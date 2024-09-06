@@ -1,0 +1,12 @@
+salesforce.ApexClass ContactManager {
+  apiVersion = 62
+  status = "Active"
+  fullName = "ContactManager"
+  content = file("salesforce/Records/ApexClass/ContactManager.cls")
+  _generated_dependencies = [
+    {
+      reference = salesforce.Contact
+    },
+  ]
+  _alias = "ContactManager"
+}

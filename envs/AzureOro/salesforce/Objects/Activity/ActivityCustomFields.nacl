@@ -18,4 +18,10 @@ type salesforce.Activity {
     unique = true
     _hidden_value = true
   }
+  salesforce.Checkbox TESTV1__c {
+    apiName = "Activity.TESTV1__c"
+    defaultValue = false
+    label = "TESTV1"
+    _hidden_value = true
+  }
 }
