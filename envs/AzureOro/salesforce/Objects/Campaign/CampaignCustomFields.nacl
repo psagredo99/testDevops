@@ -1,4 +1,10 @@
 type salesforce.Campaign {
+  salesforce.Checkbox AzureV1__c {
+    apiName = "Campaign.AzureV1__c"
+    defaultValue = false
+    label = "AzureV1"
+    _hidden_value = true
+  }
   salesforce.Picklist Centro_de_actividad__c {
     apiName = "Campaign.Centro_de_actividad__c"
     label = "Centro de actividad"

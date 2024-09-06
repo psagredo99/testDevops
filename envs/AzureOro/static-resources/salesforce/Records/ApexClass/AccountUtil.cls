@@ -28,11 +28,14 @@ public class AccountUtil
         Map<String,List<String>> accountToMergeMap 	= new Map<String,List<String>>();
         Map<String,Account> accountMap 				= new Map<String,Account>();
         
+        
+        //TEST MOD DEVOPS  acc.RecordTypeId != ''
         for(Account acc :newList)
         {
-          if(acc.RecordTypeId == navClientRT && String.isNotBlank(acc.NIF_CIF__c))
+          if(acc.RecordTypeId == navClientRT && String.isNotBlank(acc.NIF_CIF__c) && acc.RecordTypeId != '' )
           {
               integratedNAVClientsIds.add(acc.Id);
+              
               integratedNAVClientsDNIs.add(acc.NIF_CIF__c);
           }
         }
