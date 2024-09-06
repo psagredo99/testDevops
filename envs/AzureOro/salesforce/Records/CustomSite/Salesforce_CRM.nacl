@@ -1,0 +1,32 @@
+salesforce.CustomSite Salesforce_CRM {
+  fullName = "Salesforce_CRM"
+  active = false
+  allowGuestPaymentsApi = "false"
+  allowHomePage = false
+  allowStandardAnswersPages = false
+  allowStandardIdeasPages = false
+  allowStandardLookups = false
+  allowStandardPortalPages = true
+  allowStandardSearch = false
+  authorizationRequiredPage = salesforce.ApexPage.instance.Unauthorized
+  bandwidthExceededPage = salesforce.ApexPage.instance.BandwidthExceeded
+  browserXssProtection = true
+  cachePublicVisualforcePagesInProxyServers = true
+  clickjackProtectionLevel = "SameOriginOnly"
+  contentSniffingProtection = true
+  enableAuraRequests = true
+  fileNotFoundPage = salesforce.ApexPage.instance.FileNotFound
+  genericErrorPage = salesforce.ApexPage.instance.Exception
+  inMaintenancePage = salesforce.ApexPage.instance.InMaintenance
+  inactiveIndexPage = salesforce.ApexPage.instance.InMaintenance
+  indexPage = salesforce.ApexPage.instance.SiteLogin
+  masterLabel = "Salesforce CRM"
+  redirectToCustomDomain = true
+  referrerPolicyOriginWhenCrossOrigin = true
+  siteAdmin = "raul.martin@pkf-attest.es"
+  siteGuestRecordDefaultOwner = "raul.martin@pkf-attest.es"
+  siteTemplate = "SiteTemplate"
+  siteType = "Visualforce"
+  subdomain = "crm-pkf-attest-18626af7958"
+  _alias = "Salesforce_CRM"
+}

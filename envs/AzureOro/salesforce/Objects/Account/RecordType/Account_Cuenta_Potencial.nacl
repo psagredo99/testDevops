@@ -1,0 +1,978 @@
+salesforce.RecordType Account_Cuenta_Potencial {
+  fullName = "Account.Cuenta_Potencial"
+  active = true
+  compactLayoutAssignment = salesforce.CompactLayout.instance.Account_Account_Compact_Layout
+  description = "Empresa que muestra interés o tiene la posibilidad de adquirir nuestros servicios, pero aún no ha realizado ninguna contratación."
+  label = "Cuenta Potencial"
+  picklistValues = [
+    {
+      picklist = salesforce.Account.field.AccountSource
+      values = [
+        {
+          fullName = "Clientify"
+          default = false
+        },
+        {
+          fullName = "Website"
+          default = false
+        },
+      ]
+    },
+    {
+      picklist = salesforce.Account.field.Alerta_motivo__c
+      values = [
+        {
+          fullName = "Conflicto en job"
+          default = false
+        },
+        {
+          fullName = "Impago"
+          default = false
+        },
+        {
+          fullName = "Otros"
+          default = false
+        },
+      ]
+    },
+    {
+      picklist = salesforce.Account.field.CRM__c
+      values = [
+        {
+          fullName = "A medida"
+          default = false
+        },
+        {
+          fullName = "Clientify"
+          default = false
+        },
+        {
+          fullName = "Desconocido"
+          default = false
+        },
+        {
+          fullName = "Dynamics CRM %2F 365"
+          default = false
+        },
+        {
+          fullName = "Hubspot"
+          default = false
+        },
+        {
+          fullName = "Jira"
+          default = false
+        },
+        {
+          fullName = "No tiene"
+          default = false
+        },
+        {
+          fullName = "SAP"
+          default = false
+        },
+        {
+          fullName = "Sage"
+          default = false
+        },
+        {
+          fullName = "Salesforce"
+          default = false
+        },
+        {
+          fullName = "Siebel"
+          default = false
+        },
+        {
+          fullName = "Sugar CRM"
+          default = false
+        },
+        {
+          fullName = "Zohoo"
+          default = false
+        },
+      ]
+    },
+    {
+      picklist = salesforce.Account.field.Categoria_Mifid__c
+      values = [
+        {
+          fullName = "Cliente profesional"
+          default = false
+        },
+        {
+          fullName = "Contraparte elegible"
+          default = false
+        },
+        {
+          fullName = "Profesional"
+          default = false
+        },
+      ]
+    },
+    {
+      picklist = salesforce.Account.field.ERP__c
+      values = [
+        {
+          fullName = "A medida"
+          default = false
+        },
+        {
+          fullName = "A3"
+          default = false
+        },
+        {
+          fullName = "ADA Sistemas"
+          default = false
+        },
+        {
+          fullName = "AQUA"
+          default = false
+        },
+        {
+          fullName = "AS%2F400"
+          default = false
+        },
+        {
+          fullName = "Amis"
+          default = false
+        },
+        {
+          fullName = "BAAN"
+          default = false
+        },
+        {
+          fullName = "CCS-Ekon-Agress"
+          default = false
+        },
+        {
+          fullName = "Desconocido"
+          default = false
+        },
+        {
+          fullName = "Dynamics AX"
+          default = false
+        },
+        {
+          fullName = "Dynamics NAV"
+          default = false
+        },
+        {
+          fullName = "Eurowin"
+          default = false
+        },
+        {
+          fullName = "Exact"
+          default = false
+        },
+        {
+          fullName = "FactoryWin"
+          default = false
+        },
+        {
+          fullName = "GesCol"
+          default = false
+        },
+        {
+          fullName = "IDS-Vektor"
+          default = false
+        },
+        {
+          fullName = "JDEwards"
+          default = false
+        },
+        {
+          fullName = "Logic Control"
+          default = false
+        },
+        {
+          fullName = "Movex"
+          default = false
+        },
+        {
+          fullName = "Nada %2F Sin ERP"
+          default = false
+        },
+        {
+          fullName = "Nucleo ERP"
+          default = false
+        },
+        {
+          fullName = "Odoo"
+          default = false
+        },
+        {
+          fullName = "Openbravo"
+          default = false
+        },
+        {
+          fullName = "Oracle"
+          default = false
+        },
+        {
+          fullName = "PSN"
+          default = false
+        },
+        {
+          fullName = "Prowin"
+          default = false
+        },
+        {
+          fullName = "RPS"
+          default = false
+        },
+        {
+          fullName = "SAP"
+          default = false
+        },
+        {
+          fullName = "SAP B%2EO%2E"
+          default = false
+        },
+        {
+          fullName = "Sage 50%2FContaplus"
+          default = false
+        },
+        {
+          fullName = "Sage Murano %2F 200"
+          default = false
+        },
+        {
+          fullName = "Sage X3"
+          default = false
+        },
+        {
+          fullName = "Solmicro Expertis"
+          default = false
+        },
+        {
+          fullName = "Spyro"
+          default = false
+        },
+        {
+          fullName = "Transkal"
+          default = false
+        },
+        {
+          fullName = "Viafisio"
+          default = false
+        },
+        {
+          fullName = "i68 %28Izaro%29"
+          default = false
+        },
+      ]
+    },
+    {
+      picklist = salesforce.Account.field.ESG_CP__c
+      values = [
+        {
+          fullName = "No"
+          default = false
+        },
+        {
+          fullName = "Sí"
+          default = false
+        },
+      ]
+    },
+    {
+      picklist = salesforce.Account.field.ESG_LP__c
+      values = [
+        {
+          fullName = "No"
+          default = false
+        },
+        {
+          fullName = "Sí"
+          default = false
+        },
+      ]
+    },
+    {
+      picklist = salesforce.Account.field.Estado_DCM__c
+      values = [
+        {
+          fullName = "Activo"
+          default = false
+        },
+        {
+          fullName = "Cliente"
+          default = false
+        },
+        {
+          fullName = "Pipeline"
+          default = false
+        },
+        {
+          fullName = "Target"
+          default = false
+        },
+      ]
+    },
+    {
+      picklist = salesforce.Account.field.Estado_de_la_situacion__c
+      values = [
+        {
+          fullName = "Cerrada"
+          default = false
+        },
+        {
+          fullName = "En Activo"
+          default = false
+        },
+        {
+          fullName = "En Liquidación"
+          default = false
+        },
+      ]
+    },
+    {
+      picklist = salesforce.Account.field.Estructura__c
+      values = [
+        {
+          fullName = "Bono"
+          default = false
+        },
+        {
+          fullName = "Préstamo"
+          default = false
+        },
+      ]
+    },
+    {
+      picklist = salesforce.Account.field.EthiFinance_CP__c
+      values = [
+        {
+          fullName = "No"
+          default = false
+        },
+        {
+          fullName = "Sí"
+          default = false
+        },
+      ]
+    },
+    {
+      picklist = salesforce.Account.field.EthiFinance_LP__c
+      values = [
+        {
+          fullName = "No"
+          default = false
+        },
+        {
+          fullName = "Sí"
+          default = false
+        },
+      ]
+    },
+    {
+      picklist = salesforce.Account.field.Facturacion_emisor_CP__c
+      values = [
+        {
+          fullName = "Menos de 500M"
+          default = false
+        },
+        {
+          fullName = "Más de 500M"
+          default = false
+        },
+      ]
+    },
+    {
+      picklist = salesforce.Account.field.Facturacion_emisor_LP__c
+      values = [
+        {
+          fullName = "Menos de 500M"
+          default = false
+        },
+        {
+          fullName = "Más de 500M"
+          default = false
+        },
+      ]
+    },
+    {
+      picklist = salesforce.Account.field.GLOFS__c
+      values = [
+        {
+          fullName = "No"
+          default = false
+        },
+        {
+          fullName = "Sí"
+          default = false
+        },
+      ]
+    },
+    {
+      picklist = salesforce.Account.field.Industry
+      values = [
+        {
+          fullName = "Agriculture"
+          default = false
+        },
+        {
+          fullName = "Apparel"
+          default = false
+        },
+        {
+          fullName = "Banking"
+          default = false
+        },
+        {
+          fullName = "Biotechnology"
+          default = false
+        },
+        {
+          fullName = "Chemicals"
+          default = false
+        },
+        {
+          fullName = "Communications"
+          default = false
+        },
+        {
+          fullName = "Construction"
+          default = false
+        },
+        {
+          fullName = "Consulting"
+          default = false
+        },
+        {
+          fullName = "Education"
+          default = false
+        },
+        {
+          fullName = "Electronics"
+          default = false
+        },
+        {
+          fullName = "Energy"
+          default = false
+        },
+        {
+          fullName = "Engineering"
+          default = false
+        },
+        {
+          fullName = "Entertainment"
+          default = false
+        },
+        {
+          fullName = "Environmental"
+          default = false
+        },
+        {
+          fullName = "Finance"
+          default = false
+        },
+        {
+          fullName = "Food %26 Beverage"
+          default = false
+        },
+        {
+          fullName = "Government"
+          default = false
+        },
+        {
+          fullName = "Healthcare"
+          default = false
+        },
+        {
+          fullName = "Hospitality"
+          default = false
+        },
+        {
+          fullName = "Insurance"
+          default = false
+        },
+        {
+          fullName = "Machinery"
+          default = false
+        },
+        {
+          fullName = "Manufacturing"
+          default = false
+        },
+        {
+          fullName = "Media"
+          default = false
+        },
+        {
+          fullName = "Not For Profit"
+          default = false
+        },
+        {
+          fullName = "Other"
+          default = false
+        },
+        {
+          fullName = "Recreation"
+          default = false
+        },
+        {
+          fullName = "Retail"
+          default = false
+        },
+        {
+          fullName = "Shipping"
+          default = false
+        },
+        {
+          fullName = "Technology"
+          default = false
+        },
+        {
+          fullName = "Telecommunications"
+          default = false
+        },
+        {
+          fullName = "Transportation"
+          default = false
+        },
+        {
+          fullName = "Utilities"
+          default = false
+        },
+      ]
+    },
+    {
+      picklist = salesforce.Account.field.Listing__c
+      values = [
+        {
+          fullName = "No"
+          default = false
+        },
+        {
+          fullName = "Sí"
+          default = false
+        },
+      ]
+    },
+    {
+      picklist = salesforce.Account.field.Ownership
+      values = [
+        {
+          fullName = "Other"
+          default = false
+        },
+        {
+          fullName = "Private"
+          default = false
+        },
+        {
+          fullName = "Public"
+          default = false
+        },
+        {
+          fullName = "Subsidiary"
+          default = false
+        },
+      ]
+    },
+    {
+      picklist = salesforce.Account.field.Pais_CP__c
+      values = [
+        {
+          fullName = "España"
+          default = false
+        },
+        {
+          fullName = "Francia"
+          default = false
+        },
+        {
+          fullName = "Italia"
+          default = false
+        },
+        {
+          fullName = "Otros"
+          default = false
+        },
+        {
+          fullName = "Portugal"
+          default = false
+        },
+      ]
+    },
+    {
+      picklist = salesforce.Account.field.Pais_LP__c
+      values = [
+        {
+          fullName = "España"
+          default = false
+        },
+        {
+          fullName = "Francia"
+          default = false
+        },
+        {
+          fullName = "Italia"
+          default = false
+        },
+        {
+          fullName = "Otros"
+          default = false
+        },
+        {
+          fullName = "Portugal"
+          default = false
+        },
+      ]
+    },
+    {
+      picklist = salesforce.Account.field.Plazo_CP__c
+      values = [
+        {
+          fullName = "0-1m"
+          default = false
+        },
+        {
+          fullName = "1-3m"
+          default = false
+        },
+        {
+          fullName = "3-6m"
+          default = false
+        },
+        {
+          fullName = "6-12m"
+          default = false
+        },
+        {
+          fullName = "Más de 12m"
+          default = false
+        },
+      ]
+    },
+    {
+      picklist = salesforce.Account.field.Plazo_LP__c
+      values = [
+        {
+          fullName = "2-5y"
+          default = false
+        },
+        {
+          fullName = "5-10y"
+          default = false
+        },
+        {
+          fullName = "Menos_de_2y"
+          default = false
+        },
+        {
+          fullName = "Más_de_10y"
+          default = false
+        },
+      ]
+    },
+    {
+      picklist = salesforce.Account.field.Rating
+      values = [
+        {
+          fullName = "Cold"
+          default = false
+        },
+        {
+          fullName = "Hot"
+          default = false
+        },
+        {
+          fullName = "Warm"
+          default = false
+        },
+      ]
+    },
+    {
+      picklist = salesforce.Account.field.Rating_CP__c
+      values = [
+        {
+          fullName = "Cualquiera"
+          default = false
+        },
+        {
+          fullName = "HYNR"
+          default = false
+        },
+        {
+          fullName = "IG"
+          default = false
+        },
+      ]
+    },
+    {
+      picklist = salesforce.Account.field.Rating_LP__c
+      values = [
+        {
+          fullName = "Cualquiera"
+          default = false
+        },
+        {
+          fullName = "HYNR"
+          default = false
+        },
+        {
+          fullName = "IG"
+          default = false
+        },
+      ]
+    },
+    {
+      picklist = salesforce.Account.field.Rtdo_CP__c
+      values = [
+        {
+          fullName = "No"
+          default = false
+        },
+        {
+          fullName = "Sí"
+          default = false
+        },
+      ]
+    },
+    {
+      picklist = salesforce.Account.field.Rtdo_LP__c
+      values = [
+        {
+          fullName = "No"
+          default = false
+        },
+        {
+          fullName = "Sí"
+          default = false
+        },
+      ]
+    },
+    {
+      picklist = salesforce.Account.field.Sector_DCM__c
+      values = [
+        {
+          fullName = "BdE"
+          default = false
+        },
+        {
+          fullName = "Corporate"
+          default = false
+        },
+        {
+          fullName = "DGSFP"
+          default = false
+        },
+        {
+          fullName = "ESI"
+          default = false
+        },
+      ]
+    },
+    {
+      picklist = salesforce.Account.field.Si_no_Glof_orden__c
+      values = [
+        {
+          fullName = "Bloomberg"
+          default = false
+        },
+        {
+          fullName = "Mail"
+          default = false
+        },
+        {
+          fullName = "Teléfono"
+          default = false
+        },
+      ]
+    },
+    {
+      picklist = salesforce.Account.field.Situacion_cliente__c
+      values = [
+        {
+          fullName = "Cliente"
+          default = false
+        },
+        {
+          fullName = "Cliente Potencial"
+          default = true
+        },
+        {
+          fullName = "Cliente sin facturación en años"
+          default = false
+        },
+      ]
+    },
+    {
+      picklist = salesforce.Account.field.Tamano_Emision__c
+      values = [
+        {
+          fullName = "%3E300M"
+          default = false
+        },
+        {
+          fullName = "0-100M"
+          default = false
+        },
+        {
+          fullName = "100-300M"
+          default = false
+        },
+      ]
+    },
+    {
+      picklist = salesforce.Account.field.Tamano_programa__c
+      values = [
+        {
+          fullName = "Cualquiera"
+          default = false
+        },
+        {
+          fullName = "Más de 100M"
+          default = false
+        },
+      ]
+    },
+    {
+      picklist = salesforce.Account.field.Ticket_CP__c
+      values = [
+        {
+          fullName = "0-1"
+          default = false
+        },
+        {
+          fullName = "1-5"
+          default = false
+        },
+        {
+          fullName = "Más de 5"
+          default = false
+        },
+      ]
+    },
+    {
+      picklist = salesforce.Account.field.Ticket_LP__c
+      values = [
+        {
+          fullName = "0-1"
+          default = false
+        },
+        {
+          fullName = "1-5"
+          default = false
+        },
+        {
+          fullName = "Más de 5"
+          default = false
+        },
+      ]
+    },
+    {
+      picklist = salesforce.Account.field.Tipo_DCM__c
+      values = [
+        {
+          fullName = "ALM"
+          default = false
+        },
+        {
+          fullName = "Banco"
+          default = false
+        },
+        {
+          fullName = "Distribución"
+          default = false
+        },
+        {
+          fullName = "EAF"
+          default = false
+        },
+        {
+          fullName = "EPSV"
+          default = false
+        },
+        {
+          fullName = "Family Office"
+          default = false
+        },
+        {
+          fullName = "Mutuas"
+          default = false
+        },
+        {
+          fullName = "Privada"
+          default = false
+        },
+        {
+          fullName = "SGIIC"
+          default = false
+        },
+        {
+          fullName = "SV%2FAV"
+          default = false
+        },
+        {
+          fullName = "Seguros"
+          default = false
+        },
+      ]
+    },
+    {
+      picklist = salesforce.Account.field.Tipo_Yield__c
+      values = [
+        {
+          fullName = "Fijo"
+          default = false
+        },
+        {
+          fullName = "Flotante"
+          default = false
+        },
+      ]
+    },
+    {
+      picklist = salesforce.Account.field.Type
+      values = [
+        {
+          fullName = "Analyst"
+          default = false
+        },
+        {
+          fullName = "Competitor"
+          default = false
+        },
+        {
+          fullName = "Customer"
+          default = false
+        },
+        {
+          fullName = "Integrator"
+          default = false
+        },
+        {
+          fullName = "Investor"
+          default = false
+        },
+        {
+          fullName = "Other"
+          default = false
+        },
+        {
+          fullName = "Partner"
+          default = false
+        },
+        {
+          fullName = "Press"
+          default = false
+        },
+        {
+          fullName = "Prospect"
+          default = false
+        },
+        {
+          fullName = "Reseller"
+          default = false
+        },
+      ]
+    },
+  ]
+  _parent = [
+    salesforce.Account,
+  ]
+  _alias = "Cuenta Potencial"
+}

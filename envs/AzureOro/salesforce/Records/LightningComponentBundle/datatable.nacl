@@ -1,0 +1,717 @@
+salesforce.LightningComponentBundle datatable {
+  masterLabel = "Datatable"
+  description = "This component allows the user to configure and display a datatable in a Flow screen."
+  apiVersion = 53
+  isExposed = true
+  targets = {
+    target = [
+      "lightning__FlowScreen",
+    ]
+    "#text" = "\r\r"
+  }
+  targetConfigs = {
+    targetConfig = [
+      {
+        targets = "lightning__FlowScreen"
+        configurationEditor = "c-ers_datatable-C-P-E"
+        propertyType = {
+          attr_name = "T"
+          attr_extends = "SObject"
+          attr_label = "Datatable Object API Name"
+          attr_description = "Select the API Name of the SObject to use in the Datatable"
+        }
+        property = [
+          {
+            name = "tableData"
+            label = "_ Datatable Record Collection"
+            type = "{T[]}"
+            role = "inputOnly"
+            description = "Record Collection variable containing the records to display in the datatable."
+          },
+          {
+            name = "preSelectedRows"
+            label = "Pre-Selected Rows"
+            type = "{T[]}"
+            role = "inputOnly"
+            description = "Record Collection variable containing the records to show as pre-selected in the datatable."
+          },
+          {
+            name = "outputEditedRows"
+            label = "Output Edited Rows"
+            type = "{T[]}"
+            role = "outputOnly"
+            description = '''
+Record Collection variable to contain only the records that were edited in the datatable. &#xD;
+                - NOTE: To write these edits back to the Object, you will need to do a Record Update in the Flow.
+'''
+          },
+          {
+            name = "outputEditedSerializedRows"
+            label = "Output Edited (Serialized) Rows"
+            type = "String"
+            role = "outputOnly"
+            description = '''
+Record Collection variable to contain only the records that were edited in the datatable. &#xD;
+                - NOTE: To write these edits back to the Object, you will need to do a Record Update in the Flow.
+'''
+          },
+          {
+            name = "outputSelectedRows"
+            label = "Output Selected Rows (Collection)"
+            type = "{T[]}"
+            role = "outputOnly"
+            description = '''
+Record Collection variable to contain only the records that were selected in the datatable. &#xD;
+                - NOTE: These records may not contain all of the edited values.
+'''
+          },
+          {
+            name = "outputSelectedRow"
+            label = "Output Selected Row (Object)"
+            type = "{T}"
+            role = "outputOnly"
+            description = '''
+Record Object variable that contains the single record that was selected in the datatable. &#xD;
+                - NOTE: This is only provided when just a single record is selected.
+'''
+          },
+          {
+            name = "isUserDefinedObject"
+            label = "_ (User Defined)  Display User Defined Object?"
+            type = "Boolean"
+            default = "false"
+            role = "inputOnly"
+            description = "Set to True if you are providing a User Defined object rather than a Salesforce SObject."
+          },
+          {
+            name = "cb_isUserDefinedObject"
+            type = "String"
+            role = "inputOnly"
+          },
+          {
+            name = "tableDataString"
+            label = "_ Datatable Record String (User Defined)"
+            type = "String"
+            role = "inputOnly"
+            description = "Object Collection string variable containing the records to display in the datatable."
+          },
+          {
+            name = "preSelectedRowsString"
+            label = "Pre-Selected Rows (User Defined)"
+            type = "String"
+            role = "inputOnly"
+            description = "Object Collection string variable containing the records to show as pre-selected in the datatable."
+          },
+          {
+            name = "serializedRecordData"
+            label = "_ (User Defined)  Display Serialized Record?"
+            type = "String"
+            default = "false"
+            role = "inputOnly"
+            description = "String variable containing the records. Serialized record data."
+          },
+          {
+            name = "isSerializedRecordData"
+            type = "Boolean"
+            role = "inputOnly"
+          },
+          {
+            name = "cb_isSerializedRecordData"
+            type = "String"
+            role = "inputOnly"
+          },
+          {
+            name = "outputSelectedRowsString"
+            label = "Output Selected Rows (User Defined)"
+            type = "String"
+            role = "outputOnly"
+            description = '''
+Object Collection string variable to contain only the records that were selected in the datatable. &#xD;
+                --  NOTE: These records may not contain all of the edited values.
+'''
+          },
+          {
+            name = "outputEditedRowsString"
+            label = "Output Edited Rows (User Defined)"
+            type = "String"
+            role = "outputOnly"
+            description = "Object Collection string variable to contain only the records that were edited in the datatable."
+          },
+          {
+            name = "numberOfRowsSelected"
+            label = "Output Number of Selected Records"
+            type = "Integer"
+            role = "outputOnly"
+            description = "Total count of the number of selected records"
+          },
+          {
+            name = "numberOfRowsEdited"
+            label = "Output Number of Edited Records"
+            type = "Integer"
+            role = "outputOnly"
+            description = "Total count of the number of edited records"
+          },
+          {
+            name = "selectedRowKeyValue"
+            label = "Selected Row Key Field Value"
+            type = "String"
+            role = "outputOnly"
+            description = "The value of the keyField(Id) of the selected row"
+          },
+          {
+            name = "objectName"
+            label = "Wizard Only - Selected SObject"
+            type = "String"
+          },
+          {
+            name = "wizSObject"
+            label = "Wizard Only - Selected SObject"
+            type = "String"
+            role = "outputOnly"
+          },
+          {
+            name = "wizColumnFields"
+            label = "Wizard Only - Column Fields"
+            type = "String"
+            role = "outputOnly"
+          },
+          {
+            name = "wizColumnAlignments"
+            label = "Wizard Only - Column Alignments"
+            type = "String"
+            role = "outputOnly"
+          },
+          {
+            name = "wizColumnEdits"
+            label = "Wizard Only - Column Edits"
+            type = "String"
+            role = "outputOnly"
+          },
+          {
+            name = "wizColumnFilters"
+            label = "Wizard Only - Column Filters"
+            type = "String"
+            role = "outputOnly"
+          },
+          {
+            name = "wizColumnIcons"
+            label = "Wizard Only - Column Icons"
+            type = "String"
+            role = "outputOnly"
+          },
+          {
+            name = "wizColumnLabels"
+            label = "Wizard Only - Column Labels"
+            type = "String"
+            role = "outputOnly"
+          },
+          {
+            name = "wizColumnWidths"
+            label = "Wizard Only - Column Widths"
+            type = "String"
+            role = "outputOnly"
+          },
+          {
+            name = "wizColumnWraps"
+            label = "Wizard Only - Column Wraps"
+            type = "String"
+            role = "outputOnly"
+          },
+          {
+            name = "wizColumnCellAttribs"
+            label = "Wizard Only - Special Cell Attributes"
+            type = "String"
+            role = "outputOnly"
+          },
+          {
+            name = "wizColumnTypeAttributes"
+            label = "Wizard Only - Special Type Attributes"
+            type = "String"
+            role = "outputOnly"
+          },
+          {
+            name = "wizColumnOtherAttributes"
+            label = "Wizard Only - Special Other Attributes"
+            type = "String"
+            role = "outputOnly"
+          },
+          {
+            name = "columnFields"
+            label = "_ Column Fields"
+            type = "String"
+            role = "inputOnly"
+            description = "REQUIRED: Comma separated list of field API Names to display in the datatable."
+          },
+          {
+            name = "columnAlignments"
+            label = "- Column Alignments (Col#:alignment,...)"
+            type = "String"
+            role = "inputOnly"
+            description = '''
+Comma separated list of ColID:Alignment Value (left,center,right).  &#xD;
+                --  NOTE: ColIDs can be either the column number or the field API Name
+'''
+          },
+          {
+            name = "columnEdits"
+            label = "- Column Edits (Col#:true,...) or All"
+            type = "String"
+            role = "inputOnly"
+            description = '''
+'All' or a Comma separated list of ColID:true or false  &#xD;
+                --  NOTE: Some data types cannot be edited in a datable (lookup, picklist, location, encrypted, rich text, long text area)&#xD;
+                --  NOTE: ColIDs can be either the column number or the field API Name
+'''
+          },
+          {
+            name = "columnFilters"
+            label = "- Column Filters (Col#:true,...) or All"
+            type = "String"
+            role = "inputOnly"
+            description = '''
+'All' or a Comma separated list of ColID:true or false  &#xD;
+                --  NOTE: Some data types cannot be filtered in a datable (location, encrypted)&#xD;
+                --  NOTE: ColIDs can be either the column number or the field API Name
+'''
+          },
+          {
+            name = "columnIcons"
+            label = "- Column Icons (Col#:icon,...)"
+            type = "String"
+            role = "inputOnly"
+            description = '''
+Comma separated list of ColID:Icon Identifier  --  EXAMPLE: 1:standard:account (Display the first column with the Account icon)  &#xD;
+                --  NOTE: ColIDs can be either the column number or the field API Name
+'''
+          },
+          {
+            name = "columnLabels"
+            label = "- Column Labels (Col#:label,...)"
+            type = "String"
+            role = "inputOnly"
+            description = '''
+Comma separated list of ColID:Label (These are only needed if you want a label that is different from the field's defined label)  &#xD;
+                --  NOTE: ColIDs can be either the column number or the field API Name
+'''
+          },
+          {
+            name = "columnScales"
+            label = "- Column Scale Values (Col#:scale,...) (User Defined)"
+            type = "String"
+            role = "inputOnly"
+            description = '''
+Comma separated list of ColID:Scale (The number of digits to display to the right of the decimal point in currency, number and percent fields (default = 0))  &#xD;
+                --  NOTE: ColIDs can be either the column number or the field API Name
+'''
+          },
+          {
+            name = "columnTypes"
+            label = "- Column Field Types (Col#:type,...) (User Defined)"
+            type = "String"
+            role = "inputOnly"
+            description = '''
+Comma separated list of ColID:FieldType (boolean, currency, date, datetime, number, email, id, location, percent, phone, time, url, text(default))  &#xD;
+                --  NOTE: ColIDs can be either the column number or the field API Name
+'''
+          },
+          {
+            name = "columnWidths"
+            label = "- Column Widths (Col#:width,...)"
+            type = "String"
+            role = "inputOnly"
+            description = '''
+Comma separated list of ColID:Width (in pixels).  &#xD;
+                --  NOTE: ColIDs can be either the column number or the field API Name
+'''
+          },
+          {
+            name = "columnWraps"
+            label = "- Column Wraps (Col#:true,...)"
+            type = "String"
+            role = "inputOnly"
+            description = '''
+Comma separated list of ColID:true or false (Default:false)  &#xD;
+                --  NOTE: ColIDs can be either the column number or the field API Name
+'''
+          },
+          {
+            name = "columnCellAttribs"
+            label = ". Special: Column CellAttributes (Col#:{name:value,...};...) Use ; as separator"
+            type = "String"
+            role = "inputOnly"
+            description = "EXAMPLE: FancyField__c:{class: 'slds-theme_shade slds-theme_alert-texture', iconName: {fieldName: IconValue__c}, iconPosition: left}"
+          },
+          {
+            name = "columnOtherAttribs"
+            label = ". Special: Column Other Attributes (Col#:{name:value,...};...) Use ; as separator"
+            type = "String"
+            role = "inputOnly"
+            description = "EXAMPLE: Description:{wrapText: true, wrapTextMaxLines: 5}"
+          },
+          {
+            name = "columnTypeAttribs"
+            label = ". Special: Column TypeAttributes (Col#:{name:value,...};...) Use ; as separator"
+            type = "String"
+            role = "inputOnly"
+            description = "EXAMPLE: DateField__c:{year:'numeric', day:'2-digit', month:'long'}; NumberField__c:{minimumFractionDigits:4}"
+          },
+          {
+            name = "isConfigMode"
+            label = "Configuration Mode?"
+            type = "Boolean"
+            default = "false"
+            role = "inputOnly"
+            description = "Display the Field API Names and the Column Widths in a box below the table.  This parameter is designed to be used by the setup Flow."
+          },
+          {
+            name = "hideCheckboxColumn"
+            label = "Hide Checkbox Column?"
+            type = "Boolean"
+            default = "false"
+            role = "inputOnly"
+            description = "Set to True to hide the row selection column.  --  NOTE: The checkbox column will always display when inline editing is enabled."
+          },
+          {
+            name = "cb_hideCheckboxColumn"
+            type = "String"
+            role = "inputOnly"
+          },
+          {
+            name = "hideHeaderActions"
+            label = "Hide Column Header Actions?"
+            type = "Boolean"
+            default = "false"
+            role = "inputOnly"
+            description = "Set to True to hide all column header actions including Sort, Clip Text, Wrap Text + Filter."
+          },
+          {
+            name = "cb_hideHeaderActions"
+            type = "String"
+            role = "inputOnly"
+          },
+          {
+            name = "hideClearSelectionButton"
+            label = "Hide Clear Selection Button?"
+            type = "Boolean"
+            default = "false"
+            role = "inputOnly"
+            description = "Set to True to hide the Clear Selection Button that would normally appear on a radio button selection table."
+          },
+          {
+            name = "cb_hideClearSelectionButton"
+            type = "String"
+            role = "inputOnly"
+          },
+          {
+            name = "showRowNumbers"
+            label = "Show Row Numbers"
+            type = "Boolean"
+            default = "false"
+            role = "inputOnly"
+            description = "Display a row number column as the first column in the table."
+          },
+          {
+            name = "cb_showRowNumbers"
+            type = "String"
+            role = "inputOnly"
+          },
+          {
+            name = "showRecordCount"
+            label = "Show Record Count in Header"
+            type = "Boolean"
+            default = "false"
+            role = "inputOnly"
+            description = "Display the number of records in the table header.  This will match what is shown in a List View header."
+          },
+          {
+            name = "cb_showRecordCount"
+            type = "String"
+            role = "inputOnly"
+          },
+          {
+            name = "keyField"
+            label = "Key Field"
+            type = "String"
+            default = "Id"
+            role = "inputOnly"
+            description = "This is normally the Id field, but you can specify a different field if all field values are unique."
+          },
+          {
+            name = "matchCaseOnFilters"
+            label = "Match Case on Column Filters?"
+            type = "Boolean"
+            default = "false"
+            role = "inputOnly"
+            description = "Set to True is you want to force an exact match on case for column filter values."
+          },
+          {
+            name = "cb_matchCaseOnFilters"
+            type = "String"
+            role = "inputOnly"
+          },
+          {
+            name = "maxNumberOfRows"
+            label = "Maximum Number of Records to Display"
+            type = "Integer"
+            role = "inputOnly"
+            description = "Enter a number here if you want to restrict how many rows will be displayed in the datatable."
+          },
+          {
+            name = "isRequired"
+            label = "Required?"
+            type = "Boolean"
+            default = "false"
+            role = "inputOnly"
+            description = "Require at least 1 row to be selected?"
+          },
+          {
+            name = "cb_isRequired"
+            type = "String"
+            role = "inputOnly"
+          },
+          {
+            name = "singleRowSelection"
+            label = "Single Row Selection (Radio Buttons)?"
+            type = "Boolean"
+            default = "false"
+            role = "inputOnly"
+            description = '''
+When set to True, Radio Buttons will be displayed and only a single row can be selected.  &#xD;
+                The default (False) will display Checkboxes and allow multiple records to be selected.
+'''
+          },
+          {
+            name = "cb_singleRowSelection"
+            type = "String"
+            role = "inputOnly"
+          },
+          {
+            name = "suppressBottomBar"
+            label = "Suppress Cancel/Save Buttons during Edit Mode?"
+            type = "Boolean"
+            default = "false"
+            role = "inputOnly"
+            description = '''
+Cancel/Save buttons will appear by default at the very bottom of the table once a field is edited.  &#xD;
+                When hiding these buttons, field updates will be applied as soon as the user Tabs out or selects a different field.
+'''
+          },
+          {
+            name = "cb_suppressBottomBar"
+            type = "String"
+            role = "inputOnly"
+          },
+          {
+            name = "navigateNextOnSave"
+            label = "Navigate to Next Flow Element on Save?"
+            type = "Boolean"
+            default = "false"
+            role = "inputOnly"
+            description = '''
+When selecting Save after inline editing, immediately navigate to the next Flow element.  &#xD;
+                This removes the need for the User to select the Next button after saving.
+'''
+          },
+          {
+            name = "cb_navigateNextOnSave"
+            type = "String"
+            role = "inputOnly"
+          },
+          {
+            name = "tableHeight"
+            label = "Table Height"
+            type = "String"
+            role = "inputOnly"
+            description = "CSS specification for the height of the datatable (Examples: 30rem, calc(50vh - 100px)  If you leave this blank, the datatable will expand to display all records.)"
+          },
+          {
+            name = "tableBorder"
+            label = "Table Border"
+            type = "Boolean"
+            default = "true"
+            role = "inputOnly"
+            description = "Display a border around the datatable."
+          },
+          {
+            name = "cb_tableBorder"
+            type = "String"
+            role = "inputOnly"
+          },
+          {
+            name = "isDisplayHeader"
+            label = "Display Table Header?"
+            type = "Boolean"
+            default = "false"
+            role = "inputOnly"
+            description = "Display a header above the datatable."
+          },
+          {
+            name = "cb_isDisplayHeader"
+            type = "String"
+            role = "inputOnly"
+          },
+          {
+            name = "tableIcon"
+            label = "Table Icon"
+            type = "String"
+            role = "inputOnly"
+            description = "(Optional) Icon to display on the Table Header. Example: standard:account"
+          },
+          {
+            name = "tableLabel"
+            label = "Table Label"
+            type = "String"
+            role = "inputOnly"
+            description = "(Optional) Label to display on the Table Header"
+          },
+          {
+            name = "not_suppressNameFieldLink"
+            label = "Show the Link on the Object's 'Name' Field"
+            type = "Boolean"
+            default = "true"
+            role = "inputOnly"
+            description = "Show the default behavior of displaying the SObject's 'Name' field as a link to the record"
+          },
+          {
+            name = "cb_not_suppressNameFieldLink"
+            type = "String"
+            role = "inputOnly"
+          },
+          {
+            name = "openLinkinSameTab"
+            type = "Boolean"
+            role = "inputOnly"
+          },
+          {
+            name = "cb_openLinkinSameTab"
+            type = "String"
+            role = "inputOnly"
+          },
+          {
+            name = "suppressNameFieldLink"
+            label = "OBSOLETE as of v3.0.10"
+            type = "Boolean"
+            default = "false"
+            role = "inputOnly"
+            description = "Suppress the default behavior of displaying the SObject's 'Name' field as a link to the record"
+          },
+          {
+            name = "not_tableBorder"
+            label = "OBSOLETE as of v3.0.10"
+            type = "Boolean"
+            default = "false"
+            role = "inputOnly"
+          },
+          {
+            name = "displayAll"
+            type = "Boolean"
+            role = "inputOnly"
+          },
+          {
+            name = "cb_displayAll"
+            type = "String"
+            role = "inputOnly"
+          },
+          {
+            name = "recordTypeId"
+            type = "String"
+            role = "inputOnly"
+          },
+          {
+            name = "allowNoneToBeChosen"
+            type = "Boolean"
+            role = "inputOnly"
+          },
+          {
+            name = "cb_allowNoneToBeChosen"
+            type = "String"
+            role = "inputOnly"
+          },
+          {
+            name = "allowOverflow"
+            type = "Boolean"
+            role = "inputOnly"
+          },
+          {
+            name = "cb_allowOverflow"
+            type = "String"
+            role = "inputOnly"
+          },
+          {
+            name = "suppressCurrencyConversion"
+            type = "Boolean"
+            role = "inputOnly"
+          },
+          {
+            name = "cb_suppressCurrencyConversion"
+            type = "String"
+            role = "inputOnly"
+          },
+          {
+            name = "sortedBy"
+            label = "sortedBy"
+            type = "String"
+            role = "outputOnly"
+          },
+          {
+            name = "sortDirection"
+            label = "sortDirection"
+            type = "String"
+            role = "outputOnly"
+          },
+        ]
+        "#text" = '''
+
+                  
+
+    
+              
+            
+            
+            
+            
+              
+            
+            
+
+            
+
+              
+'''
+      },
+    ]
+    "#text" = "\r\r"
+  }
+  "#text" = "\r\r\r\r\r\r\r"
+  fullName = "datatable"
+  lwcResources = {
+    lwcResource = {
+      datatable_html@v = {
+        source = file("salesforce/Records/LightningComponentBundle/datatable/datatable.html")
+        filePath = "lwc/datatable/datatable.html"
+      }
+      datatable_js@v = {
+        source = file("salesforce/Records/LightningComponentBundle/datatable/datatable.js")
+        filePath = "lwc/datatable/datatable.js"
+      }
+    }
+  }
+  _generated_dependencies = [
+    {
+      reference = salesforce.ApexClass.instance.ers_DatatableController
+    },
+    {
+      reference = salesforce.LightningComponentBundle.instance.ers_customLightningDatatable
+    },
+    {
+      reference = salesforce.LightningComponentBundle.instance.ers_datatableCPE
+    },
+    {
+      reference = salesforce.LightningComponentBundle.instance.ers_datatableUtils
+    },
+    {
+      reference = salesforce.LightningComponentBundle.instance.fsc_pickIcon
+    },
+  ]
+  _alias = "datatable"
+}

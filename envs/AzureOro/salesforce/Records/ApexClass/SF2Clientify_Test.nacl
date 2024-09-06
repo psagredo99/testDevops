@@ -1,0 +1,24 @@
+salesforce.ApexClass SF2Clientify_Test {
+  apiVersion = 57
+  status = "Active"
+  fullName = "SF2Clientify_Test"
+  content = file("salesforce/Records/ApexClass/SF2Clientify_Test.cls")
+  _generated_dependencies = [
+    {
+      reference = salesforce.ApexClass.instance.SF2Clientify
+    },
+    {
+      reference = salesforce.Contact
+    },
+    {
+      reference = salesforce.Contact.field.ID_Contacto_Clientify__c
+    },
+    {
+      reference = salesforce.Lead
+    },
+    {
+      reference = salesforce.Lead.field.ID_Contacto_Clientify__c
+    },
+  ]
+  _alias = "SF2Clientify_Test"
+}

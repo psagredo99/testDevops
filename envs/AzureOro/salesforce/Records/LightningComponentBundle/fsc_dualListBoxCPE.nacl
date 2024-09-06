@@ -1,0 +1,32 @@
+salesforce.LightningComponentBundle fsc_dualListBoxCPE {
+  apiVersion = 51
+  description = "Dual List Box Cpe"
+  isExposed = true
+  masterLabel = "Dual List Box Cpe"
+  fullName = "fsc_dualListBoxCPE"
+  lwcResources = {
+    lwcResource = {
+      fsc_dualListBoxCPE_html@uv = {
+        source = file("salesforce/Records/LightningComponentBundle/fsc_dualListBoxCPE/fsc_dualListBoxCPE.html")
+        filePath = "lwc/fsc_dualListBoxCPE/fsc_dualListBoxCPE.html"
+      }
+      fsc_dualListBoxCPE_css@uv = {
+        source = file("salesforce/Records/LightningComponentBundle/fsc_dualListBoxCPE/fsc_dualListBoxCPE.css")
+        filePath = "lwc/fsc_dualListBoxCPE/fsc_dualListBoxCPE.css"
+      }
+      fsc_dualListBoxCPE_js@uv = {
+        source = file("salesforce/Records/LightningComponentBundle/fsc_dualListBoxCPE/fsc_dualListBoxCPE.js")
+        filePath = "lwc/fsc_dualListBoxCPE/fsc_dualListBoxCPE.js"
+      }
+    }
+  }
+  _generated_dependencies = [
+    {
+      reference = salesforce.LightningComponentBundle.instance.fsc_dualListBoxUtils
+    },
+    {
+      reference = salesforce.LightningComponentBundle.instance.fsc_flowCombobox
+    },
+  ]
+  _alias = "fsc_dualListBoxCPE"
+}

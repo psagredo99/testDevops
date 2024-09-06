@@ -1,0 +1,428 @@
+salesforce.CustomLabel Cuenta_auditada {
+  fullName = "Cuenta_auditada"
+  categories = "Pop Up CMP - Aviso cuenta auditada"
+  language = "es"
+  protected = false
+  shortDescription = "Cuenta auditada"
+  value = '''
+El cliente al que estás accediendo es un cliente auditado por PKF Attest. Siguiendo la normativa del ICAC sobre SNA, antes de poder ofrecer cualquier servicio, debes coordinarte con el socio de auditoria correspondiente para contrastar que no hay incompatibilidades. 
+
+Consulta la pestaña Detalles – Auditoría para más información.
+'''
+  _alias = "Cuenta_auditada"
+}
+salesforce.CustomLabel ObtenerIpActual_Destinatarios {
+  fullName = "ObtenerIpActual_Destinatarios"
+  language = "es"
+  protected = false
+  shortDescription = "ObtenerIpActual - Destinatarios"
+  value = "mikelurtiaga@gmail.com,soportesalesforce@blueway.es,sistemas@pkf-attest.es"
+  _alias = "ObtenerIpActual_Destinatarios"
+}
+salesforce.CustomLabel Oportunidad_Cuenta_auditada {
+  fullName = "Oportunidad_Cuenta_auditada"
+  categories = "Pop Up CMP - Aviso cuenta auditada"
+  language = "es"
+  protected = false
+  shortDescription = "Oportunidad_Cuenta_auditada"
+  value = '''
+La oportunidad que estás abriendo pertenece a una cuenta auditada por PKF Attest. Siguiendo la normativa del ICAC sobre SNA, antes de poder ofertar ningún servicio, el socio de auditoría debe revisar y autorizar la oportunidad así como validar la oferta.
+
+Consulta la pestaña Detalles de la cuenta – Socio auditoría para más información.
+'''
+  _alias = "Oportunidad_Cuenta_auditada"
+}
+salesforce.CustomLabel ers_CancelButton {
+  fullName = "ers_CancelButton"
+  categories = "buttons"
+  language = "en_US"
+  protected = false
+  shortDescription = "Cancel"
+  value = "Cancel"
+  _alias = "ers_CancelButton"
+}
+salesforce.CustomLabel ers_ClearFilterAction {
+  fullName = "ers_ClearFilterAction"
+  categories = "actions"
+  language = "en_US"
+  protected = false
+  shortDescription = "Clear Filter"
+  value = "Clear Filter"
+  _alias = "ers_ClearFilterAction"
+}
+salesforce.CustomLabel ers_ClearSelectionButton {
+  fullName = "ers_ClearSelectionButton"
+  categories = "buttons"
+  language = "en_US"
+  protected = false
+  shortDescription = "Clear Selection"
+  value = "Clear Selection"
+  _alias = "ers_ClearSelectionButton"
+}
+salesforce.CustomLabel ers_ColumnHeader {
+  fullName = "ers_ColumnHeader"
+  categories = "headers"
+  language = "en_US"
+  protected = false
+  shortDescription = "Column"
+  value = "Column"
+  _alias = "ers_ColumnHeader"
+}
+salesforce.CustomLabel ers_EmptyTableMessage {
+  fullName = "ers_EmptyTableMessage"
+  categories = "messages"
+  language = "en_US"
+  protected = false
+  shortDescription = "Empty"
+  value = "This table currently has no data to display"
+  _alias = "ers_EmptyTableMessage"
+}
+salesforce.CustomLabel ers_ErrorRequiredEntry {
+  fullName = "ers_ErrorRequiredEntry"
+  categories = "messages"
+  language = "en_US"
+  protected = false
+  shortDescription = "Required"
+  value = "This is a required entry.  At least 1 row must be selected."
+  _alias = "ers_ErrorRequiredEntry"
+}
+salesforce.CustomLabel ers_FilterHeader {
+  fullName = "ers_FilterHeader"
+  categories = "headers"
+  language = "en_US"
+  protected = false
+  shortDescription = "Filter"
+  value = "Filter"
+  _alias = "ers_FilterHeader"
+}
+salesforce.CustomLabel ers_LabelHeader {
+  fullName = "ers_LabelHeader"
+  categories = "headers"
+  language = "en_US"
+  protected = false
+  shortDescription = "Label"
+  value = "Label"
+  _alias = "ers_LabelHeader"
+}
+salesforce.CustomLabel ers_SaveButton {
+  fullName = "ers_SaveButton"
+  categories = "buttons"
+  language = "en_US"
+  protected = false
+  shortDescription = "Save"
+  value = "Save"
+  _alias = "ers_SaveButton"
+}
+salesforce.CustomLabel ers_SetFilterAction {
+  fullName = "ers_SetFilterAction"
+  categories = "actions"
+  language = "en_US"
+  protected = false
+  shortDescription = "Set Filter"
+  value = "Set Filter"
+  _alias = "ers_SetFilterAction"
+}
+salesforce.CustomLabel fsc_AccessLevel {
+  fullName = "fsc_AccessLevel"
+  categories = "labels"
+  language = "en_US"
+  protected = false
+  shortDescription = "AccessLevel"
+  value = "Access Level"
+  _alias = "fsc_AccessLevel"
+}
+salesforce.CustomLabel fsc_Back {
+  fullName = "fsc_Back"
+  categories = "Buttons,Filters,Title"
+  language = "en_US"
+  protected = false
+  shortDescription = "Back"
+  value = "Back"
+  _alias = "fsc_Back"
+}
+salesforce.CustomLabel fsc_ButtonIsNotSupportedMessage {
+  fullName = "fsc_ButtonIsNotSupportedMessage"
+  categories = "messages"
+  language = "en_US"
+  protected = false
+  shortDescription = "ButtonIsNotSupportedMessage"
+  value = "Following buttons are note supported:"
+  _alias = "fsc_ButtonIsNotSupportedMessage"
+}
+salesforce.CustomLabel fsc_ConditionLogicHelpText {
+  fullName = "fsc_ConditionLogicHelpText"
+  categories = "labels"
+  language = "en_US"
+  protected = false
+  shortDescription = "ConditionLogicHelpText"
+  value = "Use parentheses, AND, OR, and NOT to customize the logic. For example, if you enter “(1 AND 2 AND 3) OR 4”, the flow evaluates whether the first three conditions are true or only the fourth condition is true."
+  _alias = "fsc_ConditionLogicHelpText"
+}
+salesforce.CustomLabel fsc_Delete {
+  fullName = "fsc_Delete"
+  categories = "labels, buttons"
+  language = "en_US"
+  protected = false
+  shortDescription = "Delete"
+  value = "Delete"
+  _alias = "fsc_Delete"
+}
+salesforce.CustomLabel fsc_FieldIsNotSupportedMessage {
+  fullName = "fsc_FieldIsNotSupportedMessage"
+  categories = "messages"
+  language = "en_US"
+  protected = false
+  shortDescription = "FieldIsNotSupportedMessage"
+  value = "Following fields are not supported:"
+  _alias = "fsc_FieldIsNotSupportedMessage"
+}
+salesforce.CustomLabel fsc_FieldTypeNotSuportedMessage {
+  fullName = "fsc_FieldTypeNotSuportedMessage"
+  categories = "messages"
+  language = "en_US"
+  protected = false
+  shortDescription = "fsc_FieldTypeNotSuportedMessage"
+  value = "You provided an unsupported value for the DataTypeFilter input on Object and Field Picker. Currently the only supported value is ’picklist’"
+  _alias = "fsc_FieldTypeNotSuportedMessage"
+}
+salesforce.CustomLabel fsc_For {
+  fullName = "fsc_For"
+  categories = "Buttons"
+  language = "en_US"
+  protected = false
+  shortDescription = "For"
+  value = "For"
+  _alias = "fsc_For"
+}
+salesforce.CustomLabel fsc_Key_Label {
+  fullName = "fsc_Key_Label"
+  language = "en_US"
+  protected = true
+  shortDescription = "Key Label"
+  value = "Key"
+  _alias = "fsc_Key_Label"
+}
+salesforce.CustomLabel fsc_LackingPermissions {
+  fullName = "fsc_LackingPermissions"
+  categories = "messages"
+  language = "en_US"
+  protected = false
+  shortDescription = "LackingPermissions"
+  value = "You don\\'t have the proper permissions for ths action"
+  _alias = "fsc_LackingPermissions"
+}
+salesforce.CustomLabel fsc_ManagerEmptyMessage {
+  fullName = "fsc_ManagerEmptyMessage"
+  categories = "messages"
+  language = "en_US"
+  protected = false
+  shortDescription = "ManagerEmptyMessage"
+  value = "\"Manager APEX Class\" can not be empty"
+  _alias = "fsc_ManagerEmptyMessage"
+}
+salesforce.CustomLabel fsc_MultipleGroupsForRole {
+  fullName = "fsc_MultipleGroupsForRole"
+  categories = "messages"
+  language = "en_US"
+  protected = false
+  shortDescription = "MultipleGroupsForRole"
+  value = "There are multiple groups for that role"
+  _alias = "fsc_MultipleGroupsForRole"
+}
+salesforce.CustomLabel fsc_Name {
+  fullName = "fsc_Name"
+  categories = "quicklinks, Labels"
+  language = "en_US"
+  protected = false
+  shortDescription = "Name"
+  value = "Name"
+  _alias = "fsc_Name"
+}
+salesforce.CustomLabel fsc_NonePicklistValueLabel {
+  fullName = "fsc_NonePicklistValueLabel"
+  categories = "messages"
+  language = "en_US"
+  protected = false
+  shortDescription = "NonePicklistValueLabel"
+  value = "-- None --"
+  _alias = "fsc_NonePicklistValueLabel"
+}
+salesforce.CustomLabel fsc_OWDReadWrite {
+  fullName = "fsc_OWDReadWrite"
+  categories = "messages"
+  language = "en_US"
+  protected = false
+  shortDescription = "OWDReadWrite"
+  value = "Sharing Settings must be private or public read/write to enable manual sharing"
+  _alias = "fsc_OWDReadWrite"
+}
+salesforce.CustomLabel fsc_OwnerAdminModify {
+  fullName = "fsc_OwnerAdminModify"
+  categories = "messages"
+  language = "en_US"
+  protected = false
+  shortDescription = "OwnerAdminModify"
+  value = "Only the record owner or administrators can modify permissions"
+  _alias = "fsc_OwnerAdminModify"
+}
+salesforce.CustomLabel fsc_PublicGroups {
+  fullName = "fsc_PublicGroups"
+  categories = "labels"
+  language = "en_US"
+  protected = false
+  shortDescription = "PublicGroups"
+  value = "Public Groups"
+  _alias = "fsc_PublicGroups"
+}
+salesforce.CustomLabel fsc_Queues {
+  fullName = "fsc_Queues"
+  categories = "labels"
+  language = "en_US"
+  protected = false
+  shortDescription = "Queues"
+  value = "Queues"
+  _alias = "fsc_Queues"
+}
+salesforce.CustomLabel fsc_Read {
+  fullName = "fsc_Read"
+  categories = "labels, buttons"
+  language = "en_US"
+  protected = false
+  shortDescription = "Read"
+  value = "Read"
+  _alias = "fsc_Read"
+}
+salesforce.CustomLabel fsc_ReadWrite {
+  fullName = "fsc_ReadWrite"
+  categories = "labels, buttons"
+  language = "en_US"
+  protected = false
+  shortDescription = "ReadWrite"
+  value = "Read / Write"
+  _alias = "fsc_ReadWrite"
+}
+salesforce.CustomLabel fsc_Reason {
+  fullName = "fsc_Reason"
+  categories = "labels"
+  language = "en_US"
+  protected = false
+  shortDescription = "Reason"
+  value = "Reason"
+  _alias = "fsc_Reason"
+}
+salesforce.CustomLabel fsc_RelatedUsers {
+  fullName = "fsc_RelatedUsers"
+  categories = "labels"
+  language = "en_US"
+  protected = false
+  shortDescription = "RelatedUsers"
+  value = "Related Users"
+  _alias = "fsc_RelatedUsers"
+}
+salesforce.CustomLabel fsc_Roles {
+  fullName = "fsc_Roles"
+  categories = "labels"
+  language = "en_US"
+  protected = false
+  shortDescription = "Roles"
+  value = "Roles"
+  _alias = "fsc_Roles"
+}
+salesforce.CustomLabel fsc_Search {
+  fullName = "fsc_Search"
+  categories = "Actions,Buttons,quicklinks"
+  language = "en_US"
+  protected = false
+  shortDescription = "Search in"
+  value = "Search in"
+  _alias = "fsc_Search"
+}
+salesforce.CustomLabel fsc_SearchFor {
+  fullName = "fsc_SearchFor"
+  categories = "labels"
+  language = "en_US"
+  protected = false
+  shortDescription = "SearchFor"
+  value = "For"
+  _alias = "fsc_SearchFor"
+}
+salesforce.CustomLabel fsc_SetAccessLevel {
+  fullName = "fsc_SetAccessLevel"
+  categories = "labels"
+  language = "en_US"
+  protected = false
+  shortDescription = "SetAccessLevel"
+  value = "Set Access Level"
+  _alias = "fsc_SetAccessLevel"
+}
+salesforce.CustomLabel fsc_SupportedAddCapabilitiesEmptyMessage {
+  fullName = "fsc_SupportedAddCapabilitiesEmptyMessage"
+  categories = "messages"
+  language = "en_US"
+  protected = false
+  shortDescription = "SupportedAddCapabilitiesEmptyMessage"
+  value = "\"Add Capabilities\" can not be empty"
+  _alias = "fsc_SupportedAddCapabilitiesEmptyMessage"
+}
+salesforce.CustomLabel fsc_SupportedButtonsEmptyMessage {
+  fullName = "fsc_SupportedButtonsEmptyMessage"
+  categories = "messages"
+  language = "en_US"
+  protected = false
+  shortDescription = "SupportedButtonsEmptyMessage"
+  value = "\"Supported Buttons\" can not be empty"
+  _alias = "fsc_SupportedButtonsEmptyMessage"
+}
+salesforce.CustomLabel fsc_SupportedEditCapabilitiesEmptyMessage {
+  fullName = "fsc_SupportedEditCapabilitiesEmptyMessage"
+  categories = "messages"
+  language = "en_US"
+  protected = false
+  shortDescription = "SupportedEditCapabilitiesEmptyMessage"
+  value = "\"Edit Capabilities\" can not be empty"
+  _alias = "fsc_SupportedEditCapabilitiesEmptyMessage"
+}
+salesforce.CustomLabel fsc_TooManyResultsMessage {
+  fullName = "fsc_TooManyResultsMessage"
+  categories = "messages"
+  language = "en_US"
+  protected = false
+  shortDescription = "TooManyResultsMessage"
+  value = "Your search found more than 200 results.  Keep typing to make it more specific"
+  _alias = "fsc_TooManyResultsMessage"
+}
+salesforce.CustomLabel fsc_Type {
+  fullName = "fsc_Type"
+  categories = "Buttons,Filters,Title"
+  language = "en_US"
+  protected = false
+  shortDescription = "Type"
+  value = "Type"
+  _alias = "fsc_Type"
+}
+salesforce.CustomLabel fsc_UserOrGroup {
+  fullName = "fsc_UserOrGroup"
+  categories = "labels"
+  language = "en_US"
+  protected = false
+  shortDescription = "UserOrGroup"
+  value = "User Or Group"
+  _alias = "fsc_UserOrGroup"
+}
+salesforce.CustomLabel fsc_Users {
+  fullName = "fsc_Users"
+  categories = "labels"
+  language = "en_US"
+  protected = false
+  shortDescription = "Users"
+  value = "Users"
+  _alias = "fsc_Users"
+}
+salesforce.CustomLabel fsc_Value_Label {
+  fullName = "fsc_Value_Label"
+  language = "en_US"
+  protected = true
+  shortDescription = "Value Label"
+  value = "Value"
+  _alias = "fsc_Value_Label"
+}

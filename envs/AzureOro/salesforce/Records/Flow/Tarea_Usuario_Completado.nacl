@@ -1,0 +1,73 @@
+salesforce.Flow Tarea_Usuario_Completado {
+  fullName = "Tarea_Usuario_Completado"
+  apiVersion = 57
+  environments = "Default"
+  interviewLabel = "Tarea - Usuario Completado {!$Flow.CurrentDateTime}"
+  label = "Tarea - Usuario Completado"
+  processMetadataValues = [
+    {
+      name = "BuilderType"
+      value = {
+        stringValue = "LightningFlowBuilder"
+      }
+    },
+    {
+      name = "CanvasMode"
+      value = {
+        stringValue = "AUTO_LAYOUT_CANVAS"
+      }
+    },
+    {
+      name = "OriginBuilderType"
+      value = {
+        stringValue = "LightningFlowBuilder"
+      }
+    },
+  ]
+  processType = "AutoLaunchedFlow"
+  recordUpdates = [
+    {
+      name = "Update_Task"
+      label = "Update Task"
+      locationX = 176
+      locationY = 311
+      inputAssignments = [
+        {
+          field = "Completado_por__c"
+          value = {
+            elementReference = "$User.Id"
+          }
+        },
+      ]
+      inputReference = "$Record"
+    },
+  ]
+  start = {
+    locationX = 50
+    locationY = 0
+    connector = {
+      targetReference = "Update_Task"
+    }
+    doesRequireRecordChangedToMeetCriteria = true
+    filterLogic = "and"
+    filters = [
+      {
+        field = salesforce.Task.field.Status
+        operator = "EqualTo"
+        value = {
+          stringValue = "Completed"
+        }
+      },
+    ]
+    object = salesforce.Task
+    recordTriggerType = "CreateAndUpdate"
+    triggerType = "RecordBeforeSave"
+  }
+  status = "Obsolete"
+  _generated_dependencies = [
+    {
+      reference = salesforce.Activity.field.Completado_por__c
+    },
+  ]
+  _alias = "Tarea - Usuario Completado"
+}

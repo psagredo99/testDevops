@@ -1,0 +1,10 @@
+salesforce.AuraDefinitionBundle fsc_openUrl {
+  apiVersion = 47
+  description = "A Lightning Component Bundle"
+  fullName = "fsc_openUrl"
+  type = "Component"
+  designContent = file("salesforce/Records/AuraDefinitionBundle/fsc_openUrl/fsc_openUrl.design")
+  markup = file("salesforce/Records/AuraDefinitionBundle/fsc_openUrl/fsc_openUrl.cmp")
+  controllerContent = file("salesforce/Records/AuraDefinitionBundle/fsc_openUrl/fsc_openUrlController.js")
+  _alias = "fsc_openUrl"
+}

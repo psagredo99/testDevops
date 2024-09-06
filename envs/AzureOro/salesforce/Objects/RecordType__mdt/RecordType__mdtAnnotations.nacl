@@ -1,0 +1,19 @@
+type salesforce.RecordType__mdt {
+  annotations {
+    serviceid apiName {
+    }
+    serviceid metadataType {
+    }
+    string label {
+    }
+    string pluralLabel {
+    }
+    hidden_string keyPrefix {
+    }
+  }
+  apiName = "RecordType__mdt"
+  metadataType = "CustomMetadata"
+  label = "RecordType"
+  pluralLabel = "RecordTypes"
+  _alias = "RecordType"
+}

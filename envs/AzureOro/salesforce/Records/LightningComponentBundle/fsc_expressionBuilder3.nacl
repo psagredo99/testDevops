@@ -1,0 +1,59 @@
+salesforce.LightningComponentBundle fsc_expressionBuilder3 {
+  apiVersion = 46
+  description = "ExpressionBuilder"
+  isExposed = true
+  masterLabel = "ExpressionBuilder"
+  targets = {
+    target = [
+      "lightning__RecordPage",
+      "lightning__FlowScreen",
+    ]
+  }
+  targetConfigs = {
+    targetConfig = [
+      {
+        targets = "lightning__FlowScreen"
+        property = [
+          {
+            name = "formulaString"
+            type = "String"
+          },
+          {
+            name = "addButtonLabel"
+            type = "String"
+            role = "inputOnly"
+          },
+          {
+            name = "contextObjectType"
+            type = "String"
+            role = "inputOnly"
+          },
+          {
+            name = "supportedSystemTypes"
+            type = "String"
+            role = "inputOnly"
+          },
+        ]
+      },
+    ]
+  }
+  fullName = "fsc_expressionBuilder3"
+  lwcResources = {
+    lwcResource = {
+      fsc_expressionBuilder3_html@uv = {
+        source = file("salesforce/Records/LightningComponentBundle/fsc_expressionBuilder3/fsc_expressionBuilder3.html")
+        filePath = "lwc/fsc_expressionBuilder3/fsc_expressionBuilder3.html"
+      }
+      fsc_expressionBuilder3_js@uv = {
+        source = file("salesforce/Records/LightningComponentBundle/fsc_expressionBuilder3/fsc_expressionBuilder3.js")
+        filePath = "lwc/fsc_expressionBuilder3/fsc_expressionBuilder3.js"
+      }
+    }
+  }
+  _generated_dependencies = [
+    {
+      reference = salesforce.LightningComponentBundle.instance.fsc_expressionLine
+    },
+  ]
+  _alias = "fsc_expressionBuilder3"
+}

@@ -1,0 +1,39 @@
+salesforce.ApexClass SchedulableClientify2SF {
+  apiVersion = 57
+  status = "Active"
+  fullName = "SchedulableClientify2SF"
+  content = file("salesforce/Records/ApexClass/SchedulableClientify2SF.cls")
+  _generated_dependencies = [
+    {
+      reference = salesforce.ApexClass.instance.Clientify2SF
+    },
+    {
+      reference = salesforce.ApexClass.instance.IntegracionClientify2SF_Contacts_Batch
+    },
+    {
+      reference = salesforce.Clienti_Settings__c
+    },
+    {
+      reference = salesforce.Clienti_Settings__c.field.Next_callout_URL__c
+    },
+    {
+      reference = salesforce.Clienti_Settings__c.field.Processed_records__c
+    },
+    {
+      reference = salesforce.Clienti_Settings__c.field.Record_count__c
+    },
+    {
+      reference = salesforce.Log__c
+    },
+    {
+      reference = salesforce.Log__c.field.Result_Description__c
+    },
+    {
+      reference = salesforce.Log__c.field.Result__c
+    },
+    {
+      reference = salesforce.Log__c.field.Service_Name__c
+    },
+  ]
+  _alias = "SchedulableClientify2SF"
+}

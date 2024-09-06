@@ -1,0 +1,8 @@
+salesforce.AuraDefinitionBundle defaultTokens {
+  apiVersion = 40
+  description = "A Lightning Component Bundle"
+  fullName = "defaultTokens"
+  type = "Tokens"
+  markup = file("salesforce/Records/AuraDefinitionBundle/defaultTokens/defaultTokens.tokens")
+  _alias = "defaultTokens"
+}

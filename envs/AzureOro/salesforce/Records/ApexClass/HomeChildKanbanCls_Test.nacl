@@ -1,0 +1,24 @@
+salesforce.ApexClass HomeChildKanbanCls_Test {
+  apiVersion = 40
+  status = "Active"
+  fullName = "HomeChildKanbanCls_Test"
+  content = file("salesforce/Records/ApexClass/HomeChildKanbanCls_Test.cls")
+  _generated_dependencies = [
+    {
+      reference = salesforce.Account
+    },
+    {
+      reference = salesforce.ApexClass.instance.HomeChildKanbanCls
+    },
+    {
+      reference = salesforce.ApexClass.instance.HomeChildKanbanUtil
+    },
+    {
+      reference = salesforce.ApexClass.instance.KanbanConfigList
+    },
+    {
+      reference = salesforce.Kanban_Configuration__c
+    },
+  ]
+  _alias = "HomeChildKanbanCls_Test"
+}

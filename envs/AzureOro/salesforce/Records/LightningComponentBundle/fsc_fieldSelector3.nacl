@@ -1,0 +1,22 @@
+salesforce.LightningComponentBundle fsc_fieldSelector3 {
+  apiVersion = 52
+  isExposed = true
+  fullName = "fsc_fieldSelector3"
+  lwcResources = {
+    lwcResource = {
+      fsc_fieldSelector3_js@uv = {
+        source = file("salesforce/Records/LightningComponentBundle/fsc_fieldSelector3/fsc_fieldSelector3.js")
+        filePath = "lwc/fsc_fieldSelector3/fsc_fieldSelector3.js"
+      }
+      fsc_fieldSelector3_html@uv = {
+        source = file("salesforce/Records/LightningComponentBundle/fsc_fieldSelector3/fsc_fieldSelector3.html")
+        filePath = "lwc/fsc_fieldSelector3/fsc_fieldSelector3.html"
+      }
+      fsc_fieldSelector3_css@uv = {
+        source = file("salesforce/Records/LightningComponentBundle/fsc_fieldSelector3/fsc_fieldSelector3.css")
+        filePath = "lwc/fsc_fieldSelector3/fsc_fieldSelector3.css"
+      }
+    }
+  }
+  _alias = "fsc_fieldSelector3"
+}

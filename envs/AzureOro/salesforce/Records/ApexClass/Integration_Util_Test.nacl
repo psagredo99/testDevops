@@ -1,0 +1,48 @@
+salesforce.ApexClass Integration_Util_Test {
+  apiVersion = 46
+  status = "Active"
+  fullName = "Integration_Util_Test"
+  content = file("salesforce/Records/ApexClass/Integration_Util_Test.cls")
+  _generated_dependencies = [
+    {
+      reference = salesforce.Account
+    },
+    {
+      reference = salesforce.ApexClass.instance.Integration_Util
+    },
+    {
+      reference = salesforce.Contact
+    },
+    {
+      reference = salesforce.Integration_Settings__c
+    },
+    {
+      reference = salesforce.Integration_Settings__c.field.Buffer_days__c
+    },
+    {
+      reference = salesforce.Integration_Settings__c.field.Integration_Process__c
+    },
+    {
+      reference = salesforce.Integration_Settings__c.field.Limit__c
+    },
+    {
+      reference = salesforce.Integration_Settings__c.field.Log_Level__c
+    },
+    {
+      reference = salesforce.Integration_Settings__c.field.Next_Process_Delay__c
+    },
+    {
+      reference = salesforce.Integration_Settings__c.field.Next_Process__c
+    },
+    {
+      reference = salesforce.Integration_Settings__c.field.Offset__c
+    },
+    {
+      reference = salesforce.Log__c
+    },
+    {
+      reference = salesforce.Log__c.field.Result__c
+    },
+  ]
+  _alias = "Integration_Util_Test"
+}

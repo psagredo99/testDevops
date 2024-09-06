@@ -1,0 +1,7 @@
+salesforce.SharingRules Empleado__c {
+  fullName = "Empleado__c"
+  _parent = [
+    salesforce.Empleado__c,
+  ]
+  _alias = "Empleado__c"
+}

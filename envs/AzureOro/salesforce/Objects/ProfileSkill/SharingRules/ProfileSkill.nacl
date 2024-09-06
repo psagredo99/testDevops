@@ -1,0 +1,7 @@
+salesforce.SharingRules ProfileSkill {
+  fullName = "ProfileSkill"
+  _parent = [
+    salesforce.ProfileSkill,
+  ]
+  _alias = "ProfileSkill"
+}

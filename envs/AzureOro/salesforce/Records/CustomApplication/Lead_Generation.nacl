@@ -1,0 +1,35 @@
+salesforce.CustomApplication Lead_Generation {
+  brand = {
+    headerColor = "#0070D2"
+    logoVersion = 1
+    shouldOverrideOrgTheme = false
+  }
+  description = "Generate leads faster, and qualify and nurture prospects using best practices."
+  formFactors = [
+    "Large",
+  ]
+  isNavAutoTempTabsDisabled = false
+  isNavPersonalizationDisabled = false
+  isNavTabPersistenceDisabled = false
+  isOmniPinnedViewEnabled = false
+  label = "Lead Generation"
+  navType = "Standard"
+  tabs = [
+    "standard-home",
+    "standard-Account",
+    "standard-Contact",
+    "standard-Lead",
+    "standard-Campaign",
+    "standard-CollaborationGroup",
+    salesforce.CustomTab.instance.Datos_cuentas__c,
+  ]
+  uiType = "Lightning"
+  utilityBar = "Lead_Generation_UtilityBar"
+  fullName = "Lead_Generation"
+  _generated_dependencies = [
+    {
+      reference = salesforce.LightningPage.instance.Lead_Generation_UtilityBar
+    },
+  ]
+  _alias = "Lead Generation"
+}

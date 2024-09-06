@@ -1,0 +1,22 @@
+salesforce.LightningComponentBundle fsc_flowBanner {
+  apiVersion = 50
+  isExposed = false
+  fullName = "fsc_flowBanner"
+  lwcResources = {
+    lwcResource = {
+      fsc_flowBanner_css@uv = {
+        source = file("salesforce/Records/LightningComponentBundle/fsc_flowBanner/fsc_flowBanner.css")
+        filePath = "lwc/fsc_flowBanner/fsc_flowBanner.css"
+      }
+      fsc_flowBanner_js@uv = {
+        source = file("salesforce/Records/LightningComponentBundle/fsc_flowBanner/fsc_flowBanner.js")
+        filePath = "lwc/fsc_flowBanner/fsc_flowBanner.js"
+      }
+      fsc_flowBanner_html@uv = {
+        source = file("salesforce/Records/LightningComponentBundle/fsc_flowBanner/fsc_flowBanner.html")
+        filePath = "lwc/fsc_flowBanner/fsc_flowBanner.html"
+      }
+    }
+  }
+  _alias = "fsc_flowBanner"
+}

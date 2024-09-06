@@ -1,0 +1,9 @@
+salesforce.CustomTab Kanban_Configuration__c {
+  fullName = "Kanban_Configuration__c"
+  customObject = true
+  motif = "Custom52: Balls"
+  _parent = [
+    salesforce.Kanban_Configuration__c,
+  ]
+  _alias = "Kanban_Configuration__c"
+}

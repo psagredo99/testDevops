@@ -1,0 +1,322 @@
+salesforce.Flow Cuenta_SABI_Rellenar_campo_cuenta_con_Cuenta_SABI {
+  fullName = "Cuenta_SABI_Rellenar_campo_cuenta_con_Cuenta_SABI"
+  apiVersion = 57
+  assignments = [
+    {
+      name = "Add_Cuenta_para_Update"
+      label = "Add Cuenta para Update"
+      locationX = 660
+      locationY = 1031
+      assignmentItems = [
+        {
+          assignToReference = "Cuentas_Actualizar"
+          operator = "Assign"
+          value = {
+            elementReference = "Recorrer_Cuentas_mismo_NIF_CIF"
+          }
+        },
+      ]
+      connector = {
+        targetReference = "Recorrer_Cuentas_mismo_NIF_CIF"
+      }
+    },
+    {
+      name = "Asignar_Cuenta_SABI_a_Cuenta"
+      label = "Asignar Cuenta SABI a Cuenta"
+      locationX = 660
+      locationY = 575
+      assignmentItems = [
+        {
+          assignToReference = "Recorrer_Cuentas_mismo_NIF_CIF.Informacion_SABI__c"
+          operator = "Assign"
+          value = {
+            elementReference = "$Record.Id"
+          }
+        },
+        {
+          assignToReference = "Recorrer_Cuentas_mismo_NIF_CIF.Website"
+          operator = "Assign"
+          value = {
+            elementReference = "$Record.Direccion_Web__c"
+          }
+        },
+        {
+          assignToReference = "Recorrer_Cuentas_mismo_NIF_CIF.NumberOfEmployees"
+          operator = "Assign"
+          value = {
+            elementReference = "$Record.Numero_empleados__c"
+          }
+        },
+        {
+          assignToReference = "Recorrer_Cuentas_mismo_NIF_CIF.Empresa_cotizada__c"
+          operator = "Assign"
+          value = {
+            elementReference = "$Record.Empresa_cotizada__c"
+          }
+        },
+        {
+          assignToReference = "Recorrer_Cuentas_mismo_NIF_CIF.AnnualRevenue"
+          operator = "Assign"
+          value = {
+            elementReference = "form_Ingresos1000"
+          }
+        },
+      ]
+      connector = {
+        targetReference = "Estado_de_la_empresa"
+      }
+    },
+    {
+      name = "Estado_Activo"
+      label = "Estado Activo"
+      locationX = 264
+      locationY = 815
+      assignmentItems = [
+        {
+          assignToReference = "Recorrer_Cuentas_mismo_NIF_CIF.Estado_de_la_situacion__c"
+          operator = "Assign"
+          value = {
+            stringValue = "En Activo"
+          }
+        },
+      ]
+      connector = {
+        targetReference = "Add_Cuenta_para_Update"
+      }
+    },
+    {
+      name = "Estado_Cerrada"
+      label = "Estado Cerrada"
+      locationX = 792
+      locationY = 815
+      assignmentItems = [
+        {
+          assignToReference = "Recorrer_Cuentas_mismo_NIF_CIF.Estado_de_la_situacion__c"
+          operator = "Assign"
+          value = {
+            stringValue = "Cerrada"
+          }
+        },
+      ]
+      connector = {
+        targetReference = "Add_Cuenta_para_Update"
+      }
+    },
+    {
+      name = "Estado_En_Liquidacion"
+      label = "Estado En Liquidacion"
+      locationX = 528
+      locationY = 815
+      assignmentItems = [
+        {
+          assignToReference = "Recorrer_Cuentas_mismo_NIF_CIF.Estado_de_la_situacion__c"
+          operator = "Assign"
+          value = {
+            stringValue = "En Liquidación"
+          }
+        },
+      ]
+      connector = {
+        targetReference = "Add_Cuenta_para_Update"
+      }
+    },
+  ]
+  decisions = [
+    {
+      name = "Estado_de_la_empresa"
+      label = "Estado de la empresa"
+      locationX = 660
+      locationY = 695
+      defaultConnector = {
+        targetReference = "Add_Cuenta_para_Update"
+      }
+      defaultConnectorLabel = "Ilegible"
+      rules = [
+        {
+          name = "Activo"
+          conditionLogic = "and"
+          conditions = [
+            {
+              leftValueReference = "$Record.Estado_detallado__c"
+              operator = "StartsWith"
+              rightValue = {
+                stringValue = "Activa"
+              }
+            },
+          ]
+          connector = {
+            targetReference = "Estado_Activo"
+          }
+          label = "En Activo"
+        },
+        {
+          name = "En_Liquidaci_n"
+          conditionLogic = "and"
+          conditions = [
+            {
+              leftValueReference = "$Record.Estado_detallado__c"
+              operator = "StartsWith"
+              rightValue = {
+                stringValue = "Posible cierre"
+              }
+            },
+          ]
+          connector = {
+            targetReference = "Estado_En_Liquidacion"
+          }
+          label = "En Liquidación"
+        },
+        {
+          name = "Cerrada"
+          conditionLogic = "and"
+          conditions = [
+            {
+              leftValueReference = "$Record.Estado_detallado__c"
+              operator = "StartsWith"
+              rightValue = {
+                stringValue = "Extin"
+              }
+            },
+          ]
+          connector = {
+            targetReference = "Estado_Cerrada"
+          }
+          label = "Cerrada"
+        },
+      ]
+    },
+  ]
+  environments = "Default"
+  formulas = [
+    {
+      name = "form_Ingresos1000"
+      dataType = "Number"
+      expression = "{!$Record.Ingresos__c}*1000"
+      scale = 2
+    },
+  ]
+  interviewLabel = "Cuenta SABI - Rellenar campo cuenta con SABI {!$Flow.CurrentDateTime}"
+  label = "Cuenta SABI - Rellenar campo cuenta con Cuenta SABI"
+  loops = [
+    {
+      name = "Recorrer_Cuentas_mismo_NIF_CIF"
+      label = "Recorrer Cuentas mismo NIF/CIF"
+      locationX = 176
+      locationY = 455
+      collectionReference = "Get_Cuentas_mismo_NIF_CIF"
+      iterationOrder = "Asc"
+      nextValueConnector = {
+        targetReference = "Asignar_Cuenta_SABI_a_Cuenta"
+      }
+      noMoreValuesConnector = {
+        targetReference = "Actualizar_Cuentas"
+      }
+    },
+  ]
+  processMetadataValues = [
+    {
+      name = "BuilderType"
+      value = {
+        stringValue = "LightningFlowBuilder"
+      }
+    },
+    {
+      name = "CanvasMode"
+      value = {
+        stringValue = "AUTO_LAYOUT_CANVAS"
+      }
+    },
+    {
+      name = "OriginBuilderType"
+      value = {
+        stringValue = "LightningFlowBuilder"
+      }
+    },
+  ]
+  processType = "AutoLaunchedFlow"
+  recordLookups = [
+    {
+      name = "Get_Cuentas_mismo_NIF_CIF"
+      label = "Get Cuentas mismo NIF/CIF"
+      locationX = 176
+      locationY = 335
+      assignNullValuesIfNoRecordsFound = false
+      connector = {
+        targetReference = "Recorrer_Cuentas_mismo_NIF_CIF"
+      }
+      filterLogic = "and"
+      filters = [
+        {
+          field = salesforce.Account.field.NIF_CIF__c
+          operator = "EqualTo"
+          value = {
+            elementReference = "$Record.Id_NIF_CIF__c"
+          }
+        },
+      ]
+      getFirstRecordOnly = false
+      object = salesforce.Account
+      storeOutputAutomatically = true
+    },
+  ]
+  recordUpdates = [
+    {
+      name = "Actualizar_Cuentas"
+      label = "Actualizar Cuentas"
+      locationX = 176
+      locationY = 1247
+      inputReference = "Cuentas_Actualizar"
+    },
+  ]
+  start = {
+    locationX = 50
+    locationY = 0
+    connector = {
+      targetReference = "Get_Cuentas_mismo_NIF_CIF"
+    }
+    object = salesforce.Datos_cuentas__c
+    recordTriggerType = "CreateAndUpdate"
+    triggerType = "RecordAfterSave"
+  }
+  status = "Active"
+  variables = [
+    {
+      name = "Cuentas_Actualizar"
+      dataType = "SObject"
+      isCollection = false
+      isInput = false
+      isOutput = false
+      objectType = salesforce.Account
+    },
+  ]
+  _generated_dependencies = [
+    {
+      reference = salesforce.Account.field.Empresa_cotizada__c
+    },
+    {
+      reference = salesforce.Account.field.Estado_de_la_situacion__c
+    },
+    {
+      reference = salesforce.Account.field.Informacion_SABI__c
+    },
+    {
+      reference = salesforce.Datos_cuentas__c.field.Direccion_Web__c
+    },
+    {
+      reference = salesforce.Datos_cuentas__c.field.Empresa_cotizada__c
+    },
+    {
+      reference = salesforce.Datos_cuentas__c.field.Estado_detallado__c
+    },
+    {
+      reference = salesforce.Datos_cuentas__c.field.Id_NIF_CIF__c
+    },
+    {
+      reference = salesforce.Datos_cuentas__c.field.Ingresos__c
+    },
+    {
+      reference = salesforce.Datos_cuentas__c.field.Numero_empleados__c
+    },
+  ]
+  _alias = "Cuenta SABI - Rellenar campo cuenta con Cuenta SABI"
+}

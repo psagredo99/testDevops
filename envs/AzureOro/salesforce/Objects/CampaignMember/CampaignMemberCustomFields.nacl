@@ -1,0 +1,23 @@
+type salesforce.CampaignMember {
+  salesforce.FormulaText Anyadido_por__c {
+    apiName = "CampaignMember.Anyadido_por__c"
+    externalId = false
+    formula = "CreatedBy.FirstName + ' ' +  CreatedBy.LastName"
+    formulaTreatBlanksAs = "BlankAsZero"
+    label = "Añadido por"
+    unique = false
+    createable = false
+    updateable = false
+    caseSensitive = false
+    queryable = true
+    _hidden_value = true
+    _generated_dependencies = [
+      {
+        reference = salesforce.CampaignMember.field.CreatedById
+      },
+      {
+        reference = salesforce.User
+      },
+    ]
+  }
+}

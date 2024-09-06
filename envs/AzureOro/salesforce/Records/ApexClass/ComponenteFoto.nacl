@@ -1,0 +1,7 @@
+salesforce.ApexClass ComponenteFoto {
+  apiVersion = 56
+  status = "Active"
+  fullName = "ComponenteFoto"
+  content = file("salesforce/Records/ApexClass/ComponenteFoto.cls")
+  _alias = "ComponenteFoto"
+}

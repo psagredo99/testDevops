@@ -1,0 +1,10 @@
+type salesforce.Parametro_Integracion__mdt {
+  salesforce.Text Valor__c {
+    apiName = "Parametro_Integracion__mdt.Valor__c"
+    externalId = false
+    fieldManageability = "DeveloperControlled"
+    label = "Valor"
+    length = 255
+    unique = false
+  }
+}

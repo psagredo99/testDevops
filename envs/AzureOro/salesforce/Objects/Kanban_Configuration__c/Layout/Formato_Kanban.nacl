@@ -1,0 +1,120 @@
+salesforce.Layout Kanban_Configuration__c_Formato_Kanban@uuubs {
+  excludeButtons = [
+    "Submit",
+  ]
+  layoutSections = [
+    {
+      customLabel = false
+      detailHeading = false
+      editHeading = true
+      label = "Information"
+      layoutColumns = [
+        {
+          layoutItems = [
+            {
+              behavior = "Required"
+              field = salesforce.Kanban_Configuration__c.field.Name
+            },
+            {
+              behavior = "Edit"
+              field = salesforce.Kanban_Configuration__c.field.For_Object__c
+            },
+            {
+              behavior = "Edit"
+              field = salesforce.Kanban_Configuration__c.field.KanbanDev_Child_Object__c
+            },
+            {
+              behavior = "Edit"
+              field = salesforce.Kanban_Configuration__c.field.Kanban_For__c
+            },
+            {
+              behavior = "Edit"
+              field = salesforce.Kanban_Configuration__c.field.Clausula_WHERE__c
+            },
+            {
+              behavior = "Edit"
+              field = salesforce.Kanban_Configuration__c.field.KanbanDev_Name_Field__c
+            },
+            {
+              behavior = "Edit"
+              field = salesforce.Kanban_Configuration__c.field.KanbanDev_Exclude_From_Group_By__c
+            },
+            {
+              behavior = "Edit"
+              field = salesforce.Kanban_Configuration__c.field.KanbanDev_Fields_To_Show__c
+            },
+            {
+              behavior = "Edit"
+              field = salesforce.Kanban_Configuration__c.field.KanbanDev_Group_By__c
+            },
+            {
+              behavior = "Edit"
+              field = salesforce.Kanban_Configuration__c.field.KanbanDev_Relation_Field__c
+            },
+            {
+              behavior = "Edit"
+              field = salesforce.Kanban_Configuration__c.field.KanbanDev_Summarize_By__c
+            },
+          ]
+        },
+        {
+          layoutItems = [
+            {
+              behavior = "Edit"
+              field = salesforce.Kanban_Configuration__c.field.OwnerId
+            },
+          ]
+        },
+      ]
+      style = "TwoColumnsTopToBottom"
+    },
+    {
+      customLabel = false
+      detailHeading = false
+      editHeading = true
+      label = "System Information"
+      layoutColumns = [
+        {
+          layoutItems = [
+            {
+              behavior = "Readonly"
+              field = salesforce.Kanban_Configuration__c.field.CreatedById
+            },
+          ]
+        },
+        {
+          layoutItems = [
+            {
+              behavior = "Readonly"
+              field = salesforce.Kanban_Configuration__c.field.LastModifiedById
+            },
+          ]
+        },
+      ]
+      style = "TwoColumnsTopToBottom"
+    },
+    {
+      customLabel = true
+      detailHeading = false
+      editHeading = true
+      label = "Vínculos personalizados"
+      style = "CustomLinks"
+    },
+  ]
+  showEmailCheckbox = false
+  showHighlightsPanel = false
+  showInteractionLogPanel = false
+  showRunAssignmentRulesCheckbox = false
+  showSubmitAndAttachButton = false
+  summaryLayout = {
+    masterLabel = "00h26000002NKu8"
+    sizeX = 4
+    sizeY = 0
+    summaryLayoutStyle = "Default"
+  }
+  fullName = "Kanban_Configuration__c-Formato Kanban"
+  _parent = [
+    salesforce.Kanban_Configuration__c,
+  ]
+  _alias = "Kanban_Configuration__c-Formato Kanban"
+}

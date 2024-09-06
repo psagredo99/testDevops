@@ -1,0 +1,206 @@
+salesforce.Flow Cuenta_Datatable_Sectores {
+  fullName = "Cuenta_Datatable_Sectores"
+  apiVersion = 57
+  description = "Flow de pantalla que muestra a modo tabla la información de sectores de la cuenta en el detalle de página."
+  environments = "Default"
+  interviewLabel = "Cuenta - Datatable Sectores {!$Flow.CurrentDateTime}"
+  label = "Cuenta - Datatable Sectores"
+  processMetadataValues = [
+    {
+      name = "BuilderType"
+      value = {
+        stringValue = "LightningFlowBuilder"
+      }
+    },
+    {
+      name = "CanvasMode"
+      value = {
+        stringValue = "AUTO_LAYOUT_CANVAS"
+      }
+    },
+    {
+      name = "OriginBuilderType"
+      value = {
+        stringValue = "LightningFlowBuilder"
+      }
+    },
+  ]
+  processType = "Flow"
+  recordLookups = [
+    {
+      name = "Sectores"
+      label = "Sectores"
+      locationX = 176
+      locationY = 158
+      assignNullValuesIfNoRecordsFound = false
+      connector = {
+        targetReference = "Tabla"
+      }
+      filterLogic = "and"
+      filters = [
+        {
+          field = salesforce.Sector__c.field.Cuenta__c
+          operator = "EqualTo"
+          value = {
+            elementReference = "recordId"
+          }
+        },
+      ]
+      getFirstRecordOnly = false
+      object = salesforce.Sector__c
+      storeOutputAutomatically = true
+    },
+  ]
+  screens = [
+    {
+      name = "Tabla"
+      label = "Tabla"
+      locationX = 176
+      locationY = 278
+      allowBack = true
+      allowFinish = true
+      allowPause = true
+      fields = [
+        {
+          name = "Sectores_cabecera"
+          fieldText = "Sectores"
+          fieldType = "RegionContainer"
+          fields = [
+            {
+              name = "Sectores_cabecera_Column1"
+              fieldType = "Region"
+              fields = [
+                {
+                  name = "sep"
+                  fieldText = "<p> </p>"
+                  fieldType = "DisplayText"
+                },
+                {
+                  name = "datatable"
+                  dataTypeMappings = {
+                    typeName = "T"
+                    typeValue = salesforce.Sector__c
+                  }
+                  extensionName = "flowruntime:datatable"
+                  fieldType = "ComponentInstance"
+                  inputParameters = [
+                    {
+                      name = "label"
+                      value = {
+                        stringValue = "Data Table"
+                      }
+                    },
+                    {
+                      name = "selectionMode"
+                      value = {
+                        stringValue = "NO_SELECTION"
+                      }
+                    },
+                    {
+                      name = "minRowSelection"
+                      value = {
+                        numberValue = 0
+                      }
+                    },
+                    {
+                      name = "tableData"
+                      value = {
+                        elementReference = "Sectores"
+                      }
+                    },
+                    {
+                      name = "maxRowSelection"
+                      value = {
+                        numberValue = 0
+                      }
+                    },
+                    {
+                      name = "columns"
+                      value = {
+                        stringValue = "[{\"apiName\":\"Sector__c\",\"guid\":\"column-9f00\",\"editable\":false,\"hasCustomHeaderLabel\":false,\"customHeaderLabel\":\"\",\"wrapText\":true,\"order\":0,\"label\":\"Sector\",\"type\":\"text\"},{\"apiName\":\"Subsector__c\",\"guid\":\"column-8543\",\"editable\":false,\"hasCustomHeaderLabel\":false,\"customHeaderLabel\":\"\",\"wrapText\":true,\"order\":1,\"label\":\"Subsector\",\"type\":\"text\"},{\"apiName\":\"Actividad__c\",\"guid\":\"column-c653\",\"editable\":false,\"hasCustomHeaderLabel\":false,\"customHeaderLabel\":\"\",\"wrapText\":true,\"order\":2,\"label\":\"Actividad\",\"type\":\"text\"}]"
+                      }
+                    },
+                  ]
+                  inputsOnNextNavToAssocScrn = "UseStoredValues"
+                  isRequired = true
+                  storeOutputAutomatically = true
+                },
+                {
+                  name = "botones"
+                  extensionName = "c:fsc_flowButtonBar"
+                  fieldType = "ComponentInstance"
+                  inputParameters = [
+                    {
+                      name = "alignment"
+                      value = {
+                        stringValue = "right"
+                      }
+                    },
+                    {
+                      name = "orientation"
+                      value = {
+                        stringValue = "horizontal"
+                      }
+                    },
+                    {
+                      name = "showLines"
+                      value = {
+                        stringValue = "neither"
+                      }
+                    },
+                    {
+                      name = "actionMode"
+                      value = {
+                        stringValue = "navigation"
+                      }
+                    },
+                    {
+                      name = "buttons"
+                      value = {
+                        stringValue = "[{\"label\":\"Crear nuevo sector\",\"value\":\"Crear nuevo sector\",\"iconPosition\":\"left\",\"variant\":\"brand\",\"iconName\":\"utility:color_swatch\",\"index\":0}]"
+                      }
+                    },
+                  ]
+                  inputsOnNextNavToAssocScrn = "UseStoredValues"
+                  isRequired = true
+                  storeOutputAutomatically = true
+                },
+              ]
+              inputParameters = [
+                {
+                  name = "width"
+                  value = {
+                    stringValue = "12"
+                  }
+                },
+              ]
+              isRequired = false
+            },
+          ]
+          isRequired = false
+          regionContainerType = "SectionWithHeader"
+        },
+      ]
+      showFooter = false
+      showHeader = false
+    },
+  ]
+  start = {
+    locationX = 50
+    locationY = 0
+    connector = {
+      targetReference = "Sectores"
+    }
+  }
+  status = "Draft"
+  variables = [
+    {
+      name = "recordId"
+      dataType = "String"
+      isCollection = false
+      isInput = true
+      isOutput = false
+    },
+  ]
+  _alias = "Cuenta - Datatable Sectores"
+}

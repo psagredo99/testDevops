@@ -1,0 +1,247 @@
+salesforce.LightningPage Sector_P_gina_de_registro {
+  flexiPageRegions = [
+    {
+      itemInstances = [
+        {
+          componentInstance = {
+            componentInstanceProperties = [
+              {
+                name = "actionNames"
+                valueList = {
+                  valueListItems = [
+                    {
+                      value = "Edit"
+                    },
+                  ]
+                }
+              },
+              {
+                name = "collapsed"
+                value = "false"
+              },
+              {
+                name = "enableActionsConfiguration"
+                value = "true"
+              },
+              {
+                name = "enableActionsInNative"
+                value = "true"
+              },
+              {
+                name = "hideChatterActions"
+                value = "false"
+              },
+              {
+                name = "numVisibleActions"
+                value = "3"
+              },
+            ]
+            componentName = "force:highlightsPanel"
+            identifier = "force_highlightsPanel"
+          }
+        },
+      ]
+      mode = "Replace"
+      name = "header"
+      type = "Region"
+    },
+    {
+      itemInstances = [
+        {
+          componentInstance = {
+            componentName = "force:detailPanel"
+            identifier = "force_detailPanel"
+          }
+        },
+      ]
+      mode = "Replace"
+      name = "detailTabContent"
+      type = "Facet"
+    },
+    {
+      itemInstances = [
+        {
+          componentInstance = {
+            componentInstanceProperties = [
+              {
+                name = "active"
+                value = "true"
+              },
+              {
+                name = "body"
+                value = "detailTabContent"
+              },
+              {
+                name = "title"
+                value = "Standard.Tab.detail"
+              },
+            ]
+            componentName = "flexipage:tab"
+            identifier = "detailTab"
+          }
+        },
+      ]
+      mode = "Replace"
+      name = "maintabs"
+      type = "Facet"
+    },
+    {
+      itemInstances = [
+        {
+          componentInstance = {
+            componentInstanceProperties = [
+              {
+                name = "tabs"
+                value = "maintabs"
+              },
+            ]
+            componentName = "flexipage:tabset"
+            identifier = "flexipage_tabset"
+          }
+        },
+      ]
+      mode = "Replace"
+      name = "main"
+      type = "Region"
+    },
+    {
+      itemInstances = [
+        {
+          componentInstance = {
+            componentInstanceProperties = [
+              {
+                name = "actionNames"
+              },
+              {
+                name = "maxRecordsToDisplay"
+                value = "5"
+              },
+              {
+                name = "parentFieldApiName"
+                value = "Sector__c.Cuenta__c"
+              },
+              {
+                name = "relatedListApiName"
+                value = "Sectores__r"
+              },
+              {
+                name = "relatedListDisplayType"
+                value = "ADVGRID"
+              },
+              {
+                name = "relatedListFieldAliases"
+                valueList = {
+                  valueListItems = [
+                    {
+                      value = "NAME"
+                    },
+                    {
+                      value = "Sector__c"
+                    },
+                    {
+                      value = "Subsector__c"
+                    },
+                    {
+                      value = "Actividad__c"
+                    },
+                  ]
+                }
+              },
+              {
+                name = "relatedListLabel"
+                value = "Sectores para la Cuenta"
+              },
+              {
+                name = "showActionBar"
+                value = "true"
+              },
+              {
+                name = "sortFieldAlias"
+                value = "Sector__c"
+              },
+              {
+                name = "sortFieldOrder"
+                value = "Ascending"
+              },
+            ]
+            componentName = "lst:dynamicRelatedList"
+            identifier = "lst_dynamicRelatedList"
+          }
+        },
+      ]
+      name = "Facet-1e790820-d00c-4535-bdd0-3a991e9237d8"
+      type = "Facet"
+    },
+    {
+      itemInstances = [
+        {
+          componentInstance = {
+            componentInstanceProperties = [
+              {
+                name = "active"
+                value = "true"
+              },
+              {
+                name = "body"
+                value = "Facet-1e790820-d00c-4535-bdd0-3a991e9237d8"
+              },
+              {
+                name = "title"
+                value = "Cuenta"
+              },
+            ]
+            componentName = "flexipage:tab"
+            identifier = "flexipage_tab"
+          }
+        },
+      ]
+      name = "Facet-f60748be-a32b-48ec-ae75-55da4cf668b4"
+      type = "Facet"
+    },
+    {
+      itemInstances = [
+        {
+          componentInstance = {
+            componentInstanceProperties = [
+              {
+                name = "tabs"
+                value = "Facet-f60748be-a32b-48ec-ae75-55da4cf668b4"
+              },
+            ]
+            componentName = "flexipage:tabset"
+            identifier = "flexipage_tabset2"
+          }
+        },
+      ]
+      mode = "Replace"
+      name = "sidebar"
+      type = "Region"
+    },
+  ]
+  masterLabel = "Sector Página de registro"
+  parentFlexiPage = "flexipage__default_rec_L"
+  sobjectType = "Sector__c"
+  template = {
+    name = "flexipage:recordHomeTemplateDesktop"
+  }
+  type = "RecordPage"
+  fullName = "Sector_P_gina_de_registro"
+  _parent = [
+    salesforce.Sector__c,
+  ]
+  _generated_dependencies = [
+    {
+      reference = salesforce.Sector__c.field.Actividad__c
+    },
+    {
+      reference = salesforce.Sector__c.field.Cuenta__c
+    },
+    {
+      reference = salesforce.Sector__c.field.Sector__c
+    },
+    {
+      reference = salesforce.Sector__c.field.Subsector__c
+    },
+  ]
+  _alias = "Sector_P_gina_de_registro"
+}

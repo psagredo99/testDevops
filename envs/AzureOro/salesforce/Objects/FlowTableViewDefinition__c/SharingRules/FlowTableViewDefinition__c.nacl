@@ -1,0 +1,7 @@
+salesforce.SharingRules FlowTableViewDefinition__c {
+  fullName = "FlowTableViewDefinition__c"
+  _parent = [
+    salesforce.FlowTableViewDefinition__c,
+  ]
+  _alias = "FlowTableViewDefinition__c"
+}

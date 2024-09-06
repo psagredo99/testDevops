@@ -1,0 +1,19 @@
+salesforce.ValidationRule Opportunity_Auditada_Crear_Estado_Identificada {
+  fullName = "Opportunity.Auditada_Crear_Estado_Identificada"
+  active = true
+  description = "Las cuentas auditadas tienen proceso de negocio distinto y es necesario que al crearse empiecen por el estado identificada."
+  errorConditionFormula = '''
+AND(
+ ISNEW(),
+ RecordType.Name = 'Oportunidades clientes auditados',
+ TEXT(StageName) != 'Identificada'
+
+)
+'''
+  errorDisplayField = salesforce.Opportunity.field.StageName
+  errorMessage = "Los procesos de negocio para clientes auditados solo pueden empezar en la etapa identificada."
+  _parent = [
+    salesforce.Opportunity,
+  ]
+  _alias = "Opportunity.Auditada_Crear_Estado_Identificada"
+}

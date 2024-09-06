@@ -1,0 +1,142 @@
+type salesforce.WorkPlan {
+  salesforce.LongTextArea Description {
+    apiName = "WorkPlan.Description"
+    length = 32000
+    label = "Descripción"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Number ExecutionOrder {
+    apiName = "WorkPlan.ExecutionOrder"
+    label = "Orden de ejecución"
+    precision = 9
+    createable = true
+    updateable = true
+    scale = 0
+    unique = false
+    queryable = true
+  }
+  salesforce.Text Name {
+    apiName = "WorkPlan.Name"
+    length = 255
+    _required = true
+    label = "Nombre"
+    createable = true
+    updateable = true
+    unique = false
+    caseSensitive = false
+    queryable = true
+  }
+  salesforce.Lookup OwnerId {
+    apiName = "WorkPlan.OwnerId"
+    relationshipName = "Owner"
+    label = "Id. del propietario"
+    createable = true
+    updateable = true
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup ParentRecordId {
+    apiName = "WorkPlan.ParentRecordId"
+    relationshipName = "ParentRecord"
+    _required = true
+    label = "Id. de Registro principal"
+    createable = true
+    updateable = false
+    queryable = true
+  }
+  salesforce.Text ParentRecordType {
+    apiName = "WorkPlan.ParentRecordType"
+    length = 50
+    label = "Tipo de registro principal"
+    createable = false
+    updateable = false
+    unique = false
+    caseSensitive = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup WorkOrderId {
+    apiName = "WorkPlan.WorkOrderId"
+    relationshipName = "WorkOrder"
+    label = "Id. de orden de trabajo"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Lookup WorkOrderLineItemId {
+    apiName = "WorkPlan.WorkOrderLineItemId"
+    relationshipName = "WorkOrderLineItem"
+    label = "Id. de Partida de orden de trabajo"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Lookup WorkPlanTemplateId {
+    apiName = "WorkPlan.WorkPlanTemplateId"
+    relationshipName = "WorkPlanTemplate"
+    label = "Id. de Plantilla de plan de trabajo"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  serviceid Id {
+    apiName = "WorkPlan.Id"
+    label = "Id. de Plan de trabajo"
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Checkbox IsDeleted {
+    apiName = "WorkPlan.IsDeleted"
+    defaultValue = false
+    label = "Eliminado"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime CreatedDate {
+    apiName = "WorkPlan.CreatedDate"
+    label = "Fecha de creación"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup CreatedById {
+    apiName = "WorkPlan.CreatedById"
+    relationshipName = "CreatedBy"
+    label = "Creado por el Id."
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime LastModifiedDate {
+    apiName = "WorkPlan.LastModifiedDate"
+    label = "Fecha de la última modificación"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup LastModifiedById {
+    apiName = "WorkPlan.LastModifiedById"
+    relationshipName = "LastModifiedBy"
+    label = "Última modificación realizada por el Id."
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime SystemModstamp {
+    apiName = "WorkPlan.SystemModstamp"
+    label = "Modstamp del sistema"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+}

@@ -1,0 +1,141 @@
+salesforce.Layout ers_datatableConfig__c_ers_datatableConfig_Layout@uuubus {
+  excludeButtons = [
+    "Submit",
+  ]
+  layoutSections = [
+    {
+      customLabel = false
+      detailHeading = false
+      editHeading = true
+      label = "Information"
+      layoutColumns = [
+        {
+          layoutItems = [
+            {
+              behavior = "Required"
+              field = salesforce.ers_datatableConfig__c.field.Name
+            },
+            {
+              behavior = "Required"
+              field = salesforce.ers_datatableConfig__c.field.Object_API_Name__c
+            },
+            {
+              behavior = "Required"
+              field = salesforce.ers_datatableConfig__c.field.Field_API_Names__c
+            },
+            {
+              behavior = "Edit"
+              field = salesforce.ers_datatableConfig__c.field.Alignments__c
+            },
+            {
+              behavior = "Edit"
+              field = salesforce.ers_datatableConfig__c.field.Edits__c
+            },
+            {
+              behavior = "Edit"
+              field = salesforce.ers_datatableConfig__c.field.Filters__c
+            },
+            {
+              behavior = "Edit"
+              field = salesforce.ers_datatableConfig__c.field.Icons__c
+            },
+            {
+              behavior = "Edit"
+              field = salesforce.ers_datatableConfig__c.field.Labels__c
+            },
+            {
+              behavior = "Edit"
+              field = salesforce.ers_datatableConfig__c.field.Widths__c
+            },
+            {
+              behavior = "Edit"
+              field = salesforce.ers_datatableConfig__c.field.Wraps__c
+            },
+            {
+              behavior = "Edit"
+              field = salesforce.ers_datatableConfig__c.field.Cell_Attributes__c
+            },
+            {
+              behavior = "Edit"
+              field = salesforce.ers_datatableConfig__c.field.Type_Attributes__c
+            },
+            {
+              behavior = "Edit"
+              field = salesforce.ers_datatableConfig__c.field.Other_Attributes__c
+            },
+          ]
+        },
+        {
+          layoutItems = [
+            {
+              behavior = "Edit"
+              field = salesforce.ers_datatableConfig__c.field.OwnerId
+            },
+            {
+              behavior = "Required"
+              field = salesforce.ers_datatableConfig__c.field.Selection_Method__c
+            },
+            {
+              behavior = "Edit"
+              field = salesforce.ers_datatableConfig__c.field.Active__c
+            },
+          ]
+        },
+      ]
+      style = "TwoColumnsTopToBottom"
+    },
+    {
+      customLabel = false
+      detailHeading = false
+      editHeading = true
+      label = "System Information"
+      layoutColumns = [
+        {
+          layoutItems = [
+            {
+              behavior = "Readonly"
+              field = salesforce.ers_datatableConfig__c.field.CreatedById
+            },
+          ]
+        },
+        {
+          layoutItems = [
+            {
+              behavior = "Readonly"
+              field = salesforce.ers_datatableConfig__c.field.LastModifiedById
+            },
+          ]
+        },
+      ]
+      style = "TwoColumnsTopToBottom"
+    },
+    {
+      customLabel = true
+      detailHeading = false
+      editHeading = true
+      label = "Custom Links"
+      style = "CustomLinks"
+    },
+  ]
+  relatedLists = [
+    {
+      relatedList = "RelatedNoteList"
+    },
+  ]
+  showEmailCheckbox = false
+  showHighlightsPanel = false
+  showInteractionLogPanel = false
+  showRunAssignmentRulesCheckbox = false
+  showSubmitAndAttachButton = false
+  summaryLayout = {
+    masterLabel = "00h3t00000VsEtu"
+    sizeX = 4
+    sizeY = 0
+    summaryLayoutStyle = "Default"
+  }
+  fullName = "ers_datatableConfig__c-ers_datatableConfig Layout"
+  _parent = [
+    salesforce.ers_datatableConfig__c,
+  ]
+  _alias = "ers_datatableConfig__c-ers_datatableConfig Layout"
+}

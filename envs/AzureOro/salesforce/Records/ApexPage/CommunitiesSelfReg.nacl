@@ -1,0 +1,15 @@
+salesforce.ApexPage CommunitiesSelfReg {
+  apiVersion = 57
+  availableInTouch = false
+  confirmationTokenRequired = false
+  description = "Página de inscripción automática de experiencias predeterminadas"
+  label = "CommunitiesSelfReg"
+  fullName = "CommunitiesSelfReg"
+  content = file("salesforce/Records/ApexPage/CommunitiesSelfReg.page")
+  _generated_dependencies = [
+    {
+      reference = salesforce.ApexClass.instance.CommunitiesSelfRegController
+    },
+  ]
+  _alias = "CommunitiesSelfReg"
+}

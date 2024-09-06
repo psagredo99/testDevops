@@ -1,0 +1,23 @@
+type salesforce.Task {
+  salesforce.Lookup Completado_por__c {
+    apiName = "Task.Completado_por__c"
+    relationshipName = "Completado_por__r"
+    referenceTo = [
+      salesforce.User,
+    ]
+    label = "Completado por"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Text Id_Clientify__c {
+    apiName = "Task.Id_Clientify__c"
+    length = 20
+    label = "Id Clientify"
+    createable = true
+    updateable = true
+    unique = true
+    caseSensitive = false
+    queryable = true
+  }
+}

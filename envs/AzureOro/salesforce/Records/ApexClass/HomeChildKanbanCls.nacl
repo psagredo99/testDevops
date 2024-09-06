@@ -1,0 +1,42 @@
+salesforce.ApexClass HomeChildKanbanCls {
+  apiVersion = 40
+  status = "Active"
+  fullName = "HomeChildKanbanCls"
+  content = file("salesforce/Records/ApexClass/HomeChildKanbanCls.cls")
+  _generated_dependencies = [
+    {
+      reference = salesforce.ApexClass.instance.HomeChildKanbanCObjUtil
+    },
+    {
+      reference = salesforce.ApexClass.instance.HomeChildKanbanObjUtil
+    },
+    {
+      reference = salesforce.ApexClass.instance.HomeChildKanbanUtil
+    },
+    {
+      reference = salesforce.Kanban_Configuration__c
+    },
+    {
+      reference = salesforce.Kanban_Configuration__c.field.Clausula_WHERE__c
+    },
+    {
+      reference = salesforce.Kanban_Configuration__c.field.For_Object__c
+    },
+    {
+      reference = salesforce.Kanban_Configuration__c.field.KanbanDev_Child_Object__c
+    },
+    {
+      reference = salesforce.Kanban_Configuration__c.field.KanbanDev_Name_Field__c
+    },
+    {
+      reference = salesforce.Kanban_Configuration__c.field.Kanban_For__c
+    },
+    {
+      reference = salesforce.Opportunity
+    },
+    {
+      reference = salesforce.OpportunityTeamMember
+    },
+  ]
+  _alias = "HomeChildKanbanCls"
+}

@@ -1,0 +1,31 @@
+salesforce.FieldSet Contact_sortablegrid__default {
+  fullName = "Contact.sortablegrid__default"
+  description = "asdf"
+  displayedFields = [
+    {
+      field = salesforce.Contact.field.Name
+      isFieldManaged = false
+      isRequired = false
+    },
+    {
+      field = salesforce.Contact.field.Email
+      isFieldManaged = false
+      isRequired = false
+    },
+    {
+      field = salesforce.Contact.field.Perfil_de_Linkedin__c
+      isFieldManaged = false
+      isRequired = false
+    },
+    {
+      field = salesforce.Contact.field.Departamento__c
+      isFieldManaged = false
+      isRequired = false
+    },
+  ]
+  label = "default"
+  _parent = [
+    salesforce.Contact,
+  ]
+  _alias = "default (sortablegrid)"
+}

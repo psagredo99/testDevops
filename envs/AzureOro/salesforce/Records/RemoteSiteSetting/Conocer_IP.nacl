@@ -1,0 +1,7 @@
+salesforce.RemoteSiteSetting Conocer_IP {
+  fullName = "Conocer_IP"
+  disableProtocolSecurity = false
+  isActive = true
+  url = "https://api-bdc.net"
+  _alias = "Conocer_IP"
+}

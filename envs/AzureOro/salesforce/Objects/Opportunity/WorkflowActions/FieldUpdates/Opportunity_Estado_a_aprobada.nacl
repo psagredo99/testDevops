@@ -1,0 +1,14 @@
+salesforce.WorkflowFieldUpdate Opportunity_Estado_a_aprobada@vuu {
+  fullName = "Opportunity.Estado_a_aprobada"
+  field = salesforce.Opportunity.field.Estado_proceso_aprobacion__c
+  literalValue = "Aprobado"
+  name = "Estado a aprobada"
+  notifyAssignee = false
+  operation = "Literal"
+  protected = false
+  reevaluateOnChange = false
+  _parent = [
+    salesforce.Opportunity,
+  ]
+  _alias = "Opportunity.Estado_a_aprobada"
+}

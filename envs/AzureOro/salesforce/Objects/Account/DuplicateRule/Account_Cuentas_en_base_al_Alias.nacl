@@ -1,0 +1,34 @@
+salesforce.DuplicateRule Account_Cuentas_en_base_al_Alias@vuuuu {
+  fullName = "Account.Cuentas_en_base_al_Alias"
+  actionOnInsert = "Allow"
+  actionOnUpdate = "Allow"
+  alertText = "¿Utilizar uno de estos registros?"
+  duplicateRuleFilter = {
+    duplicateRuleFilterItems = {
+      field = "RecordType"
+      operation = "equals"
+      value = "Cuenta Potencial"
+      sortOrder = 1
+      table = salesforce.Account
+    }
+  }
+  duplicateRuleMatchRules = [
+    {
+      matchRuleSObjectType = salesforce.Account
+      matchingRule = "Mismo_alias"
+    },
+  ]
+  isActive = true
+  masterLabel = "Cuentas en base al Alias"
+  operationsOnInsert = [
+    "Alert",
+    "Report",
+  ]
+  operationsOnUpdate = "Report"
+  securityOption = "EnforceSharingRules"
+  sortOrder = 3
+  _parent = [
+    salesforce.Account,
+  ]
+  _alias = "Account.Cuentas_en_base_al_Alias"
+}

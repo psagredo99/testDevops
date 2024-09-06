@@ -1,0 +1,33 @@
+salesforce.Letterhead Pkf_Attest {
+  fullName = "Pkf_Attest"
+  available = true
+  backgroundColor = "#CCCCCC"
+  bodyColor = "#FFFFFF"
+  bottomLine = {
+    color = "#FFFFFF"
+    height = 0
+  }
+  description = "Nuevo logo"
+  footer = {
+    backgroundColor = "#FFFFFF"
+    height = 100
+    horizontalAlignment = "Left"
+    verticalAlignment = "Top"
+  }
+  header = {
+    backgroundColor = "#FFFFFF"
+    height = 100
+    horizontalAlignment = "Left"
+    verticalAlignment = "Top"
+  }
+  middleLine = {
+    color = "#FFFFFF"
+    height = 0
+  }
+  name = "Pkf Attest"
+  topLine = {
+    color = "#FFFFFF"
+    height = 0
+  }
+  _alias = "Pkf_Attest"
+}

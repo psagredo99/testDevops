@@ -1,0 +1,51 @@
+salesforce.BrandingSet LEXTHEMINGPKFAttest {
+  fullName = "LEXTHEMINGPKFAttest"
+  brandingSetProperty = [
+    {
+      propertyName = "BRAND_COLOR"
+      propertyValue = "#0176D3"
+    },
+    {
+      propertyName = "PAGE_BACKGROUND_COLOR"
+      propertyValue = "#FFFFFF"
+    },
+    {
+      propertyName = "HEADER_BACKGROUND_COLOR"
+      propertyValue = "#FFFFFF"
+    },
+    {
+      propertyName = "BRAND_IMAGE"
+      propertyValue = "/file-asset/logo_6001201?v=1"
+    },
+    {
+      propertyName = "BANNER_IMAGE"
+      propertyValue = "/file-asset/fondo_SF?v=1"
+    },
+    {
+      propertyName = "GROUPS_BANNER_IMAGE"
+      propertyValue = ""
+    },
+    {
+      propertyName = "GROUP_IMAGE"
+      propertyValue = ""
+    },
+    {
+      propertyName = "PROFILE_BANNER_IMAGE"
+      propertyValue = ""
+    },
+    {
+      propertyName = "USER_IMAGE"
+      propertyValue = ""
+    },
+    {
+      propertyName = "LINK_AS_BACKGROUND"
+      propertyValue = "true"
+    },
+    {
+      propertyName = "OVERRIDE_LOADING_PAGE"
+      propertyValue = "false"
+    },
+  ]
+  masterLabel = "PKF Attest"
+  _alias = "LEXTHEMINGPKFAttest"
+}

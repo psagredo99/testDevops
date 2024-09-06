@@ -1,0 +1,759 @@
+<!--
+  @author            : jsantos@pkf-attest.es
+  @last modified on  : 19-05-2023
+  @last modified by  : jsantos@pkf-attest.es
+-->
+
+<aura:component implements="flexipage:availableForAllPageTypes,force:hasRecordId,force:appHostable,forceCommunity:availableForAllPageTypes,force:lightningQuickActionWithoutHeader,lightning:availableForFlowScreens"  controller="AsistenteOportunidadesController" access="global" >
+	 <aura:html tag="style">
+        .fileCardGrande.slds-file--card {
+        <!-- width: 800px; -->
+        }
+
+         .iconoBasura{
+         color : white !important;
+         }
+         
+         
+        .slds-modal__container{
+        width: 90% !important;
+        max-width: 90% !important;
+        }
+
+        #ClienteFinal .slds-form-element__label{
+        visibility:hidden;
+        }
+
+        .fechaPedido abbr{
+        display: none;
+        }
+
+        .fechaPedido input{
+        text-align: center;
+        }
+
+        .horaPedido input{
+        display: inline-block;
+        margin-left: 10px;
+        }
+        .horaPedido label{
+        display: inline-block;
+        margin-left: 10px;
+        }
+        .horaPedido abbr{
+        display: none;
+        }
+        <!-- .urgente input{
+            display: inline-block;
+            margin-left: 10px;
+        } -->
+        .oculto{
+        display: none;
+        visibility: hidden;
+        }
+        .addButton{
+        color: white;
+        border: 2px solid #4CAF50;
+        }
+        .selector{
+        flexibility: auto;
+        margin-top: 17px;
+
+        }
+        .borraButton{
+        width: 24px;
+        }
+        #fondoModal
+        {
+        width: 300%;
+        margin-left: -100%;
+        }
+        .label-hidden label
+        {
+        <!-- display: none; -->
+        visibility: hidden;
+        }
+        .tarifa-select label{
+        display: none;
+        margin-top: 3px;
+        }
+    </aura:html>
+
+    <!-- DATOS PRINCIPALES-->
+    <aura:attribute name="step" type="String" default="1" />
+    <aura:attribute name="cuentas" type="Account" />
+     
+    <aura:attribute name="numDocumentoExterno" type="String" />
+    <aura:attribute name="lineasPedido" type="OpportunityLineItem" />
+    <aura:attribute name="pedido" type="SObject" default="{'sobjectType': 'Opportunity' }" />
+    <aura:attribute name="idPedido" type="String" />
+    <aura:attribute name="idCuenta" type="String" />
+    <aura:attribute name="idDireccion" type="String" />
+    <aura:attribute name="nombreCuenta" type="String" />
+    <aura:attribute name="direccion" type="String" />
+    <aura:attribute name="direccionSeleccionada" type="String" />
+    <aura:attribute name="cuentaSeleccionada" type="String" />
+    <aura:attribute name="Deshabilitado" type="Boolean" default="false" />
+    <aura:attribute name="datePedido" type="Date" />
+    <aura:attribute name="horaPedido" type="String" />
+    <aura:attribute name="muelle" type="String" />
+    <aura:attribute name="descPedido" type="String" />
+    <aura:attribute name="NumItem" type="Integer" default="0" />
+    <aura:attribute name="importeLinea" type="Decimal" default="0" />
+    <aura:attribute name="importeTotalPedido" type="Decimal" default="0" />
+    <aura:attribute name="totalProductosPedido" type="Decimal" default="0" />
+    <aura:attribute name="generatedDocumentId" type="String" default="" />
+
+    <aura:attribute name="queryCuentas" type="String" />
+    <aura:attribute name="cuentaBloqueada" type="Boolean" default="false" />
+
+    <aura:attribute name="recordId" type="String" />
+    <aura:attribute name="externalId" type="String" />
+    <aura:attribute name="queryProductos" type="String" />
+    <aura:attribute name="serverResponse" type="Object" />
+    <aura:attribute name="pedidoData" type="Object" />
+    <aura:attribute name="cuentaInfo" type="Account" />
+    <aura:attribute name="VolumenData" type="String" />
+    <aura:attribute name="productData" type="Object[]" />
+    <aura:attribute name="treeData" type="Object" />
+    <aura:attribute name="DescuentoCalculado" type="Decimal" />
+    <aura:attribute name="DescuentoAplicado" type="Decimal" />
+    <aura:attribute name="hoverRow" type="Integer" default="-1" />
+    <aura:attribute name="togglehover" type="boolean" default="false" />
+    <aura:attribute name="productId" type="String" />
+    <aura:attribute name="url" type="String" />
+    <aura:attribute name="precioTotal" type="Decimal" access="global" />
+    <aura:attribute name="direccionCompleta" type="String" />
+    <aura:attribute name="fechaminima" type="Date" />
+    <aura:attribute name="cargarIframe" type="Boolean" default="false" />
+    <aura:attribute name="mostrarToastCrear" type="Boolean" default="false" />
+
+    <!-- Tablas selección productos-->
+    <aura:attribute name="filterColumns" type="List" />
+    <aura:attribute name="loadingFilterData" type="Object[]" />
+    <aura:attribute name="data" type="Object" />
+    <aura:attribute name="keyField" type="String" default="Id" />
+  
+
+    <!-- Atributos utilidades -->
+    <aura:attribute name="issearching" type="Boolean" default="false" />
+    <aura:attribute name="cargandoSpiner" type="Boolean" default="false" />
+    <aura:attribute name="BuscadorShowHide" type="Boolean" default="true" />
+    <aura:attribute name="DireccionShowHide" type="Boolean" default="true" />
+    <aura:attribute name="ProductosShowHide" type="Boolean" default="true" />
+    <aura:attribute name="botonesDeshabilitados" type="Boolean" default="false" />
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+
+    <aura:attribute name="tipoObjeto" type="String" />
+    <aura:attribute name="ItemNoStock" type="String" />
+    <aura:attribute name="stockDisponible" type="Decimal" />
+    <aura:attribute name="CantidadNoStock" type="Decimal" />
+
+    <aura:attribute name="options" type="List" />
+    <aura:attribute name="totalProductoSustitutivos" type="Integer" default="0" />
+    <aura:attribute name="ProductoSustitutivos" type="List" />
+    <aura:attribute name="selectCantidad" type="Boolean" />
+    <aura:attribute name="buttonCantidad" type="Boolean" default="true" />
+    <aura:attribute name="cantidadSeleccionada" type="Decimal" />
+    <aura:attribute name="pedidosDivision" type="String[]" />
+    <aura:attribute name="roturaEsperar" type="String" />
+
+
+    <aura:attribute name="favoritoData" type="Object[]" />
+    <aura:attribute name="favoritoDataFilter" type="Object[]" />
+    <aura:attribute name="favorito" type="Boolean" default="false" />
+
+    <aura:attribute name="palabraBuscada" type="String" default="" />
+	<aura:attribute name="direccionSeleccionadaEntrada" type="String" default="" />
+
+
+    <aura:attribute name="IsCommunity" type="Boolean" />
+
+
+    <!-- ==================================================================== -->
+    <!-- =========================     SPINNER     ========================== -->
+    <!-- ==================================================================== -->
+    <aura:if isTrue="{!v.cargandoSpiner == true}">
+        <lightning:spinner aura:id="mySpinner" variant="brand" class="slds-show backgroundSpinner"
+            alternativeText="Cargando..." />
+        <lightning:spinner aura:id="mySpinner" alternativeText="Cargando..." size="medium" />
+    </aura:if>
+
+
+
+    <!-- ====================================================================================================== -->
+    <!-- ============================                                            ============================== -->
+    <!-- ===================      SELECCIÓN CUENTA/DIRECCIÓN/FECHA /HORA /DESCRIPCION     ===================== -->
+    <!-- ============================                                            ============================== -->
+    <!-- ====================================================================================================== -->
+
+    <div class="slds-scrollable--y ">
+        <lightning:card>
+
+
+	
+                    
+        
+
+            <!-- ====================================================================================================== -->
+            <!-- ============================                                            ============================== -->
+            <!-- ============================           VISTA CREACIÓN PEDIDO            ============================== -->
+            <!-- ============================                                            ============================== -->
+            <!-- ====================================================================================================== -->
+
+            <aura:if isTrue="{!v.step == '1'}">
+                <lightning:layout multipleRows="true" horizontalAlign="start" verticalAlign="start">
+                    <!-- ==================================================================== -->
+                    <!-- ====================     DATOS DE CABECERA     ===================== -->
+                    <!-- ==================================================================== -->
+                  	  <lightning:layoutItem size="12">
+                        <div class="slds-page-header slds-page-header_record-home" style="width: 100%;">
+                            <div class="slds-page-header__row">
+                                <div class="slds-page-header__col-title">
+                                    <div class="slds-media">
+                                        <div class="slds-media__figure">
+                                            <span class="slds-icon_container">
+                                                <lightning:icon iconName="standard:product" class="sds-c-icon-color-background: #CB0015" />         
+                                            </span>
+                                        </div>
+                                        <div class="slds-media__body" style="margin-top: 6px;">
+                                            <div class="slds-page-header__name">
+                                                <div class="slds-page-header__name-title">
+                                                    <h1>
+                                                        <span class="slds-page-header__title slds-truncate"
+                                                            title="">Servicios
+                                                           </span>
+                                                    </h1>
+                                                </div>
+                                            </div>
+                                           
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <br />
+                          
+                        <aura:if isTrue="{!v.ProductosShowHide}">
+                            <p class="slds-scrollable slds-p-horizontal--small">
+                            <div tabindex="-1" class="slds-scrollable " style="max-height: 300px; width: 100%;">
+                                <!-- slds-table-|-header-fixed_container  -->
+                                <ui:scrollerWrapper class="innerScroller">
+                                    <table class="slds-scrollable slds-table slds-table_bordered slds-table_cell-buffer">
+
+                                        <thead>
+                                            <tr class="slds-text-title_caps">
+                                                
+                                               <th scope="col" style="width: 20%;">
+                                                    <div class="slds-truncate " title="Familia">
+                                                        Familia de Servicios
+                                                    </div>
+                                                    <!-- slds-cell-fixed -->
+                                                 </th>
+                                                
+                                                <th scope="col" style="width: 20%;">
+                                                    <div class="slds-truncate " title="Servicios">
+                                                        Grupo de Servicios
+                                                    </div>
+                                                    <!-- slds-cell-fixed -->
+                                                </th>
+                                                
+                                                <th scope="col" style="width: 40%;">
+                                                    <div class="slds-truncate" title="Descripción">
+                                                        Servicio
+                                                    </div>
+                                                </th>
+  
+                                                <th scope="col" style="width: 10%;">
+                                                    <div class="slds-truncate" title="Importe total">
+                                                        Importe
+                                                    </div>
+                                                </th>
+                                                
+                                               
+                                                
+                                                <th scope="col" style="width: 5%;">
+                                                    <div class="slds-truncate" title="Borrar"></div>
+                                                </th>
+                                                
+                                                
+                                                
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <aura:if isTrue="{!v.productData != null}">
+                                                <aura:iteration items="{!v.productData}" var="record" indexVar="index">
+                                                    <tr class="slds-text-title_caps" data-record="{!index}">
+                                                       
+                                                       
+                                                         <td data-label="Familia" style="max-width: 100px;">
+                                                            <div class="slds-truncate">
+                                                                
+                                                                <ui:outputText
+                                                                               title="{!record.producto.Family}"
+                                                                               value="{!record.producto.Family}" />
+                                                            </div>
+                                                        </td>
+                                                        
+                                                        <td data-label="Servicios"
+                                                            style="max-width: 100px;">
+                                                            <div class="slds-truncate">
+                                                                <ui:outputText
+                                                                               title="{!record.producto.Grupo_de_Servicios__c}"
+                                                                               value="{!record.producto.Grupo_de_Servicios__c}" />
+                                                            </div>
+                                                        </td>
+                                                        
+                                                        <td data-label="Nombre de Producto" style="max-width: 100px;">
+                                                            <div class="slds-truncate">
+                                                                <ui:outputText class="slds-m-bottom_x-small"
+                                                                    aura:id="{!record.Id + '-Name-' + index}"
+                                                                    value="{!record.producto.Name}">
+                                                                </ui:outputText>
+                                                            </div>
+                                                        </td>
+                                                        
+                                                       
+                                                        
+                                                        
+                                                       
+
+                                                       
+                                                        <td>
+                                                            <lightning:input type="number" formatter="currency"
+                                                                step="0.01" class="slds-m-bottom_x-small"
+                                                                aura:id="{!record.Id + '-ImporteTotal-' + index}"
+                                                                name="{!record.Id + '-ImporteTotal-' + index}"
+                                                                value="{!record.TotalPrice}"
+                                                                onblur="{!c.GuardarRowProducts}" style="width:100px"
+                                                                size="5"></lightning:input>
+                                                        </td>
+                                                        
+                                                        
+                                                       
+                                                        
+                                                         <td data-label="Borrar Línea">
+                                                            <lightning:buttonIcon class="slds-button slds-button_destructive iconoBasura"  
+                                                                value="{!record.Id + '-' + index}"
+                                                                title="Quitar producto(s)" iconName="utility:delete"
+                                                                variant="destructive"
+                                                                onclick="{!c.removeRowProducts}" />
+                                                        </td>
+                                                        
+                                                         
+                                                       
+                                                    </tr>
+                                                </aura:iteration>
+                                            </aura:if>
+                                        </tbody>
+                                    </table>
+                                </ui:scrollerWrapper>
+                            </div>
+                            </p>
+                        </aura:if>
+                           
+                          <!--<lightning:layoutItem flexibility="auto" size="12">
+                            <br />
+                            <div class="slds-float_right slds-m-right_xx-large">
+                                <aura:if isTrue="{!v.Deshabilitado}">
+          	  					<lightning:button aura:id="NEXT" label="Modificar Precios Servicios" variant="brand"
+                                    onclick="{!c.guardarBorradorPedido}"  />
+            					</aura:if>
+                                
+                                   
+                                <br />
+                            </div>
+                            <br />
+                    </lightning:layoutItem> -->
+                           <br />
+                     <br />
+                     <br />
+                         
+                          
+                    </lightning:layoutItem>
+                    
+                    <lightning:tabset selectedTabId="Agregar_productos">
+                        
+                       
+                        <lightning:tab label="Agregar Servicios" id="Agregar_productos">
+                            <lightning:layoutItem size="12">
+                                <span class="expand-element">
+
+                                    <!-- <br/>  -->
+
+                                    <!-- ==================================================================== -->
+                                    <!-- ========================     BUSCADOR     ========================== -->
+                                    <!-- ==================================================================== -->
+                                    <lightning:layoutItem>
+                                        <!--flexibility="auto" -->
+
+                                        <!--<div class="slds-section slds-is-open">
+                                            <h2 class="slds-section__title" style="font-weight: bold;">
+                                                <p style="width: 100%; text-align: center;">Agregar productos</p>
+                                            </h2>
+                                        </div>-->
+
+                                        <aura:if isTrue="{!v.BuscadorShowHide}">
+                                            <p class="slds-p-horizontal--small">
+
+                                                <lightning:layout horizontalAlign="center">
+                                                    <div style="width: 100%;" onkeyup="{!c.doSearch}">
+                                                        <!---->
+                                                        <lightning:input aura:id="buscadorTexto" name="buscadorTexto"
+                                                            placeholder="Buscador Servicios..."
+                                                            isLoading="{!v.issearching }" type="search"
+                                                            variant="label-hidden" onchange="{!c.doSearch}" />
+                                                    </div>
+                                                </lightning:layout>
+
+                                                <br />
+
+                                                <!-- <div class="slds-card__body slds-card__body_inner"> -->
+                                            <div tabindex="-1" class="slds-scrollable "
+                                                style="height: 350px; width: 100%;">
+                                                <!-- slds-scrollable_y slds-scrollable_x slds-table-|-header-fixed_container  height: 100%; -->
+                                                <!-- <div class="slds-scrollable_y" style="height:100%;"> -->
+                                                <ui:scrollerWrapper class="innerScroller">
+                                                    <table
+                                                        class="slds-table slds-table_bordered slds-table_cell-buffer ">
+                                                        <!-- slds-table-|-header-fixed -->
+
+                                                        <thead>
+                                                            <tr class="slds-text-title_caps">
+                                                              
+                                                                <th scope="col" style="width: 20%;">
+                                                                    <div class="slds-truncate " title="Familia">
+                                                                        Familia de Servicios
+                                                                    </div>
+                                                                    <!-- slds-cell-fixed -->
+                                                                </th>
+                                                                <th scope="col" style="width: 20%;">
+                                                                    <div class="slds-truncate " title="Servicios">
+                                                                        Grupo de Servicios
+                                                                    </div>
+                                                                    <!-- slds-cell-fixed -->
+                                                                </th>
+                                                                
+                                                                <th scope="col" style="width: 40%;">
+                                                                    <div class="slds-truncate " title="Descripción">
+                                                                        Servicio
+                                                                    </div>
+                                                                    <!-- slds-cell-fixed -->
+                                                                </th>
+                                                                
+                                                                 <th scope="col" style="width: 10%;">
+                                                                    <div class="slds-truncate " title="Precio">
+                                                                        Importe
+                                                                    </div>
+                                                                    <!-- slds-cell-fixed -->
+                                                                </th>
+                                                                
+                                                                 <th scope="col" style="width: 10px;">
+                                                                    <div class="slds-truncate " title="Favorito"></div>
+                                                                    <!-- slds-cell-fixed -->
+                                                                </th>
+                                                                
+                                                                 <th scope="col" style="width: 10px;">
+                                                                    <div class="slds-truncate " title="Añadir"></div>
+                                                                    <!-- slds-cell-fixed -->
+                                                                </th>
+                                                                
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <aura:iteration items="{!v.loadingFilterData}" var="record"
+                                                                indexVar="index">
+                                                                <tr class="slds-text-title_caps" data-record="{!index}"
+                                                                    id="{!record.producto.Id}">
+                                                                    <!-- "> <!- - onclick="{!c.getRow}"" -->
+                                                                    
+                                                                   
+                                                                    <td data-label="Familia">
+                                                                        <div class="slds-truncate">
+                                                                               
+                                                                                <ui:outputText
+                                                                                    title="{!record.producto.Family}"
+                                                                                    value="{!record.producto.Family}" />
+                                                                            </div>
+                                                                    </td>
+                                                                    <td data-label="Servicios"
+                                                                        style="max-width: 100px;">
+                                                                        <div class="slds-truncate">
+                                                                            <ui:outputText
+                                                                                title="{!record.producto.Grupo_de_Servicios__c}"
+                                                                                value="{!record.producto.Grupo_de_Servicios__c}" />
+                                                                        </div>
+                                                                    </td>
+                                                                    
+                                                                     <td data-label="Descripción"
+                                                                        style="max-width: 100px;">
+                                                                       
+                                                                         <div class="slds-truncate">
+                                                                                <ui:outputText
+                                                                                    title="{!record.producto.Name}"
+                                                                                	value="{!record.producto.Name}" />
+                                                                            </div>
+                                                                    </td>
+                                                                    
+                                                                   
+                                                                    
+                                                                     <td data-label="Precio"
+                                                                        style="max-width: 100px;">
+                                                                        
+                                                                         
+                                                                         <lightning:input type="number" formatter="currency"
+                                                                            step="0.01" class="slds-m-bottom_x-small"
+                                                                            aura:id="{!record.producto.Id + '-PrecioBase-' + index}"
+                                                                            name="{!record.producto.Id + '-PrecioBase-' + index}"
+                                                                            value="0"  onchange="{!c.asignarPrecio}"
+                                                                            style="width:100px" size="3">
+                                                            			</lightning:input>
+                                                                         
+                                                                         
+                                                               
+                                                                    </td>
+                                                                    
+                                                                    <td data-label="Añadir Favorito">
+                                                                        <div class="slds-truncate">
+                                                                            <aura:if
+                                                                                isTrue="{!or(record.producto.favorito == false,record.producto.favorito == null)}">
+                                                                                <lightning:buttonIcon title=""
+                                                                                    value="{!record.producto.Id}"
+                                                                                    iconName="utility:favorite"
+                                                                                    size="x-large"
+                                                                                    onclick="{!c.addFavorito}" />
+                                                                            </aura:if>
+                                                                            <aura:if
+                                                                                isTrue="{!record.producto.favorito == true}">
+                                                                                <lightning:buttonIcon title=""
+                                                                                    value="{!record.producto.Id}"
+                                                                                    iconName="utility:favorite"
+                                                                                    size="x-large" variant="brand"
+                                                                                    onclick="{!c.deleteFavorito}" />
+                                                                            </aura:if>
+                                                                        </div>
+                                                                    </td>
+                                                                    
+                                                                    
+                                                                    
+                                                                    <td data-label="Añadir Línea">
+                                                                        <div class="slds-truncate">
+                                                                            <lightning:button label="Añadir"
+                                                                                class="addButton"
+                                                                                title="Añadir producto(s)"
+                                                                                value="{!record.producto.Id}"
+                                                                                iconName="utility:add"
+                                                                                iconPosition="left" variant="success"
+                                                                                onclick="{!c.addRowToSelects}" />
+                                                                        </div>
+                                                                    </td>
+                                                                   
+                                                                </tr>
+                                                            </aura:iteration>
+                                                        </tbody>
+                                                    </table>
+                                                </ui:scrollerWrapper>
+                                                <!-- </div> -->
+                                            </div>
+                                            </p>
+                                        </aura:if>
+
+                                    </lightning:layoutItem>
+
+                                    <br />
+                                    <br />
+                                    <br />
+
+                                </span>
+                            </lightning:layoutItem>
+                        </lightning:tab>
+                        
+                        <lightning:tab label="Servicios favoritos" id="Productos_favoritos">
+                              <lightning:layoutItem size="12">
+                                <span class="expand-element">
+
+                                    <!-- <br/>  -->
+
+                                    <!-- ==================================================================== -->
+                                    <!-- ========================     BUSCADOR     ========================== -->
+                                    <!-- ==================================================================== -->
+                                    <lightning:layoutItem>
+                                        <aura:if isTrue="{!v.BuscadorShowHide}">
+                                            <p class="slds-p-horizontal--small">
+                                                <lightning:layout horizontalAlign="center">
+
+                                                    <div style="width: 100%;" onkeyup="{!c.doSearchFavorito}">
+                                                        <!---->
+                                                        <lightning:input aura:id="buscadorTextoFavorito"
+                                                            name="buscadorTextoFavorito"
+                                                            placeholder="Buscador Servicios favoritos..."
+                                                            isLoading="{!v.issearching }" type="search"
+                                                            variant="label-hidden" onchange="{!c.doSearchFavorito}" />
+                                                    </div>
+                                                </lightning:layout>
+
+                                                <br />
+                                            <div tabindex="-1" class="slds-scrollable "
+                                                style="height: 240px; width: 100%;">
+                                                <!-- slds-scrollable_y slds-scrollable_x slds-table-|-header-fixed_container  height: 100%; -->
+                                                <!-- <div class="slds-scrollable_y" style="height:100%;"> -->
+                                                <ui:scrollerWrapper class="innerScroller">
+
+
+                                                    <table
+                                                        class="slds-table slds-table_bordered slds-table_cell-buffer ">
+                                                        <!-- slds-table-|-header-fixed -->
+
+                                                        <thead>
+                                                            <tr class="slds-text-title_caps">
+                                                                <th scope="col" style="width: 20%;">
+                                                                    <div class="slds-truncate " title="Familia">
+                                                                        Familia de Servicios
+                                                                    </div>
+                                                                    <!-- slds-cell-fixed -->
+                                                                </th>
+                                                                <th scope="col" style="width: 20%;">
+                                                                    <div class="slds-truncate " title="Servicios">
+                                                                        Grupo de Servicios
+                                                                    </div>
+                                                                    <!-- slds-cell-fixed -->
+                                                                </th>
+                                                                
+                                                                <th scope="col" style="width: 40%;">
+                                                                    <div class="slds-truncate " title="Descripción">
+                                                                        Servicio
+                                                                    </div>
+                                                                    <!-- slds-cell-fixed -->
+                                                                </th>
+                                                                
+                                                                 <th scope="col" style="width: 10%;">
+                                                                    <div class="slds-truncate " title="Precio">
+                                                                        Importe
+                                                                    </div>
+                                                                    <!-- slds-cell-fixed -->
+                                                                </th>
+                                                                
+                                                                 <th scope="col" style="width: 10px;">
+                                                                    <div class="slds-truncate " title="Favorito"></div>
+                                                                    <!-- slds-cell-fixed -->
+                                                                </th>
+                                                                
+                                                                 <th scope="col" style="width: 10px;">
+                                                                    <div class="slds-truncate " title="Añadir"></div>
+                                                                    <!-- slds-cell-fixed -->
+                                                                </th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <aura:iteration items="{!v.favoritoDataFilter}" var="record"
+                                                                indexVar="index">
+                                                                <tr class="slds-text-title_caps" data-record="{!index}"
+                                                                    id="{!record.Id}">
+                                                                    <!-- "> <!- - onclick="{!c.getRow}"" -->
+                                                                                                                               
+
+                                                                   <td data-label="Familia">
+                                                                        <div class="slds-truncate">
+                                                                               
+                                                                                <ui:outputText
+                                                                                    title="{!record.producto.Family}"
+                                                                                    value="{!record.producto.Family}" />
+                                                                            </div>
+                                                                    </td>
+                                                                    <td data-label="Servicios"
+                                                                        style="max-width: 100px;">
+                                                                        <div class="slds-truncate">
+                                                                            <ui:outputText
+                                                                                title="{!record.producto.Grupo_de_Servicios__c}"
+                                                                                value="{!record.producto.Grupo_de_Servicios__c}" />
+                                                                        </div>
+                                                                    </td>
+                                                                    
+                                                                     <td data-label="Descripción"
+                                                                        style="max-width: 100px;">
+                                                                       
+                                                                         <div class="slds-truncate">
+                                                                                
+                                                                                <ui:outputText
+                                                                                    title="{!record.producto.Name}"
+                                                                                	value="{!record.producto.Name}" />
+                                                                            </div>
+                                                                    </td>
+                                                                    
+                                                                   
+                                                                    
+                                                                     <td data-label="Precio"
+                                                                        style="max-width: 100px;">
+                                                                        
+                                                                         
+                                                                         <lightning:input type="number" formatter="currency"
+                                                                            step="0.01" class="slds-m-bottom_x-small"
+                                                                            aura:id="{!record.producto.Id + '-PrecioBase-' + index}"
+                                                                            name="{!record.producto.Id + '-PrecioBase-' + index}"
+                                                                            value="0"  onchange="{!c.asignarPrecio}"
+                                                                            style="width:100px" size="3">
+                                                            			</lightning:input>
+                                                                         
+                                                                         
+                                                               
+                                                                    </td>
+                                                                    
+                                                                     <td>
+                                                                        <lightning:buttonIcon title=""
+                                                                            value="{!record.producto.Id}"
+                                                                            iconName="utility:delete" size="x-large"
+                                                                            onclick="{!c.deleteFavorito}" />
+                                                                    </td>
+                                                                    
+                                                                    <td data-label="Añadir Línea">
+                                                                        <div class="slds-truncate">
+                                                                            <lightning:button label="Añadir"
+                                                                                class="addButton"
+                                                                                title="Añadir producto(s)"
+                                                                                value="{!record.producto.Id}"
+                                                                                iconName="utility:add"
+                                                                                iconPosition="left" variant="success"
+                                                                                onclick="{!c.addRowToSelectsFavourite}" />
+                                                                        </div>
+                                                                    </td>
+                                                                    
+                                                                    
+                                                                </tr>
+                                                            </aura:iteration>
+                                                        </tbody>
+                                                    </table>
+                                                </ui:scrollerWrapper>
+                                                <!-- </div> -->
+                                            </div>
+                                            </p>
+                                        </aura:if>
+                                    </lightning:layoutItem>
+
+                                    <br />
+                                    <br />
+                                    <br />
+
+                                </span>
+                            </lightning:layoutItem>
+                        </lightning:tab>
+                       
+                    </lightning:tabset>
+
+                    <!-- ==================================================================== -->
+                    <!-- ================     PRODUCTOS SELECCIONADOS     =================== -->
+                    <!-- ==================================================================== -->
+
+                  
+
+
+                </lightning:layout>
+            </aura:if>
+
+      
+
+        </lightning:card>
+        <br />
+    </div>
+    
+</aura:component>

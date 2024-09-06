@@ -1,0 +1,18 @@
+salesforce.LightningComponentBundle fsc_sortingConfigurationLine {
+  apiVersion = 52
+  isExposed = false
+  fullName = "fsc_sortingConfigurationLine"
+  lwcResources = {
+    lwcResource = {
+      fsc_sortingConfigurationLine_html@uv = {
+        source = file("salesforce/Records/LightningComponentBundle/fsc_sortingConfigurationLine/fsc_sortingConfigurationLine.html")
+        filePath = "lwc/fsc_sortingConfigurationLine/fsc_sortingConfigurationLine.html"
+      }
+      fsc_sortingConfigurationLine_js@uv = {
+        source = file("salesforce/Records/LightningComponentBundle/fsc_sortingConfigurationLine/fsc_sortingConfigurationLine.js")
+        filePath = "lwc/fsc_sortingConfigurationLine/fsc_sortingConfigurationLine.js"
+      }
+    }
+  }
+  _alias = "fsc_sortingConfigurationLine"
+}

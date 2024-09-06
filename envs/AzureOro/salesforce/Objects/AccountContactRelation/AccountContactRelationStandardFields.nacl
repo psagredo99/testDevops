@@ -1,0 +1,118 @@
+type salesforce.AccountContactRelation {
+  salesforce.Lookup AccountId {
+    apiName = "AccountContactRelation.AccountId"
+    relationshipName = "Account"
+    _required = true
+    label = "Id. de la cuenta"
+    createable = true
+    updateable = false
+    queryable = true
+  }
+  salesforce.Lookup ContactId {
+    apiName = "AccountContactRelation.ContactId"
+    relationshipName = "Contact"
+    _required = true
+    label = "Id. de contacto"
+    createable = true
+    updateable = false
+    queryable = true
+  }
+  salesforce.Date EndDate {
+    apiName = "AccountContactRelation.EndDate"
+    label = "Fecha de finalización"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Checkbox IsActive {
+    apiName = "AccountContactRelation.IsActive"
+    defaultValue = false
+    label = "Activa"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Checkbox IsDirect {
+    apiName = "AccountContactRelation.IsDirect"
+    defaultValue = false
+    label = "Directa"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Picklist Roles {
+    apiName = "AccountContactRelation.Roles"
+    restricted = false
+    label = "Funciones"
+    visibleLines = 0
+    createable = true
+    updateable = true
+    queryable = true
+    valueSetName = salesforce.StandardValueSet.instance.ContractContactRole
+  }
+  salesforce.Date StartDate {
+    apiName = "AccountContactRelation.StartDate"
+    label = "Fecha de inicio"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  serviceid Id {
+    apiName = "AccountContactRelation.Id"
+    label = "Id. de relación de contacto de cuenta"
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Checkbox IsDeleted {
+    apiName = "AccountContactRelation.IsDeleted"
+    defaultValue = false
+    label = "Eliminado"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime CreatedDate {
+    apiName = "AccountContactRelation.CreatedDate"
+    label = "Fecha de creación"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup CreatedById {
+    apiName = "AccountContactRelation.CreatedById"
+    relationshipName = "CreatedBy"
+    label = "Creado por el Id."
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime LastModifiedDate {
+    apiName = "AccountContactRelation.LastModifiedDate"
+    label = "Fecha de la última modificación"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup LastModifiedById {
+    apiName = "AccountContactRelation.LastModifiedById"
+    relationshipName = "LastModifiedBy"
+    label = "Última modificación realizada por el Id."
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime SystemModstamp {
+    apiName = "AccountContactRelation.SystemModstamp"
+    label = "Modstamp del sistema"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+}

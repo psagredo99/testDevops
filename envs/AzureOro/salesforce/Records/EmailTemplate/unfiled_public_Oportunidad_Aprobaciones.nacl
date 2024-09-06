@@ -1,0 +1,29 @@
+salesforce.EmailTemplate unfiled_public_Oportunidad_Aprobaciones@zcdu {
+  available = true
+  description = "Envío de mail para aprobadores de la oportunidad"
+  encodingKey = "UTF-8"
+  letterhead = salesforce.Letterhead.instance.Pkf_Attest
+  name = "Oportunidad_Aprobaciones"
+  style = "freeForm"
+  subject = "{!Opportunity.Account} - Solicitada aprobación para la oportunidad"
+  textOnly = '''
+Buenas,
+
+Se solicita desde una oportunidad la aprobación para continuar con el proceso de negocio.
+
+
+Enlace a la oportunidad para revisar el registro.
+
+Enlace al proceso de aprobación para aprobación directa.
+
+{!ApprovalRequest.Internal_URL}{!Workitem.ID}
+
+
+Un saludo.
+'''
+  type = "html"
+  uiType = "Aloha"
+  fullName = "unfiled$public/Oportunidad_Aprobaciones"
+  content = file("salesforce/Records/EmailTemplate/unfiled$public/Oportunidad_Aprobaciones/Oportunidad_Aprobaciones.email")
+  _alias = "unfiled$public/Oportunidad_Aprobaciones"
+}

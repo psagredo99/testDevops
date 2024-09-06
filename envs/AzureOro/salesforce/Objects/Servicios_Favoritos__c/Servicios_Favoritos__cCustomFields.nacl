@@ -1,0 +1,29 @@
+type salesforce.Servicios_Favoritos__c {
+  salesforce.Lookup Servicio__c {
+    apiName = "Servicios_Favoritos__c.Servicio__c"
+    deleteConstraint = "SetNull"
+    label = "Servicio"
+    referenceTo = [
+      salesforce.Product2,
+    ]
+    relationshipLabel = "Servicios Favoritos"
+    relationshipName = "Servicios_Favoritos"
+    trackTrending = false
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Lookup Usuario__c {
+    apiName = "Servicios_Favoritos__c.Usuario__c"
+    deleteConstraint = "SetNull"
+    label = "Usuario"
+    referenceTo = [
+      salesforce.User,
+    ]
+    relationshipName = "Servicios_Favoritos"
+    trackTrending = false
+    createable = true
+    updateable = true
+    queryable = true
+  }
+}

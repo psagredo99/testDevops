@@ -1,0 +1,6 @@
+salesforce.MilestoneType Primera_respuesta_al_cliente@s {
+  fullName = "Primera respuesta al cliente"
+  description = "Establece un hito no recurrente para el tiempo que emplean los agentes en enviar su primera respuesta a clientes."
+  recurrenceType = "none"
+  _alias = "Primera respuesta al cliente"
+}

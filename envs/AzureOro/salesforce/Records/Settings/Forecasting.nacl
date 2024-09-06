@@ -1,0 +1,4136 @@
+salesforce.ForecastingSettings {
+  fullName = "Forecasting"
+  defaultToPersonalCurrency = false
+  enableForecasts = true
+  forecastingCategoryMappings = [
+    {
+      forecastingItemCategoryApiName = "commitonly"
+      weightedSourceCategories = [
+        {
+          sourceCategoryApiName = "commit"
+          weight = 1
+        },
+      ]
+    },
+    {
+      forecastingItemCategoryApiName = "closedonly"
+      weightedSourceCategories = [
+        {
+          sourceCategoryApiName = "closed"
+          weight = 1
+        },
+      ]
+    },
+    {
+      forecastingItemCategoryApiName = "openpipeline"
+      weightedSourceCategories = [
+        {
+          sourceCategoryApiName = "pipeline"
+          weight = 1
+        },
+        {
+          sourceCategoryApiName = "commit"
+          weight = 1
+        },
+        {
+          sourceCategoryApiName = "best case"
+          weight = 1
+        },
+      ]
+    },
+    {
+      forecastingItemCategoryApiName = "omittedonly"
+      weightedSourceCategories = [
+        {
+          sourceCategoryApiName = "omitted"
+          weight = 1
+        },
+      ]
+    },
+    {
+      forecastingItemCategoryApiName = "bestcaseforecast"
+      weightedSourceCategories = [
+        {
+          sourceCategoryApiName = "closed"
+          weight = 1
+        },
+        {
+          sourceCategoryApiName = "commit"
+          weight = 1
+        },
+        {
+          sourceCategoryApiName = "best case"
+          weight = 1
+        },
+      ]
+    },
+    {
+      forecastingItemCategoryApiName = "pipelineonly"
+      weightedSourceCategories = [
+        {
+          sourceCategoryApiName = "pipeline"
+          weight = 1
+        },
+      ]
+    },
+    {
+      forecastingItemCategoryApiName = "commitforecast"
+      weightedSourceCategories = [
+        {
+          sourceCategoryApiName = "closed"
+          weight = 1
+        },
+        {
+          sourceCategoryApiName = "commit"
+          weight = 1
+        },
+      ]
+    },
+    {
+      forecastingItemCategoryApiName = "bestcaseonly"
+      weightedSourceCategories = [
+        {
+          sourceCategoryApiName = "best case"
+          weight = 1
+        },
+      ]
+    },
+  ]
+  forecastingTypeSettings = [
+    {
+      active = true
+      displayedCategoryApiNames = [
+        "closedonly",
+        "commitforecast",
+        "bestcaseforecast",
+        "openpipeline",
+      ]
+      forecastedCategoryApiNames = [
+        "commitonly",
+        "closedonly",
+        "openpipeline",
+        "bestcaseforecast",
+        "pipelineonly",
+        "commitforecast",
+        "bestcaseonly",
+      ]
+      forecastingDateType = "OpportunityCloseDate"
+      hasProductFamily = false
+      isAmount = true
+      isAvailable = true
+      isQuantity = false
+      managerAdjustableCategoryApiNames = [
+        "bestcaseforecast",
+        "commitforecast",
+      ]
+      masterLabel = "Oportunidades"
+      name = "OpportunityRevenue"
+      opportunityListFieldsLabelMappings = [
+        {
+          field = "OPPORTUNITY.NAME"
+          label = "Nombre de la oportunidad"
+        },
+        {
+          field = "ACCOUNT.NAME"
+          label = "Nombre de cuenta"
+        },
+        {
+          field = "OPPORTUNITY.AMOUNT"
+          label = "Importe"
+        },
+        {
+          field = "OPPORTUNITY.CLOSE_DATE"
+          label = "Fecha de cierre"
+        },
+        {
+          field = "OPPORTUNITY.STAGE_NAME"
+          label = "Etapa"
+        },
+        {
+          field = "OPPORTUNITY.PROBABILITY"
+          label = "Probabilidad (%)"
+        },
+        {
+          field = "FORECAST_CATEGORY"
+          label = "Categoría de previsión"
+        },
+        {
+          field = "FULL_NAME"
+          label = "Nombre completo del propietario"
+        },
+        {
+          field = "CONTRACT.CONTRACT_NUMBER"
+          label = "Número de contrato"
+        },
+        {
+          field = "CORE.USERS.ALIAS"
+          label = "Alias del propietario de la oportunidad"
+        },
+        {
+          field = "CORE.USERS.FIRST_NAME"
+          label = "Nombre del propietario"
+        },
+        {
+          field = "CORE.USERS.LAST_NAME"
+          label = "Apellidos del propietario"
+        },
+        {
+          field = "DESCRIPTION"
+          label = "Descripción"
+        },
+        {
+          field = "OPPORTUNITY.LEAD_SOURCE"
+          label = "Origen del candidato"
+        },
+        {
+          field = "OPPORTUNITY.NEXT_STEP"
+          label = "Siguiente paso"
+        },
+        {
+          field = "OPPORTUNITY.TYPE"
+          label = "Tipo"
+        },
+        {
+          field = "UPDATEDBY_USER.ALIAS"
+          label = "Última modificación por alias"
+        },
+        {
+          field = "CREATEDBY_USER.ALIAS"
+          label = "Creado por alias"
+        },
+        {
+          field = "SYNCEDQUOTE.NAME"
+          label = "Presupuesto sincronizado"
+        },
+        {
+          field = "OPPORTUNITY.CLOSED"
+          label = "Cerrado"
+        },
+        {
+          field = "OPPORTUNITY.WON"
+          label = "Ganadas"
+        },
+        {
+          field = "ACCOUNT.SITE"
+          label = "Sitio de la cuenta"
+        },
+        {
+          field = "OPPORTUNITY.FISCAL_YEAR"
+          label = "Año fiscal"
+        },
+        {
+          field = "OPPORTUNITY.FISCAL_QUARTER"
+          label = "Trimestre fiscal"
+        },
+        {
+          field = "OPPORTUNITY.FISCAL_PERIOD"
+          label = "Periodo fiscal"
+        },
+        {
+          field = "OPPORTUNITY.RECORDTYPE"
+          label = "Tipo de registro de la oportunidad"
+        },
+        {
+          field = "OPPORTUNITY.LAST_ACTIVITY"
+          label = "Última actividad"
+        },
+        {
+          field = "OPPORTUNITY.CREATED_DATE"
+          label = "Fecha de creación"
+        },
+        {
+          field = "OPPORTUNITY.LAST_UPDATE"
+          label = "Fecha de la última modificación"
+        },
+        {
+          field = "Opportunity.Socio_Propietario__c"
+          label = "_"
+        },
+        {
+          field = "Opportunity.Budget_Confirmed__c"
+          label = "Budget Confirmed"
+        },
+        {
+          field = "Opportunity.Centro_de_actividad__c"
+          label = "Centro de actividad"
+        },
+        {
+          field = "Opportunity.Codigo_Oferta__c"
+          label = "Código Oferta"
+        },
+        {
+          field = "Opportunity.Comentario_aprobacion_auditoria__c"
+          label = "Comentario aprobación auditoría"
+        },
+        {
+          field = "Opportunity.Descripcion_motivo_p_rdida_de_oportunida__c"
+          label = "Descripción motivo pérdida de oportunida"
+        },
+        {
+          field = "Opportunity.Detalle_origen__c"
+          label = "Detalle origen"
+        },
+        {
+          field = "Opportunity.Discovery_Completed__c"
+          label = "Discovery Completed"
+        },
+        {
+          field = "Opportunity.Division__c"
+          label = "División"
+        },
+        {
+          field = "Opportunity.Documentacion__c"
+          label = "Documentación Oferta"
+        },
+        {
+          field = "Opportunity.Estado_Lead__c"
+          label = "Estado \"Lead\""
+        },
+        {
+          field = "Opportunity.Estado_proceso_aprobacion__c"
+          label = "Estado proceso aprobación"
+        },
+        {
+          field = "Opportunity.Fecha_aprobacion_auditoria__c"
+          label = "Fecha aprobación auditoría"
+        },
+        {
+          field = "Opportunity.Fecha_de_registro__c"
+          label = "Fecha de registro"
+        },
+        {
+          field = "Opportunity.Fecha_notificacion_auditoria__c"
+          label = "Fecha notificación auditoría"
+        },
+        {
+          field = "Opportunity.Id_CRM_Dynamics__c"
+          label = "Id CRM Dynamics"
+        },
+        {
+          field = "Opportunity.Lead_valido__c"
+          label = "Lead válido"
+        },
+        {
+          field = "Opportunity.Loss_Reason__c"
+          label = "Motivo pérdida"
+        },
+        {
+          field = "Opportunity.Notificacion_auditoria__c"
+          label = "Notificación auditoría"
+        },
+        {
+          field = "Opportunity.Origen__c"
+          label = "Origen"
+        },
+        {
+          field = "Opportunity.Responsable_oportunidad__c"
+          label = "Responsable de la oportunidad"
+        },
+        {
+          field = "Opportunity.ROI_Analysis_Completed__c"
+          label = "ROI Analysis Completed"
+        },
+        {
+          field = "Opportunity.Servicios_a_adidos_en_la_oportunidad__c"
+          label = "Servicios añadidos en la oportunidad"
+        },
+        {
+          field = "Opportunity.Estado_operacion_lead__c"
+          label = "Sistema devolución \"Lead\""
+        },
+        {
+          field = "Opportunity.Socio_oportunidad__c"
+          label = "Socio responsable de la oportunidad"
+        },
+        {
+          field = "Opportunity.URL_gestion_de_oferta__c"
+          label = "URL gestión de oferta"
+        },
+        {
+          field = "Opportunity.Usuarios_notificados__c"
+          label = "Usuarios notificados"
+        },
+        {
+          field = "OPPORTUNITY.LAST_STAGE_CHANGE"
+          label = "Fecha de la última modificación de Etapa"
+        },
+        {
+          field = "OPPORTUNITY.PUSH_COUNT"
+          label = "Recuento de distribución"
+        },
+      ]
+      opportunityListFieldsSelectedSettings = {
+        field = [
+          "OPPORTUNITY.NAME",
+          "ACCOUNT.NAME",
+          "OPPORTUNITY.AMOUNT",
+          "OPPORTUNITY.CLOSE_DATE",
+          "OPPORTUNITY.STAGE_NAME",
+          "OPPORTUNITY.PROBABILITY",
+          "FORECAST_CATEGORY",
+          "FULL_NAME",
+        ]
+      }
+      opportunityListFieldsUnselectedSettings = {
+        field = [
+          "CONTRACT.CONTRACT_NUMBER",
+          "CORE.USERS.ALIAS",
+          "CORE.USERS.FIRST_NAME",
+          "CORE.USERS.LAST_NAME",
+          "DESCRIPTION",
+          "OPPORTUNITY.LEAD_SOURCE",
+          "OPPORTUNITY.NEXT_STEP",
+          "OPPORTUNITY.TYPE",
+          "UPDATEDBY_USER.ALIAS",
+          "CREATEDBY_USER.ALIAS",
+          "SYNCEDQUOTE.NAME",
+          "OPPORTUNITY.CLOSED",
+          "OPPORTUNITY.WON",
+          "ACCOUNT.SITE",
+          "OPPORTUNITY.FISCAL_YEAR",
+          "OPPORTUNITY.FISCAL_QUARTER",
+          "OPPORTUNITY.FISCAL_PERIOD",
+          "OPPORTUNITY.RECORDTYPE",
+          "OPPORTUNITY.LAST_ACTIVITY",
+          "OPPORTUNITY.CREATED_DATE",
+          "OPPORTUNITY.LAST_UPDATE",
+          "Opportunity.Socio_Propietario__c",
+          "Opportunity.Budget_Confirmed__c",
+          "Opportunity.Centro_de_actividad__c",
+          "Opportunity.Codigo_Oferta__c",
+          "Opportunity.Comentario_aprobacion_auditoria__c",
+          "Opportunity.Descripcion_motivo_p_rdida_de_oportunida__c",
+          "Opportunity.Detalle_origen__c",
+          "Opportunity.Discovery_Completed__c",
+          "Opportunity.Division__c",
+          "Opportunity.Documentacion__c",
+          "Opportunity.Estado_Lead__c",
+          "Opportunity.Estado_proceso_aprobacion__c",
+          "Opportunity.Fecha_aprobacion_auditoria__c",
+          "Opportunity.Fecha_de_registro__c",
+          "Opportunity.Fecha_notificacion_auditoria__c",
+          "Opportunity.Id_CRM_Dynamics__c",
+          "Opportunity.Lead_valido__c",
+          "Opportunity.Loss_Reason__c",
+          "Opportunity.Notificacion_auditoria__c",
+          "Opportunity.Origen__c",
+          "Opportunity.Responsable_oportunidad__c",
+          "Opportunity.ROI_Analysis_Completed__c",
+          "Opportunity.Servicios_a_adidos_en_la_oportunidad__c",
+          "Opportunity.Estado_operacion_lead__c",
+          "Opportunity.Socio_oportunidad__c",
+          "Opportunity.URL_gestion_de_oferta__c",
+          "Opportunity.Usuarios_notificados__c",
+          "OPPORTUNITY.LAST_STAGE_CHANGE",
+          "OPPORTUNITY.PUSH_COUNT",
+        ]
+      }
+      ownerAdjustableCategoryApiNames = [
+        "bestcaseforecast",
+        "commitforecast",
+      ]
+    },
+    {
+      active = false
+      displayedCategoryApiNames = [
+        "closedonly",
+        "commitforecast",
+        "bestcaseforecast",
+        "openpipeline",
+      ]
+      forecastedCategoryApiNames = [
+        "commitonly",
+        "closedonly",
+        "openpipeline",
+        "bestcaseforecast",
+        "pipelineonly",
+        "commitforecast",
+        "bestcaseonly",
+      ]
+      forecastingDateType = "OpportunityCloseDate"
+      hasProductFamily = false
+      isAmount = false
+      isAvailable = true
+      isQuantity = true
+      managerAdjustableCategoryApiNames = [
+        "bestcaseforecast",
+        "commitforecast",
+      ]
+      masterLabel = "Oportunidades"
+      name = "OpportunityQuantity"
+      opportunityListFieldsLabelMappings = [
+        {
+          field = "OPPORTUNITY.NAME"
+          label = "Nombre de la oportunidad"
+        },
+        {
+          field = "ACCOUNT.NAME"
+          label = "Nombre de cuenta"
+        },
+        {
+          field = "OPPORTUNITY.CLOSE_DATE"
+          label = "Fecha de cierre"
+        },
+        {
+          field = "OPPORTUNITY.STAGE_NAME"
+          label = "Etapa"
+        },
+        {
+          field = "OPPORTUNITY.PROBABILITY"
+          label = "Probabilidad (%)"
+        },
+        {
+          field = "FORECAST_CATEGORY"
+          label = "Categoría de previsión"
+        },
+        {
+          field = "FULL_NAME"
+          label = "Nombre completo del propietario"
+        },
+        {
+          field = "CONTRACT.CONTRACT_NUMBER"
+          label = "Número de contrato"
+        },
+        {
+          field = "OPPORTUNITY.AMOUNT"
+          label = "Importe"
+        },
+        {
+          field = "CORE.USERS.ALIAS"
+          label = "Alias del propietario de la oportunidad"
+        },
+        {
+          field = "CORE.USERS.FIRST_NAME"
+          label = "Nombre del propietario"
+        },
+        {
+          field = "CORE.USERS.LAST_NAME"
+          label = "Apellidos del propietario"
+        },
+        {
+          field = "DESCRIPTION"
+          label = "Descripción"
+        },
+        {
+          field = "OPPORTUNITY.LEAD_SOURCE"
+          label = "Origen del candidato"
+        },
+        {
+          field = "OPPORTUNITY.NEXT_STEP"
+          label = "Siguiente paso"
+        },
+        {
+          field = "OPPORTUNITY.TYPE"
+          label = "Tipo"
+        },
+        {
+          field = "UPDATEDBY_USER.ALIAS"
+          label = "Última modificación por alias"
+        },
+        {
+          field = "CREATEDBY_USER.ALIAS"
+          label = "Creado por alias"
+        },
+        {
+          field = "SYNCEDQUOTE.NAME"
+          label = "Presupuesto sincronizado"
+        },
+        {
+          field = "OPPORTUNITY.CLOSED"
+          label = "Cerrado"
+        },
+        {
+          field = "OPPORTUNITY.WON"
+          label = "Ganadas"
+        },
+        {
+          field = "ACCOUNT.SITE"
+          label = "Sitio de la cuenta"
+        },
+        {
+          field = "OPPORTUNITY.FISCAL_YEAR"
+          label = "Año fiscal"
+        },
+        {
+          field = "OPPORTUNITY.FISCAL_QUARTER"
+          label = "Trimestre fiscal"
+        },
+        {
+          field = "OPPORTUNITY.FISCAL_PERIOD"
+          label = "Periodo fiscal"
+        },
+        {
+          field = "OPPORTUNITY.RECORDTYPE"
+          label = "Tipo de registro de la oportunidad"
+        },
+        {
+          field = "OPPORTUNITY.LAST_ACTIVITY"
+          label = "Última actividad"
+        },
+        {
+          field = "OPPORTUNITY.CREATED_DATE"
+          label = "Fecha de creación"
+        },
+        {
+          field = "OPPORTUNITY.LAST_UPDATE"
+          label = "Fecha de la última modificación"
+        },
+        {
+          field = "Opportunity.Socio_Propietario__c"
+          label = "_"
+        },
+        {
+          field = "Opportunity.Budget_Confirmed__c"
+          label = "Budget Confirmed"
+        },
+        {
+          field = "Opportunity.Centro_de_actividad__c"
+          label = "Centro de actividad"
+        },
+        {
+          field = "Opportunity.Codigo_Oferta__c"
+          label = "Código Oferta"
+        },
+        {
+          field = "Opportunity.Comentario_aprobacion_auditoria__c"
+          label = "Comentario aprobación auditoría"
+        },
+        {
+          field = "Opportunity.Descripcion_motivo_p_rdida_de_oportunida__c"
+          label = "Descripción motivo pérdida de oportunida"
+        },
+        {
+          field = "Opportunity.Detalle_origen__c"
+          label = "Detalle origen"
+        },
+        {
+          field = "Opportunity.Discovery_Completed__c"
+          label = "Discovery Completed"
+        },
+        {
+          field = "Opportunity.Division__c"
+          label = "División"
+        },
+        {
+          field = "Opportunity.Documentacion__c"
+          label = "Documentación Oferta"
+        },
+        {
+          field = "Opportunity.Estado_Lead__c"
+          label = "Estado \"Lead\""
+        },
+        {
+          field = "Opportunity.Estado_proceso_aprobacion__c"
+          label = "Estado proceso aprobación"
+        },
+        {
+          field = "Opportunity.Fecha_aprobacion_auditoria__c"
+          label = "Fecha aprobación auditoría"
+        },
+        {
+          field = "Opportunity.Fecha_de_registro__c"
+          label = "Fecha de registro"
+        },
+        {
+          field = "Opportunity.Fecha_notificacion_auditoria__c"
+          label = "Fecha notificación auditoría"
+        },
+        {
+          field = "Opportunity.Id_CRM_Dynamics__c"
+          label = "Id CRM Dynamics"
+        },
+        {
+          field = "Opportunity.Lead_valido__c"
+          label = "Lead válido"
+        },
+        {
+          field = "Opportunity.Loss_Reason__c"
+          label = "Motivo pérdida"
+        },
+        {
+          field = "Opportunity.Notificacion_auditoria__c"
+          label = "Notificación auditoría"
+        },
+        {
+          field = "Opportunity.Origen__c"
+          label = "Origen"
+        },
+        {
+          field = "Opportunity.Responsable_oportunidad__c"
+          label = "Responsable de la oportunidad"
+        },
+        {
+          field = "Opportunity.ROI_Analysis_Completed__c"
+          label = "ROI Analysis Completed"
+        },
+        {
+          field = "Opportunity.Servicios_a_adidos_en_la_oportunidad__c"
+          label = "Servicios añadidos en la oportunidad"
+        },
+        {
+          field = "Opportunity.Estado_operacion_lead__c"
+          label = "Sistema devolución \"Lead\""
+        },
+        {
+          field = "Opportunity.Socio_oportunidad__c"
+          label = "Socio responsable de la oportunidad"
+        },
+        {
+          field = "Opportunity.URL_gestion_de_oferta__c"
+          label = "URL gestión de oferta"
+        },
+        {
+          field = "Opportunity.Usuarios_notificados__c"
+          label = "Usuarios notificados"
+        },
+        {
+          field = "OPPORTUNITY.LAST_STAGE_CHANGE"
+          label = "Fecha de la última modificación de Etapa"
+        },
+        {
+          field = "OPPORTUNITY.PUSH_COUNT"
+          label = "Recuento de distribución"
+        },
+      ]
+      opportunityListFieldsSelectedSettings = {
+        field = [
+          "OPPORTUNITY.NAME",
+          "ACCOUNT.NAME",
+          "OPPORTUNITY.CLOSE_DATE",
+          "OPPORTUNITY.STAGE_NAME",
+          "OPPORTUNITY.PROBABILITY",
+          "FORECAST_CATEGORY",
+          "FULL_NAME",
+        ]
+      }
+      opportunityListFieldsUnselectedSettings = {
+        field = [
+          "CONTRACT.CONTRACT_NUMBER",
+          "OPPORTUNITY.AMOUNT",
+          "CORE.USERS.ALIAS",
+          "CORE.USERS.FIRST_NAME",
+          "CORE.USERS.LAST_NAME",
+          "DESCRIPTION",
+          "OPPORTUNITY.LEAD_SOURCE",
+          "OPPORTUNITY.NEXT_STEP",
+          "OPPORTUNITY.TYPE",
+          "UPDATEDBY_USER.ALIAS",
+          "CREATEDBY_USER.ALIAS",
+          "SYNCEDQUOTE.NAME",
+          "OPPORTUNITY.CLOSED",
+          "OPPORTUNITY.WON",
+          "ACCOUNT.SITE",
+          "OPPORTUNITY.FISCAL_YEAR",
+          "OPPORTUNITY.FISCAL_QUARTER",
+          "OPPORTUNITY.FISCAL_PERIOD",
+          "OPPORTUNITY.RECORDTYPE",
+          "OPPORTUNITY.LAST_ACTIVITY",
+          "OPPORTUNITY.CREATED_DATE",
+          "OPPORTUNITY.LAST_UPDATE",
+          "Opportunity.Socio_Propietario__c",
+          "Opportunity.Budget_Confirmed__c",
+          "Opportunity.Centro_de_actividad__c",
+          "Opportunity.Codigo_Oferta__c",
+          "Opportunity.Comentario_aprobacion_auditoria__c",
+          "Opportunity.Descripcion_motivo_p_rdida_de_oportunida__c",
+          "Opportunity.Detalle_origen__c",
+          "Opportunity.Discovery_Completed__c",
+          "Opportunity.Division__c",
+          "Opportunity.Documentacion__c",
+          "Opportunity.Estado_Lead__c",
+          "Opportunity.Estado_proceso_aprobacion__c",
+          "Opportunity.Fecha_aprobacion_auditoria__c",
+          "Opportunity.Fecha_de_registro__c",
+          "Opportunity.Fecha_notificacion_auditoria__c",
+          "Opportunity.Id_CRM_Dynamics__c",
+          "Opportunity.Lead_valido__c",
+          "Opportunity.Loss_Reason__c",
+          "Opportunity.Notificacion_auditoria__c",
+          "Opportunity.Origen__c",
+          "Opportunity.Responsable_oportunidad__c",
+          "Opportunity.ROI_Analysis_Completed__c",
+          "Opportunity.Servicios_a_adidos_en_la_oportunidad__c",
+          "Opportunity.Estado_operacion_lead__c",
+          "Opportunity.Socio_oportunidad__c",
+          "Opportunity.URL_gestion_de_oferta__c",
+          "Opportunity.Usuarios_notificados__c",
+          "OPPORTUNITY.LAST_STAGE_CHANGE",
+          "OPPORTUNITY.PUSH_COUNT",
+        ]
+      }
+      ownerAdjustableCategoryApiNames = [
+        "bestcaseforecast",
+        "commitforecast",
+      ]
+    },
+    {
+      active = false
+      displayedCategoryApiNames = [
+        "closedonly",
+        "commitforecast",
+        "bestcaseforecast",
+        "openpipeline",
+      ]
+      forecastedCategoryApiNames = [
+        "commitonly",
+        "closedonly",
+        "openpipeline",
+        "bestcaseforecast",
+        "pipelineonly",
+        "commitforecast",
+        "bestcaseonly",
+      ]
+      forecastingDateType = "OpportunityCloseDate"
+      hasProductFamily = true
+      isAmount = true
+      isAvailable = true
+      isQuantity = false
+      managerAdjustableCategoryApiNames = [
+        "bestcaseforecast",
+        "commitforecast",
+      ]
+      masterLabel = "Familias de servicios"
+      name = "OpportunityLineItemRevenue"
+      opportunityListFieldsLabelMappings = [
+        {
+          field = "OPPORTUNITY.NAME"
+          label = "Nombre de la oportunidad"
+        },
+        {
+          field = "ACCOUNT.NAME"
+          label = "Nombre de cuenta"
+        },
+        {
+          field = "SPLITAMOUNT"
+          label = "Importe de previsión"
+        },
+        {
+          field = "OPPORTUNITY.CLOSE_DATE"
+          label = "Fecha de cierre"
+        },
+        {
+          field = "OPPORTUNITY.STAGE_NAME"
+          label = "Etapa"
+        },
+        {
+          field = "OPPORTUNITY.PROBABILITY"
+          label = "Probabilidad (%)"
+        },
+        {
+          field = "FORECAST_CATEGORY"
+          label = "Categoría de previsión"
+        },
+        {
+          field = "FULL_NAME"
+          label = "Nombre completo del propietario"
+        },
+        {
+          field = "CONTRACT.CONTRACT_NUMBER"
+          label = "Número de contrato"
+        },
+        {
+          field = "OPPORTUNITY.AMOUNT"
+          label = "Importe"
+        },
+        {
+          field = "CORE.USERS.ALIAS"
+          label = "Alias del propietario de la oportunidad"
+        },
+        {
+          field = "CORE.USERS.FIRST_NAME"
+          label = "Nombre del propietario"
+        },
+        {
+          field = "CORE.USERS.LAST_NAME"
+          label = "Apellidos del propietario"
+        },
+        {
+          field = "DESCRIPTION"
+          label = "Descripción"
+        },
+        {
+          field = "OPPORTUNITY.LEAD_SOURCE"
+          label = "Origen del candidato"
+        },
+        {
+          field = "OPPORTUNITY.NEXT_STEP"
+          label = "Siguiente paso"
+        },
+        {
+          field = "OPPORTUNITY.TYPE"
+          label = "Tipo"
+        },
+        {
+          field = "UPDATEDBY_USER.ALIAS"
+          label = "Última modificación por alias"
+        },
+        {
+          field = "CREATEDBY_USER.ALIAS"
+          label = "Creado por alias"
+        },
+        {
+          field = "SYNCEDQUOTE.NAME"
+          label = "Presupuesto sincronizado"
+        },
+        {
+          field = "OPPORTUNITY.CLOSED"
+          label = "Cerrado"
+        },
+        {
+          field = "OPPORTUNITY.WON"
+          label = "Ganadas"
+        },
+        {
+          field = "ACCOUNT.SITE"
+          label = "Sitio de la cuenta"
+        },
+        {
+          field = "OPPORTUNITY.FISCAL_YEAR"
+          label = "Año fiscal"
+        },
+        {
+          field = "OPPORTUNITY.FISCAL_QUARTER"
+          label = "Trimestre fiscal"
+        },
+        {
+          field = "OPPORTUNITY.FISCAL_PERIOD"
+          label = "Periodo fiscal"
+        },
+        {
+          field = "OPPORTUNITY.RECORDTYPE"
+          label = "Tipo de registro de la oportunidad"
+        },
+        {
+          field = "OPPORTUNITY.LAST_ACTIVITY"
+          label = "Última actividad"
+        },
+        {
+          field = "OPPORTUNITY.CREATED_DATE"
+          label = "Fecha de creación"
+        },
+        {
+          field = "OPPORTUNITY.LAST_UPDATE"
+          label = "Fecha de la última modificación"
+        },
+        {
+          field = "Opportunity.Socio_Propietario__c"
+          label = "_"
+        },
+        {
+          field = "Opportunity.Budget_Confirmed__c"
+          label = "Budget Confirmed"
+        },
+        {
+          field = "Opportunity.Centro_de_actividad__c"
+          label = "Centro de actividad"
+        },
+        {
+          field = "Opportunity.Codigo_Oferta__c"
+          label = "Código Oferta"
+        },
+        {
+          field = "Opportunity.Comentario_aprobacion_auditoria__c"
+          label = "Comentario aprobación auditoría"
+        },
+        {
+          field = "Opportunity.Descripcion_motivo_p_rdida_de_oportunida__c"
+          label = "Descripción motivo pérdida de oportunida"
+        },
+        {
+          field = "Opportunity.Detalle_origen__c"
+          label = "Detalle origen"
+        },
+        {
+          field = "Opportunity.Discovery_Completed__c"
+          label = "Discovery Completed"
+        },
+        {
+          field = "Opportunity.Division__c"
+          label = "División"
+        },
+        {
+          field = "Opportunity.Documentacion__c"
+          label = "Documentación Oferta"
+        },
+        {
+          field = "Opportunity.Estado_Lead__c"
+          label = "Estado \"Lead\""
+        },
+        {
+          field = "Opportunity.Estado_proceso_aprobacion__c"
+          label = "Estado proceso aprobación"
+        },
+        {
+          field = "Opportunity.Fecha_aprobacion_auditoria__c"
+          label = "Fecha aprobación auditoría"
+        },
+        {
+          field = "Opportunity.Fecha_de_registro__c"
+          label = "Fecha de registro"
+        },
+        {
+          field = "Opportunity.Fecha_notificacion_auditoria__c"
+          label = "Fecha notificación auditoría"
+        },
+        {
+          field = "Opportunity.Id_CRM_Dynamics__c"
+          label = "Id CRM Dynamics"
+        },
+        {
+          field = "Opportunity.Lead_valido__c"
+          label = "Lead válido"
+        },
+        {
+          field = "Opportunity.Loss_Reason__c"
+          label = "Motivo pérdida"
+        },
+        {
+          field = "Opportunity.Notificacion_auditoria__c"
+          label = "Notificación auditoría"
+        },
+        {
+          field = "Opportunity.Origen__c"
+          label = "Origen"
+        },
+        {
+          field = "Opportunity.Responsable_oportunidad__c"
+          label = "Responsable de la oportunidad"
+        },
+        {
+          field = "Opportunity.ROI_Analysis_Completed__c"
+          label = "ROI Analysis Completed"
+        },
+        {
+          field = "Opportunity.Servicios_a_adidos_en_la_oportunidad__c"
+          label = "Servicios añadidos en la oportunidad"
+        },
+        {
+          field = "Opportunity.Estado_operacion_lead__c"
+          label = "Sistema devolución \"Lead\""
+        },
+        {
+          field = "Opportunity.Socio_oportunidad__c"
+          label = "Socio responsable de la oportunidad"
+        },
+        {
+          field = "Opportunity.URL_gestion_de_oferta__c"
+          label = "URL gestión de oferta"
+        },
+        {
+          field = "Opportunity.Usuarios_notificados__c"
+          label = "Usuarios notificados"
+        },
+        {
+          field = "OPPORTUNITY.LAST_STAGE_CHANGE"
+          label = "Fecha de la última modificación de Etapa"
+        },
+        {
+          field = "OPPORTUNITY.PUSH_COUNT"
+          label = "Recuento de distribución"
+        },
+      ]
+      opportunityListFieldsSelectedSettings = {
+        field = [
+          "OPPORTUNITY.NAME",
+          "ACCOUNT.NAME",
+          "SPLITAMOUNT",
+          "OPPORTUNITY.CLOSE_DATE",
+          "OPPORTUNITY.STAGE_NAME",
+          "OPPORTUNITY.PROBABILITY",
+          "FORECAST_CATEGORY",
+          "FULL_NAME",
+        ]
+      }
+      opportunityListFieldsUnselectedSettings = {
+        field = [
+          "CONTRACT.CONTRACT_NUMBER",
+          "OPPORTUNITY.AMOUNT",
+          "CORE.USERS.ALIAS",
+          "CORE.USERS.FIRST_NAME",
+          "CORE.USERS.LAST_NAME",
+          "DESCRIPTION",
+          "OPPORTUNITY.LEAD_SOURCE",
+          "OPPORTUNITY.NEXT_STEP",
+          "OPPORTUNITY.TYPE",
+          "UPDATEDBY_USER.ALIAS",
+          "CREATEDBY_USER.ALIAS",
+          "SYNCEDQUOTE.NAME",
+          "OPPORTUNITY.CLOSED",
+          "OPPORTUNITY.WON",
+          "ACCOUNT.SITE",
+          "OPPORTUNITY.FISCAL_YEAR",
+          "OPPORTUNITY.FISCAL_QUARTER",
+          "OPPORTUNITY.FISCAL_PERIOD",
+          "OPPORTUNITY.RECORDTYPE",
+          "OPPORTUNITY.LAST_ACTIVITY",
+          "OPPORTUNITY.CREATED_DATE",
+          "OPPORTUNITY.LAST_UPDATE",
+          "Opportunity.Socio_Propietario__c",
+          "Opportunity.Budget_Confirmed__c",
+          "Opportunity.Centro_de_actividad__c",
+          "Opportunity.Codigo_Oferta__c",
+          "Opportunity.Comentario_aprobacion_auditoria__c",
+          "Opportunity.Descripcion_motivo_p_rdida_de_oportunida__c",
+          "Opportunity.Detalle_origen__c",
+          "Opportunity.Discovery_Completed__c",
+          "Opportunity.Division__c",
+          "Opportunity.Documentacion__c",
+          "Opportunity.Estado_Lead__c",
+          "Opportunity.Estado_proceso_aprobacion__c",
+          "Opportunity.Fecha_aprobacion_auditoria__c",
+          "Opportunity.Fecha_de_registro__c",
+          "Opportunity.Fecha_notificacion_auditoria__c",
+          "Opportunity.Id_CRM_Dynamics__c",
+          "Opportunity.Lead_valido__c",
+          "Opportunity.Loss_Reason__c",
+          "Opportunity.Notificacion_auditoria__c",
+          "Opportunity.Origen__c",
+          "Opportunity.Responsable_oportunidad__c",
+          "Opportunity.ROI_Analysis_Completed__c",
+          "Opportunity.Servicios_a_adidos_en_la_oportunidad__c",
+          "Opportunity.Estado_operacion_lead__c",
+          "Opportunity.Socio_oportunidad__c",
+          "Opportunity.URL_gestion_de_oferta__c",
+          "Opportunity.Usuarios_notificados__c",
+          "OPPORTUNITY.LAST_STAGE_CHANGE",
+          "OPPORTUNITY.PUSH_COUNT",
+        ]
+      }
+      ownerAdjustableCategoryApiNames = [
+        "bestcaseforecast",
+        "commitforecast",
+      ]
+    },
+    {
+      active = false
+      displayedCategoryApiNames = [
+        "closedonly",
+        "commitforecast",
+        "bestcaseforecast",
+        "openpipeline",
+      ]
+      forecastedCategoryApiNames = [
+        "commitonly",
+        "closedonly",
+        "openpipeline",
+        "bestcaseforecast",
+        "pipelineonly",
+        "commitforecast",
+        "bestcaseonly",
+      ]
+      forecastingDateType = "OpportunityCloseDate"
+      hasProductFamily = true
+      isAmount = false
+      isAvailable = true
+      isQuantity = true
+      managerAdjustableCategoryApiNames = [
+        "bestcaseforecast",
+        "commitforecast",
+      ]
+      masterLabel = "Familias de servicios"
+      name = "OpportunityLineItemQuantity"
+      opportunityListFieldsLabelMappings = [
+        {
+          field = "OPPORTUNITY.NAME"
+          label = "Nombre de la oportunidad"
+        },
+        {
+          field = "ACCOUNT.NAME"
+          label = "Nombre de cuenta"
+        },
+        {
+          field = "OPPORTUNITY.CLOSE_DATE"
+          label = "Fecha de cierre"
+        },
+        {
+          field = "OPPORTUNITY.STAGE_NAME"
+          label = "Etapa"
+        },
+        {
+          field = "OPPORTUNITY.PROBABILITY"
+          label = "Probabilidad (%)"
+        },
+        {
+          field = "FORECAST_CATEGORY"
+          label = "Categoría de previsión"
+        },
+        {
+          field = "FULL_NAME"
+          label = "Nombre completo del propietario"
+        },
+        {
+          field = "CONTRACT.CONTRACT_NUMBER"
+          label = "Número de contrato"
+        },
+        {
+          field = "OPPORTUNITY.AMOUNT"
+          label = "Importe"
+        },
+        {
+          field = "CORE.USERS.ALIAS"
+          label = "Alias del propietario de la oportunidad"
+        },
+        {
+          field = "CORE.USERS.FIRST_NAME"
+          label = "Nombre del propietario"
+        },
+        {
+          field = "CORE.USERS.LAST_NAME"
+          label = "Apellidos del propietario"
+        },
+        {
+          field = "DESCRIPTION"
+          label = "Descripción"
+        },
+        {
+          field = "OPPORTUNITY.LEAD_SOURCE"
+          label = "Origen del candidato"
+        },
+        {
+          field = "OPPORTUNITY.NEXT_STEP"
+          label = "Siguiente paso"
+        },
+        {
+          field = "OPPORTUNITY.TYPE"
+          label = "Tipo"
+        },
+        {
+          field = "UPDATEDBY_USER.ALIAS"
+          label = "Última modificación por alias"
+        },
+        {
+          field = "CREATEDBY_USER.ALIAS"
+          label = "Creado por alias"
+        },
+        {
+          field = "SYNCEDQUOTE.NAME"
+          label = "Presupuesto sincronizado"
+        },
+        {
+          field = "OPPORTUNITY.CLOSED"
+          label = "Cerrado"
+        },
+        {
+          field = "OPPORTUNITY.WON"
+          label = "Ganadas"
+        },
+        {
+          field = "ACCOUNT.SITE"
+          label = "Sitio de la cuenta"
+        },
+        {
+          field = "OPPORTUNITY.FISCAL_YEAR"
+          label = "Año fiscal"
+        },
+        {
+          field = "OPPORTUNITY.FISCAL_QUARTER"
+          label = "Trimestre fiscal"
+        },
+        {
+          field = "OPPORTUNITY.FISCAL_PERIOD"
+          label = "Periodo fiscal"
+        },
+        {
+          field = "OPPORTUNITY.RECORDTYPE"
+          label = "Tipo de registro de la oportunidad"
+        },
+        {
+          field = "OPPORTUNITY.LAST_ACTIVITY"
+          label = "Última actividad"
+        },
+        {
+          field = "OPPORTUNITY.CREATED_DATE"
+          label = "Fecha de creación"
+        },
+        {
+          field = "OPPORTUNITY.LAST_UPDATE"
+          label = "Fecha de la última modificación"
+        },
+        {
+          field = "Opportunity.Socio_Propietario__c"
+          label = "_"
+        },
+        {
+          field = "Opportunity.Budget_Confirmed__c"
+          label = "Budget Confirmed"
+        },
+        {
+          field = "Opportunity.Centro_de_actividad__c"
+          label = "Centro de actividad"
+        },
+        {
+          field = "Opportunity.Codigo_Oferta__c"
+          label = "Código Oferta"
+        },
+        {
+          field = "Opportunity.Comentario_aprobacion_auditoria__c"
+          label = "Comentario aprobación auditoría"
+        },
+        {
+          field = "Opportunity.Descripcion_motivo_p_rdida_de_oportunida__c"
+          label = "Descripción motivo pérdida de oportunida"
+        },
+        {
+          field = "Opportunity.Detalle_origen__c"
+          label = "Detalle origen"
+        },
+        {
+          field = "Opportunity.Discovery_Completed__c"
+          label = "Discovery Completed"
+        },
+        {
+          field = "Opportunity.Division__c"
+          label = "División"
+        },
+        {
+          field = "Opportunity.Documentacion__c"
+          label = "Documentación Oferta"
+        },
+        {
+          field = "Opportunity.Estado_Lead__c"
+          label = "Estado \"Lead\""
+        },
+        {
+          field = "Opportunity.Estado_proceso_aprobacion__c"
+          label = "Estado proceso aprobación"
+        },
+        {
+          field = "Opportunity.Fecha_aprobacion_auditoria__c"
+          label = "Fecha aprobación auditoría"
+        },
+        {
+          field = "Opportunity.Fecha_de_registro__c"
+          label = "Fecha de registro"
+        },
+        {
+          field = "Opportunity.Fecha_notificacion_auditoria__c"
+          label = "Fecha notificación auditoría"
+        },
+        {
+          field = "Opportunity.Id_CRM_Dynamics__c"
+          label = "Id CRM Dynamics"
+        },
+        {
+          field = "Opportunity.Lead_valido__c"
+          label = "Lead válido"
+        },
+        {
+          field = "Opportunity.Loss_Reason__c"
+          label = "Motivo pérdida"
+        },
+        {
+          field = "Opportunity.Notificacion_auditoria__c"
+          label = "Notificación auditoría"
+        },
+        {
+          field = "Opportunity.Origen__c"
+          label = "Origen"
+        },
+        {
+          field = "Opportunity.Responsable_oportunidad__c"
+          label = "Responsable de la oportunidad"
+        },
+        {
+          field = "Opportunity.ROI_Analysis_Completed__c"
+          label = "ROI Analysis Completed"
+        },
+        {
+          field = "Opportunity.Servicios_a_adidos_en_la_oportunidad__c"
+          label = "Servicios añadidos en la oportunidad"
+        },
+        {
+          field = "Opportunity.Estado_operacion_lead__c"
+          label = "Sistema devolución \"Lead\""
+        },
+        {
+          field = "Opportunity.Socio_oportunidad__c"
+          label = "Socio responsable de la oportunidad"
+        },
+        {
+          field = "Opportunity.URL_gestion_de_oferta__c"
+          label = "URL gestión de oferta"
+        },
+        {
+          field = "Opportunity.Usuarios_notificados__c"
+          label = "Usuarios notificados"
+        },
+        {
+          field = "OPPORTUNITY.LAST_STAGE_CHANGE"
+          label = "Fecha de la última modificación de Etapa"
+        },
+        {
+          field = "OPPORTUNITY.PUSH_COUNT"
+          label = "Recuento de distribución"
+        },
+      ]
+      opportunityListFieldsSelectedSettings = {
+        field = [
+          "OPPORTUNITY.NAME",
+          "ACCOUNT.NAME",
+          "OPPORTUNITY.CLOSE_DATE",
+          "OPPORTUNITY.STAGE_NAME",
+          "OPPORTUNITY.PROBABILITY",
+          "FORECAST_CATEGORY",
+          "FULL_NAME",
+        ]
+      }
+      opportunityListFieldsUnselectedSettings = {
+        field = [
+          "CONTRACT.CONTRACT_NUMBER",
+          "OPPORTUNITY.AMOUNT",
+          "CORE.USERS.ALIAS",
+          "CORE.USERS.FIRST_NAME",
+          "CORE.USERS.LAST_NAME",
+          "DESCRIPTION",
+          "OPPORTUNITY.LEAD_SOURCE",
+          "OPPORTUNITY.NEXT_STEP",
+          "OPPORTUNITY.TYPE",
+          "UPDATEDBY_USER.ALIAS",
+          "CREATEDBY_USER.ALIAS",
+          "SYNCEDQUOTE.NAME",
+          "OPPORTUNITY.CLOSED",
+          "OPPORTUNITY.WON",
+          "ACCOUNT.SITE",
+          "OPPORTUNITY.FISCAL_YEAR",
+          "OPPORTUNITY.FISCAL_QUARTER",
+          "OPPORTUNITY.FISCAL_PERIOD",
+          "OPPORTUNITY.RECORDTYPE",
+          "OPPORTUNITY.LAST_ACTIVITY",
+          "OPPORTUNITY.CREATED_DATE",
+          "OPPORTUNITY.LAST_UPDATE",
+          "Opportunity.Socio_Propietario__c",
+          "Opportunity.Budget_Confirmed__c",
+          "Opportunity.Centro_de_actividad__c",
+          "Opportunity.Codigo_Oferta__c",
+          "Opportunity.Comentario_aprobacion_auditoria__c",
+          "Opportunity.Descripcion_motivo_p_rdida_de_oportunida__c",
+          "Opportunity.Detalle_origen__c",
+          "Opportunity.Discovery_Completed__c",
+          "Opportunity.Division__c",
+          "Opportunity.Documentacion__c",
+          "Opportunity.Estado_Lead__c",
+          "Opportunity.Estado_proceso_aprobacion__c",
+          "Opportunity.Fecha_aprobacion_auditoria__c",
+          "Opportunity.Fecha_de_registro__c",
+          "Opportunity.Fecha_notificacion_auditoria__c",
+          "Opportunity.Id_CRM_Dynamics__c",
+          "Opportunity.Lead_valido__c",
+          "Opportunity.Loss_Reason__c",
+          "Opportunity.Notificacion_auditoria__c",
+          "Opportunity.Origen__c",
+          "Opportunity.Responsable_oportunidad__c",
+          "Opportunity.ROI_Analysis_Completed__c",
+          "Opportunity.Servicios_a_adidos_en_la_oportunidad__c",
+          "Opportunity.Estado_operacion_lead__c",
+          "Opportunity.Socio_oportunidad__c",
+          "Opportunity.URL_gestion_de_oferta__c",
+          "Opportunity.Usuarios_notificados__c",
+          "OPPORTUNITY.LAST_STAGE_CHANGE",
+          "OPPORTUNITY.PUSH_COUNT",
+        ]
+      }
+      ownerAdjustableCategoryApiNames = [
+        "bestcaseforecast",
+        "commitforecast",
+      ]
+    },
+    {
+      active = false
+      displayedCategoryApiNames = [
+        "closedonly",
+        "commitforecast",
+        "bestcaseforecast",
+        "openpipeline",
+      ]
+      forecastedCategoryApiNames = [
+        "commitonly",
+        "closedonly",
+        "openpipeline",
+        "bestcaseforecast",
+        "pipelineonly",
+        "commitforecast",
+        "bestcaseonly",
+      ]
+      forecastingDateType = "ProductDate"
+      hasProductFamily = false
+      isAmount = true
+      isAvailable = true
+      isQuantity = false
+      managerAdjustableCategoryApiNames = [
+        "bestcaseforecast",
+        "commitforecast",
+      ]
+      masterLabel = "Opportunity Revenue Product Date"
+      name = "OpportunityRevenueProductDate"
+      opportunityListFieldsLabelMappings = [
+        {
+          field = "OPPORTUNITY.NAME"
+          label = "Nombre de la oportunidad"
+        },
+        {
+          field = "ACCOUNT.NAME"
+          label = "Nombre de cuenta"
+        },
+        {
+          field = "SPLITAMOUNT"
+          label = "Importe de previsión"
+        },
+        {
+          field = "OPPORTUNITY.CLOSE_DATE"
+          label = "Fecha de cierre"
+        },
+        {
+          field = "OPPORTUNITY.STAGE_NAME"
+          label = "Etapa"
+        },
+        {
+          field = "OPPORTUNITY.PROBABILITY"
+          label = "Probabilidad (%)"
+        },
+        {
+          field = "FORECAST_CATEGORY"
+          label = "Categoría de previsión"
+        },
+        {
+          field = "FULL_NAME"
+          label = "Nombre completo del propietario"
+        },
+        {
+          field = "CONTRACT.CONTRACT_NUMBER"
+          label = "Número de contrato"
+        },
+        {
+          field = "OPPORTUNITY.AMOUNT"
+          label = "Importe"
+        },
+        {
+          field = "CORE.USERS.ALIAS"
+          label = "Alias del propietario de la oportunidad"
+        },
+        {
+          field = "CORE.USERS.FIRST_NAME"
+          label = "Nombre del propietario"
+        },
+        {
+          field = "CORE.USERS.LAST_NAME"
+          label = "Apellidos del propietario"
+        },
+        {
+          field = "DESCRIPTION"
+          label = "Descripción"
+        },
+        {
+          field = "OPPORTUNITY.LEAD_SOURCE"
+          label = "Origen del candidato"
+        },
+        {
+          field = "OPPORTUNITY.NEXT_STEP"
+          label = "Siguiente paso"
+        },
+        {
+          field = "OPPORTUNITY.TYPE"
+          label = "Tipo"
+        },
+        {
+          field = "UPDATEDBY_USER.ALIAS"
+          label = "Última modificación por alias"
+        },
+        {
+          field = "CREATEDBY_USER.ALIAS"
+          label = "Creado por alias"
+        },
+        {
+          field = "SYNCEDQUOTE.NAME"
+          label = "Presupuesto sincronizado"
+        },
+        {
+          field = "OPPORTUNITY.CLOSED"
+          label = "Cerrado"
+        },
+        {
+          field = "OPPORTUNITY.WON"
+          label = "Ganadas"
+        },
+        {
+          field = "ACCOUNT.SITE"
+          label = "Sitio de la cuenta"
+        },
+        {
+          field = "OPPORTUNITY.FISCAL_YEAR"
+          label = "Año fiscal"
+        },
+        {
+          field = "OPPORTUNITY.FISCAL_QUARTER"
+          label = "Trimestre fiscal"
+        },
+        {
+          field = "OPPORTUNITY.FISCAL_PERIOD"
+          label = "Periodo fiscal"
+        },
+        {
+          field = "OPPORTUNITY.RECORDTYPE"
+          label = "Tipo de registro de la oportunidad"
+        },
+        {
+          field = "OPPORTUNITY.LAST_ACTIVITY"
+          label = "Última actividad"
+        },
+        {
+          field = "OPPORTUNITY.CREATED_DATE"
+          label = "Fecha de creación"
+        },
+        {
+          field = "OPPORTUNITY.LAST_UPDATE"
+          label = "Fecha de la última modificación"
+        },
+        {
+          field = "Opportunity.Socio_Propietario__c"
+          label = "_"
+        },
+        {
+          field = "Opportunity.Budget_Confirmed__c"
+          label = "Budget Confirmed"
+        },
+        {
+          field = "Opportunity.Centro_de_actividad__c"
+          label = "Centro de actividad"
+        },
+        {
+          field = "Opportunity.Codigo_Oferta__c"
+          label = "Código Oferta"
+        },
+        {
+          field = "Opportunity.Comentario_aprobacion_auditoria__c"
+          label = "Comentario aprobación auditoría"
+        },
+        {
+          field = "Opportunity.Descripcion_motivo_p_rdida_de_oportunida__c"
+          label = "Descripción motivo pérdida de oportunida"
+        },
+        {
+          field = "Opportunity.Detalle_origen__c"
+          label = "Detalle origen"
+        },
+        {
+          field = "Opportunity.Discovery_Completed__c"
+          label = "Discovery Completed"
+        },
+        {
+          field = "Opportunity.Division__c"
+          label = "División"
+        },
+        {
+          field = "Opportunity.Documentacion__c"
+          label = "Documentación Oferta"
+        },
+        {
+          field = "Opportunity.Estado_Lead__c"
+          label = "Estado \"Lead\""
+        },
+        {
+          field = "Opportunity.Estado_proceso_aprobacion__c"
+          label = "Estado proceso aprobación"
+        },
+        {
+          field = "Opportunity.Fecha_aprobacion_auditoria__c"
+          label = "Fecha aprobación auditoría"
+        },
+        {
+          field = "Opportunity.Fecha_de_registro__c"
+          label = "Fecha de registro"
+        },
+        {
+          field = "Opportunity.Fecha_notificacion_auditoria__c"
+          label = "Fecha notificación auditoría"
+        },
+        {
+          field = "Opportunity.Id_CRM_Dynamics__c"
+          label = "Id CRM Dynamics"
+        },
+        {
+          field = "Opportunity.Lead_valido__c"
+          label = "Lead válido"
+        },
+        {
+          field = "Opportunity.Loss_Reason__c"
+          label = "Motivo pérdida"
+        },
+        {
+          field = "Opportunity.Notificacion_auditoria__c"
+          label = "Notificación auditoría"
+        },
+        {
+          field = "Opportunity.Origen__c"
+          label = "Origen"
+        },
+        {
+          field = "Opportunity.Responsable_oportunidad__c"
+          label = "Responsable de la oportunidad"
+        },
+        {
+          field = "Opportunity.ROI_Analysis_Completed__c"
+          label = "ROI Analysis Completed"
+        },
+        {
+          field = "Opportunity.Servicios_a_adidos_en_la_oportunidad__c"
+          label = "Servicios añadidos en la oportunidad"
+        },
+        {
+          field = "Opportunity.Estado_operacion_lead__c"
+          label = "Sistema devolución \"Lead\""
+        },
+        {
+          field = "Opportunity.Socio_oportunidad__c"
+          label = "Socio responsable de la oportunidad"
+        },
+        {
+          field = "Opportunity.URL_gestion_de_oferta__c"
+          label = "URL gestión de oferta"
+        },
+        {
+          field = "Opportunity.Usuarios_notificados__c"
+          label = "Usuarios notificados"
+        },
+        {
+          field = "OPPORTUNITY.LAST_STAGE_CHANGE"
+          label = "Fecha de la última modificación de Etapa"
+        },
+        {
+          field = "OPPORTUNITY.PUSH_COUNT"
+          label = "Recuento de distribución"
+        },
+      ]
+      opportunityListFieldsSelectedSettings = {
+        field = [
+          "OPPORTUNITY.NAME",
+          "ACCOUNT.NAME",
+          "SPLITAMOUNT",
+          "OPPORTUNITY.CLOSE_DATE",
+          "OPPORTUNITY.STAGE_NAME",
+          "OPPORTUNITY.PROBABILITY",
+          "FORECAST_CATEGORY",
+          "FULL_NAME",
+        ]
+      }
+      opportunityListFieldsUnselectedSettings = {
+        field = [
+          "CONTRACT.CONTRACT_NUMBER",
+          "OPPORTUNITY.AMOUNT",
+          "CORE.USERS.ALIAS",
+          "CORE.USERS.FIRST_NAME",
+          "CORE.USERS.LAST_NAME",
+          "DESCRIPTION",
+          "OPPORTUNITY.LEAD_SOURCE",
+          "OPPORTUNITY.NEXT_STEP",
+          "OPPORTUNITY.TYPE",
+          "UPDATEDBY_USER.ALIAS",
+          "CREATEDBY_USER.ALIAS",
+          "SYNCEDQUOTE.NAME",
+          "OPPORTUNITY.CLOSED",
+          "OPPORTUNITY.WON",
+          "ACCOUNT.SITE",
+          "OPPORTUNITY.FISCAL_YEAR",
+          "OPPORTUNITY.FISCAL_QUARTER",
+          "OPPORTUNITY.FISCAL_PERIOD",
+          "OPPORTUNITY.RECORDTYPE",
+          "OPPORTUNITY.LAST_ACTIVITY",
+          "OPPORTUNITY.CREATED_DATE",
+          "OPPORTUNITY.LAST_UPDATE",
+          "Opportunity.Socio_Propietario__c",
+          "Opportunity.Budget_Confirmed__c",
+          "Opportunity.Centro_de_actividad__c",
+          "Opportunity.Codigo_Oferta__c",
+          "Opportunity.Comentario_aprobacion_auditoria__c",
+          "Opportunity.Descripcion_motivo_p_rdida_de_oportunida__c",
+          "Opportunity.Detalle_origen__c",
+          "Opportunity.Discovery_Completed__c",
+          "Opportunity.Division__c",
+          "Opportunity.Documentacion__c",
+          "Opportunity.Estado_Lead__c",
+          "Opportunity.Estado_proceso_aprobacion__c",
+          "Opportunity.Fecha_aprobacion_auditoria__c",
+          "Opportunity.Fecha_de_registro__c",
+          "Opportunity.Fecha_notificacion_auditoria__c",
+          "Opportunity.Id_CRM_Dynamics__c",
+          "Opportunity.Lead_valido__c",
+          "Opportunity.Loss_Reason__c",
+          "Opportunity.Notificacion_auditoria__c",
+          "Opportunity.Origen__c",
+          "Opportunity.Responsable_oportunidad__c",
+          "Opportunity.ROI_Analysis_Completed__c",
+          "Opportunity.Servicios_a_adidos_en_la_oportunidad__c",
+          "Opportunity.Estado_operacion_lead__c",
+          "Opportunity.Socio_oportunidad__c",
+          "Opportunity.URL_gestion_de_oferta__c",
+          "Opportunity.Usuarios_notificados__c",
+          "OPPORTUNITY.LAST_STAGE_CHANGE",
+          "OPPORTUNITY.PUSH_COUNT",
+        ]
+      }
+      ownerAdjustableCategoryApiNames = [
+        "bestcaseforecast",
+        "commitforecast",
+      ]
+    },
+    {
+      active = false
+      displayedCategoryApiNames = [
+        "closedonly",
+        "commitforecast",
+        "bestcaseforecast",
+        "openpipeline",
+      ]
+      forecastedCategoryApiNames = [
+        "commitonly",
+        "closedonly",
+        "openpipeline",
+        "bestcaseforecast",
+        "pipelineonly",
+        "commitforecast",
+        "bestcaseonly",
+      ]
+      forecastingDateType = "ProductDate"
+      hasProductFamily = false
+      isAmount = false
+      isAvailable = true
+      isQuantity = true
+      managerAdjustableCategoryApiNames = [
+        "bestcaseforecast",
+        "commitforecast",
+      ]
+      masterLabel = "Opportunity Quantity Product Date"
+      name = "OpportunityQuantityProductDate"
+      opportunityListFieldsLabelMappings = [
+        {
+          field = "OPPORTUNITY.NAME"
+          label = "Nombre de la oportunidad"
+        },
+        {
+          field = "ACCOUNT.NAME"
+          label = "Nombre de cuenta"
+        },
+        {
+          field = "OPPORTUNITY.CLOSE_DATE"
+          label = "Fecha de cierre"
+        },
+        {
+          field = "OPPORTUNITY.STAGE_NAME"
+          label = "Etapa"
+        },
+        {
+          field = "OPPORTUNITY.PROBABILITY"
+          label = "Probabilidad (%)"
+        },
+        {
+          field = "FORECAST_CATEGORY"
+          label = "Categoría de previsión"
+        },
+        {
+          field = "FULL_NAME"
+          label = "Nombre completo del propietario"
+        },
+        {
+          field = "CONTRACT.CONTRACT_NUMBER"
+          label = "Número de contrato"
+        },
+        {
+          field = "OPPORTUNITY.AMOUNT"
+          label = "Importe"
+        },
+        {
+          field = "CORE.USERS.ALIAS"
+          label = "Alias del propietario de la oportunidad"
+        },
+        {
+          field = "CORE.USERS.FIRST_NAME"
+          label = "Nombre del propietario"
+        },
+        {
+          field = "CORE.USERS.LAST_NAME"
+          label = "Apellidos del propietario"
+        },
+        {
+          field = "DESCRIPTION"
+          label = "Descripción"
+        },
+        {
+          field = "OPPORTUNITY.LEAD_SOURCE"
+          label = "Origen del candidato"
+        },
+        {
+          field = "OPPORTUNITY.NEXT_STEP"
+          label = "Siguiente paso"
+        },
+        {
+          field = "OPPORTUNITY.TYPE"
+          label = "Tipo"
+        },
+        {
+          field = "UPDATEDBY_USER.ALIAS"
+          label = "Última modificación por alias"
+        },
+        {
+          field = "CREATEDBY_USER.ALIAS"
+          label = "Creado por alias"
+        },
+        {
+          field = "SYNCEDQUOTE.NAME"
+          label = "Presupuesto sincronizado"
+        },
+        {
+          field = "OPPORTUNITY.CLOSED"
+          label = "Cerrado"
+        },
+        {
+          field = "OPPORTUNITY.WON"
+          label = "Ganadas"
+        },
+        {
+          field = "ACCOUNT.SITE"
+          label = "Sitio de la cuenta"
+        },
+        {
+          field = "OPPORTUNITY.FISCAL_YEAR"
+          label = "Año fiscal"
+        },
+        {
+          field = "OPPORTUNITY.FISCAL_QUARTER"
+          label = "Trimestre fiscal"
+        },
+        {
+          field = "OPPORTUNITY.FISCAL_PERIOD"
+          label = "Periodo fiscal"
+        },
+        {
+          field = "OPPORTUNITY.RECORDTYPE"
+          label = "Tipo de registro de la oportunidad"
+        },
+        {
+          field = "OPPORTUNITY.LAST_ACTIVITY"
+          label = "Última actividad"
+        },
+        {
+          field = "OPPORTUNITY.CREATED_DATE"
+          label = "Fecha de creación"
+        },
+        {
+          field = "OPPORTUNITY.LAST_UPDATE"
+          label = "Fecha de la última modificación"
+        },
+        {
+          field = "Opportunity.Socio_Propietario__c"
+          label = "_"
+        },
+        {
+          field = "Opportunity.Budget_Confirmed__c"
+          label = "Budget Confirmed"
+        },
+        {
+          field = "Opportunity.Centro_de_actividad__c"
+          label = "Centro de actividad"
+        },
+        {
+          field = "Opportunity.Codigo_Oferta__c"
+          label = "Código Oferta"
+        },
+        {
+          field = "Opportunity.Comentario_aprobacion_auditoria__c"
+          label = "Comentario aprobación auditoría"
+        },
+        {
+          field = "Opportunity.Descripcion_motivo_p_rdida_de_oportunida__c"
+          label = "Descripción motivo pérdida de oportunida"
+        },
+        {
+          field = "Opportunity.Detalle_origen__c"
+          label = "Detalle origen"
+        },
+        {
+          field = "Opportunity.Discovery_Completed__c"
+          label = "Discovery Completed"
+        },
+        {
+          field = "Opportunity.Division__c"
+          label = "División"
+        },
+        {
+          field = "Opportunity.Documentacion__c"
+          label = "Documentación Oferta"
+        },
+        {
+          field = "Opportunity.Estado_Lead__c"
+          label = "Estado \"Lead\""
+        },
+        {
+          field = "Opportunity.Estado_proceso_aprobacion__c"
+          label = "Estado proceso aprobación"
+        },
+        {
+          field = "Opportunity.Fecha_aprobacion_auditoria__c"
+          label = "Fecha aprobación auditoría"
+        },
+        {
+          field = "Opportunity.Fecha_de_registro__c"
+          label = "Fecha de registro"
+        },
+        {
+          field = "Opportunity.Fecha_notificacion_auditoria__c"
+          label = "Fecha notificación auditoría"
+        },
+        {
+          field = "Opportunity.Id_CRM_Dynamics__c"
+          label = "Id CRM Dynamics"
+        },
+        {
+          field = "Opportunity.Lead_valido__c"
+          label = "Lead válido"
+        },
+        {
+          field = "Opportunity.Loss_Reason__c"
+          label = "Motivo pérdida"
+        },
+        {
+          field = "Opportunity.Notificacion_auditoria__c"
+          label = "Notificación auditoría"
+        },
+        {
+          field = "Opportunity.Origen__c"
+          label = "Origen"
+        },
+        {
+          field = "Opportunity.Responsable_oportunidad__c"
+          label = "Responsable de la oportunidad"
+        },
+        {
+          field = "Opportunity.ROI_Analysis_Completed__c"
+          label = "ROI Analysis Completed"
+        },
+        {
+          field = "Opportunity.Servicios_a_adidos_en_la_oportunidad__c"
+          label = "Servicios añadidos en la oportunidad"
+        },
+        {
+          field = "Opportunity.Estado_operacion_lead__c"
+          label = "Sistema devolución \"Lead\""
+        },
+        {
+          field = "Opportunity.Socio_oportunidad__c"
+          label = "Socio responsable de la oportunidad"
+        },
+        {
+          field = "Opportunity.URL_gestion_de_oferta__c"
+          label = "URL gestión de oferta"
+        },
+        {
+          field = "Opportunity.Usuarios_notificados__c"
+          label = "Usuarios notificados"
+        },
+        {
+          field = "OPPORTUNITY.LAST_STAGE_CHANGE"
+          label = "Fecha de la última modificación de Etapa"
+        },
+        {
+          field = "OPPORTUNITY.PUSH_COUNT"
+          label = "Recuento de distribución"
+        },
+      ]
+      opportunityListFieldsSelectedSettings = {
+        field = [
+          "OPPORTUNITY.NAME",
+          "ACCOUNT.NAME",
+          "OPPORTUNITY.CLOSE_DATE",
+          "OPPORTUNITY.STAGE_NAME",
+          "OPPORTUNITY.PROBABILITY",
+          "FORECAST_CATEGORY",
+          "FULL_NAME",
+        ]
+      }
+      opportunityListFieldsUnselectedSettings = {
+        field = [
+          "CONTRACT.CONTRACT_NUMBER",
+          "OPPORTUNITY.AMOUNT",
+          "CORE.USERS.ALIAS",
+          "CORE.USERS.FIRST_NAME",
+          "CORE.USERS.LAST_NAME",
+          "DESCRIPTION",
+          "OPPORTUNITY.LEAD_SOURCE",
+          "OPPORTUNITY.NEXT_STEP",
+          "OPPORTUNITY.TYPE",
+          "UPDATEDBY_USER.ALIAS",
+          "CREATEDBY_USER.ALIAS",
+          "SYNCEDQUOTE.NAME",
+          "OPPORTUNITY.CLOSED",
+          "OPPORTUNITY.WON",
+          "ACCOUNT.SITE",
+          "OPPORTUNITY.FISCAL_YEAR",
+          "OPPORTUNITY.FISCAL_QUARTER",
+          "OPPORTUNITY.FISCAL_PERIOD",
+          "OPPORTUNITY.RECORDTYPE",
+          "OPPORTUNITY.LAST_ACTIVITY",
+          "OPPORTUNITY.CREATED_DATE",
+          "OPPORTUNITY.LAST_UPDATE",
+          "Opportunity.Socio_Propietario__c",
+          "Opportunity.Budget_Confirmed__c",
+          "Opportunity.Centro_de_actividad__c",
+          "Opportunity.Codigo_Oferta__c",
+          "Opportunity.Comentario_aprobacion_auditoria__c",
+          "Opportunity.Descripcion_motivo_p_rdida_de_oportunida__c",
+          "Opportunity.Detalle_origen__c",
+          "Opportunity.Discovery_Completed__c",
+          "Opportunity.Division__c",
+          "Opportunity.Documentacion__c",
+          "Opportunity.Estado_Lead__c",
+          "Opportunity.Estado_proceso_aprobacion__c",
+          "Opportunity.Fecha_aprobacion_auditoria__c",
+          "Opportunity.Fecha_de_registro__c",
+          "Opportunity.Fecha_notificacion_auditoria__c",
+          "Opportunity.Id_CRM_Dynamics__c",
+          "Opportunity.Lead_valido__c",
+          "Opportunity.Loss_Reason__c",
+          "Opportunity.Notificacion_auditoria__c",
+          "Opportunity.Origen__c",
+          "Opportunity.Responsable_oportunidad__c",
+          "Opportunity.ROI_Analysis_Completed__c",
+          "Opportunity.Servicios_a_adidos_en_la_oportunidad__c",
+          "Opportunity.Estado_operacion_lead__c",
+          "Opportunity.Socio_oportunidad__c",
+          "Opportunity.URL_gestion_de_oferta__c",
+          "Opportunity.Usuarios_notificados__c",
+          "OPPORTUNITY.LAST_STAGE_CHANGE",
+          "OPPORTUNITY.PUSH_COUNT",
+        ]
+      }
+      ownerAdjustableCategoryApiNames = [
+        "bestcaseforecast",
+        "commitforecast",
+      ]
+    },
+    {
+      active = false
+      displayedCategoryApiNames = [
+        "closedonly",
+        "commitforecast",
+        "bestcaseforecast",
+        "openpipeline",
+      ]
+      forecastedCategoryApiNames = [
+        "commitonly",
+        "closedonly",
+        "openpipeline",
+        "bestcaseforecast",
+        "pipelineonly",
+        "commitforecast",
+        "bestcaseonly",
+      ]
+      forecastingDateType = "ProductDate"
+      hasProductFamily = true
+      isAmount = true
+      isAvailable = true
+      isQuantity = false
+      managerAdjustableCategoryApiNames = [
+        "bestcaseforecast",
+        "commitforecast",
+      ]
+      masterLabel = "Line Item Revenue Product Date"
+      name = "LineItemRevenueProductDate"
+      opportunityListFieldsLabelMappings = [
+        {
+          field = "OPPORTUNITY.NAME"
+          label = "Nombre de la oportunidad"
+        },
+        {
+          field = "ACCOUNT.NAME"
+          label = "Nombre de cuenta"
+        },
+        {
+          field = "SPLITAMOUNT"
+          label = "Importe de previsión"
+        },
+        {
+          field = "OPPORTUNITY.CLOSE_DATE"
+          label = "Fecha de cierre"
+        },
+        {
+          field = "OPPORTUNITY.STAGE_NAME"
+          label = "Etapa"
+        },
+        {
+          field = "OPPORTUNITY.PROBABILITY"
+          label = "Probabilidad (%)"
+        },
+        {
+          field = "FORECAST_CATEGORY"
+          label = "Categoría de previsión"
+        },
+        {
+          field = "FULL_NAME"
+          label = "Nombre completo del propietario"
+        },
+        {
+          field = "CONTRACT.CONTRACT_NUMBER"
+          label = "Número de contrato"
+        },
+        {
+          field = "OPPORTUNITY.AMOUNT"
+          label = "Importe"
+        },
+        {
+          field = "CORE.USERS.ALIAS"
+          label = "Alias del propietario de la oportunidad"
+        },
+        {
+          field = "CORE.USERS.FIRST_NAME"
+          label = "Nombre del propietario"
+        },
+        {
+          field = "CORE.USERS.LAST_NAME"
+          label = "Apellidos del propietario"
+        },
+        {
+          field = "DESCRIPTION"
+          label = "Descripción"
+        },
+        {
+          field = "OPPORTUNITY.LEAD_SOURCE"
+          label = "Origen del candidato"
+        },
+        {
+          field = "OPPORTUNITY.NEXT_STEP"
+          label = "Siguiente paso"
+        },
+        {
+          field = "OPPORTUNITY.TYPE"
+          label = "Tipo"
+        },
+        {
+          field = "UPDATEDBY_USER.ALIAS"
+          label = "Última modificación por alias"
+        },
+        {
+          field = "CREATEDBY_USER.ALIAS"
+          label = "Creado por alias"
+        },
+        {
+          field = "SYNCEDQUOTE.NAME"
+          label = "Presupuesto sincronizado"
+        },
+        {
+          field = "OPPORTUNITY.CLOSED"
+          label = "Cerrado"
+        },
+        {
+          field = "OPPORTUNITY.WON"
+          label = "Ganadas"
+        },
+        {
+          field = "ACCOUNT.SITE"
+          label = "Sitio de la cuenta"
+        },
+        {
+          field = "OPPORTUNITY.FISCAL_YEAR"
+          label = "Año fiscal"
+        },
+        {
+          field = "OPPORTUNITY.FISCAL_QUARTER"
+          label = "Trimestre fiscal"
+        },
+        {
+          field = "OPPORTUNITY.FISCAL_PERIOD"
+          label = "Periodo fiscal"
+        },
+        {
+          field = "OPPORTUNITY.RECORDTYPE"
+          label = "Tipo de registro de la oportunidad"
+        },
+        {
+          field = "OPPORTUNITY.LAST_ACTIVITY"
+          label = "Última actividad"
+        },
+        {
+          field = "OPPORTUNITY.CREATED_DATE"
+          label = "Fecha de creación"
+        },
+        {
+          field = "OPPORTUNITY.LAST_UPDATE"
+          label = "Fecha de la última modificación"
+        },
+        {
+          field = "Opportunity.Socio_Propietario__c"
+          label = "_"
+        },
+        {
+          field = "Opportunity.Budget_Confirmed__c"
+          label = "Budget Confirmed"
+        },
+        {
+          field = "Opportunity.Centro_de_actividad__c"
+          label = "Centro de actividad"
+        },
+        {
+          field = "Opportunity.Codigo_Oferta__c"
+          label = "Código Oferta"
+        },
+        {
+          field = "Opportunity.Comentario_aprobacion_auditoria__c"
+          label = "Comentario aprobación auditoría"
+        },
+        {
+          field = "Opportunity.Descripcion_motivo_p_rdida_de_oportunida__c"
+          label = "Descripción motivo pérdida de oportunida"
+        },
+        {
+          field = "Opportunity.Detalle_origen__c"
+          label = "Detalle origen"
+        },
+        {
+          field = "Opportunity.Discovery_Completed__c"
+          label = "Discovery Completed"
+        },
+        {
+          field = "Opportunity.Division__c"
+          label = "División"
+        },
+        {
+          field = "Opportunity.Documentacion__c"
+          label = "Documentación Oferta"
+        },
+        {
+          field = "Opportunity.Estado_Lead__c"
+          label = "Estado \"Lead\""
+        },
+        {
+          field = "Opportunity.Estado_proceso_aprobacion__c"
+          label = "Estado proceso aprobación"
+        },
+        {
+          field = "Opportunity.Fecha_aprobacion_auditoria__c"
+          label = "Fecha aprobación auditoría"
+        },
+        {
+          field = "Opportunity.Fecha_de_registro__c"
+          label = "Fecha de registro"
+        },
+        {
+          field = "Opportunity.Fecha_notificacion_auditoria__c"
+          label = "Fecha notificación auditoría"
+        },
+        {
+          field = "Opportunity.Id_CRM_Dynamics__c"
+          label = "Id CRM Dynamics"
+        },
+        {
+          field = "Opportunity.Lead_valido__c"
+          label = "Lead válido"
+        },
+        {
+          field = "Opportunity.Loss_Reason__c"
+          label = "Motivo pérdida"
+        },
+        {
+          field = "Opportunity.Notificacion_auditoria__c"
+          label = "Notificación auditoría"
+        },
+        {
+          field = "Opportunity.Origen__c"
+          label = "Origen"
+        },
+        {
+          field = "Opportunity.Responsable_oportunidad__c"
+          label = "Responsable de la oportunidad"
+        },
+        {
+          field = "Opportunity.ROI_Analysis_Completed__c"
+          label = "ROI Analysis Completed"
+        },
+        {
+          field = "Opportunity.Servicios_a_adidos_en_la_oportunidad__c"
+          label = "Servicios añadidos en la oportunidad"
+        },
+        {
+          field = "Opportunity.Estado_operacion_lead__c"
+          label = "Sistema devolución \"Lead\""
+        },
+        {
+          field = "Opportunity.Socio_oportunidad__c"
+          label = "Socio responsable de la oportunidad"
+        },
+        {
+          field = "Opportunity.URL_gestion_de_oferta__c"
+          label = "URL gestión de oferta"
+        },
+        {
+          field = "Opportunity.Usuarios_notificados__c"
+          label = "Usuarios notificados"
+        },
+        {
+          field = "OPPORTUNITY.LAST_STAGE_CHANGE"
+          label = "Fecha de la última modificación de Etapa"
+        },
+        {
+          field = "OPPORTUNITY.PUSH_COUNT"
+          label = "Recuento de distribución"
+        },
+      ]
+      opportunityListFieldsSelectedSettings = {
+        field = [
+          "OPPORTUNITY.NAME",
+          "ACCOUNT.NAME",
+          "SPLITAMOUNT",
+          "OPPORTUNITY.CLOSE_DATE",
+          "OPPORTUNITY.STAGE_NAME",
+          "OPPORTUNITY.PROBABILITY",
+          "FORECAST_CATEGORY",
+          "FULL_NAME",
+        ]
+      }
+      opportunityListFieldsUnselectedSettings = {
+        field = [
+          "CONTRACT.CONTRACT_NUMBER",
+          "OPPORTUNITY.AMOUNT",
+          "CORE.USERS.ALIAS",
+          "CORE.USERS.FIRST_NAME",
+          "CORE.USERS.LAST_NAME",
+          "DESCRIPTION",
+          "OPPORTUNITY.LEAD_SOURCE",
+          "OPPORTUNITY.NEXT_STEP",
+          "OPPORTUNITY.TYPE",
+          "UPDATEDBY_USER.ALIAS",
+          "CREATEDBY_USER.ALIAS",
+          "SYNCEDQUOTE.NAME",
+          "OPPORTUNITY.CLOSED",
+          "OPPORTUNITY.WON",
+          "ACCOUNT.SITE",
+          "OPPORTUNITY.FISCAL_YEAR",
+          "OPPORTUNITY.FISCAL_QUARTER",
+          "OPPORTUNITY.FISCAL_PERIOD",
+          "OPPORTUNITY.RECORDTYPE",
+          "OPPORTUNITY.LAST_ACTIVITY",
+          "OPPORTUNITY.CREATED_DATE",
+          "OPPORTUNITY.LAST_UPDATE",
+          "Opportunity.Socio_Propietario__c",
+          "Opportunity.Budget_Confirmed__c",
+          "Opportunity.Centro_de_actividad__c",
+          "Opportunity.Codigo_Oferta__c",
+          "Opportunity.Comentario_aprobacion_auditoria__c",
+          "Opportunity.Descripcion_motivo_p_rdida_de_oportunida__c",
+          "Opportunity.Detalle_origen__c",
+          "Opportunity.Discovery_Completed__c",
+          "Opportunity.Division__c",
+          "Opportunity.Documentacion__c",
+          "Opportunity.Estado_Lead__c",
+          "Opportunity.Estado_proceso_aprobacion__c",
+          "Opportunity.Fecha_aprobacion_auditoria__c",
+          "Opportunity.Fecha_de_registro__c",
+          "Opportunity.Fecha_notificacion_auditoria__c",
+          "Opportunity.Id_CRM_Dynamics__c",
+          "Opportunity.Lead_valido__c",
+          "Opportunity.Loss_Reason__c",
+          "Opportunity.Notificacion_auditoria__c",
+          "Opportunity.Origen__c",
+          "Opportunity.Responsable_oportunidad__c",
+          "Opportunity.ROI_Analysis_Completed__c",
+          "Opportunity.Servicios_a_adidos_en_la_oportunidad__c",
+          "Opportunity.Estado_operacion_lead__c",
+          "Opportunity.Socio_oportunidad__c",
+          "Opportunity.URL_gestion_de_oferta__c",
+          "Opportunity.Usuarios_notificados__c",
+          "OPPORTUNITY.LAST_STAGE_CHANGE",
+          "OPPORTUNITY.PUSH_COUNT",
+        ]
+      }
+      ownerAdjustableCategoryApiNames = [
+        "bestcaseforecast",
+        "commitforecast",
+      ]
+    },
+    {
+      active = false
+      displayedCategoryApiNames = [
+        "closedonly",
+        "commitforecast",
+        "bestcaseforecast",
+        "openpipeline",
+      ]
+      forecastedCategoryApiNames = [
+        "commitonly",
+        "closedonly",
+        "openpipeline",
+        "bestcaseforecast",
+        "pipelineonly",
+        "commitforecast",
+        "bestcaseonly",
+      ]
+      forecastingDateType = "ProductDate"
+      hasProductFamily = true
+      isAmount = false
+      isAvailable = true
+      isQuantity = true
+      managerAdjustableCategoryApiNames = [
+        "bestcaseforecast",
+        "commitforecast",
+      ]
+      masterLabel = "Line Item Quantity Product Date"
+      name = "LineItemQuantityProductDate"
+      opportunityListFieldsLabelMappings = [
+        {
+          field = "OPPORTUNITY.NAME"
+          label = "Nombre de la oportunidad"
+        },
+        {
+          field = "ACCOUNT.NAME"
+          label = "Nombre de cuenta"
+        },
+        {
+          field = "OPPORTUNITY.CLOSE_DATE"
+          label = "Fecha de cierre"
+        },
+        {
+          field = "OPPORTUNITY.STAGE_NAME"
+          label = "Etapa"
+        },
+        {
+          field = "OPPORTUNITY.PROBABILITY"
+          label = "Probabilidad (%)"
+        },
+        {
+          field = "FORECAST_CATEGORY"
+          label = "Categoría de previsión"
+        },
+        {
+          field = "FULL_NAME"
+          label = "Nombre completo del propietario"
+        },
+        {
+          field = "CONTRACT.CONTRACT_NUMBER"
+          label = "Número de contrato"
+        },
+        {
+          field = "OPPORTUNITY.AMOUNT"
+          label = "Importe"
+        },
+        {
+          field = "CORE.USERS.ALIAS"
+          label = "Alias del propietario de la oportunidad"
+        },
+        {
+          field = "CORE.USERS.FIRST_NAME"
+          label = "Nombre del propietario"
+        },
+        {
+          field = "CORE.USERS.LAST_NAME"
+          label = "Apellidos del propietario"
+        },
+        {
+          field = "DESCRIPTION"
+          label = "Descripción"
+        },
+        {
+          field = "OPPORTUNITY.LEAD_SOURCE"
+          label = "Origen del candidato"
+        },
+        {
+          field = "OPPORTUNITY.NEXT_STEP"
+          label = "Siguiente paso"
+        },
+        {
+          field = "OPPORTUNITY.TYPE"
+          label = "Tipo"
+        },
+        {
+          field = "UPDATEDBY_USER.ALIAS"
+          label = "Última modificación por alias"
+        },
+        {
+          field = "CREATEDBY_USER.ALIAS"
+          label = "Creado por alias"
+        },
+        {
+          field = "SYNCEDQUOTE.NAME"
+          label = "Presupuesto sincronizado"
+        },
+        {
+          field = "OPPORTUNITY.CLOSED"
+          label = "Cerrado"
+        },
+        {
+          field = "OPPORTUNITY.WON"
+          label = "Ganadas"
+        },
+        {
+          field = "ACCOUNT.SITE"
+          label = "Sitio de la cuenta"
+        },
+        {
+          field = "OPPORTUNITY.FISCAL_YEAR"
+          label = "Año fiscal"
+        },
+        {
+          field = "OPPORTUNITY.FISCAL_QUARTER"
+          label = "Trimestre fiscal"
+        },
+        {
+          field = "OPPORTUNITY.FISCAL_PERIOD"
+          label = "Periodo fiscal"
+        },
+        {
+          field = "OPPORTUNITY.RECORDTYPE"
+          label = "Tipo de registro de la oportunidad"
+        },
+        {
+          field = "OPPORTUNITY.LAST_ACTIVITY"
+          label = "Última actividad"
+        },
+        {
+          field = "OPPORTUNITY.CREATED_DATE"
+          label = "Fecha de creación"
+        },
+        {
+          field = "OPPORTUNITY.LAST_UPDATE"
+          label = "Fecha de la última modificación"
+        },
+        {
+          field = "Opportunity.Socio_Propietario__c"
+          label = "_"
+        },
+        {
+          field = "Opportunity.Budget_Confirmed__c"
+          label = "Budget Confirmed"
+        },
+        {
+          field = "Opportunity.Centro_de_actividad__c"
+          label = "Centro de actividad"
+        },
+        {
+          field = "Opportunity.Codigo_Oferta__c"
+          label = "Código Oferta"
+        },
+        {
+          field = "Opportunity.Comentario_aprobacion_auditoria__c"
+          label = "Comentario aprobación auditoría"
+        },
+        {
+          field = "Opportunity.Descripcion_motivo_p_rdida_de_oportunida__c"
+          label = "Descripción motivo pérdida de oportunida"
+        },
+        {
+          field = "Opportunity.Detalle_origen__c"
+          label = "Detalle origen"
+        },
+        {
+          field = "Opportunity.Discovery_Completed__c"
+          label = "Discovery Completed"
+        },
+        {
+          field = "Opportunity.Division__c"
+          label = "División"
+        },
+        {
+          field = "Opportunity.Documentacion__c"
+          label = "Documentación Oferta"
+        },
+        {
+          field = "Opportunity.Estado_Lead__c"
+          label = "Estado \"Lead\""
+        },
+        {
+          field = "Opportunity.Estado_proceso_aprobacion__c"
+          label = "Estado proceso aprobación"
+        },
+        {
+          field = "Opportunity.Fecha_aprobacion_auditoria__c"
+          label = "Fecha aprobación auditoría"
+        },
+        {
+          field = "Opportunity.Fecha_de_registro__c"
+          label = "Fecha de registro"
+        },
+        {
+          field = "Opportunity.Fecha_notificacion_auditoria__c"
+          label = "Fecha notificación auditoría"
+        },
+        {
+          field = "Opportunity.Id_CRM_Dynamics__c"
+          label = "Id CRM Dynamics"
+        },
+        {
+          field = "Opportunity.Lead_valido__c"
+          label = "Lead válido"
+        },
+        {
+          field = "Opportunity.Loss_Reason__c"
+          label = "Motivo pérdida"
+        },
+        {
+          field = "Opportunity.Notificacion_auditoria__c"
+          label = "Notificación auditoría"
+        },
+        {
+          field = "Opportunity.Origen__c"
+          label = "Origen"
+        },
+        {
+          field = "Opportunity.Responsable_oportunidad__c"
+          label = "Responsable de la oportunidad"
+        },
+        {
+          field = "Opportunity.ROI_Analysis_Completed__c"
+          label = "ROI Analysis Completed"
+        },
+        {
+          field = "Opportunity.Servicios_a_adidos_en_la_oportunidad__c"
+          label = "Servicios añadidos en la oportunidad"
+        },
+        {
+          field = "Opportunity.Estado_operacion_lead__c"
+          label = "Sistema devolución \"Lead\""
+        },
+        {
+          field = "Opportunity.Socio_oportunidad__c"
+          label = "Socio responsable de la oportunidad"
+        },
+        {
+          field = "Opportunity.URL_gestion_de_oferta__c"
+          label = "URL gestión de oferta"
+        },
+        {
+          field = "Opportunity.Usuarios_notificados__c"
+          label = "Usuarios notificados"
+        },
+        {
+          field = "OPPORTUNITY.LAST_STAGE_CHANGE"
+          label = "Fecha de la última modificación de Etapa"
+        },
+        {
+          field = "OPPORTUNITY.PUSH_COUNT"
+          label = "Recuento de distribución"
+        },
+      ]
+      opportunityListFieldsSelectedSettings = {
+        field = [
+          "OPPORTUNITY.NAME",
+          "ACCOUNT.NAME",
+          "OPPORTUNITY.CLOSE_DATE",
+          "OPPORTUNITY.STAGE_NAME",
+          "OPPORTUNITY.PROBABILITY",
+          "FORECAST_CATEGORY",
+          "FULL_NAME",
+        ]
+      }
+      opportunityListFieldsUnselectedSettings = {
+        field = [
+          "CONTRACT.CONTRACT_NUMBER",
+          "OPPORTUNITY.AMOUNT",
+          "CORE.USERS.ALIAS",
+          "CORE.USERS.FIRST_NAME",
+          "CORE.USERS.LAST_NAME",
+          "DESCRIPTION",
+          "OPPORTUNITY.LEAD_SOURCE",
+          "OPPORTUNITY.NEXT_STEP",
+          "OPPORTUNITY.TYPE",
+          "UPDATEDBY_USER.ALIAS",
+          "CREATEDBY_USER.ALIAS",
+          "SYNCEDQUOTE.NAME",
+          "OPPORTUNITY.CLOSED",
+          "OPPORTUNITY.WON",
+          "ACCOUNT.SITE",
+          "OPPORTUNITY.FISCAL_YEAR",
+          "OPPORTUNITY.FISCAL_QUARTER",
+          "OPPORTUNITY.FISCAL_PERIOD",
+          "OPPORTUNITY.RECORDTYPE",
+          "OPPORTUNITY.LAST_ACTIVITY",
+          "OPPORTUNITY.CREATED_DATE",
+          "OPPORTUNITY.LAST_UPDATE",
+          "Opportunity.Socio_Propietario__c",
+          "Opportunity.Budget_Confirmed__c",
+          "Opportunity.Centro_de_actividad__c",
+          "Opportunity.Codigo_Oferta__c",
+          "Opportunity.Comentario_aprobacion_auditoria__c",
+          "Opportunity.Descripcion_motivo_p_rdida_de_oportunida__c",
+          "Opportunity.Detalle_origen__c",
+          "Opportunity.Discovery_Completed__c",
+          "Opportunity.Division__c",
+          "Opportunity.Documentacion__c",
+          "Opportunity.Estado_Lead__c",
+          "Opportunity.Estado_proceso_aprobacion__c",
+          "Opportunity.Fecha_aprobacion_auditoria__c",
+          "Opportunity.Fecha_de_registro__c",
+          "Opportunity.Fecha_notificacion_auditoria__c",
+          "Opportunity.Id_CRM_Dynamics__c",
+          "Opportunity.Lead_valido__c",
+          "Opportunity.Loss_Reason__c",
+          "Opportunity.Notificacion_auditoria__c",
+          "Opportunity.Origen__c",
+          "Opportunity.Responsable_oportunidad__c",
+          "Opportunity.ROI_Analysis_Completed__c",
+          "Opportunity.Servicios_a_adidos_en_la_oportunidad__c",
+          "Opportunity.Estado_operacion_lead__c",
+          "Opportunity.Socio_oportunidad__c",
+          "Opportunity.URL_gestion_de_oferta__c",
+          "Opportunity.Usuarios_notificados__c",
+          "OPPORTUNITY.LAST_STAGE_CHANGE",
+          "OPPORTUNITY.PUSH_COUNT",
+        ]
+      }
+      ownerAdjustableCategoryApiNames = [
+        "bestcaseforecast",
+        "commitforecast",
+      ]
+    },
+    {
+      active = false
+      displayedCategoryApiNames = [
+        "closedonly",
+        "commitforecast",
+        "bestcaseforecast",
+        "openpipeline",
+      ]
+      forecastedCategoryApiNames = [
+        "commitonly",
+        "closedonly",
+        "openpipeline",
+        "bestcaseforecast",
+        "pipelineonly",
+        "commitforecast",
+        "bestcaseonly",
+      ]
+      forecastingDateType = "ScheduleDate"
+      hasProductFamily = false
+      isAmount = true
+      isAvailable = false
+      isQuantity = false
+      managerAdjustableCategoryApiNames = [
+        "bestcaseforecast",
+        "commitforecast",
+      ]
+      masterLabel = "Opportunity Revenue Schedule Date"
+      name = "OpportunityRevenueScheduleDate"
+      opportunityListFieldsLabelMappings = [
+        {
+          field = "OPPORTUNITY.NAME"
+          label = "Nombre de la oportunidad"
+        },
+        {
+          field = "ACCOUNT.NAME"
+          label = "Nombre de cuenta"
+        },
+        {
+          field = "SPLITAMOUNT"
+          label = "Importe de previsión"
+        },
+        {
+          field = "OPPORTUNITY.CLOSE_DATE"
+          label = "Fecha de cierre"
+        },
+        {
+          field = "OPPORTUNITY.STAGE_NAME"
+          label = "Etapa"
+        },
+        {
+          field = "OPPORTUNITY.PROBABILITY"
+          label = "Probabilidad (%)"
+        },
+        {
+          field = "FORECAST_CATEGORY"
+          label = "Categoría de previsión"
+        },
+        {
+          field = "FULL_NAME"
+          label = "Nombre completo del propietario"
+        },
+        {
+          field = "CONTRACT.CONTRACT_NUMBER"
+          label = "Número de contrato"
+        },
+        {
+          field = "OPPORTUNITY.AMOUNT"
+          label = "Importe"
+        },
+        {
+          field = "CORE.USERS.ALIAS"
+          label = "Alias del propietario de la oportunidad"
+        },
+        {
+          field = "CORE.USERS.FIRST_NAME"
+          label = "Nombre del propietario"
+        },
+        {
+          field = "CORE.USERS.LAST_NAME"
+          label = "Apellidos del propietario"
+        },
+        {
+          field = "DESCRIPTION"
+          label = "Descripción"
+        },
+        {
+          field = "OPPORTUNITY.LEAD_SOURCE"
+          label = "Origen del candidato"
+        },
+        {
+          field = "OPPORTUNITY.NEXT_STEP"
+          label = "Siguiente paso"
+        },
+        {
+          field = "OPPORTUNITY.TYPE"
+          label = "Tipo"
+        },
+        {
+          field = "UPDATEDBY_USER.ALIAS"
+          label = "Última modificación por alias"
+        },
+        {
+          field = "CREATEDBY_USER.ALIAS"
+          label = "Creado por alias"
+        },
+        {
+          field = "SYNCEDQUOTE.NAME"
+          label = "Presupuesto sincronizado"
+        },
+        {
+          field = "OPPORTUNITY.CLOSED"
+          label = "Cerrado"
+        },
+        {
+          field = "OPPORTUNITY.WON"
+          label = "Ganadas"
+        },
+        {
+          field = "ACCOUNT.SITE"
+          label = "Sitio de la cuenta"
+        },
+        {
+          field = "OPPORTUNITY.FISCAL_YEAR"
+          label = "Año fiscal"
+        },
+        {
+          field = "OPPORTUNITY.FISCAL_QUARTER"
+          label = "Trimestre fiscal"
+        },
+        {
+          field = "OPPORTUNITY.FISCAL_PERIOD"
+          label = "Periodo fiscal"
+        },
+        {
+          field = "OPPORTUNITY.RECORDTYPE"
+          label = "Tipo de registro de la oportunidad"
+        },
+        {
+          field = "OPPORTUNITY.LAST_ACTIVITY"
+          label = "Última actividad"
+        },
+        {
+          field = "OPPORTUNITY.CREATED_DATE"
+          label = "Fecha de creación"
+        },
+        {
+          field = "OPPORTUNITY.LAST_UPDATE"
+          label = "Fecha de la última modificación"
+        },
+        {
+          field = "Opportunity.Socio_Propietario__c"
+          label = "_"
+        },
+        {
+          field = "Opportunity.Budget_Confirmed__c"
+          label = "Budget Confirmed"
+        },
+        {
+          field = "Opportunity.Centro_de_actividad__c"
+          label = "Centro de actividad"
+        },
+        {
+          field = "Opportunity.Codigo_Oferta__c"
+          label = "Código Oferta"
+        },
+        {
+          field = "Opportunity.Comentario_aprobacion_auditoria__c"
+          label = "Comentario aprobación auditoría"
+        },
+        {
+          field = "Opportunity.Descripcion_motivo_p_rdida_de_oportunida__c"
+          label = "Descripción motivo pérdida de oportunida"
+        },
+        {
+          field = "Opportunity.Detalle_origen__c"
+          label = "Detalle origen"
+        },
+        {
+          field = "Opportunity.Discovery_Completed__c"
+          label = "Discovery Completed"
+        },
+        {
+          field = "Opportunity.Division__c"
+          label = "División"
+        },
+        {
+          field = "Opportunity.Documentacion__c"
+          label = "Documentación Oferta"
+        },
+        {
+          field = "Opportunity.Estado_Lead__c"
+          label = "Estado \"Lead\""
+        },
+        {
+          field = "Opportunity.Estado_proceso_aprobacion__c"
+          label = "Estado proceso aprobación"
+        },
+        {
+          field = "Opportunity.Fecha_aprobacion_auditoria__c"
+          label = "Fecha aprobación auditoría"
+        },
+        {
+          field = "Opportunity.Fecha_de_registro__c"
+          label = "Fecha de registro"
+        },
+        {
+          field = "Opportunity.Fecha_notificacion_auditoria__c"
+          label = "Fecha notificación auditoría"
+        },
+        {
+          field = "Opportunity.Id_CRM_Dynamics__c"
+          label = "Id CRM Dynamics"
+        },
+        {
+          field = "Opportunity.Lead_valido__c"
+          label = "Lead válido"
+        },
+        {
+          field = "Opportunity.Loss_Reason__c"
+          label = "Motivo pérdida"
+        },
+        {
+          field = "Opportunity.Notificacion_auditoria__c"
+          label = "Notificación auditoría"
+        },
+        {
+          field = "Opportunity.Origen__c"
+          label = "Origen"
+        },
+        {
+          field = "Opportunity.Responsable_oportunidad__c"
+          label = "Responsable de la oportunidad"
+        },
+        {
+          field = "Opportunity.ROI_Analysis_Completed__c"
+          label = "ROI Analysis Completed"
+        },
+        {
+          field = "Opportunity.Servicios_a_adidos_en_la_oportunidad__c"
+          label = "Servicios añadidos en la oportunidad"
+        },
+        {
+          field = "Opportunity.Estado_operacion_lead__c"
+          label = "Sistema devolución \"Lead\""
+        },
+        {
+          field = "Opportunity.Socio_oportunidad__c"
+          label = "Socio responsable de la oportunidad"
+        },
+        {
+          field = "Opportunity.URL_gestion_de_oferta__c"
+          label = "URL gestión de oferta"
+        },
+        {
+          field = "Opportunity.Usuarios_notificados__c"
+          label = "Usuarios notificados"
+        },
+        {
+          field = "OPPORTUNITY.LAST_STAGE_CHANGE"
+          label = "Fecha de la última modificación de Etapa"
+        },
+        {
+          field = "OPPORTUNITY.PUSH_COUNT"
+          label = "Recuento de distribución"
+        },
+      ]
+      opportunityListFieldsSelectedSettings = {
+        field = [
+          "OPPORTUNITY.NAME",
+          "ACCOUNT.NAME",
+          "SPLITAMOUNT",
+          "OPPORTUNITY.CLOSE_DATE",
+          "OPPORTUNITY.STAGE_NAME",
+          "OPPORTUNITY.PROBABILITY",
+          "FORECAST_CATEGORY",
+          "FULL_NAME",
+        ]
+      }
+      opportunityListFieldsUnselectedSettings = {
+        field = [
+          "CONTRACT.CONTRACT_NUMBER",
+          "OPPORTUNITY.AMOUNT",
+          "CORE.USERS.ALIAS",
+          "CORE.USERS.FIRST_NAME",
+          "CORE.USERS.LAST_NAME",
+          "DESCRIPTION",
+          "OPPORTUNITY.LEAD_SOURCE",
+          "OPPORTUNITY.NEXT_STEP",
+          "OPPORTUNITY.TYPE",
+          "UPDATEDBY_USER.ALIAS",
+          "CREATEDBY_USER.ALIAS",
+          "SYNCEDQUOTE.NAME",
+          "OPPORTUNITY.CLOSED",
+          "OPPORTUNITY.WON",
+          "ACCOUNT.SITE",
+          "OPPORTUNITY.FISCAL_YEAR",
+          "OPPORTUNITY.FISCAL_QUARTER",
+          "OPPORTUNITY.FISCAL_PERIOD",
+          "OPPORTUNITY.RECORDTYPE",
+          "OPPORTUNITY.LAST_ACTIVITY",
+          "OPPORTUNITY.CREATED_DATE",
+          "OPPORTUNITY.LAST_UPDATE",
+          "Opportunity.Socio_Propietario__c",
+          "Opportunity.Budget_Confirmed__c",
+          "Opportunity.Centro_de_actividad__c",
+          "Opportunity.Codigo_Oferta__c",
+          "Opportunity.Comentario_aprobacion_auditoria__c",
+          "Opportunity.Descripcion_motivo_p_rdida_de_oportunida__c",
+          "Opportunity.Detalle_origen__c",
+          "Opportunity.Discovery_Completed__c",
+          "Opportunity.Division__c",
+          "Opportunity.Documentacion__c",
+          "Opportunity.Estado_Lead__c",
+          "Opportunity.Estado_proceso_aprobacion__c",
+          "Opportunity.Fecha_aprobacion_auditoria__c",
+          "Opportunity.Fecha_de_registro__c",
+          "Opportunity.Fecha_notificacion_auditoria__c",
+          "Opportunity.Id_CRM_Dynamics__c",
+          "Opportunity.Lead_valido__c",
+          "Opportunity.Loss_Reason__c",
+          "Opportunity.Notificacion_auditoria__c",
+          "Opportunity.Origen__c",
+          "Opportunity.Responsable_oportunidad__c",
+          "Opportunity.ROI_Analysis_Completed__c",
+          "Opportunity.Servicios_a_adidos_en_la_oportunidad__c",
+          "Opportunity.Estado_operacion_lead__c",
+          "Opportunity.Socio_oportunidad__c",
+          "Opportunity.URL_gestion_de_oferta__c",
+          "Opportunity.Usuarios_notificados__c",
+          "OPPORTUNITY.LAST_STAGE_CHANGE",
+          "OPPORTUNITY.PUSH_COUNT",
+        ]
+      }
+      ownerAdjustableCategoryApiNames = [
+        "bestcaseforecast",
+        "commitforecast",
+      ]
+    },
+    {
+      active = false
+      displayedCategoryApiNames = [
+        "closedonly",
+        "commitforecast",
+        "bestcaseforecast",
+        "openpipeline",
+      ]
+      forecastedCategoryApiNames = [
+        "commitonly",
+        "closedonly",
+        "openpipeline",
+        "bestcaseforecast",
+        "pipelineonly",
+        "commitforecast",
+        "bestcaseonly",
+      ]
+      forecastingDateType = "ScheduleDate"
+      hasProductFamily = false
+      isAmount = false
+      isAvailable = false
+      isQuantity = true
+      managerAdjustableCategoryApiNames = [
+        "bestcaseforecast",
+        "commitforecast",
+      ]
+      masterLabel = "Opportunity Quantity Schedule Date"
+      name = "OpportunityQuantityScheduleDate"
+      opportunityListFieldsLabelMappings = [
+        {
+          field = "OPPORTUNITY.NAME"
+          label = "Nombre de la oportunidad"
+        },
+        {
+          field = "ACCOUNT.NAME"
+          label = "Nombre de cuenta"
+        },
+        {
+          field = "OPPORTUNITY.CLOSE_DATE"
+          label = "Fecha de cierre"
+        },
+        {
+          field = "OPPORTUNITY.STAGE_NAME"
+          label = "Etapa"
+        },
+        {
+          field = "OPPORTUNITY.PROBABILITY"
+          label = "Probabilidad (%)"
+        },
+        {
+          field = "FORECAST_CATEGORY"
+          label = "Categoría de previsión"
+        },
+        {
+          field = "FULL_NAME"
+          label = "Nombre completo del propietario"
+        },
+        {
+          field = "CONTRACT.CONTRACT_NUMBER"
+          label = "Número de contrato"
+        },
+        {
+          field = "OPPORTUNITY.AMOUNT"
+          label = "Importe"
+        },
+        {
+          field = "CORE.USERS.ALIAS"
+          label = "Alias del propietario de la oportunidad"
+        },
+        {
+          field = "CORE.USERS.FIRST_NAME"
+          label = "Nombre del propietario"
+        },
+        {
+          field = "CORE.USERS.LAST_NAME"
+          label = "Apellidos del propietario"
+        },
+        {
+          field = "DESCRIPTION"
+          label = "Descripción"
+        },
+        {
+          field = "OPPORTUNITY.LEAD_SOURCE"
+          label = "Origen del candidato"
+        },
+        {
+          field = "OPPORTUNITY.NEXT_STEP"
+          label = "Siguiente paso"
+        },
+        {
+          field = "OPPORTUNITY.TYPE"
+          label = "Tipo"
+        },
+        {
+          field = "UPDATEDBY_USER.ALIAS"
+          label = "Última modificación por alias"
+        },
+        {
+          field = "CREATEDBY_USER.ALIAS"
+          label = "Creado por alias"
+        },
+        {
+          field = "SYNCEDQUOTE.NAME"
+          label = "Presupuesto sincronizado"
+        },
+        {
+          field = "OPPORTUNITY.CLOSED"
+          label = "Cerrado"
+        },
+        {
+          field = "OPPORTUNITY.WON"
+          label = "Ganadas"
+        },
+        {
+          field = "ACCOUNT.SITE"
+          label = "Sitio de la cuenta"
+        },
+        {
+          field = "OPPORTUNITY.FISCAL_YEAR"
+          label = "Año fiscal"
+        },
+        {
+          field = "OPPORTUNITY.FISCAL_QUARTER"
+          label = "Trimestre fiscal"
+        },
+        {
+          field = "OPPORTUNITY.FISCAL_PERIOD"
+          label = "Periodo fiscal"
+        },
+        {
+          field = "OPPORTUNITY.RECORDTYPE"
+          label = "Tipo de registro de la oportunidad"
+        },
+        {
+          field = "OPPORTUNITY.LAST_ACTIVITY"
+          label = "Última actividad"
+        },
+        {
+          field = "OPPORTUNITY.CREATED_DATE"
+          label = "Fecha de creación"
+        },
+        {
+          field = "OPPORTUNITY.LAST_UPDATE"
+          label = "Fecha de la última modificación"
+        },
+        {
+          field = "Opportunity.Socio_Propietario__c"
+          label = "_"
+        },
+        {
+          field = "Opportunity.Budget_Confirmed__c"
+          label = "Budget Confirmed"
+        },
+        {
+          field = "Opportunity.Centro_de_actividad__c"
+          label = "Centro de actividad"
+        },
+        {
+          field = "Opportunity.Codigo_Oferta__c"
+          label = "Código Oferta"
+        },
+        {
+          field = "Opportunity.Comentario_aprobacion_auditoria__c"
+          label = "Comentario aprobación auditoría"
+        },
+        {
+          field = "Opportunity.Descripcion_motivo_p_rdida_de_oportunida__c"
+          label = "Descripción motivo pérdida de oportunida"
+        },
+        {
+          field = "Opportunity.Detalle_origen__c"
+          label = "Detalle origen"
+        },
+        {
+          field = "Opportunity.Discovery_Completed__c"
+          label = "Discovery Completed"
+        },
+        {
+          field = "Opportunity.Division__c"
+          label = "División"
+        },
+        {
+          field = "Opportunity.Documentacion__c"
+          label = "Documentación Oferta"
+        },
+        {
+          field = "Opportunity.Estado_Lead__c"
+          label = "Estado \"Lead\""
+        },
+        {
+          field = "Opportunity.Estado_proceso_aprobacion__c"
+          label = "Estado proceso aprobación"
+        },
+        {
+          field = "Opportunity.Fecha_aprobacion_auditoria__c"
+          label = "Fecha aprobación auditoría"
+        },
+        {
+          field = "Opportunity.Fecha_de_registro__c"
+          label = "Fecha de registro"
+        },
+        {
+          field = "Opportunity.Fecha_notificacion_auditoria__c"
+          label = "Fecha notificación auditoría"
+        },
+        {
+          field = "Opportunity.Id_CRM_Dynamics__c"
+          label = "Id CRM Dynamics"
+        },
+        {
+          field = "Opportunity.Lead_valido__c"
+          label = "Lead válido"
+        },
+        {
+          field = "Opportunity.Loss_Reason__c"
+          label = "Motivo pérdida"
+        },
+        {
+          field = "Opportunity.Notificacion_auditoria__c"
+          label = "Notificación auditoría"
+        },
+        {
+          field = "Opportunity.Origen__c"
+          label = "Origen"
+        },
+        {
+          field = "Opportunity.Responsable_oportunidad__c"
+          label = "Responsable de la oportunidad"
+        },
+        {
+          field = "Opportunity.ROI_Analysis_Completed__c"
+          label = "ROI Analysis Completed"
+        },
+        {
+          field = "Opportunity.Servicios_a_adidos_en_la_oportunidad__c"
+          label = "Servicios añadidos en la oportunidad"
+        },
+        {
+          field = "Opportunity.Estado_operacion_lead__c"
+          label = "Sistema devolución \"Lead\""
+        },
+        {
+          field = "Opportunity.Socio_oportunidad__c"
+          label = "Socio responsable de la oportunidad"
+        },
+        {
+          field = "Opportunity.URL_gestion_de_oferta__c"
+          label = "URL gestión de oferta"
+        },
+        {
+          field = "Opportunity.Usuarios_notificados__c"
+          label = "Usuarios notificados"
+        },
+        {
+          field = "OPPORTUNITY.LAST_STAGE_CHANGE"
+          label = "Fecha de la última modificación de Etapa"
+        },
+        {
+          field = "OPPORTUNITY.PUSH_COUNT"
+          label = "Recuento de distribución"
+        },
+      ]
+      opportunityListFieldsSelectedSettings = {
+        field = [
+          "OPPORTUNITY.NAME",
+          "ACCOUNT.NAME",
+          "OPPORTUNITY.CLOSE_DATE",
+          "OPPORTUNITY.STAGE_NAME",
+          "OPPORTUNITY.PROBABILITY",
+          "FORECAST_CATEGORY",
+          "FULL_NAME",
+        ]
+      }
+      opportunityListFieldsUnselectedSettings = {
+        field = [
+          "CONTRACT.CONTRACT_NUMBER",
+          "OPPORTUNITY.AMOUNT",
+          "CORE.USERS.ALIAS",
+          "CORE.USERS.FIRST_NAME",
+          "CORE.USERS.LAST_NAME",
+          "DESCRIPTION",
+          "OPPORTUNITY.LEAD_SOURCE",
+          "OPPORTUNITY.NEXT_STEP",
+          "OPPORTUNITY.TYPE",
+          "UPDATEDBY_USER.ALIAS",
+          "CREATEDBY_USER.ALIAS",
+          "SYNCEDQUOTE.NAME",
+          "OPPORTUNITY.CLOSED",
+          "OPPORTUNITY.WON",
+          "ACCOUNT.SITE",
+          "OPPORTUNITY.FISCAL_YEAR",
+          "OPPORTUNITY.FISCAL_QUARTER",
+          "OPPORTUNITY.FISCAL_PERIOD",
+          "OPPORTUNITY.RECORDTYPE",
+          "OPPORTUNITY.LAST_ACTIVITY",
+          "OPPORTUNITY.CREATED_DATE",
+          "OPPORTUNITY.LAST_UPDATE",
+          "Opportunity.Socio_Propietario__c",
+          "Opportunity.Budget_Confirmed__c",
+          "Opportunity.Centro_de_actividad__c",
+          "Opportunity.Codigo_Oferta__c",
+          "Opportunity.Comentario_aprobacion_auditoria__c",
+          "Opportunity.Descripcion_motivo_p_rdida_de_oportunida__c",
+          "Opportunity.Detalle_origen__c",
+          "Opportunity.Discovery_Completed__c",
+          "Opportunity.Division__c",
+          "Opportunity.Documentacion__c",
+          "Opportunity.Estado_Lead__c",
+          "Opportunity.Estado_proceso_aprobacion__c",
+          "Opportunity.Fecha_aprobacion_auditoria__c",
+          "Opportunity.Fecha_de_registro__c",
+          "Opportunity.Fecha_notificacion_auditoria__c",
+          "Opportunity.Id_CRM_Dynamics__c",
+          "Opportunity.Lead_valido__c",
+          "Opportunity.Loss_Reason__c",
+          "Opportunity.Notificacion_auditoria__c",
+          "Opportunity.Origen__c",
+          "Opportunity.Responsable_oportunidad__c",
+          "Opportunity.ROI_Analysis_Completed__c",
+          "Opportunity.Servicios_a_adidos_en_la_oportunidad__c",
+          "Opportunity.Estado_operacion_lead__c",
+          "Opportunity.Socio_oportunidad__c",
+          "Opportunity.URL_gestion_de_oferta__c",
+          "Opportunity.Usuarios_notificados__c",
+          "OPPORTUNITY.LAST_STAGE_CHANGE",
+          "OPPORTUNITY.PUSH_COUNT",
+        ]
+      }
+      ownerAdjustableCategoryApiNames = [
+        "bestcaseforecast",
+        "commitforecast",
+      ]
+    },
+    {
+      active = false
+      displayedCategoryApiNames = [
+        "closedonly",
+        "commitforecast",
+        "bestcaseforecast",
+        "openpipeline",
+      ]
+      forecastedCategoryApiNames = [
+        "commitonly",
+        "closedonly",
+        "openpipeline",
+        "bestcaseforecast",
+        "pipelineonly",
+        "commitforecast",
+        "bestcaseonly",
+      ]
+      forecastingDateType = "ScheduleDate"
+      hasProductFamily = true
+      isAmount = true
+      isAvailable = false
+      isQuantity = false
+      managerAdjustableCategoryApiNames = [
+        "bestcaseforecast",
+        "commitforecast",
+      ]
+      masterLabel = "Line Item Revenue Schedule Date"
+      name = "LineItemRevenueScheduleDate"
+      opportunityListFieldsLabelMappings = [
+        {
+          field = "OPPORTUNITY.NAME"
+          label = "Nombre de la oportunidad"
+        },
+        {
+          field = "ACCOUNT.NAME"
+          label = "Nombre de cuenta"
+        },
+        {
+          field = "SPLITAMOUNT"
+          label = "Importe de previsión"
+        },
+        {
+          field = "OPPORTUNITY.CLOSE_DATE"
+          label = "Fecha de cierre"
+        },
+        {
+          field = "OPPORTUNITY.STAGE_NAME"
+          label = "Etapa"
+        },
+        {
+          field = "OPPORTUNITY.PROBABILITY"
+          label = "Probabilidad (%)"
+        },
+        {
+          field = "FORECAST_CATEGORY"
+          label = "Categoría de previsión"
+        },
+        {
+          field = "FULL_NAME"
+          label = "Nombre completo del propietario"
+        },
+        {
+          field = "CONTRACT.CONTRACT_NUMBER"
+          label = "Número de contrato"
+        },
+        {
+          field = "OPPORTUNITY.AMOUNT"
+          label = "Importe"
+        },
+        {
+          field = "CORE.USERS.ALIAS"
+          label = "Alias del propietario de la oportunidad"
+        },
+        {
+          field = "CORE.USERS.FIRST_NAME"
+          label = "Nombre del propietario"
+        },
+        {
+          field = "CORE.USERS.LAST_NAME"
+          label = "Apellidos del propietario"
+        },
+        {
+          field = "DESCRIPTION"
+          label = "Descripción"
+        },
+        {
+          field = "OPPORTUNITY.LEAD_SOURCE"
+          label = "Origen del candidato"
+        },
+        {
+          field = "OPPORTUNITY.NEXT_STEP"
+          label = "Siguiente paso"
+        },
+        {
+          field = "OPPORTUNITY.TYPE"
+          label = "Tipo"
+        },
+        {
+          field = "UPDATEDBY_USER.ALIAS"
+          label = "Última modificación por alias"
+        },
+        {
+          field = "CREATEDBY_USER.ALIAS"
+          label = "Creado por alias"
+        },
+        {
+          field = "SYNCEDQUOTE.NAME"
+          label = "Presupuesto sincronizado"
+        },
+        {
+          field = "OPPORTUNITY.CLOSED"
+          label = "Cerrado"
+        },
+        {
+          field = "OPPORTUNITY.WON"
+          label = "Ganadas"
+        },
+        {
+          field = "ACCOUNT.SITE"
+          label = "Sitio de la cuenta"
+        },
+        {
+          field = "OPPORTUNITY.FISCAL_YEAR"
+          label = "Año fiscal"
+        },
+        {
+          field = "OPPORTUNITY.FISCAL_QUARTER"
+          label = "Trimestre fiscal"
+        },
+        {
+          field = "OPPORTUNITY.FISCAL_PERIOD"
+          label = "Periodo fiscal"
+        },
+        {
+          field = "OPPORTUNITY.RECORDTYPE"
+          label = "Tipo de registro de la oportunidad"
+        },
+        {
+          field = "OPPORTUNITY.LAST_ACTIVITY"
+          label = "Última actividad"
+        },
+        {
+          field = "OPPORTUNITY.CREATED_DATE"
+          label = "Fecha de creación"
+        },
+        {
+          field = "OPPORTUNITY.LAST_UPDATE"
+          label = "Fecha de la última modificación"
+        },
+        {
+          field = "Opportunity.Socio_Propietario__c"
+          label = "_"
+        },
+        {
+          field = "Opportunity.Budget_Confirmed__c"
+          label = "Budget Confirmed"
+        },
+        {
+          field = "Opportunity.Centro_de_actividad__c"
+          label = "Centro de actividad"
+        },
+        {
+          field = "Opportunity.Codigo_Oferta__c"
+          label = "Código Oferta"
+        },
+        {
+          field = "Opportunity.Comentario_aprobacion_auditoria__c"
+          label = "Comentario aprobación auditoría"
+        },
+        {
+          field = "Opportunity.Descripcion_motivo_p_rdida_de_oportunida__c"
+          label = "Descripción motivo pérdida de oportunida"
+        },
+        {
+          field = "Opportunity.Detalle_origen__c"
+          label = "Detalle origen"
+        },
+        {
+          field = "Opportunity.Discovery_Completed__c"
+          label = "Discovery Completed"
+        },
+        {
+          field = "Opportunity.Division__c"
+          label = "División"
+        },
+        {
+          field = "Opportunity.Documentacion__c"
+          label = "Documentación Oferta"
+        },
+        {
+          field = "Opportunity.Estado_Lead__c"
+          label = "Estado \"Lead\""
+        },
+        {
+          field = "Opportunity.Estado_proceso_aprobacion__c"
+          label = "Estado proceso aprobación"
+        },
+        {
+          field = "Opportunity.Fecha_aprobacion_auditoria__c"
+          label = "Fecha aprobación auditoría"
+        },
+        {
+          field = "Opportunity.Fecha_de_registro__c"
+          label = "Fecha de registro"
+        },
+        {
+          field = "Opportunity.Fecha_notificacion_auditoria__c"
+          label = "Fecha notificación auditoría"
+        },
+        {
+          field = "Opportunity.Id_CRM_Dynamics__c"
+          label = "Id CRM Dynamics"
+        },
+        {
+          field = "Opportunity.Lead_valido__c"
+          label = "Lead válido"
+        },
+        {
+          field = "Opportunity.Loss_Reason__c"
+          label = "Motivo pérdida"
+        },
+        {
+          field = "Opportunity.Notificacion_auditoria__c"
+          label = "Notificación auditoría"
+        },
+        {
+          field = "Opportunity.Origen__c"
+          label = "Origen"
+        },
+        {
+          field = "Opportunity.Responsable_oportunidad__c"
+          label = "Responsable de la oportunidad"
+        },
+        {
+          field = "Opportunity.ROI_Analysis_Completed__c"
+          label = "ROI Analysis Completed"
+        },
+        {
+          field = "Opportunity.Servicios_a_adidos_en_la_oportunidad__c"
+          label = "Servicios añadidos en la oportunidad"
+        },
+        {
+          field = "Opportunity.Estado_operacion_lead__c"
+          label = "Sistema devolución \"Lead\""
+        },
+        {
+          field = "Opportunity.Socio_oportunidad__c"
+          label = "Socio responsable de la oportunidad"
+        },
+        {
+          field = "Opportunity.URL_gestion_de_oferta__c"
+          label = "URL gestión de oferta"
+        },
+        {
+          field = "Opportunity.Usuarios_notificados__c"
+          label = "Usuarios notificados"
+        },
+        {
+          field = "OPPORTUNITY.LAST_STAGE_CHANGE"
+          label = "Fecha de la última modificación de Etapa"
+        },
+        {
+          field = "OPPORTUNITY.PUSH_COUNT"
+          label = "Recuento de distribución"
+        },
+      ]
+      opportunityListFieldsSelectedSettings = {
+        field = [
+          "OPPORTUNITY.NAME",
+          "ACCOUNT.NAME",
+          "SPLITAMOUNT",
+          "OPPORTUNITY.CLOSE_DATE",
+          "OPPORTUNITY.STAGE_NAME",
+          "OPPORTUNITY.PROBABILITY",
+          "FORECAST_CATEGORY",
+          "FULL_NAME",
+        ]
+      }
+      opportunityListFieldsUnselectedSettings = {
+        field = [
+          "CONTRACT.CONTRACT_NUMBER",
+          "OPPORTUNITY.AMOUNT",
+          "CORE.USERS.ALIAS",
+          "CORE.USERS.FIRST_NAME",
+          "CORE.USERS.LAST_NAME",
+          "DESCRIPTION",
+          "OPPORTUNITY.LEAD_SOURCE",
+          "OPPORTUNITY.NEXT_STEP",
+          "OPPORTUNITY.TYPE",
+          "UPDATEDBY_USER.ALIAS",
+          "CREATEDBY_USER.ALIAS",
+          "SYNCEDQUOTE.NAME",
+          "OPPORTUNITY.CLOSED",
+          "OPPORTUNITY.WON",
+          "ACCOUNT.SITE",
+          "OPPORTUNITY.FISCAL_YEAR",
+          "OPPORTUNITY.FISCAL_QUARTER",
+          "OPPORTUNITY.FISCAL_PERIOD",
+          "OPPORTUNITY.RECORDTYPE",
+          "OPPORTUNITY.LAST_ACTIVITY",
+          "OPPORTUNITY.CREATED_DATE",
+          "OPPORTUNITY.LAST_UPDATE",
+          "Opportunity.Socio_Propietario__c",
+          "Opportunity.Budget_Confirmed__c",
+          "Opportunity.Centro_de_actividad__c",
+          "Opportunity.Codigo_Oferta__c",
+          "Opportunity.Comentario_aprobacion_auditoria__c",
+          "Opportunity.Descripcion_motivo_p_rdida_de_oportunida__c",
+          "Opportunity.Detalle_origen__c",
+          "Opportunity.Discovery_Completed__c",
+          "Opportunity.Division__c",
+          "Opportunity.Documentacion__c",
+          "Opportunity.Estado_Lead__c",
+          "Opportunity.Estado_proceso_aprobacion__c",
+          "Opportunity.Fecha_aprobacion_auditoria__c",
+          "Opportunity.Fecha_de_registro__c",
+          "Opportunity.Fecha_notificacion_auditoria__c",
+          "Opportunity.Id_CRM_Dynamics__c",
+          "Opportunity.Lead_valido__c",
+          "Opportunity.Loss_Reason__c",
+          "Opportunity.Notificacion_auditoria__c",
+          "Opportunity.Origen__c",
+          "Opportunity.Responsable_oportunidad__c",
+          "Opportunity.ROI_Analysis_Completed__c",
+          "Opportunity.Servicios_a_adidos_en_la_oportunidad__c",
+          "Opportunity.Estado_operacion_lead__c",
+          "Opportunity.Socio_oportunidad__c",
+          "Opportunity.URL_gestion_de_oferta__c",
+          "Opportunity.Usuarios_notificados__c",
+          "OPPORTUNITY.LAST_STAGE_CHANGE",
+          "OPPORTUNITY.PUSH_COUNT",
+        ]
+      }
+      ownerAdjustableCategoryApiNames = [
+        "bestcaseforecast",
+        "commitforecast",
+      ]
+    },
+    {
+      active = false
+      displayedCategoryApiNames = [
+        "closedonly",
+        "commitforecast",
+        "bestcaseforecast",
+        "openpipeline",
+      ]
+      forecastedCategoryApiNames = [
+        "commitonly",
+        "closedonly",
+        "openpipeline",
+        "bestcaseforecast",
+        "pipelineonly",
+        "commitforecast",
+        "bestcaseonly",
+      ]
+      forecastingDateType = "ScheduleDate"
+      hasProductFamily = true
+      isAmount = false
+      isAvailable = false
+      isQuantity = true
+      managerAdjustableCategoryApiNames = [
+        "bestcaseforecast",
+        "commitforecast",
+      ]
+      masterLabel = "Line Item Quantity Schedule Date"
+      name = "LineItemQuantityScheduleDate"
+      opportunityListFieldsLabelMappings = [
+        {
+          field = "OPPORTUNITY.NAME"
+          label = "Nombre de la oportunidad"
+        },
+        {
+          field = "ACCOUNT.NAME"
+          label = "Nombre de cuenta"
+        },
+        {
+          field = "OPPORTUNITY.CLOSE_DATE"
+          label = "Fecha de cierre"
+        },
+        {
+          field = "OPPORTUNITY.STAGE_NAME"
+          label = "Etapa"
+        },
+        {
+          field = "OPPORTUNITY.PROBABILITY"
+          label = "Probabilidad (%)"
+        },
+        {
+          field = "FORECAST_CATEGORY"
+          label = "Categoría de previsión"
+        },
+        {
+          field = "FULL_NAME"
+          label = "Nombre completo del propietario"
+        },
+        {
+          field = "CONTRACT.CONTRACT_NUMBER"
+          label = "Número de contrato"
+        },
+        {
+          field = "OPPORTUNITY.AMOUNT"
+          label = "Importe"
+        },
+        {
+          field = "CORE.USERS.ALIAS"
+          label = "Alias del propietario de la oportunidad"
+        },
+        {
+          field = "CORE.USERS.FIRST_NAME"
+          label = "Nombre del propietario"
+        },
+        {
+          field = "CORE.USERS.LAST_NAME"
+          label = "Apellidos del propietario"
+        },
+        {
+          field = "DESCRIPTION"
+          label = "Descripción"
+        },
+        {
+          field = "OPPORTUNITY.LEAD_SOURCE"
+          label = "Origen del candidato"
+        },
+        {
+          field = "OPPORTUNITY.NEXT_STEP"
+          label = "Siguiente paso"
+        },
+        {
+          field = "OPPORTUNITY.TYPE"
+          label = "Tipo"
+        },
+        {
+          field = "UPDATEDBY_USER.ALIAS"
+          label = "Última modificación por alias"
+        },
+        {
+          field = "CREATEDBY_USER.ALIAS"
+          label = "Creado por alias"
+        },
+        {
+          field = "SYNCEDQUOTE.NAME"
+          label = "Presupuesto sincronizado"
+        },
+        {
+          field = "OPPORTUNITY.CLOSED"
+          label = "Cerrado"
+        },
+        {
+          field = "OPPORTUNITY.WON"
+          label = "Ganadas"
+        },
+        {
+          field = "ACCOUNT.SITE"
+          label = "Sitio de la cuenta"
+        },
+        {
+          field = "OPPORTUNITY.FISCAL_YEAR"
+          label = "Año fiscal"
+        },
+        {
+          field = "OPPORTUNITY.FISCAL_QUARTER"
+          label = "Trimestre fiscal"
+        },
+        {
+          field = "OPPORTUNITY.FISCAL_PERIOD"
+          label = "Periodo fiscal"
+        },
+        {
+          field = "OPPORTUNITY.RECORDTYPE"
+          label = "Tipo de registro de la oportunidad"
+        },
+        {
+          field = "OPPORTUNITY.LAST_ACTIVITY"
+          label = "Última actividad"
+        },
+        {
+          field = "OPPORTUNITY.CREATED_DATE"
+          label = "Fecha de creación"
+        },
+        {
+          field = "OPPORTUNITY.LAST_UPDATE"
+          label = "Fecha de la última modificación"
+        },
+        {
+          field = "Opportunity.Socio_Propietario__c"
+          label = "_"
+        },
+        {
+          field = "Opportunity.Budget_Confirmed__c"
+          label = "Budget Confirmed"
+        },
+        {
+          field = "Opportunity.Centro_de_actividad__c"
+          label = "Centro de actividad"
+        },
+        {
+          field = "Opportunity.Codigo_Oferta__c"
+          label = "Código Oferta"
+        },
+        {
+          field = "Opportunity.Comentario_aprobacion_auditoria__c"
+          label = "Comentario aprobación auditoría"
+        },
+        {
+          field = "Opportunity.Descripcion_motivo_p_rdida_de_oportunida__c"
+          label = "Descripción motivo pérdida de oportunida"
+        },
+        {
+          field = "Opportunity.Detalle_origen__c"
+          label = "Detalle origen"
+        },
+        {
+          field = "Opportunity.Discovery_Completed__c"
+          label = "Discovery Completed"
+        },
+        {
+          field = "Opportunity.Division__c"
+          label = "División"
+        },
+        {
+          field = "Opportunity.Documentacion__c"
+          label = "Documentación Oferta"
+        },
+        {
+          field = "Opportunity.Estado_Lead__c"
+          label = "Estado \"Lead\""
+        },
+        {
+          field = "Opportunity.Estado_proceso_aprobacion__c"
+          label = "Estado proceso aprobación"
+        },
+        {
+          field = "Opportunity.Fecha_aprobacion_auditoria__c"
+          label = "Fecha aprobación auditoría"
+        },
+        {
+          field = "Opportunity.Fecha_de_registro__c"
+          label = "Fecha de registro"
+        },
+        {
+          field = "Opportunity.Fecha_notificacion_auditoria__c"
+          label = "Fecha notificación auditoría"
+        },
+        {
+          field = "Opportunity.Id_CRM_Dynamics__c"
+          label = "Id CRM Dynamics"
+        },
+        {
+          field = "Opportunity.Lead_valido__c"
+          label = "Lead válido"
+        },
+        {
+          field = "Opportunity.Loss_Reason__c"
+          label = "Motivo pérdida"
+        },
+        {
+          field = "Opportunity.Notificacion_auditoria__c"
+          label = "Notificación auditoría"
+        },
+        {
+          field = "Opportunity.Origen__c"
+          label = "Origen"
+        },
+        {
+          field = "Opportunity.Responsable_oportunidad__c"
+          label = "Responsable de la oportunidad"
+        },
+        {
+          field = "Opportunity.ROI_Analysis_Completed__c"
+          label = "ROI Analysis Completed"
+        },
+        {
+          field = "Opportunity.Servicios_a_adidos_en_la_oportunidad__c"
+          label = "Servicios añadidos en la oportunidad"
+        },
+        {
+          field = "Opportunity.Estado_operacion_lead__c"
+          label = "Sistema devolución \"Lead\""
+        },
+        {
+          field = "Opportunity.Socio_oportunidad__c"
+          label = "Socio responsable de la oportunidad"
+        },
+        {
+          field = "Opportunity.URL_gestion_de_oferta__c"
+          label = "URL gestión de oferta"
+        },
+        {
+          field = "Opportunity.Usuarios_notificados__c"
+          label = "Usuarios notificados"
+        },
+        {
+          field = "OPPORTUNITY.LAST_STAGE_CHANGE"
+          label = "Fecha de la última modificación de Etapa"
+        },
+        {
+          field = "OPPORTUNITY.PUSH_COUNT"
+          label = "Recuento de distribución"
+        },
+      ]
+      opportunityListFieldsSelectedSettings = {
+        field = [
+          "OPPORTUNITY.NAME",
+          "ACCOUNT.NAME",
+          "OPPORTUNITY.CLOSE_DATE",
+          "OPPORTUNITY.STAGE_NAME",
+          "OPPORTUNITY.PROBABILITY",
+          "FORECAST_CATEGORY",
+          "FULL_NAME",
+        ]
+      }
+      opportunityListFieldsUnselectedSettings = {
+        field = [
+          "CONTRACT.CONTRACT_NUMBER",
+          "OPPORTUNITY.AMOUNT",
+          "CORE.USERS.ALIAS",
+          "CORE.USERS.FIRST_NAME",
+          "CORE.USERS.LAST_NAME",
+          "DESCRIPTION",
+          "OPPORTUNITY.LEAD_SOURCE",
+          "OPPORTUNITY.NEXT_STEP",
+          "OPPORTUNITY.TYPE",
+          "UPDATEDBY_USER.ALIAS",
+          "CREATEDBY_USER.ALIAS",
+          "SYNCEDQUOTE.NAME",
+          "OPPORTUNITY.CLOSED",
+          "OPPORTUNITY.WON",
+          "ACCOUNT.SITE",
+          "OPPORTUNITY.FISCAL_YEAR",
+          "OPPORTUNITY.FISCAL_QUARTER",
+          "OPPORTUNITY.FISCAL_PERIOD",
+          "OPPORTUNITY.RECORDTYPE",
+          "OPPORTUNITY.LAST_ACTIVITY",
+          "OPPORTUNITY.CREATED_DATE",
+          "OPPORTUNITY.LAST_UPDATE",
+          "Opportunity.Socio_Propietario__c",
+          "Opportunity.Budget_Confirmed__c",
+          "Opportunity.Centro_de_actividad__c",
+          "Opportunity.Codigo_Oferta__c",
+          "Opportunity.Comentario_aprobacion_auditoria__c",
+          "Opportunity.Descripcion_motivo_p_rdida_de_oportunida__c",
+          "Opportunity.Detalle_origen__c",
+          "Opportunity.Discovery_Completed__c",
+          "Opportunity.Division__c",
+          "Opportunity.Documentacion__c",
+          "Opportunity.Estado_Lead__c",
+          "Opportunity.Estado_proceso_aprobacion__c",
+          "Opportunity.Fecha_aprobacion_auditoria__c",
+          "Opportunity.Fecha_de_registro__c",
+          "Opportunity.Fecha_notificacion_auditoria__c",
+          "Opportunity.Id_CRM_Dynamics__c",
+          "Opportunity.Lead_valido__c",
+          "Opportunity.Loss_Reason__c",
+          "Opportunity.Notificacion_auditoria__c",
+          "Opportunity.Origen__c",
+          "Opportunity.Responsable_oportunidad__c",
+          "Opportunity.ROI_Analysis_Completed__c",
+          "Opportunity.Servicios_a_adidos_en_la_oportunidad__c",
+          "Opportunity.Estado_operacion_lead__c",
+          "Opportunity.Socio_oportunidad__c",
+          "Opportunity.URL_gestion_de_oferta__c",
+          "Opportunity.Usuarios_notificados__c",
+          "OPPORTUNITY.LAST_STAGE_CHANGE",
+          "OPPORTUNITY.PUSH_COUNT",
+        ]
+      }
+      ownerAdjustableCategoryApiNames = [
+        "bestcaseforecast",
+        "commitforecast",
+      ]
+    },
+  ]
+  globalAdjustmentsSettings = {
+    allowExpandedColumns = false
+    enableAdjustments = true
+    enableOwnerAdjustments = true
+  }
+  globalForecastRangeSettings = {
+    beginning = 0
+    displaying = 6
+    periodType = "Month"
+  }
+  globalQuotasSettings = {
+    showQuotas = false
+  }
+  _alias = "Forecasting"
+}

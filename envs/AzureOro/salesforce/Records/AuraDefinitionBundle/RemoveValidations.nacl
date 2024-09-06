@@ -1,0 +1,8 @@
+salesforce.AuraDefinitionBundle RemoveValidations {
+  apiVersion = 40
+  description = "A Lightning Component Bundle"
+  fullName = "RemoveValidations"
+  type = "Event"
+  markup = file("salesforce/Records/AuraDefinitionBundle/RemoveValidations/RemoveValidations.evt")
+  _alias = "RemoveValidations"
+}

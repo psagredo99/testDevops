@@ -1,0 +1,17 @@
+salesforce.WorkflowAlert Opportunity_Aprobacion_de_Oportunidad@vuu {
+  fullName = "Opportunity.Aprobacion_de_Oportunidad"
+  description = "Aprobación de Oportunidad"
+  protected = false
+  recipients = [
+    {
+      recipient = "admin@pkf-attest.es"
+      type = "user"
+    },
+  ]
+  senderType = "CurrentUser"
+  template = salesforce.EmailTemplate.instance.unfiled_public_Oportunidad_Aprobaciones@zcdu
+  _parent = [
+    salesforce.Opportunity,
+  ]
+  _alias = "Opportunity.Aprobacion_de_Oportunidad"
+}

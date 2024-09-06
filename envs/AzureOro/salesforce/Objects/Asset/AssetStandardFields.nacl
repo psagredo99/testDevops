@@ -1,0 +1,300 @@
+type salesforce.Asset {
+  salesforce.Lookup AccountId {
+    apiName = "Asset.AccountId"
+    relationshipName = "Account"
+    label = "Id. de la cuenta"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Address Address {
+    apiName = "Asset.Address"
+    label = "Dirección"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Number AssetLevel {
+    apiName = "Asset.AssetLevel"
+    label = "Nivel de activo"
+    precision = 9
+    createable = false
+    updateable = false
+    scale = 0
+    unique = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup AssetProvidedById {
+    apiName = "Asset.AssetProvidedById"
+    relationshipName = "AssetProvidedBy"
+    label = "Id. de Activo proporcionado por"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Lookup AssetServicedById {
+    apiName = "Asset.AssetServicedById"
+    relationshipName = "AssetServicedBy"
+    label = "Id. de Activo atendido por"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Picklist ConsequenceOfFailure {
+    apiName = "Asset.ConsequenceOfFailure"
+    _hidden_value = true
+  }
+  salesforce.Lookup ContactId {
+    apiName = "Asset.ContactId"
+    relationshipName = "Contact"
+    label = "Id. de contacto"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.LongTextArea Description {
+    apiName = "Asset.Description"
+    length = 32000
+    label = "Descripción"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Picklist DigitalAssetStatus {
+    apiName = "Asset.DigitalAssetStatus"
+    _hidden_value = true
+  }
+  salesforce.Unknown ExternalIdentifier {
+    apiName = "Asset.ExternalIdentifier"
+    inlineHelpText = "Id. de registro coincidente en un sistema externo."
+    _hidden_value = true
+  }
+  salesforce.Date InstallDate {
+    apiName = "Asset.InstallDate"
+    label = "Fecha de instalación"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Checkbox IsCompetitorProduct {
+    apiName = "Asset.IsCompetitorProduct"
+    defaultValue = false
+    label = "Activo de competidor"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Checkbox IsInternal {
+    apiName = "Asset.IsInternal"
+    defaultValue = false
+    label = "Activo interno"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Lookup LocationId {
+    apiName = "Asset.LocationId"
+    _hidden_value = true
+  }
+  salesforce.Unknown ManufactureDate {
+    apiName = "Asset.ManufactureDate"
+    inlineHelpText = "Fecha en que se fabricó el activo."
+    _hidden_value = true
+  }
+  salesforce.Text Name {
+    apiName = "Asset.Name"
+    length = 255
+    _required = true
+    label = "Nombre de activo"
+    createable = true
+    updateable = true
+    unique = false
+    caseSensitive = false
+    queryable = true
+  }
+  salesforce.Lookup OwnerId {
+    apiName = "Asset.OwnerId"
+    relationshipName = "Owner"
+    label = "Id. del propietario"
+    createable = true
+    updateable = true
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup ParentId {
+    apiName = "Asset.ParentId"
+    relationshipName = "Parent"
+    label = "Id. de activo principal"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Currency Price {
+    apiName = "Asset.Price"
+    label = "Precio"
+    createable = true
+    updateable = true
+    scale = 2
+    precision = 18
+    queryable = true
+  }
+  salesforce.Lookup Product2Id {
+    apiName = "Asset.Product2Id"
+    relationshipName = "Product2"
+    label = "Servicio"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Text ProductCode {
+    apiName = "Asset.ProductCode"
+    length = 255
+    label = "Código de servicio"
+    createable = false
+    updateable = false
+    unique = false
+    caseSensitive = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Unknown ProductDescription {
+    apiName = "Asset.ProductDescription"
+    _hidden_value = true
+  }
+  salesforce.Picklist ProductFamily {
+    apiName = "Asset.ProductFamily"
+    _hidden_value = true
+  }
+  salesforce.Date PurchaseDate {
+    apiName = "Asset.PurchaseDate"
+    label = "Fecha de compra"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Number Quantity {
+    apiName = "Asset.Quantity"
+    label = "Cantidad"
+    precision = 12
+    scale = 2
+    createable = true
+    updateable = true
+    unique = false
+    queryable = true
+  }
+  salesforce.Lookup RootAssetId {
+    apiName = "Asset.RootAssetId"
+    relationshipName = "RootAsset"
+    label = "Id. de activo raíz"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Text SerialNumber {
+    apiName = "Asset.SerialNumber"
+    length = 80
+    label = "Número de serie"
+    createable = true
+    updateable = true
+    unique = false
+    caseSensitive = false
+    queryable = true
+  }
+  salesforce.Picklist Status {
+    apiName = "Asset.Status"
+    restricted = false
+    label = "Estado"
+    createable = true
+    updateable = true
+    queryable = true
+    valueSetName = salesforce.StandardValueSet.instance.AssetStatus
+  }
+  salesforce.Picklist StatusReason {
+    apiName = "Asset.StatusReason"
+    inlineHelpText = "Explicación del estado del dispositivo."
+    _hidden_value = true
+  }
+  salesforce.Text StockKeepingUnit {
+    apiName = "Asset.StockKeepingUnit"
+    length = 180
+    label = "SKU de servicio"
+    createable = false
+    updateable = false
+    unique = false
+    caseSensitive = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Date UsageEndDate {
+    apiName = "Asset.UsageEndDate"
+    label = "Fecha final de uso"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Unknown Uuid {
+    apiName = "Asset.Uuid"
+    inlineHelpText = "Cadena exclusiva identificando el activo."
+    _hidden_value = true
+  }
+  serviceid Id {
+    apiName = "Asset.Id"
+    label = "Id. del activo"
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime CreatedDate {
+    apiName = "Asset.CreatedDate"
+    label = "Fecha de creación"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup CreatedById {
+    apiName = "Asset.CreatedById"
+    relationshipName = "CreatedBy"
+    label = "Creado por el Id."
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime LastModifiedDate {
+    apiName = "Asset.LastModifiedDate"
+    label = "Fecha de la última modificación"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup LastModifiedById {
+    apiName = "Asset.LastModifiedById"
+    relationshipName = "LastModifiedBy"
+    label = "Última modificación realizada por el Id."
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime SystemModstamp {
+    apiName = "Asset.SystemModstamp"
+    label = "Modstamp del sistema"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Checkbox IsDeleted {
+    apiName = "Asset.IsDeleted"
+    defaultValue = false
+    label = "Eliminado"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+}

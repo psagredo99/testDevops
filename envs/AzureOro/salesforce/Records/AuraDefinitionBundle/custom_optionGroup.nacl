@@ -1,0 +1,10 @@
+salesforce.AuraDefinitionBundle custom_optionGroup {
+  apiVersion = 40
+  description = "A Lightning Component Bundle"
+  fullName = "custom_optionGroup"
+  type = "Component"
+  markup = file("salesforce/Records/AuraDefinitionBundle/custom_optionGroup/custom_optionGroup.cmp")
+  controllerContent = file("salesforce/Records/AuraDefinitionBundle/custom_optionGroup/custom_optionGroupController.js")
+  helperContent = file("salesforce/Records/AuraDefinitionBundle/custom_optionGroup/custom_optionGroupHelper.js")
+  _alias = "custom_optionGroup"
+}

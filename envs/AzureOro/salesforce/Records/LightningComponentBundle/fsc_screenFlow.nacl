@@ -1,0 +1,20 @@
+salesforce.LightningComponentBundle fsc_screenFlow {
+  apiVersion = 51
+  description = "Screen Flow (Base Pack)"
+  isExposed = true
+  masterLabel = "Screen Flow (Base PAck)"
+  fullName = "fsc_screenFlow"
+  lwcResources = {
+    lwcResource = {
+      fsc_screenFlow_html@uv = {
+        source = file("salesforce/Records/LightningComponentBundle/fsc_screenFlow/fsc_screenFlow.html")
+        filePath = "lwc/fsc_screenFlow/fsc_screenFlow.html"
+      }
+      fsc_screenFlow_js@uv = {
+        source = file("salesforce/Records/LightningComponentBundle/fsc_screenFlow/fsc_screenFlow.js")
+        filePath = "lwc/fsc_screenFlow/fsc_screenFlow.js"
+      }
+    }
+  }
+  _alias = "fsc_screenFlow"
+}

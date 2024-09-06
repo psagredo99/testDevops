@@ -1,0 +1,9 @@
+salesforce.CustomTab Datos_cuentas__c {
+  fullName = "Datos_cuentas__c"
+  customObject = true
+  motif = "Custom21: Computer"
+  _parent = [
+    salesforce.Datos_cuentas__c,
+  ]
+  _alias = "Datos_cuentas__c"
+}

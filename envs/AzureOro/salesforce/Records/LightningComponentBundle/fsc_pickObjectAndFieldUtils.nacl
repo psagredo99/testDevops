@@ -1,0 +1,16 @@
+salesforce.LightningComponentBundle fsc_pickObjectAndFieldUtils {
+  apiVersion = 49
+  description = "Pick Object And Field Utils"
+  isExposed = false
+  masterLabel = "Pick Object And Field Utils"
+  fullName = "fsc_pickObjectAndFieldUtils"
+  lwcResources = {
+    lwcResource = {
+      fsc_pickObjectAndFieldUtils_js@uv = {
+        source = file("salesforce/Records/LightningComponentBundle/fsc_pickObjectAndFieldUtils/fsc_pickObjectAndFieldUtils.js")
+        filePath = "lwc/fsc_pickObjectAndFieldUtils/fsc_pickObjectAndFieldUtils.js"
+      }
+    }
+  }
+  _alias = "fsc_pickObjectAndFieldUtils"
+}

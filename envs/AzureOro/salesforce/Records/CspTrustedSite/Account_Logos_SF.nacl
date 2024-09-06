@@ -1,0 +1,16 @@
+salesforce.CspTrustedSite Account_Logos_SF {
+  fullName = "Account_Logos_SF"
+  canAccessCamera = false
+  canAccessMicrophone = false
+  context = "All"
+  description = "Dominio para la gestión de logos de SF"
+  endpointUrl = "*.bluetail.salesforce.com"
+  isActive = true
+  isApplicableToConnectSrc = true
+  isApplicableToFontSrc = true
+  isApplicableToFrameSrc = true
+  isApplicableToImgSrc = true
+  isApplicableToMediaSrc = true
+  isApplicableToStyleSrc = false
+  _alias = "Account_Logos_SF"
+}

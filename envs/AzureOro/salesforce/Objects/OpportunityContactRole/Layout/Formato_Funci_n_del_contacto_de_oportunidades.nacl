@@ -1,0 +1,56 @@
+salesforce.Layout OpportunityContactRole_Formato_Funci_n_del_contacto_de_oportunidades@bs_00243ssss {
+  layoutSections = [
+    {
+      customLabel = true
+      detailHeading = false
+      editHeading = false
+      label = "Función del contacto de oportunidades"
+      layoutColumns = [
+        {
+          layoutItems = [
+            {
+              behavior = "Required"
+              field = salesforce.OpportunityContactRole.field.OpportunityId
+            },
+            {
+              behavior = "Required"
+              field = salesforce.OpportunityContactRole.field.ContactId
+            },
+            {
+              behavior = "Edit"
+              field = salesforce.OpportunityContactRole.field.Role
+            },
+            {
+              behavior = "Edit"
+              field = salesforce.OpportunityContactRole.field.IsPrimary
+            },
+          ]
+        },
+      ]
+      style = "OneColumn"
+    },
+    {
+      customLabel = false
+      detailHeading = false
+      editHeading = false
+      layoutColumns = [
+        {
+        },
+      ]
+      style = "CustomLinks"
+    },
+  ]
+  multilineLayoutFields = [
+    "ContactId",
+    "Role",
+    "OpportunityId",
+  ]
+  showEmailCheckbox = false
+  showRunAssignmentRulesCheckbox = false
+  showSubmitAndAttachButton = false
+  fullName = "OpportunityContactRole-Formato Función del contacto de oportunidades"
+  _parent = [
+    salesforce.OpportunityContactRole,
+  ]
+  _alias = "OpportunityContactRole-Formato Función del contacto de oportunidades"
+}

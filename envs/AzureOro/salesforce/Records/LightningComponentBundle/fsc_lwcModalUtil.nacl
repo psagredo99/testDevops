@@ -1,0 +1,14 @@
+salesforce.LightningComponentBundle fsc_lwcModalUtil {
+  apiVersion = 52
+  isExposed = false
+  fullName = "fsc_lwcModalUtil"
+  lwcResources = {
+    lwcResource = {
+      fsc_lwcModalUtil_js@uv = {
+        source = file("salesforce/Records/LightningComponentBundle/fsc_lwcModalUtil/fsc_lwcModalUtil.js")
+        filePath = "lwc/fsc_lwcModalUtil/fsc_lwcModalUtil.js"
+      }
+    }
+  }
+  _alias = "fsc_lwcModalUtil"
+}

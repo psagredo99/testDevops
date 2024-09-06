@@ -1,0 +1,10 @@
+salesforce.ProfileSessionSetting null_profileSessionSetting1681815985349 {
+  fullName = "null_profileSessionSetting1681815985349"
+  externalCommunityUserIdentityVerif = false
+  forceLogout = false
+  profile = "pkf attest - secretaría"
+  sessionPersistence = false
+  sessionTimeout = 0
+  sessionTimeoutWarning = false
+  _alias = "null_profileSessionSetting1681815985349"
+}

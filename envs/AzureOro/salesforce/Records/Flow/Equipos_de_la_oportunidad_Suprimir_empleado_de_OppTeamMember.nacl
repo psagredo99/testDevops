@@ -1,0 +1,153 @@
+salesforce.Flow Equipos_de_la_oportunidad_Suprimir_empleado_de_OppTeamMember {
+  fullName = "Equipos_de_la_oportunidad_Suprimir_empleado_de_OppTeamMember"
+  apiVersion = 57
+  decisions = [
+    {
+      name = "si_existe_OppTeamMember"
+      label = "si existe OppTeamMember"
+      locationX = 182
+      locationY = 551
+      defaultConnectorLabel = "Resultado predeterminado"
+      rules = [
+        {
+          name = "Si_existe_OppTeamMember_rama"
+          conditionLogic = "and"
+          conditions = [
+            {
+              leftValueReference = "Buscar_OppTeamMember.Id"
+              operator = "IsNull"
+              rightValue = {
+                booleanValue = false
+              }
+            },
+          ]
+          connector = {
+            targetReference = "eliminar_OppTeamMember"
+          }
+          label = "Si existe OppTeamMember"
+        },
+      ]
+    },
+  ]
+  environments = "Default"
+  interviewLabel = "Equipos de la oportunidad - Suprimir empleado de OppTeamMember {!$Flow.CurrentDateTime}"
+  label = "Equipos de la oportunidad - Suprimir empleado de OppTeamMember"
+  processMetadataValues = [
+    {
+      name = "BuilderType"
+      value = {
+        stringValue = "LightningFlowBuilder"
+      }
+    },
+    {
+      name = "CanvasMode"
+      value = {
+        stringValue = "AUTO_LAYOUT_CANVAS"
+      }
+    },
+    {
+      name = "OriginBuilderType"
+      value = {
+        stringValue = "LightningFlowBuilder"
+      }
+    },
+  ]
+  processType = "AutoLaunchedFlow"
+  recordDeletes = {
+    name = "eliminar_OppTeamMember"
+    label = "eliminar OppTeamMember"
+    locationX = 50
+    locationY = 671
+    inputReference = "Buscar_OppTeamMember"
+  }
+  recordLookups = [
+    {
+      name = "Buscar_OppTeamMember"
+      label = "Buscar OppTeamMember"
+      locationX = 182
+      locationY = 431
+      assignNullValuesIfNoRecordsFound = false
+      connector = {
+        targetReference = "si_existe_OppTeamMember"
+      }
+      filterLogic = "and"
+      filters = [
+        {
+          field = salesforce.OpportunityTeamMember.field.OpportunityId
+          operator = "EqualTo"
+          value = {
+            elementReference = "$Record.Oportunidad__c"
+          }
+        },
+        {
+          field = salesforce.OpportunityTeamMember.field.UserId
+          operator = "EqualTo"
+          value = {
+            elementReference = "Buscar_Usuario_por_email.Id"
+          }
+        },
+      ]
+      getFirstRecordOnly = true
+      object = salesforce.OpportunityTeamMember
+      storeOutputAutomatically = true
+    },
+    {
+      name = "Buscar_Usuario_por_email"
+      label = "Buscar Usuario por email"
+      locationX = 182
+      locationY = 311
+      assignNullValuesIfNoRecordsFound = false
+      connector = {
+        targetReference = "Buscar_OppTeamMember"
+      }
+      filterLogic = "and"
+      filters = [
+        {
+          field = salesforce.User.field.Email
+          operator = "EqualTo"
+          value = {
+            elementReference = "$Record.Empleado__r.Correo_electronico__c"
+          }
+        },
+      ]
+      getFirstRecordOnly = true
+      object = salesforce.User
+      storeOutputAutomatically = true
+    },
+  ]
+  start = {
+    locationX = 56
+    locationY = 0
+    connector = {
+      targetReference = "Buscar_Usuario_por_email"
+    }
+    object = salesforce.Equipo_de_la_oportunidad__c
+    recordTriggerType = "Delete"
+    triggerType = "RecordBeforeDelete"
+  }
+  status = "Active"
+  variables = [
+    {
+      name = "usuarioEliminadoId"
+      dataType = "String"
+      isCollection = false
+      isInput = false
+      isOutput = false
+    },
+  ]
+  _generated_dependencies = [
+    {
+      reference = salesforce.Empleado__c
+    },
+    {
+      reference = salesforce.Empleado__c.field.Correo_electronico__c
+    },
+    {
+      reference = salesforce.Equipo_de_la_oportunidad__c.field.Empleado__c
+    },
+    {
+      reference = salesforce.Equipo_de_la_oportunidad__c.field.Oportunidad__c
+    },
+  ]
+  _alias = "Equipos de la oportunidad - Suprimir empleado de OppTeamMember"
+}

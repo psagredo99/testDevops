@@ -1,0 +1,52 @@
+salesforce.StandardValueSet CampaignType {
+  fullName = "CampaignType"
+  sorted = false
+  standardValue = [
+    {
+      fullName = "Email"
+      default = false
+      label = "Email"
+    },
+    {
+      fullName = "Evento híbrido"
+      default = false
+      label = "Evento híbrido"
+    },
+    {
+      fullName = "Evento online"
+      default = false
+      label = "Evento online"
+    },
+    {
+      fullName = "Evento presencial"
+      default = true
+      label = "Evento presencial"
+    },
+    {
+      fullName = "Gestión comercial"
+      default = false
+      label = "Gestión comercial"
+    },
+    {
+      fullName = "Lista de distribución"
+      default = false
+      label = "Lista de distribución"
+    },
+    {
+      fullName = "Otros"
+      default = false
+      label = "Otros"
+    },
+    {
+      fullName = "Redes sociales"
+      default = false
+      label = "Redes sociales"
+    },
+    {
+      fullName = "Telemarketing"
+      default = false
+      label = "Telemarketing"
+    },
+  ]
+  _alias = "CampaignType"
+}

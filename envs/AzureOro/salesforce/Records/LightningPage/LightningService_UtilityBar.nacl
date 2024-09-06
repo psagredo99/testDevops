@@ -1,0 +1,30 @@
+salesforce.LightningPage LightningService_UtilityBar {
+  description = "La barra de utilidad predeterminada para la aplicación Service Console."
+  flexiPageRegions = [
+    {
+      itemInstances = [
+        {
+          componentInstance = {
+            componentName = "console:history"
+            identifier = "console_history"
+          }
+        },
+        {
+          componentInstance = {
+            componentName = "notes:utilityBarNoteList"
+            identifier = "notes_utilityBarNoteList"
+          }
+        },
+      ]
+      name = "utilityItems"
+      type = "Region"
+    },
+  ]
+  masterLabel = "Barra de utilidad de aplicación Service Console"
+  template = {
+    name = "one:utilityBarTemplateDesktop"
+  }
+  type = "UtilityBar"
+  fullName = "LightningService_UtilityBar"
+  _alias = "LightningService_UtilityBar"
+}

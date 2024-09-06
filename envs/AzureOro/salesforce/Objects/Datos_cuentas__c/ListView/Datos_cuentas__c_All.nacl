@@ -1,0 +1,9 @@
+salesforce.ListView Datos_cuentas__c_All {
+  fullName = "Datos_cuentas__c.All"
+  filterScope = "Everything"
+  label = "Todos"
+  _parent = [
+    salesforce.Datos_cuentas__c,
+  ]
+  _alias = "Todos"
+}

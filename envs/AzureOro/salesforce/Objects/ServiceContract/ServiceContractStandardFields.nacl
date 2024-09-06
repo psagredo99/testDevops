@@ -1,0 +1,285 @@
+type salesforce.ServiceContract {
+  salesforce.Lookup AccountId {
+    apiName = "ServiceContract.AccountId"
+    relationshipName = "Account"
+    label = "Id. de la cuenta"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.DateTime ActivationDate {
+    apiName = "ServiceContract.ActivationDate"
+    label = "Fecha de activación"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Percent AdditionalDiscount {
+    apiName = "ServiceContract.AdditionalDiscount"
+    label = "Descuento adicional"
+    createable = true
+    updateable = true
+    scale = 2
+    precision = 5
+    queryable = true
+  }
+  salesforce.Picklist ApprovalStatus {
+    apiName = "ServiceContract.ApprovalStatus"
+    restricted = false
+    label = "Estado de la aprobación"
+    createable = true
+    updateable = true
+    queryable = true
+    valueSetName = salesforce.StandardValueSet.instance.ServiceContractApprovalStatus
+  }
+  salesforce.Address BillingAddress {
+    apiName = "ServiceContract.BillingAddress"
+    label = "Dirección de facturación"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup ContactId {
+    apiName = "ServiceContract.ContactId"
+    relationshipName = "Contact"
+    label = "Id. de contacto"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.LongTextArea Description {
+    apiName = "ServiceContract.Description"
+    length = 32000
+    label = "Descripción"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Percent Discount {
+    apiName = "ServiceContract.Discount"
+    label = "Descuento"
+    createable = false
+    updateable = false
+    scale = 2
+    precision = 5
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Date EndDate {
+    apiName = "ServiceContract.EndDate"
+    label = "Fecha de finalización"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Currency GrandTotal {
+    apiName = "ServiceContract.GrandTotal"
+    label = "Suma total"
+    createable = false
+    updateable = false
+    scale = 2
+    precision = 18
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Summary LineItemCount {
+    apiName = "ServiceContract.LineItemCount"
+    label = "Partidas"
+    precision = 9
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Text Name {
+    apiName = "ServiceContract.Name"
+    length = 255
+    _required = true
+    label = "Nombre de contrato"
+    createable = true
+    updateable = true
+    unique = false
+    caseSensitive = false
+    queryable = true
+  }
+  salesforce.Lookup OwnerId {
+    apiName = "ServiceContract.OwnerId"
+    relationshipName = "Owner"
+    label = "Id. del propietario"
+    createable = true
+    updateable = true
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup ParentServiceContractId {
+    apiName = "ServiceContract.ParentServiceContractId"
+    relationshipName = "ParentServiceContract"
+    label = "Id. de Contrato de servicio principal"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Lookup Pricebook2Id {
+    apiName = "ServiceContract.Pricebook2Id"
+    relationshipName = "Pricebook2"
+    label = "Id. de la lista de precios"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Lookup RootServiceContractId {
+    apiName = "ServiceContract.RootServiceContractId"
+    relationshipName = "RootServiceContract"
+    label = "Id. de Contrato de servicio raíz"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Address ShippingAddress {
+    apiName = "ServiceContract.ShippingAddress"
+    label = "Dirección de envío"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Currency ShippingHandling {
+    apiName = "ServiceContract.ShippingHandling"
+    label = "Gastos de envío"
+    createable = true
+    updateable = true
+    scale = 2
+    precision = 18
+    queryable = true
+  }
+  salesforce.LongTextArea SpecialTerms {
+    apiName = "ServiceContract.SpecialTerms"
+    length = 32000
+    label = "Condiciones especiales"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Date StartDate {
+    apiName = "ServiceContract.StartDate"
+    label = "Fecha de inicio"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Picklist Status {
+    apiName = "ServiceContract.Status"
+    restricted = true
+    label = "Estado"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Unknown StatusIndicator {
+    apiName = "ServiceContract.StatusIndicator"
+    _hidden_value = true
+  }
+  salesforce.Summary Subtotal {
+    apiName = "ServiceContract.Subtotal"
+    label = "Subtotal"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Currency Tax {
+    apiName = "ServiceContract.Tax"
+    label = "Impuesto"
+    createable = true
+    updateable = true
+    scale = 2
+    precision = 18
+    queryable = true
+  }
+  salesforce.Number Term {
+    apiName = "ServiceContract.Term"
+    label = "Duración (meses)"
+    precision = 9
+    createable = true
+    updateable = true
+    scale = 0
+    unique = false
+    queryable = true
+  }
+  salesforce.Summary TotalPrice {
+    apiName = "ServiceContract.TotalPrice"
+    label = "Precio total"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  serviceid Id {
+    apiName = "ServiceContract.Id"
+    label = "ID de contrato de servicio"
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Checkbox IsDeleted {
+    apiName = "ServiceContract.IsDeleted"
+    defaultValue = false
+    label = "Eliminado"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime CreatedDate {
+    apiName = "ServiceContract.CreatedDate"
+    label = "Fecha de creación"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup CreatedById {
+    apiName = "ServiceContract.CreatedById"
+    relationshipName = "CreatedBy"
+    label = "Creado por el Id."
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime LastModifiedDate {
+    apiName = "ServiceContract.LastModifiedDate"
+    label = "Fecha de la última modificación"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup LastModifiedById {
+    apiName = "ServiceContract.LastModifiedById"
+    relationshipName = "LastModifiedBy"
+    label = "Última modificación realizada por el Id."
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime SystemModstamp {
+    apiName = "ServiceContract.SystemModstamp"
+    label = "Modstamp del sistema"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.AutoNumber ContractNumber {
+    apiName = "ServiceContract.ContractNumber"
+    label = "Número de contrato"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+}

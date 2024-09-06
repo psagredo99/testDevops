@@ -1,0 +1,7 @@
+salesforce.SharingRules ers_datatableConfig__c {
+  fullName = "ers_datatableConfig__c"
+  _parent = [
+    salesforce.ers_datatableConfig__c,
+  ]
+  _alias = "ers_datatableConfig__c"
+}

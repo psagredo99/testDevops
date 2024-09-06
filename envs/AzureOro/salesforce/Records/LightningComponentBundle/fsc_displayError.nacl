@@ -1,0 +1,18 @@
+salesforce.LightningComponentBundle fsc_displayError {
+  apiVersion = 51
+  isExposed = false
+  fullName = "fsc_displayError"
+  lwcResources = {
+    lwcResource = {
+      fsc_displayError_js@uv = {
+        source = file("salesforce/Records/LightningComponentBundle/fsc_displayError/fsc_displayError.js")
+        filePath = "lwc/fsc_displayError/fsc_displayError.js"
+      }
+      fsc_displayError_html@uv = {
+        source = file("salesforce/Records/LightningComponentBundle/fsc_displayError/fsc_displayError.html")
+        filePath = "lwc/fsc_displayError/fsc_displayError.html"
+      }
+    }
+  }
+  _alias = "fsc_displayError"
+}

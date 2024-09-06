@@ -1,0 +1,19 @@
+salesforce.ApexComponent SiteLogin {
+  apiVersion = 56
+  description = "Componente Inicio de sesión predeterminado de Sitios de Salesforce"
+  label = "SiteLogin"
+  fullName = "SiteLogin"
+  content = file("salesforce/Records/ApexComponent/SiteLogin.component")
+  _generated_dependencies = [
+    {
+      reference = salesforce.ApexClass.instance.SiteLoginController
+    },
+    {
+      reference = salesforce.ApexPage.instance.ForgotPassword
+    },
+    {
+      reference = salesforce.ApexPage.instance.SiteRegister
+    },
+  ]
+  _alias = "SiteLogin"
+}

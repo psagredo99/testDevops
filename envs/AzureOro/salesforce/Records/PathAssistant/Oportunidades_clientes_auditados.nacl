@@ -1,0 +1,68 @@
+salesforce.PathAssistant Oportunidades_clientes_auditados {
+  fullName = "Oportunidades_clientes_auditados"
+  active = true
+  entityName = "Opportunity"
+  fieldName = "StageName"
+  masterLabel = "Oportunidades clientes auditados"
+  pathAssistantSteps = [
+    {
+      fieldNames = [
+        "Estado_proceso_aprobacion__c",
+      ]
+      info = "<p>Al actualizar a este estado se lanzará el proceso de aprobación necesario para poder continuar con el proceso de negocio:</p><ul><li>Se enviará un correo electrónico a los aprobadores.</li><li>Se notificará por correo al socio y responsable de la oportunidad que se ha solicitado</li></ul><p><br></p>"
+      picklistValueName = "Aprobación auditoría"
+    },
+    {
+      fieldNames = [
+        "Loss_Reason__c",
+        "Descripcion_motivo_p_rdida_de_oportunida__c",
+      ]
+      picklistValueName = "Cerrada perdida"
+    },
+    {
+      fieldNames = [
+        "Amount",
+        "NextStep",
+      ]
+      info = "<p>Completar los datos de importe, como previsión de lo que se estima sea el cierre del negocio.</p><p>Añadir detalle genérico sobre que área y servicio se van a ofertar.</p>"
+      picklistValueName = "En preparación"
+    },
+    {
+      fieldNames = [
+        "CloseDate",
+        "Description",
+        "NextStep",
+      ]
+      info = "<p><span style=\"font-size: 13px;\">Describir brevemente que negocio se va a llevar a cabo con la cuenta relacionada.</span></p>"
+      picklistValueName = "Identificada"
+    },
+    {
+      fieldNames = [
+        "Notificacion_auditoria__c",
+        "Usuarios_notificados__c",
+        "Fecha_notificacion_auditoria__c",
+      ]
+      info = "<p>Al actualizar a este estado se lanzará el proceso necesario para dejar traza de cada paso que necesita el equipo auditor para la gestión de oportunidades con un cliente auditado.</p><ul><li>Se enviará un correo electrónico a los miembros de Secretaría Técnica y al socio y responsable de la oportunidad.</li></ul><p><br></p>"
+      picklistValueName = "Notificación auditoría"
+    },
+    {
+      fieldNames = [
+        "Documentacion__c",
+        "CloseDate",
+        "Amount",
+        "Probability",
+        "NextStep",
+      ]
+      info = "<p><span style=\"font-size: 13px;\">Informar de la dirección donde está almacenada la documentación de la oferta.</span></p>"
+      picklistValueName = "Ofertada"
+    },
+    {
+      fieldNames = [
+        "NextStep",
+      ]
+      picklistValueName = "Postpuesta"
+    },
+  ]
+  recordTypeName = "Oportunidades_clientes_auditados"
+  _alias = "Oportunidades_clientes_auditados"
+}

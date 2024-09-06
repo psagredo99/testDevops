@@ -1,0 +1,1009 @@
+salesforce.Flow Formulario_Largo_Plazo {
+  fullName = "Formulario_Largo_Plazo"
+  apiVersion = 60
+  choices = [
+    {
+      name = "cr_2_5y"
+      choiceText = "Entre 2 y 5 años"
+      dataType = "String"
+      value = {
+        stringValue = "Entre 2 y 5 años"
+      }
+    },
+    {
+      name = "cr_5_10y"
+      choiceText = "Entre 5 y 10 años"
+      dataType = "String"
+      value = {
+        stringValue = "Entre 5 y 10 años"
+      }
+    },
+    {
+      name = "cr_Cualquiera"
+      choiceText = "Cualquiera"
+      dataType = "String"
+      value = {
+        stringValue = "Cualquiera"
+      }
+    },
+    {
+      name = "cr_HYNR"
+      choiceText = "HYNR"
+      dataType = "String"
+      value = {
+        stringValue = "HYNR"
+      }
+    },
+    {
+      name = "cr_IG"
+      choiceText = "IG"
+      dataType = "String"
+      value = {
+        stringValue = "IG"
+      }
+    },
+    {
+      name = "cr_Mas_de_10y"
+      choiceText = "Más de 10 años"
+      dataType = "String"
+      value = {
+        stringValue = "Más de 10 años"
+      }
+    },
+    {
+      name = "cr_Menos_de_2y"
+      choiceText = "Menos de 2 años"
+      dataType = "String"
+      value = {
+        stringValue = "Menos de 2 años"
+      }
+    },
+    {
+      name = "cr_No"
+      choiceText = "No"
+      dataType = "String"
+      value = {
+        stringValue = "No"
+      }
+    },
+    {
+      name = "cr_Si"
+      choiceText = "Sí"
+      dataType = "String"
+      value = {
+        stringValue = "Sí"
+      }
+    },
+  ]
+  description = "Completar datos de formulario desde la página Lightning de cuentas para la app de Capital Markets"
+  dynamicChoiceSets = [
+    {
+      name = "vcr_Estructura"
+      dataType = "Picklist"
+      picklistField = salesforce.Account.field.Estructura__c
+      picklistObject = salesforce.Account
+    },
+    {
+      name = "vcr_Fact_Emi"
+      dataType = "Picklist"
+      picklistField = salesforce.Account.field.Facturacion_emisor_LP__c
+      picklistObject = salesforce.Account
+    },
+    {
+      name = "vcr_Glof_Choices"
+      dataType = "Picklist"
+      picklistField = salesforce.Account.field.GLOFS__c
+      picklistObject = salesforce.Account
+    },
+    {
+      name = "vcr_Pais"
+      dataType = "Picklist"
+      picklistField = salesforce.Account.field.Pais_LP__c
+      picklistObject = salesforce.Account
+    },
+    {
+      name = "vcr_Plazo_LP"
+      dataType = "Picklist"
+      picklistField = salesforce.Account.field.Plazo_LP__c
+      picklistObject = salesforce.Account
+    },
+    {
+      name = "vcr_Rating"
+      dataType = "Picklist"
+      picklistField = salesforce.Account.field.Rating_CP__c
+      picklistObject = salesforce.Account
+    },
+    {
+      name = "vcr_Rating_LP"
+      dataType = "Picklist"
+      picklistField = salesforce.Account.field.Rating_LP__c
+      picklistObject = salesforce.Account
+    },
+    {
+      name = "vcr_Si_No_Glof"
+      dataType = "Picklist"
+      picklistField = salesforce.Account.field.Si_no_Glof_orden__c
+      picklistObject = salesforce.Account
+    },
+    {
+      name = "vcr_Tam_Emi"
+      dataType = "Picklist"
+      picklistField = salesforce.Account.field.Tamano_Emision__c
+      picklistObject = salesforce.Account
+    },
+    {
+      name = "vcr_Tam_Prog"
+      dataType = "Picklist"
+      picklistField = salesforce.Account.field.Tamano_programa__c
+      picklistObject = salesforce.Account
+    },
+    {
+      name = "vcr_Ticket"
+      dataType = "Picklist"
+      picklistField = salesforce.Account.field.Ticket_LP__c
+      picklistObject = salesforce.Account
+    },
+    {
+      name = "vcr_Tipo_Yield"
+      dataType = "Picklist"
+      picklistField = salesforce.Account.field.Tipo_Yield__c
+      picklistObject = salesforce.Account
+    },
+  ]
+  environments = "Default"
+  interviewLabel = "Formulario Largo Plazo {!$Flow.CurrentDateTime}"
+  label = "DCM - Formulario Largo Plazo"
+  processMetadataValues = [
+    {
+      name = "BuilderType"
+      value = {
+        stringValue = "LightningFlowBuilder"
+      }
+    },
+    {
+      name = "CanvasMode"
+      value = {
+        stringValue = "AUTO_LAYOUT_CANVAS"
+      }
+    },
+    {
+      name = "OriginBuilderType"
+      value = {
+        stringValue = "LightningFlowBuilder"
+      }
+    },
+  ]
+  processType = "Flow"
+  recordUpdates = [
+    {
+      name = "Update_cuenta"
+      label = "Update cuenta"
+      locationX = 176
+      locationY = 242
+      connector = {
+        targetReference = "Hecho"
+      }
+      faultConnector = {
+        targetReference = "MsgError"
+      }
+      filterLogic = "and"
+      filters = [
+        {
+          field = salesforce.Account.field.Id
+          operator = "EqualTo"
+          value = {
+            elementReference = "RecordId.Id"
+          }
+        },
+      ]
+      inputAssignments = [
+        {
+          field = salesforce.Account.field.Apalancamiento_max_LP__c
+          value = {
+            elementReference = "Apalancamiento_max"
+          }
+        },
+        {
+          field = salesforce.Account.field.ESG_Agencia_LP__c
+          value = {
+            elementReference = "ESG_Agencia"
+          }
+        },
+        {
+          field = salesforce.Account.field.ESG_LP__c
+          value = {
+            elementReference = "ESG"
+          }
+        },
+        {
+          field = salesforce.Account.field.Empresa_cotizada_LP__c
+          value = {
+            elementReference = "Empresa_Cotizada"
+          }
+        },
+        {
+          field = salesforce.Account.field.Estructura__c
+          value = {
+            elementReference = "Estructura"
+          }
+        },
+        {
+          field = salesforce.Account.field.EthiFinance_LP__c
+          value = {
+            elementReference = "EthIFinance"
+          }
+        },
+        {
+          field = salesforce.Account.field.Facturacion_emisor_LP__c
+          value = {
+            elementReference = "Facturaci_n_emisor"
+          }
+        },
+        {
+          field = salesforce.Account.field.Feedback_general_LP__c
+          value = {
+            elementReference = "Feedback_general"
+          }
+        },
+        {
+          field = salesforce.Account.field.Limite_sobre_saldo_vivo_LP__c
+          value = {
+            elementReference = "Limite_sobre_saldo_vivo"
+          }
+        },
+        {
+          field = salesforce.Account.field.Moneda_LP__c
+          value = {
+            elementReference = "Moneda"
+          }
+        },
+        {
+          field = salesforce.Account.field.Pais_LP__c
+          value = {
+            elementReference = "Pa_s"
+          }
+        },
+        {
+          field = salesforce.Account.field.Pais_vetado_LP__c
+          value = {
+            elementReference = "Pais_vetado"
+          }
+        },
+        {
+          field = salesforce.Account.field.Plazo_LP__c
+          value = {
+            elementReference = "Plazo"
+          }
+        },
+        {
+          field = salesforce.Account.field.Rating_LP__c
+          value = {
+            elementReference = "Rating"
+          }
+        },
+        {
+          field = salesforce.Account.field.Rtdo_LP__c
+          value = {
+            elementReference = "Rtdo"
+          }
+        },
+        {
+          field = salesforce.Account.field.Sectores_betados_LP__c
+          value = {
+            elementReference = "Sectores_betados"
+          }
+        },
+        {
+          field = salesforce.Account.field.Sectores_buscados_LP__c
+          value = {
+            elementReference = "Sectores_buscados"
+          }
+        },
+        {
+          field = salesforce.Account.field.Tamano_Emision__c
+          value = {
+            elementReference = "Tama_o_Emisi_n"
+          }
+        },
+        {
+          field = salesforce.Account.field.Ticket_LP__c
+          value = {
+            elementReference = "Ticket"
+          }
+        },
+        {
+          field = salesforce.Account.field.Tipo_Yield__c
+          value = {
+            elementReference = "Tipo_Yield"
+          }
+        },
+        {
+          field = salesforce.Account.field.Yield_obj_LP__c
+          value = {
+            elementReference = "Yield_obj"
+          }
+        },
+      ]
+      object = salesforce.Account
+    },
+  ]
+  screens = [
+    {
+      name = "Formulario_Largo_Plazo"
+      label = "Formulario Largo Plazo"
+      locationX = 176
+      locationY = 134
+      allowBack = false
+      allowFinish = true
+      allowPause = false
+      connector = {
+        targetReference = "Update_cuenta"
+      }
+      fields = [
+        {
+          name = "Formulario_Largo_Plazo_Section1"
+          fieldType = "RegionContainer"
+          fields = [
+            {
+              name = "Formulario_Largo_Plazo_Section1_Column1"
+              fieldType = "Region"
+              fields = [
+                {
+                  name = "Estructura"
+                  choiceReferences = [
+                    "vcr_Estructura",
+                  ]
+                  dataType = "String"
+                  defaultValue = {
+                    elementReference = "RecordId.Estructura__c"
+                  }
+                  fieldText = "Estructura"
+                  fieldType = "DropdownBox"
+                  inputsOnNextNavToAssocScrn = "UseStoredValues"
+                  isRequired = false
+                },
+              ]
+              inputParameters = [
+                {
+                  name = "width"
+                  value = {
+                    stringValue = "4"
+                  }
+                },
+              ]
+              isRequired = false
+            },
+            {
+              name = "Formulario_Largo_Plazo_Section1_Column2"
+              fieldType = "Region"
+              fields = [
+                {
+                  name = "Tama_o_Emisi_n"
+                  choiceReferences = [
+                    "vcr_Tam_Emi",
+                  ]
+                  dataType = "String"
+                  defaultValue = {
+                    elementReference = "RecordId.Tamano_Emision__c"
+                  }
+                  fieldText = "Tamaño Emisión"
+                  fieldType = "DropdownBox"
+                  inputsOnNextNavToAssocScrn = "UseStoredValues"
+                  isRequired = false
+                },
+              ]
+              inputParameters = [
+                {
+                  name = "width"
+                  value = {
+                    stringValue = "4"
+                  }
+                },
+              ]
+              isRequired = false
+            },
+            {
+              name = "Formulario_Largo_Plazo_Section1_Column3"
+              fieldType = "Region"
+              fields = [
+                {
+                  name = "Plazo"
+                  choiceReferences = [
+                    "vcr_Plazo_LP",
+                  ]
+                  dataType = "String"
+                  defaultValue = {
+                    elementReference = "RecordId.Plazo_LP__c"
+                  }
+                  fieldText = "Plazo"
+                  fieldType = "DropdownBox"
+                  inputsOnNextNavToAssocScrn = "UseStoredValues"
+                  isRequired = false
+                },
+              ]
+              inputParameters = [
+                {
+                  name = "width"
+                  value = {
+                    stringValue = "4"
+                  }
+                },
+              ]
+              isRequired = false
+            },
+          ]
+          isRequired = false
+          regionContainerType = "SectionWithoutHeader"
+        },
+        {
+          name = "Formulario_Largo_Plazo_Section2"
+          fieldType = "RegionContainer"
+          fields = [
+            {
+              name = "Formulario_Largo_Plazo_Section2_Column1"
+              fieldType = "Region"
+              fields = [
+                {
+                  name = "Rating"
+                  choiceReferences = [
+                    "vcr_Rating_LP",
+                  ]
+                  dataType = "String"
+                  defaultValue = {
+                    elementReference = "RecordId.Rating_LP__c"
+                  }
+                  fieldText = "Rating"
+                  fieldType = "DropdownBox"
+                  inputsOnNextNavToAssocScrn = "UseStoredValues"
+                  isRequired = false
+                },
+              ]
+              inputParameters = [
+                {
+                  name = "width"
+                  value = {
+                    stringValue = "6"
+                  }
+                },
+              ]
+              isRequired = false
+            },
+            {
+              name = "Formulario_Largo_Plazo_Section2_Column2"
+              fieldType = "Region"
+              fields = [
+                {
+                  name = "EthIFinance"
+                  choiceReferences = [
+                    "cr_Si",
+                    "cr_No",
+                  ]
+                  dataType = "String"
+                  defaultValue = {
+                    elementReference = "RecordId.EthiFinance_LP__c"
+                  }
+                  fieldText = "EthIFinance"
+                  fieldType = "DropdownBox"
+                  inputsOnNextNavToAssocScrn = "UseStoredValues"
+                  isRequired = false
+                },
+              ]
+              inputParameters = [
+                {
+                  name = "width"
+                  value = {
+                    stringValue = "6"
+                  }
+                },
+              ]
+              isRequired = false
+            },
+          ]
+          isRequired = false
+          regionContainerType = "SectionWithoutHeader"
+        },
+        {
+          name = "Formulario_Largo_Plazo_Section3"
+          fieldType = "RegionContainer"
+          fields = [
+            {
+              name = "Formulario_Largo_Plazo_Section3_Column1"
+              fieldType = "Region"
+              fields = [
+                {
+                  name = "Tipo_Yield"
+                  choiceReferences = [
+                    "vcr_Tipo_Yield",
+                  ]
+                  dataType = "String"
+                  defaultValue = {
+                    elementReference = "RecordId.Tipo_Yield__c"
+                  }
+                  fieldText = "Tipo Yield"
+                  fieldType = "DropdownBox"
+                  inputsOnNextNavToAssocScrn = "UseStoredValues"
+                  isRequired = false
+                },
+              ]
+              inputParameters = [
+                {
+                  name = "width"
+                  value = {
+                    stringValue = "6"
+                  }
+                },
+              ]
+              isRequired = false
+            },
+            {
+              name = "Formulario_Largo_Plazo_Section3_Column2"
+              fieldType = "Region"
+              fields = [
+                {
+                  name = "Yield_obj"
+                  dataType = "String"
+                  defaultValue = {
+                    elementReference = "RecordId.Yield_obj_LP__c"
+                  }
+                  fieldText = "Yield obj."
+                  fieldType = "InputField"
+                  inputsOnNextNavToAssocScrn = "UseStoredValues"
+                  isRequired = false
+                },
+              ]
+              inputParameters = [
+                {
+                  name = "width"
+                  value = {
+                    stringValue = "6"
+                  }
+                },
+              ]
+              isRequired = false
+            },
+          ]
+          isRequired = false
+          regionContainerType = "SectionWithoutHeader"
+        },
+        {
+          name = "Formulario_Largo_Plazo_Section4"
+          fieldType = "RegionContainer"
+          fields = [
+            {
+              name = "Formulario_Largo_Plazo_Section4_Column1"
+              fieldType = "Region"
+              fields = [
+                {
+                  name = "ESG"
+                  choiceReferences = [
+                    "cr_Si",
+                    "cr_No",
+                  ]
+                  dataType = "String"
+                  defaultValue = {
+                    elementReference = "RecordId.ESG_LP__c"
+                  }
+                  fieldText = "ESG"
+                  fieldType = "DropdownBox"
+                  inputsOnNextNavToAssocScrn = "UseStoredValues"
+                  isRequired = false
+                },
+              ]
+              inputParameters = [
+                {
+                  name = "width"
+                  value = {
+                    stringValue = "6"
+                  }
+                },
+              ]
+              isRequired = false
+            },
+            {
+              name = "Formulario_Largo_Plazo_Section4_Column2"
+              fieldType = "Region"
+              fields = [
+                {
+                  name = "ESG_Agencia"
+                  dataType = "String"
+                  defaultValue = {
+                    elementReference = "RecordId.ESG_Agencia_LP__c"
+                  }
+                  fieldText = "ESG Agencia"
+                  fieldType = "InputField"
+                  inputsOnNextNavToAssocScrn = "UseStoredValues"
+                  isRequired = false
+                },
+              ]
+              inputParameters = [
+                {
+                  name = "width"
+                  value = {
+                    stringValue = "6"
+                  }
+                },
+              ]
+              isRequired = false
+            },
+          ]
+          isRequired = false
+          regionContainerType = "SectionWithoutHeader"
+        },
+        {
+          name = "Ticket"
+          choiceReferences = [
+            "vcr_Ticket",
+          ]
+          dataType = "String"
+          defaultValue = {
+            elementReference = "RecordId.Ticket_LP__c"
+          }
+          fieldText = "Ticket"
+          fieldType = "DropdownBox"
+          inputsOnNextNavToAssocScrn = "UseStoredValues"
+          isRequired = false
+        },
+        {
+          name = "Formulario_Largo_Plazo_Section5"
+          fieldType = "RegionContainer"
+          fields = [
+            {
+              name = "Formulario_Largo_Plazo_Section5_Column1"
+              fieldType = "Region"
+              fields = [
+                {
+                  name = "Limite_sobre_saldo_vivo"
+                  dataType = "String"
+                  defaultValue = {
+                    elementReference = "RecordId.Limite_sobre_saldo_vivo_LP__c"
+                  }
+                  fieldText = "Límite sobre saldo vivo"
+                  fieldType = "InputField"
+                  inputsOnNextNavToAssocScrn = "UseStoredValues"
+                  isRequired = false
+                },
+              ]
+              inputParameters = [
+                {
+                  name = "width"
+                  value = {
+                    stringValue = "6"
+                  }
+                },
+              ]
+              isRequired = false
+            },
+            {
+              name = "Formulario_Largo_Plazo_Section5_Column2"
+              fieldType = "Region"
+              fields = [
+                {
+                  name = "Apalancamiento_max"
+                  dataType = "String"
+                  defaultValue = {
+                    elementReference = "RecordId.Apalancamiento_max_LP__c"
+                  }
+                  fieldText = "Apalancamiento max."
+                  fieldType = "InputField"
+                  inputsOnNextNavToAssocScrn = "UseStoredValues"
+                  isRequired = false
+                },
+              ]
+              inputParameters = [
+                {
+                  name = "width"
+                  value = {
+                    stringValue = "6"
+                  }
+                },
+              ]
+              isRequired = false
+            },
+          ]
+          isRequired = false
+          regionContainerType = "SectionWithoutHeader"
+        },
+        {
+          name = "Formulario_Largo_Plazo_Section6"
+          fieldType = "RegionContainer"
+          fields = [
+            {
+              name = "Formulario_Largo_Plazo_Section6_Column1"
+              fieldType = "Region"
+              fields = [
+                {
+                  name = "Sectores_buscados"
+                  defaultValue = {
+                    stringValue = "{!RecordId.Sectores_buscados_LP__c}"
+                  }
+                  fieldText = "Sectores buscados"
+                  fieldType = "LargeTextArea"
+                  inputsOnNextNavToAssocScrn = "UseStoredValues"
+                  isRequired = false
+                },
+              ]
+              inputParameters = [
+                {
+                  name = "width"
+                  value = {
+                    stringValue = "6"
+                  }
+                },
+              ]
+              isRequired = false
+            },
+            {
+              name = "Formulario_Largo_Plazo_Section6_Column2"
+              fieldType = "Region"
+              fields = [
+                {
+                  name = "Sectores_betados"
+                  defaultValue = {
+                    stringValue = "{!RecordId.Sectores_betados_LP__c}"
+                  }
+                  fieldText = "Sectores betados"
+                  fieldType = "LargeTextArea"
+                  inputsOnNextNavToAssocScrn = "UseStoredValues"
+                  isRequired = false
+                },
+              ]
+              inputParameters = [
+                {
+                  name = "width"
+                  value = {
+                    stringValue = "6"
+                  }
+                },
+              ]
+              isRequired = false
+            },
+          ]
+          isRequired = false
+          regionContainerType = "SectionWithoutHeader"
+        },
+        {
+          name = "Empresa_Cotizada"
+          dataType = "Boolean"
+          defaultValue = {
+            elementReference = "RecordId.Empresa_cotizada_LP__c"
+          }
+          fieldText = "Empresa Cotizada"
+          fieldType = "InputField"
+          inputsOnNextNavToAssocScrn = "UseStoredValues"
+          isRequired = true
+        },
+        {
+          name = "Moneda"
+          dataType = "String"
+          defaultValue = {
+            elementReference = "RecordId.Moneda_LP__c"
+          }
+          fieldText = "Moneda"
+          fieldType = "InputField"
+          inputsOnNextNavToAssocScrn = "UseStoredValues"
+          isRequired = false
+        },
+        {
+          name = "Formulario_Largo_Plazo_Section7"
+          fieldType = "RegionContainer"
+          fields = [
+            {
+              name = "Formulario_Largo_Plazo_Section7_Column1"
+              fieldType = "Region"
+              fields = [
+                {
+                  name = "Pa_s"
+                  choiceReferences = [
+                    "vcr_Pais",
+                  ]
+                  dataType = "String"
+                  defaultValue = {
+                    elementReference = "RecordId.Pais_LP__c"
+                  }
+                  fieldText = "País"
+                  fieldType = "DropdownBox"
+                  inputsOnNextNavToAssocScrn = "UseStoredValues"
+                  isRequired = false
+                },
+              ]
+              inputParameters = [
+                {
+                  name = "width"
+                  value = {
+                    stringValue = "6"
+                  }
+                },
+              ]
+              isRequired = false
+            },
+            {
+              name = "Formulario_Largo_Plazo_Section7_Column2"
+              fieldType = "Region"
+              fields = [
+                {
+                  name = "Pais_vetado"
+                  dataType = "String"
+                  defaultValue = {
+                    elementReference = "RecordId.Pais_vetado_LP__c"
+                  }
+                  fieldText = "País vetado"
+                  fieldType = "InputField"
+                  inputsOnNextNavToAssocScrn = "UseStoredValues"
+                  isRequired = false
+                },
+              ]
+              inputParameters = [
+                {
+                  name = "width"
+                  value = {
+                    stringValue = "6"
+                  }
+                },
+              ]
+              isRequired = false
+            },
+          ]
+          isRequired = false
+          regionContainerType = "SectionWithoutHeader"
+        },
+        {
+          name = "Formulario_Largo_Plazo_Section8"
+          fieldType = "RegionContainer"
+          fields = [
+            {
+              name = "Formulario_Largo_Plazo_Section8_Column1"
+              fieldType = "Region"
+              fields = [
+                {
+                  name = "Facturaci_n_emisor"
+                  choiceReferences = [
+                    "vcr_Fact_Emi",
+                  ]
+                  dataType = "String"
+                  defaultValue = {
+                    elementReference = "RecordId.Facturacion_emisor_LP__c"
+                  }
+                  fieldText = "Facturación emisor"
+                  fieldType = "DropdownBox"
+                  inputsOnNextNavToAssocScrn = "UseStoredValues"
+                  isRequired = false
+                },
+              ]
+              inputParameters = [
+                {
+                  name = "width"
+                  value = {
+                    stringValue = "6"
+                  }
+                },
+              ]
+              isRequired = false
+            },
+            {
+              name = "Formulario_Largo_Plazo_Section8_Column2"
+              fieldType = "Region"
+              fields = [
+                {
+                  name = "Rtdo"
+                  choiceReferences = [
+                    "cr_Si",
+                    "cr_No",
+                  ]
+                  dataType = "String"
+                  defaultValue = {
+                    elementReference = "RecordId.Rtdo_LP__c"
+                  }
+                  fieldText = "Rtdo+"
+                  fieldType = "DropdownBox"
+                  inputsOnNextNavToAssocScrn = "UseStoredValues"
+                  isRequired = false
+                },
+              ]
+              inputParameters = [
+                {
+                  name = "width"
+                  value = {
+                    stringValue = "6"
+                  }
+                },
+              ]
+              isRequired = false
+            },
+          ]
+          isRequired = false
+          regionContainerType = "SectionWithoutHeader"
+        },
+        {
+          name = "Feedback_general"
+          defaultValue = {
+            stringValue = "{!RecordId.Feedback_general_LP__c}"
+          }
+          fieldText = "Feedback general"
+          fieldType = "LargeTextArea"
+          inputsOnNextNavToAssocScrn = "UseStoredValues"
+          isRequired = false
+        },
+      ]
+      nextOrFinishButtonLabel = "Guardar datos"
+      showFooter = true
+      showHeader = true
+    },
+    {
+      name = "Hecho"
+      label = "Hecho"
+      locationX = 176
+      locationY = 350
+      allowBack = false
+      allowFinish = true
+      allowPause = false
+      fields = [
+        {
+          name = "Cambio_hecho"
+          fieldText = "<p><span style=\"background-color: rgb(255, 255, 255); color: rgb(68, 68, 68);\">Cambio realizado correctamente.</span></p>"
+          fieldType = "DisplayText"
+        },
+        {
+          name = "Redirigir"
+          extensionName = "c:Redirigir_al_registro"
+          fieldType = "ComponentInstance"
+          inputParameters = [
+            {
+              name = "recordId"
+              value = {
+                elementReference = "RecordId.Id"
+              }
+            },
+            {
+              name = "msgToast"
+              value = {
+                stringValue = "Cambios guardados correctamente"
+              }
+            },
+          ]
+          inputsOnNextNavToAssocScrn = "UseStoredValues"
+          isRequired = true
+          storeOutputAutomatically = true
+        },
+      ]
+      showFooter = true
+      showHeader = true
+    },
+    {
+      name = "MsgError"
+      label = "MsgError"
+      locationX = 440
+      locationY = 350
+      allowBack = false
+      allowFinish = true
+      allowPause = false
+      fields = [
+        {
+          name = "Mensaje"
+          fieldText = "<p>Se ha producido un error no controlado al guardar los cambios:</p><p><br></p><p>{!$Flow.FaultMessage}</p>"
+          fieldType = "DisplayText"
+        },
+      ]
+      showFooter = true
+      showHeader = true
+    },
+  ]
+  start = {
+    locationX = 50
+    locationY = 0
+    connector = {
+      targetReference = "Formulario_Largo_Plazo"
+    }
+  }
+  status = "Active"
+  variables = [
+    {
+      name = "RecordId"
+      dataType = "SObject"
+      isCollection = false
+      isInput = true
+      isOutput = false
+      objectType = salesforce.Account
+    },
+  ]
+  _alias = "DCM - Formulario Largo Plazo"
+}

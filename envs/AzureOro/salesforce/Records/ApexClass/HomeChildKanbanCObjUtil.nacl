@@ -1,0 +1,7 @@
+salesforce.ApexClass HomeChildKanbanCObjUtil {
+  apiVersion = 40
+  status = "Active"
+  fullName = "HomeChildKanbanCObjUtil"
+  content = file("salesforce/Records/ApexClass/HomeChildKanbanCObjUtil.cls")
+  _alias = "HomeChildKanbanCObjUtil"
+}

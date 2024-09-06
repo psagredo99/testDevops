@@ -1,0 +1,14 @@
+salesforce.NavigationMenu SFDC_Default_Navigation_postventa {
+  fullName = "SFDC_Default_Navigation_postventa"
+  container = "postventa"
+  containerType = "Network"
+  label = "Default Navigation"
+  navigationMenuItem = {
+    label = "Temas"
+    position = 1
+    publiclyAvailable = true
+    target = "ShowMoreTopics"
+    type = "NavigationalTopic"
+  }
+  _alias = "Default Navigation"
+}

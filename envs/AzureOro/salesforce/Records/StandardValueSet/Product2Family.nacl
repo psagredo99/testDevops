@@ -1,0 +1,62 @@
+salesforce.StandardValueSet Product2Family {
+  fullName = "Product2Family"
+  sorted = false
+  standardValue = [
+    {
+      fullName = "Auditoría y verificación"
+      default = false
+      label = "Auditoría y verificación"
+    },
+    {
+      fullName = "Auditoría de TI"
+      default = false
+      label = "Auditoría de TI"
+    },
+    {
+      fullName = "GRC (Gobierno, Riesgo y Cumplimiento)"
+      default = false
+      label = "GRC (Gobierno, Riesgo y Cumplimiento)"
+    },
+    {
+      fullName = "Forensic"
+      default = false
+      label = "Forensic"
+    },
+    {
+      fullName = "Financial Advisory"
+      default = false
+      label = "Financial Advisory"
+    },
+    {
+      fullName = "Reestructuraciones e Insolvencia"
+      default = false
+      label = "Reestructuraciones e Insolvencia"
+    },
+    {
+      fullName = "Consultoría"
+      default = false
+      label = "Consultoría"
+    },
+    {
+      fullName = "Tecnología"
+      default = false
+      label = "Tecnología"
+    },
+    {
+      fullName = "Mercado de Capitales"
+      default = false
+      label = "Mercado de Capitales"
+    },
+    {
+      fullName = "Gestión de la innovación"
+      default = false
+      label = "Gestión de la innovación"
+    },
+    {
+      fullName = "Asesoramiento Fiscal y Legal"
+      default = false
+      label = "Asesoramiento Fiscal y Legal"
+    },
+  ]
+  _alias = "Product2Family"
+}

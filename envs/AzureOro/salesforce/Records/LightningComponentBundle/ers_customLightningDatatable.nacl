@@ -1,0 +1,37 @@
+salesforce.LightningComponentBundle ers_customLightningDatatable {
+  masterLabel = "custom-lighting-datatable"
+  description = "This component extends lightning datatable to use custom data types"
+  apiVersion = 53
+  isExposed = true
+  "#text" = "\r\r\r\r\r"
+  fullName = "ers_customLightningDatatable"
+  lwcResources = {
+    lwcResource = {
+      ers_customLightningDatatable_js@uv = {
+        source = file("salesforce/Records/LightningComponentBundle/ers_customLightningDatatable/ers_customLightningDatatable.js")
+        filePath = "lwc/ers_customLightningDatatable/ers_customLightningDatatable.js"
+      }
+      ers_comboboxColumnType_html@uv = {
+        source = file("salesforce/Records/LightningComponentBundle/ers_customLightningDatatable/ers_comboboxColumnType.html")
+        filePath = "lwc/ers_customLightningDatatable/ers_comboboxColumnType.html"
+      }
+      ers_richTextColumnType_html@uv = {
+        source = file("salesforce/Records/LightningComponentBundle/ers_customLightningDatatable/ers_richTextColumnType.html")
+        filePath = "lwc/ers_customLightningDatatable/ers_richTextColumnType.html"
+      }
+      ers_customLightningDatatable_html@uv = {
+        source = file("salesforce/Records/LightningComponentBundle/ers_customLightningDatatable/ers_customLightningDatatable.html")
+        filePath = "lwc/ers_customLightningDatatable/ers_customLightningDatatable.html"
+      }
+    }
+  }
+  _generated_dependencies = [
+    {
+      reference = salesforce.LightningComponentBundle.instance.ers_comboboxColumnType
+    },
+    {
+      reference = salesforce.StaticResource.instance.ers_customLightningDatatableStyles
+    },
+  ]
+  _alias = "ers_customLightningDatatable"
+}

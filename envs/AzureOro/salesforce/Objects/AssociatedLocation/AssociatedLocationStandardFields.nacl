@@ -1,0 +1,106 @@
+type salesforce.AssociatedLocation {
+  salesforce.DateTime ActiveFrom {
+    apiName = "AssociatedLocation.ActiveFrom"
+    label = "Activo desde"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.DateTime ActiveTo {
+    apiName = "AssociatedLocation.ActiveTo"
+    label = "Activo hasta"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.AutoNumber AssociatedLocationNumber {
+    apiName = "AssociatedLocation.AssociatedLocationNumber"
+    label = "Nombre de ubicación asociada"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup LocationId {
+    apiName = "AssociatedLocation.LocationId"
+    relationshipName = "Location"
+    _required = true
+    label = "Id. de Ubicación"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.MasterDetail ParentRecordId {
+    apiName = "AssociatedLocation.ParentRecordId"
+    relationshipName = "ParentRecord"
+    _required = true
+    label = "Id. de Nombre de cuenta"
+    createable = true
+    updateable = false
+    queryable = true
+  }
+  salesforce.Picklist Type {
+    apiName = "AssociatedLocation.Type"
+    label = "Tipo"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  serviceid Id {
+    apiName = "AssociatedLocation.Id"
+    label = "Id. de Ubicación asociada"
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Checkbox IsDeleted {
+    apiName = "AssociatedLocation.IsDeleted"
+    defaultValue = false
+    label = "Eliminado"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime CreatedDate {
+    apiName = "AssociatedLocation.CreatedDate"
+    label = "Fecha de creación"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup CreatedById {
+    apiName = "AssociatedLocation.CreatedById"
+    relationshipName = "CreatedBy"
+    label = "Creado por el Id."
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime LastModifiedDate {
+    apiName = "AssociatedLocation.LastModifiedDate"
+    label = "Fecha de la última modificación"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup LastModifiedById {
+    apiName = "AssociatedLocation.LastModifiedById"
+    relationshipName = "LastModifiedBy"
+    label = "Última modificación realizada por el Id."
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime SystemModstamp {
+    apiName = "AssociatedLocation.SystemModstamp"
+    label = "Modstamp del sistema"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+}

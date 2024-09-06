@@ -1,0 +1,19 @@
+type salesforce.Parametro_Integracion__mdt {
+  annotations {
+    serviceid apiName {
+    }
+    serviceid metadataType {
+    }
+    string label {
+    }
+    string pluralLabel {
+    }
+    hidden_string keyPrefix {
+    }
+  }
+  apiName = "Parametro_Integracion__mdt"
+  metadataType = "CustomMetadata"
+  label = "Parámetro Integración"
+  pluralLabel = "Parámetros Integración"
+  _alias = "Parámetro Integración"
+}

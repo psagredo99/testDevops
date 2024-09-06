@@ -1,0 +1,39 @@
+salesforce.LightningComponentBundle fsc_flexcardCPE {
+  apiVersion = 53
+  isExposed = true
+  masterLabel = "Flow Flex Card CPE"
+  fullName = "fsc_flexcardCPE"
+  lwcResources = {
+    lwcResource = {
+      fsc_flexcardCPE_js@uv = {
+        source = file("salesforce/Records/LightningComponentBundle/fsc_flexcardCPE/fsc_flexcardCPE.js")
+        filePath = "lwc/fsc_flexcardCPE/fsc_flexcardCPE.js"
+      }
+      fsc_flexcardCPE_html@uv = {
+        source = file("salesforce/Records/LightningComponentBundle/fsc_flexcardCPE/fsc_flexcardCPE.html")
+        filePath = "lwc/fsc_flexcardCPE/fsc_flexcardCPE.html"
+      }
+    }
+  }
+  _generated_dependencies = [
+    {
+      reference = salesforce.LightningComponentBundle.instance.fsc_fieldSelector3
+    },
+    {
+      reference = salesforce.LightningComponentBundle.instance.fsc_flowBanner
+    },
+    {
+      reference = salesforce.LightningComponentBundle.instance.fsc_flowCombobox
+    },
+    {
+      reference = salesforce.LightningComponentBundle.instance.fsc_flowPicker3
+    },
+    {
+      reference = salesforce.LightningComponentBundle.instance.fsc_pickIcon
+    },
+    {
+      reference = salesforce.LightningComponentBundle.instance.fsc_pickObjectAndField3
+    },
+  ]
+  _alias = "fsc_flexcardCPE"
+}

@@ -1,0 +1,57 @@
+salesforce.ApexClass Integration_Util {
+  apiVersion = 46
+  status = "Active"
+  fullName = "Integration_Util"
+  content = file("salesforce/Records/ApexClass/Integration_Util.cls")
+  _generated_dependencies = [
+    {
+      reference = salesforce.Integration_Settings__c
+    },
+    {
+      reference = salesforce.Integration_Settings__c.field.Buffer_days__c
+    },
+    {
+      reference = salesforce.Integration_Settings__c.field.Limit__c
+    },
+    {
+      reference = salesforce.Integration_Settings__c.field.Log_Level__c
+    },
+    {
+      reference = salesforce.Integration_Settings__c.field.Offset__c
+    },
+    {
+      reference = salesforce.Log__c
+    },
+    {
+      reference = salesforce.Log__c.field.Apex_Class_Name__c
+    },
+    {
+      reference = salesforce.Log__c.field.Apex_Method_Name__c
+    },
+    {
+      reference = salesforce.Log__c.field.Error_Records__c
+    },
+    {
+      reference = salesforce.Log__c.field.Result_Description__c
+    },
+    {
+      reference = salesforce.Log__c.field.Result__c
+    },
+    {
+      reference = salesforce.Log__c.field.Service_Name__c
+    },
+    {
+      reference = salesforce.Log__c.field.Successful_Records__c
+    },
+    {
+      reference = salesforce.Log__c.field.Timestamp__c
+    },
+    {
+      reference = salesforce.Log__c.field.Total_Records__c
+    },
+    {
+      reference = salesforce.Log__c.field.Warning_Records__c
+    },
+  ]
+  _alias = "Integration_Util"
+}

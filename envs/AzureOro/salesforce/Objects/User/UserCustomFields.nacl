@@ -1,0 +1,92 @@
+type salesforce.User {
+  salesforce.Picklist Division__c {
+    apiName = "User.Division__c"
+    label = "División"
+    valueSet = [
+      {
+        fullName = "Auditoría y Consultoría Económica"
+        default = false
+        label = "Auditoría y Consultoría Económica"
+      },
+      {
+        fullName = "Riesgos Tecnológicos"
+        default = false
+        label = "Riesgos Tecnológicos"
+      },
+      {
+        fullName = "ITC"
+        default = false
+        label = "ITC"
+      },
+      {
+        fullName = "Fiscal"
+        default = false
+        label = "Fiscal"
+      },
+      {
+        fullName = "Legal"
+        default = false
+        label = "Legal"
+      },
+      {
+        fullName = "Soluciones de Gestión"
+        default = false
+        label = "Soluciones de Gestión"
+      },
+      {
+        fullName = "Corporate Finance"
+        default = false
+        label = "Corporate Finance"
+      },
+      {
+        fullName = "Capital Markets"
+        default = false
+        label = "Capital Markets"
+      },
+      {
+        fullName = "Inncome"
+        default = false
+        label = "Inncome"
+      },
+      {
+        fullName = "Regulación"
+        default = false
+        label = "Regulación"
+      },
+      {
+        fullName = "Concursal"
+        default = false
+        label = "Concursal"
+      },
+      {
+        fullName = "Corporativo"
+        default = false
+        label = "Corporativo"
+      },
+      {
+        fullName = "FAS"
+        default = false
+        label = "FAS"
+      },
+      {
+        fullName = "Health"
+        default = false
+        label = "Health"
+      },
+    ]
+    sorted = false
+    restricted = true
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Checkbox Recibir_notificacion_secretaria_tecnica__c {
+    apiName = "User.Recibir_notificacion_secretaria_tecnica__c"
+    defaultValue = false
+    inlineHelpText = "Al activarse llegarán los correos de notificación a Secretaría Técnica con las oportunidades de clientes auditados."
+    label = "Recibir notificación secretaría técnica"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+}

@@ -1,0 +1,179 @@
+salesforce.LightningComponentBundle fsc_pickObjectAndField3 {
+  apiVersion = 46
+  description = "Pick Object And Field v3"
+  isExposed = true
+  masterLabel = "Pick Object And Field v3"
+  targets = {
+    target = [
+      "lightning__FlowScreen",
+      "lightning__RecordPage",
+    ]
+  }
+  targetConfigs = {
+    targetConfig = [
+      {
+        targets = "lightning__FlowScreen"
+        property = [
+          {
+            name = "masterLabel"
+            type = "String"
+            role = "inputOnly"
+          },
+          {
+            name = "objectLabel"
+            type = "String"
+            role = "inputOnly"
+          },
+          {
+            name = "fieldLabel"
+            type = "String"
+            role = "inputOnly"
+          },
+          {
+            name = "objectType"
+            type = "String"
+          },
+          {
+            name = "field"
+            type = "String"
+          },
+          {
+            name = "disableObjectPicklist"
+            type = "Boolean"
+            role = "inputOnly"
+          },
+          {
+            name = "availableObjectTypes"
+            type = "String"
+            role = "inputOnly"
+          },
+          {
+            name = "availableFields"
+            type = "String"
+            role = "inputOnly"
+          },
+          {
+            name = "hideObjectPicklist"
+            type = "Boolean"
+            role = "inputOnly"
+          },
+          {
+            name = "required"
+            type = "Boolean"
+            role = "inputOnly"
+          },
+          {
+            name = "hideFieldPicklist"
+            type = "Boolean"
+            role = "inputOnly"
+          },
+          {
+            name = "displayFieldType"
+            type = "Boolean"
+            role = "inputOnly"
+          },
+          {
+            name = "testproperty"
+            type = "String"
+            role = "inputOnly"
+          },
+          {
+            name = "DataTypeFilter"
+            type = "String"
+            role = "inputOnly"
+          },
+          {
+            name = "allowFieldMultiselect"
+            type = "Boolean"
+            role = "inputOnly"
+          },
+        ]
+      },
+      {
+        targets = "lightning__RecordPage"
+        property = [
+          {
+            name = "masterLabel"
+            type = "String"
+          },
+          {
+            name = "objectLabel"
+            type = "String"
+          },
+          {
+            name = "fieldLabel"
+            type = "String"
+          },
+          {
+            name = "objectType"
+            type = "String"
+          },
+          {
+            name = "field"
+            type = "String"
+          },
+          {
+            name = "disableObjectPicklist"
+            type = "Boolean"
+          },
+          {
+            name = "availableObjectTypes"
+            type = "String"
+          },
+          {
+            name = "availableFields"
+            type = "String"
+          },
+          {
+            name = "hideObjectPicklist"
+            type = "Boolean"
+          },
+          {
+            name = "hideFieldPicklist"
+            type = "Boolean"
+          },
+          {
+            name = "required"
+            type = "Boolean"
+          },
+          {
+            name = "displayFieldType"
+            type = "Boolean"
+          },
+        ]
+      },
+    ]
+  }
+  fullName = "fsc_pickObjectAndField3"
+  lwcResources = {
+    lwcResource = {
+      fsc_pickObjectAndField3_html@uv = {
+        source = file("salesforce/Records/LightningComponentBundle/fsc_pickObjectAndField3/fsc_pickObjectAndField3.html")
+        filePath = "lwc/fsc_pickObjectAndField3/fsc_pickObjectAndField3.html"
+      }
+      fsc_pickObjectAndField3_css@uv = {
+        source = file("salesforce/Records/LightningComponentBundle/fsc_pickObjectAndField3/fsc_pickObjectAndField3.css")
+        filePath = "lwc/fsc_pickObjectAndField3/fsc_pickObjectAndField3.css"
+      }
+      fsc_pickObjectAndField3_js@uv = {
+        source = file("salesforce/Records/LightningComponentBundle/fsc_pickObjectAndField3/fsc_pickObjectAndField3.js")
+        filePath = "lwc/fsc_pickObjectAndField3/fsc_pickObjectAndField3.js"
+      }
+    }
+  }
+  _generated_dependencies = [
+    {
+      reference = salesforce.LightningComponentBundle.instance.fsc_fieldSelector3
+    },
+    {
+      reference = salesforce.LightningComponentBundle.instance.fsc_flowCombobox
+    },
+    {
+      reference = salesforce.LightningComponentBundle.instance.fsc_flowComboboxUtils
+    },
+    {
+      reference = salesforce.LightningComponentBundle.instance.fsc_pickObjectAndFieldUtils
+    },
+  ]
+  _alias = "fsc_pickObjectAndField3"
+}

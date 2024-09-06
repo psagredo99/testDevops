@@ -1,0 +1,48 @@
+salesforce.PathAssistant Default {
+  fullName = "Default"
+  active = true
+  entityName = "Lead"
+  fieldName = "Status"
+  masterLabel = "Default"
+  pathAssistantSteps = [
+    {
+      fieldNames = [
+        "Company",
+        "Website",
+        "Industry",
+        "NumberOfEmployees",
+      ]
+      info = "<p><strong>Determine qué clientes potenciales están cualificados o no.</strong></p><ul><li>Asignar el cliente potencial a un representante.</li><li>Recopilar información clave sobre el cliente potencial en el sitio web de su empresa.</li><li>Cree un plan para establecer una conexión con este cliente potencial.</li></ul>"
+      picklistValueName = "New"
+    },
+    {
+      fieldNames = [
+        "Rating",
+      ]
+      info = "<p><strong>Nutra a sus clientes potenciales e identifique oportunidades.</strong></p><ul><li>Identifique los puntos débiles que puede resolver para este cliente potencial.</li><li>Determine la probabilidad de conversión de este cliente potencial.</li><li>Si el cliente potencial está cualificado, conviértalo en una oportunidad.</li><li>Asegúrese de que los departamentos de marketing y ventas colaboran en el desarrollo del proceso de cualificación de clientes potenciales.</li></ul>"
+      picklistValueName = "Nurturing"
+    },
+    {
+      info = "<p><strong>¡Hurra! Tienes un nuevo acuerdo para cruzar la línea de meta.</strong></p>"
+      picklistValueName = "Qualified"
+    },
+    {
+      fieldNames = [
+        "LeadSource",
+      ]
+      info = "<p>Lleve un registro de la información relacionada con sus clientes potenciales no cualificados.</p><p><br></p><p><strong>Un cliente potencial puede no estar cualificado si no está interesado en sus productos o si ha abandonado la empresa asociada al cliente potencial.</strong></p><p><br></p><ul><li>Guarde los detalles del contacto y la información de contacto.</li></ul>"
+      picklistValueName = "Unqualified"
+    },
+    {
+      fieldNames = [
+        "Title",
+        "Email",
+        "Phone",
+      ]
+      info = "<p><strong>Cualificar los clientes potenciales.</strong></p><ul><li>Identificar un contacto para el lead.</li><li>Guarde su información de contacto en el registro de clientes potenciales</li></ul>"
+      picklistValueName = "Working"
+    },
+  ]
+  recordTypeName = "__MASTER__"
+  _alias = "Default"
+}

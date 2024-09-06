@@ -1,0 +1,17 @@
+salesforce.CompactLayout Lead_Leads_Custom_Compact_Layout {
+  fullName = "Lead.Leads_Custom_Compact_Layout"
+  fields = [
+    "Name",
+    "Title",
+    "Company",
+    "Phone",
+    "MobilePhone",
+    "Email",
+    "OwnerId",
+  ]
+  label = "Leads Custom Compact Layout"
+  _parent = [
+    salesforce.Lead,
+  ]
+  _alias = "Leads Custom Compact Layout"
+}

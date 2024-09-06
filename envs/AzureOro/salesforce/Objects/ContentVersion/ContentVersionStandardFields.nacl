@@ -1,0 +1,412 @@
+type salesforce.ContentVersion {
+  salesforce.Number ContentSize {
+    apiName = "ContentVersion.ContentSize"
+    label = "Tamaño"
+    precision = 9
+    createable = false
+    updateable = false
+    scale = 0
+    unique = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.LongTextArea Description {
+    apiName = "ContentVersion.Description"
+    length = 1000
+    label = "Descripción"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Text FileExtension {
+    apiName = "ContentVersion.FileExtension"
+    length = 40
+    label = "Extensión de archivo"
+    createable = false
+    updateable = false
+    unique = false
+    caseSensitive = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Text FileType {
+    apiName = "ContentVersion.FileType"
+    length = 20
+    _required = true
+    label = "Tipo de archivo"
+    createable = false
+    updateable = false
+    unique = false
+    caseSensitive = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Checkbox IsAssetEnabled {
+    apiName = "ContentVersion.IsAssetEnabled"
+    defaultValue = false
+    label = "Archivo de activo activado"
+    createable = true
+    updateable = false
+    queryable = true
+  }
+  salesforce.Unknown Language {
+    apiName = "ContentVersion.Language"
+    _hidden_value = true
+  }
+  salesforce.Lookup OwnerId {
+    apiName = "ContentVersion.OwnerId"
+    relationshipName = "Owner"
+    label = "Id. del propietario"
+    createable = true
+    updateable = true
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Picklist SharingOption {
+    apiName = "ContentVersion.SharingOption"
+    restricted = true
+    _required = true
+    label = "Evitar que los demás usuarios compartan o dejen de compartir"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Picklist SharingPrivacy {
+    apiName = "ContentVersion.SharingPrivacy"
+    restricted = true
+    _required = true
+    label = "Privacidad de archivos en registros"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.LongTextArea TagCsv {
+    apiName = "ContentVersion.TagCsv"
+    length = 2000
+    label = "Etiquetas"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Text Title {
+    apiName = "ContentVersion.Title"
+    length = 255
+    _required = true
+    label = "Título"
+    createable = true
+    updateable = true
+    unique = false
+    caseSensitive = false
+    queryable = true
+  }
+  serviceid Id {
+    apiName = "ContentVersion.Id"
+    label = "Id. de versión de contenido"
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup ContentDocumentId {
+    apiName = "ContentVersion.ContentDocumentId"
+    relationshipName = "ContentDocument"
+    _required = true
+    label = "ContentDocument ID"
+    createable = true
+    updateable = false
+    queryable = true
+  }
+  salesforce.Checkbox IsLatest {
+    apiName = "ContentVersion.IsLatest"
+    label = "Es más reciente"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Url ContentUrl {
+    apiName = "ContentVersion.ContentUrl"
+    label = "URL de contenido"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Lookup ContentBodyId {
+    apiName = "ContentVersion.ContentBodyId"
+    relationshipName = "ContentBody"
+    label = "Id. de Cuerpo de contenido"
+    createable = true
+    updateable = false
+    queryable = true
+  }
+  salesforce.Text VersionNumber {
+    apiName = "ContentVersion.VersionNumber"
+    length = 20
+    label = "Número de versión"
+    createable = false
+    updateable = false
+    unique = false
+    caseSensitive = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Text ReasonForChange {
+    apiName = "ContentVersion.ReasonForChange"
+    length = 1000
+    label = "Motivo de cambio"
+    createable = true
+    updateable = true
+    unique = false
+    caseSensitive = false
+    queryable = true
+  }
+  salesforce.Text PathOnClient {
+    apiName = "ContentVersion.PathOnClient"
+    length = 500
+    label = "Ruta del cliente"
+    createable = true
+    updateable = false
+    unique = false
+    caseSensitive = false
+    queryable = true
+  }
+  salesforce.Number RatingCount {
+    apiName = "ContentVersion.RatingCount"
+    label = "Recuento de valoración"
+    precision = 9
+    createable = false
+    updateable = false
+    scale = 0
+    unique = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Checkbox IsDeleted {
+    apiName = "ContentVersion.IsDeleted"
+    defaultValue = false
+    label = "Está eliminado"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime ContentModifiedDate {
+    apiName = "ContentVersion.ContentModifiedDate"
+    label = "Fecha de modificación de contenido"
+    createable = true
+    updateable = false
+    queryable = true
+  }
+  salesforce.Lookup ContentModifiedById {
+    apiName = "ContentVersion.ContentModifiedById"
+    relationshipName = "ContentModifiedBy"
+    label = "Id. de usuario"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Number PositiveRatingCount {
+    apiName = "ContentVersion.PositiveRatingCount"
+    label = "Recuento de valoración positiva"
+    precision = 9
+    createable = false
+    updateable = false
+    scale = 0
+    unique = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Number NegativeRatingCount {
+    apiName = "ContentVersion.NegativeRatingCount"
+    label = "Recuento de valoración negativa"
+    precision = 9
+    createable = false
+    updateable = false
+    scale = 0
+    unique = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Number FeaturedContentBoost {
+    apiName = "ContentVersion.FeaturedContentBoost"
+    label = "Fomento del contenido destacado"
+    precision = 9
+    createable = false
+    updateable = false
+    scale = 0
+    unique = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Date FeaturedContentDate {
+    apiName = "ContentVersion.FeaturedContentDate"
+    label = "Fecha del contenido destacado"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup CreatedById {
+    apiName = "ContentVersion.CreatedById"
+    relationshipName = "CreatedBy"
+    label = "Creado por el Id."
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime CreatedDate {
+    apiName = "ContentVersion.CreatedDate"
+    label = "Fecha de creación"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup LastModifiedById {
+    apiName = "ContentVersion.LastModifiedById"
+    relationshipName = "LastModifiedBy"
+    label = "Última modificación realizada por el Id."
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime LastModifiedDate {
+    apiName = "ContentVersion.LastModifiedDate"
+    label = "Fecha de la última modificación"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime SystemModstamp {
+    apiName = "ContentVersion.SystemModstamp"
+    label = "Modstamp del sistema"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Picklist PublishStatus {
+    apiName = "ContentVersion.PublishStatus"
+    restricted = true
+    _required = true
+    label = "Publicar estado"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Text VersionData {
+    apiName = "ContentVersion.VersionData"
+    length = 0
+    label = "Datos de versión"
+    createable = true
+    updateable = true
+    unique = false
+    caseSensitive = false
+    queryable = true
+  }
+  salesforce.Lookup FirstPublishLocationId {
+    apiName = "ContentVersion.FirstPublishLocationId"
+    relationshipName = "FirstPublishLocation"
+    label = "Id de primera ubicación de publicación"
+    createable = true
+    updateable = false
+    queryable = true
+  }
+  salesforce.Picklist Origin {
+    apiName = "ContentVersion.Origin"
+    restricted = true
+    _required = true
+    label = "Origen del contenido"
+    createable = true
+    updateable = false
+    queryable = true
+  }
+  salesforce.Lookup NetworkId {
+    apiName = "ContentVersion.NetworkId"
+    label = "Id. de red"
+    createable = true
+    updateable = false
+    queryable = true
+  }
+  salesforce.Picklist ContentLocation {
+    apiName = "ContentVersion.ContentLocation"
+    restricted = true
+    _required = true
+    label = "Ubicación de contenido"
+    createable = true
+    updateable = false
+    queryable = true
+  }
+  salesforce.Text TextPreview {
+    apiName = "ContentVersion.TextPreview"
+    length = 255
+    label = "Vista previa de texto"
+    createable = false
+    updateable = false
+    unique = false
+    caseSensitive = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Text ExternalDocumentInfo1 {
+    apiName = "ContentVersion.ExternalDocumentInfo1"
+    length = 1000
+    label = "Información de documento externo 1"
+    createable = true
+    updateable = true
+    unique = false
+    caseSensitive = false
+    queryable = true
+  }
+  salesforce.Text ExternalDocumentInfo2 {
+    apiName = "ContentVersion.ExternalDocumentInfo2"
+    length = 1000
+    label = "Información de documento externo 2"
+    createable = true
+    updateable = true
+    unique = false
+    caseSensitive = false
+    queryable = true
+  }
+  salesforce.Lookup ExternalDataSourceId {
+    apiName = "ContentVersion.ExternalDataSourceId"
+    relationshipName = "ExternalDataSource"
+    label = "Id. de fuente de datos externa"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Text Checksum {
+    apiName = "ContentVersion.Checksum"
+    length = 50
+    label = "Suma de verificación"
+    createable = false
+    updateable = false
+    unique = false
+    caseSensitive = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Checkbox IsMajorVersion {
+    apiName = "ContentVersion.IsMajorVersion"
+    defaultValue = false
+    label = "Versión principal"
+    createable = true
+    updateable = false
+    queryable = true
+  }
+  salesforce.Text VersionDataUrl {
+    apiName = "ContentVersion.VersionDataUrl"
+    length = 255
+    label = "URL de datos de versión"
+    createable = false
+    updateable = false
+    unique = false
+    caseSensitive = false
+    queryable = true
+    _hidden_value = true
+  }
+}

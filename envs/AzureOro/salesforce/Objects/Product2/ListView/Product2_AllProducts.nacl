@@ -1,0 +1,14 @@
+salesforce.ListView Product2_AllProducts {
+  fullName = "Product2.AllProducts"
+  columns = [
+    "PRODUCT2.NAME",
+    salesforce.Product2.field.Grupo_de_Servicios__c,
+    "PRODUCT2.FAMILY",
+  ]
+  filterScope = "Everything"
+  label = "Todos los servicios"
+  _parent = [
+    salesforce.Product2,
+  ]
+  _alias = "Todos los servicios"
+}

@@ -1,0 +1,37 @@
+salesforce.LightningPage Sales_UtilityBar {
+  flexiPageRegions = [
+    {
+      itemInstances = [
+        {
+          componentInstance = {
+            componentName = "runtime_sales_todo_list:unifiedToDoListAuraWrapper"
+            identifier = "runtime_sales_todo_list_unifiedToDoListAuraWrapper"
+          }
+        },
+        {
+          componentInstance = {
+            componentName = "notes:utilityBarNoteList"
+            identifier = "notes_utilityBarNoteList"
+          }
+        },
+      ]
+      name = "utilityItems"
+      type = "Region"
+    },
+    {
+      name = "backgroundComponents"
+      type = "Background"
+    },
+  ]
+  masterLabel = "Sales UtilityBar"
+  template = {
+    name = "one:utilityBarTemplateDesktop"
+    properties = {
+      name = "isLeftAligned"
+      value = "true"
+    }
+  }
+  type = "UtilityBar"
+  fullName = "Sales_UtilityBar"
+  _alias = "Sales_UtilityBar"
+}

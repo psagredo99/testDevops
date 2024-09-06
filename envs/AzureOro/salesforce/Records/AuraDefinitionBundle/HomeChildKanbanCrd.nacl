@@ -1,0 +1,17 @@
+salesforce.AuraDefinitionBundle HomeChildKanbanCrd {
+  apiVersion = 41
+  description = "A Lightning Component Bundle"
+  fullName = "HomeChildKanbanCrd"
+  type = "Component"
+  markup = file("salesforce/Records/AuraDefinitionBundle/HomeChildKanbanCrd/HomeChildKanbanCrd.cmp")
+  controllerContent = file("salesforce/Records/AuraDefinitionBundle/HomeChildKanbanCrd/HomeChildKanbanCrdController.js")
+  styleContent = file("salesforce/Records/AuraDefinitionBundle/HomeChildKanbanCrd/HomeChildKanbanCrd.css")
+  documentationContent = file("salesforce/Records/AuraDefinitionBundle/HomeChildKanbanCrd/HomeChildKanbanCrd.auradoc")
+  rendererContent = file("salesforce/Records/AuraDefinitionBundle/HomeChildKanbanCrd/HomeChildKanbanCrdRenderer.js")
+  _generated_dependencies = [
+    {
+      reference = salesforce.AuraDefinitionBundle.instance.HomeChildKanbanDeleteEvt
+    },
+  ]
+  _alias = "HomeChildKanbanCrd"
+}

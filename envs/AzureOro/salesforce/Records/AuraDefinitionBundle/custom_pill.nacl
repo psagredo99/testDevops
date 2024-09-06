@@ -1,0 +1,19 @@
+salesforce.AuraDefinitionBundle custom_pill {
+  apiVersion = 40
+  description = "A Lightning Component Bundle"
+  fullName = "custom_pill"
+  type = "Component"
+  controllerContent = file("salesforce/Records/AuraDefinitionBundle/custom_pill/custom_pillController.js")
+  helperContent = file("salesforce/Records/AuraDefinitionBundle/custom_pill/custom_pillHelper.js")
+  styleContent = file("salesforce/Records/AuraDefinitionBundle/custom_pill/custom_pill.css")
+  markup = file("salesforce/Records/AuraDefinitionBundle/custom_pill/custom_pill.cmp")
+  _generated_dependencies = [
+    {
+      reference = salesforce.AuraDefinitionBundle.instance.custom_event
+    },
+    {
+      reference = salesforce.AuraDefinitionBundle.instance.defaultTokens
+    },
+  ]
+  _alias = "custom_pill"
+}

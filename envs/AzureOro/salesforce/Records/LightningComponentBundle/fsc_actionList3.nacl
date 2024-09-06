@@ -1,0 +1,18 @@
+salesforce.LightningComponentBundle fsc_actionList3 {
+  apiVersion = 50
+  isExposed = false
+  fullName = "fsc_actionList3"
+  lwcResources = {
+    lwcResource = {
+      fsc_actionList3_html@uv = {
+        source = file("salesforce/Records/LightningComponentBundle/fsc_actionList3/fsc_actionList3.html")
+        filePath = "lwc/fsc_actionList3/fsc_actionList3.html"
+      }
+      fsc_actionList3_js@uv = {
+        source = file("salesforce/Records/LightningComponentBundle/fsc_actionList3/fsc_actionList3.js")
+        filePath = "lwc/fsc_actionList3/fsc_actionList3.js"
+      }
+    }
+  }
+  _alias = "fsc_actionList3"
+}

@@ -1,0 +1,92 @@
+salesforce.Layout FlowInterview_Formato_Flow_Interview@bss {
+  layoutSections = [
+    {
+      customLabel = true
+      detailHeading = false
+      editHeading = true
+      label = "Información de objetivo"
+      layoutColumns = [
+        {
+          layoutItems = [
+            {
+              behavior = "Required"
+              field = "InterviewStatus"
+            },
+            {
+              behavior = "Required"
+              field = "Error"
+            },
+            {
+              behavior = "Edit"
+              field = "MasterVersionProcessType"
+            },
+            {
+              behavior = "Edit"
+              field = "WasPausedFromScreen"
+            },
+            {
+              behavior = "Readonly"
+              field = "Name"
+            },
+            {
+              behavior = "Required"
+              field = "InterviewLabel"
+            },
+            {
+              behavior = "Required"
+              field = "OwnerId"
+            },
+            {
+              behavior = "Readonly"
+              field = "LastModifiedById"
+            },
+            {
+              behavior = "Edit"
+              field = "Guid"
+            },
+          ]
+        },
+        {
+          layoutItems = [
+            {
+              behavior = "Required"
+              field = "MasterFlowVersion"
+            },
+            {
+              behavior = "Required"
+              field = "PauseLabel"
+            },
+            {
+              behavior = "Readonly"
+              field = "CreatedById"
+            },
+          ]
+        },
+      ]
+      style = "TwoColumnsLeftToRight"
+    },
+    {
+      customLabel = false
+      detailHeading = false
+      editHeading = false
+      layoutColumns = [
+        {
+        },
+      ]
+      style = "CustomLinks"
+    },
+  ]
+  miniLayout = {
+    fields = [
+      "InterviewStatus",
+      "Error",
+      "MasterVersionProcessType",
+      "WasPausedFromScreen",
+    ]
+  }
+  showEmailCheckbox = false
+  showRunAssignmentRulesCheckbox = false
+  showSubmitAndAttachButton = false
+  fullName = "FlowInterview-Formato Flow Interview"
+  _alias = "FlowInterview-Formato Flow Interview"
+}

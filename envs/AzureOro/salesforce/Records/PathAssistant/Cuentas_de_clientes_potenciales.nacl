@@ -1,0 +1,9 @@
+salesforce.PathAssistant Cuentas_de_clientes_potenciales {
+  fullName = "Cuentas_de_clientes_potenciales"
+  active = true
+  entityName = "Account"
+  fieldName = "Situacion_cliente__c"
+  masterLabel = "Cuentas de clientes potenciales"
+  recordTypeName = "Cuenta_Potencial"
+  _alias = "Cuentas_de_clientes_potenciales"
+}

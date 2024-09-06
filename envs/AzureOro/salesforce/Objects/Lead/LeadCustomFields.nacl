@@ -1,0 +1,111 @@
+type salesforce.Lead {
+  salesforce.LongTextArea Correos_electronicos_adicionales__c {
+    apiName = "Lead.Correos_electronicos_adicionales__c"
+    label = "Correos electrónicos adicionales"
+    length = 1000
+    visibleLines = 2
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Text Detalle_sector__c {
+    apiName = "Lead.Detalle_sector__c"
+    externalId = false
+    inlineHelpText = "Información sobre el detalle del sector del candidato."
+    label = "Detalle sector"
+    length = 255
+    unique = false
+    createable = true
+    updateable = true
+    caseSensitive = false
+    queryable = true
+  }
+  salesforce.Text ID_Clientify__c {
+    apiName = "Lead.ID_Clientify__c"
+    caseSensitive = false
+    externalId = true
+    label = "ID Contacto Clientify"
+    length = 80
+    unique = true
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Text ID_Compania__c {
+    apiName = "Lead.ID_Compania__c"
+    externalId = false
+    label = "ID Cuenta Clientify"
+    length = 80
+    unique = false
+    createable = true
+    updateable = true
+    caseSensitive = false
+    queryable = true
+  }
+  salesforce.Text ID_Contacto_Clientify__c {
+    apiName = "Lead.ID_Contacto_Clientify__c"
+    caseSensitive = false
+    externalId = true
+    label = "ID Contacto Clientify"
+    length = 80
+    unique = true
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Text ID_Cuenta_Clientify__c {
+    apiName = "Lead.ID_Cuenta_Clientify__c"
+    externalId = false
+    label = "ID Cuenta Clientify"
+    length = 80
+    unique = false
+    createable = true
+    updateable = true
+    caseSensitive = false
+    queryable = true
+  }
+  salesforce.Checkbox Integrado_Clientify__c {
+    apiName = "Lead.Integrado_Clientify__c"
+    defaultValue = false
+    label = "Integrado Clientify"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Url Linkedin_candidato__c {
+    apiName = "Lead.Linkedin_candidato__c"
+    label = "Linkedin candidato"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Url Linkedin_compania__c {
+    apiName = "Lead.Linkedin_compania__c"
+    label = "Linkedin compañía"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Text NIF_CIF__c {
+    apiName = "Lead.NIF_CIF__c"
+    externalId = false
+    label = "NIF/CIF"
+    length = 255
+    unique = false
+    createable = true
+    updateable = true
+    caseSensitive = false
+    queryable = true
+  }
+  salesforce.Text Telefonos_adicionales__c {
+    apiName = "Lead.Telefonos_adicionales__c"
+    externalId = false
+    label = "Números adicionales"
+    length = 255
+    unique = false
+    createable = true
+    updateable = true
+    caseSensitive = false
+    queryable = true
+  }
+}

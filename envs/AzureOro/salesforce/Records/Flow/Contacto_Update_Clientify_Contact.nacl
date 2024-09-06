@@ -1,0 +1,120 @@
+salesforce.Flow Contacto_Update_Clientify_Contact {
+  fullName = "Contacto_Update_Clientify_Contact"
+  actionCalls = [
+    {
+      name = "Edit_contact_in_clientify"
+      label = "Edit contact in clientify"
+      locationX = 176
+      locationY = 455
+      actionName = salesforce.ApexClass.instance.SF2Clientify
+      actionType = "apex"
+      flowTransactionModel = "CurrentTransaction"
+      inputParameters = [
+        {
+          name = "Id"
+          value = {
+            elementReference = "$Record.Id"
+          }
+        },
+        {
+          name = "idClienti"
+          value = {
+            elementReference = "idClientify"
+          }
+        },
+      ]
+      nameSegment = "SF2Clientify"
+      versionSegment = 1
+    },
+  ]
+  apiVersion = 57
+  assignments = [
+    {
+      name = "Assing_Id_Clientify"
+      label = "Assing Id Clientify"
+      locationX = 176
+      locationY = 335
+      assignmentItems = [
+        {
+          assignToReference = "idClientify"
+          operator = "Assign"
+          value = {
+            elementReference = "$Record.ID_Contacto_Clientify__c"
+          }
+        },
+      ]
+      connector = {
+        targetReference = "Edit_contact_in_clientify"
+      }
+    },
+  ]
+  environments = "Default"
+  interviewLabel = "Contacto - Update Clientify Contact {!$Flow.CurrentDateTime}"
+  label = "Contacto - Update Clientify Contact"
+  processMetadataValues = [
+    {
+      name = "BuilderType"
+      value = {
+        stringValue = "LightningFlowBuilder"
+      }
+    },
+    {
+      name = "CanvasMode"
+      value = {
+        stringValue = "AUTO_LAYOUT_CANVAS"
+      }
+    },
+    {
+      name = "OriginBuilderType"
+      value = {
+        stringValue = "LightningFlowBuilder"
+      }
+    },
+  ]
+  processType = "AutoLaunchedFlow"
+  start = {
+    locationX = 50
+    locationY = 0
+    connector = {
+      targetReference = "Assing_Id_Clientify"
+    }
+    filterLogic = "1 AND (2 OR 3)"
+    filters = [
+      {
+        field = salesforce.Contact.field.ID_Contacto_Clientify__c
+        operator = "IsNull"
+        value = {
+          booleanValue = false
+        }
+      },
+      {
+        field = salesforce.Contact.field.DoNotCall
+        operator = "IsChanged"
+        value = {
+          booleanValue = true
+        }
+      },
+      {
+        field = salesforce.Contact.field.HasOptedOutOfEmail
+        operator = "IsChanged"
+        value = {
+          booleanValue = true
+        }
+      },
+    ]
+    object = salesforce.Contact
+    recordTriggerType = "Update"
+    triggerType = "RecordAfterSave"
+  }
+  status = "Draft"
+  variables = [
+    {
+      name = "idClientify"
+      dataType = "String"
+      isCollection = false
+      isInput = false
+      isOutput = false
+    },
+  ]
+  _alias = "Contacto - Update Clientify Contact"
+}

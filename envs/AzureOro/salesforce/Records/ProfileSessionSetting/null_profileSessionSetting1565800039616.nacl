@@ -1,0 +1,10 @@
+salesforce.ProfileSessionSetting null_profileSessionSetting1565800039616 {
+  fullName = "null_profileSessionSetting1565800039616"
+  externalCommunityUserIdentityVerif = false
+  forceLogout = false
+  profile = "executive sponsor"
+  sessionPersistence = false
+  sessionTimeout = 0
+  sessionTimeoutWarning = false
+  _alias = "null_profileSessionSetting1565800039616"
+}

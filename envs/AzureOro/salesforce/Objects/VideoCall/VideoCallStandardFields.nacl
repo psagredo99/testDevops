@@ -1,0 +1,241 @@
+type salesforce.VideoCall {
+  salesforce.LongTextArea Description {
+    apiName = "VideoCall.Description"
+    length = 32000
+    label = "Descripción"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Number DurationInSeconds {
+    apiName = "VideoCall.DurationInSeconds"
+    label = "Duración de llamada"
+    precision = 8
+    createable = false
+    updateable = false
+    scale = 0
+    unique = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime EndDateTime {
+    apiName = "VideoCall.EndDateTime"
+    label = "Finalizó llamada"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup EventId {
+    apiName = "VideoCall.EventId"
+    relationshipName = "Event"
+    label = "Id. de actividad"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup HostId {
+    apiName = "VideoCall.HostId"
+    relationshipName = "Host"
+    label = "Id. de usuario"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Number IntelligenceScore {
+    apiName = "VideoCall.IntelligenceScore"
+    label = "Puntuación de inteligencia"
+    precision = 8
+    createable = false
+    updateable = false
+    scale = 0
+    unique = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Checkbox IsCallCoachingIncluded {
+    apiName = "VideoCall.IsCallCoachingIncluded"
+    defaultValue = false
+    label = "Incluye Apoyo de llamadas"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Checkbox IsDiarizationOptIn {
+    apiName = "VideoCall.IsDiarizationOptIn"
+    defaultValue = false
+    label = "Está suscrita la diarización"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Checkbox IsRecorded {
+    apiName = "VideoCall.IsRecorded"
+    defaultValue = false
+    label = "Es grabado"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Picklist MeetingType {
+    apiName = "VideoCall.MeetingType"
+    restricted = true
+    label = "Tipo de reunión"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Text Name {
+    apiName = "VideoCall.Name"
+    length = 255
+    _required = true
+    label = "Nombre"
+    createable = true
+    updateable = false
+    unique = false
+    caseSensitive = false
+    queryable = true
+  }
+  salesforce.Lookup OwnerId {
+    apiName = "VideoCall.OwnerId"
+    relationshipName = "Owner"
+    label = "Id. del propietario"
+    createable = true
+    updateable = true
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup RelatedRecordId {
+    apiName = "VideoCall.RelatedRecordId"
+    relationshipName = "RelatedRecord"
+    label = "Id. de Registro relacionado"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.DateTime StartDateTime {
+    apiName = "VideoCall.StartDateTime"
+    label = "Llamada iniciada"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Text TranscribedLanguage {
+    apiName = "VideoCall.TranscribedLanguage"
+    length = 10
+    label = "Idioma"
+    createable = false
+    updateable = false
+    unique = false
+    caseSensitive = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Text VendorMeetingKey {
+    apiName = "VideoCall.VendorMeetingKey"
+    length = 255
+    _required = true
+    label = "Clave de reunión de proveedor"
+    createable = true
+    updateable = false
+    unique = false
+    caseSensitive = false
+    queryable = true
+  }
+  salesforce.Text VendorMeetingUuid {
+    apiName = "VideoCall.VendorMeetingUuid"
+    length = 255
+    label = "UUID de reunión de proveedor"
+    createable = false
+    updateable = false
+    unique = false
+    caseSensitive = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Picklist VendorName {
+    apiName = "VideoCall.VendorName"
+    restricted = true
+    label = "Proveedor"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  serviceid Id {
+    apiName = "VideoCall.Id"
+    label = "Id. de Llamada de vídeo"
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Checkbox IsDeleted {
+    apiName = "VideoCall.IsDeleted"
+    defaultValue = false
+    label = "Eliminado"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime CreatedDate {
+    apiName = "VideoCall.CreatedDate"
+    label = "Fecha de creación"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup CreatedById {
+    apiName = "VideoCall.CreatedById"
+    relationshipName = "CreatedBy"
+    label = "Creado por el Id."
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime LastModifiedDate {
+    apiName = "VideoCall.LastModifiedDate"
+    label = "Fecha de la última modificación"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup LastModifiedById {
+    apiName = "VideoCall.LastModifiedById"
+    relationshipName = "LastModifiedBy"
+    label = "Última modificación realizada por el Id."
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime SystemModstamp {
+    apiName = "VideoCall.SystemModstamp"
+    label = "Modstamp del sistema"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Text ExternalId {
+    apiName = "VideoCall.ExternalId"
+    length = 255
+    label = "Id. externo"
+    createable = false
+    updateable = false
+    unique = true
+    caseSensitive = true
+    queryable = true
+    _hidden_value = true
+  }
+}

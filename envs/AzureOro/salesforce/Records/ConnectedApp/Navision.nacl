@@ -1,0 +1,51 @@
+salesforce.ConnectedApp Navision {
+  fullName = "Navision"
+  contactEmail = "adminsalesforce@pkf-attest.es"
+  label = "Navision"
+  oauthConfig = {
+    callbackUrl = "https://pkf-attest.lightning.force.com/"
+    consumerKey = "3MVG9Iuu5rVmxszwBKbFDI7ihc8FrEzvhiQKRXXkErgwBPY0mi6yKw4NRA6Zeyj_0JplBEAJw4rMK1SakMjq0"
+    isAdminApproved = false
+    isClientCredentialEnabled = false
+    isCodeCredentialEnabled = false
+    isCodeCredentialPostOnly = false
+    isConsumerSecretOptional = false
+    isIntrospectAllTokens = false
+    isNamedUserJwtEnabled = false
+    isPkceRequired = false
+    isRefreshTokenRotationEnabled = false
+    isSecretRequiredForRefreshToken = false
+    isSecretRequiredForTokenExchange = false
+    isTokenExchangeEnabled = false
+    scopes = [
+      "Basic",
+      "Api",
+      "Web",
+      "Full",
+      "Chatter",
+      "CustomApplications",
+      "RefreshToken",
+      "OpenID",
+      "CustomPermissions",
+      "Wave",
+      "Eclair",
+      "Pardot",
+      "Lightning",
+      "Content",
+      "CDPIngest",
+      "CDPProfile",
+      "CDPQuery",
+      "Chatbot",
+      "CDPSegment",
+      "CDPIdentityResolution",
+      "CDPCalculatedInsight",
+      "ForgotPassword",
+    ]
+  }
+  oauthPolicy = {
+    ipRelaxation = "ENFORCE"
+    isTokenExchangeFlowEnabled = false
+    refreshTokenPolicy = "infinite"
+  }
+  _alias = "Navision"
+}

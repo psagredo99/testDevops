@@ -1,0 +1,7 @@
+salesforce.SharingRules In_App_Checklist_Settings__c {
+  fullName = "In_App_Checklist_Settings__c"
+  _parent = [
+    salesforce.In_App_Checklist_Settings__c,
+  ]
+  _alias = "In_App_Checklist_Settings__c"
+}

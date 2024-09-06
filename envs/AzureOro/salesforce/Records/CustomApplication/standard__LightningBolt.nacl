@@ -1,0 +1,24 @@
+salesforce.CustomApplication standard__LightningBolt {
+  formFactors = [
+    "Large",
+  ]
+  isNavAutoTempTabsDisabled = false
+  isNavPersonalizationDisabled = false
+  isNavTabPersistenceDisabled = false
+  isOmniPinnedViewEnabled = false
+  label = "LightningBolt"
+  navType = "Standard"
+  tabs = [
+    "standard-LightningBoltHome",
+    salesforce.CustomTab.instance.Datos_cuentas__c,
+  ]
+  uiType = "Lightning"
+  utilityBar = "LightningBolt_UtilityBar"
+  fullName = "standard__LightningBolt"
+  _generated_dependencies = [
+    {
+      reference = salesforce.LightningPage.instance.LightningBolt_UtilityBar
+    },
+  ]
+  _alias = "LightningBolt (standard)"
+}

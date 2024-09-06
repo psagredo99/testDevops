@@ -1,0 +1,16 @@
+salesforce.CompactLayout Datos_cuentas__c_Cabecera {
+  fullName = "Datos_cuentas__c.Cabecera"
+  fields = [
+    "Name",
+    "Id_NIF_CIF__c",
+    "Ingresos__c",
+    "Ultimo_Year__c",
+    "Estado_detallado__c",
+    "Numero_empleados__c",
+  ]
+  label = "Cabecera"
+  _parent = [
+    salesforce.Datos_cuentas__c,
+  ]
+  _alias = "Cabecera"
+}

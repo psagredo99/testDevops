@@ -1,0 +1,402 @@
+type salesforce.Campaign {
+  salesforce.Picklist Centro_de_actividad__c {
+    apiName = "Campaign.Centro_de_actividad__c"
+    label = "Centro de actividad"
+    valueSet = [
+      {
+        fullName = "Auditoria"
+        default = false
+        label = "Auditoria"
+      },
+      {
+        fullName = "BS Dynamics NAV"
+        default = false
+        label = "BS Dynamics NAV"
+      },
+      {
+        fullName = "BS Expertis"
+        default = false
+        label = "BS Expertis"
+      },
+      {
+        fullName = "BS GesCol"
+        default = false
+        label = "BS GesCol"
+      },
+      {
+        fullName = "BS Otras Sol. (BI, Lucanet., FN..)"
+        default = false
+        label = "BS Otras Sol. (BI, Lucanet., FN..)"
+      },
+      {
+        fullName = "BS Sage X3"
+        default = false
+        label = "BS Sage X3"
+      },
+      {
+        fullName = "Compliance"
+        default = false
+        label = "Compliance"
+      },
+      {
+        fullName = "Consultoría"
+        default = false
+        label = "Consultoría"
+      },
+      {
+        fullName = "Consultoría de Sistemas"
+        default = false
+        label = "Consultoría de Sistemas"
+      },
+      {
+        fullName = "Corporate FInance"
+        default = false
+        label = "Corporate FInance"
+      },
+      {
+        fullName = "Data Analytics"
+        default = false
+        label = "Data Analytics"
+      },
+      {
+        fullName = "Excellence"
+        default = false
+        label = "Excellence"
+      },
+      {
+        fullName = "Health"
+        default = false
+        label = "Health"
+      },
+      {
+        fullName = "Ing.Software"
+        default = false
+        label = "Ing.Software"
+      },
+      {
+        fullName = "Inncome"
+        default = false
+        label = "Inncome"
+      },
+      {
+        fullName = "Legal & Fiscal"
+        default = false
+        label = "Legal & Fiscal"
+      },
+      {
+        fullName = "Marketing Digital"
+        default = false
+        label = "Marketing Digital"
+      },
+      {
+        fullName = "Regulation @ Public Policy"
+        default = false
+        label = "Regulation @ Public Policy"
+      },
+      {
+        fullName = "RGPD"
+        default = false
+        label = "RGPD"
+      },
+      {
+        fullName = "Riesgos Tecnológicos"
+        default = false
+        label = "Riesgos Tecnológicos"
+      },
+      {
+        fullName = "SALESFORCE"
+        default = false
+        label = "SALESFORCE"
+      },
+      {
+        fullName = "Técnica Sistemas"
+        default = false
+        label = "Técnica Sistemas"
+      },
+    ]
+    sorted = false
+    restricted = true
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.MultiselectPicklist Division__c {
+    apiName = "Campaign.Division__c"
+    label = "División"
+    valueSet = [
+      {
+        fullName = "Auditoría y Consultoría Económica"
+        default = false
+        label = "Auditoría y Consultoría Económica"
+      },
+      {
+        fullName = "Riesgos Tecnológicos"
+        default = false
+        label = "Riesgos Tecnológicos"
+      },
+      {
+        fullName = "ITC"
+        default = false
+        label = "ITC"
+      },
+      {
+        fullName = "Fiscal"
+        default = false
+        label = "Fiscal"
+      },
+      {
+        fullName = "Legal"
+        default = false
+        label = "Legal"
+      },
+      {
+        fullName = "Soluciones de Gestión"
+        default = false
+        label = "Soluciones de Gestión"
+      },
+      {
+        fullName = "Corporate Finance"
+        default = false
+        label = "Corporate Finance"
+      },
+      {
+        fullName = "Capital Markets"
+        default = false
+        label = "Capital Markets"
+      },
+      {
+        fullName = "Inncome"
+        default = false
+        label = "Inncome"
+      },
+      {
+        fullName = "Regulación"
+        default = false
+        label = "Regulación"
+      },
+      {
+        fullName = "Concursal"
+        default = false
+        label = "Concursal"
+      },
+      {
+        fullName = "Corporativo"
+        default = false
+        label = "Corporativo"
+      },
+      {
+        fullName = "FAS"
+        default = false
+        label = "FAS"
+      },
+      {
+        fullName = "Health"
+        default = false
+        label = "Health"
+      },
+    ]
+    sorted = false
+    restricted = true
+    visibleLines = 4
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Picklist Publico_Objetivo__c {
+    apiName = "Campaign.Publico_Objetivo__c"
+    label = "Público Objetivo"
+    valueSet = [
+      {
+        fullName = "Clientes"
+        default = false
+        label = "Clientes"
+      },
+      {
+        fullName = "Potenciales"
+        default = false
+        label = "Potenciales"
+      },
+      {
+        fullName = "Mixto"
+        default = false
+        label = "Mixto"
+      },
+    ]
+    sorted = false
+    restricted = true
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Picklist Sector__c {
+    apiName = "Campaign.Sector__c"
+    label = "Sector"
+    valueSet = [
+      {
+        fullName = "Agriculture"
+        default = false
+        label = "Agriculture"
+      },
+      {
+        fullName = "Apparel"
+        default = false
+        label = "Apparel"
+      },
+      {
+        fullName = "Banking"
+        default = false
+        label = "Banking"
+      },
+      {
+        fullName = "Biotechnology"
+        default = false
+        label = "Biotechnology"
+      },
+      {
+        fullName = "Chemicals"
+        default = false
+        label = "Chemicals"
+      },
+      {
+        fullName = "Communications"
+        default = false
+        label = "Communications"
+      },
+      {
+        fullName = "Construction"
+        default = false
+        label = "Construction"
+      },
+      {
+        fullName = "Consulting"
+        default = false
+        label = "Consulting"
+      },
+      {
+        fullName = "Education"
+        default = false
+        label = "Education"
+      },
+      {
+        fullName = "Electronics"
+        default = false
+        label = "Electronics"
+      },
+      {
+        fullName = "Energy"
+        default = false
+        label = "Energy"
+      },
+      {
+        fullName = "Engineering"
+        default = false
+        label = "Engineering"
+      },
+      {
+        fullName = "Entertainment"
+        default = false
+        label = "Entertainment"
+      },
+      {
+        fullName = "Environmental"
+        default = false
+        label = "Environmental"
+      },
+      {
+        fullName = "Finance"
+        default = false
+        label = "Finance"
+      },
+      {
+        fullName = "Food & Beverage"
+        default = false
+        label = "Food & Beverage"
+      },
+      {
+        fullName = "Government"
+        default = false
+        label = "Government"
+      },
+      {
+        fullName = "Healthcare"
+        default = false
+        label = "Healthcare"
+      },
+      {
+        fullName = "Hospitality"
+        default = false
+        label = "Hospitality"
+      },
+      {
+        fullName = "Insurance"
+        default = false
+        label = "Insurance"
+      },
+      {
+        fullName = "Machinery"
+        default = false
+        label = "Machinery"
+      },
+      {
+        fullName = "Manufacturing"
+        default = false
+        label = "Manufacturing"
+      },
+      {
+        fullName = "Media"
+        default = false
+        label = "Media"
+      },
+      {
+        fullName = "Not For Profit"
+        default = false
+        label = "Not For Profit"
+      },
+      {
+        fullName = "Other"
+        default = false
+        label = "Other"
+      },
+      {
+        fullName = "Recreation"
+        default = false
+        label = "Recreation"
+      },
+      {
+        fullName = "Retail"
+        default = false
+        label = "Retail"
+      },
+      {
+        fullName = "Shipping"
+        default = false
+        label = "Shipping"
+      },
+      {
+        fullName = "Technology"
+        default = false
+        label = "Technology"
+      },
+      {
+        fullName = "Telecommunications"
+        default = false
+        label = "Telecommunications"
+      },
+      {
+        fullName = "Transportation"
+        default = false
+        label = "Transportation"
+      },
+      {
+        fullName = "Utilities"
+        default = false
+        label = "Utilities"
+      },
+    ]
+    sorted = false
+    restricted = true
+    createable = true
+    updateable = true
+    queryable = true
+  }
+}

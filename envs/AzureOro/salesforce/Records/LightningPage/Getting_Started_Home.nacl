@@ -1,0 +1,278 @@
+salesforce.LightningPage Getting_Started_Home {
+  flexiPageRegions = [
+    {
+      itemInstances = [
+        {
+          componentInstance = {
+            componentInstanceProperties = [
+              {
+                name = "HeaderTitle"
+                value = "Mis oportunidades"
+              },
+              {
+                name = "kanbanConfigId"
+                value = "a0H6800000Lh4NnEAJ"
+              },
+              {
+                name = "kanbanHeight"
+                value = "500"
+              },
+            ]
+            componentName = "HomeChildKanban"
+            identifier = "c_HomeChildKanban"
+          }
+        },
+      ]
+      name = "Facet-aabdd87e-d471-426d-89c9-f372cc66067b"
+      type = "Facet"
+    },
+    {
+      itemInstances = [
+        {
+          componentInstance = {
+            componentInstanceProperties = [
+              {
+                name = "tabs"
+                valueList = {
+                  valueListItems = [
+                    {
+                      value = "standard-Account"
+                    },
+                    {
+                      value = "standard-Contact"
+                    },
+                    {
+                      value = "standard-Opportunity"
+                    },
+                    {
+                      value = "standard-Campaign"
+                    },
+                    {
+                      value = "standard-Lead"
+                    },
+                    {
+                      value = "standard-Product2"
+                    },
+                  ]
+                }
+              },
+              {
+                name = "title"
+                value = "Ventas"
+              },
+            ]
+            componentName = "runtime_mobilesapp:launchPadTileList"
+            identifier = "runtime_mobilesapp_launchPadTileList"
+          }
+        },
+        {
+          componentInstance = {
+            componentInstanceProperties = [
+              {
+                name = "tabs"
+                valueList = {
+                  valueListItems = [
+                    {
+                      value = "standard-DuplicateRecordSet"
+                    },
+                    {
+                      value = "standard-DeleteEvent"
+                    },
+                  ]
+                }
+              },
+              {
+                name = "title"
+                value = "Data"
+              },
+            ]
+            componentName = "runtime_mobilesapp:launchPadTileList"
+            identifier = "runtime_mobilesapp_launchPadTileList3"
+          }
+        },
+      ]
+      name = "Facet-1280b9bd-e429-4fa4-a4e0-07a0132d5fa2"
+      type = "Facet"
+    },
+    {
+      itemInstances = [
+        {
+          componentInstance = {
+            componentInstanceProperties = [
+              {
+                name = "body"
+                value = "Facet-aabdd87e-d471-426d-89c9-f372cc66067b"
+              },
+              {
+                name = "title"
+                value = "Información de oportunidades"
+              },
+            ]
+            componentName = "flexipage:tab"
+            identifier = "flexipage_tab"
+          }
+        },
+        {
+          componentInstance = {
+            componentInstanceProperties = [
+              {
+                name = "body"
+                value = "Facet-1280b9bd-e429-4fa4-a4e0-07a0132d5fa2"
+              },
+              {
+                name = "title"
+                value = "Manage"
+              },
+            ]
+            componentName = "flexipage:tab"
+            identifier = "flexipage_tab2"
+          }
+        },
+      ]
+      name = "Facet-2645d0c5-2720-4908-adc5-5044fcd6e655"
+      type = "Facet"
+    },
+    {
+      itemInstances = [
+        {
+          componentInstance = {
+            componentInstanceProperties = [
+              {
+                name = "tabs"
+                value = "Facet-2645d0c5-2720-4908-adc5-5044fcd6e655"
+              },
+            ]
+            componentName = "flexipage:tabset"
+            identifier = "flexipage_tabset"
+          }
+        },
+      ]
+      name = "top"
+      type = "Region"
+    },
+    {
+      itemInstances = [
+        {
+          componentInstance = {
+            componentInstanceProperties = [
+              {
+                name = "entityNames"
+                valueList = {
+                  valueListItems = [
+                    {
+                      value = "Contact"
+                    },
+                  ]
+                }
+              },
+              {
+                name = "label"
+                value = "Recent Contacts"
+              },
+              {
+                name = "maxRecords"
+                value = "5"
+              },
+            ]
+            componentName = "flexipage:recentItems"
+            identifier = "flexipage_recentItems"
+          }
+        },
+      ]
+      name = "bottomLeft"
+      type = "Region"
+    },
+    {
+      itemInstances = [
+        {
+          componentInstance = {
+            componentInstanceProperties = [
+              {
+                name = "enableInlineEdit"
+                value = "true"
+              },
+              {
+                name = "entityName"
+                value = "Account"
+              },
+              {
+                name = "filterName"
+                value = "MyAccounts"
+              },
+              {
+                name = "hideActionBar"
+                value = "false"
+              },
+              {
+                name = "hideSearchBar"
+                value = "false"
+              },
+              {
+                name = "pageSize"
+                value = "10"
+              },
+            ]
+            componentName = "flexipage:filterListCard"
+            identifier = "flexipage_filterListCard"
+          }
+        },
+      ]
+      name = "bottomRight"
+      type = "Region"
+    },
+    {
+      itemInstances = [
+        {
+          componentInstance = {
+            componentName = "home:assistant"
+            identifier = "home_assistant"
+          }
+        },
+        {
+          componentInstance = {
+            componentName = "runtime_approval_process:pendingApprovalCard"
+            identifier = "runtime_approval_process_pendingApprovalCard"
+            visibilityRule = {
+              criteria = [
+                {
+                  leftValue = "{!$User.Recibir_notificacion_secretaria_tecnica__c}"
+                  operator = "EQUAL"
+                  rightValue = "true"
+                },
+              ]
+            }
+          }
+        },
+        {
+          componentInstance = {
+            componentName = "home:eventContainer"
+            identifier = "home_eventContainer"
+          }
+        },
+        {
+          componentInstance = {
+            componentName = "runtime_sales_activities:todayTaskContainer"
+            identifier = "runtime_sales_activities_todayTaskContainer"
+          }
+        },
+      ]
+      name = "sidebar"
+      type = "Region"
+    },
+  ]
+  masterLabel = "Getting Started Home"
+  template = {
+    name = "home:desktopTemplate"
+  }
+  type = "HomePage"
+  fullName = "Getting_Started_Home"
+  _generated_dependencies = [
+    {
+      reference = salesforce.AuraDefinitionBundle.instance.HomeChildKanban
+    },
+    {
+      reference = salesforce.ListView.instance.Account_MyAccounts
+    },
+  ]
+  _alias = "Getting_Started_Home"
+}

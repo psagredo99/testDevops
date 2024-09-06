@@ -1,0 +1,14 @@
+type salesforce.Parametro_Integracion__mdt {
+  serviceid fullName {
+  }
+  string description {
+  }
+  string label {
+  }
+  boolean protected {
+  }
+  string internalId {
+    _hidden_value = true
+    localOnly = true
+  }
+}

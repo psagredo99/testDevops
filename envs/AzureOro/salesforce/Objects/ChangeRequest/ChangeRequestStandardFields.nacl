@@ -1,0 +1,225 @@
+type salesforce.ChangeRequest {
+  salesforce.LongTextArea BusinessJustification {
+    apiName = "ChangeRequest.BusinessJustification"
+    length = 32000
+    label = "Justificación comercial"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Picklist BusinessReason {
+    apiName = "ChangeRequest.BusinessReason"
+    label = "Motivo comercial"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Picklist Category {
+    apiName = "ChangeRequest.Category"
+    label = "Categoría"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Picklist ChangeType {
+    apiName = "ChangeRequest.ChangeType"
+    restricted = true
+    label = "Tipo de cambio"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.LongTextArea Description {
+    apiName = "ChangeRequest.Description"
+    length = 32000
+    label = "Descripción"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.DateTime EstimatedEndTime {
+    apiName = "ChangeRequest.EstimatedEndTime"
+    label = "Hora de finalización (estimada)"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.DateTime EstimatedStartTime {
+    apiName = "ChangeRequest.EstimatedStartTime"
+    label = "Hora de inicio (estimada)"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.DateTime FinalReviewDateTime {
+    apiName = "ChangeRequest.FinalReviewDateTime"
+    label = "Revisada el"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.LongTextArea FinalReviewNotes {
+    apiName = "ChangeRequest.FinalReviewNotes"
+    length = 32000
+    label = "Notas de revisor finales"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Picklist Impact {
+    apiName = "ChangeRequest.Impact"
+    restricted = false
+    _required = true
+    label = "Repercusión"
+    createable = true
+    updateable = true
+    queryable = true
+    valueSetName = salesforce.StandardValueSet.instance.CasePriority
+  }
+  salesforce.Lookup OwnerId {
+    apiName = "ChangeRequest.OwnerId"
+    relationshipName = "Owner"
+    label = "Id. del propietario"
+    createable = true
+    updateable = true
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Picklist Priority {
+    apiName = "ChangeRequest.Priority"
+    restricted = false
+    _required = true
+    label = "Prioridad"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.LongTextArea RemediationPlan {
+    apiName = "ChangeRequest.RemediationPlan"
+    length = 32000
+    label = "Plan de reparación"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Lookup ReviewerId {
+    apiName = "ChangeRequest.ReviewerId"
+    relationshipName = "Reviewer"
+    label = "Id. de usuario"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.LongTextArea RiskImpactAnalysis {
+    apiName = "ChangeRequest.RiskImpactAnalysis"
+    length = 32000
+    label = "Análisis de repercusión"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Picklist RiskLevel {
+    apiName = "ChangeRequest.RiskLevel"
+    restricted = false
+    _required = true
+    label = "Nivel de riesgo"
+    createable = true
+    updateable = true
+    queryable = true
+    valueSetName = salesforce.StandardValueSet.instance.CasePriority
+  }
+  salesforce.Picklist Status {
+    apiName = "ChangeRequest.Status"
+    restricted = false
+    _required = true
+    label = "Estado"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Picklist StatusCode {
+    apiName = "ChangeRequest.StatusCode"
+    restricted = true
+    label = "Código de estado"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Text Subject {
+    apiName = "ChangeRequest.Subject"
+    length = 255
+    _required = true
+    label = "Asunto"
+    createable = true
+    updateable = true
+    unique = false
+    caseSensitive = false
+    queryable = true
+  }
+  serviceid Id {
+    apiName = "ChangeRequest.Id"
+    label = "Id. de Solicitud de cambio"
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Checkbox IsDeleted {
+    apiName = "ChangeRequest.IsDeleted"
+    defaultValue = false
+    label = "Eliminado"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.AutoNumber ChangeRequestNumber {
+    apiName = "ChangeRequest.ChangeRequestNumber"
+    label = "Número de solicitud de cambio"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime CreatedDate {
+    apiName = "ChangeRequest.CreatedDate"
+    label = "Creado el"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup CreatedById {
+    apiName = "ChangeRequest.CreatedById"
+    relationshipName = "CreatedBy"
+    label = "Creado por el Id."
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime LastModifiedDate {
+    apiName = "ChangeRequest.LastModifiedDate"
+    label = "Última modificación el"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup LastModifiedById {
+    apiName = "ChangeRequest.LastModifiedById"
+    relationshipName = "LastModifiedBy"
+    label = "Última modificación realizada por el Id."
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime SystemModstamp {
+    apiName = "ChangeRequest.SystemModstamp"
+    label = "Modstamp del sistema"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+}

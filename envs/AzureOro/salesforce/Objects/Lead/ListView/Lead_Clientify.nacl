@@ -1,0 +1,26 @@
+salesforce.ListView Lead_Clientify {
+  fullName = "Lead.Clientify"
+  columns = [
+    "FULL_NAME",
+    "LEAD.EMAIL",
+    "LEAD.COMPANY",
+    "LEAD.STATE",
+    "LEAD.STATUS",
+    "LEAD.UNREAD",
+    "LEAD.CREATED_DATE",
+    "CORE.USERS.ALIAS",
+  ]
+  filterScope = "Everything"
+  filters = [
+    {
+      field = "LEAD.LEAD_SOURCE"
+      operation = "equals"
+      value = "Clientify"
+    },
+  ]
+  label = "Clientify"
+  _parent = [
+    salesforce.Lead,
+  ]
+  _alias = "Clientify"
+}

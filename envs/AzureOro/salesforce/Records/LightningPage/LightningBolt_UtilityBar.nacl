@@ -1,0 +1,19 @@
+salesforce.LightningPage LightningBolt_UtilityBar {
+  flexiPageRegions = [
+    {
+      name = "utilityItems"
+      type = "Region"
+    },
+    {
+      name = "backgroundComponents"
+      type = "Background"
+    },
+  ]
+  masterLabel = "LightningBolt UtilityBar"
+  template = {
+    name = "one:utilityBarTemplateDesktop"
+  }
+  type = "UtilityBar"
+  fullName = "LightningBolt_UtilityBar"
+  _alias = "LightningBolt_UtilityBar"
+}

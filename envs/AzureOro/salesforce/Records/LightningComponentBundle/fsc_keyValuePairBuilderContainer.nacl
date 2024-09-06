@@ -1,0 +1,23 @@
+salesforce.LightningComponentBundle fsc_keyValuePairBuilderContainer {
+  apiVersion = 51
+  isExposed = false
+  fullName = "fsc_keyValuePairBuilderContainer"
+  lwcResources = {
+    lwcResource = {
+      fsc_keyValuePairBuilderContainer_html@uv = {
+        source = file("salesforce/Records/LightningComponentBundle/fsc_keyValuePairBuilderContainer/fsc_keyValuePairBuilderContainer.html")
+        filePath = "lwc/fsc_keyValuePairBuilderContainer/fsc_keyValuePairBuilderContainer.html"
+      }
+      fsc_keyValuePairBuilderContainer_js@uv = {
+        source = file("salesforce/Records/LightningComponentBundle/fsc_keyValuePairBuilderContainer/fsc_keyValuePairBuilderContainer.js")
+        filePath = "lwc/fsc_keyValuePairBuilderContainer/fsc_keyValuePairBuilderContainer.js"
+      }
+    }
+  }
+  _generated_dependencies = [
+    {
+      reference = salesforce.LightningComponentBundle.instance.fsc_keyValuePairBuilderRow
+    },
+  ]
+  _alias = "fsc_keyValuePairBuilderContainer"
+}

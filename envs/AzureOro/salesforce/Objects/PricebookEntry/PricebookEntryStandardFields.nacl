@@ -1,0 +1,138 @@
+type salesforce.PricebookEntry {
+  salesforce.Checkbox IsActive {
+    apiName = "PricebookEntry.IsActive"
+    defaultValue = false
+    label = "Activo"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Lookup Pricebook2Id {
+    apiName = "PricebookEntry.Pricebook2Id"
+    relationshipName = "Pricebook2"
+    _required = true
+    label = "Id. de la lista de precios"
+    createable = true
+    updateable = false
+    queryable = true
+  }
+  salesforce.Lookup Product2Id {
+    apiName = "PricebookEntry.Product2Id"
+    relationshipName = "Product2"
+    _required = true
+    label = "Servicio"
+    createable = true
+    updateable = false
+    queryable = true
+  }
+  salesforce.Text ProductCode {
+    apiName = "PricebookEntry.ProductCode"
+    length = 255
+    label = "Código de servicio"
+    createable = false
+    updateable = false
+    unique = false
+    caseSensitive = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Unknown StandardPrice {
+    apiName = "PricebookEntry.StandardPrice"
+    _hidden_value = true
+  }
+  salesforce.Currency UnitPrice {
+    apiName = "PricebookEntry.UnitPrice"
+    _required = true
+    label = "Precio de lista"
+    createable = true
+    updateable = true
+    scale = 2
+    precision = 18
+    queryable = true
+  }
+  salesforce.Checkbox UseStandardPrice {
+    apiName = "PricebookEntry.UseStandardPrice"
+    defaultValue = false
+    label = "Utilizar Precio estándar"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  serviceid Id {
+    apiName = "PricebookEntry.Id"
+    label = "Id. de Entrada de lista de precios"
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Text Name {
+    apiName = "PricebookEntry.Name"
+    length = 255
+    label = "Nombre del servicio"
+    createable = false
+    updateable = false
+    unique = false
+    caseSensitive = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime CreatedDate {
+    apiName = "PricebookEntry.CreatedDate"
+    label = "Fecha de creación"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup CreatedById {
+    apiName = "PricebookEntry.CreatedById"
+    relationshipName = "CreatedBy"
+    label = "Creado por el Id."
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime LastModifiedDate {
+    apiName = "PricebookEntry.LastModifiedDate"
+    label = "Fecha de la última modificación"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup LastModifiedById {
+    apiName = "PricebookEntry.LastModifiedById"
+    relationshipName = "LastModifiedBy"
+    label = "Última modificación realizada por el Id."
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime SystemModstamp {
+    apiName = "PricebookEntry.SystemModstamp"
+    label = "Modstamp del sistema"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Checkbox IsDeleted {
+    apiName = "PricebookEntry.IsDeleted"
+    defaultValue = false
+    label = "Eliminado"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Checkbox IsArchived {
+    apiName = "PricebookEntry.IsArchived"
+    defaultValue = false
+    label = "Archivado"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+}

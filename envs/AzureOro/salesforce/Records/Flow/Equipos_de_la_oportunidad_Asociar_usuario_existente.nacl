@@ -1,0 +1,182 @@
+salesforce.Flow Equipos_de_la_oportunidad_Asociar_usuario_existente {
+  fullName = "Equipos_de_la_oportunidad_Asociar_usuario_existente"
+  apiVersion = 57
+  assignments = [
+    {
+      name = "rellenar_team_member"
+      label = "rellenar team member"
+      locationX = 182
+      locationY = 431
+      assignmentItems = [
+        {
+          assignToReference = "newOppTeamMember.UserId"
+          operator = "Assign"
+          value = {
+            elementReference = "buscar_usuario.Id"
+          }
+        },
+        {
+          assignToReference = "newOppTeamMember.OpportunityId"
+          operator = "Assign"
+          value = {
+            elementReference = "$Record.Oportunidad__c"
+          }
+        },
+        {
+          assignToReference = "newOppTeamMember.OpportunityAccessLevel"
+          operator = "Assign"
+          value = {
+            stringValue = "Edit"
+          }
+        },
+        {
+          assignToReference = "newOppTeamMember.Title"
+          operator = "Assign"
+          value = {
+            stringValue = "Sales Manager"
+          }
+        },
+      ]
+      connector = {
+        targetReference = "Hay_o_no_usuario"
+      }
+    },
+  ]
+  decisions = [
+    {
+      name = "Hay_o_no_usuario"
+      label = "Hay o no usuario"
+      locationX = 182
+      locationY = 539
+      defaultConnectorLabel = "Resultado predeterminado"
+      rules = [
+        {
+          name = "Se_ha_encontrado_usuario"
+          conditionLogic = "and"
+          conditions = [
+            {
+              leftValueReference = "newOppTeamMember.UserId"
+              operator = "IsNull"
+              rightValue = {
+                booleanValue = false
+              }
+            },
+          ]
+          connector = {
+            targetReference = "crear_team_member"
+          }
+          label = "¿Se ha encontrado usuario?"
+        },
+      ]
+    },
+  ]
+  description = "Cuando se crea un miembro de Equipo de la oportunidad (Custom), comprobamos si ese empleado existe como usuario de la plataforma y internamente se asigna como OpportunityTeamMember"
+  environments = "Default"
+  interviewLabel = "Equipos de la oportunidad - Asociar usuario existente {!$Flow.CurrentDateTime}"
+  label = "Equipos de la oportunidad - Asociar usuario existente"
+  processMetadataValues = [
+    {
+      name = "BuilderType"
+      value = {
+        stringValue = "LightningFlowBuilder"
+      }
+    },
+    {
+      name = "CanvasMode"
+      value = {
+        stringValue = "AUTO_LAYOUT_CANVAS"
+      }
+    },
+    {
+      name = "OriginBuilderType"
+      value = {
+        stringValue = "LightningFlowBuilder"
+      }
+    },
+  ]
+  processType = "AutoLaunchedFlow"
+  recordCreates = [
+    {
+      name = "crear_team_member"
+      label = "crear team member"
+      locationX = 50
+      locationY = 647
+      inputReference = "newOppTeamMember"
+    },
+  ]
+  recordLookups = [
+    {
+      name = "buscar_usuario"
+      label = "buscar usuario"
+      locationX = 182
+      locationY = 323
+      assignNullValuesIfNoRecordsFound = false
+      connector = {
+        targetReference = "rellenar_team_member"
+      }
+      filterLogic = "and"
+      filters = [
+        {
+          field = salesforce.User.field.Email
+          operator = "EqualTo"
+          value = {
+            elementReference = "$Record.Empleado__r.Correo_electronico__c"
+          }
+        },
+        {
+          field = salesforce.User.field.IsActive
+          operator = "EqualTo"
+          value = {
+            booleanValue = true
+          }
+        },
+      ]
+      getFirstRecordOnly = true
+      object = salesforce.User
+      storeOutputAutomatically = true
+    },
+  ]
+  start = {
+    locationX = 56
+    locationY = 0
+    connector = {
+      targetReference = "buscar_usuario"
+    }
+    filterLogic = "and"
+    filters = [
+      {
+        field = salesforce.Equipo_de_la_oportunidad__c.field.Empleado__c
+        operator = "IsNull"
+        value = {
+          booleanValue = false
+        }
+      },
+    ]
+    object = salesforce.Equipo_de_la_oportunidad__c
+    recordTriggerType = "CreateAndUpdate"
+    triggerType = "RecordAfterSave"
+  }
+  status = "Draft"
+  variables = [
+    {
+      name = "newOppTeamMember"
+      dataType = "SObject"
+      isCollection = false
+      isInput = false
+      isOutput = false
+      objectType = salesforce.OpportunityTeamMember
+    },
+  ]
+  _generated_dependencies = [
+    {
+      reference = salesforce.Empleado__c
+    },
+    {
+      reference = salesforce.Empleado__c.field.Correo_electronico__c
+    },
+    {
+      reference = salesforce.Equipo_de_la_oportunidad__c.field.Oportunidad__c
+    },
+  ]
+  _alias = "Equipos de la oportunidad - Asociar usuario existente"
+}

@@ -1,0 +1,8 @@
+envs {
+  envsCloud = [
+    {
+      uuid = "0346585e-ca5c-4924-9372-3b4299a0af5f"
+      folderName = "AzureOro"
+    },
+  ]
+}

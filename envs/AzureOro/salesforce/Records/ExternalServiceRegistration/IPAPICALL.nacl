@@ -1,0 +1,17 @@
+salesforce.ExternalServiceRegistration IPAPICALL {
+  fullName = "IPAPICALL"
+  label = "IPAPICALL"
+  namedCredential = "IP_API_CALL"
+  namedCredentialReference = salesforce.NamedCredential.instance.IP_API_CALL
+  operations = {
+    active = true
+    name = "apix2dbdc"
+  }
+  registrationProviderType = "SchemaInferred"
+  schema = "{\"openapi\":\"3.0.1\",\"info\":{\"title\":\"IPAPICALL\",\"description\":\"\"},\"paths\":{\"\":{\"get\":{\"description\":\"\",\"operationId\":\"api-bdc\",\"responses\":{\"2XX\":{\"description\":\"\",\"content\":{\"application/json\":{\"schema\":{\"type\":\"object\",\"properties\":{\"ipString\":{\"type\":\"string\"},\"ipNumeric\":{\"type\":\"integer\",\"format\":\"int64\"},\"isBehindProxy\":{\"type\":\"boolean\"},\"ipType\":{\"type\":\"string\"}}}}}}}}}}}"
+  schemaType = "OpenApi3"
+  serviceBinding = "{\"host\":\"\",\"basePath\":\"/\",\"allowedSchemes\":[],\"requestMediaTypes\":[],\"responseMediaTypes\":[],\"compatibleMediaTypes\":{}}"
+  status = "Complete"
+  systemVersion = 4
+  _alias = "IPAPICALL"
+}

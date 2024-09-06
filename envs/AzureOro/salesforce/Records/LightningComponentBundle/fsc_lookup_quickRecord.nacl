@@ -1,0 +1,23 @@
+salesforce.LightningComponentBundle fsc_lookup_quickRecord {
+  apiVersion = 53
+  isExposed = false
+  attr_fqn = "lookup"
+  fullName = "fsc_lookup_quickRecord"
+  lwcResources = {
+    lwcResource = {
+      fsc_lookup_quickRecord_css@uuv = {
+        source = file("salesforce/Records/LightningComponentBundle/fsc_lookup_quickRecord/fsc_lookup_quickRecord.css")
+        filePath = "lwc/fsc_lookup_quickRecord/fsc_lookup_quickRecord.css"
+      }
+      fsc_lookup_quickRecord_html@uuv = {
+        source = file("salesforce/Records/LightningComponentBundle/fsc_lookup_quickRecord/fsc_lookup_quickRecord.html")
+        filePath = "lwc/fsc_lookup_quickRecord/fsc_lookup_quickRecord.html"
+      }
+      fsc_lookup_quickRecord_js@uuv = {
+        source = file("salesforce/Records/LightningComponentBundle/fsc_lookup_quickRecord/fsc_lookup_quickRecord.js")
+        filePath = "lwc/fsc_lookup_quickRecord/fsc_lookup_quickRecord.js"
+      }
+    }
+  }
+  _alias = "fsc_lookup_quickRecord"
+}

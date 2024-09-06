@@ -1,0 +1,489 @@
+salesforce.Layout Account_Cliente_Capital_Markets@bss {
+  excludeButtons = [
+    "DataDotComCompanyHierarchy",
+    "DisableCustomerPortalAccount",
+    "DisablePartnerPortalAccount",
+    "IncludeOffline",
+    "Share",
+  ]
+  layoutSections = [
+    {
+      customLabel = false
+      detailHeading = false
+      editHeading = true
+      label = "Account Information"
+      layoutColumns = [
+        {
+          layoutItems = [
+            {
+              behavior = "Required"
+              field = salesforce.Account.field.Name
+            },
+            {
+              behavior = "Edit"
+              field = salesforce.Account.field.Alias__c
+            },
+            {
+              behavior = "Edit"
+              field = salesforce.Account.field.Marcas_comerciales__c
+            },
+          ]
+        },
+        {
+          layoutItems = [
+            {
+              behavior = "Edit"
+              field = salesforce.Account.field.ParentId
+            },
+            {
+              behavior = "Edit"
+              field = salesforce.Account.field.NIF_CIF__c
+            },
+          ]
+        },
+      ]
+      style = "TwoColumnsTopToBottom"
+    },
+    {
+      customLabel = true
+      detailHeading = false
+      editHeading = false
+      label = "Descripción"
+      layoutColumns = [
+        {
+          layoutItems = [
+            {
+              behavior = "Edit"
+              field = salesforce.Account.field.Description
+            },
+          ]
+        },
+      ]
+      style = "OneColumn"
+    },
+    {
+      customLabel = true
+      detailHeading = true
+      editHeading = true
+      label = "Información Capital Markets"
+      layoutColumns = [
+        {
+          layoutItems = [
+            {
+              behavior = "Edit"
+              field = salesforce.Account.field.Estado_DCM__c
+            },
+            {
+              behavior = "Edit"
+              field = salesforce.Account.field.Sector_DCM__c
+            },
+            {
+              behavior = "Edit"
+              field = salesforce.Account.field.Tipo_DCM__c
+            },
+            {
+              behavior = "Edit"
+              field = salesforce.Account.field.GLOFS__c
+            },
+          ]
+        },
+        {
+          layoutItems = [
+            {
+              behavior = "Edit"
+              field = salesforce.Account.field.Categoria_Mifid__c
+            },
+            {
+              behavior = "Edit"
+              field = salesforce.Account.field.Prescriptor__c
+            },
+            {
+              behavior = "Edit"
+              field = salesforce.Account.field.Vinculo_1__c
+            },
+            {
+              behavior = "Edit"
+              field = salesforce.Account.field.Vinculo_2__c
+            },
+          ]
+        },
+      ]
+      style = "TwoColumnsLeftToRight"
+    },
+    {
+      customLabel = true
+      detailHeading = true
+      editHeading = true
+      label = "Información para contacto"
+      layoutColumns = [
+        {
+          layoutItems = [
+            {
+              behavior = "Edit"
+              field = salesforce.Account.field.Correo_Navision__c
+            },
+            {
+              behavior = "Edit"
+              field = salesforce.Account.field.Website
+            },
+            {
+              behavior = "Edit"
+              field = salesforce.Account.field.Cuenta_LinkedIn__c
+            },
+          ]
+        },
+        {
+          layoutItems = [
+            {
+              behavior = "Edit"
+              field = salesforce.Account.field.Phone
+            },
+            {
+              behavior = "Edit"
+              field = salesforce.Account.field.Fax
+            },
+          ]
+        },
+      ]
+      style = "TwoColumnsLeftToRight"
+    },
+    {
+      customLabel = false
+      detailHeading = true
+      editHeading = true
+      label = "Address Information"
+      layoutColumns = [
+        {
+          layoutItems = [
+            {
+              behavior = "Edit"
+              field = salesforce.Account.field.BillingAddress
+            },
+            {
+              behavior = "Edit"
+              field = salesforce.Account.field.Direccion_2__c
+            },
+          ]
+        },
+        {
+          layoutItems = [
+            {
+              behavior = "Edit"
+              field = salesforce.Account.field.ShippingAddress
+            },
+          ]
+        },
+      ]
+      style = "TwoColumnsTopToBottom"
+    },
+    {
+      customLabel = true
+      detailHeading = true
+      editHeading = true
+      label = "Ubicación de la documentación"
+      layoutColumns = [
+        {
+          layoutItems = [
+            {
+              behavior = "Edit"
+              field = salesforce.Account.field.Documentacion_Cliente_ITC__c
+            },
+            {
+              behavior = "Edit"
+              field = salesforce.Account.field.Documentacion_Cliente_Fiscal_y_Legal__c
+            },
+            {
+              behavior = "Edit"
+              field = salesforce.Account.field.Documentacion_Cliente_Auditoria__c
+            },
+          ]
+        },
+        {
+          layoutItems = [
+            {
+              behavior = "Edit"
+              field = salesforce.Account.field.Documentacion_Cliente_DCM__c
+            },
+            {
+              behavior = "Edit"
+              field = salesforce.Account.field.Documentacion_Cliente_Inncome__c
+            },
+            {
+              behavior = "Edit"
+              field = salesforce.Account.field.Documentacion_Cliente_Corporate__c
+            },
+          ]
+        },
+      ]
+      style = "TwoColumnsLeftToRight"
+    },
+    {
+      customLabel = false
+      detailHeading = true
+      editHeading = true
+      label = "System Information"
+      layoutColumns = [
+        {
+          layoutItems = [
+            {
+              behavior = "Readonly"
+              field = salesforce.Account.field.CreatedById
+            },
+            {
+              behavior = "Readonly"
+              field = salesforce.Account.field.Multicompany_ID__c
+            },
+          ]
+        },
+        {
+          layoutItems = [
+            {
+              behavior = "Readonly"
+              field = salesforce.Account.field.LastModifiedById
+            },
+            {
+              behavior = "Readonly"
+              field = salesforce.Account.field.RecordTypeId
+            },
+          ]
+        },
+      ]
+      style = "TwoColumnsTopToBottom"
+    },
+    {
+      customLabel = false
+      detailHeading = false
+      editHeading = false
+      label = "Custom Links"
+      style = "CustomLinks"
+    },
+    {
+      customLabel = true
+      detailHeading = true
+      editHeading = true
+      label = "Histórico"
+      layoutColumns = [
+        {
+          layoutItems = [
+            {
+              reportChartComponent = {
+                cacheData = true
+                contextFilterableField = "ACCOUNT_ID"
+                hideOnError = false
+                includeContext = true
+                reportName = "Facturacin_por_Socio_NeI"
+                showTitle = false
+                size = "SMALL"
+              }
+            },
+          ]
+        },
+        {
+          layoutItems = [
+            {
+              reportChartComponent = {
+                cacheData = true
+                contextFilterableField = "ACCOUNT_ID"
+                hideOnError = false
+                includeContext = true
+                reportName = "Facturacin_por_rea_80i"
+                showTitle = false
+                size = "SMALL"
+              }
+            },
+          ]
+        },
+      ]
+      style = "TwoColumnsLeftToRight"
+    },
+  ]
+  platformActionList = {
+    actionListContext = "Record"
+    platformActionListItems = [
+      {
+        actionName = "AccountHierarchy"
+        actionType = "StandardButton"
+        sortOrder = 0
+      },
+      {
+        actionName = "Edit"
+        actionType = "StandardButton"
+        sortOrder = 1
+      },
+      {
+        actionName = "SendEmail"
+        actionType = "QuickAction"
+        sortOrder = 2
+      },
+      {
+        actionName = salesforce.QuickAction.instance.LogACall
+        actionType = "QuickAction"
+        sortOrder = 3
+      },
+      {
+        actionName = salesforce.QuickAction.instance.NewTask
+        actionType = "QuickAction"
+        sortOrder = 4
+      },
+      {
+        actionName = salesforce.QuickAction.instance.NewEvent
+        actionType = "QuickAction"
+        sortOrder = 5
+      },
+      {
+        actionName = "EmailHighlightAction"
+        actionType = "ProductivityAction"
+        sortOrder = 6
+      },
+      {
+        actionName = "FeedItem.ContentNote"
+        actionType = "QuickAction"
+        sortOrder = 7
+      },
+      {
+        actionName = "FeedItem.TextPost"
+        actionType = "QuickAction"
+        sortOrder = 8
+      },
+      {
+        actionName = "FeedItem.ContentPost"
+        actionType = "QuickAction"
+        sortOrder = 9
+      },
+      {
+        actionName = salesforce.QuickAction.instance.Account_Marcar_como_Auditada@vuu
+        actionType = "QuickAction"
+        sortOrder = 10
+      },
+    ]
+  }
+  quickActionList = {
+    quickActionListItems = [
+      {
+        quickActionName = "FeedItem.ContentPost"
+      },
+      {
+        quickActionName = "FeedItem.LinkPost"
+      },
+      {
+        quickActionName = "FeedItem.PollPost"
+      },
+      {
+        quickActionName = "FeedItem.TextPost"
+      },
+      {
+        quickActionName = salesforce.QuickAction.instance.LogACall
+      },
+      {
+        quickActionName = salesforce.QuickAction.instance.NewEvent
+      },
+      {
+        quickActionName = salesforce.QuickAction.instance.NewTask
+      },
+      {
+        quickActionName = "SendEmail"
+      },
+    ]
+  }
+  relatedLists = [
+    {
+      fields = [
+        "FULL_NAME",
+        "CONTACT.TITLE",
+        "Departamento__c",
+        "CONTACT.EMAIL",
+        "CONTACT.PHONE1",
+        "Relaciones_Profesionales_PKF_Attest__c",
+        "Relacion_personal__c",
+      ]
+      relatedList = "RelatedContactList"
+    },
+    {
+      fields = [
+        "OPPORTUNITY.NAME",
+        "Socio_Propietario__c",
+        "OPPORTUNITY.AMOUNT",
+        "OPPORTUNITY.STAGE_NAME",
+        "Fecha_de_registro__c",
+      ]
+      relatedList = "RelatedOpportunityList"
+      sortField = "Fecha_de_registro__c"
+      sortOrder = "Desc"
+    },
+    {
+      fields = [
+        "Sector__c",
+        "Subsector__c",
+        "Actividad__c",
+      ]
+      relatedList = salesforce.Sector__c.field.Cuenta__c
+    },
+    {
+      fields = [
+        "CAMPAIGN.NAME",
+        "CAMPAIGN.CAMPAIGN_TYPE",
+        "CAMPAIGN.START_DATE",
+        "CAMPAIGN.BUDGETED_COST",
+        "CAMPAIGN.STATUS",
+      ]
+      relatedList = "RelatedAccountCampaignList"
+    },
+    {
+      relatedList = "RelatedContentNoteList"
+    },
+    {
+      relatedList = "RelatedFileList"
+    },
+    {
+      fields = [
+        "TASK.SUBJECT",
+        "TASK.WHO_NAME",
+        "ACTIVITY.TASK",
+        "TASK.DUE_DATE",
+        "TASK.STATUS",
+        "CORE.USERS.FULL_NAME",
+        "EVENT.LOCATION",
+        "TASK.WHAT_NAME",
+      ]
+      relatedList = "RelatedActivityList"
+    },
+    {
+      fields = [
+        "TASK.SUBJECT",
+        "TASK.WHO_NAME",
+        "ACTIVITY.TASK",
+        "TASK.DUE_DATE",
+        "EVENT.LOCATION",
+        "CORE.USERS.FULL_NAME",
+        "TASK.WHAT_NAME",
+      ]
+      relatedList = "RelatedHistoryList"
+    },
+    {
+      fields = [
+        "MEMBER_NAME",
+        "TEAM_MEMBER_ROLE",
+      ]
+      relatedList = "RelatedAccountSalesTeam"
+    },
+  ]
+  relatedObjects = [
+    "ParentId",
+  ]
+  showEmailCheckbox = false
+  showHighlightsPanel = false
+  showInteractionLogPanel = false
+  showRunAssignmentRulesCheckbox = false
+  showSubmitAndAttachButton = false
+  summaryLayout = {
+    masterLabel = "00hSo0000027W5G"
+    sizeX = 4
+    sizeY = 0
+    summaryLayoutStyle = "Default"
+  }
+  fullName = "Account-Cliente Capital Markets"
+  _parent = [
+    salesforce.Account,
+  ]
+  _alias = "Account-Cliente Capital Markets"
+}

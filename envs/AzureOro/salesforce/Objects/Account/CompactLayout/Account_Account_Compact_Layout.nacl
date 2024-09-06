@@ -1,0 +1,15 @@
+salesforce.CompactLayout Account_Account_Compact_Layout {
+  fullName = "Account.Account_Compact_Layout"
+  fields = [
+    "Name",
+    "Alias_FX__c",
+    "Phone",
+    "Ubicacion__c",
+    "Website",
+  ]
+  label = "Account Compact Layout"
+  _parent = [
+    salesforce.Account,
+  ]
+  _alias = "Account Compact Layout"
+}

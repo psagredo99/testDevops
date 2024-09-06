@@ -1,0 +1,7 @@
+salesforce.RemoteSiteSetting Clientify {
+  fullName = "Clientify"
+  disableProtocolSecurity = false
+  isActive = true
+  url = "https://api.clientify.net"
+  _alias = "Clientify"
+}

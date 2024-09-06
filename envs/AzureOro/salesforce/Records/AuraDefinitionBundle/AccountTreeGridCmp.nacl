@@ -1,0 +1,17 @@
+salesforce.AuraDefinitionBundle AccountTreeGridCmp {
+  apiVersion = 57
+  description = "A Lightning Component Bundle"
+  fullName = "AccountTreeGridCmp"
+  type = "Component"
+  markup = file("salesforce/Records/AuraDefinitionBundle/AccountTreeGridCmp/AccountTreeGridCmp.cmp")
+  SVGContent = file("salesforce/Records/AuraDefinitionBundle/AccountTreeGridCmp/AccountTreeGridCmp.svg")
+  documentationContent = file("salesforce/Records/AuraDefinitionBundle/AccountTreeGridCmp/AccountTreeGridCmp.auradoc")
+  helperContent = file("salesforce/Records/AuraDefinitionBundle/AccountTreeGridCmp/AccountTreeGridCmpHelper.js")
+  controllerContent = file("salesforce/Records/AuraDefinitionBundle/AccountTreeGridCmp/AccountTreeGridCmpController.js")
+  _generated_dependencies = [
+    {
+      reference = salesforce.ApexClass.instance.AccountTreeGridCmpController
+    },
+  ]
+  _alias = "AccountTreeGridCmp"
+}

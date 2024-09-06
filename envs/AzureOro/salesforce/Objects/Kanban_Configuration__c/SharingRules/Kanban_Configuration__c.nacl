@@ -1,0 +1,7 @@
+salesforce.SharingRules Kanban_Configuration__c {
+  fullName = "Kanban_Configuration__c"
+  _parent = [
+    salesforce.Kanban_Configuration__c,
+  ]
+  _alias = "Kanban_Configuration__c"
+}

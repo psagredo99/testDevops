@@ -1,0 +1,8 @@
+salesforce.SocialCustomerServiceSettings {
+  fullName = "SocialCustomerService"
+  caseSubjectOption = "SocialPostSource"
+  enableSocialCustomerService = false
+  enableSocialPersonaHistoryTracking = false
+  enableSocialPostHistoryTracking = false
+  _alias = "SocialCustomerService"
+}

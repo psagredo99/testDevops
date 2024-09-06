@@ -1,0 +1,100 @@
+type salesforce.CollaborationGroupMember {
+  serviceid Id {
+    apiName = "CollaborationGroupMember.Id"
+    label = "Id. de miembro de Grupo"
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup CollaborationGroupId {
+    apiName = "CollaborationGroupMember.CollaborationGroupId"
+    relationshipName = "CollaborationGroup"
+    _required = true
+    label = "Id. de grupo de colaboración"
+    createable = true
+    updateable = false
+    queryable = true
+  }
+  salesforce.Lookup MemberId {
+    apiName = "CollaborationGroupMember.MemberId"
+    relationshipName = "Member"
+    _required = true
+    label = "Id. de miembro"
+    createable = true
+    updateable = false
+    queryable = true
+  }
+  salesforce.Picklist CollaborationRole {
+    apiName = "CollaborationGroupMember.CollaborationRole"
+    restricted = true
+    label = "Función de miembro de grupo"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Picklist NotificationFrequency {
+    apiName = "CollaborationGroupMember.NotificationFrequency"
+    restricted = true
+    label = "Frecuencia de notificaciones"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.DateTime CreatedDate {
+    apiName = "CollaborationGroupMember.CreatedDate"
+    label = "Fecha de creación"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup CreatedById {
+    apiName = "CollaborationGroupMember.CreatedById"
+    relationshipName = "CreatedBy"
+    label = "Creado por el Id."
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime LastModifiedDate {
+    apiName = "CollaborationGroupMember.LastModifiedDate"
+    label = "Fecha de la última modificación"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup LastModifiedById {
+    apiName = "CollaborationGroupMember.LastModifiedById"
+    relationshipName = "LastModifiedBy"
+    label = "Última modificación realizada por el Id."
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime SystemModstamp {
+    apiName = "CollaborationGroupMember.SystemModstamp"
+    label = "Modstamp del sistema"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime LastFeedAccessDate {
+    apiName = "CollaborationGroupMember.LastFeedAccessDate"
+    label = "Fecha de último acceso a noticia en tiempo real"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup NetworkId {
+    apiName = "CollaborationGroupMember.NetworkId"
+    label = "Id. de red"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+}

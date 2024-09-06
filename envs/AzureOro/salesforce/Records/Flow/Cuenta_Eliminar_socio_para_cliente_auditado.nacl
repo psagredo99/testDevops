@@ -1,0 +1,90 @@
+salesforce.Flow Cuenta_Eliminar_socio_para_cliente_auditado {
+  fullName = "Cuenta_Eliminar_socio_para_cliente_auditado"
+  apiVersion = 59
+  description = '''
+Una vez un cliente deja de estar auditado se procede a blanquear el campo del socio de auditoría.
+11/12/23 ILS: cambiar lookup a usuario por lookup a empleado.
+'''
+  environments = "Default"
+  interviewLabel = "Cuenta - Eliminar socio para cliente auditado {!$Flow.CurrentDateTime}"
+  label = "Cuenta - Eliminar socio para cliente auditado"
+  processMetadataValues = [
+    {
+      name = "BuilderType"
+      value = {
+        stringValue = "LightningFlowBuilder"
+      }
+    },
+    {
+      name = "CanvasMode"
+      value = {
+        stringValue = "AUTO_LAYOUT_CANVAS"
+      }
+    },
+    {
+      name = "OriginBuilderType"
+      value = {
+        stringValue = "LightningFlowBuilder"
+      }
+    },
+  ]
+  processType = "AutoLaunchedFlow"
+  recordUpdates = [
+    {
+      name = "Vaciamos_socio_de_auditoria"
+      label = "Vaciamos socio de auditoría"
+      locationX = 308
+      locationY = 276
+      inputAssignments = [
+        {
+          field = "Socio_de_auditoria__c"
+          value = {
+            stringValue = ""
+          }
+        },
+      ]
+      inputReference = "$Record"
+    },
+  ]
+  start = {
+    locationX = 50
+    locationY = 0
+    doesRequireRecordChangedToMeetCriteria = true
+    filterLogic = "and"
+    filters = [
+      {
+        field = salesforce.Account.field.Cliente_auditado__c
+        operator = "EqualTo"
+        value = {
+          booleanValue = false
+        }
+      },
+      {
+        field = salesforce.Account.field.Socio_de_la_auditoria__c
+        operator = "IsNull"
+        value = {
+          booleanValue = false
+        }
+      },
+    ]
+    object = salesforce.Account
+    recordTriggerType = "Update"
+    scheduledPaths = {
+      connector = {
+        targetReference = "Vaciamos_socio_de_auditoria"
+      }
+      pathType = "AsyncAfterCommit"
+    }
+    triggerType = "RecordAfterSave"
+  }
+  status = "Active"
+  _generated_dependencies = [
+    {
+      reference = salesforce.Account.field.Socio_de_auditoria__c
+    },
+    {
+      reference = salesforce.Empleado__c
+    },
+  ]
+  _alias = "Cuenta - Eliminar socio para cliente auditado"
+}

@@ -1,0 +1,999 @@
+salesforce.LightningPage Contact_Record_Page_Two_Column {
+  flexiPageRegions = [
+    {
+      itemInstances = [
+        {
+          componentInstance = {
+            componentInstanceProperties = [
+              {
+                name = "collapsed"
+                value = "false"
+              },
+              {
+                name = "enableActionsConfiguration"
+                value = "false"
+              },
+              {
+                name = "enableActionsInNative"
+                value = "false"
+              },
+              {
+                name = "hideChatterActions"
+                value = "false"
+              },
+              {
+                name = "numVisibleActions"
+                value = "3"
+              },
+            ]
+            componentName = "force:highlightsPanel"
+            identifier = "force_highlightsPanel"
+          }
+        },
+      ]
+      name = "header"
+      type = "Region"
+    },
+    {
+      itemInstances = [
+        {
+          fieldInstance = {
+            fieldInstanceProperties = {
+              name = "uiBehavior"
+              value = "required"
+            }
+            fieldItem = "Record.Name"
+            identifier = "RecordNameField"
+          }
+        },
+        {
+          fieldInstance = {
+            fieldInstanceProperties = {
+              name = "uiBehavior"
+              value = "none"
+            }
+            fieldItem = "Record.Puesto__c"
+            identifier = "RecordPuesto_cField"
+          }
+        },
+        {
+          fieldInstance = {
+            fieldInstanceProperties = {
+              name = "uiBehavior"
+              value = "none"
+            }
+            fieldItem = "Record.Departamento__c"
+            identifier = "RecordDepartamento_cField"
+          }
+        },
+      ]
+      name = "Facet-e884942e-952f-4b70-8a34-f39fba14263a"
+      type = "Facet"
+    },
+    {
+      itemInstances = [
+        {
+          fieldInstance = {
+            fieldInstanceProperties = {
+              name = "uiBehavior"
+              value = "required"
+            }
+            fieldItem = "Record.AccountId"
+            identifier = "RecordAccountIdField"
+          }
+        },
+        {
+          fieldInstance = {
+            fieldInstanceProperties = {
+              name = "uiBehavior"
+              value = "none"
+            }
+            fieldItem = "Record.Title"
+            identifier = "RecordTitleField"
+          }
+        },
+      ]
+      name = "Facet-92784bcf-50ef-4495-b321-0889f93597c2"
+      type = "Facet"
+    },
+    {
+      itemInstances = [
+        {
+          componentInstance = {
+            componentInstanceProperties = [
+              {
+                name = "body"
+                value = "Facet-e884942e-952f-4b70-8a34-f39fba14263a"
+              },
+            ]
+            componentName = "flexipage:column"
+            identifier = "flexipage_column4"
+          }
+        },
+        {
+          componentInstance = {
+            componentInstanceProperties = [
+              {
+                name = "body"
+                value = "Facet-92784bcf-50ef-4495-b321-0889f93597c2"
+              },
+            ]
+            componentName = "flexipage:column"
+            identifier = "flexipage_column5"
+          }
+        },
+      ]
+      name = "Facet-d5935367-0ac2-48a9-a542-3026339d7e21"
+      type = "Facet"
+    },
+    {
+      itemInstances = [
+        {
+          fieldInstance = {
+            fieldInstanceProperties = {
+              name = "uiBehavior"
+              value = "none"
+            }
+            fieldItem = "Record.Phone"
+            identifier = "RecordPhoneField"
+          }
+        },
+        {
+          fieldInstance = {
+            fieldInstanceProperties = {
+              name = "uiBehavior"
+              value = "none"
+            }
+            fieldItem = "Record.MobilePhone"
+            identifier = "RecordMobilePhoneField"
+          }
+        },
+        {
+          fieldInstance = {
+            fieldInstanceProperties = {
+              name = "uiBehavior"
+              value = "none"
+            }
+            fieldItem = "Record.DoNotCall"
+            identifier = "RecordDoNotCallField"
+          }
+        },
+      ]
+      name = "Facet-f7de1dc7-0d16-4889-991a-1d1d932ee16d"
+      type = "Facet"
+    },
+    {
+      itemInstances = [
+        {
+          fieldInstance = {
+            fieldInstanceProperties = {
+              name = "uiBehavior"
+              value = "none"
+            }
+            fieldItem = "Record.Perfil_de_Linkedin__c"
+            identifier = "RecordPerfil_de_Linkedin_cField"
+          }
+        },
+        {
+          fieldInstance = {
+            fieldInstanceProperties = {
+              name = "uiBehavior"
+              value = "none"
+            }
+            fieldItem = "Record.Email"
+            identifier = "RecordEmailField"
+          }
+        },
+        {
+          fieldInstance = {
+            fieldInstanceProperties = {
+              name = "uiBehavior"
+              value = "none"
+            }
+            fieldItem = "Record.HasOptedOutOfEmail"
+            identifier = "RecordHasOptedOutOfEmailField"
+          }
+        },
+      ]
+      name = "Facet-376ebe67-230c-4f4a-9f35-57b15be14160"
+      type = "Facet"
+    },
+    {
+      itemInstances = [
+        {
+          componentInstance = {
+            componentInstanceProperties = [
+              {
+                name = "body"
+                value = "Facet-f7de1dc7-0d16-4889-991a-1d1d932ee16d"
+              },
+            ]
+            componentName = "flexipage:column"
+            identifier = "flexipage_column6"
+          }
+        },
+        {
+          componentInstance = {
+            componentInstanceProperties = [
+              {
+                name = "body"
+                value = "Facet-376ebe67-230c-4f4a-9f35-57b15be14160"
+              },
+            ]
+            componentName = "flexipage:column"
+            identifier = "flexipage_column7"
+          }
+        },
+      ]
+      name = "Facet-065bee2e-48bc-4aa0-8fae-3cdd9050f78a"
+      type = "Facet"
+    },
+    {
+      itemInstances = [
+        {
+          fieldInstance = {
+            fieldInstanceProperties = {
+              name = "uiBehavior"
+              value = "none"
+            }
+            fieldItem = "Record.Relaciones_Profesionales_PKF_Attest__c"
+            identifier = "RecordRelaciones_Profesionales_PKF_Attest_cField"
+          }
+        },
+        {
+          fieldInstance = {
+            fieldInstanceProperties = {
+              name = "uiBehavior"
+              value = "none"
+            }
+            fieldItem = "Record.Relacion_personal__c"
+            identifier = "RecordA_quien_conoce_de_Attest_cField"
+          }
+        },
+      ]
+      name = "Facet-9b633a56-4342-4530-8297-b6b6c5d4e3fb"
+      type = "Facet"
+    },
+    {
+      itemInstances = [
+        {
+          componentInstance = {
+            componentInstanceProperties = [
+              {
+                name = "body"
+                value = "Facet-9b633a56-4342-4530-8297-b6b6c5d4e3fb"
+              },
+            ]
+            componentName = "flexipage:column"
+            identifier = "flexipage_column12"
+          }
+        },
+      ]
+      name = "Facet-396209e2-0ec0-439a-be52-a2c745f04926"
+      type = "Facet"
+    },
+    {
+      itemInstances = [
+        {
+          fieldInstance = {
+            fieldInstanceProperties = {
+              name = "uiBehavior"
+              value = "none"
+            }
+            fieldItem = "Record.MailingAddress"
+            identifier = "RecordMailingAddressField"
+          }
+        },
+      ]
+      name = "Facet-f324e43a-be18-4e46-af1f-edef791e6ce7"
+      type = "Facet"
+    },
+    {
+      itemInstances = [
+        {
+          componentInstance = {
+            componentInstanceProperties = [
+              {
+                name = "body"
+                value = "Facet-f324e43a-be18-4e46-af1f-edef791e6ce7"
+              },
+            ]
+            componentName = "flexipage:column"
+            identifier = "flexipage_column8"
+          }
+        },
+      ]
+      name = "Facet-1c0acc1f-9aac-4a81-a9bf-680c601c36b5"
+      type = "Facet"
+    },
+    {
+      itemInstances = [
+        {
+          fieldInstance = {
+            fieldInstanceProperties = {
+              name = "uiBehavior"
+              value = "none"
+            }
+            fieldItem = "Record.Description"
+            identifier = "RecordDescriptionField"
+          }
+        },
+      ]
+      name = "Facet-3ebc855f-32bd-4641-b7ce-dd4b5c8ecc1a"
+      type = "Facet"
+    },
+    {
+      itemInstances = [
+        {
+          componentInstance = {
+            componentInstanceProperties = [
+              {
+                name = "body"
+                value = "Facet-3ebc855f-32bd-4641-b7ce-dd4b5c8ecc1a"
+              },
+            ]
+            componentName = "flexipage:column"
+            identifier = "flexipage_column10"
+          }
+        },
+      ]
+      name = "Facet-fe73eda7-0a69-42bc-9c2e-682f55c754af"
+      type = "Facet"
+    },
+    {
+      itemInstances = [
+        {
+          fieldInstance = {
+            fieldInstanceProperties = {
+              name = "uiBehavior"
+              value = "readonly"
+            }
+            fieldItem = "Record.CreatedById"
+            identifier = "RecordCreatedByIdField"
+          }
+        },
+        {
+          fieldInstance = {
+            fieldInstanceProperties = {
+              name = "uiBehavior"
+              value = "none"
+            }
+            fieldItem = "Record.Multicompany_Id__c"
+            identifier = "RecordMulticompany_Id_cField"
+          }
+        },
+      ]
+      name = "Facet-3d0ab040-b05a-4752-a868-12fa18c60e18"
+      type = "Facet"
+    },
+    {
+      itemInstances = [
+        {
+          fieldInstance = {
+            fieldInstanceProperties = {
+              name = "uiBehavior"
+              value = "readonly"
+            }
+            fieldItem = "Record.LastModifiedById"
+            identifier = "RecordLastModifiedByIdField"
+          }
+        },
+      ]
+      name = "Facet-499bcde0-1aa9-478b-b811-7140e386a5f9"
+      type = "Facet"
+    },
+    {
+      itemInstances = [
+        {
+          componentInstance = {
+            componentInstanceProperties = [
+              {
+                name = "body"
+                value = "Facet-3d0ab040-b05a-4752-a868-12fa18c60e18"
+              },
+            ]
+            componentName = "flexipage:column"
+            identifier = "flexipage_column13"
+          }
+        },
+        {
+          componentInstance = {
+            componentInstanceProperties = [
+              {
+                name = "body"
+                value = "Facet-499bcde0-1aa9-478b-b811-7140e386a5f9"
+              },
+            ]
+            componentName = "flexipage:column"
+            identifier = "flexipage_column14"
+          }
+        },
+      ]
+      name = "Facet-6032fee1-f685-426d-8bb9-d6b5fc38840f"
+      type = "Facet"
+    },
+    {
+      itemInstances = [
+        {
+          componentInstance = {
+            componentInstanceProperties = [
+              {
+                name = "columns"
+                value = "Facet-d5935367-0ac2-48a9-a542-3026339d7e21"
+              },
+              {
+                name = "label"
+                value = "Información Personal"
+              },
+            ]
+            componentName = "flexipage:fieldSection"
+            identifier = "flexipage_fieldSection3"
+          }
+        },
+        {
+          componentInstance = {
+            componentInstanceProperties = [
+              {
+                name = "columns"
+                value = "Facet-065bee2e-48bc-4aa0-8fae-3cdd9050f78a"
+              },
+              {
+                name = "label"
+                value = "Información de contacto"
+              },
+            ]
+            componentName = "flexipage:fieldSection"
+            identifier = "flexipage_fieldSection4"
+          }
+        },
+        {
+          componentInstance = {
+            componentInstanceProperties = [
+              {
+                name = "columns"
+                value = "Facet-396209e2-0ec0-439a-be52-a2c745f04926"
+              },
+              {
+                name = "label"
+                value = "¿Quién le conoce en PKF Attest?"
+              },
+            ]
+            componentName = "flexipage:fieldSection"
+            identifier = "flexipage_fieldSection7"
+          }
+        },
+        {
+          componentInstance = {
+            componentInstanceProperties = [
+              {
+                name = "columns"
+                value = "Facet-1c0acc1f-9aac-4a81-a9bf-680c601c36b5"
+              },
+              {
+                name = "label"
+                value = "Información de dirección"
+              },
+            ]
+            componentName = "flexipage:fieldSection"
+            identifier = "flexipage_fieldSection5"
+          }
+        },
+        {
+          componentInstance = {
+            componentInstanceProperties = [
+              {
+                name = "columns"
+                value = "Facet-fe73eda7-0a69-42bc-9c2e-682f55c754af"
+              },
+              {
+                name = "label"
+                value = "Información Adicional"
+              },
+            ]
+            componentName = "flexipage:fieldSection"
+            identifier = "flexipage_fieldSection6"
+          }
+        },
+        {
+          componentInstance = {
+            componentInstanceProperties = [
+              {
+                name = "columns"
+                value = "Facet-6032fee1-f685-426d-8bb9-d6b5fc38840f"
+              },
+              {
+                name = "label"
+                value = "Información del Sistema"
+              },
+            ]
+            componentName = "flexipage:fieldSection"
+            identifier = "flexipage_fieldSection8"
+          }
+        },
+        {
+          componentInstance = {
+            componentName = "force:recordDetailPanelMobile"
+            identifier = "force_recordDetailPanelMobile"
+          }
+        },
+      ]
+      name = "Facet-a23aabff-69e1-4b01-b7fe-33b681aa63dc"
+      type = "Facet"
+    },
+    {
+      itemInstances = [
+        {
+          componentInstance = {
+            componentInstanceProperties = [
+              {
+                name = "parentFieldApiName"
+                value = "Contact.Id"
+              },
+              {
+                name = "relatedListApiName"
+                value = "Opportunities"
+              },
+              {
+                name = "relatedListComponentOverride"
+                value = "NONE"
+              },
+              {
+                name = "rowsToDisplay"
+                value = "10"
+              },
+              {
+                name = "showActionBar"
+                value = "true"
+              },
+            ]
+            componentName = "force:relatedListSingleContainer"
+            identifier = "force_relatedListSingleContainer"
+          }
+        },
+        {
+          componentInstance = {
+            componentInstanceProperties = [
+              {
+                name = "parentFieldApiName"
+                value = "Contact.Id"
+              },
+              {
+                name = "relatedListApiName"
+                value = "Quotes"
+              },
+              {
+                name = "relatedListComponentOverride"
+                value = "NONE"
+              },
+              {
+                name = "rowsToDisplay"
+                value = "10"
+              },
+              {
+                name = "showActionBar"
+                value = "true"
+              },
+            ]
+            componentName = "force:relatedListSingleContainer"
+            identifier = "force_relatedListSingleContainer2"
+          }
+        },
+      ]
+      name = "Facet-vd5993d9u9e"
+      type = "Facet"
+    },
+    {
+      itemInstances = [
+        {
+          componentInstance = {
+            componentInstanceProperties = [
+              {
+                name = "parentFieldApiName"
+                value = "Contact.Id"
+              },
+              {
+                name = "relatedListApiName"
+                value = "CampaignMembers"
+              },
+              {
+                name = "relatedListComponentOverride"
+                value = "NONE"
+              },
+              {
+                name = "rowsToDisplay"
+                value = "10"
+              },
+              {
+                name = "showActionBar"
+                value = "true"
+              },
+            ]
+            componentName = "force:relatedListSingleContainer"
+            identifier = "force_relatedListSingleContainer3"
+          }
+        },
+      ]
+      name = "Facet-559b3de4-e303-435d-be65-8edbb7eb76a9"
+      type = "Facet"
+    },
+    {
+      itemInstances = [
+        {
+          componentInstance = {
+            componentInstanceProperties = [
+              {
+                name = "active"
+                value = "true"
+              },
+              {
+                name = "body"
+                value = "Facet-a23aabff-69e1-4b01-b7fe-33b681aa63dc"
+              },
+              {
+                name = "title"
+                value = "Standard.Tab.detail"
+              },
+            ]
+            componentName = "flexipage:tab"
+            identifier = "flexipage_tab2"
+          }
+        },
+        {
+          componentInstance = {
+            componentInstanceProperties = [
+              {
+                name = "body"
+                value = "Facet-vd5993d9u9e"
+              },
+              {
+                name = "title"
+                value = "Opps"
+              },
+            ]
+            componentName = "flexipage:tab"
+            identifier = "flexipage_tab5"
+          }
+        },
+        {
+          componentInstance = {
+            componentInstanceProperties = [
+              {
+                name = "body"
+                value = "Facet-559b3de4-e303-435d-be65-8edbb7eb76a9"
+              },
+              {
+                name = "title"
+                value = "Campañas"
+              },
+            ]
+            componentName = "flexipage:tab"
+            identifier = "flexipage_tab7"
+          }
+        },
+      ]
+      name = "Facet-590640c0-ce3e-4a3b-97bb-3013459ee1fe"
+      type = "Facet"
+    },
+    {
+      itemInstances = [
+        {
+          componentInstance = {
+            componentInstanceProperties = [
+              {
+                name = "tabs"
+                value = "Facet-590640c0-ce3e-4a3b-97bb-3013459ee1fe"
+              },
+            ]
+            componentName = "flexipage:tabset"
+            identifier = "flexipage_tabset"
+          }
+        },
+      ]
+      name = "leftcol"
+      type = "Region"
+    },
+    {
+      itemInstances = [
+        {
+          componentInstance = {
+            componentInstanceProperties = [
+              {
+                name = "showLegacyActivityComposer"
+                value = "false"
+              },
+            ]
+            componentName = "runtime_sales_activities:activityPanel"
+            identifier = "runtime_sales_activities_activityPanel"
+          }
+        },
+      ]
+      name = "Facet-4w8zz91b2jm"
+      type = "Facet"
+    },
+    {
+      itemInstances = [
+        {
+          componentInstance = {
+            componentInstanceProperties = [
+              {
+                name = "daysToShow"
+                value = "60"
+              },
+              {
+                name = "earliestRange"
+                value = "2"
+              },
+              {
+                name = "latestRange"
+                value = "0.5"
+              },
+              {
+                name = "preferredHeight"
+                value = "3 - Default"
+              },
+              {
+                name = "timelineParent"
+                value = "Default_Picklist_Value"
+              },
+              {
+                name = "timelineTitle"
+                value = "Timeline"
+              },
+              {
+                name = "zoomTo"
+                value = "Current Date"
+              },
+            ]
+            componentName = "bmpyrckt:timeline"
+            identifier = "bmpyrckt_timeline"
+          }
+        },
+      ]
+      name = "Facet-9e4301ad-8438-4f72-8453-aad4c93975bf"
+      type = "Facet"
+    },
+    {
+      itemInstances = [
+        {
+          fieldInstance = {
+            fieldInstanceProperties = {
+              name = "uiBehavior"
+              value = "readonly"
+            }
+            fieldItem = "Record.Telefono_Nav__c"
+            identifier = "RecordTelefono_Nav_cField"
+          }
+        },
+      ]
+      name = "Facet-c0d6b3bb-4424-4a57-9df2-0b6c338e7e35"
+      type = "Facet"
+    },
+    {
+      itemInstances = [
+        {
+          fieldInstance = {
+            fieldInstanceProperties = {
+              name = "uiBehavior"
+              value = "readonly"
+            }
+            fieldItem = "Record.Telefono_Nav_2__c"
+            identifier = "RecordTelefono_Nav_2_cField"
+          }
+        },
+      ]
+      name = "Facet-d86f8ef5-cba8-46cf-82e2-9e7b69ce534c"
+      type = "Facet"
+    },
+    {
+      itemInstances = [
+        {
+          componentInstance = {
+            componentInstanceProperties = [
+              {
+                name = "body"
+                value = "Facet-c0d6b3bb-4424-4a57-9df2-0b6c338e7e35"
+              },
+            ]
+            componentName = "flexipage:column"
+            identifier = "flexipage_column"
+          }
+        },
+        {
+          componentInstance = {
+            componentInstanceProperties = [
+              {
+                name = "body"
+                value = "Facet-d86f8ef5-cba8-46cf-82e2-9e7b69ce534c"
+              },
+            ]
+            componentName = "flexipage:column"
+            identifier = "flexipage_column2"
+          }
+        },
+      ]
+      name = "Facet-479b1aec-a9ad-4965-890d-1081159472af"
+      type = "Facet"
+    },
+    {
+      itemInstances = [
+        {
+          fieldInstance = {
+            fieldInstanceProperties = {
+              name = "uiBehavior"
+              value = "readonly"
+            }
+            fieldItem = "Record.Email_Nav__c"
+            identifier = "RecordEmail_Nav_cField"
+          }
+        },
+        {
+          fieldInstance = {
+            fieldInstanceProperties = {
+              name = "uiBehavior"
+              value = "readonly"
+            }
+            fieldItem = "Record.Email_Nav_2__c"
+            identifier = "RecordEmail_Nav_2_cField"
+          }
+        },
+      ]
+      name = "Facet-ob2y1f5kdt"
+      type = "Facet"
+    },
+    {
+      itemInstances = [
+        {
+          componentInstance = {
+            componentInstanceProperties = [
+              {
+                name = "body"
+                value = "Facet-ob2y1f5kdt"
+              },
+            ]
+            componentName = "flexipage:column"
+            identifier = "flexipage_column3"
+          }
+        },
+      ]
+      name = "Facet-sc5vw0js319"
+      type = "Facet"
+    },
+    {
+      itemInstances = [
+        {
+          componentInstance = {
+            componentInstanceProperties = [
+              {
+                name = "columns"
+                value = "Facet-479b1aec-a9ad-4965-890d-1081159472af"
+              },
+              {
+                name = "label"
+                value = "Teléfonos"
+              },
+            ]
+            componentName = "flexipage:fieldSection"
+            identifier = "flexipage_fieldSection"
+          }
+        },
+        {
+          componentInstance = {
+            componentInstanceProperties = [
+              {
+                name = "columns"
+                value = "Facet-sc5vw0js319"
+              },
+              {
+                name = "label"
+                value = "Emails"
+              },
+            ]
+            componentName = "flexipage:fieldSection"
+            identifier = "flexipage_fieldSection2"
+          }
+        },
+      ]
+      name = "Facet-ee1e839c-cf85-4a28-8e0b-da095b13aa77"
+      type = "Facet"
+    },
+    {
+      itemInstances = [
+        {
+          componentInstance = {
+            componentInstanceProperties = [
+              {
+                name = "body"
+                value = "Facet-4w8zz91b2jm"
+              },
+              {
+                name = "title"
+                value = "Standard.Tab.activity"
+              },
+            ]
+            componentName = "flexipage:tab"
+            identifier = "flexipage_tab4"
+          }
+        },
+        {
+          componentInstance = {
+            componentInstanceProperties = [
+              {
+                name = "body"
+                value = "Facet-9e4301ad-8438-4f72-8453-aad4c93975bf"
+              },
+              {
+                name = "title"
+                value = "Timeline"
+              },
+            ]
+            componentName = "flexipage:tab"
+            identifier = "flexipage_tab6"
+          }
+        },
+        {
+          componentInstance = {
+            componentInstanceProperties = [
+              {
+                name = "body"
+                value = "Facet-ee1e839c-cf85-4a28-8e0b-da095b13aa77"
+              },
+              {
+                name = "title"
+                value = "Datos contacto de Navision"
+              },
+            ]
+            componentName = "flexipage:tab"
+            identifier = "flexipage_tab"
+          }
+        },
+      ]
+      name = "Facet-z8jdlod6ihe"
+      type = "Facet"
+    },
+    {
+      itemInstances = [
+        {
+          componentInstance = {
+            componentInstanceProperties = [
+              {
+                name = "displayOption"
+                value = "BOTH"
+              },
+            ]
+            componentName = "runtime_sales_merge:mergeCandidatesPreviewCard"
+            identifier = "runtime_sales_merge_mergeCandidatesPreviewCard"
+          }
+        },
+        {
+          componentInstance = {
+            componentInstanceProperties = [
+              {
+                name = "tabs"
+                value = "Facet-z8jdlod6ihe"
+              },
+            ]
+            componentName = "flexipage:tabset"
+            identifier = "flexipage_tabset2"
+          }
+        },
+      ]
+      name = "rightcol"
+      type = "Region"
+    },
+  ]
+  masterLabel = "Contact Record Page - Two Column"
+  sobjectType = "Contact"
+  template = {
+    name = "flexipage:recordHomeTwoColEqualHeaderTemplateDesktop"
+    properties = {
+      name = "enablePageActionConfig"
+      value = "false"
+    }
+  }
+  type = "RecordPage"
+  fullName = "Contact_Record_Page_Two_Column"
+  _parent = [
+    salesforce.Contact,
+  ]
+  _alias = "Contact_Record_Page_Two_Column"
+}

@@ -1,0 +1,22 @@
+salesforce.ValidationRule Account_Cuentas_Cliente_no_modificar_nombre {
+  fullName = "Account.Cuentas_Cliente_no_modificar_nombre"
+  active = true
+  description = "Bloqueamos el nombre de los clientes que vienen desde NAV para que los usuarios no puedan cambiarlo."
+  errorConditionFormula = '''
+AND(
+ RecordType.Name = 'Cliente',
+ ISCHANGED(Name),
+ NOT( $Permission.Cuenta_Modificar_nombre ))
+'''
+  errorDisplayField = salesforce.Account.field.Name
+  errorMessage = "El nombre de los clientes que vienen desde NAV no es modificable."
+  _parent = [
+    salesforce.Account,
+  ]
+  _generated_dependencies = [
+    {
+      reference = salesforce.CustomPermission.instance.Cuenta_Modificar_nombre
+    },
+  ]
+  _alias = "Account.Cuentas_Cliente_no_modificar_nombre"
+}

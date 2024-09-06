@@ -1,0 +1,137 @@
+type salesforce.AccountTeamMember {
+  salesforce.Picklist AccountAccessLevel {
+    apiName = "AccountTeamMember.AccountAccessLevel"
+    restricted = true
+    label = "Acceso a cuentas"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Lookup AccountId {
+    apiName = "AccountTeamMember.AccountId"
+    relationshipName = "Account"
+    _required = true
+    label = "Id. de la cuenta"
+    createable = true
+    updateable = false
+    queryable = true
+  }
+  salesforce.Picklist CaseAccessLevel {
+    apiName = "AccountTeamMember.CaseAccessLevel"
+    restricted = true
+    label = "Acceso a casos"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Picklist ContactAccessLevel {
+    apiName = "AccountTeamMember.ContactAccessLevel"
+    restricted = true
+    label = "Acceso a contacto"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Picklist OpportunityAccessLevel {
+    apiName = "AccountTeamMember.OpportunityAccessLevel"
+    restricted = true
+    label = "Acceso a oportunidad"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Picklist TeamMemberRole {
+    apiName = "AccountTeamMember.TeamMemberRole"
+    restricted = false
+    label = "Función del equipo"
+    createable = true
+    updateable = true
+    queryable = true
+    valueSetName = salesforce.StandardValueSet.instance.SalesTeamRole
+  }
+  salesforce.Lookup UserId {
+    apiName = "AccountTeamMember.UserId"
+    relationshipName = "User"
+    _required = true
+    label = "Id. de usuario"
+    createable = true
+    updateable = false
+    queryable = true
+  }
+  serviceid Id {
+    apiName = "AccountTeamMember.Id"
+    label = "Id. del miembro del equipo de cuentas"
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Url PhotoUrl {
+    apiName = "AccountTeamMember.PhotoUrl"
+    label = "URL de fotografía en tamaño miniatura"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Text Title {
+    apiName = "AccountTeamMember.Title"
+    length = 80
+    label = "Cargo"
+    createable = false
+    updateable = false
+    unique = false
+    caseSensitive = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime CreatedDate {
+    apiName = "AccountTeamMember.CreatedDate"
+    label = "Fecha de creación"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup CreatedById {
+    apiName = "AccountTeamMember.CreatedById"
+    relationshipName = "CreatedBy"
+    label = "Creado por el Id."
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime LastModifiedDate {
+    apiName = "AccountTeamMember.LastModifiedDate"
+    label = "Fecha de la última modificación"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup LastModifiedById {
+    apiName = "AccountTeamMember.LastModifiedById"
+    relationshipName = "LastModifiedBy"
+    label = "Última modificación realizada por el Id."
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime SystemModstamp {
+    apiName = "AccountTeamMember.SystemModstamp"
+    label = "Modstamp del sistema"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Checkbox IsDeleted {
+    apiName = "AccountTeamMember.IsDeleted"
+    defaultValue = false
+    label = "Eliminado"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+}

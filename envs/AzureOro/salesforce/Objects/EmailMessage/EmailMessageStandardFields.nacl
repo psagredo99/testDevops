@@ -1,0 +1,352 @@
+type salesforce.EmailMessage {
+  salesforce.Picklist AutomationType {
+    apiName = "EmailMessage.AutomationType"
+    restricted = true
+    label = "Tipo de automatización"
+    createable = true
+    updateable = false
+    queryable = true
+  }
+  salesforce.Text BccAddress {
+    apiName = "EmailMessage.BccAddress"
+    length = 4000
+    label = "Dirección Cco"
+    createable = true
+    updateable = true
+    unique = false
+    caseSensitive = false
+    queryable = true
+  }
+  salesforce.Text CcAddress {
+    apiName = "EmailMessage.CcAddress"
+    length = 4000
+    label = "Dirección Cc"
+    createable = true
+    updateable = true
+    unique = false
+    caseSensitive = false
+    queryable = true
+  }
+  salesforce.DateTime FirstOpenedDate {
+    apiName = "EmailMessage.FirstOpenedDate"
+    label = "Primera fecha en que se abrió"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Email FromAddress {
+    apiName = "EmailMessage.FromAddress"
+    label = "Dirección De"
+    createable = true
+    updateable = true
+    unique = false
+    queryable = true
+  }
+  salesforce.Text FromName {
+    apiName = "EmailMessage.FromName"
+    length = 1000
+    label = "Nombre De"
+    createable = true
+    updateable = true
+    unique = false
+    caseSensitive = false
+    queryable = true
+  }
+  salesforce.Checkbox HasAttachment {
+    apiName = "EmailMessage.HasAttachment"
+    defaultValue = false
+    label = "Tiene archivos adjuntos"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.LongTextArea Headers {
+    apiName = "EmailMessage.Headers"
+    length = 32000
+    label = "Encabezados"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.LongTextArea HtmlBody {
+    apiName = "EmailMessage.HtmlBody"
+    length = 131072
+    label = "Cuerpo HTML"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Checkbox Incoming {
+    apiName = "EmailMessage.Incoming"
+    defaultValue = false
+    label = "Es Entrante"
+    createable = true
+    updateable = false
+    queryable = true
+  }
+  salesforce.Checkbox IsExternallyVisible {
+    apiName = "EmailMessage.IsExternallyVisible"
+    defaultValue = false
+    label = "Es visible de modo externo"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Unknown IsPrivateDraft {
+    apiName = "EmailMessage.IsPrivateDraft"
+    _hidden_value = true
+  }
+  salesforce.DateTime LastOpenedDate {
+    apiName = "EmailMessage.LastOpenedDate"
+    label = "Última fecha en que se abrió"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.DateTime MessageDate {
+    apiName = "EmailMessage.MessageDate"
+    label = "Fecha del mensaje"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Unknown MessageSize {
+    apiName = "EmailMessage.MessageSize"
+    _hidden_value = true
+  }
+  salesforce.Lookup ParentId {
+    apiName = "EmailMessage.ParentId"
+    relationshipName = "Parent"
+    label = "Id. del caso"
+    createable = true
+    updateable = false
+    queryable = true
+  }
+  salesforce.Lookup RelatedToId {
+    apiName = "EmailMessage.RelatedToId"
+    relationshipName = "RelatedTo"
+    label = "Id. de relacionado con"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Picklist Status {
+    apiName = "EmailMessage.Status"
+    restricted = true
+    _required = true
+    label = "Estado"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Text Subject {
+    apiName = "EmailMessage.Subject"
+    length = 3000
+    label = "Asunto"
+    createable = true
+    updateable = true
+    unique = false
+    caseSensitive = false
+    queryable = true
+  }
+  salesforce.LongTextArea TextBody {
+    apiName = "EmailMessage.TextBody"
+    length = 131072
+    label = "Cuerpo del texto"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Text ToAddress {
+    apiName = "EmailMessage.ToAddress"
+    length = 4000
+    label = "Dirección Para"
+    createable = true
+    updateable = true
+    unique = false
+    caseSensitive = false
+    queryable = true
+  }
+  salesforce.Picklist ValidatedFromAddress {
+    apiName = "EmailMessage.ValidatedFromAddress"
+    restricted = true
+    label = "De"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  serviceid Id {
+    apiName = "EmailMessage.Id"
+    label = "Id. de Mensaje de correo electrónico"
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup ActivityId {
+    apiName = "EmailMessage.ActivityId"
+    label = "Id. de actividad"
+    createable = true
+    updateable = false
+    queryable = true
+  }
+  salesforce.Lookup CreatedById {
+    apiName = "EmailMessage.CreatedById"
+    relationshipName = "CreatedBy"
+    label = "Creado por el Id."
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime CreatedDate {
+    apiName = "EmailMessage.CreatedDate"
+    label = "Fecha de creación"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime LastModifiedDate {
+    apiName = "EmailMessage.LastModifiedDate"
+    label = "Fecha de la última modificación"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup LastModifiedById {
+    apiName = "EmailMessage.LastModifiedById"
+    relationshipName = "LastModifiedBy"
+    label = "Última modificación realizada por el Id."
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime SystemModstamp {
+    apiName = "EmailMessage.SystemModstamp"
+    label = "Modstamp del sistema"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Text Name {
+    apiName = "EmailMessage.Name"
+    length = 255
+    _required = true
+    label = "Nombre de mensaje de correo electrónico"
+    createable = false
+    updateable = false
+    unique = false
+    caseSensitive = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Checkbox IsDeleted {
+    apiName = "EmailMessage.IsDeleted"
+    defaultValue = false
+    label = "Eliminado"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup ReplyToEmailMessageId {
+    apiName = "EmailMessage.ReplyToEmailMessageId"
+    relationshipName = "ReplyToEmailMessage"
+    label = "Id. de Mensaje de correo electrónico"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Text MessageIdentifier {
+    apiName = "EmailMessage.MessageIdentifier"
+    length = 765
+    label = "Id del mensaje"
+    createable = true
+    updateable = true
+    unique = false
+    caseSensitive = false
+    queryable = true
+  }
+  salesforce.Text ThreadIdentifier {
+    apiName = "EmailMessage.ThreadIdentifier"
+    length = 765
+    label = "Id. de hilo"
+    createable = true
+    updateable = true
+    unique = false
+    caseSensitive = false
+    queryable = true
+  }
+  salesforce.Text ClientThreadIdentifier {
+    apiName = "EmailMessage.ClientThreadIdentifier"
+    length = 765
+    label = "Id. de hilo de cliente"
+    createable = true
+    updateable = true
+    unique = false
+    caseSensitive = false
+    queryable = true
+  }
+  salesforce.Lookup FromId {
+    apiName = "EmailMessage.FromId"
+    label = "Id. de De"
+    createable = true
+    updateable = false
+    queryable = true
+  }
+  salesforce.Checkbox IsClientManaged {
+    apiName = "EmailMessage.IsClientManaged"
+    defaultValue = false
+    label = "Es cliente gestionado"
+    createable = true
+    updateable = false
+    queryable = true
+  }
+  salesforce.Text AttachmentIds {
+    apiName = "EmailMessage.AttachmentIds"
+    length = 32768
+    label = "Id. de Archivos adjuntos"
+    createable = true
+    updateable = true
+    unique = false
+    caseSensitive = false
+    queryable = true
+  }
+  salesforce.Checkbox IsTracked {
+    apiName = "EmailMessage.IsTracked"
+    defaultValue = false
+    label = "Supervisado"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Checkbox IsOpened {
+    apiName = "EmailMessage.IsOpened"
+    defaultValue = false
+    label = "¿Abierto?"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Checkbox IsBounced {
+    apiName = "EmailMessage.IsBounced"
+    defaultValue = false
+    label = "¿Devuelto?"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Lookup EmailTemplateId {
+    apiName = "EmailMessage.EmailTemplateId"
+    relationshipName = "EmailTemplate"
+    label = "Id. de la plantilla de correo electrónico"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+}

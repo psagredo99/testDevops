@@ -1,0 +1,38 @@
+salesforce.EntitlementProcess caso_est_ndar@s_00225 {
+  fullName = "caso estándar"
+  SObjectType = salesforce.Case
+  active = true
+  description = "Ejecuta el proceso SLA estándar para el caso."
+  entryStartDateField = salesforce.Case.field.CreatedDate
+  exitCriteriaFilterItems = {
+    field = salesforce.Case.field.IsClosed
+    operation = "equals"
+    value = "true"
+  }
+  milestones = [
+    {
+      milestoneName = salesforce.MilestoneType.instance.Primera_respuesta_al_cliente@s
+      minutesToComplete = 240
+      timeTriggers = {
+        actions = {
+          name = salesforce.WorkflowFieldUpdate.instance.Case_ChangePriorityToHigh@v
+          type = "FieldUpdate"
+        }
+        timeLength = -60
+        workflowTimeTriggerUnit = "Minutes"
+      }
+      useCriteriaStartTime = false
+    },
+    {
+      milestoneName = salesforce.MilestoneType.instance.Distribuir_caso@s
+      minutesToComplete = 1440
+      useCriteriaStartTime = false
+    },
+    {
+      milestoneName = salesforce.MilestoneType.instance.Cerrar_caso@s
+      minutesToComplete = 5760
+      useCriteriaStartTime = false
+    },
+  ]
+  _alias = "caso estándar"
+}

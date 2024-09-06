@@ -1,0 +1,16 @@
+salesforce.CompactLayout Contact_Custom {
+  fullName = "Contact.Custom"
+  fields = [
+    "Name",
+    "Title",
+    "AccountId",
+    "Phone",
+    "Email",
+    "MobilePhone",
+  ]
+  label = "Custom"
+  _parent = [
+    salesforce.Contact,
+  ]
+  _alias = "Custom"
+}

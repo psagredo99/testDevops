@@ -1,0 +1,11 @@
+salesforce.QuickAction Account_Desactivar_Alerta@vu {
+  fullName = "Account.Desactivar_Alerta"
+  flowDefinition = salesforce.Flow.instance.Cuenta_Desactivar_Alerta
+  label = "Desactivar Alerta"
+  optionsCreateFeedItem = false
+  type = "Flow"
+  _parent = [
+    salesforce.Account,
+  ]
+  _alias = "Desactivar Alerta"
+}

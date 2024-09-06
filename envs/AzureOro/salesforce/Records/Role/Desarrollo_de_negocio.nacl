@@ -1,0 +1,10 @@
+salesforce.Role Desarrollo_de_negocio {
+  fullName = "Desarrollo_de_negocio"
+  caseAccessLevel = "Edit"
+  contactAccessLevel = "Edit"
+  mayForecastManagerShare = false
+  name = "Desarrollo de negocio"
+  opportunityAccessLevel = "Edit"
+  parentRole = salesforce.Role.instance.Socio
+  _alias = "Desarrollo_de_negocio"
+}

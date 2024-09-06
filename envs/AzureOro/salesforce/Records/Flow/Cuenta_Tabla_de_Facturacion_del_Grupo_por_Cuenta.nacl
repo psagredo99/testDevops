@@ -1,0 +1,373 @@
+salesforce.Flow Cuenta_Tabla_de_Facturacion_del_Grupo_por_Cuenta {
+  fullName = "Cuenta_Tabla_de_Facturacion_del_Grupo_por_Cuenta"
+  apiVersion = 57
+  decisions = [
+    {
+      name = "Grupo_o_Individual"
+      label = "Grupo o Individual?"
+      locationX = 182
+      locationY = 158
+      defaultConnector = {
+        targetReference = "Cuentas_individuales_o_Matriz"
+      }
+      defaultConnectorLabel = "Individual"
+      rules = [
+        {
+          name = "Grupo"
+          conditionLogic = "and"
+          conditions = [
+            {
+              leftValueReference = "recordId.Id_Matriz_del_Grupo__c"
+              operator = "IsNull"
+              rightValue = {
+                booleanValue = false
+              }
+            },
+          ]
+          connector = {
+            targetReference = "Cuentas_del_grupo"
+          }
+          label = "Grupo"
+        },
+      ]
+    },
+  ]
+  environments = "Default"
+  formulas = [
+    {
+      name = "id_Matriz"
+      dataType = "String"
+      expression = "left({!recordId.Id}, 15)"
+    },
+  ]
+  interviewLabel = "Cuenta - Tabla de Facturación del Grupo por Cuenta {!$Flow.CurrentDateTime}"
+  label = "Cuenta - Tabla de Facturación del Grupo por Cuenta"
+  processMetadataValues = [
+    {
+      name = "BuilderType"
+      value = {
+        stringValue = "LightningFlowBuilder"
+      }
+    },
+    {
+      name = "CanvasMode"
+      value = {
+        stringValue = "AUTO_LAYOUT_CANVAS"
+      }
+    },
+    {
+      name = "OriginBuilderType"
+      value = {
+        stringValue = "LightningFlowBuilder"
+      }
+    },
+  ]
+  processType = "Flow"
+  recordLookups = [
+    {
+      name = "Cuentas_del_grupo"
+      label = "Cuentas del grupo"
+      locationX = 50
+      locationY = 278
+      assignNullValuesIfNoRecordsFound = false
+      connector = {
+        targetReference = "Tabla"
+      }
+      filterLogic = "or"
+      filters = [
+        {
+          field = salesforce.Account.field.Id
+          operator = "EqualTo"
+          value = {
+            elementReference = "recordId.Id_Matriz_del_Grupo__c"
+          }
+        },
+        {
+          field = salesforce.Account.field.Id_Matriz_del_Grupo__c
+          operator = "EqualTo"
+          value = {
+            elementReference = "recordId.Id_Matriz_del_Grupo__c"
+          }
+        },
+      ]
+      getFirstRecordOnly = false
+      object = salesforce.Account
+      sortField = salesforce.Account.field.Facturacion_PKF__c
+      sortOrder = "Desc"
+      storeOutputAutomatically = true
+    },
+    {
+      name = "Cuentas_individuales_o_Matriz"
+      label = "Cuentas individuales o Matriz"
+      locationX = 314
+      locationY = 278
+      assignNullValuesIfNoRecordsFound = false
+      connector = {
+        targetReference = "Tabla_0"
+      }
+      filterLogic = "or"
+      filters = [
+        {
+          field = salesforce.Account.field.Id_Matriz_del_Grupo__c
+          operator = "EqualTo"
+          value = {
+            elementReference = "id_Matriz"
+          }
+        },
+        {
+          field = salesforce.Account.field.Id
+          operator = "EqualTo"
+          value = {
+            elementReference = "recordId.Id"
+          }
+        },
+      ]
+      getFirstRecordOnly = false
+      object = salesforce.Account
+      sortField = salesforce.Account.field.Facturacion_PKF__c
+      sortOrder = "Desc"
+      storeOutputAutomatically = true
+    },
+  ]
+  screens = [
+    {
+      name = "Tabla"
+      label = "Tabla"
+      locationX = 50
+      locationY = 398
+      allowBack = false
+      allowFinish = true
+      allowPause = true
+      fields = [
+        {
+          name = "Espacio"
+          fieldText = "<p>La facturación total es de: {!totalFacturado}</p>"
+          fieldType = "DisplayText"
+        },
+        {
+          name = "Facturaci_n_por_Empresa"
+          fieldText = "Facturación por Empresa"
+          fieldType = "RegionContainer"
+          fields = [
+            {
+              name = "Facturaci_n_por_Empresa_Column1"
+              fieldType = "Region"
+              fields = [
+                {
+                  name = "TablaAgrupada"
+                  dataTypeMappings = {
+                    typeName = "T"
+                    typeValue = salesforce.Account
+                  }
+                  extensionName = "flowruntime:datatable"
+                  fieldType = "ComponentInstance"
+                  inputParameters = [
+                    {
+                      name = "label"
+                      value = {
+                        stringValue = "Data Table"
+                      }
+                    },
+                    {
+                      name = "selectionMode"
+                      value = {
+                        stringValue = "NO_SELECTION"
+                      }
+                    },
+                    {
+                      name = "minRowSelection"
+                      value = {
+                        numberValue = 0
+                      }
+                    },
+                    {
+                      name = "tableData"
+                      value = {
+                        elementReference = "Cuentas_del_grupo"
+                      }
+                    },
+                    {
+                      name = "columns"
+                      value = {
+                        stringValue = "[{\"apiName\":\"Name\",\"guid\":\"column-4275\",\"editable\":false,\"hasCustomHeaderLabel\":false,\"customHeaderLabel\":\"\",\"wrapText\":true,\"order\":0,\"label\":\"Nombre de la cuenta\",\"type\":\"text\"},{\"apiName\":\"Facturacion_PKF__c\",\"guid\":\"column-3e9d\",\"editable\":false,\"hasCustomHeaderLabel\":false,\"customHeaderLabel\":\"\",\"wrapText\":true,\"order\":1,\"label\":\"Facturación PKF\",\"type\":\"currency\"}]"
+                      }
+                    },
+                    {
+                      name = "maxRowSelection"
+                      value = {
+                        numberValue = 0
+                      }
+                    },
+                  ]
+                  inputsOnNextNavToAssocScrn = "UseStoredValues"
+                  isRequired = true
+                  storeOutputAutomatically = true
+                },
+              ]
+              inputParameters = [
+                {
+                  name = "width"
+                  value = {
+                    stringValue = "12"
+                  }
+                },
+              ]
+              isRequired = false
+            },
+          ]
+          isRequired = false
+          regionContainerType = "SectionWithHeader"
+        },
+      ]
+      showFooter = true
+      showHeader = false
+    },
+    {
+      name = "Tabla_0"
+      label = "Tabla"
+      locationX = 314
+      locationY = 398
+      allowBack = false
+      allowFinish = true
+      allowPause = false
+      fields = [
+        {
+          name = "Facturaci_n_por_Empresa_0"
+          fieldText = "Facturación por Empresa"
+          fieldType = "RegionContainer"
+          fields = [
+            {
+              name = "Facturaci_n_por_Empresa_0_Column1"
+              fieldType = "Region"
+              fields = [
+                {
+                  name = "TablaAgrupada_0"
+                  dataTypeMappings = {
+                    typeName = "T"
+                    typeValue = salesforce.Account
+                  }
+                  extensionName = "flowruntime:datatable"
+                  fieldType = "ComponentInstance"
+                  inputParameters = [
+                    {
+                      name = "label"
+                      value = {
+                        stringValue = "Data Table"
+                      }
+                    },
+                    {
+                      name = "selectionMode"
+                      value = {
+                        stringValue = "NO_SELECTION"
+                      }
+                    },
+                    {
+                      name = "minRowSelection"
+                      value = {
+                        numberValue = 0
+                      }
+                    },
+                    {
+                      name = "tableData"
+                      value = {
+                        elementReference = "Cuentas_individuales_o_Matriz"
+                      }
+                    },
+                    {
+                      name = "columns"
+                      value = {
+                        stringValue = "[{\"apiName\":\"Name\",\"guid\":\"column-4275\",\"editable\":false,\"hasCustomHeaderLabel\":false,\"customHeaderLabel\":\"\",\"wrapText\":true,\"order\":0,\"label\":\"Nombre de la cuenta\",\"type\":\"text\"},{\"apiName\":\"Facturacion_PKF__c\",\"guid\":\"column-3e9d\",\"editable\":false,\"hasCustomHeaderLabel\":false,\"customHeaderLabel\":\"\",\"wrapText\":true,\"order\":1,\"label\":\"Facturación PKF\",\"type\":\"currency\"}]"
+                      }
+                    },
+                    {
+                      name = "maxRowSelection"
+                      value = {
+                        numberValue = 0
+                      }
+                    },
+                  ]
+                  inputsOnNextNavToAssocScrn = "UseStoredValues"
+                  isRequired = true
+                  storeOutputAutomatically = true
+                },
+              ]
+              inputParameters = [
+                {
+                  name = "width"
+                  value = {
+                    stringValue = "12"
+                  }
+                },
+              ]
+              isRequired = false
+            },
+          ]
+          isRequired = false
+          regionContainerType = "SectionWithHeader"
+        },
+      ]
+      showFooter = true
+      showHeader = false
+    },
+  ]
+  start = {
+    locationX = 56
+    locationY = 0
+    connector = {
+      targetReference = "Grupo_o_Individual"
+    }
+  }
+  status = "Active"
+  variables = [
+    {
+      name = "AccountsIds"
+      dataType = "String"
+      isCollection = true
+      isInput = false
+      isOutput = false
+    },
+    {
+      name = "facturacionCuenta"
+      dataType = "SObject"
+      isCollection = false
+      isInput = false
+      isOutput = false
+      objectType = salesforce.Facturacion__c
+    },
+    {
+      name = "listaFacturaciones"
+      dataType = "SObject"
+      isCollection = true
+      isInput = false
+      isOutput = false
+      objectType = salesforce.Facturacion__c
+    },
+    {
+      name = "nombreCuentaVueltaAnterior"
+      dataType = "String"
+      isCollection = false
+      isInput = false
+      isOutput = false
+      value = {
+        stringValue = ""
+      }
+    },
+    {
+      name = "recordId"
+      dataType = "SObject"
+      isCollection = false
+      isInput = true
+      isOutput = false
+      objectType = salesforce.Account
+    },
+    {
+      name = "totalFacturado"
+      dataType = "Currency"
+      isCollection = false
+      isInput = false
+      isOutput = false
+      scale = 2
+    },
+  ]
+  _alias = "Cuenta - Tabla de Facturación del Grupo por Cuenta"
+}

@@ -1,0 +1,12 @@
+salesforce.NamedCredential Clientify_Heredado {
+  fullName = "Clientify_Heredado"
+  allowMergeFieldsInBody = false
+  allowMergeFieldsInHeader = true
+  calloutStatus = "Enabled"
+  endpoint = "https://api.clientify.net"
+  generateAuthorizationHeader = true
+  label = "Clientify Heredado"
+  principalType = "Anonymous"
+  protocol = "NoAuthentication"
+  _alias = "Clientify Heredado"
+}

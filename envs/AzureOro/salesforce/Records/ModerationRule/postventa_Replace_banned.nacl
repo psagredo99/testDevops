@@ -1,0 +1,37 @@
+salesforce.ModerationRule postventa_Replace_banned@vu {
+  fullName = "postventa.Replace_banned"
+  action = "Replace"
+  active = false
+  description = "Posts and comments using banned keywords are replaced with asterisks"
+  entitiesAndFields = [
+    {
+      entityName = "FeedComment"
+      fieldName = "RawCommentBody"
+      keywordList = "postventa.Banned"
+    },
+    {
+      entityName = "FeedItem"
+      fieldName = "LinkUrl"
+      keywordList = "postventa.Banned"
+    },
+    {
+      entityName = "FeedItem"
+      fieldName = "RawBody"
+      keywordList = "postventa.Banned"
+    },
+    {
+      entityName = "FeedItem"
+      fieldName = "Title"
+      keywordList = "postventa.Banned"
+    },
+    {
+      entityName = "FeedPollChoice"
+      fieldName = "ChoiceBody"
+      keywordList = "postventa.Banned"
+    },
+  ]
+  masterLabel = "Replace banned keywords with asterisks"
+  type = "Content"
+  userMessage = "You can't use %BLOCKED_KEYWORD% or other inappropriate words in this community. Review your content and try again."
+  _alias = "postventa.Replace_banned"
+}

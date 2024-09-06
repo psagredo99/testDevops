@@ -1,0 +1,20 @@
+salesforce.WorkflowAlert Opportunity_Oportunidad_rechazada@vu {
+  fullName = "Opportunity.Oportunidad_rechazada"
+  description = "Oportunidad rechazada"
+  protected = false
+  recipients = [
+    {
+      recipient = "Desarrollo negocio"
+      type = "accountTeam"
+    },
+    {
+      type = "owner"
+    },
+  ]
+  senderType = "CurrentUser"
+  template = salesforce.EmailTemplate.instance.unfiled_public_Oportunidad_rechazada@zcdu
+  _parent = [
+    salesforce.Opportunity,
+  ]
+  _alias = "Opportunity.Oportunidad_rechazada"
+}

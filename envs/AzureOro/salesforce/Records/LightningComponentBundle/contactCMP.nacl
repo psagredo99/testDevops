@@ -1,0 +1,23 @@
+salesforce.LightningComponentBundle contactCMP {
+  apiVersion = 56
+  isExposed = false
+  fullName = "contactCMP"
+  lwcResources = {
+    lwcResource = {
+      contactCMP_html@v = {
+        source = file("salesforce/Records/LightningComponentBundle/contactCMP/contactCMP.html")
+        filePath = "lwc/contactCMP/contactCMP.html"
+      }
+      contactCMP_js@v = {
+        source = file("salesforce/Records/LightningComponentBundle/contactCMP/contactCMP.js")
+        filePath = "lwc/contactCMP/contactCMP.js"
+      }
+    }
+  }
+  _generated_dependencies = [
+    {
+      reference = salesforce.ApexClass.instance.ComponenteFoto
+    },
+  ]
+  _alias = "contactCMP"
+}

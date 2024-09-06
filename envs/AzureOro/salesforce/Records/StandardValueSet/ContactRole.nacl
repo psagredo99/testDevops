@@ -1,0 +1,27 @@
+salesforce.StandardValueSet ContactRole {
+  fullName = "ContactRole"
+  sorted = false
+  standardValue = [
+    {
+      fullName = "Business User"
+      default = false
+      label = "Usuario de negocio"
+    },
+    {
+      fullName = "Decision Maker"
+      default = false
+      label = "Responsable de la toma de decisiones"
+    },
+    {
+      fullName = "Economic Decision Maker"
+      default = false
+      label = "Responsable financiero"
+    },
+    {
+      fullName = "Technical Buyer"
+      default = false
+      label = "Usuario técnico"
+    },
+  ]
+  _alias = "ContactRole"
+}

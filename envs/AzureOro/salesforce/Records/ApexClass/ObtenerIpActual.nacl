@@ -1,0 +1,15 @@
+salesforce.ApexClass ObtenerIpActual {
+  apiVersion = 57
+  status = "Active"
+  fullName = "ObtenerIpActual"
+  content = file("salesforce/Records/ApexClass/ObtenerIpActual.cls")
+  _generated_dependencies = [
+    {
+      reference = salesforce.Ultima_Ip_Obtenida__c
+    },
+    {
+      reference = salesforce.Ultima_Ip_Obtenida__c.field.Valor__c
+    },
+  ]
+  _alias = "ObtenerIpActual"
+}

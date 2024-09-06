@@ -1,0 +1,13 @@
+salesforce.AnimationRule Default_Opportunity {
+  fullName = "Default_Opportunity"
+  animationFrequency = "always"
+  developerName = "Default_Opportunity"
+  isActive = false
+  masterLabel = "Default"
+  recordTypeContext = "Master"
+  recordTypeName = "__MASTER__"
+  sobjectType = salesforce.Opportunity
+  targetField = salesforce.Opportunity.field.StageName
+  targetFieldChangeToValues = "Cerrada ganada"
+  _alias = "Default_Opportunity"
+}

@@ -1,0 +1,12 @@
+salesforce.ApexClass KanbanConfigList {
+  apiVersion = 40
+  status = "Active"
+  fullName = "KanbanConfigList"
+  content = file("salesforce/Records/ApexClass/KanbanConfigList.cls")
+  _generated_dependencies = [
+    {
+      reference = salesforce.Kanban_Configuration__c
+    },
+  ]
+  _alias = "KanbanConfigList"
+}

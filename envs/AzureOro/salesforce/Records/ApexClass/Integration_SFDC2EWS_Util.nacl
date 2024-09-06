@@ -1,0 +1,42 @@
+salesforce.ApexClass Integration_SFDC2EWS_Util {
+  apiVersion = 54
+  status = "Active"
+  fullName = "Integration_SFDC2EWS_Util"
+  content = file("salesforce/Records/ApexClass/Integration_SFDC2EWS_Util.cls")
+  _generated_dependencies = [
+    {
+      reference = salesforce.Log__c
+    },
+    {
+      reference = salesforce.Log__c.field.Apex_Class_Name__c
+    },
+    {
+      reference = salesforce.Log__c.field.Apex_Method_Name__c
+    },
+    {
+      reference = salesforce.Log__c.field.Callout_Error__c
+    },
+    {
+      reference = salesforce.Log__c.field.Endpoint_WS__c
+    },
+    {
+      reference = salesforce.Log__c.field.Request__c
+    },
+    {
+      reference = salesforce.Log__c.field.Response_Body__c
+    },
+    {
+      reference = salesforce.Log__c.field.Result__c
+    },
+    {
+      reference = salesforce.Log__c.field.Server_Response__c
+    },
+    {
+      reference = salesforce.Log__c.field.Service_Name__c
+    },
+    {
+      reference = salesforce.Log__c.field.Timestamp__c
+    },
+  ]
+  _alias = "Integration_SFDC2EWS_Util"
+}

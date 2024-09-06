@@ -1,0 +1,196 @@
+salesforce.Flow Cuenta_Asignar_situacion_cliente {
+  fullName = "Cuenta_Asignar_situacion_cliente"
+  apiVersion = 57
+  decisions = [
+    {
+      name = "Estado"
+      label = "Estado"
+      locationX = 446
+      locationY = 311
+      defaultConnectorLabel = "Resultado predeterminado"
+      rules = [
+        {
+          name = "Cliente"
+          conditionLogic = "and"
+          conditions = [
+            {
+              leftValueReference = "$Record.RecordType.DeveloperName"
+              operator = "EqualTo"
+              rightValue = {
+                stringValue = "Cliente"
+              }
+            },
+            {
+              leftValueReference = "$Record.Ultimo_anyo_con_facturacion__c"
+              operator = "GreaterThanOrEqualTo"
+              rightValue = {
+                elementReference = "FX_Calcular_Vigente_Obsoleto"
+              }
+            },
+          ]
+          connector = {
+            targetReference = "Asignar_status_cliente"
+          }
+          label = "Cliente"
+        },
+        {
+          name = "Cuenta_Potencial"
+          conditionLogic = "or"
+          conditions = [
+            {
+              leftValueReference = "$Record.RecordType.DeveloperName"
+              operator = "EqualTo"
+              rightValue = {
+                stringValue = "Cuenta_Potencial"
+              }
+            },
+            {
+              leftValueReference = "$Record.RecordTypeId"
+              operator = "IsNull"
+              rightValue = {
+                booleanValue = true
+              }
+            },
+          ]
+          connector = {
+            targetReference = "Asignar_cliente_potencial"
+          }
+          label = "Cuenta Potencial"
+        },
+        {
+          name = "Cliente_sin_facturacion_reciente"
+          conditionLogic = "1 AND (2 OR 3)"
+          conditions = [
+            {
+              leftValueReference = "$Record.RecordType.DeveloperName"
+              operator = "EqualTo"
+              rightValue = {
+                stringValue = "Cliente"
+              }
+            },
+            {
+              leftValueReference = "$Record.Ultimo_anyo_con_facturacion__c"
+              operator = "LessThan"
+              rightValue = {
+                elementReference = "FX_Calcular_Vigente_Obsoleto"
+              }
+            },
+            {
+              leftValueReference = "$Record.Ultimo_anyo_con_facturacion__c"
+              operator = "IsNull"
+              rightValue = {
+                booleanValue = false
+              }
+            },
+          ]
+          connector = {
+            targetReference = "Asignar_Cliente_sin_relacion_desde_hace_anyos"
+          }
+          label = "Cliente sin facturación reciente"
+        },
+      ]
+    },
+  ]
+  description = "Cálculo automático de la situación de un cliente en base al tipo de registro si es cliente o no, y en caso de que lo sea si lleva más de cuatro años sin facturar."
+  environments = "Default"
+  formulas = [
+    {
+      description = "A través de la fórmula calculamos si la cuenta de tiempo cliente está con facturación reciente o bien si está obsoleta."
+      name = "FX_Calcular_Vigente_Obsoleto"
+      dataType = "Number"
+      expression = "IF(MONTH({!$Flow.CurrentDate})<=6, YEAR({!$Flow.CurrentDate})-5, YEAR({!$Flow.CurrentDate})-4)"
+      scale = 0
+    },
+  ]
+  interviewLabel = "Cuenta - Asignar situación cliente {!$Flow.CurrentDateTime}"
+  label = "Cuenta - Asignar situación cliente"
+  processMetadataValues = [
+    {
+      name = "BuilderType"
+      value = {
+        stringValue = "LightningFlowBuilder"
+      }
+    },
+    {
+      name = "CanvasMode"
+      value = {
+        stringValue = "AUTO_LAYOUT_CANVAS"
+      }
+    },
+    {
+      name = "OriginBuilderType"
+      value = {
+        stringValue = "LightningFlowBuilder"
+      }
+    },
+  ]
+  processType = "AutoLaunchedFlow"
+  recordUpdates = [
+    {
+      name = "Asignar_cliente_potencial"
+      label = "Asignar cliente potencial"
+      locationX = 314
+      locationY = 431
+      inputAssignments = [
+        {
+          field = "Situacion_cliente__c"
+          value = {
+            stringValue = "Cliente Potencial"
+          }
+        },
+      ]
+      inputReference = "$Record"
+    },
+    {
+      name = "Asignar_Cliente_sin_relacion_desde_hace_anyos"
+      label = "Asignar Cliente sin relación desde hace años"
+      locationX = 578
+      locationY = 431
+      inputAssignments = [
+        {
+          field = "Situacion_cliente__c"
+          value = {
+            stringValue = "Cliente sin facturación en años"
+          }
+        },
+      ]
+      inputReference = "$Record"
+    },
+    {
+      name = "Asignar_status_cliente"
+      label = "Asignar status cliente"
+      locationX = 50
+      locationY = 431
+      inputAssignments = [
+        {
+          field = "Situacion_cliente__c"
+          value = {
+            stringValue = "Cliente"
+          }
+        },
+      ]
+      inputReference = "$Record"
+    },
+  ]
+  start = {
+    locationX = 320
+    locationY = 0
+    connector = {
+      targetReference = "Estado"
+    }
+    filterFormula = "OR(ISNEW(), ISCHANGED({!$Record.RecordTypeId}), ISCHANGED({!$Record.Ultimo_anyo_con_facturacion__c} ), ISBLANK(TEXT({!$Record.Situacion_cliente__c})))"
+    object = salesforce.Account
+    recordTriggerType = "CreateAndUpdate"
+    triggerType = "RecordBeforeSave"
+  }
+  status = "Active"
+  _generated_dependencies = [
+    {
+      reference = salesforce.Account.field.Situacion_cliente__c
+    },
+    {
+      reference = salesforce.Account.field.Ultimo_anyo_con_facturacion__c
+    },
+  ]
+  _alias = "Cuenta - Asignar situación cliente"
+}

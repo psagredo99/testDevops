@@ -1,0 +1,22 @@
+salesforce.SamlSsoConfig sts {
+  fullName = "sts"
+  identityLocation = "SubjectNameId"
+  identityMapping = "Username"
+  issuer = "https://sts.windows.net/16e3f57f-b4b0-4064-939a-c8360b0b7b7e/"
+  loginUrl = "https://login.microsoftonline.com/16e3f57f-b4b0-4064-939a-c8360b0b7b7e/saml2"
+  name = "Microsoft Entra ID PKF Attest"
+  oauthTokenEndpoint = "https://crm-pkf-attest--azureoro.sandbox.my.salesforce.com/services/oauth2/token"
+  redirectBinding = true
+  requestSignatureMethod = "1"
+  requestSigningCertId = "0P168000003RCEM"
+  salesforceLoginUrl = "https://crm-pkf-attest--azureoro.sandbox.my.salesforce.com"
+  samlEntityId = "https://crm-pkf-attest.my.salesforce.com"
+  samlVersion = "SAML2_0"
+  singleLogoutBinding = "RedirectBinding"
+  singleLogoutUrl = "https://login.microsoftonline.com/16e3f57f-b4b0-4064-939a-c8360b0b7b7e/saml2"
+  useConfigRequestMethod = false
+  useSameDigestAlgoForSigning = true
+  userProvisioning = false
+  validationCert = "MIIC8DCCAdigAwIBAgIQFhwoSttSNaNJHj7+9bTvJjANBgkqhkiG9w0BAQsFADA0MTIwMAYDVQQDEylNaWNyb3NvZnQgQXp1cmUgRmVkZXJhdGVkIFNTTyBDZXJ0aWZpY2F0ZTAeFw0yMzAyMDcxNjA3MjhaFw0yNjAyMDcxNjA3MjhaMDQxMjAwBgNVBAMTKU1pY3Jvc29mdCBBenVyZSBGZWRlcmF0ZWQgU1NPIENlcnRpZmljYXRlMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA7pkbJcGoYtM7YtSA36Pk9CT54EjylmCxn01Aicd/JSyK7zpPH1T1ianVqQrewpSH+rmKsjEIAmgGYZVqYyUKr4MNtyz59+SfLEfma9mt1XMluqJFnl76zTB1E1jAp2BSstkuG+PG8Yv52aw/o6av+Nw9m3+9hgWz+d73zfFQgxeD8iTz4+JUyBZF+w02zEfJuIzd9Y8r97cDZ5GlxBDDxjLil+fDSJVG1E1k+y5T1dkeJIIoSfe5+u4tTxwXbZi68aK2BFaRkLn4d/btjmSmirMDNGIKxF3P/QW6Vt+UNxYhXHA/AuUemedLL5VHf09H6rRsiJUt7dmoNtADCbJFLQIDAQABMA0GCSqGSIb3DQEBCwUAA4IBAQByt/5wAGcsxBf6G93vwp4zE19ELC21ad5lWGcIAgwysXJlEeX/RxPmk72iV/nM1JK7QNnGWerRQgo9YhKDNURaT5L505aZZFX6nxe1aWXqgyGpCeEdAKTubab2ur+yptrGdbU9UBsWfV0yOgT7+X1DmV40DNDA/OKniR01mtoCRXq/kz+u7FICfwE0arpaVQ2fTg/95DUSQPdoKYAym5NywhAMGdjTsd/0OyXsx3aH2BUWISrkwRD7lL/lrmoUnUZJJbpUsJXg4j+px1YwqzbX7MYgURo0nA5MQ2oDe/EVnX3A/mtHhmCovZ0r9z1NrvJ59C+GbRTRlAM0AS6prQhg"
+  _alias = "sts"
+}

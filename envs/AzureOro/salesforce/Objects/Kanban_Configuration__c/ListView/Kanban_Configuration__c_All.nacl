@@ -1,0 +1,9 @@
+salesforce.ListView Kanban_Configuration__c_All {
+  fullName = "Kanban_Configuration__c.All"
+  filterScope = "Everything"
+  label = "Todos"
+  _parent = [
+    salesforce.Kanban_Configuration__c,
+  ]
+  _alias = "Todos"
+}

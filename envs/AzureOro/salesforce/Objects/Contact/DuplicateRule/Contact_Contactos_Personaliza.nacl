@@ -1,0 +1,25 @@
+salesforce.DuplicateRule Contact_Contactos_Personaliza@vu {
+  fullName = "Contact.Contactos_Personaliza"
+  actionOnInsert = "Allow"
+  actionOnUpdate = "Allow"
+  alertText = "¿Utilizar uno de estos registros?"
+  description = "Comprobamos correo electrónico"
+  duplicateRuleMatchRules = [
+    {
+      matchRuleSObjectType = salesforce.Contact
+      matchingRule = "Contacto_personalizada"
+    },
+  ]
+  isActive = true
+  masterLabel = "Contactos por email"
+  operationsOnInsert = [
+    "Alert",
+    "Report",
+  ]
+  securityOption = "BypassSharingRules"
+  sortOrder = 1
+  _parent = [
+    salesforce.Contact,
+  ]
+  _alias = "Contact.Contactos_Personaliza"
+}

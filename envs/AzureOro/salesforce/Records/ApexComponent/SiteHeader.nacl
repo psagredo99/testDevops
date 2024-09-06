@@ -1,0 +1,8 @@
+salesforce.ApexComponent SiteHeader {
+  apiVersion = 56
+  description = "Componente del encabezado de sitio predeterminado de Plataforma Lightning"
+  label = "SiteHeader"
+  fullName = "SiteHeader"
+  content = file("salesforce/Records/ApexComponent/SiteHeader.component")
+  _alias = "SiteHeader"
+}

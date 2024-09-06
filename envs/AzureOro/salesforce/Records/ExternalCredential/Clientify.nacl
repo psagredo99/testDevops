@@ -1,0 +1,21 @@
+salesforce.ExternalCredential Clientify {
+  fullName = "Clientify"
+  authenticationProtocol = "Custom"
+  externalCredentialParameters = [
+    {
+      parameterGroup = "DefaultGroup"
+      parameterName = "Authorization"
+      parameterType = "AuthHeader"
+      parameterValue = "Token 794013d682dfc21dc754db99522dab1f447f092e"
+      sequenceNumber = 1
+    },
+    {
+      parameterGroup = "DefaultGroup"
+      parameterName = "HTTP_Callout_DTytGbS1680523732150"
+      parameterType = "NamedPrincipal"
+      sequenceNumber = 1
+    },
+  ]
+  label = "Clientify"
+  _alias = "Clientify"
+}

@@ -1,0 +1,116 @@
+type salesforce.Empleado__c {
+  salesforce.Email Correo_electronico__c {
+    apiName = "Empleado__c.Correo_electronico__c"
+    externalId = false
+    label = "Correo electrónico"
+    trackTrending = false
+    unique = false
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Picklist Empresa__c {
+    apiName = "Empleado__c.Empresa__c"
+    label = "Empresa"
+    trackTrending = false
+    valueSet = [
+      {
+        fullName = "Nombre empresa"
+        default = false
+        label = "Nombre empresa"
+      },
+      {
+        fullName = "016-ASE"
+        default = false
+        label = "016-ASE"
+      },
+      {
+        fullName = "017-4LEARN"
+        default = false
+        label = "017-4LEARN"
+      },
+      {
+        fullName = "020-LYF"
+        default = false
+        label = "020-LYF"
+      },
+      {
+        fullName = "030-ITC"
+        default = false
+        label = "030-ITC"
+      },
+      {
+        fullName = "033-BLUEWAY"
+        default = false
+        label = "033-BLUEWAY"
+      },
+      {
+        fullName = "035-FAS"
+        default = false
+        label = "035-FAS"
+      },
+      {
+        fullName = "036-HEALTH"
+        default = false
+        label = "036-HEALTH"
+      },
+      {
+        fullName = "040-ASGES"
+        default = false
+        label = "040-ASGES"
+      },
+      {
+        fullName = "042-DCM"
+        default = false
+        label = "042-DCM"
+      },
+      {
+        fullName = "043-INNCOME"
+        default = false
+        label = "043-INNCOME"
+      },
+      {
+        fullName = "050-CONCURSAL"
+        default = false
+        label = "050-CONCURSAL"
+      },
+      {
+        fullName = "056-NORTE"
+        default = false
+        label = "056-NORTE"
+      },
+      {
+        fullName = "060-RPP"
+        default = false
+        label = "060-RPP"
+      },
+      {
+        fullName = "078-ASP"
+        default = false
+        label = "078-ASP"
+      },
+      {
+        fullName = "079-CORP"
+        default = false
+        label = "079-CORP"
+      },
+    ]
+    sorted = false
+    restricted = false
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Text Identificador__c {
+    apiName = "Empleado__c.Identificador__c"
+    caseSensitive = false
+    externalId = true
+    label = "Identificador"
+    length = 40
+    trackTrending = false
+    unique = true
+    createable = true
+    updateable = true
+    queryable = true
+  }
+}

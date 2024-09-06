@@ -1,0 +1,6 @@
+salesforce.MilestoneType Cerrar_caso@s {
+  fullName = "Cerrar caso"
+  description = "Establece un hito recurrente secuencial para cerrar un caso."
+  recurrenceType = "recursChained"
+  _alias = "Cerrar caso"
+}

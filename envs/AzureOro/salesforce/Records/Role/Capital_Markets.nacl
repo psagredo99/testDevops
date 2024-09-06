@@ -1,0 +1,9 @@
+salesforce.Role Capital_Markets {
+  fullName = "Capital_Markets"
+  caseAccessLevel = "Edit"
+  contactAccessLevel = "Edit"
+  mayForecastManagerShare = false
+  name = "Capital Markets"
+  opportunityAccessLevel = "Edit"
+  _alias = "Capital_Markets"
+}

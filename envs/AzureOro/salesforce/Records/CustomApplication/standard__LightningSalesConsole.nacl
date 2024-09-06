@@ -1,0 +1,203 @@
+salesforce.CustomApplication standard__LightningSalesConsole {
+  actionOverrides = [
+    {
+      actionName = "View"
+      comment = "Action override updated by Lightning App Builder during activation."
+      content = "Account_Page_Cliente"
+      formFactor = "Large"
+      skipRecordTypeSelect = false
+      type = "Flexipage"
+      pageOrSobjectType = "Account"
+    },
+    {
+      actionName = "View"
+      comment = "Action override created by Lightning App Builder during activation."
+      content = "Account_Page_Cliente"
+      formFactor = "Small"
+      skipRecordTypeSelect = false
+      type = "Flexipage"
+      pageOrSobjectType = "Account"
+    },
+    {
+      actionName = "View"
+      comment = "Action override updated by Lightning App Builder during activation."
+      content = "Contact_Record_Page_Two_Column"
+      formFactor = "Large"
+      skipRecordTypeSelect = false
+      type = "Flexipage"
+      pageOrSobjectType = "Contact"
+    },
+    {
+      actionName = "View"
+      comment = "Action override created by Lightning App Builder during activation."
+      content = "Contact_Record_Page_Two_Column"
+      formFactor = "Small"
+      skipRecordTypeSelect = false
+      type = "Flexipage"
+      pageOrSobjectType = "Contact"
+    },
+    {
+      actionName = "View"
+      comment = "Action override updated by Lightning App Builder during activation."
+      content = "Lead_Record_Page_Three_Column"
+      formFactor = "Large"
+      skipRecordTypeSelect = false
+      type = "Flexipage"
+      pageOrSobjectType = "Lead"
+    },
+    {
+      actionName = "View"
+      comment = "Action override updated by Lightning App Builder during activation."
+      content = "Opportunity_Record_Page"
+      formFactor = "Large"
+      skipRecordTypeSelect = false
+      type = "Flexipage"
+      pageOrSobjectType = "Opportunity"
+    },
+    {
+      actionName = "View"
+      comment = "Action override created by Lightning App Builder during activation."
+      content = "Opportunity_Record_Page"
+      formFactor = "Small"
+      skipRecordTypeSelect = false
+      type = "Flexipage"
+      pageOrSobjectType = "Opportunity"
+    },
+  ]
+  formFactors = [
+    "Small",
+    "Large",
+  ]
+  isNavAutoTempTabsDisabled = false
+  isNavPersonalizationDisabled = false
+  isNavTabPersistenceDisabled = false
+  isOmniPinnedViewEnabled = false
+  label = "Sales Console"
+  navType = "Console"
+  profileActionOverrides = [
+    {
+      actionName = "View"
+      content = "Account_Page_Sin_Jobs"
+      formFactor = "Small"
+      pageOrSobjectType = "Account"
+      recordType = salesforce.RecordType.instance.Account_Cuenta_Potencial
+      type = "Flexipage"
+      profile = "Admin"
+    },
+    {
+      actionName = "View"
+      content = "Account_Page_Sin_Jobs"
+      formFactor = "Large"
+      pageOrSobjectType = "Account"
+      recordType = salesforce.RecordType.instance.Account_Cuenta_Potencial
+      type = "Flexipage"
+      profile = "Admin"
+    },
+    {
+      actionName = "View"
+      content = "Account_Page_Sin_Jobs"
+      formFactor = "Small"
+      pageOrSobjectType = "Account"
+      recordType = salesforce.RecordType.instance.Account_Cuenta_Potencial
+      type = "Flexipage"
+      profile = "PKF Attest - Desarrollo Negocio"
+    },
+    {
+      actionName = "View"
+      content = "Account_Page_Sin_Jobs"
+      formFactor = "Large"
+      pageOrSobjectType = "Account"
+      recordType = salesforce.RecordType.instance.Account_Cuenta_Potencial
+      type = "Flexipage"
+      profile = "PKF Attest - Desarrollo Negocio"
+    },
+    {
+      actionName = "View"
+      content = "Account_Page_Sin_Jobs"
+      formFactor = "Small"
+      pageOrSobjectType = "Account"
+      recordType = salesforce.RecordType.instance.Account_Cuenta_Potencial
+      type = "Flexipage"
+      profile = "PKF Attest - Socio"
+    },
+    {
+      actionName = "View"
+      content = "Account_Page_Sin_Jobs"
+      formFactor = "Large"
+      pageOrSobjectType = "Account"
+      recordType = salesforce.RecordType.instance.Account_Cuenta_Potencial
+      type = "Flexipage"
+      profile = "PKF Attest - Socio"
+    },
+  ]
+  tabs = [
+    "standard-home",
+    "standard-Lead",
+    "standard-Account",
+    "standard-Contact",
+    "standard-Opportunity",
+    "standard-Campaign",
+    "standard-Task",
+    "standard-Event",
+    "standard-ContentNote",
+    "standard-report",
+    "standard-Dashboard",
+    "standard-Feed",
+    "standard-CollaborationGroup",
+    "standard-File",
+    salesforce.CustomTab.instance.Datos_cuentas__c,
+  ]
+  uiType = "Lightning"
+  utilityBar = "LightningSalesConsole_UtilityBar"
+  workspaceConfig = {
+    mappings = [
+      {
+        tab = salesforce.CustomTab.instance.Datos_cuentas__c
+      },
+      {
+        tab = "standard-Account"
+      },
+      {
+        tab = "standard-Campaign"
+      },
+      {
+        tab = "standard-CollaborationGroup"
+      },
+      {
+        tab = "standard-Contact"
+      },
+      {
+        tab = "standard-ContentNote"
+      },
+      {
+        tab = "standard-Dashboard"
+      },
+      {
+        tab = "standard-Event"
+      },
+      {
+        tab = "standard-Feed"
+      },
+      {
+        tab = "standard-File"
+      },
+      {
+        tab = "standard-Lead"
+      },
+      {
+        tab = "standard-Opportunity"
+      },
+      {
+        tab = "standard-Task"
+      },
+      {
+        tab = "standard-home"
+      },
+      {
+        tab = "standard-report"
+      },
+    ]
+  }
+  fullName = "standard__LightningSalesConsole"
+  _alias = "Sales Console (standard)"
+}

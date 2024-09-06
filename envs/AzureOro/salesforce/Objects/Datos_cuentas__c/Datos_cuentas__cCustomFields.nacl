@@ -1,0 +1,249 @@
+type salesforce.Datos_cuentas__c {
+  salesforce.Text Codigo_CNAE__c {
+    apiName = "Datos_cuentas__c.Codigo_CNAE__c"
+    externalId = false
+    label = "Código CNAE"
+    length = 80
+    trackTrending = false
+    unique = false
+    createable = true
+    updateable = true
+    caseSensitive = false
+    queryable = true
+  }
+  salesforce.Text Codigo_IAE__c {
+    apiName = "Datos_cuentas__c.Codigo_IAE__c"
+    externalId = false
+    label = "Código IAE"
+    length = 80
+    trackTrending = false
+    unique = false
+    createable = true
+    updateable = true
+    caseSensitive = false
+    queryable = true
+  }
+  salesforce.Text Codigo_consolidacion__c {
+    apiName = "Datos_cuentas__c.Codigo_consolidacion__c"
+    externalId = false
+    label = "Código consolidación"
+    length = 8
+    trackTrending = false
+    unique = false
+    createable = true
+    updateable = true
+    caseSensitive = false
+    queryable = true
+  }
+  salesforce.Picklist Cotizacion__c {
+    apiName = "Datos_cuentas__c.Cotizacion__c"
+    inlineHelpText = "Cotiza, no cotiza, cotizó"
+    label = "Cotización"
+    trackTrending = false
+    valueSet = [
+      {
+        fullName = "Cotiza"
+        default = false
+        label = "Cotiza"
+      },
+      {
+        fullName = "No cotiza"
+        default = false
+        label = "No cotiza"
+      },
+      {
+        fullName = "Cotizó"
+        default = false
+        label = "Cotizó"
+      },
+    ]
+    sorted = false
+    restricted = false
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Url Direccion_Web__c {
+    apiName = "Datos_cuentas__c.Direccion_Web__c"
+    label = "Dirección Web"
+    trackTrending = false
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Checkbox Empresa_cotizada__c {
+    apiName = "Datos_cuentas__c.Empresa_cotizada__c"
+    defaultValue = false
+    label = "Empresa cotizada"
+    trackTrending = false
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Text Estado_detallado__c {
+    apiName = "Datos_cuentas__c.Estado_detallado__c"
+    externalId = false
+    label = "Estado detallado"
+    length = 255
+    trackTrending = false
+    unique = false
+    createable = true
+    updateable = true
+    caseSensitive = false
+    queryable = true
+  }
+  salesforce.Picklist GUO_CodigoPais__c {
+    apiName = "Datos_cuentas__c.GUO_CodigoPais__c"
+    inlineHelpText = "Último propietario global (GUO)"
+    label = "GUO Código País"
+    trackTrending = false
+    valueSet = [
+      {
+        fullName = "DE"
+        default = false
+        label = "DE"
+      },
+      {
+        fullName = "ES"
+        default = false
+        label = "ES"
+      },
+    ]
+    sorted = false
+    restricted = false
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Text GUO_Nombre__c {
+    apiName = "Datos_cuentas__c.GUO_Nombre__c"
+    externalId = false
+    inlineHelpText = "Último propietario global (GUO)"
+    label = "GUO Nombre"
+    length = 255
+    trackTrending = false
+    unique = false
+    createable = true
+    updateable = true
+    caseSensitive = false
+    queryable = true
+  }
+  salesforce.Text Id_NIF_CIF__c {
+    apiName = "Datos_cuentas__c.Id_NIF_CIF__c"
+    caseSensitive = false
+    description = "Denominado como ID para que se pueda usar con SF inspector"
+    externalId = true
+    label = "NIF/CIF"
+    length = 80
+    _required = true
+    trackTrending = false
+    unique = true
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Number Ingresos__c {
+    apiName = "Datos_cuentas__c.Ingresos__c"
+    externalId = false
+    label = "Ingresos (miles €)"
+    precision = 18
+    scale = 0
+    trackTrending = false
+    unique = false
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Text Literal_CNAE__c {
+    apiName = "Datos_cuentas__c.Literal_CNAE__c"
+    externalId = false
+    label = "Literal CNAE"
+    length = 255
+    trackTrending = false
+    unique = false
+    createable = true
+    updateable = true
+    caseSensitive = false
+    queryable = true
+  }
+  salesforce.Text Literal_IAE__c {
+    apiName = "Datos_cuentas__c.Literal_IAE__c"
+    externalId = false
+    label = "Literal IAE"
+    length = 255
+    trackTrending = false
+    unique = false
+    createable = true
+    updateable = true
+    caseSensitive = false
+    queryable = true
+  }
+  salesforce.Text Nombre_auditor__c {
+    apiName = "Datos_cuentas__c.Nombre_auditor__c"
+    externalId = false
+    label = "Nombre auditor"
+    length = 255
+    trackTrending = false
+    unique = false
+    createable = true
+    updateable = true
+    caseSensitive = false
+    queryable = true
+  }
+  salesforce.Number Numero_de_participadas__c {
+    apiName = "Datos_cuentas__c.Numero_de_participadas__c"
+    externalId = false
+    label = "Número de participadas"
+    precision = 6
+    scale = 0
+    trackTrending = false
+    unique = false
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Number Numero_empleados__c {
+    apiName = "Datos_cuentas__c.Numero_empleados__c"
+    externalId = false
+    label = "Número empleados"
+    precision = 18
+    scale = 0
+    trackTrending = false
+    unique = false
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Text Remuneracion_Auditor__c {
+    apiName = "Datos_cuentas__c.Remuneracion_Auditor__c"
+    externalId = false
+    label = "Remuneración Auditor Últ. año (miles €)"
+    length = 255
+    trackTrending = false
+    unique = false
+    createable = true
+    updateable = true
+    caseSensitive = false
+    queryable = true
+  }
+  salesforce.Text Total_Activo__c {
+    apiName = "Datos_cuentas__c.Total_Activo__c"
+    externalId = false
+    label = "Total Activo Últ. año disp. (miles €)"
+    length = 255
+    trackTrending = false
+    unique = false
+    createable = true
+    updateable = true
+    caseSensitive = false
+    queryable = true
+  }
+  salesforce.Date Ultimo_Year__c {
+    apiName = "Datos_cuentas__c.Ultimo_Year__c"
+    label = "Último año disponible"
+    trackTrending = false
+    createable = true
+    updateable = true
+    queryable = true
+  }
+}

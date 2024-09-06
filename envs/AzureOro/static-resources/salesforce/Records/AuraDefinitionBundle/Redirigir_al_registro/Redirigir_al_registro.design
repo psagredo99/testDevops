@@ -1,0 +1,4 @@
+<design:component>
+    <design:attribute name="recordId" label="Id del registro" description="Id del registro que se cargará al finalizar" />
+    <design:attribute name="msgToast" label="Mensaje aviso" description="Operación correcta" />
+</design:component>

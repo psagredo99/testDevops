@@ -1,0 +1,30 @@
+salesforce.LightningPage CrisisCenter_UtilityBar {
+  description = "La barra de utilidad predeterminada para la aplicación CrisisCenter."
+  flexiPageRegions = [
+    {
+      itemInstances = [
+        {
+          componentInstance = {
+            componentName = "console:history"
+            identifier = "console_history"
+          }
+        },
+        {
+          componentInstance = {
+            componentName = "opencti:softPhone"
+            identifier = "opencti_softphone"
+          }
+        },
+      ]
+      name = "utilityItems"
+      type = "Region"
+    },
+  ]
+  masterLabel = "Barra de utilidad de aplicación CrisisCenter"
+  template = {
+    name = "one:utilityBarTemplateDesktop"
+  }
+  type = "UtilityBar"
+  fullName = "CrisisCenter_UtilityBar"
+  _alias = "CrisisCenter_UtilityBar"
+}

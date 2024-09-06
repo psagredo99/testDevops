@@ -1,0 +1,10 @@
+salesforce.Audience Predeterminado {
+  fullName = "Predeterminado"
+  audienceName = "Predeterminado"
+  container = salesforce.Network.instance.postventa
+  criteria = {
+  }
+  formulaFilterType = "AllCriteriaMatch"
+  isDefaultAudience = true
+  _alias = "Predeterminado"
+}

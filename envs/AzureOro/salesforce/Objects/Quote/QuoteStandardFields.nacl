@@ -1,0 +1,327 @@
+type salesforce.Quote {
+  salesforce.Lookup AccountId {
+    apiName = "Quote.AccountId"
+    relationshipName = "Account"
+    label = "Id. de la cuenta"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Address AdditionalAddress {
+    apiName = "Quote.AdditionalAddress"
+    label = "Elemento adicional para"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Text AdditionalName {
+    apiName = "Quote.AdditionalName"
+    length = 255
+    label = "Nombre de elemento adicional"
+    createable = true
+    updateable = true
+    unique = false
+    caseSensitive = false
+    queryable = true
+  }
+  salesforce.Address BillingAddress {
+    apiName = "Quote.BillingAddress"
+    label = "Factura para"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Text BillingName {
+    apiName = "Quote.BillingName"
+    length = 255
+    label = "Nombre de facturación"
+    createable = true
+    updateable = true
+    unique = false
+    caseSensitive = false
+    queryable = true
+  }
+  salesforce.Lookup ContactId {
+    apiName = "Quote.ContactId"
+    relationshipName = "Contact"
+    label = "Id. de contacto"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Lookup ContractId {
+    apiName = "Quote.ContractId"
+    relationshipName = "Contract"
+    label = "Id. de contrato"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.LongTextArea Description {
+    apiName = "Quote.Description"
+    length = 32000
+    label = "Descripción"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Percent Discount {
+    apiName = "Quote.Discount"
+    label = "Descuento"
+    createable = false
+    updateable = false
+    scale = 2
+    precision = 5
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Email Email {
+    apiName = "Quote.Email"
+    label = "Correo electrónico"
+    createable = true
+    updateable = true
+    unique = false
+    queryable = true
+  }
+  salesforce.Date ExpirationDate {
+    apiName = "Quote.ExpirationDate"
+    label = "Fecha de caducidad"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Phone Fax {
+    apiName = "Quote.Fax"
+    label = "Fax"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Currency GrandTotal {
+    apiName = "Quote.GrandTotal"
+    label = "Total"
+    createable = false
+    updateable = false
+    scale = 2
+    precision = 18
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Checkbox IsSyncing {
+    apiName = "Quote.IsSyncing"
+    defaultValue = false
+    label = "Syncing"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Summary LineItemCount {
+    apiName = "Quote.LineItemCount"
+    label = "Partidas"
+    precision = 9
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Text Name {
+    apiName = "Quote.Name"
+    length = 255
+    _required = true
+    label = "Nombre de presupuesto"
+    createable = true
+    updateable = true
+    unique = false
+    caseSensitive = false
+    queryable = true
+  }
+  salesforce.MasterDetail OpportunityId {
+    apiName = "Quote.OpportunityId"
+    relationshipName = "Opportunity"
+    _required = true
+    label = "Id. de la oportunidad"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Lookup OwnerId {
+    apiName = "Quote.OwnerId"
+    relationshipName = "Owner"
+    label = "Id. del propietario"
+    createable = true
+    updateable = true
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Phone Phone {
+    apiName = "Quote.Phone"
+    label = "Teléfono"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Address QuoteToAddress {
+    apiName = "Quote.QuoteToAddress"
+    label = "Presupuesto para"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Text QuoteToName {
+    apiName = "Quote.QuoteToName"
+    length = 255
+    label = "Nombre de facturación"
+    createable = true
+    updateable = true
+    unique = false
+    caseSensitive = false
+    queryable = true
+  }
+  salesforce.Address ShippingAddress {
+    apiName = "Quote.ShippingAddress"
+    label = "Destinatario"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Currency ShippingHandling {
+    apiName = "Quote.ShippingHandling"
+    label = "Envío y tratamiento"
+    createable = true
+    updateable = true
+    scale = 2
+    precision = 18
+    queryable = true
+  }
+  salesforce.Text ShippingName {
+    apiName = "Quote.ShippingName"
+    length = 255
+    label = "Nombre de envío"
+    createable = true
+    updateable = true
+    unique = false
+    caseSensitive = false
+    queryable = true
+  }
+  salesforce.Picklist Status {
+    apiName = "Quote.Status"
+    restricted = false
+    label = "Estado"
+    createable = true
+    updateable = true
+    queryable = true
+    valueSetName = salesforce.StandardValueSet.instance.QuoteStatus
+  }
+  salesforce.Summary Subtotal {
+    apiName = "Quote.Subtotal"
+    label = "Subtotal"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Currency Tax {
+    apiName = "Quote.Tax"
+    label = "Impuestos"
+    createable = true
+    updateable = true
+    scale = 2
+    precision = 18
+    queryable = true
+  }
+  salesforce.Summary TotalPrice {
+    apiName = "Quote.TotalPrice"
+    label = "Precio total"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  serviceid Id {
+    apiName = "Quote.Id"
+    label = "Id. de presupuesto"
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Checkbox IsDeleted {
+    apiName = "Quote.IsDeleted"
+    defaultValue = false
+    label = "Eliminado"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime CreatedDate {
+    apiName = "Quote.CreatedDate"
+    label = "Fecha de creación"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup CreatedById {
+    apiName = "Quote.CreatedById"
+    relationshipName = "CreatedBy"
+    label = "Creado por el Id."
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime LastModifiedDate {
+    apiName = "Quote.LastModifiedDate"
+    label = "Fecha de la última modificación"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup LastModifiedById {
+    apiName = "Quote.LastModifiedById"
+    relationshipName = "LastModifiedBy"
+    label = "Última modificación realizada por el Id."
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime SystemModstamp {
+    apiName = "Quote.SystemModstamp"
+    label = "Modstamp del sistema"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup Pricebook2Id {
+    apiName = "Quote.Pricebook2Id"
+    relationshipName = "Pricebook2"
+    label = "Id. de la lista de precios"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.AutoNumber QuoteNumber {
+    apiName = "Quote.QuoteNumber"
+    label = "Número de presupuesto"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Checkbox CanCreateQuoteLineItems {
+    apiName = "Quote.CanCreateQuoteLineItems"
+    defaultValue = false
+    label = "Puede crear partidas de presupuesto"
+    createable = true
+    updateable = false
+    queryable = true
+  }
+}

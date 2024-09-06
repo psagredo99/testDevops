@@ -1,0 +1,43 @@
+salesforce.LeadConvertSettings LeadConvertSettings {
+  fullName = "LeadConvertSettings"
+  allowOwnerChange = true
+  objectMapping = [
+    {
+      inputObject = salesforce.Lead
+      mappingFields = [
+        {
+          inputField = salesforce.Lead.field.ID_Compania__c
+          outputField = salesforce.Account.field.ID_Cuenta_Clientify__c
+        },
+        {
+          inputField = salesforce.Lead.field.Linkedin_compania__c
+          outputField = salesforce.Account.field.Cuenta_LinkedIn__c
+        },
+        {
+          inputField = salesforce.Lead.field.NIF_CIF__c
+          outputField = salesforce.Account.field.NIF_CIF__c
+        },
+      ]
+      outputObject = salesforce.Account
+    },
+    {
+      inputObject = salesforce.Lead
+      mappingFields = [
+        {
+          inputField = salesforce.Lead.field.ID_Clientify__c
+          outputField = salesforce.Contact.field.ID_Contacto_Clientify__c
+        },
+        {
+          inputField = salesforce.Lead.field.Linkedin_candidato__c
+          outputField = salesforce.Contact.field.Perfil_de_Linkedin__c
+        },
+      ]
+      outputObject = salesforce.Contact
+    },
+  ]
+  opportunityCreationOptions = "VisibleOptional"
+  _parent = [
+    salesforce.Lead,
+  ]
+  _alias = "LeadConvertSettings"
+}

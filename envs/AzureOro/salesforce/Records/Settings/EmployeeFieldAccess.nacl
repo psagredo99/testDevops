@@ -1,0 +1,6 @@
+salesforce.EmployeeFieldAccessSettings {
+  fullName = "EmployeeFieldAccess"
+  enableEmployeeFieldMaskDefaults = "false"
+  enableEmployeeFieldMasking = "false"
+  _alias = "EmployeeFieldAccess"
+}

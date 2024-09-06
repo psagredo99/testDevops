@@ -1,0 +1,130 @@
+type salesforce.Facturacion__c {
+  salesforce.Text Alias_socio__c {
+    apiName = "Facturacion__c.Alias_socio__c"
+    externalId = false
+    label = "Alias socio"
+    length = 250
+    trackTrending = false
+    unique = false
+    createable = true
+    updateable = true
+    caseSensitive = false
+    queryable = true
+  }
+  salesforce.Number Anyo__c {
+    apiName = "Facturacion__c.Anyo__c"
+    externalId = false
+    label = "Año"
+    precision = 4
+    scale = 0
+    trackTrending = false
+    unique = false
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Text Area__c {
+    apiName = "Facturacion__c.Area__c"
+    externalId = false
+    label = "Área"
+    length = 255
+    trackTrending = false
+    unique = false
+    createable = true
+    updateable = true
+    caseSensitive = false
+    queryable = true
+  }
+  salesforce.MasterDetail Cuenta__c {
+    apiName = "Facturacion__c.Cuenta__c"
+    label = "Cuenta"
+    referenceTo = [
+      salesforce.Account,
+    ]
+    relationshipLabel = "Facturaciones"
+    relationshipName = "Facturaciones"
+    relationshipOrder = 0
+    reparentableMasterDetail = false
+    trackTrending = false
+    writeRequiresMasterRead = false
+    createable = true
+    updateable = false
+    queryable = true
+  }
+  salesforce.Currency Facturacion__c {
+    apiName = "Facturacion__c.Facturacion__c"
+    label = "Facturación"
+    precision = 18
+    scale = 2
+    trackTrending = false
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Text Id_Externo__c {
+    apiName = "Facturacion__c.Id_Externo__c"
+    caseSensitive = false
+    externalId = true
+    label = "Id Externo"
+    length = 255
+    trackTrending = false
+    unique = true
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.FormulaCheckbox Informe_ultimos_2_anyos__c {
+    apiName = "Facturacion__c.Informe_ultimos_2_anyos__c"
+    formula = "IF(month(TODAY()) <= 6,Anyo__c > YEAR( TODAY())-3,Anyo__c > YEAR( TODAY())-2)"
+    formulaTreatBlanksAs = "BlankAsZero"
+    label = "Informe últimos 2 años"
+    trackTrending = false
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+    _generated_dependencies = [
+      {
+        reference = salesforce.Facturacion__c.field.Anyo__c
+      },
+    ]
+  }
+  salesforce.FormulaCheckbox Informe_ultimos_5_anyos__c {
+    apiName = "Facturacion__c.Informe_ultimos_5_anyos__c"
+    formula = "Anyo__c > YEAR(TODAY())-5"
+    formulaTreatBlanksAs = "BlankAsZero"
+    label = "Informe últimos 5 años"
+    trackTrending = false
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+    _generated_dependencies = [
+      {
+        reference = salesforce.Facturacion__c.field.Anyo__c
+      },
+    ]
+  }
+  salesforce.Checkbox Registro_anterior_a_NAV__c {
+    apiName = "Facturacion__c.Registro_anterior_a_NAV__c"
+    defaultValue = false
+    description = "El registro corresponde al sistema ERP anterior a Navision Años < 2016"
+    label = "Registro anterior a NAV"
+    trackTrending = false
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Text Socio__c {
+    apiName = "Facturacion__c.Socio__c"
+    externalId = false
+    label = "Socio"
+    length = 255
+    trackTrending = false
+    unique = false
+    createable = true
+    updateable = true
+    caseSensitive = false
+    queryable = true
+  }
+}

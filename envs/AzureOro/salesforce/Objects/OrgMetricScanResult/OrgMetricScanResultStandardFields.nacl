@@ -1,0 +1,160 @@
+type salesforce.OrgMetricScanResult {
+  salesforce.Picklist ItemStatus {
+    apiName = "OrgMetricScanResult.ItemStatus"
+    label = "Estado"
+    createable = true
+    updateable = false
+    queryable = true
+  }
+  serviceid Id {
+    apiName = "OrgMetricScanResult.Id"
+    label = "Id. de Resultado de exploración de mediciones de la organización"
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Checkbox IsDeleted {
+    apiName = "OrgMetricScanResult.IsDeleted"
+    defaultValue = false
+    label = "Eliminado"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Text Name {
+    apiName = "OrgMetricScanResult.Name"
+    length = 255
+    _required = true
+    label = "Resultado de exploración de medición de organización"
+    createable = true
+    updateable = false
+    unique = false
+    caseSensitive = false
+    queryable = true
+  }
+  salesforce.DateTime CreatedDate {
+    apiName = "OrgMetricScanResult.CreatedDate"
+    label = "Fecha de creación"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup CreatedById {
+    apiName = "OrgMetricScanResult.CreatedById"
+    relationshipName = "CreatedBy"
+    label = "Creado por el Id."
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime LastModifiedDate {
+    apiName = "OrgMetricScanResult.LastModifiedDate"
+    label = "Fecha de la última modificación"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup LastModifiedById {
+    apiName = "OrgMetricScanResult.LastModifiedById"
+    relationshipName = "LastModifiedBy"
+    label = "Última modificación realizada por el Id."
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime SystemModstamp {
+    apiName = "OrgMetricScanResult.SystemModstamp"
+    label = "Modstamp del sistema"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup OrgMetricScanSummaryId {
+    apiName = "OrgMetricScanResult.OrgMetricScanSummaryId"
+    relationshipName = "OrgMetricScanSummary"
+    _required = true
+    label = "Id. de Exploración de mediciones de la organización"
+    createable = true
+    updateable = false
+    queryable = true
+  }
+  salesforce.Url Url {
+    apiName = "OrgMetricScanResult.Url"
+    label = "Url"
+    createable = true
+    updateable = false
+    queryable = true
+  }
+  salesforce.Text Object {
+    apiName = "OrgMetricScanResult.Object"
+    length = 255
+    label = "Objeto"
+    createable = true
+    updateable = false
+    unique = false
+    caseSensitive = false
+    queryable = true
+  }
+  salesforce.DateTime Date {
+    apiName = "OrgMetricScanResult.Date"
+    label = "Fecha"
+    createable = true
+    updateable = false
+    queryable = true
+  }
+  salesforce.Text Type {
+    apiName = "OrgMetricScanResult.Type"
+    length = 255
+    label = "Tipo"
+    createable = true
+    updateable = false
+    unique = false
+    caseSensitive = false
+    queryable = true
+  }
+  salesforce.Number Profile {
+    apiName = "OrgMetricScanResult.Profile"
+    label = "Perfil"
+    precision = 9
+    createable = true
+    updateable = false
+    scale = 0
+    unique = false
+    queryable = true
+  }
+  salesforce.Text User {
+    apiName = "OrgMetricScanResult.User"
+    length = 255
+    label = "Usuario"
+    createable = true
+    updateable = false
+    unique = false
+    caseSensitive = false
+    queryable = true
+  }
+  salesforce.Number Quantity {
+    apiName = "OrgMetricScanResult.Quantity"
+    label = "Cantidad"
+    precision = 9
+    createable = true
+    updateable = false
+    scale = 0
+    unique = false
+    queryable = true
+  }
+  salesforce.Number Flags {
+    apiName = "OrgMetricScanResult.Flags"
+    label = "Indicadores"
+    precision = 9
+    createable = true
+    updateable = false
+    scale = 0
+    unique = false
+    queryable = true
+  }
+}

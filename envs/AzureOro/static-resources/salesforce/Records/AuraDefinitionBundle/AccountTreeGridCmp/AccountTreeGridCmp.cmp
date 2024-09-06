@@ -1,0 +1,21 @@
+<aura:component controller="AccountTreeGridCmpController" 
+                implements="flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes" 
+                access="global" >
+    <aura:attribute name="recordId" type="String" />
+	<aura:attribute name="gridColumns" type="list" />
+    <aura:attribute name="gridData" type="Object" />
+    <aura:attribute name="gridExpandedRows" type="List" access="PRIVATE" />
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    
+    <lightning:card  title="Cuentas en la jerarquía con su facturación" iconName="standard:store_group">
+        <p class="slds-p-horizontal_small">
+            <lightning:treeGrid columns="{! v.gridColumns }"
+                data="{! v.gridData }"
+                keyField="name"
+                expandedRows="{! v.gridExpandedRows}"
+                aura:id="mytree" 
+                hideCheckboxColumn="true"/>
+        </p>
+    </lightning:card>
+    
+</aura:component>

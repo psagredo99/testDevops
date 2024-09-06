@@ -1,0 +1,89 @@
+salesforce.Layout CspTrustedSite_Formato_Sitio_de_confianza_con_pol_tica_de_seguridad_de_contenidos@bsssss_00237ssss {
+  layoutSections = [
+    {
+      customLabel = true
+      detailHeading = true
+      editHeading = false
+      label = "Información general"
+      layoutColumns = [
+        {
+          layoutItems = [
+            {
+              behavior = "Required"
+              field = "DeveloperName"
+            },
+            {
+              behavior = "Required"
+              field = "EndpointUrl"
+            },
+            {
+              behavior = "Edit"
+              field = "Description"
+            },
+            {
+              behavior = "Edit"
+              field = "IsActive"
+            },
+            {
+              behavior = "Required"
+              field = "Context"
+            },
+          ]
+        },
+      ]
+      style = "OneColumn"
+    },
+    {
+      customLabel = true
+      detailHeading = true
+      editHeading = false
+      label = "Directivas de CSP"
+      layoutColumns = [
+        {
+          layoutItems = [
+            {
+              behavior = "Edit"
+              field = "IsApplicableToConnectSrc"
+            },
+            {
+              behavior = "Edit"
+              field = "IsApplicableToFrameSrc"
+            },
+            {
+              behavior = "Edit"
+              field = "IsApplicableToImgSrc"
+            },
+            {
+              behavior = "Edit"
+              field = "IsApplicableToStyleSrc"
+            },
+            {
+              behavior = "Edit"
+              field = "IsApplicableToFontSrc"
+            },
+            {
+              behavior = "Edit"
+              field = "IsApplicableToMediaSrc"
+            },
+          ]
+        },
+      ]
+      style = "OneColumn"
+    },
+    {
+      customLabel = false
+      detailHeading = false
+      editHeading = false
+      layoutColumns = [
+        {
+        },
+      ]
+      style = "CustomLinks"
+    },
+  ]
+  showEmailCheckbox = false
+  showRunAssignmentRulesCheckbox = false
+  showSubmitAndAttachButton = false
+  fullName = "CspTrustedSite-Formato Sitio de confianza con política de seguridad de contenidos"
+  _alias = "CspTrustedSite-Formato Sitio de confianza con política de seguridad de contenidos"
+}

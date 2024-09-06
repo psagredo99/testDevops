@@ -1,0 +1,102 @@
+type salesforce.WorkThanks {
+  salesforce.Lookup FeedItemId {
+    apiName = "WorkThanks.FeedItemId"
+    relationshipName = "FeedItem"
+    label = "Id. de elemento de noticias en tiempo real"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup GiverId {
+    apiName = "WorkThanks.GiverId"
+    relationshipName = "Giver"
+    _required = true
+    label = "Id. de usuario"
+    createable = true
+    updateable = false
+    queryable = true
+  }
+  salesforce.LongTextArea Message {
+    apiName = "WorkThanks.Message"
+    length = 4000
+    label = "Mensaje"
+    createable = true
+    updateable = false
+    queryable = true
+  }
+  salesforce.Lookup OwnerId {
+    apiName = "WorkThanks.OwnerId"
+    relationshipName = "Owner"
+    label = "Id. del propietario"
+    createable = true
+    updateable = true
+    queryable = true
+    _hidden_value = true
+  }
+  serviceid Id {
+    apiName = "WorkThanks.Id"
+    label = "Id. de agradecimiento"
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Checkbox IsDeleted {
+    apiName = "WorkThanks.IsDeleted"
+    defaultValue = false
+    label = "Eliminado"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime CreatedDate {
+    apiName = "WorkThanks.CreatedDate"
+    label = "Fecha de creación"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup CreatedById {
+    apiName = "WorkThanks.CreatedById"
+    relationshipName = "CreatedBy"
+    label = "Creado por el Id."
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime LastModifiedDate {
+    apiName = "WorkThanks.LastModifiedDate"
+    label = "Fecha de la última modificación"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup LastModifiedById {
+    apiName = "WorkThanks.LastModifiedById"
+    relationshipName = "LastModifiedBy"
+    label = "Última modificación realizada por el Id."
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime SystemModstamp {
+    apiName = "WorkThanks.SystemModstamp"
+    label = "Modstamp del sistema"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup NetworkId {
+    apiName = "WorkThanks.NetworkId"
+    relationshipName = "Network"
+    label = "Id. de red"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+}

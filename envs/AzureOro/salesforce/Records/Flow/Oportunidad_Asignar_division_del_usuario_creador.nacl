@@ -1,0 +1,82 @@
+salesforce.Flow Oportunidad_Asignar_division_del_usuario_creador {
+  fullName = "Oportunidad_Asignar_division_del_usuario_creador"
+  apiVersion = 57
+  environments = "Default"
+  interviewLabel = "Oportunidad - Asignar division del usuario creador {!$Flow.CurrentDateTime}"
+  label = "Oportunidad - Asignar division del usuario creador"
+  processMetadataValues = [
+    {
+      name = "BuilderType"
+      value = {
+        stringValue = "LightningFlowBuilder"
+      }
+    },
+    {
+      name = "CanvasMode"
+      value = {
+        stringValue = "AUTO_LAYOUT_CANVAS"
+      }
+    },
+    {
+      name = "OriginBuilderType"
+      value = {
+        stringValue = "LightningFlowBuilder"
+      }
+    },
+  ]
+  processType = "AutoLaunchedFlow"
+  recordUpdates = [
+    {
+      name = "A_adir_divisi_n_por_defecto"
+      label = "Añadir división por defecto"
+      locationX = 176
+      locationY = 311
+      filterLogic = "and"
+      filters = [
+        {
+          field = "Division__c"
+          operator = "IsNull"
+          value = {
+            booleanValue = true
+          }
+        },
+      ]
+      inputAssignments = [
+        {
+          field = "Division__c"
+          value = {
+            elementReference = "$Record.Owner.Division__c"
+          }
+        },
+      ]
+      inputReference = "$Record"
+    },
+  ]
+  start = {
+    locationX = 50
+    locationY = 0
+    connector = {
+      targetReference = "A_adir_divisi_n_por_defecto"
+    }
+    filterLogic = "and"
+    filters = [
+      {
+        field = salesforce.Opportunity.field.Division__c
+        operator = "IsNull"
+        value = {
+          booleanValue = true
+        }
+      },
+    ]
+    object = salesforce.Opportunity
+    recordTriggerType = "CreateAndUpdate"
+    triggerType = "RecordBeforeSave"
+  }
+  status = "Active"
+  _generated_dependencies = [
+    {
+      reference = salesforce.User.field.Division__c
+    },
+  ]
+  _alias = "Oportunidad - Asignar division del usuario creador"
+}

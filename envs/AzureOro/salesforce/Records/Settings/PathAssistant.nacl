@@ -1,0 +1,6 @@
+salesforce.PathAssistantSettings {
+  fullName = "PathAssistant"
+  canOverrideAutoPathCollapseWithUserPref = true
+  pathAssistantEnabled = true
+  _alias = "PathAssistant"
+}

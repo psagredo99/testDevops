@@ -1,0 +1,97 @@
+type salesforce.SharingRecordCollectionItem {
+  serviceid Id {
+    apiName = "SharingRecordCollectionItem.Id"
+    label = "Id. de Elemento de Recopilación de registros"
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Checkbox IsDeleted {
+    apiName = "SharingRecordCollectionItem.IsDeleted"
+    defaultValue = false
+    label = "Eliminado"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Text Name {
+    apiName = "SharingRecordCollectionItem.Name"
+    length = 255
+    _required = true
+    label = "Nombre de Elemento de Recopilación de registros"
+    createable = true
+    updateable = true
+    unique = false
+    caseSensitive = false
+    queryable = true
+  }
+  salesforce.DateTime CreatedDate {
+    apiName = "SharingRecordCollectionItem.CreatedDate"
+    label = "Fecha de creación"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup CreatedById {
+    apiName = "SharingRecordCollectionItem.CreatedById"
+    relationshipName = "CreatedBy"
+    label = "Creado por el Id."
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime LastModifiedDate {
+    apiName = "SharingRecordCollectionItem.LastModifiedDate"
+    label = "Fecha de la última modificación"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup LastModifiedById {
+    apiName = "SharingRecordCollectionItem.LastModifiedById"
+    relationshipName = "LastModifiedBy"
+    label = "Última modificación realizada por el Id."
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime SystemModstamp {
+    apiName = "SharingRecordCollectionItem.SystemModstamp"
+    label = "Modstamp del sistema"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup CollectionId {
+    apiName = "SharingRecordCollectionItem.CollectionId"
+    relationshipName = "Collection"
+    _required = true
+    label = "Id. de Recopilación de registros"
+    createable = true
+    updateable = false
+    queryable = true
+  }
+  salesforce.Lookup ItemId {
+    apiName = "SharingRecordCollectionItem.ItemId"
+    relationshipName = "Item"
+    label = "Item ID"
+    createable = true
+    updateable = false
+    queryable = true
+  }
+  salesforce.Text Description {
+    apiName = "SharingRecordCollectionItem.Description"
+    length = 250
+    label = "Descripción"
+    createable = true
+    updateable = true
+    unique = false
+    caseSensitive = false
+    queryable = true
+  }
+}

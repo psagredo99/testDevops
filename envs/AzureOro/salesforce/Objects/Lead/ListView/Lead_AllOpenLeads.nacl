@@ -1,0 +1,21 @@
+salesforce.ListView Lead_AllOpenLeads {
+  fullName = "Lead.AllOpenLeads"
+  columns = [
+    "FULL_NAME",
+    "LEAD.COMPANY",
+    "LEAD.TITLE",
+    "LEAD.STATE",
+    "LEAD.PHONE",
+    "LEAD.EMAIL",
+    "LEAD.STATUS",
+    "CORE.USERS.FIRST_NAME",
+    "CORE.USERS.LAST_NAME",
+    "LEAD.CREATED_DATE",
+  ]
+  filterScope = "Everything"
+  label = "Todos los candidatos abiertos"
+  _parent = [
+    salesforce.Lead,
+  ]
+  _alias = "Todos los candidatos abiertos"
+}

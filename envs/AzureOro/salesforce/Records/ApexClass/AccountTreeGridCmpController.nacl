@@ -1,0 +1,12 @@
+salesforce.ApexClass AccountTreeGridCmpController {
+  apiVersion = 57
+  status = "Active"
+  fullName = "AccountTreeGridCmpController"
+  content = file("salesforce/Records/ApexClass/AccountTreeGridCmpController.cls")
+  _generated_dependencies = [
+    {
+      reference = salesforce.Account
+    },
+  ]
+  _alias = "AccountTreeGridCmpController"
+}

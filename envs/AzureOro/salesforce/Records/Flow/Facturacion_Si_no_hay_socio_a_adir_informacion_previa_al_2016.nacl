@@ -1,0 +1,81 @@
+salesforce.Flow Facturacion_Si_no_hay_socio_a_adir_informacion_previa_al_2016 {
+  fullName = "Facturacion_Si_no_hay_socio_a_adir_informacion_previa_al_2016"
+  apiVersion = 58
+  description = "Facturas 2016 sin clasificar por socio"
+  environments = "Default"
+  interviewLabel = "Facturación - Si no hay socio añadir información previa al 2016 {!$Flow.CurrentDateTime}"
+  label = "Facturación - Si no hay socio añadir información previa al 2016"
+  processMetadataValues = [
+    {
+      name = "BuilderType"
+      value = {
+        stringValue = "LightningFlowBuilder"
+      }
+    },
+    {
+      name = "CanvasMode"
+      value = {
+        stringValue = "AUTO_LAYOUT_CANVAS"
+      }
+    },
+    {
+      name = "OriginBuilderType"
+      value = {
+        stringValue = "LightningFlowBuilder"
+      }
+    },
+  ]
+  processType = "AutoLaunchedFlow"
+  recordUpdates = [
+    {
+      name = "Asignar_valores_por_defecto"
+      label = "Asignar valores por defecto"
+      locationX = 176
+      locationY = 287
+      inputAssignments = [
+        {
+          field = "Alias_socio__c"
+          value = {
+            stringValue = "F2016"
+          }
+        },
+        {
+          field = "Socio__c"
+          value = {
+            stringValue = "Facturas 2016 sin clasificar por socio"
+          }
+        },
+      ]
+      inputReference = "$Record"
+    },
+  ]
+  start = {
+    locationX = 50
+    locationY = 0
+    connector = {
+      targetReference = "Asignar_valores_por_defecto"
+    }
+    filterLogic = "or"
+    filters = [
+      {
+        field = salesforce.Facturacion__c.field.Alias_socio__c
+        operator = "IsNull"
+        value = {
+          booleanValue = true
+        }
+      },
+      {
+        field = salesforce.Facturacion__c.field.Socio__c
+        operator = "IsNull"
+        value = {
+          booleanValue = true
+        }
+      },
+    ]
+    object = salesforce.Facturacion__c
+    recordTriggerType = "CreateAndUpdate"
+    triggerType = "RecordBeforeSave"
+  }
+  status = "Active"
+  _alias = "Facturación - Si no hay socio añadir información previa al 2016"
+}

@@ -1,0 +1,10 @@
+salesforce.ProfileSessionSetting Socio_profileSessionSetting1679481844404 {
+  fullName = "Socio_profileSessionSetting1679481844404"
+  externalCommunityUserIdentityVerif = false
+  forceLogout = false
+  profile = "pkf attest - socio"
+  sessionPersistence = false
+  sessionTimeout = 0
+  sessionTimeoutWarning = false
+  _alias = "Socio_profileSessionSetting1679481844404"
+}

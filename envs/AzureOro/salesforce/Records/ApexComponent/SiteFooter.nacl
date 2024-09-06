@@ -1,0 +1,16 @@
+salesforce.ApexComponent SiteFooter {
+  apiVersion = 56
+  description = "Componente del pie de sitio predeterminado de Plataforma Lightning"
+  label = "SiteFooter"
+  fullName = "SiteFooter"
+  content = file("salesforce/Records/ApexComponent/SiteFooter.component")
+  _generated_dependencies = [
+    {
+      reference = salesforce.ApexComponent.instance.SitePoweredBy
+    },
+    {
+      reference = salesforce.StaticResource.instance.SiteSamples
+    },
+  ]
+  _alias = "SiteFooter"
+}

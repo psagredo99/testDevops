@@ -1,0 +1,465 @@
+salesforce.LightningPage Account_Record_Page_WithoutJobs {
+  flexiPageRegions = [
+    {
+      itemInstances = [
+        {
+          componentInstance = {
+            componentInstanceProperties = [
+              {
+                name = "actionNames"
+                valueList = {
+                  valueListItems = [
+                    {
+                      value = "Edit"
+                    },
+                  ]
+                }
+              },
+              {
+                name = "collapsed"
+                value = "false"
+              },
+              {
+                name = "enableActionsConfiguration"
+                value = "true"
+              },
+              {
+                name = "enableActionsInNative"
+                value = "false"
+              },
+              {
+                name = "hideChatterActions"
+                value = "false"
+              },
+              {
+                name = "numVisibleActions"
+                value = "5"
+              },
+            ]
+            componentName = "force:highlightsPanel"
+            identifier = "force_highlightsPanel2"
+          }
+        },
+        {
+          componentInstance = {
+            componentInstanceProperties = [
+              {
+                name = "hideHeader"
+                value = "true"
+              },
+            ]
+            componentName = "force:relatedListQuickLinksContainer"
+            identifier = "force_relatedListQuickLinksContainer"
+          }
+        },
+        {
+          componentInstance = {
+            componentInstanceProperties = [
+              {
+                name = "hideUpdateButton"
+                value = "true"
+              },
+              {
+                name = "variant"
+                value = "linear"
+              },
+            ]
+            componentName = "runtime_sales_pathassistant:pathAssistant"
+            identifier = "runtime_sales_pathassistant_pathAssistant"
+          }
+        },
+        {
+          componentInstance = {
+            componentInstanceProperties = [
+              {
+                name = "decorate"
+                value = "true"
+              },
+              {
+                name = "richTextValue"
+                value = "<p style=\"text-align: center;\"><strong style=\"color: rgb(195, 9, 9); font-size: 28px;\">Este cliente está marcado como auditado</strong></p>"
+              },
+            ]
+            componentName = "flexipage:richText"
+            identifier = "flexipage_richText"
+            visibilityRule = {
+              criteria = [
+                {
+                  leftValue = "{!Record.Empresa_auditada__c}"
+                  operator = "EQUAL"
+                  rightValue = "true"
+                },
+              ]
+            }
+          }
+        },
+      ]
+      name = "header"
+      type = "Region"
+    },
+    {
+      itemInstances = [
+        {
+          componentInstance = {
+            componentInstanceProperties = [
+              {
+                name = "cacheAge"
+                value = "1440"
+              },
+              {
+                name = "label"
+                value = "Histórico de Facturación"
+              },
+              {
+                name = "reportFilter"
+                value = "ACCOUNT_ID"
+              },
+              {
+                name = "reportName"
+                value = "Facturacin_por_Ao_y6O"
+              },
+              {
+                name = "showRefreshButton"
+                value = "true"
+              },
+            ]
+            componentName = "flexipage:reportChart"
+            identifier = "flexipage_reportChart3"
+          }
+        },
+        {
+          componentInstance = {
+            componentInstanceProperties = [
+              {
+                name = "cacheAge"
+                value = "1440"
+              },
+              {
+                name = "label"
+                value = "Histórico de Facturación Agregado"
+              },
+              {
+                name = "reportFilter"
+                value = "ACCOUNT_ID"
+              },
+              {
+                name = "reportName"
+                value = "Historico_de_facturacin_agregado_JUI"
+              },
+              {
+                name = "showRefreshButton"
+                value = "true"
+              },
+            ]
+            componentName = "flexipage:reportChart"
+            identifier = "flexipage_reportChart4"
+          }
+        },
+        {
+          componentInstance = {
+            componentInstanceProperties = [
+              {
+                name = "cacheAge"
+                value = "1440"
+              },
+              {
+                name = "label"
+                value = "Facturaciones por Área de Negocio Últimos 2 años"
+              },
+              {
+                name = "reportFilter"
+                value = "ACCOUNT_ID"
+              },
+              {
+                name = "reportName"
+                value = "Facturacin_por_rea_2_Aos_S3F"
+              },
+              {
+                name = "showRefreshButton"
+                value = "true"
+              },
+            ]
+            componentName = "flexipage:reportChart"
+            identifier = "flexipage_reportChart"
+          }
+        },
+        {
+          componentInstance = {
+            componentInstanceProperties = [
+              {
+                name = "cacheAge"
+                value = "1440"
+              },
+              {
+                name = "label"
+                value = "Facturaciones por Área de Negocio Histórico"
+              },
+              {
+                name = "reportFilter"
+                value = "ACCOUNT_ID"
+              },
+              {
+                name = "reportName"
+                value = "Facturacin_por_rea_80i"
+              },
+              {
+                name = "showRefreshButton"
+                value = "true"
+              },
+            ]
+            componentName = "flexipage:reportChart"
+            identifier = "flexipage_reportChart5"
+          }
+        },
+        {
+          componentInstance = {
+            componentInstanceProperties = [
+              {
+                name = "flowArguments"
+                value = "[{\"label\":\"recordId\",\"dataType\":\"SObject\",\"supportsRecordId\":true,\"value\":\"{!Record.Id}\"}]"
+              },
+              {
+                name = "flowLayout"
+                value = "oneColumn"
+              },
+              {
+                name = "flowName"
+                value = salesforce.Flow.instance.Cuenta_Tabla_de_Facturaci_n_por_Socio
+              },
+            ]
+            componentName = "flowruntime:interview"
+            identifier = "flowruntime_interview"
+          }
+        },
+      ]
+      name = "Facet-4f8bd2db-6884-445b-a41d-7e49cc176d32"
+      type = "Facet"
+    },
+    {
+      itemInstances = [
+        {
+          componentInstance = {
+            componentName = "force:detailPanel"
+            identifier = "force_detailPanel"
+          }
+        },
+        {
+          componentInstance = {
+            componentName = "force:recordDetailPanelMobile"
+            identifier = "force_recordDetailPanelMobile"
+          }
+        },
+      ]
+      name = "Facet-52bb4e82-0a09-4825-b82b-f4538e10492a"
+      type = "Facet"
+    },
+    {
+      itemInstances = [
+        {
+          componentInstance = {
+            componentInstanceProperties = [
+              {
+                name = "active"
+                value = "true"
+              },
+              {
+                name = "body"
+                value = "Facet-4f8bd2db-6884-445b-a41d-7e49cc176d32"
+              },
+              {
+                name = "title"
+                value = "Visión 360"
+              },
+            ]
+            componentName = "flexipage:tab"
+            identifier = "flexipage_tab8"
+          }
+        },
+        {
+          componentInstance = {
+            componentInstanceProperties = [
+              {
+                name = "body"
+                value = "Facet-52bb4e82-0a09-4825-b82b-f4538e10492a"
+              },
+              {
+                name = "title"
+                value = "Standard.Tab.detail"
+              },
+            ]
+            componentName = "flexipage:tab"
+            identifier = "flexipage_tab2"
+          }
+        },
+      ]
+      name = "Facet-c0026d0e-b04d-4ece-a1ff-0a3ad1c0aa12"
+      type = "Facet"
+    },
+    {
+      itemInstances = [
+        {
+          componentInstance = {
+            componentInstanceProperties = [
+              {
+                name = "tabs"
+                value = "Facet-c0026d0e-b04d-4ece-a1ff-0a3ad1c0aa12"
+              },
+            ]
+            componentName = "flexipage:tabset"
+            identifier = "flexipage_tabset"
+          }
+        },
+      ]
+      name = "main"
+      type = "Region"
+    },
+    {
+      itemInstances = [
+        {
+          componentInstance = {
+            componentInstanceProperties = [
+              {
+                name = "showLegacyActivityComposer"
+                value = "false"
+              },
+            ]
+            componentName = "runtime_sales_activities:activityPanel"
+            identifier = "runtime_sales_activities_activityPanel"
+          }
+        },
+      ]
+      name = "Facet-f801ca97-6cf1-41fa-82e4-59d7a1fa9551"
+      type = "Facet"
+    },
+    {
+      itemInstances = [
+        {
+          componentInstance = {
+            componentInstanceProperties = [
+              {
+                name = "daysToShow"
+                value = "60"
+              },
+              {
+                name = "earliestRange"
+                value = "3"
+              },
+              {
+                name = "latestRange"
+                value = "0.5"
+              },
+              {
+                name = "preferredHeight"
+                value = "3 - Default"
+              },
+              {
+                name = "timelineParent"
+                value = "Default_Picklist_Value"
+              },
+              {
+                name = "timelineTitle"
+                value = "Timeline"
+              },
+              {
+                name = "zoomTo"
+                value = "Current Date"
+              },
+            ]
+            componentName = "bmpyrckt:timeline"
+            identifier = "bmpyrckt_timeline"
+          }
+        },
+      ]
+      name = "Facet-1d9f3fe2-e1f8-40e8-a6bc-051fb7aadfc0"
+      type = "Facet"
+    },
+    {
+      itemInstances = [
+        {
+          componentInstance = {
+            componentInstanceProperties = [
+              {
+                name = "body"
+                value = "Facet-f801ca97-6cf1-41fa-82e4-59d7a1fa9551"
+              },
+              {
+                name = "title"
+                value = "Standard.Tab.activity"
+              },
+            ]
+            componentName = "flexipage:tab"
+            identifier = "flexipage_tab7"
+          }
+        },
+        {
+          componentInstance = {
+            componentInstanceProperties = [
+              {
+                name = "body"
+                value = "Facet-1d9f3fe2-e1f8-40e8-a6bc-051fb7aadfc0"
+              },
+              {
+                name = "title"
+                value = "Timeline"
+              },
+            ]
+            componentName = "flexipage:tab"
+            identifier = "flexipage_tab"
+          }
+        },
+      ]
+      name = "Facet-d5fe3507-bf3f-4bf3-96b9-0d6b5cc88954"
+      type = "Facet"
+    },
+    {
+      itemInstances = [
+        {
+          componentInstance = {
+            componentInstanceProperties = [
+              {
+                name = "displayOption"
+                value = "BOTH"
+              },
+            ]
+            componentName = "runtime_sales_merge:mergeCandidatesPreviewCard"
+            identifier = "runtime_sales_merge_mergeCandidatesPreviewCard"
+          }
+        },
+        {
+          componentInstance = {
+            componentInstanceProperties = [
+              {
+                name = "tabs"
+                value = "Facet-d5fe3507-bf3f-4bf3-96b9-0d6b5cc88954"
+              },
+            ]
+            componentName = "flexipage:tabset"
+            identifier = "flexipage_tabset2"
+          }
+        },
+      ]
+      name = "sidebar"
+      type = "Region"
+    },
+  ]
+  masterLabel = "Account Record Page - Without Jobs"
+  sobjectType = "Account"
+  template = {
+    name = "PageCollapsible"
+    properties = {
+      name = "enablePageActionConfig"
+      value = "false"
+    }
+  }
+  type = "RecordPage"
+  fullName = "Account_Record_Page_WithoutJobs"
+  _parent = [
+    salesforce.Account,
+  ]
+  _generated_dependencies = [
+    {
+      reference = salesforce.AuraDefinitionBundle.instance.PageCollapsible
+    },
+  ]
+  _alias = "Account_Record_Page_WithoutJobs"
+}

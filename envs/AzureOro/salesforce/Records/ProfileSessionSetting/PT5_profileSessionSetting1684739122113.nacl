@@ -1,0 +1,10 @@
+salesforce.ProfileSessionSetting PT5_profileSessionSetting1684739122113 {
+  fullName = "PT5_profileSessionSetting1684739122113"
+  externalCommunityUserIdentityVerif = false
+  forceLogout = false
+  profile = "marketingprofile"
+  sessionPersistence = false
+  sessionTimeout = 0
+  sessionTimeoutWarning = false
+  _alias = "PT5_profileSessionSetting1684739122113"
+}

@@ -1,0 +1,6 @@
+salesforce.MilestoneType Distribuir_caso@s {
+  fullName = "Distribuir caso"
+  description = "Establece un hito recurrente para distribuir un caso."
+  recurrenceType = "recursIndependently"
+  _alias = "Distribuir caso"
+}

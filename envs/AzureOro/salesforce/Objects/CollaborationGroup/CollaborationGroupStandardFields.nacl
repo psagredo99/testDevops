@@ -1,0 +1,223 @@
+type salesforce.CollaborationGroup {
+  serviceid Id {
+    apiName = "CollaborationGroup.Id"
+    label = "Id. de grupo"
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Text Name {
+    apiName = "CollaborationGroup.Name"
+    length = 40
+    _required = true
+    label = "Nombre"
+    createable = true
+    updateable = true
+    unique = false
+    caseSensitive = false
+    queryable = true
+  }
+  salesforce.Number MemberCount {
+    apiName = "CollaborationGroup.MemberCount"
+    label = "Recuento de miembros"
+    precision = 9
+    createable = false
+    updateable = false
+    scale = 0
+    unique = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup OwnerId {
+    apiName = "CollaborationGroup.OwnerId"
+    relationshipName = "Owner"
+    label = "Id. del propietario"
+    createable = true
+    updateable = true
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Picklist CollaborationType {
+    apiName = "CollaborationGroup.CollaborationType"
+    restricted = true
+    _required = true
+    label = "Tipo de acceso"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.LongTextArea Description {
+    apiName = "CollaborationGroup.Description"
+    length = 1000
+    label = "Descripción"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.DateTime CreatedDate {
+    apiName = "CollaborationGroup.CreatedDate"
+    label = "Fecha de creación"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup CreatedById {
+    apiName = "CollaborationGroup.CreatedById"
+    relationshipName = "CreatedBy"
+    label = "Creado por el Id."
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime LastModifiedDate {
+    apiName = "CollaborationGroup.LastModifiedDate"
+    label = "Fecha de la última modificación"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup LastModifiedById {
+    apiName = "CollaborationGroup.LastModifiedById"
+    relationshipName = "LastModifiedBy"
+    label = "Última modificación realizada por el Id."
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime SystemModstamp {
+    apiName = "CollaborationGroup.SystemModstamp"
+    label = "Modstamp del sistema"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Url FullPhotoUrl {
+    apiName = "CollaborationGroup.FullPhotoUrl"
+    label = "URL de fotografía en tamaño completo"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Url MediumPhotoUrl {
+    apiName = "CollaborationGroup.MediumPhotoUrl"
+    label = "URL para foto de perfil media"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Url SmallPhotoUrl {
+    apiName = "CollaborationGroup.SmallPhotoUrl"
+    label = "Foto"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime LastFeedModifiedDate {
+    apiName = "CollaborationGroup.LastFeedModifiedDate"
+    _required = true
+    label = "Fecha de la última modificación de noticias en tiempo real"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Text InformationTitle {
+    apiName = "CollaborationGroup.InformationTitle"
+    length = 30
+    label = "Título de información"
+    createable = true
+    updateable = true
+    unique = false
+    caseSensitive = false
+    queryable = true
+  }
+  salesforce.Html InformationBody {
+    apiName = "CollaborationGroup.InformationBody"
+    length = 4000
+    label = "Información"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Checkbox HasPrivateFieldsAccess {
+    apiName = "CollaborationGroup.HasPrivateFieldsAccess"
+    defaultValue = false
+    label = "Tiene acceso a campos privados"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Checkbox CanHaveGuests {
+    apiName = "CollaborationGroup.CanHaveGuests"
+    defaultValue = false
+    label = "Permitir clientes"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Lookup NetworkId {
+    apiName = "CollaborationGroup.NetworkId"
+    relationshipName = "Network"
+    label = "Id. de red"
+    createable = true
+    updateable = false
+    queryable = true
+  }
+  salesforce.Checkbox IsArchived {
+    apiName = "CollaborationGroup.IsArchived"
+    defaultValue = false
+    label = "Archivar"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Checkbox IsAutoArchiveDisabled {
+    apiName = "CollaborationGroup.IsAutoArchiveDisabled"
+    defaultValue = false
+    label = "Desactivar archivado automático"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Lookup AnnouncementId {
+    apiName = "CollaborationGroup.AnnouncementId"
+    relationshipName = "Announcement"
+    label = "Id. de anuncio"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Email GroupEmail {
+    apiName = "CollaborationGroup.GroupEmail"
+    label = "Correo electrónico de grupo"
+    createable = false
+    updateable = false
+    unique = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Url BannerPhotoUrl {
+    apiName = "CollaborationGroup.BannerPhotoUrl"
+    label = "URL de foto de pancarta"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Checkbox IsBroadcast {
+    apiName = "CollaborationGroup.IsBroadcast"
+    defaultValue = false
+    label = "Solo difusión"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+}

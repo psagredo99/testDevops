@@ -1,0 +1,102 @@
+salesforce.StandardValueSet CampaignMemberStatus {
+  fullName = "CampaignMemberStatus"
+  sorted = true
+  standardValue = [
+    {
+      fullName = "Analizando el nombre"
+      default = false
+      label = "Analizando el nombre"
+    },
+    {
+      fullName = "Añadido a lista en Clientify"
+      default = false
+      label = "Añadido a lista en Clientify"
+    },
+    {
+      fullName = "Apuntado"
+      default = false
+      label = "Apuntado"
+    },
+    {
+      fullName = "Dyn 365 BC SaaS"
+      default = false
+      label = "Dyn 365 BC SaaS"
+    },
+    {
+      fullName = "Dynamics NAV / BC on premise"
+      default = false
+      label = "Dynamics NAV / BC on premise"
+    },
+    {
+      fullName = "Dynamics NAV / BC suscripción"
+      default = false
+      label = "Dynamics NAV / BC suscripción"
+    },
+    {
+      fullName = "En relación"
+      default = false
+      label = "En relación"
+    },
+    {
+      fullName = "En revisión"
+      default = false
+      label = "En revisión"
+    },
+    {
+      fullName = "Enviado"
+      default = false
+      label = "Enviado"
+    },
+    {
+      fullName = "Interesados"
+      default = false
+      label = "Interesados"
+    },
+    {
+      fullName = "Le interesa"
+      default = false
+      label = "Le interesa"
+    },
+    {
+      fullName = "Microsoft Dynamics NAV Perpetual"
+      default = false
+      label = "Microsoft Dynamics NAV Perpetual"
+    },
+    {
+      fullName = "No interesado"
+      default = false
+      label = "No interesado"
+    },
+    {
+      fullName = "No le interesa el nombre"
+      default = false
+      label = "No le interesa el nombre"
+    },
+    {
+      fullName = "No le interesa por plazo"
+      default = false
+      label = "No le interesa por plazo"
+    },
+    {
+      fullName = "No le interesa por volumen de emisión"
+      default = false
+      label = "No le interesa por volumen de emisión"
+    },
+    {
+      fullName = "No le interesa por yield"
+      default = false
+      label = "No le interesa por yield"
+    },
+    {
+      fullName = "Respondida"
+      default = false
+      label = "Respondida"
+    },
+    {
+      fullName = "Sin liquidez"
+      default = false
+      label = "Sin liquidez"
+    },
+  ]
+  _alias = "CampaignMemberStatus"
+}

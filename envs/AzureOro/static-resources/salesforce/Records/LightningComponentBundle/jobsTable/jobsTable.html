@@ -1,0 +1,41 @@
+<template>
+    <template if:true={thereIsData}>
+        <div class="slds-m-top_medium slds-m-bottom_x-large">
+            <lightning-card title="Jobs" icon-name="standard:contract_payment" >
+                <br/>
+                    <div if:false={casesSpinner} style="height: 500px;">
+                        <lightning-datatable
+                            key-field="id"
+                            columns={columns}
+                            data={data}
+                            hide-checkbox-column
+                            wrap-text-max-lines="3"
+                            default-sort-direction={defaultSortDirection}
+                            sorted-direction={sortDirection}
+                            sorted-by={sortedBy}
+                            onsort={onHandleSort}>
+                        </lightning-datatable>
+                    </div> 
+            </lightning-card>  
+        </div> 
+        <div if:true={casesSpinner} class="slds-spinner_inline spinner-padding">
+            <lightning-spinner variant="brand" 
+                            alternative-text="Loading Jobs"     
+                            size="medium">
+            </lightning-spinner>
+        </div>
+    </template>
+    <template if:false={thereIsData}>
+        <div if:false={casesSpinner} style="height: 500px;">
+            <br>
+            <br>
+            <p style="text-align:center; font-size: 18px; font-weight: bold;">No hay Jobs para esta cuenta.</p>
+        </div> 
+        <div if:true={casesSpinner} class="slds-spinner_inline spinner-padding">
+            <lightning-spinner variant="brand" 
+                            alternative-text="Loading Jobs"     
+                            size="medium">
+            </lightning-spinner>
+        </div>
+    </template>
+</template>

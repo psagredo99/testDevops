@@ -1,0 +1,21 @@
+type salesforce.Activity {
+  salesforce.Lookup Completado_por__c {
+    apiName = "Activity.Completado_por__c"
+    deleteConstraint = "SetNull"
+    label = "Completado por"
+    referenceTo = [
+      salesforce.User,
+    ]
+    relationshipName = "Actividades_completadas"
+    _hidden_value = true
+  }
+  salesforce.Text Id_Clientify__c {
+    apiName = "Activity.Id_Clientify__c"
+    caseSensitive = false
+    externalId = false
+    label = "Id Clientify"
+    length = 20
+    unique = true
+    _hidden_value = true
+  }
+}

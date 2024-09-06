@@ -1,0 +1,15 @@
+salesforce.ListView Opportunity_MyOpportunities {
+  fullName = "Opportunity.MyOpportunities"
+  columns = [
+    "OPPORTUNITY.NAME",
+    "ACCOUNT.NAME",
+    "OPPORTUNITY.CLOSE_DATE",
+    "OPPORTUNITY.AMOUNT",
+  ]
+  filterScope = "Mine"
+  label = "My Opportunities"
+  _parent = [
+    salesforce.Opportunity,
+  ]
+  _alias = "My Opportunities"
+}

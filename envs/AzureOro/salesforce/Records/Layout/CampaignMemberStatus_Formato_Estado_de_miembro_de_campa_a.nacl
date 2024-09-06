@@ -1,0 +1,52 @@
+salesforce.Layout CampaignMemberStatus_Formato_Estado_de_miembro_de_campa_a@bsssss_00241 {
+  layoutSections = [
+    {
+      customLabel = false
+      detailHeading = false
+      editHeading = false
+      label = "Detail Information"
+      layoutColumns = [
+        {
+          layoutItems = [
+            {
+              behavior = "Required"
+              field = "Label"
+            },
+            {
+              behavior = "Edit"
+              field = "HasResponded"
+            },
+            {
+              behavior = "Readonly"
+              field = "IsDefault"
+            },
+            {
+              behavior = "Readonly"
+              field = "LastModifiedDate"
+            },
+            {
+              behavior = "Readonly"
+              field = "LastModifiedById"
+            },
+          ]
+        },
+      ]
+      style = "OneColumn"
+    },
+    {
+      customLabel = false
+      detailHeading = false
+      editHeading = false
+      layoutColumns = [
+        {
+        },
+      ]
+      style = "CustomLinks"
+    },
+  ]
+  showEmailCheckbox = false
+  showRunAssignmentRulesCheckbox = false
+  showSubmitAndAttachButton = false
+  fullName = "CampaignMemberStatus-Formato Estado de miembro de campaña"
+  _alias = "CampaignMemberStatus-Formato Estado de miembro de campaña"
+}

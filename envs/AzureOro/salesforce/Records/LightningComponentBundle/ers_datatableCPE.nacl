@@ -1,0 +1,52 @@
+salesforce.LightningComponentBundle ers_datatableCPE {
+  apiVersion = 53
+  isExposed = true
+  "#text" = "\r\r\r"
+  fullName = "ers_datatableCPE"
+  lwcResources = {
+    lwcResource = {
+      ers_datatableCPE_js@uv = {
+        source = file("salesforce/Records/LightningComponentBundle/ers_datatableCPE/ers_datatableCPE.js")
+        filePath = "lwc/ers_datatableCPE/ers_datatableCPE.js"
+      }
+      ers_datatableCPE_css@uv = {
+        source = file("salesforce/Records/LightningComponentBundle/ers_datatableCPE/ers_datatableCPE.css")
+        filePath = "lwc/ers_datatableCPE/ers_datatableCPE.css"
+      }
+      ers_datatableCPE_html@uv = {
+        source = file("salesforce/Records/LightningComponentBundle/ers_datatableCPE/ers_datatableCPE.html")
+        filePath = "lwc/ers_datatableCPE/ers_datatableCPE.html"
+      }
+    }
+  }
+  _generated_dependencies = [
+    {
+      reference = salesforce.ApexClass.instance.ers_DatatableController
+    },
+    {
+      reference = salesforce.LightningComponentBundle.instance.ers_datatableUtils
+    },
+    {
+      reference = salesforce.LightningComponentBundle.instance.fsc_displayError
+    },
+    {
+      reference = salesforce.LightningComponentBundle.instance.fsc_flowBanner
+    },
+    {
+      reference = salesforce.LightningComponentBundle.instance.fsc_flowCheckbox
+    },
+    {
+      reference = salesforce.LightningComponentBundle.instance.fsc_flowCombobox
+    },
+    {
+      reference = salesforce.LightningComponentBundle.instance.fsc_pickIcon
+    },
+    {
+      reference = salesforce.LightningComponentBundle.instance.fsc_pickObjectAndField3
+    },
+    {
+      reference = salesforce.LightningComponentBundle.instance.fsc_screenFlow
+    },
+  ]
+  _alias = "ers_datatableCPE"
+}

@@ -1,0 +1,53 @@
+salesforce.QuickAction Datos_cuentas__c_Informacion_SABI@uuuvu {
+  fullName = "Datos_cuentas__c.Informacion_SABI"
+  label = "Información SABI"
+  optionsCreateFeedItem = false
+  quickActionLayout = {
+    layoutSectionStyle = "TwoColumnsLeftToRight"
+    quickActionLayoutColumns = [
+      {
+        quickActionLayoutItems = [
+          {
+            emptySpace = false
+            field = salesforce.Datos_cuentas__c.field.Codigo_CNAE__c
+            uiBehavior = "Edit"
+          },
+          {
+            emptySpace = false
+            field = salesforce.Datos_cuentas__c.field.Empresa_cotizada__c
+            uiBehavior = "Edit"
+          },
+          {
+            emptySpace = false
+            field = salesforce.Datos_cuentas__c.field.Numero_empleados__c
+            uiBehavior = "Edit"
+          },
+        ]
+      },
+      {
+        quickActionLayoutItems = [
+          {
+            emptySpace = false
+            field = salesforce.Datos_cuentas__c.field.Codigo_IAE__c
+            uiBehavior = "Edit"
+          },
+          {
+            emptySpace = false
+            field = salesforce.Datos_cuentas__c.field.Estado_detallado__c
+            uiBehavior = "Edit"
+          },
+          {
+            emptySpace = false
+            field = salesforce.Datos_cuentas__c.field.Ingresos__c
+            uiBehavior = "Edit"
+          },
+        ]
+      },
+    ]
+  }
+  type = "Update"
+  _parent = [
+    salesforce.Datos_cuentas__c,
+  ]
+  _alias = "Información SABI"
+}

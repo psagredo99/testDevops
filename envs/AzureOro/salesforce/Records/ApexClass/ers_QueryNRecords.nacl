@@ -1,0 +1,7 @@
+salesforce.ApexClass ers_QueryNRecords {
+  apiVersion = 53
+  status = "Active"
+  fullName = "ers_QueryNRecords"
+  content = file("salesforce/Records/ApexClass/ers_QueryNRecords.cls")
+  _alias = "ers_QueryNRecords"
+}

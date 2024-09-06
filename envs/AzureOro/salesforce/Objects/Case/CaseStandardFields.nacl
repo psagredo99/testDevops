@@ -1,0 +1,372 @@
+type salesforce.Case {
+  salesforce.Lookup AccountId {
+    apiName = "Case.AccountId"
+    trackTrending = false
+    relationshipName = "Account"
+    label = "Id. de la cuenta"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Lookup AssetId {
+    apiName = "Case.AssetId"
+    trackTrending = false
+    _hidden_value = true
+  }
+  salesforce.Lookup BusinessHoursId {
+    apiName = "Case.BusinessHoursId"
+    trackTrending = false
+    _hidden_value = true
+  }
+  salesforce.DateTime ClosedDate {
+    apiName = "Case.ClosedDate"
+    trackTrending = false
+    label = "Fecha de cierre"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.LongTextArea Comments {
+    apiName = "Case.Comments"
+    trackTrending = false
+    length = 4000
+    label = "Comentarios internos"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Email ContactEmail {
+    apiName = "Case.ContactEmail"
+    trackTrending = false
+    label = "Correo electrónico del contacto"
+    createable = false
+    updateable = false
+    unique = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Phone ContactFax {
+    apiName = "Case.ContactFax"
+    trackTrending = false
+    label = "Fax de contacto"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup ContactId {
+    apiName = "Case.ContactId"
+    trackTrending = false
+    relationshipName = "Contact"
+    label = "Id. de contacto"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Phone ContactMobile {
+    apiName = "Case.ContactMobile"
+    trackTrending = false
+    label = "Teléfono móvil del contacto"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Phone ContactPhone {
+    apiName = "Case.ContactPhone"
+    trackTrending = false
+    label = "Teléfono del contacto"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.LongTextArea Description {
+    apiName = "Case.Description"
+    trackTrending = false
+    length = 32000
+    label = "Descripción"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Lookup EntitlementId {
+    apiName = "Case.EntitlementId"
+    trackTrending = false
+    _hidden_value = true
+  }
+  salesforce.Unknown IsClosedOnCreate {
+    apiName = "Case.IsClosedOnCreate"
+    trackTrending = false
+    _hidden_value = true
+  }
+  salesforce.Checkbox IsEscalated {
+    apiName = "Case.IsEscalated"
+    trackTrending = false
+    defaultValue = false
+    label = "Distribuido"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Unknown IsStopped {
+    apiName = "Case.IsStopped"
+    trackTrending = false
+    _hidden_value = true
+  }
+  salesforce.Picklist Language {
+    apiName = "Case.Language"
+    trackTrending = false
+    restricted = true
+    label = "Idioma"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Unknown MilestoneStatus {
+    apiName = "Case.MilestoneStatus"
+    trackTrending = false
+    _hidden_value = true
+  }
+  salesforce.Unknown MilestoneStatusIcon {
+    apiName = "Case.MilestoneStatusIcon"
+    trackTrending = false
+    _hidden_value = true
+  }
+  salesforce.Picklist Origin {
+    apiName = "Case.Origin"
+    trackTrending = false
+    restricted = false
+    label = "Origen del caso"
+    createable = true
+    updateable = true
+    queryable = true
+    valueSetName = salesforce.StandardValueSet.instance.CaseOrigin
+  }
+  salesforce.Lookup OwnerId {
+    apiName = "Case.OwnerId"
+    trackTrending = false
+    relationshipName = "Owner"
+    label = "Id. del propietario"
+    createable = true
+    updateable = true
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup ParentId {
+    apiName = "Case.ParentId"
+    trackTrending = false
+    relationshipName = "Parent"
+    label = "Id. del caso principal"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Picklist Priority {
+    apiName = "Case.Priority"
+    trackTrending = false
+    restricted = false
+    label = "Prioridad"
+    createable = true
+    updateable = true
+    queryable = true
+    valueSetName = salesforce.StandardValueSet.instance.CasePriority
+  }
+  salesforce.Lookup ProductId {
+    apiName = "Case.ProductId"
+    trackTrending = false
+    _hidden_value = true
+  }
+  salesforce.Picklist Reason {
+    apiName = "Case.Reason"
+    trackTrending = false
+    restricted = false
+    label = "Motivo del caso"
+    createable = true
+    updateable = true
+    queryable = true
+    valueSetName = salesforce.StandardValueSet.instance.CaseReason
+  }
+  salesforce.Lookup ServiceContractId {
+    apiName = "Case.ServiceContractId"
+    trackTrending = false
+    _hidden_value = true
+  }
+  salesforce.Unknown SlaExitDate {
+    apiName = "Case.SlaExitDate"
+    trackTrending = false
+    _hidden_value = true
+  }
+  salesforce.Unknown SlaStartDate {
+    apiName = "Case.SlaStartDate"
+    trackTrending = false
+    _hidden_value = true
+  }
+  salesforce.Lookup SourceId {
+    apiName = "Case.SourceId"
+    trackTrending = false
+    _hidden_value = true
+  }
+  salesforce.Picklist Status {
+    apiName = "Case.Status"
+    trackTrending = false
+    restricted = false
+    label = "Estado"
+    createable = true
+    updateable = true
+    queryable = true
+    valueSetName = salesforce.StandardValueSet.instance.CaseStatus
+  }
+  salesforce.Unknown StopStartDate {
+    apiName = "Case.StopStartDate"
+    trackTrending = false
+    _hidden_value = true
+  }
+  salesforce.Text Subject {
+    apiName = "Case.Subject"
+    trackTrending = false
+    length = 255
+    label = "Asunto"
+    createable = true
+    updateable = true
+    unique = false
+    caseSensitive = false
+    queryable = true
+  }
+  salesforce.Text SuppliedCompany {
+    apiName = "Case.SuppliedCompany"
+    trackTrending = false
+    length = 80
+    label = "Empresa"
+    createable = true
+    updateable = true
+    unique = false
+    caseSensitive = false
+    queryable = true
+  }
+  salesforce.Email SuppliedEmail {
+    apiName = "Case.SuppliedEmail"
+    trackTrending = false
+    label = "Dirección de correo electrónico"
+    createable = true
+    updateable = true
+    unique = false
+    queryable = true
+  }
+  salesforce.Text SuppliedName {
+    apiName = "Case.SuppliedName"
+    trackTrending = false
+    length = 80
+    label = "Nombre"
+    createable = true
+    updateable = true
+    unique = false
+    caseSensitive = false
+    queryable = true
+  }
+  salesforce.Text SuppliedPhone {
+    apiName = "Case.SuppliedPhone"
+    trackTrending = false
+    length = 40
+    label = "Teléfono"
+    createable = true
+    updateable = true
+    unique = false
+    caseSensitive = false
+    queryable = true
+  }
+  salesforce.Picklist Type {
+    apiName = "Case.Type"
+    trackTrending = false
+    restricted = false
+    label = "Tipo del caso"
+    createable = true
+    updateable = true
+    queryable = true
+    valueSetName = salesforce.StandardValueSet.instance.CaseType
+  }
+  serviceid Id {
+    apiName = "Case.Id"
+    label = "Id. del caso"
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Checkbox IsDeleted {
+    apiName = "Case.IsDeleted"
+    defaultValue = false
+    label = "Eliminado"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup MasterRecordId {
+    apiName = "Case.MasterRecordId"
+    relationshipName = "MasterRecord"
+    label = "Id. de registro principal"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.AutoNumber CaseNumber {
+    apiName = "Case.CaseNumber"
+    label = "Número del caso"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Checkbox IsClosed {
+    apiName = "Case.IsClosed"
+    defaultValue = false
+    label = "Cerrado"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime CreatedDate {
+    apiName = "Case.CreatedDate"
+    label = "Fecha de creación"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup CreatedById {
+    apiName = "Case.CreatedById"
+    relationshipName = "CreatedBy"
+    label = "Creado por el Id."
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime LastModifiedDate {
+    apiName = "Case.LastModifiedDate"
+    label = "Fecha de la última modificación"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup LastModifiedById {
+    apiName = "Case.LastModifiedById"
+    relationshipName = "LastModifiedBy"
+    label = "Última modificación realizada por el Id."
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime SystemModstamp {
+    apiName = "Case.SystemModstamp"
+    label = "Modstamp del sistema"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+}

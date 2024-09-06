@@ -1,0 +1,15 @@
+salesforce.ApexClass ers_QueryNRecordsTest {
+  apiVersion = 53
+  status = "Active"
+  fullName = "ers_QueryNRecordsTest"
+  content = file("salesforce/Records/ApexClass/ers_QueryNRecordsTest.cls")
+  _generated_dependencies = [
+    {
+      reference = salesforce.Account
+    },
+    {
+      reference = salesforce.ApexClass.instance.ers_QueryNRecords
+    },
+  ]
+  _alias = "ers_QueryNRecordsTest"
+}

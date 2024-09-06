@@ -1,0 +1,222 @@
+type salesforce.ContractLineItem {
+  salesforce.Lookup AssetId {
+    apiName = "ContractLineItem.AssetId"
+    relationshipName = "Asset"
+    label = "Id. del activo"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.LongTextArea Description {
+    apiName = "ContractLineItem.Description"
+    length = 32000
+    label = "Descripción"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Percent Discount {
+    apiName = "ContractLineItem.Discount"
+    label = "Descuento"
+    createable = true
+    updateable = true
+    scale = 2
+    precision = 5
+    queryable = true
+  }
+  salesforce.Date EndDate {
+    apiName = "ContractLineItem.EndDate"
+    label = "Fecha de finalización"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Currency ListPrice {
+    apiName = "ContractLineItem.ListPrice"
+    label = "Precio de lista"
+    createable = false
+    updateable = false
+    scale = 2
+    precision = 18
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup LocationId {
+    apiName = "ContractLineItem.LocationId"
+    relationshipName = "Location"
+    label = "Id. de Ubicación"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Lookup ParentContractLineItemId {
+    apiName = "ContractLineItem.ParentContractLineItemId"
+    relationshipName = "ParentContractLineItem"
+    label = "Id. de partida de contrato"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Lookup PricebookEntryId {
+    apiName = "ContractLineItem.PricebookEntryId"
+    relationshipName = "PricebookEntry"
+    _required = true
+    label = "Id. de Entrada de lista de precios"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Lookup Product2Id {
+    apiName = "ContractLineItem.Product2Id"
+    relationshipName = "Product2"
+    label = "Servicio"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Number Quantity {
+    apiName = "ContractLineItem.Quantity"
+    _required = true
+    label = "Cantidad"
+    precision = 12
+    scale = 2
+    createable = true
+    updateable = true
+    unique = false
+    queryable = true
+  }
+  salesforce.Lookup RootContractLineItemId {
+    apiName = "ContractLineItem.RootContractLineItemId"
+    relationshipName = "RootContractLineItem"
+    label = "Id. de partida de contrato"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.MasterDetail ServiceContractId {
+    apiName = "ContractLineItem.ServiceContractId"
+    relationshipName = "ServiceContract"
+    _required = true
+    label = "ID de contrato de servicio"
+    createable = true
+    updateable = false
+    queryable = true
+  }
+  salesforce.Date StartDate {
+    apiName = "ContractLineItem.StartDate"
+    label = "Fecha de inicio"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Picklist Status {
+    apiName = "ContractLineItem.Status"
+    restricted = true
+    label = "Estado"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Unknown StatusIndicator {
+    apiName = "ContractLineItem.StatusIndicator"
+    _hidden_value = true
+  }
+  salesforce.Currency Subtotal {
+    apiName = "ContractLineItem.Subtotal"
+    label = "Subtotal "
+    createable = false
+    updateable = false
+    scale = 2
+    precision = 18
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Currency TotalPrice {
+    apiName = "ContractLineItem.TotalPrice"
+    label = "Precio total"
+    createable = false
+    updateable = false
+    scale = 2
+    precision = 18
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Currency UnitPrice {
+    apiName = "ContractLineItem.UnitPrice"
+    _required = true
+    label = "Precio de venta"
+    createable = true
+    updateable = true
+    scale = 2
+    precision = 18
+    queryable = true
+  }
+  serviceid Id {
+    apiName = "ContractLineItem.Id"
+    label = "Id. de partida de contrato"
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Checkbox IsDeleted {
+    apiName = "ContractLineItem.IsDeleted"
+    defaultValue = false
+    label = "Eliminado"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.AutoNumber LineItemNumber {
+    apiName = "ContractLineItem.LineItemNumber"
+    label = "Número de partida"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime CreatedDate {
+    apiName = "ContractLineItem.CreatedDate"
+    label = "Fecha de creación"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup CreatedById {
+    apiName = "ContractLineItem.CreatedById"
+    relationshipName = "CreatedBy"
+    label = "Creado por el Id."
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime LastModifiedDate {
+    apiName = "ContractLineItem.LastModifiedDate"
+    label = "Fecha de la última modificación"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup LastModifiedById {
+    apiName = "ContractLineItem.LastModifiedById"
+    relationshipName = "LastModifiedBy"
+    label = "Última modificación realizada por el Id."
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime SystemModstamp {
+    apiName = "ContractLineItem.SystemModstamp"
+    label = "Modstamp del sistema"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+}

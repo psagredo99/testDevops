@@ -1,0 +1,17 @@
+salesforce.StandardValueSet LeadSource {
+  fullName = "LeadSource"
+  sorted = false
+  standardValue = [
+    {
+      fullName = "Website"
+      default = false
+      label = "Website"
+    },
+    {
+      fullName = "Clientify"
+      default = false
+      label = "Clientify"
+    },
+  ]
+  _alias = "LeadSource"
+}

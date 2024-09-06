@@ -1,0 +1,18 @@
+salesforce.ApexClass BatchMergeAccountsTest {
+  apiVersion = 59
+  status = "Active"
+  fullName = "BatchMergeAccountsTest"
+  content = file("salesforce/Records/ApexClass/BatchMergeAccountsTest.cls")
+  _generated_dependencies = [
+    {
+      reference = salesforce.Account
+    },
+    {
+      reference = salesforce.Account.field.NIF_CIF__c
+    },
+    {
+      reference = salesforce.ApexClass.instance.BatchMergeAccounts
+    },
+  ]
+  _alias = "BatchMergeAccountsTest"
+}

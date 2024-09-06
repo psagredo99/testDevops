@@ -1,0 +1,7 @@
+salesforce.SharingRules Log__c {
+  fullName = "Log__c"
+  _parent = [
+    salesforce.Log__c,
+  ]
+  _alias = "Log__c"
+}

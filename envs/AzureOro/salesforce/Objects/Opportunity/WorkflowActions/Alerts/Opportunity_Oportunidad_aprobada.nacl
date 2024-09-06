@@ -1,0 +1,20 @@
+salesforce.WorkflowAlert Opportunity_Oportunidad_aprobada@vu {
+  fullName = "Opportunity.Oportunidad_aprobada"
+  description = "Oportunidad aprobada"
+  protected = false
+  recipients = [
+    {
+      recipient = "Desarrollo negocio"
+      type = "opportunityTeam"
+    },
+    {
+      type = "owner"
+    },
+  ]
+  senderType = "CurrentUser"
+  template = salesforce.EmailTemplate.instance.unfiled_public_Oportunidad_aprobada@zcdu
+  _parent = [
+    salesforce.Opportunity,
+  ]
+  _alias = "Opportunity.Oportunidad_aprobada"
+}

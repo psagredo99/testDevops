@@ -1,0 +1,39 @@
+salesforce.ApexClass AsistenteOportunidadesController {
+  apiVersion = 53
+  status = "Active"
+  fullName = "AsistenteOportunidadesController"
+  content = file("salesforce/Records/ApexClass/AsistenteOportunidadesController.cls")
+  _generated_dependencies = [
+    {
+      reference = salesforce.Account
+    },
+    {
+      reference = salesforce.Opportunity
+    },
+    {
+      reference = salesforce.OpportunityLineItem
+    },
+    {
+      reference = salesforce.Order
+    },
+    {
+      reference = salesforce.PricebookEntry
+    },
+    {
+      reference = salesforce.Product2
+    },
+    {
+      reference = salesforce.Product2.field.Grupo_de_Servicios__c
+    },
+    {
+      reference = salesforce.Servicios_Favoritos__c
+    },
+    {
+      reference = salesforce.Servicios_Favoritos__c.field.Servicio__c
+    },
+    {
+      reference = salesforce.Servicios_Favoritos__c.field.Usuario__c
+    },
+  ]
+  _alias = "AsistenteOportunidadesController"
+}

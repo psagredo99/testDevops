@@ -1,0 +1,7 @@
+salesforce.ApexClass ers_DatatableController {
+  apiVersion = 53
+  status = "Active"
+  fullName = "ers_DatatableController"
+  content = file("salesforce/Records/ApexClass/ers_DatatableController.cls")
+  _alias = "ers_DatatableController"
+}

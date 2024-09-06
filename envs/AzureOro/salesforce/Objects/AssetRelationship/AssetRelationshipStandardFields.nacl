@@ -1,0 +1,107 @@
+type salesforce.AssetRelationship {
+  salesforce.MasterDetail AssetId {
+    apiName = "AssetRelationship.AssetId"
+    relationshipName = "Asset"
+    _required = true
+    label = "Id. del activo"
+    createable = true
+    updateable = false
+    queryable = true
+  }
+  salesforce.DateTime FromDate {
+    apiName = "AssetRelationship.FromDate"
+    label = "Desde fecha"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Lookup RelatedAssetId {
+    apiName = "AssetRelationship.RelatedAssetId"
+    relationshipName = "RelatedAsset"
+    _required = true
+    label = "Id. del activo"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Picklist RelationshipType {
+    apiName = "AssetRelationship.RelationshipType"
+    restricted = false
+    label = "Tipo de relación"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.DateTime ToDate {
+    apiName = "AssetRelationship.ToDate"
+    label = "Hasta fecha"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  serviceid Id {
+    apiName = "AssetRelationship.Id"
+    label = "Id. de Relación de activo"
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Checkbox IsDeleted {
+    apiName = "AssetRelationship.IsDeleted"
+    defaultValue = false
+    label = "Eliminado"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.AutoNumber AssetRelationshipNumber {
+    apiName = "AssetRelationship.AssetRelationshipNumber"
+    label = "Número de relación de activo"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime CreatedDate {
+    apiName = "AssetRelationship.CreatedDate"
+    label = "Fecha de creación"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup CreatedById {
+    apiName = "AssetRelationship.CreatedById"
+    relationshipName = "CreatedBy"
+    label = "Creado por el Id."
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime LastModifiedDate {
+    apiName = "AssetRelationship.LastModifiedDate"
+    label = "Fecha de la última modificación"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup LastModifiedById {
+    apiName = "AssetRelationship.LastModifiedById"
+    relationshipName = "LastModifiedBy"
+    label = "Última modificación realizada por el Id."
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime SystemModstamp {
+    apiName = "AssetRelationship.SystemModstamp"
+    label = "Modstamp del sistema"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+}

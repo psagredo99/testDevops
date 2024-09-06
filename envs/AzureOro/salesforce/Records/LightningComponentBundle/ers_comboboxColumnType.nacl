@@ -1,0 +1,21 @@
+salesforce.LightningComponentBundle ers_comboboxColumnType {
+  apiVersion = 53
+  description = "Custom datatable column type for comobobox"
+  isExposed = false
+  masterLabel = "Combobox Column Type"
+  "#text" = "\r\r\r\r\r"
+  fullName = "ers_comboboxColumnType"
+  lwcResources = {
+    lwcResource = {
+      ers_comboboxColumnType_js@uv = {
+        source = file("salesforce/Records/LightningComponentBundle/ers_comboboxColumnType/ers_comboboxColumnType.js")
+        filePath = "lwc/ers_comboboxColumnType/ers_comboboxColumnType.js"
+      }
+      ers_comboboxColumnType_html@uv = {
+        source = file("salesforce/Records/LightningComponentBundle/ers_comboboxColumnType/ers_comboboxColumnType.html")
+        filePath = "lwc/ers_comboboxColumnType/ers_comboboxColumnType.html"
+      }
+    }
+  }
+  _alias = "ers_comboboxColumnType"
+}

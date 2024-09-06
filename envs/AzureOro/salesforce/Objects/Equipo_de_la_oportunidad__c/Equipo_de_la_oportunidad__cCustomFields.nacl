@@ -1,0 +1,34 @@
+type salesforce.Equipo_de_la_oportunidad__c {
+  salesforce.MasterDetail Empleado__c {
+    apiName = "Equipo_de_la_oportunidad__c.Empleado__c"
+    label = "Empleado"
+    referenceTo = [
+      salesforce.Empleado__c,
+    ]
+    relationshipLabel = "Equipos de la oportunidad"
+    relationshipName = "Equipos_de_la_oportunidad"
+    relationshipOrder = 1
+    reparentableMasterDetail = false
+    trackTrending = false
+    writeRequiresMasterRead = false
+    createable = true
+    updateable = false
+    queryable = true
+  }
+  salesforce.MasterDetail Oportunidad__c {
+    apiName = "Equipo_de_la_oportunidad__c.Oportunidad__c"
+    label = "Oportunidad"
+    referenceTo = [
+      salesforce.Opportunity,
+    ]
+    relationshipLabel = "Equipos de la oportunidad"
+    relationshipName = "Equipos_de_la_oportunidad"
+    relationshipOrder = 0
+    reparentableMasterDetail = false
+    trackTrending = false
+    writeRequiresMasterRead = false
+    createable = true
+    updateable = false
+    queryable = true
+  }
+}

@@ -1,0 +1,19 @@
+salesforce.AuraDefinitionBundle AsistenteOportunidades {
+  apiVersion = 53
+  description = "A Lightning Component Bundle"
+  fullName = "AsistenteOportunidades"
+  type = "Component"
+  rendererContent = file("salesforce/Records/AuraDefinitionBundle/AsistenteOportunidades/AsistenteOportunidadesRenderer.js")
+  designContent = file("salesforce/Records/AuraDefinitionBundle/AsistenteOportunidades/AsistenteOportunidades.design")
+  SVGContent = file("salesforce/Records/AuraDefinitionBundle/AsistenteOportunidades/AsistenteOportunidades.svg")
+  markup = file("salesforce/Records/AuraDefinitionBundle/AsistenteOportunidades/AsistenteOportunidades.cmp")
+  controllerContent = file("salesforce/Records/AuraDefinitionBundle/AsistenteOportunidades/AsistenteOportunidadesController.js")
+  helperContent = file("salesforce/Records/AuraDefinitionBundle/AsistenteOportunidades/AsistenteOportunidadesHelper.js")
+  styleContent = file("salesforce/Records/AuraDefinitionBundle/AsistenteOportunidades/AsistenteOportunidades.css")
+  _generated_dependencies = [
+    {
+      reference = salesforce.ApexClass.instance.AsistenteOportunidadesController
+    },
+  ]
+  _alias = "AsistenteOportunidades"
+}

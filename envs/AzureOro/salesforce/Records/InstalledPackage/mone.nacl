@@ -1,0 +1,4 @@
+salesforce.InstalledPackage mone {
+  fullName = "mone"
+  _alias = "mone"
+}

@@ -1,0 +1,36 @@
+salesforce.CustomApplication Sales_Operations {
+  brand = {
+    headerColor = "#0070D2"
+    logoVersion = 1
+    shouldOverrideOrgTheme = false
+  }
+  description = "Customize and automate the sales process, and analyze your data to make informed business decisions."
+  formFactors = [
+    "Large",
+  ]
+  isNavAutoTempTabsDisabled = false
+  isNavPersonalizationDisabled = false
+  isNavTabPersistenceDisabled = false
+  isOmniPinnedViewEnabled = false
+  label = "Sales Operations"
+  navType = "Standard"
+  tabs = [
+    "standard-home",
+    "standard-Dashboard",
+    "standard-report",
+    "standard-Pricebook2",
+    "standard-Product2",
+    "standard-CollaborationGroup",
+    "standard-Feed",
+    salesforce.CustomTab.instance.Datos_cuentas__c,
+  ]
+  uiType = "Lightning"
+  utilityBar = "Sales_Operations_UtilityBar"
+  fullName = "Sales_Operations"
+  _generated_dependencies = [
+    {
+      reference = salesforce.LightningPage.instance.Sales_Operations_UtilityBar
+    },
+  ]
+  _alias = "Sales Operations"
+}

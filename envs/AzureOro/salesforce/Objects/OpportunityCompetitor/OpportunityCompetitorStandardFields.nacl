@@ -1,0 +1,95 @@
+type salesforce.OpportunityCompetitor {
+  salesforce.Picklist CompetitorName {
+    apiName = "OpportunityCompetitor.CompetitorName"
+    label = "Nombre del competidor"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  serviceid Id {
+    apiName = "OpportunityCompetitor.Id"
+    label = "Oportunidad: Id. de competidor"
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup OpportunityId {
+    apiName = "OpportunityCompetitor.OpportunityId"
+    relationshipName = "Opportunity"
+    _required = true
+    label = "Id. de la oportunidad"
+    createable = true
+    updateable = false
+    queryable = true
+  }
+  salesforce.Text Strengths {
+    apiName = "OpportunityCompetitor.Strengths"
+    length = 1000
+    label = "Puntos fuertes"
+    createable = true
+    updateable = true
+    unique = false
+    caseSensitive = false
+    queryable = true
+  }
+  salesforce.Text Weaknesses {
+    apiName = "OpportunityCompetitor.Weaknesses"
+    length = 1000
+    label = "Puntos débiles"
+    createable = true
+    updateable = true
+    unique = false
+    caseSensitive = false
+    queryable = true
+  }
+  salesforce.Lookup CreatedById {
+    apiName = "OpportunityCompetitor.CreatedById"
+    relationshipName = "CreatedBy"
+    label = "Creado por el Id."
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime CreatedDate {
+    apiName = "OpportunityCompetitor.CreatedDate"
+    label = "Fecha de creación"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup LastModifiedById {
+    apiName = "OpportunityCompetitor.LastModifiedById"
+    relationshipName = "LastModifiedBy"
+    label = "Última modificación realizada por el Id."
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime LastModifiedDate {
+    apiName = "OpportunityCompetitor.LastModifiedDate"
+    label = "Fecha de la última modificación"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime SystemModstamp {
+    apiName = "OpportunityCompetitor.SystemModstamp"
+    label = "Modstamp del sistema"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Checkbox IsDeleted {
+    apiName = "OpportunityCompetitor.IsDeleted"
+    defaultValue = false
+    label = "Eliminado"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+}

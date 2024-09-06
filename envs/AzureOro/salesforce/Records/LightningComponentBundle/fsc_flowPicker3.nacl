@@ -1,0 +1,143 @@
+salesforce.LightningComponentBundle fsc_flowPicker3 {
+  apiVersion = 52
+  description = "Flow Picker FSC"
+  isExposed = true
+  masterLabel = "Flow Picker FSC"
+  targets = {
+    target = [
+      "lightning__FlowScreen",
+      "lightning__RecordPage",
+    ]
+  }
+  targetConfigs = {
+    targetConfig = [
+      {
+        targets = "lightning__FlowScreen"
+        property = [
+          {
+            name = "label"
+            type = "String"
+            role = "inputOnly"
+            label = "Flow Selector Label"
+            description = "Set the text to appear above the Flow selection box"
+          },
+          {
+            name = "placeholder"
+            type = "String"
+            role = "inputOnly"
+            label = "Placeholder text for selection box"
+            default = "- Select a Flow -"
+            description = "Set the placeholder text to appear in the Flow selection box"
+          },
+          {
+            name = "selectedFlowApiName"
+            type = "String"
+            label = "Store the API name of the selected Flow"
+            description = "On output this stores the API name of the selected Flow, and the component can be initialized with a value on input"
+          },
+          {
+            name = "showActiveFlowsOnly"
+            type = "Boolean"
+            role = "inputOnly"
+            label = "Show Active Flows Only?"
+            description = "If set to True, only active Flows will be displayed"
+          },
+          {
+            name = "showWhichFlowTypes"
+            type = "String"
+            role = "inputOnly"
+            label = "Only show which Flow types? (default = Flow,AutolaunchedFlow)"
+            description = "Comma separated list of Flow Process Types to be included (see: https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_visual_workflow.htm)"
+          },
+          {
+            name = "required"
+            type = "Boolean"
+            role = "inputOnly"
+            label = "Required?"
+            description = "If set to True, an error message will appear when trying to advance to the next screen. (default=False)"
+          },
+          {
+            name = "searchString"
+            type = "String"
+            role = "inputOnly"
+            label = "Flow Name Filter"
+            description = "Set a value to search and filter the returned list of Flows.  This adds a LIKE %filtertext% to the Flow lookup."
+          },
+          {
+            name = "componentWidth"
+            type = "String"
+            role = "inputOnly"
+            label = "Set component width (out of 12)"
+            default = "12"
+            description = '''
+By dividing the full display area width into 12 equal sections, you can specify the percentage of the total width to be used by this component in 12ths.  
+            For example a value of 9 would be 75% width, 6 would be 50% width, 3 would be 25% width.
+'''
+          },
+        ]
+      },
+      {
+        targets = "lightning__RecordPage"
+        property = [
+          {
+            name = "label"
+            type = "String"
+            label = "Flow Selector Label"
+            default = "Select a Flow:"
+          },
+          {
+            name = "placeholder"
+            type = "String"
+            label = "Placeholder text for selection box"
+            default = "- Select a Flow -"
+          },
+          {
+            name = "selectedFlowApiName"
+            type = "String"
+            label = "Store the API name of the selected Flow"
+          },
+          {
+            name = "showActiveFlowsOnly"
+            type = "Boolean"
+            label = "Show Active Flows Only?"
+          },
+          {
+            name = "showWhichFlowTypes"
+            type = "String"
+            label = "Only show which Flow types? (default = Flow,AutolaunchedFlow)"
+          },
+          {
+            name = "required"
+            type = "Boolean"
+            label = "Required?"
+          },
+          {
+            name = "searchString"
+            type = "String"
+            label = "Flow Name Filter"
+          },
+          {
+            name = "componentWidth"
+            type = "String"
+            label = "Set component width (out of 12)"
+            default = "12"
+          },
+        ]
+      },
+    ]
+  }
+  fullName = "fsc_flowPicker3"
+  lwcResources = {
+    lwcResource = {
+      fsc_flowPicker3_js@uv = {
+        source = file("salesforce/Records/LightningComponentBundle/fsc_flowPicker3/fsc_flowPicker3.js")
+        filePath = "lwc/fsc_flowPicker3/fsc_flowPicker3.js"
+      }
+      fsc_flowPicker3_html@uv = {
+        source = file("salesforce/Records/LightningComponentBundle/fsc_flowPicker3/fsc_flowPicker3.html")
+        filePath = "lwc/fsc_flowPicker3/fsc_flowPicker3.html"
+      }
+    }
+  }
+  _alias = "fsc_flowPicker3"
+}

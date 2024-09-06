@@ -1,0 +1,17 @@
+salesforce.ListView Lead_My_Leads {
+  fullName = "Lead.My_Leads"
+  columns = [
+    "FULL_NAME",
+    "LEAD.EMAIL",
+    "LEAD.PHONE",
+    "LEAD.COMPANY",
+    "LEAD.STATUS",
+    "LEAD.LEAD_SOURCE",
+  ]
+  filterScope = "Mine"
+  label = "Mis candidatos"
+  _parent = [
+    salesforce.Lead,
+  ]
+  _alias = "Mis candidatos"
+}

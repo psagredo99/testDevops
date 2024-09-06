@@ -1,0 +1,16 @@
+salesforce.LightningComponentBundle fsc_dualListBoxUtils {
+  apiVersion = 46
+  description = "Dual List Box Utils"
+  isExposed = false
+  masterLabel = "Dual List Box Utils"
+  fullName = "fsc_dualListBoxUtils"
+  lwcResources = {
+    lwcResource = {
+      fsc_dualListBoxUtils_js@uv = {
+        source = file("salesforce/Records/LightningComponentBundle/fsc_dualListBoxUtils/fsc_dualListBoxUtils.js")
+        filePath = "lwc/fsc_dualListBoxUtils/fsc_dualListBoxUtils.js"
+      }
+    }
+  }
+  _alias = "fsc_dualListBoxUtils"
+}

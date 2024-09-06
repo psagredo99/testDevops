@@ -1,0 +1,14 @@
+salesforce.NamedCredential Navision {
+  fullName = "Navision"
+  allowMergeFieldsInBody = true
+  allowMergeFieldsInHeader = true
+  calloutStatus = "Enabled"
+  certificate = salesforce.Certificate.instance.pkf2023
+  endpoint = "https://nav.pkf-attest.es:6048"
+  generateAuthorizationHeader = true
+  label = "Navision"
+  principalType = "NamedUser"
+  protocol = "Password"
+  username = "BCAPI"
+  _alias = "Navision"
+}

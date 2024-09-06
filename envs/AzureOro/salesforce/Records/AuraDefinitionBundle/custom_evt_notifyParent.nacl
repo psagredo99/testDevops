@@ -1,0 +1,8 @@
+salesforce.AuraDefinitionBundle custom_evt_notifyParent {
+  apiVersion = 53
+  description = "DESCRIPTION"
+  fullName = "custom_evt_notifyParent"
+  type = "Event"
+  markup = file("salesforce/Records/AuraDefinitionBundle/custom_evt_notifyParent/custom_evt_notifyParent.evt")
+  _alias = "custom_evt_notifyParent"
+}

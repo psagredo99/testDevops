@@ -1,0 +1,28 @@
+salesforce.RecordType Log__c_Outbound {
+  fullName = "Log__c.Outbound"
+  active = true
+  label = "Outbound"
+  picklistValues = [
+    {
+      picklist = salesforce.Log__c.field.Result__c
+      values = [
+        {
+          fullName = "Error"
+          default = false
+        },
+        {
+          fullName = "Success"
+          default = false
+        },
+        {
+          fullName = "Warning"
+          default = false
+        },
+      ]
+    },
+  ]
+  _parent = [
+    salesforce.Log__c,
+  ]
+  _alias = "Outbound"
+}

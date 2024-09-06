@@ -1,0 +1,178 @@
+type salesforce.Recommendation {
+  salesforce.Text AcceptanceLabel {
+    apiName = "Recommendation.AcceptanceLabel"
+    length = 80
+    _required = true
+    label = "Etiqueta de aceptación"
+    createable = true
+    updateable = true
+    unique = false
+    caseSensitive = false
+    queryable = true
+  }
+  salesforce.Text ActionReference {
+    apiName = "Recommendation.ActionReference"
+    length = 255
+    _required = true
+    label = "Acción"
+    createable = true
+    updateable = true
+    unique = false
+    caseSensitive = false
+    queryable = true
+  }
+  salesforce.Text Description {
+    apiName = "Recommendation.Description"
+    length = 255
+    _required = true
+    label = "Descripción"
+    createable = true
+    updateable = true
+    unique = false
+    caseSensitive = false
+    queryable = true
+  }
+  salesforce.Lookup ImageId {
+    apiName = "Recommendation.ImageId"
+    inlineHelpText = "Para obtener los mejores resultados, utilice una imagen de 1000 px x 380 px a 72 dpi o una con una relación similar."
+    relationshipName = "Image"
+    label = "Id. de Archivo de activo"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Checkbox IsActionActive {
+    apiName = "Recommendation.IsActionActive"
+    defaultValue = false
+    label = "Es acción activa"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Text Name {
+    apiName = "Recommendation.Name"
+    length = 80
+    _required = true
+    label = "Nombre"
+    createable = true
+    updateable = true
+    unique = false
+    caseSensitive = false
+    queryable = true
+  }
+  salesforce.Text RejectionLabel {
+    apiName = "Recommendation.RejectionLabel"
+    length = 80
+    _required = true
+    label = "Etiqueta de rechazo"
+    createable = true
+    updateable = true
+    unique = false
+    caseSensitive = false
+    queryable = true
+  }
+  serviceid Id {
+    apiName = "Recommendation.Id"
+    label = "Id. de Recomendación"
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Checkbox IsDeleted {
+    apiName = "Recommendation.IsDeleted"
+    defaultValue = false
+    label = "Eliminado"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime CreatedDate {
+    apiName = "Recommendation.CreatedDate"
+    label = "Fecha de creación"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup CreatedById {
+    apiName = "Recommendation.CreatedById"
+    relationshipName = "CreatedBy"
+    label = "Creado por el Id."
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime LastModifiedDate {
+    apiName = "Recommendation.LastModifiedDate"
+    label = "Fecha de la última modificación"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup LastModifiedById {
+    apiName = "Recommendation.LastModifiedById"
+    relationshipName = "LastModifiedBy"
+    label = "Última modificación realizada por el Id."
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime SystemModstamp {
+    apiName = "Recommendation.SystemModstamp"
+    label = "Modstamp del sistema"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup NetworkId {
+    apiName = "Recommendation.NetworkId"
+    relationshipName = "Network"
+    label = "Id. de red"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Text ExternalId {
+    apiName = "Recommendation.ExternalId"
+    length = 255
+    label = "Id. externo"
+    createable = true
+    updateable = true
+    unique = false
+    caseSensitive = false
+    queryable = true
+  }
+  salesforce.Picklist RecommendationMode {
+    apiName = "Recommendation.RecommendationMode"
+    restricted = true
+    label = "Modo de recomendación"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Number RecommendationScore {
+    apiName = "Recommendation.RecommendationScore"
+    label = "Puntuación de recomendación"
+    precision = 5
+    scale = 2
+    createable = true
+    updateable = true
+    unique = false
+    queryable = true
+  }
+  salesforce.Text RecommendationKey {
+    apiName = "Recommendation.RecommendationKey"
+    length = 255
+    label = "Identificador de RecommendationResponse"
+    createable = true
+    updateable = true
+    unique = false
+    caseSensitive = false
+    queryable = true
+  }
+}

@@ -1,0 +1,89 @@
+salesforce.Layout FlowTableViewDefinition__c_Formato_FlowTableViewDefinition@uubs {
+  layoutSections = [
+    {
+      customLabel = false
+      detailHeading = false
+      editHeading = true
+      label = "Information"
+      layoutColumns = [
+        {
+          layoutItems = [
+            {
+              behavior = "Required"
+              field = salesforce.FlowTableViewDefinition__c.field.Object_API_Name__c
+            },
+            {
+              behavior = "Required"
+              field = salesforce.FlowTableViewDefinition__c.field.Selection_Method__c
+            },
+            {
+              behavior = "Required"
+              field = salesforce.FlowTableViewDefinition__c.field.View_Name__c
+            },
+            {
+              behavior = "Required"
+              field = salesforce.FlowTableViewDefinition__c.field.Name
+            },
+          ]
+        },
+        {
+          layoutItems = [
+            {
+              behavior = "Edit"
+              field = salesforce.FlowTableViewDefinition__c.field.OwnerId
+            },
+          ]
+        },
+      ]
+      style = "TwoColumnsTopToBottom"
+    },
+    {
+      customLabel = false
+      detailHeading = false
+      editHeading = true
+      label = "System Information"
+      layoutColumns = [
+        {
+          layoutItems = [
+            {
+              behavior = "Readonly"
+              field = salesforce.FlowTableViewDefinition__c.field.CreatedById
+            },
+          ]
+        },
+        {
+          layoutItems = [
+            {
+              behavior = "Readonly"
+              field = salesforce.FlowTableViewDefinition__c.field.LastModifiedById
+            },
+          ]
+        },
+      ]
+      style = "TwoColumnsTopToBottom"
+    },
+    {
+      customLabel = false
+      detailHeading = false
+      editHeading = true
+      style = "CustomLinks"
+    },
+  ]
+  miniLayout = {
+    fields = [
+      "Object_API_Name__c",
+      "Selection_Method__c",
+      "View_Name__c",
+    ]
+  }
+  showEmailCheckbox = false
+  showHighlightsPanel = false
+  showInteractionLogPanel = false
+  showRunAssignmentRulesCheckbox = false
+  showSubmitAndAttachButton = false
+  fullName = "FlowTableViewDefinition__c-Formato FlowTableViewDefinition"
+  _parent = [
+    salesforce.FlowTableViewDefinition__c,
+  ]
+  _alias = "FlowTableViewDefinition__c-Formato FlowTableViewDefinition"
+}

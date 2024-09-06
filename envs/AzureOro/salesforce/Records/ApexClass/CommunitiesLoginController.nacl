@@ -1,0 +1,7 @@
+salesforce.ApexClass CommunitiesLoginController {
+  apiVersion = 57
+  status = "Active"
+  fullName = "CommunitiesLoginController"
+  content = file("salesforce/Records/ApexClass/CommunitiesLoginController.cls")
+  _alias = "CommunitiesLoginController"
+}

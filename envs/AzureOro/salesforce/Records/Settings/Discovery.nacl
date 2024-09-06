@@ -1,0 +1,5 @@
+salesforce.DiscoverySettings {
+  fullName = "Discovery"
+  enableEinsteinArticleRecommendations = "false"
+  _alias = "Discovery"
+}

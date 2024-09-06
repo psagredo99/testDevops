@@ -1,0 +1,12 @@
+salesforce.ApexClass ers_EncodeDecodeURLTest {
+  apiVersion = 52
+  status = "Active"
+  fullName = "ers_EncodeDecodeURLTest"
+  content = file("salesforce/Records/ApexClass/ers_EncodeDecodeURLTest.cls")
+  _generated_dependencies = [
+    {
+      reference = salesforce.ApexClass.instance.ers_EncodeDecodeURL
+    },
+  ]
+  _alias = "ers_EncodeDecodeURLTest"
+}

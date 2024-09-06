@@ -1,0 +1,14 @@
+salesforce.CompactLayout Log__c_Log {
+  fullName = "Log__c.Log"
+  fields = [
+    "Name",
+    "Service_Name__c",
+    "Result__c",
+    "Timestamp__c",
+  ]
+  label = "Log"
+  _parent = [
+    salesforce.Log__c,
+  ]
+  _alias = "Log"
+}

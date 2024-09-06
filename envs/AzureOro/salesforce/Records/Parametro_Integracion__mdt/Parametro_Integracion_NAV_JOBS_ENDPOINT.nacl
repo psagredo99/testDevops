@@ -1,0 +1,7 @@
+salesforce.Parametro_Integracion__mdt Parametro_Integracion_NAV_JOBS_ENDPOINT@uvuu {
+  label = "NAV_JOBS_ENDPOINT"
+  protected = false
+  fullName = "Parametro_Integracion.NAV_JOBS_ENDPOINT"
+  Valor__c = "NAV_PKF_ATTEST_PROD_SF/ODataV4/Company('030-ITC')/jobSF?$filter=CustomerMulticompanyID%20eq%20"
+  _alias = "NAV_JOBS_ENDPOINT"
+}

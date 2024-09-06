@@ -1,0 +1,10 @@
+salesforce.Role Dpto_Sistemas {
+  fullName = "Dpto_Sistemas"
+  caseAccessLevel = "Edit"
+  contactAccessLevel = "Edit"
+  mayForecastManagerShare = false
+  name = "Dpto Sistemas"
+  opportunityAccessLevel = "Edit"
+  parentRole = salesforce.Role.instance.Socio
+  _alias = "Dpto_Sistemas"
+}

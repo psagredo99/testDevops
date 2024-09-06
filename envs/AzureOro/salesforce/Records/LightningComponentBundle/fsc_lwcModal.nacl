@@ -1,0 +1,22 @@
+salesforce.LightningComponentBundle fsc_lwcModal {
+  apiVersion = 52
+  isExposed = false
+  fullName = "fsc_lwcModal"
+  lwcResources = {
+    lwcResource = {
+      fsc_lwcModal_html@uv = {
+        source = file("salesforce/Records/LightningComponentBundle/fsc_lwcModal/fsc_lwcModal.html")
+        filePath = "lwc/fsc_lwcModal/fsc_lwcModal.html"
+      }
+      fsc_lwcModal_css@uv = {
+        source = file("salesforce/Records/LightningComponentBundle/fsc_lwcModal/fsc_lwcModal.css")
+        filePath = "lwc/fsc_lwcModal/fsc_lwcModal.css"
+      }
+      fsc_lwcModal_js@uv = {
+        source = file("salesforce/Records/LightningComponentBundle/fsc_lwcModal/fsc_lwcModal.js")
+        filePath = "lwc/fsc_lwcModal/fsc_lwcModal.js"
+      }
+    }
+  }
+  _alias = "fsc_lwcModal"
+}

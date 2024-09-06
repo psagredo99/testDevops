@@ -1,0 +1,189 @@
+salesforce.Flow Candidato_Update_Clientify_Contact {
+  fullName = "Candidato_Update_Clientify_Contact"
+  actionCalls = [
+    {
+      name = "Edit_Contact_in_Clientify"
+      label = "Edit Contact in Clientify"
+      locationX = 314
+      locationY = 539
+      actionName = salesforce.ApexClass.instance.SF2Clientify
+      actionType = "apex"
+      flowTransactionModel = "CurrentTransaction"
+      inputParameters = [
+        {
+          name = "Id"
+          value = {
+            elementReference = "$Record.Id"
+          }
+        },
+        {
+          name = "idClienti"
+          value = {
+            elementReference = "idClientify"
+          }
+        },
+      ]
+      nameSegment = "SF2Clientify"
+      versionSegment = 1
+    },
+  ]
+  apiVersion = 57
+  assignments = [
+    {
+      name = "Asignar_id_clientify"
+      label = "Asignar id clientify"
+      locationX = 314
+      locationY = 431
+      assignmentItems = [
+        {
+          assignToReference = "idClientify"
+          operator = "Assign"
+          value = {
+            elementReference = "$Record.ID_Contacto_Clientify__c"
+          }
+        },
+      ]
+      connector = {
+        targetReference = "Edit_Contact_in_Clientify"
+      }
+    },
+  ]
+  decisions = [
+    {
+      name = "Viene_de_Inte"
+      label = "Viene de Inte?"
+      locationX = 182
+      locationY = 323
+      defaultConnector = {
+        targetReference = "Asignar_id_clientify"
+      }
+      defaultConnectorLabel = "No viene de integración"
+      rules = [
+        {
+          name = "Viene_por_integraci_n"
+          conditionLogic = "and"
+          conditions = [
+            {
+              leftValueReference = "$Record.Integrado_Clientify__c"
+              operator = "IsChanged"
+              rightValue = {
+                booleanValue = true
+              }
+            },
+            {
+              leftValueReference = "$Record.Integrado_Clientify__c"
+              operator = "EqualTo"
+              rightValue = {
+                booleanValue = true
+              }
+            },
+          ]
+          connector = {
+            targetReference = "Volver_a_False_el_Integrado"
+          }
+          label = "Viene por integración"
+        },
+      ]
+    },
+  ]
+  environments = "Default"
+  interviewLabel = "Lead - {!$Flow.CurrentDateTime}"
+  label = "Candidato - Update Clientify Contact"
+  processMetadataValues = [
+    {
+      name = "BuilderType"
+      value = {
+        stringValue = "LightningFlowBuilder"
+      }
+    },
+    {
+      name = "CanvasMode"
+      value = {
+        stringValue = "AUTO_LAYOUT_CANVAS"
+      }
+    },
+    {
+      name = "OriginBuilderType"
+      value = {
+        stringValue = "LightningFlowBuilder"
+      }
+    },
+  ]
+  processType = "AutoLaunchedFlow"
+  recordUpdates = [
+    {
+      name = "Volver_a_False_el_Integrado"
+      label = "Volver a False el Integrado"
+      locationX = 50
+      locationY = 431
+      inputAssignments = [
+        {
+          field = "Integrado_Clientify__c"
+          value = {
+            booleanValue = false
+          }
+        },
+      ]
+      inputReference = "$Record"
+    },
+  ]
+  start = {
+    locationX = 56
+    locationY = 0
+    connector = {
+      targetReference = "Viene_de_Inte"
+    }
+    filterLogic = "1 AND 2 AND (3 OR 4 OR 5)"
+    filters = [
+      {
+        field = salesforce.Lead.field.ID_Contacto_Clientify__c
+        operator = "IsNull"
+        value = {
+          booleanValue = false
+        }
+      },
+      {
+        field = salesforce.Lead.field.IsConverted
+        operator = "EqualTo"
+        value = {
+          booleanValue = false
+        }
+      },
+      {
+        field = salesforce.Lead.field.HasOptedOutOfEmail
+        operator = "IsChanged"
+        value = {
+          booleanValue = true
+        }
+      },
+      {
+        field = salesforce.Lead.field.DoNotCall
+        operator = "IsChanged"
+        value = {
+          booleanValue = true
+        }
+      },
+      {
+        field = salesforce.Lead.field.Integrado_Clientify__c
+        operator = "IsChanged"
+        value = {
+          booleanValue = true
+        }
+      },
+    ]
+    object = salesforce.Lead
+    recordTriggerType = "Update"
+    triggerType = "RecordAfterSave"
+  }
+  status = "Draft"
+  variables = [
+    {
+      name = "idClientify"
+      dataType = "String"
+      isCollection = false
+      isInput = false
+      isOutput = false
+    },
+  ]
+  _alias = "Candidato - Update Clientify Contact"
+}

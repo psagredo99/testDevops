@@ -1,0 +1,103 @@
+salesforce.LightningComponentBundle fsc_pickIcon {
+  apiVersion = 51
+  isExposed = true
+  masterLabel = "Pick an Icon"
+  description = "Icon Picker"
+  targets = {
+    target = [
+      "lightning__FlowScreen",
+    ]
+  }
+  targetConfigs = {
+    targetConfig = [
+      {
+        targets = "lightning__FlowScreen"
+        configurationEditor = "c-fsc_pick-icon-cpe"
+        property = [
+          {
+            name = "iconCategories"
+            type = "String"
+            role = "inputOnly"
+          },
+          {
+            name = "mode"
+            label = "Display Mode"
+            type = "String"
+            description = "Enter 'tab', 'accordion', or 'combobox'"
+            role = "inputOnly"
+          },
+          {
+            name = "label"
+            label = "Label"
+            type = "String"
+            default = "Pick an Icon"
+            role = "inputOnly"
+          },
+          {
+            name = "iconName"
+            label = "Icon Name"
+            type = "String"
+          },
+          {
+            name = "hideStandardIcons"
+            label = "Hide Standard icons"
+            type = "Boolean"
+            default = "false"
+            role = "inputOnly"
+          },
+          {
+            name = "hideCustomIcons"
+            label = "Hide Custom icons"
+            type = "Boolean"
+            default = "false"
+            role = "inputOnly"
+          },
+          {
+            name = "hideUtilityIcons"
+            label = "Hide Utility icons"
+            type = "Boolean"
+            default = "false"
+            role = "inputOnly"
+          },
+          {
+            name = "hideActionIcons"
+            label = "Hide Action icons"
+            type = "Boolean"
+            default = "false"
+            description = "Note: Action icons are not available in combobox mode"
+            role = "inputOnly"
+          },
+          {
+            name = "accordionMode"
+            label = "zzz(legacy) Accordion Mode"
+            description = "This is a legacy property included for backwards compatibility and is not recommended for future use. Use the new 'mode' property instead."
+            type = "boolean"
+            role = "inputOnly"
+          },
+        ]
+      },
+    ]
+  }
+  fullName = "fsc_pickIcon"
+  lwcResources = {
+    lwcResource = {
+      fsc_pickIcon_html@uv = {
+        source = file("salesforce/Records/LightningComponentBundle/fsc_pickIcon/fsc_pickIcon.html")
+        filePath = "lwc/fsc_pickIcon/fsc_pickIcon.html"
+      }
+      fsc_pickIcon_js@uv = {
+        source = file("salesforce/Records/LightningComponentBundle/fsc_pickIcon/fsc_pickIcon.js")
+        filePath = "lwc/fsc_pickIcon/fsc_pickIcon.js"
+      }
+    }
+  }
+  _generated_dependencies = [
+    {
+      reference = salesforce.LightningComponentBundle.instance.fsc_pickIconCpe
+    },
+    {
+      reference = salesforce.LightningComponentBundle.instance.fsc_searchableDataTable
+    },
+  ]
+  _alias = "fsc_pickIcon"
+}

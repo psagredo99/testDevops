@@ -1,0 +1,99 @@
+salesforce.Flow Oportunidad_Aprobaci_n_auditor_a {
+  fullName = "Oportunidad_Aprobaci_n_auditor_a"
+  actionCalls = [
+    {
+      name = "Enviar_para_aprobacion"
+      label = "Enviar para aprobación"
+      locationX = 176
+      locationY = 323
+      actionName = "submit"
+      actionType = "submit"
+      faultConnector = {
+        targetReference = "Error"
+      }
+      flowTransactionModel = "CurrentTransaction"
+      inputParameters = [
+        {
+          name = "objectId"
+          value = {
+            elementReference = "$Record.Id"
+          }
+        },
+        {
+          name = "processDefinitionNameOrId"
+          value = {
+            stringValue = "Oportunidades_de_cuentas_auditadas"
+          }
+        },
+      ]
+      nameSegment = "submit"
+      storeOutputAutomatically = true
+      versionSegment = 1
+    },
+  ]
+  apiVersion = 59
+  customErrors = [
+    {
+      name = "Error"
+      label = "Error"
+      locationX = 440
+      locationY = 431
+      customErrorMessages = {
+        errorMessage = '''
+Se ha producido un error:
+
+{!$Flow.FaultMessage}
+'''
+        isFieldError = false
+      }
+    },
+  ]
+  description = "Si el estado es Aprobación auditoría lanzamos el proceso de aprobación."
+  environments = "Default"
+  interviewLabel = "Oportunidad - Aprobación auditoría {!$Flow.CurrentDateTime}"
+  label = "Oportunidad - Aprobación auditoría"
+  processMetadataValues = [
+    {
+      name = "BuilderType"
+      value = {
+        stringValue = "LightningFlowBuilder"
+      }
+    },
+    {
+      name = "CanvasMode"
+      value = {
+        stringValue = "AUTO_LAYOUT_CANVAS"
+      }
+    },
+    {
+      name = "OriginBuilderType"
+      value = {
+        stringValue = "LightningFlowBuilder"
+      }
+    },
+  ]
+  processType = "AutoLaunchedFlow"
+  start = {
+    locationX = 50
+    locationY = 0
+    connector = {
+      targetReference = "Enviar_para_aprobacion"
+    }
+    doesRequireRecordChangedToMeetCriteria = true
+    filterLogic = "and"
+    filters = [
+      {
+        field = salesforce.Opportunity.field.StageName
+        operator = "EqualTo"
+        value = {
+          stringValue = "Aprobación auditoría"
+        }
+      },
+    ]
+    object = salesforce.Opportunity
+    recordTriggerType = "Update"
+    triggerType = "RecordAfterSave"
+  }
+  status = "Active"
+  _alias = "Oportunidad - Aprobación auditoría"
+}

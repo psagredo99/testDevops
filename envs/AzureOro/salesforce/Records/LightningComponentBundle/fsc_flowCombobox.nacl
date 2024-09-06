@@ -1,0 +1,27 @@
+salesforce.LightningComponentBundle fsc_flowCombobox {
+  apiVersion = 50
+  isExposed = true
+  fullName = "fsc_flowCombobox"
+  lwcResources = {
+    lwcResource = {
+      fsc_flowCombobox_html@uv = {
+        source = file("salesforce/Records/LightningComponentBundle/fsc_flowCombobox/fsc_flowCombobox.html")
+        filePath = "lwc/fsc_flowCombobox/fsc_flowCombobox.html"
+      }
+      fsc_flowCombobox_css@uv = {
+        source = file("salesforce/Records/LightningComponentBundle/fsc_flowCombobox/fsc_flowCombobox.css")
+        filePath = "lwc/fsc_flowCombobox/fsc_flowCombobox.css"
+      }
+      fsc_flowCombobox_js@uv = {
+        source = file("salesforce/Records/LightningComponentBundle/fsc_flowCombobox/fsc_flowCombobox.js")
+        filePath = "lwc/fsc_flowCombobox/fsc_flowCombobox.js"
+      }
+    }
+  }
+  _generated_dependencies = [
+    {
+      reference = salesforce.LightningComponentBundle.instance.fsc_flowComboboxUtils
+    },
+  ]
+  _alias = "fsc_flowCombobox"
+}

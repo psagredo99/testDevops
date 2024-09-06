@@ -1,0 +1,20 @@
+salesforce.AuraDefinitionBundle custom_select {
+  apiVersion = 40
+  description = "A Lightning Component Bundle"
+  fullName = "custom_select"
+  type = "Component"
+  helperContent = file("salesforce/Records/AuraDefinitionBundle/custom_select/custom_selectHelper.js")
+  styleContent = file("salesforce/Records/AuraDefinitionBundle/custom_select/custom_select.css")
+  rendererContent = file("salesforce/Records/AuraDefinitionBundle/custom_select/custom_selectRenderer.js")
+  markup = file("salesforce/Records/AuraDefinitionBundle/custom_select/custom_select.cmp")
+  controllerContent = file("salesforce/Records/AuraDefinitionBundle/custom_select/custom_selectController.js")
+  _generated_dependencies = [
+    {
+      reference = salesforce.AuraDefinitionBundle.instance.custom_event
+    },
+    {
+      reference = salesforce.AuraDefinitionBundle.instance.defaultTokens
+    },
+  ]
+  _alias = "custom_select"
+}

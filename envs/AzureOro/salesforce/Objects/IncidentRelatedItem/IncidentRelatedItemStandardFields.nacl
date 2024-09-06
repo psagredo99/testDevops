@@ -1,0 +1,118 @@
+type salesforce.IncidentRelatedItem {
+  salesforce.Lookup AssetId {
+    apiName = "IncidentRelatedItem.AssetId"
+    relationshipName = "Asset"
+    label = "Id. del activo"
+    createable = true
+    updateable = false
+    queryable = true
+  }
+  salesforce.LongTextArea Comment {
+    apiName = "IncidentRelatedItem.Comment"
+    length = 32000
+    label = "Comentario"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Picklist ImpactLevel {
+    apiName = "IncidentRelatedItem.ImpactLevel"
+    restricted = false
+    label = "Nivel de repercusión"
+    createable = true
+    updateable = true
+    queryable = true
+    valueSetName = salesforce.StandardValueSet.instance.CasePriority
+  }
+  salesforce.Picklist ImpactType {
+    apiName = "IncidentRelatedItem.ImpactType"
+    restricted = false
+    _required = true
+    label = "Tipo de repercusión"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.MasterDetail IncidentId {
+    apiName = "IncidentRelatedItem.IncidentId"
+    relationshipName = "Incident"
+    _required = true
+    label = "Id. de incidente"
+    createable = true
+    updateable = false
+    queryable = true
+  }
+  salesforce.AutoNumber Name {
+    apiName = "IncidentRelatedItem.Name"
+    label = "Número de Elemento relacionado con incidente"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup Product2Id {
+    apiName = "IncidentRelatedItem.Product2Id"
+    relationshipName = "Product2"
+    label = "Servicio"
+    createable = true
+    updateable = false
+    queryable = true
+  }
+  serviceid Id {
+    apiName = "IncidentRelatedItem.Id"
+    label = "Id. de Elemento relacionado con incidente"
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Checkbox IsDeleted {
+    apiName = "IncidentRelatedItem.IsDeleted"
+    defaultValue = false
+    label = "Eliminado"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime CreatedDate {
+    apiName = "IncidentRelatedItem.CreatedDate"
+    label = "Fecha de creación"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup CreatedById {
+    apiName = "IncidentRelatedItem.CreatedById"
+    relationshipName = "CreatedBy"
+    label = "Creado por el Id."
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime LastModifiedDate {
+    apiName = "IncidentRelatedItem.LastModifiedDate"
+    label = "Fecha de la última modificación"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup LastModifiedById {
+    apiName = "IncidentRelatedItem.LastModifiedById"
+    relationshipName = "LastModifiedBy"
+    label = "Última modificación realizada por el Id."
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime SystemModstamp {
+    apiName = "IncidentRelatedItem.SystemModstamp"
+    label = "Modstamp del sistema"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+}

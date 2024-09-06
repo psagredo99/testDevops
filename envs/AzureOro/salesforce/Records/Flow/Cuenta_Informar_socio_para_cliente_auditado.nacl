@@ -1,0 +1,140 @@
+salesforce.Flow Cuenta_Informar_socio_para_cliente_auditado {
+  fullName = "Cuenta_Informar_socio_para_cliente_auditado"
+  apiVersion = 59
+  decisions = [
+    {
+      name = "Encontrado_Socio"
+      label = "¿Encontrado Socio?"
+      locationX = 374
+      locationY = 384
+      defaultConnectorLabel = "No"
+      rules = [
+        {
+          name = "S"
+          conditionLogic = "and"
+          conditions = [
+            {
+              leftValueReference = "Get_Socio"
+              operator = "IsNull"
+              rightValue = {
+                booleanValue = false
+              }
+            },
+          ]
+          connector = {
+            targetReference = "Asignar_socio"
+          }
+          label = "Sí"
+        },
+      ]
+    },
+  ]
+  description = '''
+Al entrar un cliente auditado se trata de buscar al socio responsable para informar el lookup correspondiente.
+11/12/23 ILS: cambiar lookup a usuario por lookup a empleado.
+'''
+  environments = "Default"
+  interviewLabel = "Cuenta - Informar socio para cliente auditado {!$Flow.CurrentDateTime}"
+  label = "Cuenta - Informar socio para cliente auditado"
+  processMetadataValues = [
+    {
+      name = "BuilderType"
+      value = {
+        stringValue = "LightningFlowBuilder"
+      }
+    },
+    {
+      name = "CanvasMode"
+      value = {
+        stringValue = "AUTO_LAYOUT_CANVAS"
+      }
+    },
+    {
+      name = "OriginBuilderType"
+      value = {
+        stringValue = "LightningFlowBuilder"
+      }
+    },
+  ]
+  processType = "AutoLaunchedFlow"
+  recordLookups = [
+    {
+      name = "Get_Socio"
+      label = "Get Socio"
+      locationX = 374
+      locationY = 276
+      assignNullValuesIfNoRecordsFound = false
+      connector = {
+        targetReference = "Encontrado_Socio"
+      }
+      filterLogic = "and"
+      filters = [
+        {
+          field = salesforce.Empleado__c.field.Correo_electronico__c
+          operator = "EqualTo"
+          value = {
+            elementReference = "$Record.Correo_electronico_de_socio_de_auditoria__c"
+          }
+        },
+      ]
+      getFirstRecordOnly = true
+      object = salesforce.Empleado__c
+      storeOutputAutomatically = true
+    },
+  ]
+  recordUpdates = [
+    {
+      name = "Asignar_socio"
+      label = "Asignar socio"
+      locationX = 242
+      locationY = 492
+      inputAssignments = [
+        {
+          field = "Socio_de_la_auditoria__c"
+          value = {
+            elementReference = "Get_Socio.Id"
+          }
+        },
+      ]
+      inputReference = "$Record"
+    },
+  ]
+  start = {
+    locationX = 50
+    locationY = 0
+    doesRequireRecordChangedToMeetCriteria = true
+    filterLogic = "and"
+    filters = [
+      {
+        field = salesforce.Account.field.Cliente_auditado__c
+        operator = "EqualTo"
+        value = {
+          booleanValue = true
+        }
+      },
+      {
+        field = salesforce.Account.field.Correo_electronico_de_socio_de_auditoria__c
+        operator = "IsNull"
+        value = {
+          booleanValue = false
+        }
+      },
+    ]
+    object = salesforce.Account
+    recordTriggerType = "CreateAndUpdate"
+    scheduledPaths = {
+      connector = {
+        targetReference = "Get_Socio"
+      }
+      pathType = "AsyncAfterCommit"
+    }
+    triggerType = "RecordAfterSave"
+  }
+  status = "Active"
+  _generated_dependencies = [
+    {
+      reference = salesforce.Account.field.Socio_de_la_auditoria__c
+    },
+  ]
+  _alias = "Cuenta - Informar socio para cliente auditado"
+}
