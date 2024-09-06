@@ -1,0 +1,43 @@
+salesforce.BusinessProcess Opportunity_PKF_Attest_Cuenta_Auditadas@usss {
+  fullName = "Opportunity.PKF Attest Cuenta Auditadas"
+  description = "Proceso de negocio estándar con dos etapas nuevas para las gestiones del dpto. de auditoría"
+  isActive = true
+  values = [
+    {
+      fullName = "Aprobación auditoría"
+      default = false
+    },
+    {
+      fullName = "Cerrada ganada"
+      default = false
+    },
+    {
+      fullName = "Cerrada perdida"
+      default = false
+    },
+    {
+      fullName = "En preparación"
+      default = false
+    },
+    {
+      fullName = "Identificada"
+      default = false
+    },
+    {
+      fullName = "Notificación auditoría"
+      default = false
+    },
+    {
+      fullName = "Ofertada"
+      default = false
+    },
+    {
+      fullName = "Postpuesta"
+      default = false
+    },
+  ]
+  _parent = [
+    salesforce.Opportunity,
+  ]
+  _alias = "Opportunity.PKF Attest Cuenta Auditadas"
+}

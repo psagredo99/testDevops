@@ -1,0 +1,19 @@
+salesforce.WorkflowFieldUpdate Opportunity_Comentario@v {
+  fullName = "Opportunity.Comentario"
+  field = salesforce.Opportunity.field.Comentario_aprobacion_auditoria__c
+  formula = "'El socio de auditoría ' +  Account.Socio_de_la_auditoria__r.Name  + ' aprueba la oferta.'"
+  name = "Comentario"
+  notifyAssignee = false
+  operation = "Formula"
+  protected = false
+  reevaluateOnChange = false
+  _parent = [
+    salesforce.Opportunity,
+  ]
+  _generated_dependencies = [
+    {
+      reference = salesforce.Account.field.Socio_de_la_auditoria__c
+    },
+  ]
+  _alias = "Opportunity.Comentario"
+}

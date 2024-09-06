@@ -1,0 +1,151 @@
+type salesforce.Solution {
+  salesforce.Checkbox IsPublished {
+    apiName = "Solution.IsPublished"
+    defaultValue = false
+    label = "Pública"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Checkbox IsPublishedInPublicKb {
+    apiName = "Solution.IsPublishedInPublicKb"
+    defaultValue = false
+    label = "Visible en la base de datos de conocimientos pública"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Text SolutionName {
+    apiName = "Solution.SolutionName"
+    length = 255
+    _required = true
+    label = "Título"
+    createable = true
+    updateable = true
+    unique = false
+    caseSensitive = false
+    queryable = true
+  }
+  salesforce.Html SolutionNote {
+    apiName = "Solution.SolutionNote"
+    length = 32000
+    label = "Descripción"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Picklist Status {
+    apiName = "Solution.Status"
+    restricted = false
+    _required = true
+    label = "Estado"
+    createable = true
+    updateable = true
+    queryable = true
+    valueSetName = salesforce.StandardValueSet.instance.SolutionStatus
+  }
+  serviceid Id {
+    apiName = "Solution.Id"
+    label = "Id. de solución"
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Checkbox IsDeleted {
+    apiName = "Solution.IsDeleted"
+    defaultValue = false
+    label = "Eliminado"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.AutoNumber SolutionNumber {
+    apiName = "Solution.SolutionNumber"
+    label = "Número de la solución"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Checkbox IsReviewed {
+    apiName = "Solution.IsReviewed"
+    defaultValue = false
+    label = "Revisada"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup OwnerId {
+    apiName = "Solution.OwnerId"
+    relationshipName = "Owner"
+    label = "Id. del propietario"
+    createable = true
+    updateable = true
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime CreatedDate {
+    apiName = "Solution.CreatedDate"
+    label = "Fecha de creación"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup CreatedById {
+    apiName = "Solution.CreatedById"
+    relationshipName = "CreatedBy"
+    label = "Creado por el Id."
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime LastModifiedDate {
+    apiName = "Solution.LastModifiedDate"
+    label = "Fecha de la última modificación"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup LastModifiedById {
+    apiName = "Solution.LastModifiedById"
+    relationshipName = "LastModifiedBy"
+    label = "Última modificación realizada por el Id."
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime SystemModstamp {
+    apiName = "Solution.SystemModstamp"
+    label = "Modstamp del sistema"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Number TimesUsed {
+    apiName = "Solution.TimesUsed"
+    _required = true
+    label = "Núm. de casos relacionados"
+    precision = 9
+    createable = false
+    updateable = false
+    scale = 0
+    unique = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Checkbox IsHtml {
+    apiName = "Solution.IsHtml"
+    defaultValue = false
+    label = "Es Html"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+}

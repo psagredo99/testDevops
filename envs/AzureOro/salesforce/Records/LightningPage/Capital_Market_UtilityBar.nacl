@@ -1,0 +1,87 @@
+salesforce.LightningPage Capital_Market_UtilityBar {
+  flexiPageRegions = [
+    {
+      itemInstances = [
+        {
+          componentInstance = {
+            componentInstanceProperties = [
+              {
+                name = "eager"
+                type = "decorator"
+                value = "false"
+              },
+              {
+                name = "entityNames"
+                valueList = {
+                  valueListItems = [
+                    {
+                      value = "Asset"
+                    },
+                  ]
+                }
+              },
+              {
+                name = "height"
+                type = "decorator"
+                value = "480"
+              },
+              {
+                name = "icon"
+                type = "decorator"
+                value = "fallback"
+              },
+              {
+                name = "label"
+                value = "Standard.RecentItems"
+              },
+              {
+                name = "label"
+                type = "decorator"
+                value = "Elementos recientes"
+              },
+              {
+                name = "maxRecords"
+                value = "3"
+              },
+              {
+                name = "scrollable"
+                type = "decorator"
+                value = "true"
+              },
+              {
+                name = "width"
+                type = "decorator"
+                value = "340"
+              },
+            ]
+            componentName = "flexipage:recentItems"
+            identifier = "flexipage_recentItems"
+          }
+        },
+        {
+          componentInstance = {
+            componentName = "notes:utilityBarNoteList"
+            identifier = "notes_utilityBarNoteList"
+          }
+        },
+      ]
+      name = "utilityItems"
+      type = "Region"
+    },
+    {
+      name = "backgroundComponents"
+      type = "Background"
+    },
+  ]
+  masterLabel = "Capital Market UtilityBar"
+  template = {
+    name = "one:utilityBarTemplateDesktop"
+    properties = {
+      name = "isLeftAligned"
+      value = "true"
+    }
+  }
+  type = "UtilityBar"
+  fullName = "Capital_Market_UtilityBar"
+  _alias = "Capital_Market_UtilityBar"
+}

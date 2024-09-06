@@ -1,0 +1,18 @@
+salesforce.ApexClass ComponenteFoto_Test {
+  apiVersion = 56
+  status = "Active"
+  fullName = "ComponenteFoto_Test"
+  content = file("salesforce/Records/ApexClass/ComponenteFoto_Test.cls")
+  _generated_dependencies = [
+    {
+      reference = salesforce.Account
+    },
+    {
+      reference = salesforce.ApexClass.instance.ComponenteFoto
+    },
+    {
+      reference = salesforce.Contact
+    },
+  ]
+  _alias = "ComponenteFoto_Test"
+}

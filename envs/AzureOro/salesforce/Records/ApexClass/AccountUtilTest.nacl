@@ -1,0 +1,21 @@
+salesforce.ApexClass AccountUtilTest {
+  apiVersion = 58
+  status = "Active"
+  fullName = "AccountUtilTest"
+  content = file("salesforce/Records/ApexClass/AccountUtilTest.cls")
+  _generated_dependencies = [
+    {
+      reference = salesforce.Account
+    },
+    {
+      reference = salesforce.Account.field.Multicompany_ID__c
+    },
+    {
+      reference = salesforce.ApexClass.instance.AccountUtil
+    },
+    {
+      reference = salesforce.User
+    },
+  ]
+  _alias = "AccountUtilTest"
+}

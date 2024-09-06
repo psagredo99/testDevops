@@ -1,0 +1,18 @@
+salesforce.LightningComponentBundle fsc_fieldViewer {
+  apiVersion = 50
+  isExposed = false
+  fullName = "fsc_fieldViewer"
+  lwcResources = {
+    lwcResource = {
+      fsc_fieldViewer_js@uv = {
+        source = file("salesforce/Records/LightningComponentBundle/fsc_fieldViewer/fsc_fieldViewer.js")
+        filePath = "lwc/fsc_fieldViewer/fsc_fieldViewer.js"
+      }
+      fsc_fieldViewer_html@uv = {
+        source = file("salesforce/Records/LightningComponentBundle/fsc_fieldViewer/fsc_fieldViewer.html")
+        filePath = "lwc/fsc_fieldViewer/fsc_fieldViewer.html"
+      }
+    }
+  }
+  _alias = "fsc_fieldViewer"
+}

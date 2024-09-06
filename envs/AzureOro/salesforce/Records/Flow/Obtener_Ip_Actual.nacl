@@ -1,0 +1,176 @@
+salesforce.Flow Obtener_Ip_Actual {
+  fullName = "Obtener_Ip_Actual"
+  actionCalls = [
+    {
+      name = "Notificar_cambio_de_IP"
+      label = "Notificar cambio de IP"
+      locationX = 50
+      locationY = 876
+      actionName = "emailSimple"
+      actionType = "emailSimple"
+      flowTransactionModel = "CurrentTransaction"
+      inputParameters = [
+        {
+          name = "emailSubject"
+          value = {
+            stringValue = "Cambio de IP \"CRM PKF Attest\""
+          }
+        },
+        {
+          name = "emailBody"
+          value = {
+            stringValue = "Cambio de IP de los servidores del CRM de PKF Attest: Nueva IP {!Obtener_Ip_Actual.2XX.ipString}"
+          }
+        },
+        {
+          name = "emailAddresses"
+          value = {
+            stringValue = "mikel.urtiaga@pkf-attest.es,soportesalesforce@pkf-attest.es,sistemas@pkf-attest.es"
+          }
+        },
+      ]
+      nameSegment = "emailSimple"
+      versionSegment = 1
+    },
+    {
+      name = "Obtener_Ip_Actual"
+      label = "Obtener Ip Actual"
+      locationX = 182
+      locationY = 276
+      actionName = "IPAPICALL.api-bdc"
+      actionType = "externalService"
+      connector = {
+        targetReference = "Obtener_Ip_Almacenada"
+      }
+      flowTransactionModel = "CurrentTransaction"
+      nameSegment = "IPAPICALL.api-bdc"
+      storeOutputAutomatically = true
+      versionSegment = 1
+    },
+  ]
+  apiVersion = 57
+  assignments = [
+    {
+      name = "Asignar_nueva_Ip"
+      label = "Asignar nueva Ip"
+      locationX = 50
+      locationY = 636
+      assignmentItems = [
+        {
+          assignToReference = "Obtener_Ip_Almacenada.Valor__c"
+          operator = "Assign"
+          value = {
+            elementReference = "Obtener_Ip_Actual.2XX.ipString"
+          }
+        },
+      ]
+      connector = {
+        targetReference = "Actualizar_con_la_nueva_IP"
+      }
+    },
+  ]
+  decisions = [
+    {
+      name = "Comprobar_Ip_Almacenada"
+      label = "Comprobar Ip Almacenada"
+      locationX = 182
+      locationY = 516
+      defaultConnectorLabel = "Resultado predeterminado"
+      rules = [
+        {
+          name = "La_Ip_no_coincide"
+          conditionLogic = "and"
+          conditions = [
+            {
+              leftValueReference = "Obtener_Ip_Actual.2XX.ipString"
+              operator = "NotEqualTo"
+              rightValue = {
+                elementReference = "Obtener_Ip_Almacenada.Valor__c"
+              }
+            },
+          ]
+          connector = {
+            targetReference = "Asignar_nueva_Ip"
+          }
+          label = "La Ip no coincide"
+        },
+      ]
+    },
+  ]
+  environments = "Default"
+  interviewLabel = "Obtener Ip Actual {!$Flow.CurrentDateTime}"
+  label = "Obtener Ip Actual"
+  processMetadataValues = [
+    {
+      name = "BuilderType"
+      value = {
+        stringValue = "LightningFlowBuilder"
+      }
+    },
+    {
+      name = "CanvasMode"
+      value = {
+        stringValue = "AUTO_LAYOUT_CANVAS"
+      }
+    },
+    {
+      name = "OriginBuilderType"
+      value = {
+        stringValue = "LightningFlowBuilder"
+      }
+    },
+  ]
+  processType = "AutoLaunchedFlow"
+  recordLookups = [
+    {
+      name = "Obtener_Ip_Almacenada"
+      label = "Obtener Ip Almacenada"
+      locationX = 182
+      locationY = 396
+      assignNullValuesIfNoRecordsFound = false
+      connector = {
+        targetReference = "Comprobar_Ip_Almacenada"
+      }
+      filterLogic = "and"
+      filters = [
+        {
+          field = salesforce.Ultima_Ip_Obtenida__c.field.Valor__c
+          operator = "IsNull"
+          value = {
+            booleanValue = false
+          }
+        },
+      ]
+      getFirstRecordOnly = true
+      object = salesforce.Ultima_Ip_Obtenida__c
+      storeOutputAutomatically = true
+    },
+  ]
+  recordUpdates = [
+    {
+      name = "Actualizar_con_la_nueva_IP"
+      label = "Actualizar con la nueva IP"
+      locationX = 50
+      locationY = 756
+      connector = {
+        targetReference = "Notificar_cambio_de_IP"
+      }
+      inputReference = "Obtener_Ip_Almacenada"
+    },
+  ]
+  start = {
+    locationX = 56
+    locationY = 0
+    connector = {
+      targetReference = "Obtener_Ip_Actual"
+    }
+    schedule = {
+      frequency = "Daily"
+      startDate = "2023-04-17"
+      startTime = "16:00:00.000Z"
+    }
+    triggerType = "Scheduled"
+  }
+  status = "Obsolete"
+  _alias = "Obtener Ip Actual"
+}

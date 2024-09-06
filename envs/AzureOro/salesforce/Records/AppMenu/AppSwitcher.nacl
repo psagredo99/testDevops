@@ -1,0 +1,182 @@
+salesforce.AppMenu AppSwitcher {
+  fullName = "AppSwitcher"
+  appMenuItems = [
+    {
+      name = salesforce.CustomApplication.instance.standard__Platform
+      type = "CustomApplication"
+    },
+    {
+      name = salesforce.CustomApplication.instance.standard__Sales
+      type = "CustomApplication"
+    },
+    {
+      name = salesforce.CustomApplication.instance.standard__Chatter
+      type = "CustomApplication"
+    },
+    {
+      name = salesforce.CustomApplication.instance.standard__Marketing
+      type = "CustomApplication"
+    },
+    {
+      name = salesforce.CustomApplication.instance.standard__Service
+      type = "CustomApplication"
+    },
+    {
+      name = salesforce.CustomApplication.instance.standard__Community
+      type = "CustomApplication"
+    },
+    {
+      name = salesforce.CustomApplication.instance.standard__ServiceConsole
+      type = "CustomApplication"
+    },
+    {
+      name = salesforce.CustomApplication.instance.standard__LightningSales
+      type = "CustomApplication"
+    },
+    {
+      name = salesforce.CustomApplication.instance.Sales_Leadership
+      type = "CustomApplication"
+    },
+    {
+      name = salesforce.CustomApplication.instance.Lead_Generation
+      type = "CustomApplication"
+    },
+    {
+      name = salesforce.CustomApplication.instance.Sales_Operations
+      type = "CustomApplication"
+    },
+    {
+      name = salesforce.CustomApplication.instance.Relationship_Management
+      type = "CustomApplication"
+    },
+    {
+      name = salesforce.CustomApplication.instance.standard__LightningSalesConsole
+      type = "CustomApplication"
+    },
+    {
+      name = salesforce.CustomApplication.instance.standard__LightningBolt
+      type = "CustomApplication"
+    },
+    {
+      name = "CPQIntegrationUserApp"
+      type = "ConnectedApp"
+    },
+    {
+      name = salesforce.CustomApplication.instance.standard__SalesforceCMS
+      type = "CustomApplication"
+    },
+    {
+      name = salesforce.CustomApplication.instance.standard__AppLauncher
+      type = "CustomApplication"
+    },
+    {
+      name = salesforce.CustomApplication.instance.standard__AllTabSet
+      type = "CustomApplication"
+    },
+    {
+      name = salesforce.CustomApplication.instance.standard__OnlineSales
+      type = "CustomApplication"
+    },
+    {
+      name = salesforce.CustomApplication.instance.standard__LightningService
+      type = "CustomApplication"
+    },
+    {
+      name = salesforce.ConnectedApp.instance.Navision
+      type = "ConnectedApp"
+    },
+    {
+      name = "Chatter_Desktop"
+      type = "ConnectedApp"
+    },
+    {
+      name = "Chatter_for_Android"
+      type = "ConnectedApp"
+    },
+    {
+      name = "Chatter_for_BlackBerry"
+      type = "ConnectedApp"
+    },
+    {
+      name = "Chatter_for_iOS"
+      type = "ConnectedApp"
+    },
+    {
+      name = "Salesforce1_for_Windows"
+      type = "ConnectedApp"
+    },
+    {
+      name = "SalesforceA"
+      type = "ConnectedApp"
+    },
+    {
+      name = "Salesforce_Chatterbox"
+      type = "ConnectedApp"
+    },
+    {
+      name = "sortablegrid__Sortable_Data_Grids"
+      type = "CustomApplication"
+    },
+    {
+      name = salesforce.CustomApplication.instance.Secretaria
+      type = "CustomApplication"
+    },
+    {
+      name = salesforce.CustomApplication.instance.Kanban
+      type = "CustomApplication"
+    },
+    {
+      name = "Dataloader_Bulk"
+      type = "ConnectedApp"
+    },
+    {
+      name = "Dataloader_Partner"
+      type = "ConnectedApp"
+    },
+    {
+      name = "Forcecom_IDE"
+      type = "ConnectedApp"
+    },
+    {
+      name = "Forcecom_Migration_Tool"
+      type = "ConnectedApp"
+    },
+    {
+      name = "Salesforce_Mobile_Dashboards"
+      type = "ConnectedApp"
+    },
+    {
+      name = "Salesforce_Touch"
+      type = "ConnectedApp"
+    },
+    {
+      name = "Salesforce_for_Outlook"
+      type = "ConnectedApp"
+    },
+    {
+      name = "Workbench"
+      type = "ConnectedApp"
+    },
+    {
+      name = salesforce.CustomApplication.instance.Capital_Markets
+      type = "CustomApplication"
+    },
+    {
+      name = "OIQ_Integration"
+      type = "ConnectedApp"
+    },
+    {
+      name = "mone__Mailchimp"
+      type = "CustomApplication"
+    },
+    {
+      name = salesforce.CustomApplication.instance.standard__FlowsApp
+      type = "CustomApplication"
+    },
+    {
+      name = "DEVHUB_gyau8dmppsua2kuki3fk"
+      type = "ConnectedApp"
+    },
+  ]
+  _alias = "AppSwitcher"
+}

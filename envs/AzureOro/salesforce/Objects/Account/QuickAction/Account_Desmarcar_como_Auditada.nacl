@@ -1,0 +1,11 @@
+salesforce.QuickAction Account_Desmarcar_como_Auditada@vuu {
+  fullName = "Account.Desmarcar_como_Auditada"
+  flowDefinition = salesforce.Flow.instance.Cuenta_Desmarcar_como_Auditada
+  label = "Desmarcar como Auditada"
+  optionsCreateFeedItem = false
+  type = "Flow"
+  _parent = [
+    salesforce.Account,
+  ]
+  _alias = "Desmarcar como Auditada"
+}

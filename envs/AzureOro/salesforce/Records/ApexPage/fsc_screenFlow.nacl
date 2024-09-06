@@ -1,0 +1,14 @@
+salesforce.ApexPage fsc_screenFlow {
+  apiVersion = 51
+  availableInTouch = false
+  confirmationTokenRequired = false
+  label = "Screen Flow (Base Pack)"
+  fullName = "fsc_screenFlow"
+  content = file("salesforce/Records/ApexPage/fsc_screenFlow.page")
+  _generated_dependencies = [
+    {
+      reference = salesforce.AuraDefinitionBundle.instance.fsc_screenFlowApp
+    },
+  ]
+  _alias = "Screen Flow (Base Pack)"
+}

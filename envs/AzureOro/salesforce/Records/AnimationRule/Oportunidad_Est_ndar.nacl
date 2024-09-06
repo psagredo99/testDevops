@@ -1,0 +1,13 @@
+salesforce.AnimationRule Oportunidad_Est_ndar {
+  fullName = "Oportunidad_Est_ndar"
+  animationFrequency = "often"
+  developerName = "Oportunidad_Est_ndar"
+  isActive = true
+  masterLabel = "Oportunidad Estándar"
+  recordTypeContext = "Custom"
+  recordTypeName = salesforce.RecordType.instance.Opportunity_Oportunidades_estandar
+  sobjectType = salesforce.Opportunity
+  targetField = salesforce.Opportunity.field.StageName
+  targetFieldChangeToValues = "Cerrada ganada"
+  _alias = "Oportunidad_Est_ndar"
+}

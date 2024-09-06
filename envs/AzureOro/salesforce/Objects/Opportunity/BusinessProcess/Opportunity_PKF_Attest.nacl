@@ -1,0 +1,35 @@
+salesforce.BusinessProcess Opportunity_PKF_Attest@us {
+  fullName = "Opportunity.PKF Attest"
+  description = "Versión inicial del proceso de ventas para la gestión de oportunidades de PKF Attest"
+  isActive = true
+  values = [
+    {
+      fullName = "Cerrada ganada"
+      default = false
+    },
+    {
+      fullName = "Cerrada perdida"
+      default = false
+    },
+    {
+      fullName = "En preparación"
+      default = false
+    },
+    {
+      fullName = "Identificada"
+      default = false
+    },
+    {
+      fullName = "Ofertada"
+      default = false
+    },
+    {
+      fullName = "Postpuesta"
+      default = false
+    },
+  ]
+  _parent = [
+    salesforce.Opportunity,
+  ]
+  _alias = "Opportunity.PKF Attest"
+}

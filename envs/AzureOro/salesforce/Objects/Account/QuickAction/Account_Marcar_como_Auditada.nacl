@@ -1,0 +1,11 @@
+salesforce.QuickAction Account_Marcar_como_Auditada@vuu {
+  fullName = "Account.Marcar_como_Auditada"
+  flowDefinition = salesforce.Flow.instance.Cuenta_Marcar_como_Auditada
+  label = "Marcar como Auditada"
+  optionsCreateFeedItem = false
+  type = "Flow"
+  _parent = [
+    salesforce.Account,
+  ]
+  _alias = "Marcar como Auditada"
+}

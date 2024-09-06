@@ -1,0 +1,2499 @@
+salesforce.LightningPage Opportunity_Record_Page {
+  flexiPageRegions = [
+    {
+      itemInstances = [
+        {
+          componentInstance = {
+            componentInstanceProperties = [
+              {
+                name = "actionNames"
+                valueList = {
+                  valueListItems = [
+                    {
+                      value = "Edit"
+                    },
+                    {
+                      value = "Delete"
+                    },
+                    {
+                      value = "Clone"
+                    },
+                  ]
+                }
+              },
+              {
+                name = "collapsed"
+                value = "false"
+              },
+              {
+                name = "enableActionsConfiguration"
+                value = "true"
+              },
+              {
+                name = "enableActionsInNative"
+                value = "false"
+              },
+              {
+                name = "hideChatterActions"
+                value = "false"
+              },
+              {
+                name = "numVisibleActions"
+                value = "5"
+              },
+            ]
+            componentName = "force:highlightsPanel"
+            identifier = "force_highlightsPanel"
+          }
+        },
+        {
+          componentInstance = {
+            componentInstanceProperties = [
+              {
+                name = "expiryDate"
+              },
+              {
+                name = "fieldAPI"
+              },
+              {
+                name = "message"
+                value = "{!$Label.Oportunidad_Cuenta_auditada}"
+              },
+              {
+                name = "sound"
+                value = "false"
+              },
+              {
+                name = "title"
+                value = "Cliente Auditado"
+              },
+              {
+                name = "toastDuration"
+                value = "10"
+              },
+              {
+                name = "toastMode"
+                value = "Dismissible"
+              },
+              {
+                name = "toastType"
+                value = "Warning"
+              },
+              {
+                name = "type"
+                value = "Toast"
+              },
+            ]
+            componentName = "S360_LN:PopUp"
+            identifier = "S360_LN_PopUp"
+            visibilityRule = {
+              criteria = [
+                {
+                  leftValue = "{!Record.RecordType.Name}"
+                  operator = "EQUAL"
+                  rightValue = "Oportunidades clientes auditados"
+                },
+              ]
+            }
+          }
+        },
+        {
+          componentInstance = {
+            componentInstanceProperties = [
+              {
+                name = "hideUpdateButton"
+                value = "false"
+              },
+              {
+                name = "variant"
+                value = "linear"
+              },
+            ]
+            componentName = "runtime_sales_pathassistant:pathAssistant"
+            identifier = "runtime_sales_pathassistant_pathAssistant"
+          }
+        },
+      ]
+      name = "header"
+      type = "Region"
+    },
+    {
+      itemInstances = [
+        {
+          fieldInstance = {
+            fieldInstanceProperties = {
+              name = "uiBehavior"
+              value = "required"
+            }
+            fieldItem = "Record.AccountId"
+            identifier = "RecordAccountIdField"
+          }
+        },
+        {
+          fieldInstance = {
+            fieldInstanceProperties = {
+              name = "uiBehavior"
+              value = "required"
+            }
+            fieldItem = "Record.Name"
+            identifier = "RecordNameField"
+          }
+        },
+        {
+          fieldInstance = {
+            fieldInstanceProperties = {
+              name = "uiBehavior"
+              value = "required"
+            }
+            fieldItem = "Record.CloseDate"
+            identifier = "RecordCloseDateField"
+          }
+        },
+        {
+          fieldInstance = {
+            fieldInstanceProperties = {
+              name = "uiBehavior"
+              value = "required"
+            }
+            fieldItem = "Record.StageName"
+            identifier = "RecordStageNameField"
+          }
+        },
+        {
+          fieldInstance = {
+            fieldInstanceProperties = {
+              name = "uiBehavior"
+              value = "required"
+            }
+            fieldItem = "Record.ForecastCategoryName"
+            identifier = "RecordForecastCategoryNameField"
+          }
+        },
+      ]
+      name = "Facet-bda0868e-f60d-43d1-bc15-da4b2cf8d682"
+      type = "Facet"
+    },
+    {
+      itemInstances = [
+        {
+          fieldInstance = {
+            fieldInstanceProperties = {
+              name = "uiBehavior"
+              value = "none"
+            }
+            fieldItem = "Record.Socio_oportunidad__c"
+            identifier = "RecordSocio_oportunidad_cField"
+          }
+        },
+        {
+          fieldInstance = {
+            fieldInstanceProperties = {
+              name = "uiBehavior"
+              value = "none"
+            }
+            fieldItem = "Record.Responsable_oportunidad__c"
+            identifier = "RecordResponsable_oportunidad_cField"
+          }
+        },
+        {
+          fieldInstance = {
+            fieldInstanceProperties = {
+              name = "uiBehavior"
+              value = "readonly"
+            }
+            fieldItem = "Record.Codigo_Oferta__c"
+            identifier = "RecordCodigo_Oferta_cField"
+            visibilityRule = {
+              criteria = [
+                {
+                  leftValue = "{!Record.StageName}"
+                  operator = "NE"
+                  rightValue = "Identificada"
+                },
+              ]
+            }
+          }
+        },
+        {
+          fieldInstance = {
+            fieldInstanceProperties = {
+              name = "uiBehavior"
+              value = "none"
+            }
+            fieldItem = "Record.Amount"
+            identifier = "RecordAmountField"
+          }
+        },
+        {
+          fieldInstance = {
+            fieldInstanceProperties = {
+              name = "uiBehavior"
+              value = "none"
+            }
+            fieldItem = "Record.Probability"
+            identifier = "RecordProbabilityField"
+          }
+        },
+      ]
+      name = "Facet-f31cfb4a-cff9-4183-ab78-8e77ec6894f0"
+      type = "Facet"
+    },
+    {
+      itemInstances = [
+        {
+          componentInstance = {
+            componentInstanceProperties = [
+              {
+                name = "body"
+                value = "Facet-bda0868e-f60d-43d1-bc15-da4b2cf8d682"
+              },
+            ]
+            componentName = "flexipage:column"
+            identifier = "flexipage_column10"
+          }
+        },
+        {
+          componentInstance = {
+            componentInstanceProperties = [
+              {
+                name = "body"
+                value = "Facet-f31cfb4a-cff9-4183-ab78-8e77ec6894f0"
+              },
+            ]
+            componentName = "flexipage:column"
+            identifier = "flexipage_column11"
+          }
+        },
+      ]
+      name = "Facet-2efc519c-2c18-4a46-9a1c-6ed5d372b615"
+      type = "Facet"
+    },
+    {
+      itemInstances = [
+        {
+          fieldInstance = {
+            fieldInstanceProperties = {
+              name = "uiBehavior"
+              value = "none"
+            }
+            fieldItem = "Record.Origen__c"
+            identifier = "RecordOrigen_cField"
+          }
+        },
+        {
+          fieldInstance = {
+            fieldInstanceProperties = {
+              name = "uiBehavior"
+              value = "none"
+            }
+            fieldItem = "Record.Detalle_origen__c"
+            identifier = "RecordDetalle_origen_cField"
+            visibilityRule = {
+              booleanFilter = "1 OR 2"
+              criteria = [
+                {
+                  leftValue = "{!Record.Origen__c}"
+                  operator = "EQUAL"
+                  rightValue = "Firmas miembro de PKF Internacional"
+                },
+                {
+                  leftValue = "{!Record.Origen__c}"
+                  operator = "EQUAL"
+                  rightValue = "Referido"
+                },
+              ]
+            }
+          }
+        },
+      ]
+      name = "Facet-210abc9c-8d99-42b3-b99d-a9e85399a3f8"
+      type = "Facet"
+    },
+    {
+      itemInstances = [
+        {
+          fieldInstance = {
+            fieldInstanceProperties = {
+              name = "uiBehavior"
+              value = "none"
+            }
+            fieldItem = "Record.CampaignId"
+            identifier = "RecordCampaignIdField"
+            visibilityRule = {
+              criteria = [
+                {
+                  leftValue = "{!Record.Origen__c}"
+                  operator = "EQUAL"
+                  rightValue = "Campaña"
+                },
+              ]
+            }
+          }
+        },
+      ]
+      name = "Facet-44e8b210-d0c0-4a1b-b6d7-5816b0497a02"
+      type = "Facet"
+    },
+    {
+      itemInstances = [
+        {
+          componentInstance = {
+            componentInstanceProperties = [
+              {
+                name = "body"
+                value = "Facet-210abc9c-8d99-42b3-b99d-a9e85399a3f8"
+              },
+            ]
+            componentName = "flexipage:column"
+            identifier = "flexipage_column"
+          }
+        },
+        {
+          componentInstance = {
+            componentInstanceProperties = [
+              {
+                name = "body"
+                value = "Facet-44e8b210-d0c0-4a1b-b6d7-5816b0497a02"
+              },
+            ]
+            componentName = "flexipage:column"
+            identifier = "flexipage_column2"
+          }
+        },
+      ]
+      name = "Facet-9e875790-93c9-4c86-875c-eb467e435af6"
+      type = "Facet"
+    },
+    {
+      itemInstances = [
+        {
+          fieldInstance = {
+            fieldInstanceProperties = {
+              name = "uiBehavior"
+              value = "none"
+            }
+            fieldItem = "Record.Type"
+            identifier = "RecordTypeField"
+          }
+        },
+      ]
+      name = "Facet-dac64c49-7ca4-4dd8-9dde-aca45489bcc5"
+      type = "Facet"
+    },
+    {
+      itemInstances = [
+        {
+          fieldInstance = {
+            fieldInstanceProperties = {
+              name = "uiBehavior"
+              value = "none"
+            }
+            fieldItem = "Record.Division__c"
+            identifier = "RecordDivision_cField"
+          }
+        },
+      ]
+      name = "Facet-47986c8a-b34b-4c9b-be5e-d1fd2883fa4b"
+      type = "Facet"
+    },
+    {
+      itemInstances = [
+        {
+          componentInstance = {
+            componentInstanceProperties = [
+              {
+                name = "body"
+                value = "Facet-dac64c49-7ca4-4dd8-9dde-aca45489bcc5"
+              },
+            ]
+            componentName = "flexipage:column"
+            identifier = "flexipage_column3"
+          }
+        },
+        {
+          componentInstance = {
+            componentInstanceProperties = [
+              {
+                name = "body"
+                value = "Facet-47986c8a-b34b-4c9b-be5e-d1fd2883fa4b"
+              },
+            ]
+            componentName = "flexipage:column"
+            identifier = "flexipage_column4"
+          }
+        },
+      ]
+      name = "Facet-f2231ac9-7107-4220-8387-0360403bcb07"
+      type = "Facet"
+    },
+    {
+      itemInstances = [
+        {
+          fieldInstance = {
+            fieldInstanceProperties = {
+              name = "uiBehavior"
+              value = "none"
+            }
+            fieldItem = "Record.Description"
+            identifier = "RecordDescriptionField"
+          }
+        },
+      ]
+      name = "Facet-9fdfc475-5cc2-403d-977a-1f39bfaf91cc"
+      type = "Facet"
+    },
+    {
+      itemInstances = [
+        {
+          componentInstance = {
+            componentInstanceProperties = [
+              {
+                name = "body"
+                value = "Facet-9fdfc475-5cc2-403d-977a-1f39bfaf91cc"
+              },
+            ]
+            componentName = "flexipage:column"
+            identifier = "flexipage_column5"
+          }
+        },
+      ]
+      name = "Facet-ca6da9f0-0019-4688-aadb-8124c3116e24"
+      type = "Facet"
+    },
+    {
+      itemInstances = [
+        {
+          fieldInstance = {
+            fieldInstanceProperties = {
+              name = "uiBehavior"
+              value = "none"
+            }
+            fieldItem = "Record.Documentacion__c"
+            identifier = "RecordDocumentacion_ITC_cField"
+          }
+        },
+      ]
+      name = "Facet-23e443a5-82a0-4dcb-b487-eb03307da148"
+      type = "Facet"
+    },
+    {
+      itemInstances = [
+        {
+          componentInstance = {
+            componentInstanceProperties = [
+              {
+                name = "body"
+                value = "Facet-23e443a5-82a0-4dcb-b487-eb03307da148"
+              },
+            ]
+            componentName = "flexipage:column"
+            identifier = "flexipage_column6"
+          }
+        },
+      ]
+      name = "Facet-a1e0eeff-4d6c-4d86-99cd-83695670817d"
+      type = "Facet"
+    },
+    {
+      itemInstances = [
+        {
+          fieldInstance = {
+            fieldInstanceProperties = {
+              name = "uiBehavior"
+              value = "none"
+            }
+            fieldItem = "Record.Loss_Reason__c"
+            identifier = "RecordLoss_Reason_cField"
+          }
+        },
+      ]
+      name = "Facet-6f41fec1-be69-480f-b112-b9bd02a472ce"
+      type = "Facet"
+    },
+    {
+      itemInstances = [
+        {
+          fieldInstance = {
+            fieldInstanceProperties = {
+              name = "uiBehavior"
+              value = "none"
+            }
+            fieldItem = "Record.Descripcion_motivo_p_rdida_de_oportunida__c"
+            identifier = "RecordDescripcion_motivo_p_rdida_de_oportunida_cField"
+          }
+        },
+      ]
+      name = "Facet-96a8507b-0dc2-4f08-9c36-5e2f265ec4ef"
+      type = "Facet"
+    },
+    {
+      itemInstances = [
+        {
+          componentInstance = {
+            componentInstanceProperties = [
+              {
+                name = "body"
+                value = "Facet-6f41fec1-be69-480f-b112-b9bd02a472ce"
+              },
+            ]
+            componentName = "flexipage:column"
+            identifier = "flexipage_column7"
+          }
+        },
+        {
+          componentInstance = {
+            componentInstanceProperties = [
+              {
+                name = "body"
+                value = "Facet-96a8507b-0dc2-4f08-9c36-5e2f265ec4ef"
+              },
+            ]
+            componentName = "flexipage:column"
+            identifier = "flexipage_column12"
+          }
+        },
+      ]
+      name = "Facet-81414d58-e3d8-49f9-a5f3-2a576ef56641"
+      type = "Facet"
+    },
+    {
+      itemInstances = [
+        {
+          fieldInstance = {
+            fieldInstanceProperties = {
+              name = "uiBehavior"
+              value = "readonly"
+            }
+            fieldItem = "Record.CreatedById"
+            identifier = "RecordCreatedByIdField"
+          }
+        },
+        {
+          fieldInstance = {
+            fieldInstanceProperties = {
+              name = "uiBehavior"
+              value = "readonly"
+            }
+            fieldItem = "Record.RecordTypeId"
+            identifier = "RecordRecordTypeIdField"
+          }
+        },
+      ]
+      name = "Facet-3166f656-c33e-4d6a-92c0-a2be76b1f002"
+      type = "Facet"
+    },
+    {
+      itemInstances = [
+        {
+          fieldInstance = {
+            fieldInstanceProperties = {
+              name = "uiBehavior"
+              value = "readonly"
+            }
+            fieldItem = "Record.LastModifiedById"
+            identifier = "RecordLastModifiedByIdField"
+          }
+        },
+        {
+          fieldInstance = {
+            fieldInstanceProperties = {
+              name = "uiBehavior"
+              value = "readonly"
+            }
+            fieldItem = "Record.OwnerId"
+            identifier = "RecordOwnerIdField"
+          }
+        },
+      ]
+      name = "Facet-99325bda-8a12-4e6b-a87c-4ae6a42240dc"
+      type = "Facet"
+    },
+    {
+      itemInstances = [
+        {
+          componentInstance = {
+            componentInstanceProperties = [
+              {
+                name = "body"
+                value = "Facet-3166f656-c33e-4d6a-92c0-a2be76b1f002"
+              },
+            ]
+            componentName = "flexipage:column"
+            identifier = "flexipage_column8"
+          }
+        },
+        {
+          componentInstance = {
+            componentInstanceProperties = [
+              {
+                name = "body"
+                value = "Facet-99325bda-8a12-4e6b-a87c-4ae6a42240dc"
+              },
+            ]
+            componentName = "flexipage:column"
+            identifier = "flexipage_column9"
+          }
+        },
+      ]
+      name = "Facet-bee9cbcd-f78b-4c8e-8833-118648a980f1"
+      type = "Facet"
+    },
+    {
+      itemInstances = [
+        {
+          componentInstance = {
+            componentInstanceProperties = [
+              {
+                name = "columns"
+                value = "Facet-2efc519c-2c18-4a46-9a1c-6ed5d372b615"
+              },
+              {
+                name = "horizontalAlignment"
+                value = "false"
+              },
+              {
+                name = "label"
+                value = "Información de la Oportunidad"
+              },
+            ]
+            componentName = "flexipage:fieldSection"
+            identifier = "flexipage_fieldSection6"
+          }
+        },
+        {
+          componentInstance = {
+            componentInstanceProperties = [
+              {
+                name = "columns"
+                value = "Facet-9e875790-93c9-4c86-875c-eb467e435af6"
+              },
+              {
+                name = "horizontalAlignment"
+                value = "false"
+              },
+              {
+                name = "label"
+                value = "Origen de la oportunidad"
+              },
+            ]
+            componentName = "flexipage:fieldSection"
+            identifier = "flexipage_fieldSection"
+          }
+        },
+        {
+          componentInstance = {
+            componentInstanceProperties = [
+              {
+                name = "columns"
+                value = "Facet-f2231ac9-7107-4220-8387-0360403bcb07"
+              },
+              {
+                name = "horizontalAlignment"
+                value = "false"
+              },
+              {
+                name = "label"
+                value = "Información Adicional"
+              },
+            ]
+            componentName = "flexipage:fieldSection"
+            identifier = "flexipage_fieldSection2"
+          }
+        },
+        {
+          componentInstance = {
+            componentInstanceProperties = [
+              {
+                name = "columns"
+                value = "Facet-ca6da9f0-0019-4688-aadb-8124c3116e24"
+              },
+              {
+                name = "horizontalAlignment"
+                value = "false"
+              },
+              {
+                name = "label"
+                value = "Descripción"
+              },
+            ]
+            componentName = "flexipage:fieldSection"
+            identifier = "flexipage_fieldSection3"
+          }
+        },
+        {
+          componentInstance = {
+            componentInstanceProperties = [
+              {
+                name = "columns"
+                value = "Facet-a1e0eeff-4d6c-4d86-99cd-83695670817d"
+              },
+              {
+                name = "horizontalAlignment"
+                value = "false"
+              },
+              {
+                name = "label"
+                value = "Ubicación de la documentación"
+              },
+            ]
+            componentName = "flexipage:fieldSection"
+            identifier = "flexipage_fieldSection4"
+          }
+        },
+        {
+          componentInstance = {
+            componentInstanceProperties = [
+              {
+                name = "columns"
+                value = "Facet-81414d58-e3d8-49f9-a5f3-2a576ef56641"
+              },
+              {
+                name = "horizontalAlignment"
+                value = "false"
+              },
+              {
+                name = "label"
+                value = "Razones pérdida de la oportunidad"
+              },
+            ]
+            componentName = "flexipage:fieldSection"
+            identifier = "flexipage_fieldSection7"
+          }
+        },
+        {
+          componentInstance = {
+            componentInstanceProperties = [
+              {
+                name = "columns"
+                value = "Facet-bee9cbcd-f78b-4c8e-8833-118648a980f1"
+              },
+              {
+                name = "horizontalAlignment"
+                value = "false"
+              },
+              {
+                name = "label"
+                value = "Información del Sistema"
+              },
+            ]
+            componentName = "flexipage:fieldSection"
+            identifier = "flexipage_fieldSection5"
+          }
+        },
+        {
+          componentInstance = {
+            componentName = "force:recordDetailPanelMobile"
+            identifier = "force_recordDetailPanelMobile"
+          }
+        },
+      ]
+      name = "Facet-722c602a-105e-476d-873f-06d210e85866"
+      type = "Facet"
+    },
+    {
+      itemInstances = [
+        {
+          componentInstance = {
+            componentInstanceProperties = [
+              {
+                name = "decorate"
+                value = "true"
+              },
+              {
+                name = "richTextValue"
+                value = "<p><strong style=\"font-size: 16px;\">EXTERNOS</strong></p>"
+              },
+            ]
+            componentName = "flexipage:richText"
+            identifier = "flexipage_richText"
+          }
+        },
+        {
+          componentInstance = {
+            componentInstanceProperties = [
+              {
+                name = "parentFieldApiName"
+                value = "Opportunity.Id"
+              },
+              {
+                name = "relatedListApiName"
+                value = "OpportunityContactRoles"
+              },
+              {
+                name = "relatedListComponentOverride"
+                value = "GRID"
+              },
+              {
+                name = "rowsToDisplay"
+                value = "10"
+              },
+              {
+                name = "showActionBar"
+                value = "true"
+              },
+            ]
+            componentName = "force:relatedListSingleContainer"
+            identifier = "force_relatedListSingleContainer"
+          }
+        },
+        {
+          componentInstance = {
+            componentInstanceProperties = [
+              {
+                name = "decorate"
+                value = "true"
+              },
+              {
+                name = "richTextValue"
+                value = "<p><strong style=\"font-size: 16px;\">INTERNOS</strong></p>"
+              },
+            ]
+            componentName = "flexipage:richText"
+            identifier = "flexipage_richText2"
+          }
+        },
+        {
+          componentInstance = {
+            componentInstanceProperties = [
+              {
+                name = "parentFieldApiName"
+                value = "Opportunity.Id"
+              },
+              {
+                name = "relatedListApiName"
+                value = "Equipos_de_la_oportunidad__r"
+              },
+              {
+                name = "relatedListComponentOverride"
+                value = "NONE"
+              },
+              {
+                name = "rowsToDisplay"
+                value = "10"
+              },
+              {
+                name = "showActionBar"
+                value = "true"
+              },
+            ]
+            componentName = "force:relatedListSingleContainer"
+            identifier = "force_relatedListSingleContainer3"
+          }
+        },
+        {
+          componentInstance = {
+            componentInstanceProperties = [
+              {
+                name = "parentFieldApiName"
+                value = "Opportunity.Id"
+              },
+              {
+                name = "relatedListApiName"
+                value = "OpportunityTeamMembers"
+              },
+              {
+                name = "relatedListComponentOverride"
+                value = "NONE"
+              },
+              {
+                name = "rowsToDisplay"
+                value = "10"
+              },
+              {
+                name = "showActionBar"
+                value = "true"
+              },
+            ]
+            componentName = "force:relatedListSingleContainer"
+            identifier = "force_relatedListSingleContainer2"
+            visibilityRule = {
+              criteria = [
+                {
+                  leftValue = "{!$User.LastName}"
+                  operator = "CONTAINS"
+                  rightValue = "Administ"
+                },
+              ]
+            }
+          }
+        },
+      ]
+      name = "Facet-f9bf7fb5-2f84-412f-a587-fa03f4b36185"
+      type = "Facet"
+    },
+    {
+      itemInstances = [
+        {
+          componentInstance = {
+            componentInstanceProperties = [
+              {
+                name = "idPedido"
+                value = "recordId"
+              },
+            ]
+            componentName = "AsistenteOportunidades"
+            identifier = "c_AsistenteOportunidades"
+          }
+        },
+        {
+          componentInstance = {
+            componentInstanceProperties = [
+              {
+                name = "parentFieldApiName"
+                value = "Opportunity.Id"
+              },
+              {
+                name = "relatedListApiName"
+                value = "OpportunityLineItems"
+              },
+              {
+                name = "relatedListComponentOverride"
+                value = "NONE"
+              },
+              {
+                name = "rowsToDisplay"
+                value = "10"
+              },
+              {
+                name = "showActionBar"
+                value = "true"
+              },
+            ]
+            componentName = "force:relatedListSingleContainer"
+            identifier = "force_relatedListSingleContainer5"
+            visibilityRule = {
+              criteria = [
+                {
+                  leftValue = "{!$User.LastName}"
+                  operator = "CONTAINS"
+                  rightValue = "Administra"
+                },
+              ]
+            }
+          }
+        },
+      ]
+      name = "Facet-c7033ece-a1f8-41bb-92ef-92f8687e27bb"
+      type = "Facet"
+    },
+    {
+      itemInstances = [
+        {
+          componentInstance = {
+            componentInstanceProperties = [
+              {
+                name = "parentFieldApiName"
+                value = "Opportunity.Id"
+              },
+              {
+                name = "relatedListApiName"
+                value = "OpportunityHistories"
+              },
+              {
+                name = "relatedListComponentOverride"
+                value = "NONE"
+              },
+              {
+                name = "rowsToDisplay"
+                value = "10"
+              },
+              {
+                name = "showActionBar"
+                value = "true"
+              },
+            ]
+            componentName = "force:relatedListSingleContainer"
+            identifier = "force_relatedListSingleContainer7"
+          }
+        },
+      ]
+      name = "Facet-5vjmvxs4q7m"
+      type = "Facet"
+    },
+    {
+      itemInstances = [
+        {
+          componentInstance = {
+            componentInstanceProperties = [
+              {
+                name = "active"
+                value = "true"
+              },
+              {
+                name = "body"
+                value = "Facet-722c602a-105e-476d-873f-06d210e85866"
+              },
+              {
+                name = "title"
+                value = "Standard.Tab.detail"
+              },
+            ]
+            componentName = "flexipage:tab"
+            identifier = "flexipage_tab2"
+          }
+        },
+        {
+          componentInstance = {
+            componentInstanceProperties = [
+              {
+                name = "body"
+                value = "Facet-f9bf7fb5-2f84-412f-a587-fa03f4b36185"
+              },
+              {
+                name = "title"
+                value = "Personas"
+              },
+            ]
+            componentName = "flexipage:tab"
+            identifier = "flexipage_tab3"
+          }
+        },
+        {
+          componentInstance = {
+            componentInstanceProperties = [
+              {
+                name = "body"
+                value = "Facet-c7033ece-a1f8-41bb-92ef-92f8687e27bb"
+              },
+              {
+                name = "title"
+                value = "Servicios"
+              },
+            ]
+            componentName = "flexipage:tab"
+            identifier = "flexipage_tab"
+          }
+        },
+        {
+          componentInstance = {
+            componentInstanceProperties = [
+              {
+                name = "body"
+                value = "Facet-5vjmvxs4q7m"
+              },
+              {
+                name = "title"
+                value = "Historial de cambios"
+              },
+            ]
+            componentName = "flexipage:tab"
+            identifier = "flexipage_tab4"
+          }
+        },
+      ]
+      name = "Facet-da8e7260-6ff6-4fa0-8a96-d83e5b77c391"
+      type = "Facet"
+    },
+    {
+      itemInstances = [
+        {
+          fieldInstance = {
+            fieldInstanceProperties = {
+              name = "uiBehavior"
+              value = "required"
+            }
+            fieldItem = "Record.AccountId"
+            identifier = "RecordAccountIdField2"
+          }
+        },
+        {
+          fieldInstance = {
+            fieldInstanceProperties = {
+              name = "uiBehavior"
+              value = "required"
+            }
+            fieldItem = "Record.Name"
+            identifier = "RecordNameField2"
+          }
+        },
+        {
+          fieldInstance = {
+            fieldInstanceProperties = {
+              name = "uiBehavior"
+              value = "required"
+            }
+            fieldItem = "Record.CloseDate"
+            identifier = "RecordCloseDateField2"
+          }
+        },
+        {
+          fieldInstance = {
+            fieldInstanceProperties = {
+              name = "uiBehavior"
+              value = "required"
+            }
+            fieldItem = "Record.StageName"
+            identifier = "RecordStageNameField2"
+          }
+        },
+        {
+          fieldInstance = {
+            fieldInstanceProperties = {
+              name = "uiBehavior"
+              value = "required"
+            }
+            fieldItem = "Record.ForecastCategoryName"
+            identifier = "RecordForecastCategoryNameField2"
+          }
+        },
+      ]
+      name = "Facet-0mb8d4g0hnbn"
+      type = "Facet"
+    },
+    {
+      itemInstances = [
+        {
+          fieldInstance = {
+            fieldInstanceProperties = {
+              name = "uiBehavior"
+              value = "none"
+            }
+            fieldItem = "Record.Socio_oportunidad__c"
+            identifier = "RecordSocio_oportunidad_cField2"
+          }
+        },
+        {
+          fieldInstance = {
+            fieldInstanceProperties = {
+              name = "uiBehavior"
+              value = "none"
+            }
+            fieldItem = "Record.Responsable_oportunidad__c"
+            identifier = "RecordResponsable_oportunidad_cField2"
+          }
+        },
+        {
+          fieldInstance = {
+            fieldInstanceProperties = {
+              name = "uiBehavior"
+              value = "readonly"
+            }
+            fieldItem = "Record.Codigo_Oferta__c"
+            identifier = "RecordCodigo_Oferta_cField2"
+            visibilityRule = {
+              criteria = [
+                {
+                  leftValue = "{!Record.StageName}"
+                  operator = "NE"
+                  rightValue = "Identificada"
+                },
+              ]
+            }
+          }
+        },
+        {
+          fieldInstance = {
+            fieldInstanceProperties = {
+              name = "uiBehavior"
+              value = "none"
+            }
+            fieldItem = "Record.Amount"
+            identifier = "RecordAmountField2"
+          }
+        },
+        {
+          fieldInstance = {
+            fieldInstanceProperties = {
+              name = "uiBehavior"
+              value = "none"
+            }
+            fieldItem = "Record.Probability"
+            identifier = "RecordProbabilityField2"
+          }
+        },
+      ]
+      name = "Facet-zoiejxo6bub"
+      type = "Facet"
+    },
+    {
+      itemInstances = [
+        {
+          componentInstance = {
+            componentInstanceProperties = [
+              {
+                name = "body"
+                value = "Facet-0mb8d4g0hnbn"
+              },
+            ]
+            componentName = "flexipage:column"
+            identifier = "flexipage_column15"
+          }
+        },
+        {
+          componentInstance = {
+            componentInstanceProperties = [
+              {
+                name = "body"
+                value = "Facet-zoiejxo6bub"
+              },
+            ]
+            componentName = "flexipage:column"
+            identifier = "flexipage_column16"
+          }
+        },
+      ]
+      name = "Facet-1q5f4kuk6t7"
+      type = "Facet"
+    },
+    {
+      itemInstances = [
+        {
+          fieldInstance = {
+            fieldInstanceProperties = {
+              name = "uiBehavior"
+              value = "none"
+            }
+            fieldItem = "Record.Origen__c"
+            identifier = "RecordOrigen_cField2"
+          }
+        },
+        {
+          fieldInstance = {
+            fieldInstanceProperties = {
+              name = "uiBehavior"
+              value = "none"
+            }
+            fieldItem = "Record.Detalle_origen__c"
+            identifier = "RecordDetalle_origen_cField2"
+            visibilityRule = {
+              booleanFilter = "1 OR 2"
+              criteria = [
+                {
+                  leftValue = "{!Record.Origen__c}"
+                  operator = "EQUAL"
+                  rightValue = "Firmas miembro de PKF Internacional"
+                },
+                {
+                  leftValue = "{!Record.Origen__c}"
+                  operator = "EQUAL"
+                  rightValue = "Referido"
+                },
+              ]
+            }
+          }
+        },
+      ]
+      name = "Facet-zy4nfrv9jtd"
+      type = "Facet"
+    },
+    {
+      itemInstances = [
+        {
+          fieldInstance = {
+            fieldInstanceProperties = {
+              name = "uiBehavior"
+              value = "none"
+            }
+            fieldItem = "Record.CampaignId"
+            identifier = "RecordCampaignIdField2"
+            visibilityRule = {
+              criteria = [
+                {
+                  leftValue = "{!Record.Origen__c}"
+                  operator = "EQUAL"
+                  rightValue = "Campaña"
+                },
+              ]
+            }
+          }
+        },
+      ]
+      name = "Facet-jsof1f4o7p"
+      type = "Facet"
+    },
+    {
+      itemInstances = [
+        {
+          componentInstance = {
+            componentInstanceProperties = [
+              {
+                name = "body"
+                value = "Facet-zy4nfrv9jtd"
+              },
+            ]
+            componentName = "flexipage:column"
+            identifier = "flexipage_column17"
+          }
+        },
+        {
+          componentInstance = {
+            componentInstanceProperties = [
+              {
+                name = "body"
+                value = "Facet-jsof1f4o7p"
+              },
+            ]
+            componentName = "flexipage:column"
+            identifier = "flexipage_column18"
+          }
+        },
+      ]
+      name = "Facet-0y7jke5ulklj"
+      type = "Facet"
+    },
+    {
+      itemInstances = [
+        {
+          fieldInstance = {
+            fieldInstanceProperties = {
+              name = "uiBehavior"
+              value = "none"
+            }
+            fieldItem = "Record.Type"
+            identifier = "RecordTypeField2"
+          }
+        },
+      ]
+      name = "Facet-8gljz8vmck7"
+      type = "Facet"
+    },
+    {
+      itemInstances = [
+        {
+          fieldInstance = {
+            fieldInstanceProperties = {
+              name = "uiBehavior"
+              value = "none"
+            }
+            fieldItem = "Record.Division__c"
+            identifier = "RecordDivision_cField2"
+          }
+        },
+      ]
+      name = "Facet-kxflgroupog"
+      type = "Facet"
+    },
+    {
+      itemInstances = [
+        {
+          componentInstance = {
+            componentInstanceProperties = [
+              {
+                name = "body"
+                value = "Facet-8gljz8vmck7"
+              },
+            ]
+            componentName = "flexipage:column"
+            identifier = "flexipage_column19"
+          }
+        },
+        {
+          componentInstance = {
+            componentInstanceProperties = [
+              {
+                name = "body"
+                value = "Facet-kxflgroupog"
+              },
+            ]
+            componentName = "flexipage:column"
+            identifier = "flexipage_column20"
+          }
+        },
+      ]
+      name = "Facet-e84s3km19n9"
+      type = "Facet"
+    },
+    {
+      itemInstances = [
+        {
+          fieldInstance = {
+            fieldInstanceProperties = {
+              name = "uiBehavior"
+              value = "none"
+            }
+            fieldItem = "Record.Description"
+            identifier = "RecordDescriptionField2"
+          }
+        },
+      ]
+      name = "Facet-5gxlcnpbzwd"
+      type = "Facet"
+    },
+    {
+      itemInstances = [
+        {
+          componentInstance = {
+            componentInstanceProperties = [
+              {
+                name = "body"
+                value = "Facet-5gxlcnpbzwd"
+              },
+            ]
+            componentName = "flexipage:column"
+            identifier = "flexipage_column21"
+          }
+        },
+      ]
+      name = "Facet-wmm0p4dyfo"
+      type = "Facet"
+    },
+    {
+      itemInstances = [
+        {
+          fieldInstance = {
+            fieldInstanceProperties = {
+              name = "uiBehavior"
+              value = "none"
+            }
+            fieldItem = "Record.Documentacion__c"
+            identifier = "RecordDocumentacion_cField"
+          }
+        },
+      ]
+      name = "Facet-6w71odo9y17"
+      type = "Facet"
+    },
+    {
+      itemInstances = [
+        {
+          componentInstance = {
+            componentInstanceProperties = [
+              {
+                name = "body"
+                value = "Facet-6w71odo9y17"
+              },
+            ]
+            componentName = "flexipage:column"
+            identifier = "flexipage_column22"
+          }
+        },
+      ]
+      name = "Facet-vya7g10rnoi"
+      type = "Facet"
+    },
+    {
+      itemInstances = [
+        {
+          fieldInstance = {
+            fieldInstanceProperties = {
+              name = "uiBehavior"
+              value = "none"
+            }
+            fieldItem = "Record.Loss_Reason__c"
+            identifier = "RecordLoss_Reason_cField2"
+          }
+        },
+      ]
+      name = "Facet-lje0ecgafws"
+      type = "Facet"
+    },
+    {
+      itemInstances = [
+        {
+          fieldInstance = {
+            fieldInstanceProperties = {
+              name = "uiBehavior"
+              value = "none"
+            }
+            fieldItem = "Record.Descripcion_motivo_p_rdida_de_oportunida__c"
+            identifier = "RecordDescripcion_motivo_p_rdida_de_oportunida_cField2"
+          }
+        },
+      ]
+      name = "Facet-26bhi9tr8xui"
+      type = "Facet"
+    },
+    {
+      itemInstances = [
+        {
+          componentInstance = {
+            componentInstanceProperties = [
+              {
+                name = "body"
+                value = "Facet-lje0ecgafws"
+              },
+            ]
+            componentName = "flexipage:column"
+            identifier = "flexipage_column23"
+          }
+        },
+        {
+          componentInstance = {
+            componentInstanceProperties = [
+              {
+                name = "body"
+                value = "Facet-26bhi9tr8xui"
+              },
+            ]
+            componentName = "flexipage:column"
+            identifier = "flexipage_column24"
+          }
+        },
+      ]
+      name = "Facet-0u9tz0mopsjg"
+      type = "Facet"
+    },
+    {
+      itemInstances = [
+        {
+          fieldInstance = {
+            fieldInstanceProperties = {
+              name = "uiBehavior"
+              value = "readonly"
+            }
+            fieldItem = "Record.CreatedById"
+            identifier = "RecordCreatedByIdField2"
+          }
+        },
+        {
+          fieldInstance = {
+            fieldInstanceProperties = {
+              name = "uiBehavior"
+              value = "readonly"
+            }
+            fieldItem = "Record.RecordTypeId"
+            identifier = "RecordRecordTypeIdField2"
+          }
+        },
+      ]
+      name = "Facet-unlwu4reol"
+      type = "Facet"
+    },
+    {
+      itemInstances = [
+        {
+          fieldInstance = {
+            fieldInstanceProperties = {
+              name = "uiBehavior"
+              value = "readonly"
+            }
+            fieldItem = "Record.LastModifiedById"
+            identifier = "RecordLastModifiedByIdField2"
+          }
+        },
+        {
+          fieldInstance = {
+            fieldInstanceProperties = {
+              name = "uiBehavior"
+              value = "readonly"
+            }
+            fieldItem = "Record.OwnerId"
+            identifier = "RecordOwnerIdField2"
+          }
+        },
+      ]
+      name = "Facet-7n3ybzycp8g"
+      type = "Facet"
+    },
+    {
+      itemInstances = [
+        {
+          componentInstance = {
+            componentInstanceProperties = [
+              {
+                name = "body"
+                value = "Facet-unlwu4reol"
+              },
+            ]
+            componentName = "flexipage:column"
+            identifier = "flexipage_column25"
+          }
+        },
+        {
+          componentInstance = {
+            componentInstanceProperties = [
+              {
+                name = "body"
+                value = "Facet-7n3ybzycp8g"
+              },
+            ]
+            componentName = "flexipage:column"
+            identifier = "flexipage_column26"
+          }
+        },
+      ]
+      name = "Facet-ew6iam7ggnh"
+      type = "Facet"
+    },
+    {
+      itemInstances = [
+        {
+          componentInstance = {
+            componentInstanceProperties = [
+              {
+                name = "columns"
+                value = "Facet-1q5f4kuk6t7"
+              },
+              {
+                name = "horizontalAlignment"
+                value = "false"
+              },
+              {
+                name = "label"
+                value = "Información de la Oportunidad"
+              },
+            ]
+            componentName = "flexipage:fieldSection"
+            identifier = "flexipage_fieldSection9"
+          }
+        },
+        {
+          componentInstance = {
+            componentInstanceProperties = [
+              {
+                name = "columns"
+                value = "Facet-0y7jke5ulklj"
+              },
+              {
+                name = "horizontalAlignment"
+                value = "false"
+              },
+              {
+                name = "label"
+                value = "Origen de la oportunidad"
+              },
+            ]
+            componentName = "flexipage:fieldSection"
+            identifier = "flexipage_fieldSection10"
+          }
+        },
+        {
+          componentInstance = {
+            componentInstanceProperties = [
+              {
+                name = "columns"
+                value = "Facet-e84s3km19n9"
+              },
+              {
+                name = "horizontalAlignment"
+                value = "false"
+              },
+              {
+                name = "label"
+                value = "Información Adicional"
+              },
+            ]
+            componentName = "flexipage:fieldSection"
+            identifier = "flexipage_fieldSection11"
+          }
+        },
+        {
+          componentInstance = {
+            componentInstanceProperties = [
+              {
+                name = "columns"
+                value = "Facet-wmm0p4dyfo"
+              },
+              {
+                name = "horizontalAlignment"
+                value = "false"
+              },
+              {
+                name = "label"
+                value = "Descripción"
+              },
+            ]
+            componentName = "flexipage:fieldSection"
+            identifier = "flexipage_fieldSection12"
+          }
+        },
+        {
+          componentInstance = {
+            componentInstanceProperties = [
+              {
+                name = "columns"
+                value = "Facet-vya7g10rnoi"
+              },
+              {
+                name = "horizontalAlignment"
+                value = "false"
+              },
+              {
+                name = "label"
+                value = "Ubicación de la documentación"
+              },
+            ]
+            componentName = "flexipage:fieldSection"
+            identifier = "flexipage_fieldSection13"
+          }
+        },
+        {
+          componentInstance = {
+            componentInstanceProperties = [
+              {
+                name = "columns"
+                value = "Facet-0u9tz0mopsjg"
+              },
+              {
+                name = "horizontalAlignment"
+                value = "false"
+              },
+              {
+                name = "label"
+                value = "Razones pérdida de la oportunidad"
+              },
+            ]
+            componentName = "flexipage:fieldSection"
+            identifier = "flexipage_fieldSection14"
+          }
+        },
+        {
+          componentInstance = {
+            componentInstanceProperties = [
+              {
+                name = "columns"
+                value = "Facet-ew6iam7ggnh"
+              },
+              {
+                name = "horizontalAlignment"
+                value = "false"
+              },
+              {
+                name = "label"
+                value = "Información del Sistema"
+              },
+            ]
+            componentName = "flexipage:fieldSection"
+            identifier = "flexipage_fieldSection15"
+          }
+        },
+        {
+          componentInstance = {
+            componentName = "force:recordDetailPanelMobile"
+            identifier = "force_recordDetailPanelMobile2"
+          }
+        },
+      ]
+      name = "Facet-j6dmc7gz5r"
+      type = "Facet"
+    },
+    {
+      itemInstances = [
+        {
+          componentInstance = {
+            componentInstanceProperties = [
+              {
+                name = "decorate"
+                value = "true"
+              },
+              {
+                name = "richTextValue"
+                value = "<p><strong style=\"font-size: 16px;\">EXTERNOS</strong></p>"
+              },
+            ]
+            componentName = "flexipage:richText"
+            identifier = "flexipage_richText3"
+          }
+        },
+        {
+          componentInstance = {
+            componentInstanceProperties = [
+              {
+                name = "parentFieldApiName"
+                value = "Opportunity.Id"
+              },
+              {
+                name = "relatedListApiName"
+                value = "OpportunityContactRoles"
+              },
+              {
+                name = "relatedListComponentOverride"
+                value = "GRID"
+              },
+              {
+                name = "rowsToDisplay"
+                value = "10"
+              },
+              {
+                name = "showActionBar"
+                value = "true"
+              },
+            ]
+            componentName = "force:relatedListSingleContainer"
+            identifier = "force_relatedListSingleContainer6"
+          }
+        },
+        {
+          componentInstance = {
+            componentInstanceProperties = [
+              {
+                name = "decorate"
+                value = "true"
+              },
+              {
+                name = "richTextValue"
+                value = "<p><strong style=\"font-size: 16px;\">INTERNOS</strong></p>"
+              },
+            ]
+            componentName = "flexipage:richText"
+            identifier = "flexipage_richText4"
+          }
+        },
+        {
+          componentInstance = {
+            componentInstanceProperties = [
+              {
+                name = "parentFieldApiName"
+                value = "Opportunity.Id"
+              },
+              {
+                name = "relatedListApiName"
+                value = "Equipos_de_la_oportunidad__r"
+              },
+              {
+                name = "relatedListComponentOverride"
+                value = "NONE"
+              },
+              {
+                name = "rowsToDisplay"
+                value = "10"
+              },
+              {
+                name = "showActionBar"
+                value = "true"
+              },
+            ]
+            componentName = "force:relatedListSingleContainer"
+            identifier = "force_relatedListSingleContainer8"
+          }
+        },
+        {
+          componentInstance = {
+            componentInstanceProperties = [
+              {
+                name = "parentFieldApiName"
+                value = "Opportunity.Id"
+              },
+              {
+                name = "relatedListApiName"
+                value = "OpportunityTeamMembers"
+              },
+              {
+                name = "relatedListComponentOverride"
+                value = "NONE"
+              },
+              {
+                name = "rowsToDisplay"
+                value = "10"
+              },
+              {
+                name = "showActionBar"
+                value = "true"
+              },
+            ]
+            componentName = "force:relatedListSingleContainer"
+            identifier = "force_relatedListSingleContainer9"
+            visibilityRule = {
+              criteria = [
+                {
+                  leftValue = "{!$User.LastName}"
+                  operator = "CONTAINS"
+                  rightValue = "Administ"
+                },
+              ]
+            }
+          }
+        },
+      ]
+      name = "Facet-vziwbhu1ps"
+      type = "Facet"
+    },
+    {
+      itemInstances = [
+        {
+          componentInstance = {
+            componentInstanceProperties = [
+              {
+                name = "idPedido"
+                value = "recordId"
+              },
+            ]
+            componentName = "AsistenteOportunidades"
+            identifier = "c_AsistenteOportunidades2"
+          }
+        },
+        {
+          componentInstance = {
+            componentInstanceProperties = [
+              {
+                name = "parentFieldApiName"
+                value = "Opportunity.Id"
+              },
+              {
+                name = "relatedListApiName"
+                value = "OpportunityLineItems"
+              },
+              {
+                name = "relatedListComponentOverride"
+                value = "NONE"
+              },
+              {
+                name = "rowsToDisplay"
+                value = "10"
+              },
+              {
+                name = "showActionBar"
+                value = "true"
+              },
+            ]
+            componentName = "force:relatedListSingleContainer"
+            identifier = "force_relatedListSingleContainer10"
+            visibilityRule = {
+              criteria = [
+                {
+                  leftValue = "{!$User.LastName}"
+                  operator = "CONTAINS"
+                  rightValue = "Administra"
+                },
+              ]
+            }
+          }
+        },
+      ]
+      name = "Facet-3g1x7zmwtph"
+      type = "Facet"
+    },
+    {
+      itemInstances = [
+        {
+          componentInstance = {
+            componentInstanceProperties = [
+              {
+                name = "parentFieldApiName"
+                value = "Opportunity.Id"
+              },
+              {
+                name = "relatedListApiName"
+                value = "OpportunityHistories"
+              },
+              {
+                name = "relatedListComponentOverride"
+                value = "NONE"
+              },
+              {
+                name = "rowsToDisplay"
+                value = "10"
+              },
+              {
+                name = "showActionBar"
+                value = "true"
+              },
+            ]
+            componentName = "force:relatedListSingleContainer"
+            identifier = "force_relatedListSingleContainer11"
+          }
+        },
+      ]
+      name = "Facet-aj9cf9eqs26"
+      type = "Facet"
+    },
+    {
+      itemInstances = [
+        {
+          componentInstance = {
+            componentInstanceProperties = [
+              {
+                name = "parentFieldApiName"
+                value = "Opportunity.Id"
+              },
+              {
+                name = "relatedListApiName"
+                value = "ProcessSteps"
+              },
+              {
+                name = "relatedListComponentOverride"
+                value = "NONE"
+              },
+              {
+                name = "rowsToDisplay"
+                value = "10"
+              },
+              {
+                name = "showActionBar"
+                value = "true"
+              },
+            ]
+            componentName = "force:relatedListSingleContainer"
+            identifier = "force_relatedListSingleContainer12"
+          }
+        },
+      ]
+      name = "Facet-5eba5b91-a8b3-4b5c-b9ef-8b7aa3d8f78b"
+      type = "Facet"
+    },
+    {
+      itemInstances = [
+        {
+          componentInstance = {
+            componentInstanceProperties = [
+              {
+                name = "active"
+                value = "true"
+              },
+              {
+                name = "body"
+                value = "Facet-j6dmc7gz5r"
+              },
+              {
+                name = "title"
+                value = "Standard.Tab.detail"
+              },
+            ]
+            componentName = "flexipage:tab"
+            identifier = "flexipage_tab9"
+          }
+        },
+        {
+          componentInstance = {
+            componentInstanceProperties = [
+              {
+                name = "body"
+                value = "Facet-vziwbhu1ps"
+              },
+              {
+                name = "title"
+                value = "Personas"
+              },
+            ]
+            componentName = "flexipage:tab"
+            identifier = "flexipage_tab10"
+          }
+        },
+        {
+          componentInstance = {
+            componentInstanceProperties = [
+              {
+                name = "body"
+                value = "Facet-3g1x7zmwtph"
+              },
+              {
+                name = "title"
+                value = "Servicios"
+              },
+            ]
+            componentName = "flexipage:tab"
+            identifier = "flexipage_tab11"
+          }
+        },
+        {
+          componentInstance = {
+            componentInstanceProperties = [
+              {
+                name = "body"
+                value = "Facet-aj9cf9eqs26"
+              },
+              {
+                name = "title"
+                value = "Historial de cambios"
+              },
+            ]
+            componentName = "flexipage:tab"
+            identifier = "flexipage_tab12"
+          }
+        },
+        {
+          componentInstance = {
+            componentInstanceProperties = [
+              {
+                name = "body"
+                value = "Facet-5eba5b91-a8b3-4b5c-b9ef-8b7aa3d8f78b"
+              },
+              {
+                name = "title"
+                value = "Aprobaciones"
+              },
+            ]
+            componentName = "flexipage:tab"
+            identifier = "flexipage_tab13"
+          }
+        },
+      ]
+      name = "Facet-tkdnu607cy"
+      type = "Facet"
+    },
+    {
+      itemInstances = [
+        {
+          componentInstance = {
+            componentInstanceProperties = [
+              {
+                name = "tabs"
+                value = "Facet-da8e7260-6ff6-4fa0-8a96-d83e5b77c391"
+              },
+            ]
+            componentName = "flexipage:tabset"
+            identifier = "flexipage_tabset"
+            visibilityRule = {
+              criteria = [
+                {
+                  leftValue = "{!Record.RecordType.Name}"
+                  operator = "NE"
+                  rightValue = "Oportunidades clientes auditados"
+                },
+              ]
+            }
+          }
+        },
+        {
+          componentInstance = {
+            componentInstanceProperties = [
+              {
+                name = "tabs"
+                value = "Facet-tkdnu607cy"
+              },
+            ]
+            componentName = "flexipage:tabset"
+            identifier = "flexipage_tabset3"
+            visibilityRule = {
+              criteria = [
+                {
+                  leftValue = "{!Record.RecordType.Name}"
+                  operator = "EQUAL"
+                  rightValue = "Oportunidades clientes auditados"
+                },
+              ]
+            }
+          }
+        },
+      ]
+      name = "main"
+      type = "Region"
+    },
+    {
+      itemInstances = [
+        {
+          fieldInstance = {
+            fieldInstanceProperties = {
+              name = "uiBehavior"
+              value = "none"
+            }
+            fieldItem = "Record.Lead_valido__c"
+            identifier = "RecordLead_valido_cField"
+          }
+        },
+      ]
+      name = "Facet-4d9e323f-f3b0-4a1f-872a-c11ec4fa57b1"
+      type = "Facet"
+    },
+    {
+      itemInstances = [
+        {
+          fieldInstance = {
+            fieldInstanceProperties = {
+              name = "uiBehavior"
+              value = "none"
+            }
+            fieldItem = "Record.Estado_Lead__c"
+            identifier = "RecordEstado_Lead_cField"
+          }
+        },
+        {
+          fieldInstance = {
+            fieldInstanceProperties = {
+              name = "uiBehavior"
+              value = "none"
+            }
+            fieldItem = "Record.Estado_operacion_lead__c"
+            identifier = "RecordEstado_operacion_lead_cField"
+            visibilityRule = {
+              criteria = [
+                {
+                  leftValue = "{!Record.Estado_Lead__c}"
+                  operator = "EQUAL"
+                  rightValue = "Rechazado"
+                },
+              ]
+            }
+          }
+        },
+      ]
+      name = "Facet-f80314c2-60a9-4d24-be4e-683bdddd64e2"
+      type = "Facet"
+    },
+    {
+      itemInstances = [
+        {
+          componentInstance = {
+            componentInstanceProperties = [
+              {
+                name = "body"
+                value = "Facet-4d9e323f-f3b0-4a1f-872a-c11ec4fa57b1"
+              },
+            ]
+            componentName = "flexipage:column"
+            identifier = "flexipage_column13"
+          }
+        },
+        {
+          componentInstance = {
+            componentInstanceProperties = [
+              {
+                name = "body"
+                value = "Facet-f80314c2-60a9-4d24-be4e-683bdddd64e2"
+              },
+            ]
+            componentName = "flexipage:column"
+            identifier = "flexipage_column14"
+          }
+        },
+      ]
+      name = "Facet-08eb2720-9b7a-4160-9408-8cd44bd6f1b8"
+      type = "Facet"
+    },
+    {
+      itemInstances = [
+        {
+          componentInstance = {
+            componentInstanceProperties = [
+              {
+                name = "showLegacyActivityComposer"
+                value = "false"
+              },
+            ]
+            componentName = "runtime_sales_activities:activityPanel"
+            identifier = "runtime_sales_activities_activityPanel"
+          }
+        },
+      ]
+      name = "Facet-dfd1ad43-5570-4c6a-9377-4bd7552e85e8"
+      type = "Facet"
+    },
+    {
+      itemInstances = [
+        {
+          componentInstance = {
+            componentInstanceProperties = [
+              {
+                name = "daysToShow"
+                value = "60"
+              },
+              {
+                name = "earliestRange"
+                value = "3"
+              },
+              {
+                name = "latestRange"
+                value = "0.5"
+              },
+              {
+                name = "preferredHeight"
+                value = "3 - Default"
+              },
+              {
+                name = "timelineParent"
+                value = "Default_Picklist_Value"
+              },
+              {
+                name = "timelineTitle"
+                value = "Timeline"
+              },
+              {
+                name = "zoomTo"
+                value = "Current Date"
+              },
+            ]
+            componentName = "bmpyrckt:timeline"
+            identifier = "bmpyrckt_timeline"
+          }
+        },
+      ]
+      name = "Facet-6d5afa4a-6864-4b16-8f16-54a801abb325"
+      type = "Facet"
+    },
+    {
+      itemInstances = [
+        {
+          componentInstance = {
+            componentName = "forceChatter:recordFeedContainer"
+            identifier = "forceChatter_recordFeedContainer"
+          }
+        },
+      ]
+      name = "Facet-649ed736-171e-4c74-8985-ba69dc892a86"
+      type = "Facet"
+    },
+    {
+      itemInstances = [
+        {
+          componentInstance = {
+            componentInstanceProperties = [
+              {
+                name = "parentFieldApiName"
+                value = "Opportunity.Id"
+              },
+              {
+                name = "relatedListApiName"
+                value = "AttachedContentNotes"
+              },
+              {
+                name = "relatedListComponentOverride"
+                value = "NONE"
+              },
+              {
+                name = "rowsToDisplay"
+                value = "10"
+              },
+              {
+                name = "showActionBar"
+                value = "true"
+              },
+            ]
+            componentName = "force:relatedListSingleContainer"
+            identifier = "force_relatedListSingleContainer4"
+          }
+        },
+      ]
+      name = "Facet-johab3c007o"
+      type = "Facet"
+    },
+    {
+      itemInstances = [
+        {
+          componentInstance = {
+            componentInstanceProperties = [
+              {
+                name = "active"
+                value = "true"
+              },
+              {
+                name = "body"
+                value = "Facet-dfd1ad43-5570-4c6a-9377-4bd7552e85e8"
+              },
+              {
+                name = "title"
+                value = "Standard.Tab.activity"
+              },
+            ]
+            componentName = "flexipage:tab"
+            identifier = "flexipage_tab7"
+          }
+        },
+        {
+          componentInstance = {
+            componentInstanceProperties = [
+              {
+                name = "active"
+                value = "false"
+              },
+              {
+                name = "body"
+                value = "Facet-6d5afa4a-6864-4b16-8f16-54a801abb325"
+              },
+              {
+                name = "title"
+                value = "Timeline"
+              },
+            ]
+            componentName = "flexipage:tab"
+            identifier = "flexipage_tab5"
+          }
+        },
+        {
+          componentInstance = {
+            componentInstanceProperties = [
+              {
+                name = "body"
+                value = "Facet-649ed736-171e-4c74-8985-ba69dc892a86"
+              },
+              {
+                name = "title"
+                value = "Standard.Tab.collaborate"
+              },
+            ]
+            componentName = "flexipage:tab"
+            identifier = "flexipage_tab6"
+          }
+        },
+        {
+          componentInstance = {
+            componentInstanceProperties = [
+              {
+                name = "body"
+                value = "Facet-johab3c007o"
+              },
+              {
+                name = "title"
+                value = "Standard.Tab.crisisCenterNotes"
+              },
+            ]
+            componentName = "flexipage:tab"
+            identifier = "flexipage_tab8"
+          }
+        },
+      ]
+      name = "Facet-3b85681e-548c-4aef-ac70-b48ee766a9a8"
+      type = "Facet"
+    },
+    {
+      itemInstances = [
+        {
+          componentInstance = {
+            componentInstanceProperties = [
+              {
+                name = "columns"
+                value = "Facet-08eb2720-9b7a-4160-9408-8cd44bd6f1b8"
+              },
+              {
+                name = "horizontalAlignment"
+                value = "false"
+              },
+              {
+                name = "label"
+                value = "Gestión de leads"
+              },
+            ]
+            componentName = "flexipage:fieldSection"
+            identifier = "flexipage_fieldSection8"
+            visibilityRule = {
+              booleanFilter = "1 OR 2 OR 3"
+              criteria = [
+                {
+                  leftValue = "{!Record.Detalle_origen__c}"
+                  operator = "CONTAINS"
+                  rightValue = "eadspain"
+                },
+                {
+                  leftValue = "{!Record.Detalle_origen__c}"
+                  operator = "CONTAINS"
+                  rightValue = "ontech"
+                },
+                {
+                  leftValue = "{!Record.Detalle_origen__c}"
+                  operator = "CONTAINS"
+                  rightValue = "PIVOTE"
+                },
+              ]
+            }
+          }
+        },
+        {
+          componentInstance = {
+            componentInstanceProperties = [
+              {
+                name = "tabs"
+                value = "Facet-3b85681e-548c-4aef-ac70-b48ee766a9a8"
+              },
+            ]
+            componentName = "flexipage:tabset"
+            identifier = "flexipage_tabset2"
+          }
+        },
+      ]
+      name = "sidebar"
+      type = "Region"
+    },
+  ]
+  masterLabel = "Opportunity Record Page"
+  sobjectType = "Opportunity"
+  template = {
+    name = "flexipage:recordHomeTemplateDesktop"
+    properties = {
+      name = "enablePageActionConfig"
+      value = "false"
+    }
+  }
+  type = "RecordPage"
+  fullName = "Opportunity_Record_Page"
+  _parent = [
+    salesforce.Opportunity,
+  ]
+  _generated_dependencies = [
+    {
+      reference = salesforce.AuraDefinitionBundle.instance.AsistenteOportunidades
+    },
+    {
+      reference = salesforce.Equipo_de_la_oportunidad__c.field.Oportunidad__c
+    },
+  ]
+  _alias = "Opportunity_Record_Page"
+}

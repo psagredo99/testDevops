@@ -1,0 +1,85 @@
+type salesforce.EntitlementContact {
+  salesforce.MasterDetail ContactId {
+    apiName = "EntitlementContact.ContactId"
+    relationshipName = "Contact"
+    _required = true
+    label = "Id. de contacto"
+    createable = true
+    updateable = false
+    queryable = true
+  }
+  salesforce.MasterDetail EntitlementId {
+    apiName = "EntitlementContact.EntitlementId"
+    relationshipName = "Entitlement"
+    _required = true
+    label = "ID de asignación"
+    createable = true
+    updateable = false
+    queryable = true
+  }
+  serviceid Id {
+    apiName = "EntitlementContact.Id"
+    label = "ID de contacto de asignación"
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Checkbox IsDeleted {
+    apiName = "EntitlementContact.IsDeleted"
+    defaultValue = false
+    label = "Eliminado"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.AutoNumber Name {
+    apiName = "EntitlementContact.Name"
+    label = "Contacto de asignación"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime CreatedDate {
+    apiName = "EntitlementContact.CreatedDate"
+    label = "Fecha de creación"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup CreatedById {
+    apiName = "EntitlementContact.CreatedById"
+    relationshipName = "CreatedBy"
+    label = "Creado por el Id."
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime LastModifiedDate {
+    apiName = "EntitlementContact.LastModifiedDate"
+    label = "Fecha de la última modificación"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup LastModifiedById {
+    apiName = "EntitlementContact.LastModifiedById"
+    relationshipName = "LastModifiedBy"
+    label = "Última modificación realizada por el Id."
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime SystemModstamp {
+    apiName = "EntitlementContact.SystemModstamp"
+    label = "Modstamp del sistema"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+}

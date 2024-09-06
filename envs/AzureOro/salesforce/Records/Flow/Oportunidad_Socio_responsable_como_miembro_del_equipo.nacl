@@ -1,0 +1,169 @@
+salesforce.Flow Oportunidad_Socio_responsable_como_miembro_del_equipo {
+  fullName = "Oportunidad_Socio_responsable_como_miembro_del_equipo"
+  apiVersion = 57
+  decisions = [
+    {
+      name = "Es_el_propietario_de_la_oportunidad"
+      label = "¿Es el propietario de la oportunidad?"
+      locationX = 176
+      locationY = 335
+      defaultConnector = {
+        targetReference = "Equipo_de_la_oportunidad"
+      }
+      defaultConnectorLabel = "No"
+      rules = [
+        {
+          name = "S_es_propietario"
+          conditionLogic = "and"
+          conditions = [
+            {
+              leftValueReference = "$Record.Owner.Email"
+              operator = "EqualTo"
+              rightValue = {
+                elementReference = "$Record.Socio_oportunidad__r.Correo_electronico__c"
+              }
+            },
+          ]
+          label = "Sí, es propietario"
+        },
+      ]
+    },
+    {
+      name = "Esta_en_el_equipo_de_la_oportunidad"
+      label = "¿Está en el equipo de la oportunidad?"
+      locationX = 374
+      locationY = 575
+      defaultConnector = {
+        targetReference = "Crear_empleado_en_el_equipo_de_la_opp"
+      }
+      defaultConnectorLabel = "No, hay que crearlo"
+      rules = [
+        {
+          name = "S_pertenece_al_equipo"
+          conditionLogic = "and"
+          conditions = [
+            {
+              leftValueReference = "Equipo_de_la_oportunidad"
+              operator = "IsNull"
+              rightValue = {
+                booleanValue = false
+              }
+            },
+          ]
+          label = "Sí, pertenece al equipo"
+        },
+      ]
+    },
+  ]
+  description = "Gestión sobre el socio responsable de la oportunidad para darle acceso al registro y agregarlo como miembro del equipo."
+  environments = "Default"
+  interviewLabel = "Oportunidad - Socio responsable como miembro del equipo {!$Flow.CurrentDateTime}"
+  label = "Oportunidad - Socio responsable como miembro del equipo"
+  processMetadataValues = [
+    {
+      name = "BuilderType"
+      value = {
+        stringValue = "LightningFlowBuilder"
+      }
+    },
+    {
+      name = "CanvasMode"
+      value = {
+        stringValue = "AUTO_LAYOUT_CANVAS"
+      }
+    },
+    {
+      name = "OriginBuilderType"
+      value = {
+        stringValue = "LightningFlowBuilder"
+      }
+    },
+  ]
+  processType = "AutoLaunchedFlow"
+  recordCreates = [
+    {
+      name = "Crear_empleado_en_el_equipo_de_la_opp"
+      label = "Crear empleado en el equipo de la opp"
+      locationX = 506
+      locationY = 695
+      inputAssignments = [
+        {
+          field = salesforce.Equipo_de_la_oportunidad__c.field.Empleado__c
+          value = {
+            elementReference = "$Record.Socio_oportunidad__c"
+          }
+        },
+        {
+          field = salesforce.Equipo_de_la_oportunidad__c.field.Oportunidad__c
+          value = {
+            elementReference = "$Record.Id"
+          }
+        },
+      ]
+      object = salesforce.Equipo_de_la_oportunidad__c
+      storeOutputAutomatically = true
+    },
+  ]
+  recordLookups = [
+    {
+      description = "Basado en la relación de opp con empleado, no el estándar"
+      name = "Equipo_de_la_oportunidad"
+      label = "Equipo de la oportunidad"
+      locationX = 374
+      locationY = 455
+      assignNullValuesIfNoRecordsFound = false
+      connector = {
+        targetReference = "Esta_en_el_equipo_de_la_oportunidad"
+      }
+      filterLogic = "and"
+      filters = [
+        {
+          field = salesforce.Equipo_de_la_oportunidad__c.field.Empleado__c
+          operator = "EqualTo"
+          value = {
+            elementReference = "$Record.Socio_oportunidad__c"
+          }
+        },
+        {
+          field = salesforce.Equipo_de_la_oportunidad__c.field.Oportunidad__c
+          operator = "EqualTo"
+          value = {
+            elementReference = "$Record.Id"
+          }
+        },
+      ]
+      getFirstRecordOnly = true
+      object = salesforce.Equipo_de_la_oportunidad__c
+      storeOutputAutomatically = true
+    },
+  ]
+  start = {
+    locationX = 50
+    locationY = 0
+    connector = {
+      targetReference = "Es_el_propietario_de_la_oportunidad"
+    }
+    filterFormula = '''
+OR(
+AND(ISNEW(), NOT(ISBLANK({!$Record.Socio_oportunidad__c}))),
+AND(ISCHANGED({!$Record.Socio_oportunidad__c}), NOT(ISBLANK({!$Record.Socio_oportunidad__c})))
+)
+'''
+    object = salesforce.Opportunity
+    recordTriggerType = "CreateAndUpdate"
+    triggerType = "RecordAfterSave"
+  }
+  status = "Active"
+  _generated_dependencies = [
+    {
+      reference = salesforce.Empleado__c
+    },
+    {
+      reference = salesforce.Empleado__c.field.Correo_electronico__c
+    },
+    {
+      reference = salesforce.Opportunity.field.Socio_oportunidad__c
+    },
+  ]
+  _alias = "Oportunidad - Socio responsable como miembro del equipo"
+}

@@ -1,0 +1,85 @@
+type salesforce.SharingRecordCollectionMember {
+  serviceid Id {
+    apiName = "SharingRecordCollectionMember.Id"
+    label = "Id. de Miembro de recopilación de registros"
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Checkbox IsDeleted {
+    apiName = "SharingRecordCollectionMember.IsDeleted"
+    defaultValue = false
+    label = "Eliminado"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime CreatedDate {
+    apiName = "SharingRecordCollectionMember.CreatedDate"
+    label = "Fecha de creación"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup CreatedById {
+    apiName = "SharingRecordCollectionMember.CreatedById"
+    relationshipName = "CreatedBy"
+    label = "Creado por el Id."
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime LastModifiedDate {
+    apiName = "SharingRecordCollectionMember.LastModifiedDate"
+    label = "Fecha de la última modificación"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup LastModifiedById {
+    apiName = "SharingRecordCollectionMember.LastModifiedById"
+    relationshipName = "LastModifiedBy"
+    label = "Última modificación realizada por el Id."
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime SystemModstamp {
+    apiName = "SharingRecordCollectionMember.SystemModstamp"
+    label = "Modstamp del sistema"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup CollectionId {
+    apiName = "SharingRecordCollectionMember.CollectionId"
+    relationshipName = "Collection"
+    _required = true
+    label = "Id. de Recopilación de registros"
+    createable = true
+    updateable = false
+    queryable = true
+  }
+  salesforce.Lookup UserOrGroupId {
+    apiName = "SharingRecordCollectionMember.UserOrGroupId"
+    relationshipName = "UserOrGroup"
+    label = "Id. de usuario o grupo"
+    createable = true
+    updateable = false
+    queryable = true
+  }
+  salesforce.Picklist AccessLevel {
+    apiName = "SharingRecordCollectionMember.AccessLevel"
+    restricted = true
+    _required = true
+    label = "Nivel de acceso"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+}

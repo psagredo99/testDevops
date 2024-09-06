@@ -1,0 +1,152 @@
+type salesforce.LocationTrustMeasure {
+  salesforce.Text Description {
+    apiName = "LocationTrustMeasure.Description"
+    inlineHelpText = "Explique cómo realizará la medida de confianza. Sea conciso. Dé prioridad a la claridad sobre frases completas: solo tiene 250 caracteres."
+    length = 255
+    _required = true
+    label = "Descripción"
+    createable = true
+    updateable = true
+    unique = false
+    caseSensitive = false
+    queryable = true
+  }
+  salesforce.Text IconUrl {
+    apiName = "LocationTrustMeasure.IconUrl"
+    inlineHelpText = "La URL donde se aloja su icono. Usted crea y aloja el icono de cada medida de confianza."
+    length = 255
+    label = "Url de icono"
+    createable = true
+    updateable = true
+    unique = false
+    caseSensitive = false
+    queryable = true
+  }
+  salesforce.Checkbox IsVisibleInPublic {
+    apiName = "LocationTrustMeasure.IsVisibleInPublic"
+    inlineHelpText = "Publica esta medida de confianza en la ubicación que seleccione."
+    defaultValue = false
+    label = "La medición de confianza está publicada"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Lookup LocationId {
+    apiName = "LocationTrustMeasure.LocationId"
+    inlineHelpText = "El establecimiento, hotel u otro espacio físico que ocupa su negocio. Cada medida de confianza reside en una única ubicación. Si no hay una referencia externa en la ubicación, la tarjeta de confianza no se mostrará. Si recibe un error, modifique la ubicación para agregar una referencia externa."
+    relationshipName = "Location"
+    _required = true
+    label = "Id. de Ubicación"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Lookup OwnerId {
+    apiName = "LocationTrustMeasure.OwnerId"
+    relationshipName = "Owner"
+    label = "Id. del propietario"
+    createable = true
+    updateable = true
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Number SortOrder {
+    apiName = "LocationTrustMeasure.SortOrder"
+    inlineHelpText = "Indica dónde se posiciona esta medida de confianza en su formato. Por ejemplo, en un formato de pancarta, un orden de visualización de 1 coloca la tarjeta de confianza a la izquierda. Un orden de visualización de 2 coloca la medida de confianza a la derecha de 1."
+    label = "Orden de visualización"
+    precision = 9
+    createable = true
+    updateable = true
+    scale = 0
+    unique = false
+    queryable = true
+  }
+  salesforce.Text Title {
+    apiName = "LocationTrustMeasure.Title"
+    inlineHelpText = "El encabezado de su medición de confianza que se muestra a los visores. ¡Manténgalo breve y amable! Puede utilizar un máximo de 40 caracteres, pero 20 son los óptimos para mantener su título en una línea."
+    length = 40
+    _required = true
+    label = "Título"
+    createable = true
+    updateable = true
+    unique = false
+    caseSensitive = false
+    queryable = true
+  }
+  serviceid Id {
+    apiName = "LocationTrustMeasure.Id"
+    label = "Id. de LocationTrustMeasure"
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Checkbox IsDeleted {
+    apiName = "LocationTrustMeasure.IsDeleted"
+    defaultValue = false
+    label = "Eliminado"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.AutoNumber Name {
+    apiName = "LocationTrustMeasure.Name"
+    label = "Nombre de medición de confianza de ubicación"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime CreatedDate {
+    apiName = "LocationTrustMeasure.CreatedDate"
+    label = "Fecha de creación"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup CreatedById {
+    apiName = "LocationTrustMeasure.CreatedById"
+    relationshipName = "CreatedBy"
+    label = "Creado por el Id."
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime LastModifiedDate {
+    apiName = "LocationTrustMeasure.LastModifiedDate"
+    label = "Fecha de la última modificación"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup LastModifiedById {
+    apiName = "LocationTrustMeasure.LastModifiedById"
+    relationshipName = "LastModifiedBy"
+    label = "Última modificación realizada por el Id."
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime SystemModstamp {
+    apiName = "LocationTrustMeasure.SystemModstamp"
+    label = "Modstamp del sistema"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Text LocationExternalReference {
+    apiName = "LocationTrustMeasure.LocationExternalReference"
+    length = 255
+    label = "Referencia externa de ubicación"
+    createable = false
+    updateable = false
+    unique = false
+    caseSensitive = false
+    queryable = true
+    _hidden_value = true
+  }
+}

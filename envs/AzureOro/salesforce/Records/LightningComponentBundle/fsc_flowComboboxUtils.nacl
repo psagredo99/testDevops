@@ -1,0 +1,16 @@
+salesforce.LightningComponentBundle fsc_flowComboboxUtils {
+  apiVersion = 49
+  description = "Flow Combobox Utils"
+  isExposed = false
+  masterLabel = "Flow Combobox Utils"
+  fullName = "fsc_flowComboboxUtils"
+  lwcResources = {
+    lwcResource = {
+      fsc_flowComboboxUtils_js@uv = {
+        source = file("salesforce/Records/LightningComponentBundle/fsc_flowComboboxUtils/fsc_flowComboboxUtils.js")
+        filePath = "lwc/fsc_flowComboboxUtils/fsc_flowComboboxUtils.js"
+      }
+    }
+  }
+  _alias = "fsc_flowComboboxUtils"
+}

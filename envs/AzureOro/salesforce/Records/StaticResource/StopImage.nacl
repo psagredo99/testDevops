@@ -1,0 +1,8 @@
+salesforce.StaticResource StopImage {
+  cacheControl = "Public"
+  contentType = "image/png"
+  description = "Usada para Flow Bloqueo de Cuentas"
+  fullName = "StopImage"
+  content = file("salesforce/Records/StaticResource/StopImage.png")
+  _alias = "StopImage"
+}

@@ -1,0 +1,7 @@
+salesforce.SharingRules SharingRecordCollection {
+  fullName = "SharingRecordCollection"
+  _parent = [
+    salesforce.SharingRecordCollection,
+  ]
+  _alias = "SharingRecordCollection"
+}

@@ -1,0 +1,10 @@
+salesforce.ProfileSessionSetting Integraci_n_profileSessionSetting1679350720593 {
+  fullName = "Integraci_n_profileSessionSetting1679350720593"
+  externalCommunityUserIdentityVerif = false
+  forceLogout = false
+  profile = "integración"
+  sessionPersistence = false
+  sessionTimeout = 0
+  sessionTimeoutWarning = false
+  _alias = "Integraci_n_profileSessionSetting1679350720593"
+}

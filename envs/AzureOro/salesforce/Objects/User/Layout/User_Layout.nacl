@@ -1,0 +1,63 @@
+salesforce.Layout User_User_Layout@bs {
+  layoutSections = [
+    {
+      customLabel = false
+      detailHeading = true
+      editHeading = true
+      label = "Additional Information"
+      layoutColumns = [
+        {
+          layoutItems = [
+            {
+              behavior = "Edit"
+              field = salesforce.User.field.Division__c
+            },
+          ]
+        },
+        {
+          layoutItems = [
+            {
+              behavior = "Edit"
+              field = salesforce.User.field.Recibir_notificacion_secretaria_tecnica__c
+            },
+          ]
+        },
+      ]
+      style = "TwoColumnsLeftToRight"
+    },
+    {
+      customLabel = true
+      detailHeading = true
+      editHeading = false
+      label = "Vínculos personalizados"
+      style = "CustomLinks"
+    },
+  ]
+  relatedObjects = [
+    "UserRoleId",
+    "ProfileId",
+    "DelegatedApproverId",
+    "ManagerId",
+    "ContactId",
+    "AccountId",
+    "CallCenterId",
+    "ProfilePhotoId",
+    "WorkspaceId",
+    "BannerPhotoId",
+  ]
+  showEmailCheckbox = false
+  showHighlightsPanel = false
+  showRunAssignmentRulesCheckbox = false
+  showSubmitAndAttachButton = false
+  summaryLayout = {
+    masterLabel = "00h68000003zGY0"
+    sizeX = 4
+    sizeY = 0
+    summaryLayoutStyle = "Default"
+  }
+  fullName = "User-User Layout"
+  _parent = [
+    salesforce.User,
+  ]
+  _alias = "User-User Layout"
+}

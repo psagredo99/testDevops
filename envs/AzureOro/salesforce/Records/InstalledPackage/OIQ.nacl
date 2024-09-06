@@ -1,0 +1,5 @@
+salesforce.InstalledPackage OIQ {
+  versionNumber = "1"
+  fullName = "OIQ"
+  _alias = "OIQ"
+}

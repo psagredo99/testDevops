@@ -1,0 +1,161 @@
+salesforce.Flow Cuenta_Nuevo_cliente_potencial {
+  fullName = "Cuenta_Nuevo_cliente_potencial"
+  apiVersion = 57
+  assignments = [
+    {
+      name = "Rellenar_tarea"
+      label = "Rellenar tarea"
+      locationX = 176
+      locationY = 455
+      assignmentItems = [
+        {
+          assignToReference = "NuevaTarea.AccountId"
+          operator = "Assign"
+          value = {
+            elementReference = "$Record.Id"
+          }
+        },
+        {
+          assignToReference = "NuevaTarea.OwnerId"
+          operator = "Assign"
+          value = {
+            elementReference = "getQueue.Id"
+          }
+        },
+        {
+          assignToReference = "NuevaTarea.Subject"
+          operator = "Assign"
+          value = {
+            stringValue = "Revisar cuenta {!$Record.Name}"
+          }
+        },
+        {
+          assignToReference = "NuevaTarea.Description"
+          operator = "Assign"
+          value = {
+            stringValue = "Nueva cuenta potencial creada"
+          }
+        },
+        {
+          assignToReference = "NuevaTarea.WhatId"
+          operator = "Assign"
+          value = {
+            elementReference = "$Record.Id"
+          }
+        },
+      ]
+      connector = {
+        targetReference = "Nueva_tarea"
+      }
+    },
+  ]
+  description = "Se crea una tarea asignada a la cola Secretaría cuando se crea una nueva cuenta de tipo de registro \"Cliente Potencial\""
+  environments = "Default"
+  interviewLabel = "Cuenta - Nuevo cliente potencial {!$Flow.CurrentDateTime}"
+  label = "Cuenta - Nuevo cliente potencial"
+  processMetadataValues = [
+    {
+      name = "BuilderType"
+      value = {
+        stringValue = "LightningFlowBuilder"
+      }
+    },
+    {
+      name = "CanvasMode"
+      value = {
+        stringValue = "AUTO_LAYOUT_CANVAS"
+      }
+    },
+    {
+      name = "OriginBuilderType"
+      value = {
+        stringValue = "LightningFlowBuilder"
+      }
+    },
+  ]
+  processType = "AutoLaunchedFlow"
+  recordCreates = [
+    {
+      name = "Nueva_tarea"
+      label = "Nueva tarea"
+      locationX = 176
+      locationY = 575
+      inputReference = "NuevaTarea"
+    },
+  ]
+  recordLookups = [
+    {
+      name = "getQueue"
+      label = "getQueue"
+      locationX = 176
+      locationY = 335
+      assignNullValuesIfNoRecordsFound = false
+      connector = {
+        targetReference = "Rellenar_tarea"
+      }
+      filterLogic = "and"
+      filters = [
+        {
+          field = "Type"
+          operator = "EqualTo"
+          value = {
+            stringValue = "Queue"
+          }
+        },
+        {
+          field = "DeveloperName"
+          operator = "EqualTo"
+          value = {
+            stringValue = "Secretaria"
+          }
+        },
+      ]
+      getFirstRecordOnly = true
+      object = "Group"
+      queriedFields = [
+        "Id",
+      ]
+      storeOutputAutomatically = true
+    },
+  ]
+  start = {
+    locationX = 50
+    locationY = 0
+    connector = {
+      targetReference = "getQueue"
+    }
+    filterLogic = "and"
+    filters = [
+      {
+        field = salesforce.Account.field.TXT_Nombre_Tipo_Registro__c
+        operator = "EqualTo"
+        value = {
+          stringValue = "Cuenta_Potencial"
+        }
+      },
+    ]
+    object = salesforce.Account
+    recordTriggerType = "Create"
+    triggerType = "RecordAfterSave"
+  }
+  status = "Active"
+  variables = [
+    {
+      description = "Fecha para el recordatorio de la tarea generada"
+      name = "fRecordatorio"
+      dataType = "DateTime"
+      isCollection = false
+      isInput = true
+      isOutput = true
+    },
+    {
+      name = "NuevaTarea"
+      dataType = "SObject"
+      isCollection = false
+      isInput = true
+      isOutput = true
+      objectType = salesforce.Task
+    },
+  ]
+  _alias = "Cuenta - Nuevo cliente potencial"
+}

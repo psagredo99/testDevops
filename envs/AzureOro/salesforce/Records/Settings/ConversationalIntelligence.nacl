@@ -1,0 +1,9 @@
+salesforce.ConversationalIntelligenceSettings {
+  fullName = "ConversationalIntelligence"
+  enableCallCoaching = "false"
+  enableCallCoachingZoom = "false"
+  enableDiarizationPref = "false"
+  enableOpptyMatching = "false"
+  enableUnifiedActivities = "false"
+  _alias = "ConversationalIntelligence"
+}

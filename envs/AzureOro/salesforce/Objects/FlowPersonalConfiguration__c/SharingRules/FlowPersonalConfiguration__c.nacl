@@ -1,0 +1,7 @@
+salesforce.SharingRules FlowPersonalConfiguration__c {
+  fullName = "FlowPersonalConfiguration__c"
+  _parent = [
+    salesforce.FlowPersonalConfiguration__c,
+  ]
+  _alias = "FlowPersonalConfiguration__c"
+}

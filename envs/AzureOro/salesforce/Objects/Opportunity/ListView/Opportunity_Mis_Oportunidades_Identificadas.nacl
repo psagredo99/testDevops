@@ -1,0 +1,22 @@
+salesforce.ListView Opportunity_Mis_Oportunidades_Identificadas {
+  fullName = "Opportunity.Mis_Oportunidades_Identificadas"
+  columns = [
+    "OPPORTUNITY.NAME",
+    "ACCOUNT.NAME",
+    "OPPORTUNITY.CLOSE_DATE",
+    "OPPORTUNITY.AMOUNT",
+  ]
+  filterScope = "Mine"
+  filters = [
+    {
+      field = "OPPORTUNITY.STAGE_NAME"
+      operation = "equals"
+      value = "Identificada"
+    },
+  ]
+  label = "Mis oportunidades identificadas"
+  _parent = [
+    salesforce.Opportunity,
+  ]
+  _alias = "Mis oportunidades identificadas"
+}

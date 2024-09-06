@@ -1,0 +1,135 @@
+type salesforce.VideoCallParticipant {
+  annotations {
+    serviceid apiName {
+    }
+    serviceid metadataType {
+    }
+    string label {
+    }
+    hidden_string keyPrefix {
+    }
+    salesforce.ActionOverride actionOverrides {
+    }
+    string compactLayoutAssignment {
+    }
+    string description {
+    }
+    boolean enableDataTranslation {
+    }
+    boolean enableDivisions {
+    }
+    boolean enableEnhancedLookup {
+    }
+    boolean enableFeeds {
+    }
+    boolean enableHistory {
+    }
+    boolean enableLicensing {
+    }
+    boolean enablePublishStatusTracking {
+    }
+    string externalDataSource {
+    }
+    string externalName {
+    }
+    string externalRepository {
+    }
+    salesforce.HistoryRetentionPolicy historyRetentionPolicy {
+    }
+    salesforce.MktDataLakeAttributes mktDataLakeAttributes {
+    }
+    salesforce.MktDataModelAttributes mktDataModelAttributes {
+    }
+    salesforce.ProfileSearchLayouts profileSearchLayouts {
+    }
+    boolean recordTypeTrackFeedHistory {
+    }
+    boolean recordTypeTrackHistory {
+    }
+    salesforce.SearchLayouts searchLayouts {
+    }
+    salesforce.SharingRecalculation sharingRecalculations {
+    }
+    string externalSharingModel {
+    }
+    hidden_string internalId {
+    }
+  }
+  apiName = "VideoCallParticipant"
+  metadataType = "CustomObject"
+  label = "Participante de llamada de vídeo"
+  actionOverrides = [
+    {
+      actionName = "CancelEdit"
+      type = "Default"
+    },
+    {
+      actionName = "CancelEdit"
+      formFactor = "Large"
+      type = "Default"
+    },
+    {
+      actionName = "CancelEdit"
+      formFactor = "Small"
+      type = "Default"
+    },
+    {
+      actionName = "List"
+      type = "Default"
+    },
+    {
+      actionName = "List"
+      formFactor = "Large"
+      type = "Default"
+    },
+    {
+      actionName = "List"
+      formFactor = "Small"
+      type = "Default"
+    },
+    {
+      actionName = "SaveEdit"
+      type = "Default"
+    },
+    {
+      actionName = "SaveEdit"
+      formFactor = "Large"
+      type = "Default"
+    },
+    {
+      actionName = "SaveEdit"
+      formFactor = "Small"
+      type = "Default"
+    },
+    {
+      actionName = "View"
+      type = "Default"
+    },
+    {
+      actionName = "View"
+      formFactor = "Large"
+      type = "Default"
+    },
+    {
+      actionName = "View"
+      formFactor = "Small"
+      type = "Default"
+    },
+  ]
+  compactLayoutAssignment = "SYSTEM"
+  enableFeeds = false
+  externalSharingModel = "ControlledByParent"
+  searchLayouts = {
+    customTabListAdditionalFields = [
+      "VideoCall",
+      "Email",
+      "RelatedPerson",
+    ]
+    searchResultsAdditionalFields = [
+      "VideoCall",
+      "Email",
+      "RelatedPerson",
+    ]
+  }
+  _alias = "Participante de llamada de vídeo"
+}

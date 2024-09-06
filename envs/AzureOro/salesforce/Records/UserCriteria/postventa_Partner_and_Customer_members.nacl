@@ -1,0 +1,10 @@
+salesforce.UserCriteria postventa_Partner_and_Customer_members@vuuu {
+  fullName = "postventa.Partner_and_Customer_members"
+  description = "Member criteria matches customer and partner member"
+  masterLabel = "Customer and Partner Members"
+  userTypes = [
+    "Partner",
+    "Customer",
+  ]
+  _alias = "postventa.Partner_and_Customer_members"
+}

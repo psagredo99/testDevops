@@ -1,0 +1,29 @@
+salesforce.ValidationRule Opportunity_Auditada_Control_Etapa_Sin_Notificar {
+  fullName = "Opportunity.Auditada_Control_Etapa_Sin_Notificar"
+  active = true
+  description = "Si no se notifica no se puede avanzar en el proceso, solo cancelar o cerrar perdida"
+  errorConditionFormula = '''
+AND(
+ ISCHANGED(StageName),
+ RecordType.Name = 'Oportunidades clientes auditados',
+ !Notificacion_auditoria__c,
+ AND(
+  TEXT(StageName)!= 'Identificada',
+  TEXT(StageName)!= 'Notificación auditoría',
+  TEXT(StageName)!= 'Postpuesta',
+  TEXT(StageName)!= 'Cerrada perdida'
+ )
+)
+'''
+  errorDisplayField = salesforce.Opportunity.field.StageName
+  errorMessage = "No puede continuar el proceso de negocio si no está enviada la notificación al equipo de auditoría por lo que no se permite el cambio de etapa salvo a postpuesta o cerrada perdida."
+  _parent = [
+    salesforce.Opportunity,
+  ]
+  _generated_dependencies = [
+    {
+      reference = salesforce.Opportunity.field.Notificacion_auditoria__c
+    },
+  ]
+  _alias = "Opportunity.Auditada_Control_Etapa_Sin_Notificar"
+}

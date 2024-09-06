@@ -1,0 +1,6 @@
+salesforce.Group Capital_Markets {
+  fullName = "Capital_Markets"
+  doesIncludeBosses = true
+  name = "Capital Markets"
+  _alias = "Capital_Markets"
+}

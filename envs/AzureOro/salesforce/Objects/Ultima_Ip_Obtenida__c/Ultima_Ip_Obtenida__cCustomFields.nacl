@@ -1,0 +1,14 @@
+type salesforce.Ultima_Ip_Obtenida__c {
+  salesforce.Text Valor__c {
+    apiName = "Ultima_Ip_Obtenida__c.Valor__c"
+    externalId = false
+    label = "Valor"
+    length = 255
+    trackTrending = false
+    unique = false
+    createable = true
+    updateable = true
+    caseSensitive = false
+    queryable = true
+  }
+}

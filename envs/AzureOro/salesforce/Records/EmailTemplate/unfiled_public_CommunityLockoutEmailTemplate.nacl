@@ -1,0 +1,13 @@
+salesforce.EmailTemplate unfiled_public_CommunityLockoutEmailTemplate@zcd {
+  available = true
+  description = "Mensaje de correo electrónico que recibe un usuario cuando intenta restablecer su contraseña, pero se le ha bloqueado debido a demasiados intentos de inicio de sesión fallidos."
+  encodingKey = "UTF-8"
+  name = "Experience Cloud: Mensaje de correo electrónico de bloqueo de usuario"
+  style = "none"
+  subject = "Se le ha bloqueado en {!Community_Name}"
+  type = "text"
+  uiType = "Aloha"
+  fullName = "unfiled$public/CommunityLockoutEmailTemplate"
+  content = file("salesforce/Records/EmailTemplate/unfiled$public/CommunityLockoutEmailTemplate/CommunityLockoutEmailTemplate.email")
+  _alias = "unfiled$public/CommunityLockoutEmailTemplate"
+}

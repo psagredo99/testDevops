@@ -1,0 +1,56 @@
+salesforce.LightningComponentBundle fsc_sortingConfiguration3 {
+  apiVersion = 53
+  description = "Sorting Configuration"
+  isExposed = true
+  masterLabel = "Sorting Configuration"
+  targets = {
+    target = [
+      "lightning__AppPage",
+      "lightning__FlowScreen",
+    ]
+  }
+  targetConfigs = {
+    targetConfig = [
+      {
+        targets = "lightning__FlowScreen"
+        property = [
+          {
+            name = "fieldList"
+            type = "apex://usf3.FieldDescriptor[]"
+          },
+          {
+            name = "objectName"
+            type = "String"
+          },
+          {
+            name = "selectedFieldListString"
+            type = "String"
+          },
+          {
+            name = "fieldSortingListString"
+            type = "String"
+          },
+        ]
+      },
+    ]
+  }
+  fullName = "fsc_sortingConfiguration3"
+  lwcResources = {
+    lwcResource = {
+      fsc_sortingConfiguration3_html@uv = {
+        source = file("salesforce/Records/LightningComponentBundle/fsc_sortingConfiguration3/fsc_sortingConfiguration3.html")
+        filePath = "lwc/fsc_sortingConfiguration3/fsc_sortingConfiguration3.html"
+      }
+      fsc_sortingConfiguration3_js@uv = {
+        source = file("salesforce/Records/LightningComponentBundle/fsc_sortingConfiguration3/fsc_sortingConfiguration3.js")
+        filePath = "lwc/fsc_sortingConfiguration3/fsc_sortingConfiguration3.js"
+      }
+    }
+  }
+  _generated_dependencies = [
+    {
+      reference = salesforce.LightningComponentBundle.instance.fsc_sortingConfigurationLine
+    },
+  ]
+  _alias = "fsc_sortingConfiguration3"
+}

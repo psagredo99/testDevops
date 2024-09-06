@@ -1,0 +1,84 @@
+type salesforce.DuplicateRecordSet {
+  salesforce.Lookup DuplicateRuleId {
+    apiName = "DuplicateRecordSet.DuplicateRuleId"
+    relationshipName = "DuplicateRule"
+    label = "Regla duplicada ID"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Summary RecordCount {
+    apiName = "DuplicateRecordSet.RecordCount"
+    label = "Recuento de registros"
+    precision = 9
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  serviceid Id {
+    apiName = "DuplicateRecordSet.Id"
+    label = "Id. de Conjunto de registro duplicado "
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Checkbox IsDeleted {
+    apiName = "DuplicateRecordSet.IsDeleted"
+    defaultValue = false
+    label = "Eliminado"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.AutoNumber Name {
+    apiName = "DuplicateRecordSet.Name"
+    label = "Nombre de Conjunto de registro duplicado "
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime CreatedDate {
+    apiName = "DuplicateRecordSet.CreatedDate"
+    label = "Fecha de creación"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup CreatedById {
+    apiName = "DuplicateRecordSet.CreatedById"
+    relationshipName = "CreatedBy"
+    label = "Creado por el Id."
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime LastModifiedDate {
+    apiName = "DuplicateRecordSet.LastModifiedDate"
+    label = "Fecha de la última modificación"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup LastModifiedById {
+    apiName = "DuplicateRecordSet.LastModifiedById"
+    relationshipName = "LastModifiedBy"
+    label = "Última modificación realizada por el Id."
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime SystemModstamp {
+    apiName = "DuplicateRecordSet.SystemModstamp"
+    label = "Modstamp del sistema"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+}

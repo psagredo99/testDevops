@@ -1,0 +1,4 @@
+salesforce.InstalledPackage usf3 {
+  fullName = "usf3"
+  _alias = "usf3"
+}

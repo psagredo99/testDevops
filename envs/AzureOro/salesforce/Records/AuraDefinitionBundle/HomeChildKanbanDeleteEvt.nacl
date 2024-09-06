@@ -1,0 +1,8 @@
+salesforce.AuraDefinitionBundle HomeChildKanbanDeleteEvt {
+  apiVersion = 40
+  description = "A Lightning Component Bundle"
+  fullName = "HomeChildKanbanDeleteEvt"
+  type = "Event"
+  markup = file("salesforce/Records/AuraDefinitionBundle/HomeChildKanbanDeleteEvt/HomeChildKanbanDeleteEvt.evt")
+  _alias = "HomeChildKanbanDeleteEvt"
+}

@@ -1,0 +1,10 @@
+salesforce.ProfileSessionSetting DCM_profileSessionSetting1706182705196 {
+  fullName = "DCM_profileSessionSetting1706182705196"
+  externalCommunityUserIdentityVerif = false
+  forceLogout = false
+  profile = "pkf attest - dcm"
+  sessionPersistence = false
+  sessionTimeout = 0
+  sessionTimeoutWarning = false
+  _alias = "DCM_profileSessionSetting1706182705196"
+}

@@ -1,0 +1,196 @@
+type salesforce.FlowTableViewDefinition__c {
+  salesforce.Checkbox Active__c {
+    apiName = "FlowTableViewDefinition__c.Active__c"
+    defaultValue = true
+    deprecated = false
+    label = "Active"
+    trackTrending = false
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.LongTextArea Alignments__c {
+    apiName = "FlowTableViewDefinition__c.Alignments__c"
+    deprecated = false
+    label = "Alignments"
+    length = 2000
+    trackTrending = false
+    visibleLines = 5
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.LongTextArea Cell_Attributes__c {
+    apiName = "FlowTableViewDefinition__c.Cell_Attributes__c"
+    deprecated = false
+    label = "Cell Attributes"
+    length = 2000
+    trackTrending = false
+    visibleLines = 5
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.LongTextArea Edits__c {
+    apiName = "FlowTableViewDefinition__c.Edits__c"
+    deprecated = false
+    label = "Edits"
+    length = 2000
+    trackTrending = false
+    visibleLines = 5
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.LongTextArea Field_API_Names__c {
+    apiName = "FlowTableViewDefinition__c.Field_API_Names__c"
+    deprecated = false
+    label = "Field API Names"
+    length = 2000
+    trackTrending = false
+    visibleLines = 5
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.LongTextArea Field_Sorting__c {
+    apiName = "FlowTableViewDefinition__c.Field_Sorting__c"
+    deprecated = false
+    label = "Field Sorting"
+    length = 2000
+    trackTrending = false
+    visibleLines = 5
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.LongTextArea Filters__c {
+    apiName = "FlowTableViewDefinition__c.Filters__c"
+    deprecated = false
+    label = "Filters"
+    length = 2000
+    trackTrending = false
+    visibleLines = 5
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.LongTextArea Icons__c {
+    apiName = "FlowTableViewDefinition__c.Icons__c"
+    deprecated = false
+    label = "Icons"
+    length = 2000
+    trackTrending = false
+    visibleLines = 5
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.LongTextArea Labels__c {
+    apiName = "FlowTableViewDefinition__c.Labels__c"
+    deprecated = false
+    label = "Labels"
+    length = 2000
+    trackTrending = false
+    visibleLines = 5
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Text Object_API_Name__c {
+    apiName = "FlowTableViewDefinition__c.Object_API_Name__c"
+    deprecated = false
+    externalId = false
+    label = "Object API Name"
+    length = 120
+    _required = true
+    trackTrending = false
+    unique = false
+    createable = true
+    updateable = true
+    caseSensitive = false
+    queryable = true
+  }
+  salesforce.LongTextArea Other_Attributes__c {
+    apiName = "FlowTableViewDefinition__c.Other_Attributes__c"
+    deprecated = false
+    label = "Other Attributes"
+    length = 2000
+    trackTrending = false
+    visibleLines = 5
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Picklist Selection_Method__c {
+    apiName = "FlowTableViewDefinition__c.Selection_Method__c"
+    deprecated = false
+    label = "Selection Method"
+    _required = true
+    trackTrending = false
+    valueSet = [
+      {
+        fullName = "Pick"
+        default = true
+        label = "Pick"
+      },
+      {
+        fullName = "Type"
+        default = false
+        label = "Type"
+      },
+    ]
+    sorted = false
+    restricted = true
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.LongTextArea Type_Attributes__c {
+    apiName = "FlowTableViewDefinition__c.Type_Attributes__c"
+    deprecated = false
+    label = "Type Attributes"
+    length = 2000
+    trackTrending = false
+    visibleLines = 5
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Text View_Name__c {
+    apiName = "FlowTableViewDefinition__c.View_Name__c"
+    caseSensitive = false
+    deprecated = false
+    externalId = false
+    label = "View Name"
+    length = 255
+    _required = true
+    trackTrending = false
+    unique = true
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.LongTextArea Widths__c {
+    apiName = "FlowTableViewDefinition__c.Widths__c"
+    deprecated = false
+    label = "Widths"
+    length = 2000
+    trackTrending = false
+    visibleLines = 5
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.LongTextArea Wraps__c {
+    apiName = "FlowTableViewDefinition__c.Wraps__c"
+    deprecated = false
+    label = "Wraps"
+    length = 2000
+    trackTrending = false
+    visibleLines = 5
+    createable = true
+    updateable = true
+    queryable = true
+  }
+}

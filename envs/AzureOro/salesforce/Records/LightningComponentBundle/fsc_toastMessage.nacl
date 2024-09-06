@@ -1,0 +1,20 @@
+salesforce.LightningComponentBundle fsc_toastMessage {
+  apiVersion = 46
+  description = "toastMessage"
+  isExposed = true
+  masterLabel = "toastMessage"
+  fullName = "fsc_toastMessage"
+  lwcResources = {
+    lwcResource = {
+      fsc_toastMessage_js@uv = {
+        source = file("salesforce/Records/LightningComponentBundle/fsc_toastMessage/fsc_toastMessage.js")
+        filePath = "lwc/fsc_toastMessage/fsc_toastMessage.js"
+      }
+      fsc_toastMessage_html@uv = {
+        source = file("salesforce/Records/LightningComponentBundle/fsc_toastMessage/fsc_toastMessage.html")
+        filePath = "lwc/fsc_toastMessage/fsc_toastMessage.html"
+      }
+    }
+  }
+  _alias = "fsc_toastMessage"
+}

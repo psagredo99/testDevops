@@ -1,0 +1,11 @@
+salesforce.AuraDefinitionBundle Redirigir_al_registro {
+  apiVersion = 57
+  description = "Redirige a la cuenta y salta un toast"
+  fullName = "Redirigir_al_registro"
+  type = "Component"
+  designContent = file("salesforce/Records/AuraDefinitionBundle/Redirigir_al_registro/Redirigir_al_registro.design")
+  helperContent = file("salesforce/Records/AuraDefinitionBundle/Redirigir_al_registro/Redirigir_al_registroHelper.js")
+  controllerContent = file("salesforce/Records/AuraDefinitionBundle/Redirigir_al_registro/Redirigir_al_registroController.js")
+  markup = file("salesforce/Records/AuraDefinitionBundle/Redirigir_al_registro/Redirigir_al_registro.cmp")
+  _alias = "Redirigir_al_registro"
+}

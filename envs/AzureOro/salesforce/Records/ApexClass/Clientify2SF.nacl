@@ -1,0 +1,66 @@
+salesforce.ApexClass Clientify2SF {
+  apiVersion = 57
+  status = "Active"
+  fullName = "Clientify2SF"
+  content = file("salesforce/Records/ApexClass/Clientify2SF.cls")
+  _generated_dependencies = [
+    {
+      reference = salesforce.Clienti_Settings__c
+    },
+    {
+      reference = salesforce.Clienti_Settings__c.field.Last_Sync_Date__c
+    },
+    {
+      reference = salesforce.Clienti_Settings__c.field.Next_callout_URL__c
+    },
+    {
+      reference = salesforce.Clienti_Settings__c.field.Processed_records__c
+    },
+    {
+      reference = salesforce.Clienti_Settings__c.field.Record_count__c
+    },
+    {
+      reference = salesforce.Clienti_Settings__c.field.URL_Base__c
+    },
+    {
+      reference = salesforce.Lead
+    },
+    {
+      reference = salesforce.Lead.field.Correos_electronicos_adicionales__c
+    },
+    {
+      reference = salesforce.Lead.field.ID_Contacto_Clientify__c
+    },
+    {
+      reference = salesforce.Lead.field.ID_Cuenta_Clientify__c
+    },
+    {
+      reference = salesforce.Lead.field.Telefonos_adicionales__c
+    },
+    {
+      reference = salesforce.Log__c
+    },
+    {
+      reference = salesforce.Log__c.field.Callout_Error__c
+    },
+    {
+      reference = salesforce.Log__c.field.Endpoint_WS__c
+    },
+    {
+      reference = salesforce.Log__c.field.Response_Body__c
+    },
+    {
+      reference = salesforce.Log__c.field.Result__c
+    },
+    {
+      reference = salesforce.Log__c.field.Server_Response__c
+    },
+    {
+      reference = salesforce.Log__c.field.Service_Name__c
+    },
+    {
+      reference = salesforce.Log__c.field.Timestamp__c
+    },
+  ]
+  _alias = "Clientify2SF"
+}

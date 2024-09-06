@@ -1,0 +1,24 @@
+salesforce.LightningComponentBundle fsc_expressionLine {
+  apiVersion = 46
+  description = "expressionLine"
+  isExposed = true
+  masterLabel = "expressionLine"
+  fullName = "fsc_expressionLine"
+  lwcResources = {
+    lwcResource = {
+      fsc_expressionLine_html@uv = {
+        source = file("salesforce/Records/LightningComponentBundle/fsc_expressionLine/fsc_expressionLine.html")
+        filePath = "lwc/fsc_expressionLine/fsc_expressionLine.html"
+      }
+      fsc_expressionLine_js@uv = {
+        source = file("salesforce/Records/LightningComponentBundle/fsc_expressionLine/fsc_expressionLine.js")
+        filePath = "lwc/fsc_expressionLine/fsc_expressionLine.js"
+      }
+      fsc_expressionLine_css@uv = {
+        source = file("salesforce/Records/LightningComponentBundle/fsc_expressionLine/fsc_expressionLine.css")
+        filePath = "lwc/fsc_expressionLine/fsc_expressionLine.css"
+      }
+    }
+  }
+  _alias = "fsc_expressionLine"
+}

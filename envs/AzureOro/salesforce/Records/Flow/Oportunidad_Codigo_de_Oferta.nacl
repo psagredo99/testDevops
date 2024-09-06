@@ -1,0 +1,188 @@
+salesforce.Flow Oportunidad_Codigo_de_Oferta {
+  fullName = "Oportunidad_Codigo_de_Oferta"
+  apiVersion = 57
+  constants = [
+    {
+      name = "ValorInicial"
+      dataType = "String"
+      value = {
+        stringValue = "23-100000"
+      }
+    },
+  ]
+  decisions = [
+    {
+      name = "Primera_ejecucion"
+      label = "Primera ejecución"
+      locationX = 182
+      locationY = 431
+      defaultConnector = {
+        targetReference = "Actualizar_Oportunidad_Primera"
+      }
+      defaultConnectorLabel = "Es la primera"
+      rules = [
+        {
+          name = "Existen_oportunidades"
+          conditionLogic = "and"
+          conditions = [
+            {
+              leftValueReference = "Obtener_Oportunidades"
+              operator = "IsNull"
+              rightValue = {
+                booleanValue = false
+              }
+            },
+          ]
+          connector = {
+            targetReference = "Actualizar_Oportunidad_Sumando"
+          }
+          label = "Existen oportunidades"
+        },
+      ]
+    },
+  ]
+  environments = "Default"
+  formulas = [
+    {
+      name = "Anyo_Actual"
+      dataType = "String"
+      expression = "RIGHT(Text(Year({!$Flow.CurrentDate})),2)"
+    },
+    {
+      name = "NuevoCodigoOferta"
+      dataType = "String"
+      expression = "{!Anyo_Actual}+'-'+Text({!NumeroAnteriorOferta}+1)"
+    },
+    {
+      description = "De la última oferta que hay quitamos los primeros caracteres para quedarnos con la componente numérica. Formato YY-000000"
+      name = "NumeroAnteriorOferta"
+      dataType = "Number"
+      expression = "VALUE(RIGHT({!Obtener_Oportunidades.Codigo_Oferta__c}, 6))"
+      scale = 0
+    },
+  ]
+  interviewLabel = "Oportunidad - Código de Oferta {!$Flow.CurrentDateTime}"
+  label = "Oportunidad - Código de Oferta"
+  processMetadataValues = [
+    {
+      name = "BuilderType"
+      value = {
+        stringValue = "LightningFlowBuilder"
+      }
+    },
+    {
+      name = "CanvasMode"
+      value = {
+        stringValue = "AUTO_LAYOUT_CANVAS"
+      }
+    },
+    {
+      name = "OriginBuilderType"
+      value = {
+        stringValue = "LightningFlowBuilder"
+      }
+    },
+  ]
+  processType = "AutoLaunchedFlow"
+  recordLookups = [
+    {
+      name = "Obtener_Oportunidades"
+      label = "Obtener Oportunidad con mayor Numero de Oferta"
+      locationX = 182
+      locationY = 311
+      assignNullValuesIfNoRecordsFound = false
+      connector = {
+        targetReference = "Primera_ejecucion"
+      }
+      filterLogic = "and"
+      filters = [
+        {
+          field = salesforce.Opportunity.field.Codigo_Oferta__c
+          operator = "IsNull"
+          value = {
+            booleanValue = false
+          }
+        },
+      ]
+      getFirstRecordOnly = true
+      object = salesforce.Opportunity
+      sortField = salesforce.Opportunity.field.Codigo_Oferta__c
+      sortOrder = "Desc"
+      storeOutputAutomatically = true
+    },
+  ]
+  recordUpdates = [
+    {
+      name = "Actualizar_Oportunidad_Primera"
+      label = "Actualizar Oportunidad Sumando"
+      locationX = 314
+      locationY = 551
+      inputAssignments = [
+        {
+          field = "Codigo_Oferta__c"
+          value = {
+            elementReference = "ValorInicial"
+          }
+        },
+      ]
+      inputReference = "$Record"
+    },
+    {
+      name = "Actualizar_Oportunidad_Sumando"
+      label = "Actualizar Oportunidad Sumando"
+      locationX = 50
+      locationY = 551
+      inputAssignments = [
+        {
+          field = "Codigo_Oferta__c"
+          value = {
+            elementReference = "NuevoCodigoOferta"
+          }
+        },
+      ]
+      inputReference = "$Record"
+    },
+  ]
+  start = {
+    locationX = 56
+    locationY = 0
+    connector = {
+      targetReference = "Obtener_Oportunidades"
+    }
+    filterLogic = "and"
+    filters = [
+      {
+        field = salesforce.Opportunity.field.StageName
+        operator = "NotEqualTo"
+        value = {
+          stringValue = "Identificada"
+        }
+      },
+      {
+        field = salesforce.Opportunity.field.Codigo_Oferta__c
+        operator = "IsNull"
+        value = {
+          booleanValue = true
+        }
+      },
+    ]
+    object = salesforce.Opportunity
+    recordTriggerType = "CreateAndUpdate"
+    triggerType = "RecordBeforeSave"
+  }
+  status = "Active"
+  variables = [
+    {
+      name = "vr_nuevoNumOferta"
+      dataType = "Number"
+      isCollection = false
+      isInput = false
+      isOutput = false
+      scale = 0
+      value = {
+        numberValue = 1
+      }
+    },
+  ]
+  _alias = "Oportunidad - Código de Oferta"
+}

@@ -1,0 +1,13 @@
+salesforce.AnimationRule Default {
+  fullName = "Default"
+  animationFrequency = "often"
+  developerName = "Default"
+  isActive = true
+  masterLabel = "Default"
+  recordTypeContext = "Master"
+  recordTypeName = "__MASTER__"
+  sobjectType = salesforce.Lead
+  targetField = salesforce.Lead.field.Status
+  targetFieldChangeToValues = "Qualified"
+  _alias = "Default"
+}

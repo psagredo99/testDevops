@@ -1,0 +1,7 @@
+salesforce.CustomPermission Oportunidad_Permitir_cambiar_etapa_sin_validaciones {
+  description = "Para añadir en reglas de validación de Opps"
+  isLicensed = false
+  label = "Oportunidad - Permitir cambiar etapa sin validaciones"
+  fullName = "Oportunidad_Permitir_cambiar_etapa_sin_validaciones"
+  _alias = "Oportunidad - Permitir cambiar etapa sin validaciones"
+}

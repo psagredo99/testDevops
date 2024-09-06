@@ -1,0 +1,101 @@
+salesforce.SecuritySettings {
+  fullName = "Security"
+  canUsersGrantLoginAccess = true
+  enableAdminLoginAsAnyUser = true
+  enableAuditFieldsInactiveOwner = true
+  enableAuraSecureEvalPref = true
+  enableCoepHeader = "false"
+  enableCoopHeader = "false"
+  enableCrossOrgRedirects = "false"
+  enablePermissionsPolicy = "false"
+  enableRequireHttpsConnection = true
+  networkAccess = {
+    ipRanges = [
+      {
+        description = "PKF Attest"
+        end = "194.30.40.180"
+        start = "194.30.40.180"
+      },
+      {
+        end = "34.224.144.232"
+        start = "34.224.144.232"
+      },
+    ]
+  }
+  passwordPolicies = {
+    complexity = "SpecialCharacters"
+    expiration = "NinetyDays"
+    historyRestriction = "3"
+    lockoutInterval = "ThirtyMinutes"
+    maxLoginAttempts = "ThreeAttempts"
+    minimumPasswordLength = "8"
+    minimumPasswordLifetime = true
+    obscureSecretAnswer = true
+    questionRestriction = "DoesNotContainPassword"
+  }
+  redirectBlockModeEnabled = "false"
+  sendCspForUncommonClients = "false"
+  sessionSettings = {
+    allowUserAuthenticationByCertificate = false
+    allowUserCertBasedAuthenticationWithOcspValidation = false
+    canConfirmEmailChangeInLightningCommunities = true
+    canConfirmIdentityBySmsOnly = true
+    disableTimeoutWarning = false
+    enableBuiltInAuthenticator = false
+    enableCSPOnEmail = true
+    enableCSRFOnGet = true
+    enableCSRFOnPost = true
+    enableCacheAndAutocomplete = true
+    enableClickjackNonsetupSFDC = true
+    enableClickjackNonsetupUser = true
+    enableClickjackNonsetupUserHeaderless = true
+    enableClickjackSetup = true
+    enableCoepHeader = false
+    enableContentSniffingProtection = true
+    enableCoopHeader = false
+    enableLightningLogin = true
+    enableLightningLoginOnlyWithUserPerm = false
+    enableMFADirectUILoginOptIn = false
+    enableOauthCorsPolicy = false
+    enablePermissionsPolicy = false
+    enablePostForSessions = false
+    enableSMSIdentity = true
+    enableU2F = false
+    enforceIpRangesEveryRequest = false
+    enforceUserDeviceRevoked = false
+    forceLogoutOnSessionTimeout = true
+    forceRelogin = true
+    grantCameraAccess = "TrustedUrls"
+    grantMicrophoneAccess = "TrustedUrls"
+    hasRetainedLoginHints = false
+    hasUserSwitching = true
+    identityConfirmationOnEmailChange = false
+    identityConfirmationOnTwoFactorRegistrationEnabled = true
+    lockSessionsToDomain = true
+    lockSessionsToIp = false
+    lockerServiceCSP = false
+    lockerServiceNext = true
+    lockerServiceNextControl = false
+    redirectBlockModeEnabled = false
+    redirectionWarning = true
+    referrerPolicy = true
+    referrerPolicyDirective = "origin-when-cross-origin"
+    requireHttpOnly = true
+    sendCspForUncommonClients = false
+    sessionTimeout = "TwoHours"
+    sidToken3rdPartyAuraApp = false
+    skipSFAWhenMFADirectUILogin = false
+    terminateUserSessionsWhenAdminResetsPassword = false
+    useEAPIRateLimitForConnectAPI = false
+    useLocalStorageForLogoutUrl = false
+  }
+  singleSignOnSettings = {
+    enableCaseInsensitiveFederationID = false
+    enableForceDelegatedCallout = false
+    enableMultipleSamlConfigs = true
+    enableSamlJitProvisioning = false
+    enableSamlLogin = false
+    isLoginWithSalesforceCredentialsDisabled = true
+  }
+  _alias = "Security"
+}

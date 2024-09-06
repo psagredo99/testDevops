@@ -1,0 +1,23 @@
+salesforce.LightningComponentBundle fsc_pickIconCpe {
+  apiVersion = 51
+  isExposed = true
+  fullName = "fsc_pickIconCpe"
+  lwcResources = {
+    lwcResource = {
+      fsc_pickIconCpe_js@uv = {
+        source = file("salesforce/Records/LightningComponentBundle/fsc_pickIconCpe/fsc_pickIconCpe.js")
+        filePath = "lwc/fsc_pickIconCpe/fsc_pickIconCpe.js"
+      }
+      fsc_pickIconCpe_html@uv = {
+        source = file("salesforce/Records/LightningComponentBundle/fsc_pickIconCpe/fsc_pickIconCpe.html")
+        filePath = "lwc/fsc_pickIconCpe/fsc_pickIconCpe.html"
+      }
+    }
+  }
+  _generated_dependencies = [
+    {
+      reference = salesforce.LightningComponentBundle.instance.fsc_flowButtonBar
+    },
+  ]
+  _alias = "fsc_pickIconCpe"
+}

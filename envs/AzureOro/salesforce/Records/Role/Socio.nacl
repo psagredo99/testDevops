@@ -1,0 +1,10 @@
+salesforce.Role Socio {
+  fullName = "Socio"
+  caseAccessLevel = "Edit"
+  contactAccessLevel = "Edit"
+  description = "Socio"
+  mayForecastManagerShare = false
+  name = "Socio"
+  opportunityAccessLevel = "Edit"
+  _alias = "Socio"
+}

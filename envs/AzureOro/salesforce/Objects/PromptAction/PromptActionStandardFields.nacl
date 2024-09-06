@@ -1,0 +1,186 @@
+type salesforce.PromptAction {
+  serviceid Id {
+    apiName = "PromptAction.Id"
+    label = "Id. de Acción de solicitud"
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup OwnerId {
+    apiName = "PromptAction.OwnerId"
+    relationshipName = "Owner"
+    label = "Id. del propietario"
+    createable = true
+    updateable = true
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Checkbox IsDeleted {
+    apiName = "PromptAction.IsDeleted"
+    defaultValue = false
+    label = "Eliminado"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Text Name {
+    apiName = "PromptAction.Name"
+    length = 255
+    _required = true
+    label = "Nombre"
+    createable = true
+    updateable = true
+    unique = false
+    caseSensitive = false
+    queryable = true
+  }
+  salesforce.DateTime CreatedDate {
+    apiName = "PromptAction.CreatedDate"
+    label = "Fecha de creación"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup CreatedById {
+    apiName = "PromptAction.CreatedById"
+    relationshipName = "CreatedBy"
+    label = "Creado por el Id."
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime LastModifiedDate {
+    apiName = "PromptAction.LastModifiedDate"
+    label = "Fecha de la última modificación"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup LastModifiedById {
+    apiName = "PromptAction.LastModifiedById"
+    relationshipName = "LastModifiedBy"
+    label = "Última modificación realizada por el Id."
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime SystemModstamp {
+    apiName = "PromptAction.SystemModstamp"
+    label = "Modstamp del sistema"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup PromptVersionId {
+    apiName = "PromptAction.PromptVersionId"
+    relationshipName = "PromptVersion"
+    _required = true
+    label = "Id. de Versión de solicitud"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Lookup UserId {
+    apiName = "PromptAction.UserId"
+    relationshipName = "User"
+    _required = true
+    label = "Id. de usuario"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Number TimesDisplayed {
+    apiName = "PromptAction.TimesDisplayed"
+    label = "Veces mostrada"
+    precision = 9
+    createable = true
+    updateable = true
+    scale = 0
+    unique = false
+    queryable = true
+  }
+  salesforce.Number TimesActionTaken {
+    apiName = "PromptAction.TimesActionTaken"
+    label = "Veces que se realizó la acción"
+    precision = 9
+    createable = true
+    updateable = true
+    scale = 0
+    unique = false
+    queryable = true
+  }
+  salesforce.Number TimesDismissed {
+    apiName = "PromptAction.TimesDismissed"
+    label = "Veces rechazada"
+    precision = 9
+    createable = true
+    updateable = true
+    scale = 0
+    unique = false
+    queryable = true
+  }
+  salesforce.DateTime LastDisplayDate {
+    apiName = "PromptAction.LastDisplayDate"
+    label = "Última fecha de visualización"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Picklist LastResult {
+    apiName = "PromptAction.LastResult"
+    restricted = true
+    label = "Último resultado"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.DateTime LastResultDate {
+    apiName = "PromptAction.LastResultDate"
+    label = "Fecha de último resultado"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Number StepNumber {
+    apiName = "PromptAction.StepNumber"
+    label = "Número de paso"
+    precision = 9
+    createable = true
+    updateable = true
+    scale = 0
+    unique = false
+    queryable = true
+  }
+  salesforce.Number StepCount {
+    apiName = "PromptAction.StepCount"
+    label = "Recuento de pasos"
+    precision = 9
+    createable = true
+    updateable = true
+    scale = 0
+    unique = false
+    queryable = true
+  }
+  salesforce.DateTime SnoozeUntil {
+    apiName = "PromptAction.SnoozeUntil"
+    label = "Posponer hasta"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Number TimesSnoozed {
+    apiName = "PromptAction.TimesSnoozed"
+    label = "Veces pospuesto"
+    precision = 9
+    createable = true
+    updateable = true
+    scale = 0
+    unique = false
+    queryable = true
+  }
+}

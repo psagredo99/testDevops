@@ -1,0 +1,6 @@
+salesforce.PredictionBuilderSettings {
+  fullName = "PredictionBuilder"
+  enablePredictionBuilder = false
+  isPredictionBuilderStarted = false
+  _alias = "PredictionBuilder"
+}

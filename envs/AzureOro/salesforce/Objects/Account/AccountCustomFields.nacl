@@ -1,0 +1,1822 @@
+type salesforce.Account {
+  salesforce.Checkbox Alerta_activa__c {
+    apiName = "Account.Alerta_activa__c"
+    defaultValue = false
+    description = "#56562 Hay que crear un botón de \"Activar \"Alerta sobre cuenta\" y otro botón de \"Desactivar alerta\" cuando haya una activa"
+    label = "Alerta activa"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Date Alerta_fecha__c {
+    apiName = "Account.Alerta_fecha__c"
+    label = "Alerta fecha"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.DateTime Alerta_fecha_hora__c {
+    apiName = "Account.Alerta_fecha_hora__c"
+    label = "Alerta fecha hora"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Picklist Alerta_motivo__c {
+    apiName = "Account.Alerta_motivo__c"
+    label = "Motivo"
+    valueSet = [
+      {
+        fullName = "Impago"
+        default = false
+        label = "Impago"
+      },
+      {
+        fullName = "Conflicto en job"
+        default = false
+        label = "Conflicto en job"
+      },
+      {
+        fullName = "Otros"
+        default = false
+        label = "Otros"
+      },
+    ]
+    sorted = false
+    restricted = true
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.FormulaText Alerta_nombre_usuario__c {
+    apiName = "Account.Alerta_nombre_usuario__c"
+    externalId = false
+    formula = "Alerta_usuario__r.FirstName + ' ' + Alerta_usuario__r.LastName"
+    formulaTreatBlanksAs = "BlankAsZero"
+    label = "Alerta nombre usuario"
+    unique = false
+    createable = false
+    updateable = false
+    caseSensitive = false
+    queryable = true
+    _hidden_value = true
+    _generated_dependencies = [
+      {
+        reference = salesforce.Account.field.Alerta_usuario__c
+      },
+    ]
+  }
+  salesforce.TextArea Alerta_observaciones__c {
+    apiName = "Account.Alerta_observaciones__c"
+    label = "Observaciones"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Lookup Alerta_usuario__c {
+    apiName = "Account.Alerta_usuario__c"
+    deleteConstraint = "SetNull"
+    label = "Alerta usuario"
+    referenceTo = [
+      salesforce.User,
+    ]
+    relationshipName = "Cuentas"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.FormulaText Alias_FX__c {
+    apiName = "Account.Alias_FX__c"
+    description = "Campo creado para la cabecera de cuentas, así se puede sacar el formato compacto si tiene un alias distinto del Name"
+    externalId = false
+    formula = "IF(Name =  Alias__c ,'',Alias__c)"
+    formulaTreatBlanksAs = "BlankAsZero"
+    label = "Alias"
+    unique = false
+    createable = false
+    updateable = false
+    caseSensitive = false
+    queryable = true
+    _hidden_value = true
+    _generated_dependencies = [
+      {
+        reference = salesforce.Account.field.Alias__c
+      },
+      {
+        reference = salesforce.Account.field.Name
+      },
+    ]
+  }
+  salesforce.Text Alias__c {
+    apiName = "Account.Alias__c"
+    externalId = false
+    label = "Alias"
+    length = 255
+    unique = false
+    createable = true
+    updateable = true
+    caseSensitive = false
+    queryable = true
+  }
+  salesforce.TextArea Apalancamiento_max_CP__c {
+    apiName = "Account.Apalancamiento_max_CP__c"
+    label = "Apalancamiento max. CP"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.TextArea Apalancamiento_max_LP__c {
+    apiName = "Account.Apalancamiento_max_LP__c"
+    label = "Apalancamiento max. LP"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Picklist CRM__c {
+    apiName = "Account.CRM__c"
+    label = "CRM"
+    valueSet = [
+      {
+        fullName = "A medida"
+        default = false
+        label = "A medida"
+      },
+      {
+        fullName = "Clientify"
+        default = false
+        label = "Clientify"
+      },
+      {
+        fullName = "Desconocido"
+        default = false
+        label = "Desconocido"
+      },
+      {
+        fullName = "Dynamics CRM / 365"
+        default = false
+        label = "Dynamics CRM / 365"
+      },
+      {
+        fullName = "Hubspot"
+        default = false
+        label = "Hubspot"
+      },
+      {
+        fullName = "Jira"
+        default = false
+        label = "Jira"
+      },
+      {
+        fullName = "No tiene"
+        default = false
+        label = "No tiene"
+      },
+      {
+        fullName = "Sage"
+        default = false
+        label = "Sage"
+      },
+      {
+        fullName = "Salesforce"
+        default = false
+        label = "Salesforce"
+      },
+      {
+        fullName = "SAP"
+        default = false
+        label = "SAP"
+      },
+      {
+        fullName = "Siebel"
+        default = false
+        label = "Siebel"
+      },
+      {
+        fullName = "Sugar CRM"
+        default = false
+        label = "Sugar CRM"
+      },
+      {
+        fullName = "Zohoo"
+        default = false
+        label = "Zohoo"
+      },
+    ]
+    sorted = false
+    restricted = true
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Picklist Categoria_Mifid__c {
+    apiName = "Account.Categoria_Mifid__c"
+    label = "Categoría Mifid"
+    valueSet = [
+      {
+        fullName = "Cliente profesional"
+        default = false
+        label = "Cliente profesional"
+      },
+      {
+        fullName = "Contraparte elegible"
+        default = false
+        label = "Contraparte elegible"
+      },
+      {
+        fullName = "Profesional"
+        default = false
+        label = "Profesional"
+      },
+    ]
+    sorted = false
+    restricted = false
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Checkbox Cliente_auditado__c {
+    apiName = "Account.Cliente_auditado__c"
+    defaultValue = false
+    description = "Importado desde Navision para control de auditoría"
+    label = "Cliente auditado"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Text Correo_Navision__c {
+    apiName = "Account.Correo_Navision__c"
+    externalId = false
+    label = "Correo"
+    length = 255
+    unique = false
+    createable = true
+    updateable = true
+    caseSensitive = false
+    queryable = true
+  }
+  salesforce.Email Correo_electronico_de_socio_de_auditoria__c {
+    apiName = "Account.Correo_electronico_de_socio_de_auditoria__c"
+    externalId = false
+    label = "Correo electrónico de socio de auditoría"
+    unique = false
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Url Cuenta_LinkedIn__c {
+    apiName = "Account.Cuenta_LinkedIn__c"
+    label = "Cuenta LinkedInTEST"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Text Direccion_2__c {
+    apiName = "Account.Direccion_2__c"
+    description = "Integrado con Navision"
+    externalId = false
+    label = "Dirección 2"
+    length = 255
+    unique = false
+    createable = true
+    updateable = true
+    caseSensitive = false
+    queryable = true
+  }
+  salesforce.FormulaText Direccion_Navision__c {
+    apiName = "Account.Direccion_Navision__c"
+    externalId = false
+    formula = "BillingStreet &\", \"& BillingCity &\", \"&  BillingPostalCode  &\", \"&  BillingCountry"
+    formulaTreatBlanksAs = "BlankAsZero"
+    label = "Direccion_Navision"
+    unique = false
+    createable = false
+    updateable = false
+    caseSensitive = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Url Documentacion_Cliente_Auditoria__c {
+    apiName = "Account.Documentacion_Cliente_Auditoria__c"
+    label = "Documentación Cliente Auditoría"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Url Documentacion_Cliente_Corporate__c {
+    apiName = "Account.Documentacion_Cliente_Corporate__c"
+    label = "Documentación Cliente Corporate"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Url Documentacion_Cliente_DCM__c {
+    apiName = "Account.Documentacion_Cliente_DCM__c"
+    label = "Documentación Cliente DCM"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Url Documentacion_Cliente_Fiscal_y_Legal__c {
+    apiName = "Account.Documentacion_Cliente_Fiscal_y_Legal__c"
+    label = "Documentación Cliente Fiscal y Legal"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Url Documentacion_Cliente_ITC__c {
+    apiName = "Account.Documentacion_Cliente_ITC__c"
+    label = "Documentación Cliente ITC"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Url Documentacion_Cliente_Inncome__c {
+    apiName = "Account.Documentacion_Cliente_Inncome__c"
+    label = "Documentación Cliente Inncome"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Picklist ERP__c {
+    apiName = "Account.ERP__c"
+    inlineHelpText = "ERP que tiene la cuenta."
+    label = "ERP"
+    valueSet = [
+      {
+        fullName = "A medida"
+        default = false
+        label = "A medida"
+      },
+      {
+        fullName = "A3"
+        default = false
+        label = "A3"
+      },
+      {
+        fullName = "ADA Sistemas"
+        default = false
+        label = "ADA Sistemas"
+      },
+      {
+        fullName = "Amis"
+        default = false
+        label = "Amis"
+      },
+      {
+        fullName = "AQUA"
+        default = false
+        label = "AQUA"
+      },
+      {
+        fullName = "AS/400"
+        default = false
+        label = "AS/400"
+      },
+      {
+        fullName = "BAAN"
+        default = false
+        label = "BAAN"
+      },
+      {
+        fullName = "CCS-Ekon-Agress"
+        default = false
+        label = "CCS-Ekon-Agress"
+      },
+      {
+        fullName = "Desconocido"
+        default = false
+        label = "Desconocido"
+      },
+      {
+        fullName = "Dynamics AX"
+        default = false
+        label = "Dynamics AX"
+      },
+      {
+        fullName = "Dynamics NAV"
+        default = false
+        label = "Dynamics NAV"
+      },
+      {
+        fullName = "Eurowin"
+        default = false
+        label = "Eurowin"
+      },
+      {
+        fullName = "Exact"
+        default = false
+        label = "Exact"
+      },
+      {
+        fullName = "FactoryWin"
+        default = false
+        label = "FactoryWin"
+      },
+      {
+        fullName = "GesCol"
+        default = false
+        label = "GesCol"
+      },
+      {
+        fullName = "i68 (Izaro)"
+        default = false
+        label = "i68 (Izaro)"
+      },
+      {
+        fullName = "IDS-Vektor"
+        default = false
+        label = "IDS-Vektor"
+      },
+      {
+        fullName = "JDEwards"
+        default = false
+        label = "JDEwards"
+      },
+      {
+        fullName = "Logic Control"
+        default = false
+        label = "Logic Control"
+      },
+      {
+        fullName = "Movex"
+        default = false
+        label = "Movex"
+      },
+      {
+        fullName = "Nada / Sin ERP"
+        default = false
+        label = "Nada / Sin ERP"
+      },
+      {
+        fullName = "Nucleo ERP"
+        default = false
+        label = "Nucleo ERP"
+      },
+      {
+        fullName = "Odoo"
+        default = false
+        label = "Odoo"
+      },
+      {
+        fullName = "Openbravo"
+        default = false
+        label = "Openbravo"
+      },
+      {
+        fullName = "Oracle"
+        default = false
+        label = "Oracle"
+      },
+      {
+        fullName = "Prowin"
+        default = false
+        label = "Prowin"
+      },
+      {
+        fullName = "PSN"
+        default = false
+        label = "PSN"
+      },
+      {
+        fullName = "RPS"
+        default = false
+        label = "RPS"
+      },
+      {
+        fullName = "Sage 50/Contaplus"
+        default = false
+        label = "Sage 50/Contaplus"
+      },
+      {
+        fullName = "Sage Murano / 200"
+        default = false
+        label = "Sage Murano / 200"
+      },
+      {
+        fullName = "Sage X3"
+        default = false
+        label = "Sage X3"
+      },
+      {
+        fullName = "SAP"
+        default = false
+        label = "SAP"
+      },
+      {
+        fullName = "SAP B.O."
+        default = false
+        label = "SAP B.O."
+      },
+      {
+        fullName = "Solmicro Expertis"
+        default = false
+        label = "Solmicro Expertis"
+      },
+      {
+        fullName = "Spyro"
+        default = false
+        label = "Spyro"
+      },
+      {
+        fullName = "Transkal"
+        default = false
+        label = "Transkal"
+      },
+      {
+        fullName = "Viafisio"
+        default = false
+        label = "Viafisio"
+      },
+    ]
+    sorted = false
+    restricted = true
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.TextArea ESG_Agencia_CP__c {
+    apiName = "Account.ESG_Agencia_CP__c"
+    label = "ESG Agencia CP"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.TextArea ESG_Agencia_LP__c {
+    apiName = "Account.ESG_Agencia_LP__c"
+    label = "ESG Agencia LP"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Picklist ESG_CP__c {
+    apiName = "Account.ESG_CP__c"
+    label = "ESG CP"
+    valueSet = [
+      {
+        fullName = "Sí"
+        default = false
+        label = "Sí"
+      },
+      {
+        fullName = "No"
+        default = false
+        label = "No"
+      },
+    ]
+    sorted = false
+    restricted = true
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Picklist ESG_LP__c {
+    apiName = "Account.ESG_LP__c"
+    label = "ESG LP"
+    valueSet = [
+      {
+        fullName = "Sí"
+        default = false
+        label = "Sí"
+      },
+      {
+        fullName = "No"
+        default = false
+        label = "No"
+      },
+    ]
+    sorted = false
+    restricted = true
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Checkbox Empresa_auditada__c {
+    apiName = "Account.Empresa_auditada__c"
+    defaultValue = false
+    label = "Empresa auditada"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Checkbox Empresa_cotizada_CP__c {
+    apiName = "Account.Empresa_cotizada_CP__c"
+    defaultValue = false
+    label = "Empresa cotizada CP"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Checkbox Empresa_cotizada_LP__c {
+    apiName = "Account.Empresa_cotizada_LP__c"
+    defaultValue = false
+    label = "Empresa cotizada LP"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Checkbox Empresa_cotizada__c {
+    apiName = "Account.Empresa_cotizada__c"
+    defaultValue = false
+    label = "Empresa cotizada"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Picklist Estado_DCM__c {
+    apiName = "Account.Estado_DCM__c"
+    label = "Estado DCM"
+    valueSet = [
+      {
+        fullName = "Activo"
+        default = false
+        label = "Activo"
+      },
+      {
+        fullName = "Cliente"
+        default = false
+        label = "Cliente"
+      },
+      {
+        fullName = "Pipeline"
+        default = false
+        label = "Pipeline"
+      },
+      {
+        fullName = "Target"
+        default = false
+        label = "Target"
+      },
+    ]
+    sorted = false
+    restricted = false
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Picklist Estado_de_la_situacion__c {
+    apiName = "Account.Estado_de_la_situacion__c"
+    label = "Estado de la situación"
+    valueSet = [
+      {
+        fullName = "En Activo"
+        default = false
+        label = "En Activo"
+      },
+      {
+        fullName = "En Liquidación"
+        default = false
+        label = "En Liquidación"
+      },
+      {
+        fullName = "Cerrada"
+        default = false
+        label = "Cerrada"
+      },
+    ]
+    sorted = false
+    restricted = true
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Picklist Estructura__c {
+    apiName = "Account.Estructura__c"
+    label = "Estructura"
+    valueSet = [
+      {
+        fullName = "Préstamo"
+        default = false
+        label = "Préstamo"
+      },
+      {
+        fullName = "Bono"
+        default = false
+        label = "Bono"
+      },
+    ]
+    sorted = false
+    restricted = true
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Picklist EthiFinance_CP__c {
+    apiName = "Account.EthiFinance_CP__c"
+    label = "EthiFinance CP"
+    valueSet = [
+      {
+        fullName = "Sí"
+        default = false
+        label = "Sí"
+      },
+      {
+        fullName = "No"
+        default = false
+        label = "No"
+      },
+    ]
+    sorted = false
+    restricted = true
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Picklist EthiFinance_LP__c {
+    apiName = "Account.EthiFinance_LP__c"
+    label = "EthiFinance LP"
+    valueSet = [
+      {
+        fullName = "Sí"
+        default = false
+        label = "Sí"
+      },
+      {
+        fullName = "No"
+        default = false
+        label = "No"
+      },
+    ]
+    sorted = false
+    restricted = true
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Summary Facturacion_PKF__c {
+    apiName = "Account.Facturacion_PKF__c"
+    inlineHelpText = "Agregado de la facturación de la cuenta"
+    label = "Facturación PKF"
+    summarizedField = "Facturacion__c.Facturacion__c"
+    summaryForeignKey = "Facturacion__c.Cuenta__c"
+    summaryOperation = "sum"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Currency Facturacion__c {
+    apiName = "Account.Facturacion__c"
+    label = "Facturación"
+    precision = 18
+    scale = 2
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Picklist Facturacion_emisor_CP__c {
+    apiName = "Account.Facturacion_emisor_CP__c"
+    label = "Facturación emisor CP"
+    valueSet = [
+      {
+        fullName = "Menos de 500M"
+        default = false
+        label = "Menos de 500M"
+      },
+      {
+        fullName = "Más de 500M"
+        default = false
+        label = "Más de 500M"
+      },
+    ]
+    sorted = false
+    restricted = true
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Picklist Facturacion_emisor_LP__c {
+    apiName = "Account.Facturacion_emisor_LP__c"
+    label = "Facturación emisor LP"
+    valueSet = [
+      {
+        fullName = "Menos de 500M"
+        default = false
+        label = "Menos de 500M"
+      },
+      {
+        fullName = "Más de 500M"
+        default = false
+        label = "Más de 500M"
+      },
+    ]
+    sorted = false
+    restricted = true
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.TextArea Feedback_general_CP__c {
+    apiName = "Account.Feedback_general_CP__c"
+    label = "Feedback general CP"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.TextArea Feedback_general_LP__c {
+    apiName = "Account.Feedback_general_LP__c"
+    label = "Feedback general LP"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Picklist GLOFS__c {
+    apiName = "Account.GLOFS__c"
+    label = "GLOFS"
+    valueSet = [
+      {
+        fullName = "Sí"
+        default = false
+        label = "Sí"
+      },
+      {
+        fullName = "No"
+        default = false
+        label = "No"
+      },
+    ]
+    sorted = false
+    restricted = false
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Text ID_CRM_Dynamics__c {
+    apiName = "Account.ID_CRM_Dynamics__c"
+    caseSensitive = false
+    externalId = true
+    label = "ID CRM Dynamics"
+    length = 10
+    unique = true
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Text ID_Cuenta_Clientify__c {
+    apiName = "Account.ID_Cuenta_Clientify__c"
+    externalId = false
+    label = "ID Cuenta Clientify"
+    length = 80
+    unique = false
+    createable = true
+    updateable = true
+    caseSensitive = false
+    queryable = true
+  }
+  salesforce.FormulaText Id_Matriz_del_Grupo__c {
+    apiName = "Account.Id_Matriz_del_Grupo__c"
+    externalId = false
+    formula = '''
+IF(NOT(ISBLANK(Parent.Parent.Parent.Parent.Parent.Parent.Id)), Parent.Parent.Parent.Parent.Parent.Parent.Id,
+IF(NOT(ISBLANK(Parent.Parent.Parent.Parent.Parent.Id)), Parent.Parent.Parent.Parent.Parent.Id,
+IF(NOT(ISBLANK(Parent.Parent.Parent.Parent.Id)), Parent.Parent.Parent.Parent.Id,
+IF(NOT(ISBLANK(Parent.Parent.Parent.Id)), Parent.Parent.Parent.Id,
+IF(NOT(ISBLANK(Parent.Parent.Id)), Parent.Parent.Id,
+IF(NOT(ISBLANK(Parent.Id)),Parent.Id,
+''))))))
+'''
+    formulaTreatBlanksAs = "BlankAsZero"
+    label = "Id Matriz del Grupo"
+    unique = false
+    createable = false
+    updateable = false
+    caseSensitive = false
+    queryable = true
+    _hidden_value = true
+    _generated_dependencies = [
+      {
+        reference = salesforce.Account.field.Id
+      },
+      {
+        reference = salesforce.Account.field.ParentId
+      },
+    ]
+  }
+  salesforce.Checkbox Importado_CRM_Dynamics__c {
+    apiName = "Account.Importado_CRM_Dynamics__c"
+    defaultValue = false
+    inlineHelpText = "Origen de los datos ERP pero con influencia del CRM anterior a Salesforce."
+    label = "Importado CRM Dynamics"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Lookup Informacion_SABI__c {
+    apiName = "Account.Informacion_SABI__c"
+    deleteConstraint = "SetNull"
+    label = "Información SABI"
+    referenceTo = [
+      salesforce.Datos_cuentas__c,
+    ]
+    relationshipLabel = "Cuentas"
+    relationshipName = "Cuentas"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.TextArea Limite_sobre_saldo_vivo_CP__c {
+    apiName = "Account.Limite_sobre_saldo_vivo_CP__c"
+    label = "Límite sobre saldo vivo CP"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.TextArea Limite_sobre_saldo_vivo_LP__c {
+    apiName = "Account.Limite_sobre_saldo_vivo_LP__c"
+    label = "Límite sobre saldo vivo LP"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Picklist Listing__c {
+    apiName = "Account.Listing__c"
+    label = "Listing"
+    valueSet = [
+      {
+        fullName = "Sí"
+        default = false
+        label = "Sí"
+      },
+      {
+        fullName = "No"
+        default = false
+        label = "No"
+      },
+    ]
+    sorted = false
+    restricted = true
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Text Marcas_comerciales__c {
+    apiName = "Account.Marcas_comerciales__c"
+    externalId = false
+    label = "Marcas comerciales"
+    length = 255
+    unique = false
+    createable = true
+    updateable = true
+    caseSensitive = false
+    queryable = true
+  }
+  salesforce.TextArea Moneda_CP__c {
+    apiName = "Account.Moneda_CP__c"
+    label = "Moneda CP"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.TextArea Moneda_LP__c {
+    apiName = "Account.Moneda_LP__c"
+    label = "Moneda LP"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Text Multicompany_ID__c {
+    apiName = "Account.Multicompany_ID__c"
+    caseSensitive = false
+    externalId = true
+    label = "Multicompany ID"
+    length = 80
+    unique = true
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Text NIF_CIF__c {
+    apiName = "Account.NIF_CIF__c"
+    externalId = true
+    label = "NIF/CIF"
+    length = 255
+    unique = false
+    createable = true
+    updateable = true
+    caseSensitive = false
+    queryable = true
+  }
+  salesforce.Summary Numero_de_Oportunidades__c {
+    apiName = "Account.Numero_de_Oportunidades__c"
+    label = "Número de Oportunidades"
+    summaryForeignKey = "Opportunity.AccountId"
+    summaryOperation = "count"
+    precision = 18
+    scale = 0
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Phone Otro_telefono__c {
+    apiName = "Account.Otro_telefono__c"
+    label = "Otro teléfono"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Picklist Pais_CP__c {
+    apiName = "Account.Pais_CP__c"
+    label = "País CP"
+    valueSet = [
+      {
+        fullName = "España"
+        default = false
+        label = "España"
+      },
+      {
+        fullName = "Portugal"
+        default = false
+        label = "Portugal"
+      },
+      {
+        fullName = "Francia"
+        default = false
+        label = "Francia"
+      },
+      {
+        fullName = "Italia"
+        default = false
+        label = "Italia"
+      },
+      {
+        fullName = "Otros"
+        default = false
+        label = "Otros"
+      },
+    ]
+    sorted = false
+    restricted = true
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Picklist Pais_LP__c {
+    apiName = "Account.Pais_LP__c"
+    label = "País LP"
+    valueSet = [
+      {
+        fullName = "España"
+        default = false
+        label = "España"
+      },
+      {
+        fullName = "Portugal"
+        default = false
+        label = "Portugal"
+      },
+      {
+        fullName = "Francia"
+        default = false
+        label = "Francia"
+      },
+      {
+        fullName = "Italia"
+        default = false
+        label = "Italia"
+      },
+      {
+        fullName = "Otros"
+        default = false
+        label = "Otros"
+      },
+    ]
+    sorted = false
+    restricted = true
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.TextArea Pais_vetado_CP__c {
+    apiName = "Account.Pais_vetado_CP__c"
+    label = "País vetado CP"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.TextArea Pais_vetado_LP__c {
+    apiName = "Account.Pais_vetado_LP__c"
+    label = "País vetado LP"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Picklist Plazo_CP__c {
+    apiName = "Account.Plazo_CP__c"
+    label = "Plazo CP"
+    valueSet = [
+      {
+        fullName = "0-1m"
+        default = false
+        label = "0-1m"
+      },
+      {
+        fullName = "1-3m"
+        default = false
+        label = "1-3m"
+      },
+      {
+        fullName = "3-6m"
+        default = false
+        label = "3-6m"
+      },
+      {
+        fullName = "6-12m"
+        default = false
+        label = "6-12m"
+      },
+      {
+        fullName = "Más de 12m"
+        default = false
+        label = "Más de 12m"
+      },
+    ]
+    sorted = false
+    restricted = true
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Picklist Plazo_LP__c {
+    apiName = "Account.Plazo_LP__c"
+    label = "Plazo LP"
+    valueSet = [
+      {
+        fullName = "Menos_de_2y"
+        default = false
+        label = "Menos de 2y"
+      },
+      {
+        fullName = "2-5y"
+        default = false
+        label = "2-5y"
+      },
+      {
+        fullName = "5-10y"
+        default = false
+        label = "5-10y"
+      },
+      {
+        fullName = "Más_de_10y"
+        default = false
+        label = "Más de 10y"
+      },
+    ]
+    sorted = false
+    restricted = true
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Text Prescriptor__c {
+    apiName = "Account.Prescriptor__c"
+    externalId = false
+    label = "Prescriptor"
+    length = 255
+    unique = false
+    createable = true
+    updateable = true
+    caseSensitive = false
+    queryable = true
+  }
+  salesforce.Picklist Rating_CP__c {
+    apiName = "Account.Rating_CP__c"
+    label = "Rating CP"
+    valueSet = [
+      {
+        fullName = "Cualquiera"
+        default = false
+        label = "Cualquiera"
+      },
+      {
+        fullName = "HYNR"
+        default = false
+        label = "HYNR"
+      },
+      {
+        fullName = "IG"
+        default = false
+        label = "IG"
+      },
+    ]
+    sorted = false
+    restricted = true
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Picklist Rating_LP__c {
+    apiName = "Account.Rating_LP__c"
+    label = "Rating LP"
+    valueSet = [
+      {
+        fullName = "Cualquiera"
+        default = false
+        label = "Cualquiera"
+      },
+      {
+        fullName = "HYNR"
+        default = false
+        label = "HYNR"
+      },
+      {
+        fullName = "IG"
+        default = false
+        label = "IG"
+      },
+    ]
+    sorted = false
+    restricted = true
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Picklist Rtdo_CP__c {
+    apiName = "Account.Rtdo_CP__c"
+    label = "Rtdo+ CP"
+    valueSet = [
+      {
+        fullName = "Sí"
+        default = false
+        label = "Sí"
+      },
+      {
+        fullName = "No"
+        default = false
+        label = "No"
+      },
+    ]
+    sorted = false
+    restricted = true
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Picklist Rtdo_LP__c {
+    apiName = "Account.Rtdo_LP__c"
+    label = "Rtdo+ LP"
+    valueSet = [
+      {
+        fullName = "Sí"
+        default = false
+        label = "Sí"
+      },
+      {
+        fullName = "No"
+        default = false
+        label = "No"
+      },
+    ]
+    sorted = false
+    restricted = true
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Picklist Sector_DCM__c {
+    apiName = "Account.Sector_DCM__c"
+    label = "Sector DCM"
+    valueSet = [
+      {
+        fullName = "BdE"
+        default = false
+        label = "BdE"
+      },
+      {
+        fullName = "Corporate"
+        default = false
+        label = "Corporate"
+      },
+      {
+        fullName = "DGSFP"
+        default = false
+        label = "DGSFP"
+      },
+      {
+        fullName = "ESI"
+        default = false
+        label = "ESI"
+      },
+    ]
+    sorted = false
+    restricted = false
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.TextArea Sectores_betados_CP__c {
+    apiName = "Account.Sectores_betados_CP__c"
+    label = "Sectores betados CP"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.TextArea Sectores_betados_LP__c {
+    apiName = "Account.Sectores_betados_LP__c"
+    label = "Sectores betados LP"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.TextArea Sectores_buscados_CP__c {
+    apiName = "Account.Sectores_buscados_CP__c"
+    label = "Sectores buscados CP"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.TextArea Sectores_buscados_LP__c {
+    apiName = "Account.Sectores_buscados_LP__c"
+    label = "Sectores buscados LP"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Picklist Si_no_Glof_orden__c {
+    apiName = "Account.Si_no_Glof_orden__c"
+    label = "Si no Glof orden"
+    valueSet = [
+      {
+        fullName = "Teléfono"
+        default = false
+        label = "Teléfono"
+      },
+      {
+        fullName = "Mail"
+        default = false
+        label = "Mail"
+      },
+      {
+        fullName = "Bloomberg"
+        default = false
+        label = "Bloomberg"
+      },
+    ]
+    sorted = false
+    restricted = true
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Picklist Situacion_cliente__c {
+    apiName = "Account.Situacion_cliente__c"
+    defaultValueFormula = "IF($RecordType.Id = '01268000000Pu6n', 'Cliente Potencial', IF($RecordType.Id = '01268000000Pu6m','Cliente',''))"
+    label = "Situación cliente"
+    valueSet = [
+      {
+        fullName = "Cliente Potencial"
+        default = false
+        label = "Cliente potencial"
+      },
+      {
+        fullName = "Cliente"
+        default = false
+        label = "Cliente"
+      },
+      {
+        fullName = "Cliente sin facturación en años"
+        default = false
+        label = "Cliente sin facturación en años"
+      },
+      {
+        fullName = "0- Sin relación"
+        default = false
+        isActive = false
+        label = "0- Sin relación"
+      },
+      {
+        fullName = "1- Primeras aproximaciones"
+        default = false
+        isActive = false
+        label = "1- Primeras aproximaciones"
+      },
+    ]
+    sorted = false
+    restricted = true
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Lookup Socio_de_auditoria__c {
+    apiName = "Account.Socio_de_auditoria__c"
+    deleteConstraint = "SetNull"
+    description = "Informado a través de un flow con el correo que viene de Navision"
+    label = "Socio de auditoría"
+    referenceTo = [
+      salesforce.User,
+    ]
+    relationshipName = "CuentasAuditoria"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Lookup Socio_de_la_auditoria__c {
+    apiName = "Account.Socio_de_la_auditoria__c"
+    deleteConstraint = "SetNull"
+    label = "Socio de la auditoría"
+    referenceTo = [
+      salesforce.Empleado__c,
+    ]
+    relationshipLabel = "Cuentas"
+    relationshipName = "Cuentas"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.FormulaText TXT_Nombre_Tipo_Registro__c {
+    apiName = "Account.TXT_Nombre_Tipo_Registro__c"
+    description = "Nombre del tipo de registro"
+    externalId = false
+    formula = "RecordType.DeveloperName"
+    formulaTreatBlanksAs = "BlankAsZero"
+    label = "Nombre Tipo de Registro"
+    unique = false
+    createable = false
+    updateable = false
+    caseSensitive = false
+    queryable = true
+    _hidden_value = true
+    _generated_dependencies = [
+      {
+        reference = salesforce.Account.field.RecordTypeId
+      },
+      {
+        reference = salesforce.RecordType
+      },
+    ]
+  }
+  salesforce.Picklist Tamano_Emision__c {
+    apiName = "Account.Tamano_Emision__c"
+    label = "Tamaño Emisión"
+    valueSet = [
+      {
+        fullName = "0-100M"
+        default = false
+        label = "0-100M"
+      },
+      {
+        fullName = "100-300M"
+        default = false
+        label = "100-300M"
+      },
+      {
+        fullName = ">300M"
+        default = false
+        label = ">300M"
+      },
+    ]
+    sorted = false
+    restricted = true
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.TextArea Tamano_Saldo_vivo__c {
+    apiName = "Account.Tamano_Saldo_vivo__c"
+    label = "Tamaño - Saldo vivo"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Picklist Tamano_programa__c {
+    apiName = "Account.Tamano_programa__c"
+    label = "Tamaño programa"
+    valueSet = [
+      {
+        fullName = "Cualquiera"
+        default = false
+        label = "Cualquiera"
+      },
+      {
+        fullName = "Más de 100M"
+        default = false
+        label = "Más de 100M"
+      },
+    ]
+    sorted = false
+    restricted = true
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Picklist Ticket_CP__c {
+    apiName = "Account.Ticket_CP__c"
+    label = "Ticket CP"
+    valueSet = [
+      {
+        fullName = "0-1"
+        default = false
+        label = "0-1"
+      },
+      {
+        fullName = "1-5"
+        default = false
+        label = "1-5"
+      },
+      {
+        fullName = "Más de 5"
+        default = false
+        label = "Más de 5"
+      },
+    ]
+    sorted = false
+    restricted = true
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Picklist Ticket_LP__c {
+    apiName = "Account.Ticket_LP__c"
+    label = "Ticket LP"
+    valueSet = [
+      {
+        fullName = "0-1"
+        default = false
+        label = "0-1"
+      },
+      {
+        fullName = "1-5"
+        default = false
+        label = "1-5"
+      },
+      {
+        fullName = "Más de 5"
+        default = false
+        label = "Más de 5"
+      },
+    ]
+    sorted = false
+    restricted = true
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.FormulaCheckbox Tiene_informada_datos_cuenta__c {
+    apiName = "Account.Tiene_informada_datos_cuenta__c"
+    formula = "not(isblank( Informacion_SABI__c ))"
+    formulaTreatBlanksAs = "BlankAsZero"
+    label = "¿Tiene informada datos cuenta?"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+    _generated_dependencies = [
+      {
+        reference = salesforce.Account.field.Informacion_SABI__c
+      },
+    ]
+  }
+  salesforce.Picklist Tipo_DCM__c {
+    apiName = "Account.Tipo_DCM__c"
+    label = "Tipo DCM"
+    valueSet = [
+      {
+        fullName = "ALM"
+        default = false
+        label = "ALM"
+      },
+      {
+        fullName = "Banco"
+        default = false
+        label = "Banco"
+      },
+      {
+        fullName = "Distribución"
+        default = false
+        label = "Distribución"
+      },
+      {
+        fullName = "Privada"
+        default = false
+        label = "Privada"
+      },
+      {
+        fullName = "Family Office"
+        default = false
+        label = "Family Office"
+      },
+      {
+        fullName = "EPSV"
+        default = false
+        label = "EPSV"
+      },
+      {
+        fullName = "Mutuas"
+        default = false
+        label = "Mutuas"
+      },
+      {
+        fullName = "Seguros"
+        default = false
+        label = "Seguros"
+      },
+      {
+        fullName = "EAF"
+        default = false
+        label = "EAF"
+      },
+      {
+        fullName = "SGIIC"
+        default = false
+        label = "SGIIC"
+      },
+      {
+        fullName = "SV/AV"
+        default = false
+        label = "SV/AV"
+      },
+    ]
+    sorted = false
+    restricted = false
+    fieldDependency = {
+      controllingField = "Sector_DCM__c"
+      valueSettings = [
+        {
+          valueName = "ALM"
+          controllingFieldValue = [
+            "BdE",
+          ]
+        },
+        {
+          valueName = "Banco"
+          controllingFieldValue = [
+            "BdE",
+          ]
+        },
+        {
+          valueName = "Distribución"
+          controllingFieldValue = [
+            "BdE",
+          ]
+        },
+        {
+          valueName = "Privada"
+          controllingFieldValue = [
+            "BdE",
+          ]
+        },
+        {
+          valueName = "Family Office"
+          controllingFieldValue = [
+            "Corporate",
+          ]
+        },
+        {
+          valueName = "EPSV"
+          controllingFieldValue = [
+            "DGSFP",
+          ]
+        },
+        {
+          valueName = "Mutuas"
+          controllingFieldValue = [
+            "DGSFP",
+          ]
+        },
+        {
+          valueName = "Seguros"
+          controllingFieldValue = [
+            "DGSFP",
+          ]
+        },
+        {
+          valueName = "EAF"
+          controllingFieldValue = [
+            "ESI",
+          ]
+        },
+        {
+          valueName = "SGIIC"
+          controllingFieldValue = [
+            "ESI",
+          ]
+        },
+        {
+          valueName = "SV/AV"
+          controllingFieldValue = [
+            "ESI",
+          ]
+        },
+      ]
+    }
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Picklist Tipo_Yield__c {
+    apiName = "Account.Tipo_Yield__c"
+    label = "Tipo Yield"
+    valueSet = [
+      {
+        fullName = "Fijo"
+        default = false
+        label = "Fijo"
+      },
+      {
+        fullName = "Flotante"
+        default = false
+        label = "Flotante"
+      },
+    ]
+    sorted = false
+    restricted = true
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Text Tipo_de_cuenta_de_SABI__c {
+    apiName = "Account.Tipo_de_cuenta_de_SABI__c"
+    externalId = false
+    label = "Tipo de cuenta de SABI"
+    length = 255
+    unique = false
+    createable = true
+    updateable = true
+    caseSensitive = false
+    queryable = true
+  }
+  salesforce.Url URL_Logo__c {
+    apiName = "Account.URL_Logo__c"
+    label = "URL Logo"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.FormulaText Ubicacion__c {
+    apiName = "Account.Ubicacion__c"
+    externalId = false
+    formula = "BillingCity + ' ' + BillingState"
+    formulaTreatBlanksAs = "BlankAsZero"
+    label = "Ubicación"
+    unique = false
+    createable = false
+    updateable = false
+    caseSensitive = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Summary Ultimo_anyo_con_facturacion__c {
+    apiName = "Account.Ultimo_anyo_con_facturacion__c"
+    label = "Último año con facturación"
+    summarizedField = "Facturacion__c.Anyo__c"
+    summaryForeignKey = "Facturacion__c.Cuenta__c"
+    summaryOperation = "max"
+    precision = 4
+    scale = 0
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Checkbox Utiliza_procedimientos_de_contratacion__c {
+    apiName = "Account.Utiliza_procedimientos_de_contratacion__c"
+    defaultValue = false
+    label = "Utiliza procedimientos de contratación"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Text Vinculo_1__c {
+    apiName = "Account.Vinculo_1__c"
+    externalId = false
+    label = "Vínculo 1"
+    length = 255
+    unique = false
+    createable = true
+    updateable = true
+    caseSensitive = false
+    queryable = true
+  }
+  salesforce.Text Vinculo_2__c {
+    apiName = "Account.Vinculo_2__c"
+    externalId = false
+    label = "Vínculo 2"
+    length = 255
+    unique = false
+    createable = true
+    updateable = true
+    caseSensitive = false
+    queryable = true
+  }
+  salesforce.TextArea Yield_obj_CP__c {
+    apiName = "Account.Yield_obj_CP__c"
+    label = "Yield obj. CP"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.TextArea Yield_obj_LP__c {
+    apiName = "Account.Yield_obj_LP__c"
+    label = "Yield obj. LP"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Checkbox CampoPRUEBAV1__c {
+    apiName = "Account.CampoPRUEBAV1__c"
+    defaultValue = false
+    label = "CampoPRUEBAV1"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+}

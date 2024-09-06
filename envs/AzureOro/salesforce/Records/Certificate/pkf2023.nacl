@@ -1,0 +1,11 @@
+salesforce.Certificate pkf2023 {
+  caSigned = true
+  encryptedWithPlatformEncryption = false
+  expirationDate = "2024-11-14T23:59:59.000Z"
+  keySize = 2048
+  masterLabel = "pkf2023"
+  privateKeyExportable = true
+  fullName = "pkf2023"
+  content = file("salesforce/Records/Certificate/pkf2023.crt")
+  _alias = "pkf2023"
+}

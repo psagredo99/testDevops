@@ -1,0 +1,15 @@
+salesforce.LightningComponentBundle ers_datatableUtils {
+  apiVersion = 53
+  isExposed = false
+  "#text" = "\r\r\r"
+  fullName = "ers_datatableUtils"
+  lwcResources = {
+    lwcResource = {
+      ers_datatableUtils_js@uv = {
+        source = file("salesforce/Records/LightningComponentBundle/ers_datatableUtils/ers_datatableUtils.js")
+        filePath = "lwc/ers_datatableUtils/ers_datatableUtils.js"
+      }
+    }
+  }
+  _alias = "ers_datatableUtils"
+}

@@ -1,0 +1,4 @@
+salesforce.InstalledPackage bmpyrckt {
+  fullName = "bmpyrckt"
+  _alias = "bmpyrckt"
+}

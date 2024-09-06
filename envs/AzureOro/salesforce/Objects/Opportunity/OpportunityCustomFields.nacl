@@ -1,0 +1,651 @@
+type salesforce.Opportunity {
+  salesforce.Checkbox Budget_Confirmed__c {
+    apiName = "Opportunity.Budget_Confirmed__c"
+    defaultValue = false
+    label = "Budget Confirmed"
+    trackTrending = false
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Picklist Centro_de_actividad__c {
+    apiName = "Opportunity.Centro_de_actividad__c"
+    inlineHelpText = "Origen del campo: migración de datos del CRM Dynamic"
+    label = "Centro de actividad"
+    trackTrending = false
+    valueSet = [
+      {
+        fullName = "Centro Actividad"
+        default = false
+        label = "Centro Actividad"
+      },
+      {
+        fullName = "Auditoria"
+        default = false
+        label = "Auditoria"
+      },
+      {
+        fullName = "BS Dynamics NAV"
+        default = false
+        label = "BS Dynamics NAV"
+      },
+      {
+        fullName = "BS Expertis"
+        default = false
+        label = "BS Expertis"
+      },
+      {
+        fullName = "BS GesCol"
+        default = false
+        label = "BS GesCol"
+      },
+      {
+        fullName = "BS Otras Sol. (BI, Lucanet., FN..)"
+        default = false
+        label = "BS Otras Sol. (BI, Lucanet., FN..)"
+      },
+      {
+        fullName = "BS Sage X3"
+        default = false
+        label = "BS Sage X3"
+      },
+      {
+        fullName = "Compliance"
+        default = false
+        label = "Compliance"
+      },
+      {
+        fullName = "Consultoría"
+        default = false
+        label = "Consultoría"
+      },
+      {
+        fullName = "Consultoría de Sistemas"
+        default = false
+        label = "Consultoría de Sistemas"
+      },
+      {
+        fullName = "Corporate FInance"
+        default = false
+        label = "Corporate FInance"
+      },
+      {
+        fullName = "Data Analytics"
+        default = false
+        label = "Data Analytics"
+      },
+      {
+        fullName = "Excellence"
+        default = false
+        label = "Excellence"
+      },
+      {
+        fullName = "Health"
+        default = false
+        label = "Health"
+      },
+      {
+        fullName = "Ing.Software"
+        default = false
+        label = "Ing.Software"
+      },
+      {
+        fullName = "Inncome"
+        default = false
+        label = "Inncome"
+      },
+      {
+        fullName = "Legal & Fiscal"
+        default = false
+        label = "Legal & Fiscal"
+      },
+      {
+        fullName = "Marketing Digital"
+        default = false
+        label = "Marketing Digital"
+      },
+      {
+        fullName = "Regulation @ Public Policy"
+        default = false
+        label = "Regulation @ Public Policy"
+      },
+      {
+        fullName = "RGPD"
+        default = false
+        label = "RGPD"
+      },
+      {
+        fullName = "Riesgos Tecnológicos"
+        default = false
+        label = "Riesgos Tecnológicos"
+      },
+      {
+        fullName = "SALESFORCE"
+        default = false
+        label = "SALESFORCE"
+      },
+      {
+        fullName = "Técnica Sistemas"
+        default = false
+        label = "Técnica Sistemas"
+      },
+    ]
+    sorted = false
+    restricted = false
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Text Codigo_Oferta__c {
+    apiName = "Opportunity.Codigo_Oferta__c"
+    externalId = false
+    label = "Código Oferta"
+    length = 20
+    trackTrending = false
+    unique = false
+    createable = true
+    updateable = true
+    caseSensitive = false
+    queryable = true
+  }
+  salesforce.Text Comentario_aprobacion_auditoria__c {
+    apiName = "Opportunity.Comentario_aprobacion_auditoria__c"
+    externalId = false
+    label = "Comentario aprobación auditoría"
+    length = 255
+    trackTrending = false
+    unique = false
+    createable = true
+    updateable = true
+    caseSensitive = false
+    queryable = true
+  }
+  salesforce.Text Descripcion_motivo_p_rdida_de_oportunida__c {
+    apiName = "Opportunity.Descripcion_motivo_p_rdida_de_oportunida__c"
+    externalId = false
+    inlineHelpText = "Detalle relacionado con el motivo por el cual se pierde la oportunidad."
+    label = "Descripción motivo pérdida de oportunida"
+    length = 250
+    trackTrending = false
+    unique = false
+    createable = true
+    updateable = true
+    caseSensitive = false
+    queryable = true
+  }
+  salesforce.Text Detalle_origen__c {
+    apiName = "Opportunity.Detalle_origen__c"
+    externalId = false
+    inlineHelpText = "Descriptivo de la opción elegida como origen de la oportunidad. En el caso de un referido (Sage, Salesforce, Leadspain, Wontech, PIVOTE-X3, PIVOTE-HEALTH, ...) y en el caso de firmas miembro de PKF añadir el nombre de la firma."
+    label = "Detalle origen"
+    length = 255
+    trackTrending = false
+    unique = false
+    createable = true
+    updateable = true
+    caseSensitive = false
+    queryable = true
+  }
+  salesforce.Checkbox Discovery_Completed__c {
+    apiName = "Opportunity.Discovery_Completed__c"
+    defaultValue = false
+    label = "Discovery Completed"
+    trackTrending = false
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.MultiselectPicklist Division__c {
+    apiName = "Opportunity.Division__c"
+    label = "División"
+    trackTrending = false
+    valueSet = [
+      {
+        fullName = "Auditoría y Consultoría Económica"
+        default = false
+        label = "Auditoría y Consultoría Económica"
+      },
+      {
+        fullName = "Riesgos Tecnológicos"
+        default = false
+        label = "Riesgos Tecnológicos"
+      },
+      {
+        fullName = "ITC"
+        default = false
+        label = "ITC"
+      },
+      {
+        fullName = "Fiscal"
+        default = false
+        label = "Fiscal"
+      },
+      {
+        fullName = "Legal"
+        default = false
+        label = "Legal"
+      },
+      {
+        fullName = "Soluciones de Gestión"
+        default = false
+        label = "Soluciones de Gestión"
+      },
+      {
+        fullName = "Corporate Finance"
+        default = false
+        label = "Corporate Finance"
+      },
+      {
+        fullName = "Capital Markets"
+        default = false
+        label = "Capital Markets"
+      },
+      {
+        fullName = "Inncome"
+        default = false
+        label = "Inncome"
+      },
+      {
+        fullName = "Regulación"
+        default = false
+        label = "Regulación"
+      },
+      {
+        fullName = "Concursal"
+        default = false
+        label = "Concursal"
+      },
+      {
+        fullName = "Corporativo"
+        default = false
+        label = "Corporativo"
+      },
+      {
+        fullName = "FAS"
+        default = false
+        label = "FAS"
+      },
+      {
+        fullName = "Health"
+        default = false
+        label = "Health"
+      },
+    ]
+    sorted = false
+    restricted = false
+    visibleLines = 4
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Url Documentacion__c {
+    apiName = "Opportunity.Documentacion__c"
+    label = "Documentación Oferta"
+    trackTrending = false
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Picklist Estado_Lead__c {
+    apiName = "Opportunity.Estado_Lead__c"
+    description = "Campo creado para la gestión de oportunidades generadas de terceros: Wortech-Leadspain"
+    label = "Estado \"Lead\""
+    trackTrending = false
+    valueSet = [
+      {
+        fullName = "En curso"
+        default = false
+        label = "En curso"
+      },
+      {
+        fullName = "Pausado"
+        default = false
+        label = "Pausado"
+      },
+      {
+        fullName = "Rechazado"
+        default = false
+        label = "Rechazado"
+      },
+      {
+        fullName = "Perdido"
+        default = false
+        label = "Perdido"
+      },
+      {
+        fullName = "Ganado"
+        default = false
+        label = "Ganado"
+      },
+    ]
+    sorted = false
+    restricted = true
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Picklist Estado_operacion_lead__c {
+    apiName = "Opportunity.Estado_operacion_lead__c"
+    description = "Campo creado para la gestión de oportunidades generadas de terceros: Wortech-Leadspain"
+    label = "Sistema devolución \"Lead\""
+    trackTrending = false
+    valueSet = [
+      {
+        fullName = "Abonado"
+        default = false
+        label = "Abonado"
+      },
+      {
+        fullName = "En devolución"
+        default = false
+        label = "En devolución"
+      },
+      {
+        fullName = "Perdido"
+        default = false
+        label = "Perdido"
+      },
+      {
+        fullName = "Sin cargo"
+        default = false
+        label = "Sin cargo"
+      },
+    ]
+    sorted = false
+    restricted = true
+    fieldDependency = {
+      controllingField = "Estado_Lead__c"
+      valueSettings = [
+        {
+          valueName = "Abonado"
+          controllingFieldValue = [
+            "Rechazado",
+          ]
+        },
+        {
+          valueName = "En devolución"
+          controllingFieldValue = [
+            "Rechazado",
+          ]
+        },
+        {
+          valueName = "Perdido"
+          controllingFieldValue = [
+            "Rechazado",
+          ]
+        },
+        {
+          valueName = "Sin cargo"
+          controllingFieldValue = [
+            "Rechazado",
+          ]
+        },
+      ]
+    }
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Picklist Estado_proceso_aprobacion__c {
+    apiName = "Opportunity.Estado_proceso_aprobacion__c"
+    label = "Estado proceso aprobación"
+    trackTrending = false
+    valueSet = [
+      {
+        fullName = "Pendiente"
+        default = false
+        label = "Pendiente"
+      },
+      {
+        fullName = "Aprobado"
+        default = false
+        label = "Aprobado"
+      },
+      {
+        fullName = "Rechazado"
+        default = false
+        label = "Rechazado"
+      },
+    ]
+    sorted = false
+    restricted = true
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.DateTime Fecha_aprobacion_auditoria__c {
+    apiName = "Opportunity.Fecha_aprobacion_auditoria__c"
+    label = "Fecha aprobación auditoría"
+    trackTrending = false
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.FormulaDate Fecha_de_registro__c {
+    apiName = "Opportunity.Fecha_de_registro__c"
+    formula = "DATEVALUE( CreatedDate )"
+    formulaTreatBlanksAs = "BlankAsZero"
+    label = "Fecha de registro"
+    trackTrending = false
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+    _generated_dependencies = [
+      {
+        reference = salesforce.Opportunity.field.CreatedDate
+      },
+    ]
+  }
+  salesforce.DateTime Fecha_notificacion_auditoria__c {
+    apiName = "Opportunity.Fecha_notificacion_auditoria__c"
+    label = "Fecha notificación auditoría"
+    trackTrending = false
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Text Id_CRM_Dynamics__c {
+    apiName = "Opportunity.Id_CRM_Dynamics__c"
+    caseSensitive = false
+    externalId = true
+    label = "Id CRM Dynamics"
+    length = 20
+    trackTrending = false
+    unique = true
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Checkbox Lead_valido__c {
+    apiName = "Opportunity.Lead_valido__c"
+    defaultValue = false
+    description = "Creado para la gestión de leads proporcianadas por terceros: Wortech-Leadspain"
+    label = "Lead válido"
+    trackTrending = false
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Picklist Loss_Reason__c {
+    apiName = "Opportunity.Loss_Reason__c"
+    label = "Motivo pérdida"
+    trackTrending = false
+    valueSet = [
+      {
+        fullName = "Competencia"
+        default = false
+        label = "Competencia"
+      },
+      {
+        fullName = "Cancelada"
+        default = false
+        label = "Cancelada"
+      },
+      {
+        fullName = "No nos presentamos"
+        default = false
+        label = "No nos presentamos"
+      },
+    ]
+    sorted = false
+    restricted = false
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Checkbox Notificacion_auditoria__c {
+    apiName = "Opportunity.Notificacion_auditoria__c"
+    defaultValue = false
+    description = "Al estar activa la casilla significa que se ha pasado por el proceso de enviar a auditoría"
+    label = "Notificación auditoría"
+    trackTrending = false
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Picklist Origen__c {
+    apiName = "Opportunity.Origen__c"
+    label = "Origen"
+    trackTrending = false
+    valueSet = [
+      {
+        fullName = "Campaña"
+        default = false
+        label = "Campaña"
+      },
+      {
+        fullName = "Gestión comercial"
+        default = false
+        label = "Gestión comercial"
+      },
+      {
+        fullName = "Marketing / web"
+        default = false
+        label = "Marketing / web"
+      },
+      {
+        fullName = "Referido"
+        default = false
+        label = "Referido"
+      },
+      {
+        fullName = "Telemarketing"
+        default = false
+        label = "Telemarketing"
+      },
+      {
+        fullName = "Firmas miembro de PKF Internacional"
+        default = false
+        label = "Firmas miembro de PKF Internacional"
+      },
+      {
+        fullName = "Licitación pública"
+        default = false
+        label = "Licitación pública"
+      },
+    ]
+    sorted = false
+    restricted = false
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Checkbox ROI_Analysis_Completed__c {
+    apiName = "Opportunity.ROI_Analysis_Completed__c"
+    defaultValue = false
+    label = "ROI Analysis Completed"
+    trackTrending = false
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Lookup Responsable_oportunidad__c {
+    apiName = "Opportunity.Responsable_oportunidad__c"
+    deleteConstraint = "SetNull"
+    label = "Responsable de la oportunidad"
+    referenceTo = [
+      salesforce.Empleado__c,
+    ]
+    relationshipLabel = "Oportunidades"
+    relationshipName = "Oportunidades"
+    trackTrending = false
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Summary Servicios_a_adidos_en_la_oportunidad__c {
+    apiName = "Opportunity.Servicios_a_adidos_en_la_oportunidad__c"
+    inlineHelpText = "Número de productos vinculados a la oportunidad"
+    label = "Servicios añadidos en la oportunidad"
+    summaryForeignKey = "OpportunityLineItem.OpportunityId"
+    summaryOperation = "count"
+    trackTrending = false
+    precision = 18
+    scale = 0
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.FormulaText Socio_Propietario__c {
+    apiName = "Opportunity.Socio_Propietario__c"
+    externalId = false
+    formula = "IF(ISBLANK(Socio_oportunidad__r.Name), Owner.FirstName +  Owner.LastName , Socio_oportunidad__r.Name)"
+    formulaTreatBlanksAs = "BlankAsZero"
+    label = "_"
+    trackTrending = false
+    unique = false
+    createable = false
+    updateable = false
+    caseSensitive = false
+    queryable = true
+    _hidden_value = true
+    _generated_dependencies = [
+      {
+        reference = salesforce.Opportunity.field.OwnerId
+      },
+      {
+        reference = salesforce.Opportunity.field.Socio_oportunidad__c
+      },
+      {
+        reference = salesforce.User
+      },
+    ]
+  }
+  salesforce.Lookup Socio_oportunidad__c {
+    apiName = "Opportunity.Socio_oportunidad__c"
+    deleteConstraint = "SetNull"
+    label = "Socio responsable de la oportunidad"
+    referenceTo = [
+      salesforce.Empleado__c,
+    ]
+    relationshipLabel = "Oportunidades (Responsable de la oportunidad)"
+    relationshipName = "Oportunidades1"
+    trackTrending = false
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Url URL_gestion_de_oferta__c {
+    apiName = "Opportunity.URL_gestion_de_oferta__c"
+    description = "Crear vínculo a Sharepoint o Sitio de gestión de oferta"
+    label = "URL gestión de oferta"
+    trackTrending = false
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Text Usuarios_notificados__c {
+    apiName = "Opportunity.Usuarios_notificados__c"
+    externalId = false
+    label = "Usuarios notificados"
+    length = 255
+    trackTrending = false
+    unique = false
+    createable = true
+    updateable = true
+    caseSensitive = false
+    queryable = true
+  }
+}

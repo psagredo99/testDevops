@@ -1,0 +1,15 @@
+salesforce.ApexClass ers_DatatableControllerTest {
+  apiVersion = 53
+  status = "Active"
+  fullName = "ers_DatatableControllerTest"
+  content = file("salesforce/Records/ApexClass/ers_DatatableControllerTest.cls")
+  _generated_dependencies = [
+    {
+      reference = salesforce.Account
+    },
+    {
+      reference = salesforce.ApexClass.instance.ers_DatatableController
+    },
+  ]
+  _alias = "ers_DatatableControllerTest"
+}

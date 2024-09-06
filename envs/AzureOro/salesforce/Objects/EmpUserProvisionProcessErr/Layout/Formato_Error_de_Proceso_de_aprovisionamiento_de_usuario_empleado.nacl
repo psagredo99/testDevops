@@ -1,0 +1,78 @@
+salesforce.Layout EmpUserProvisionProcessErr_Formato_Error_de_Proceso_de_aprovisionamiento_de_usuario_empleado@bssssssss {
+  layoutSections = [
+    {
+      customLabel = true
+      detailHeading = true
+      editHeading = true
+      label = "Información"
+      layoutColumns = [
+        {
+          layoutItems = [
+            {
+              behavior = "Readonly"
+              field = salesforce.EmpUserProvisionProcessErr.field.Name
+            },
+            {
+              behavior = "Edit"
+              field = "EmployeeId"
+            },
+            {
+              behavior = "Edit"
+              field = salesforce.EmpUserProvisionProcessErr.field.ErrorCode
+            },
+            {
+              behavior = "Edit"
+              field = salesforce.EmpUserProvisionProcessErr.field.ErrorMessage
+            },
+          ]
+        },
+        {
+        },
+      ]
+      style = "TwoColumnsLeftToRight"
+    },
+    {
+      customLabel = true
+      detailHeading = true
+      editHeading = true
+      label = "Información del sistema"
+      layoutColumns = [
+        {
+          layoutItems = [
+            {
+              behavior = "Readonly"
+              field = salesforce.EmpUserProvisionProcessErr.field.CreatedById
+            },
+          ]
+        },
+        {
+          layoutItems = [
+            {
+              behavior = "Readonly"
+              field = salesforce.EmpUserProvisionProcessErr.field.LastModifiedById
+            },
+          ]
+        },
+      ]
+      style = "TwoColumnsLeftToRight"
+    },
+    {
+      customLabel = false
+      detailHeading = false
+      editHeading = false
+      layoutColumns = [
+        {
+        },
+      ]
+      style = "CustomLinks"
+    },
+  ]
+  showEmailCheckbox = false
+  showRunAssignmentRulesCheckbox = false
+  showSubmitAndAttachButton = false
+  fullName = "EmpUserProvisionProcessErr-Formato Error de Proceso de aprovisionamiento de usuario empleado"
+  _parent = [
+    salesforce.EmpUserProvisionProcessErr,
+  ]
+  _alias = "EmpUserProvisionProcessErr-Formato Error de Proceso de aprovisionamiento de usuario empleado"
+}

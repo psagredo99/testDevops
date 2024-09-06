@@ -1,0 +1,48 @@
+salesforce.ApexClass SF2Clientify {
+  apiVersion = 57
+  status = "Active"
+  fullName = "SF2Clientify"
+  content = file("salesforce/Records/ApexClass/SF2Clientify.cls")
+  _generated_dependencies = [
+    {
+      reference = salesforce.Contact
+    },
+    {
+      reference = salesforce.Contact.field.ID_Contacto_Clientify__c
+    },
+    {
+      reference = salesforce.Lead
+    },
+    {
+      reference = salesforce.Lead.field.ID_Contacto_Clientify__c
+    },
+    {
+      reference = salesforce.Log__c
+    },
+    {
+      reference = salesforce.Log__c.field.Callout_Error__c
+    },
+    {
+      reference = salesforce.Log__c.field.Endpoint_WS__c
+    },
+    {
+      reference = salesforce.Log__c.field.Request__c
+    },
+    {
+      reference = salesforce.Log__c.field.Response_Body__c
+    },
+    {
+      reference = salesforce.Log__c.field.Result__c
+    },
+    {
+      reference = salesforce.Log__c.field.Server_Response__c
+    },
+    {
+      reference = salesforce.Log__c.field.Service_Name__c
+    },
+    {
+      reference = salesforce.Log__c.field.Timestamp__c
+    },
+  ]
+  _alias = "SF2Clientify"
+}

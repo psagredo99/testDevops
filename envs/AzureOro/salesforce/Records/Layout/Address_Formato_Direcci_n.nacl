@@ -1,0 +1,67 @@
+salesforce.Layout Address_Formato_Direcci_n@bs_00243 {
+  layoutSections = [
+    {
+      customLabel = false
+      detailHeading = true
+      editHeading = true
+      label = "Information"
+      layoutColumns = [
+        {
+          layoutItems = [
+            {
+              behavior = "Required"
+              field = "ParentId"
+            },
+            {
+              behavior = "Edit"
+              field = "Address"
+            },
+            {
+              behavior = "Edit"
+              field = "Description"
+            },
+            {
+              behavior = "Edit"
+              field = "TimeZone"
+            },
+          ]
+        },
+        {
+          layoutItems = [
+            {
+              behavior = "Required"
+              field = "LocationType"
+            },
+            {
+              behavior = "Edit"
+              field = "AddressType"
+            },
+            {
+              behavior = "Edit"
+              field = "DrivingDirections"
+            },
+          ]
+        },
+      ]
+      style = "TwoColumnsLeftToRight"
+    },
+    {
+      customLabel = false
+      detailHeading = false
+      editHeading = false
+      layoutColumns = [
+        {
+        },
+      ]
+      style = "CustomLinks"
+    },
+  ]
+  relatedObjects = [
+    "ParentId",
+  ]
+  showEmailCheckbox = false
+  showRunAssignmentRulesCheckbox = false
+  showSubmitAndAttachButton = false
+  fullName = "Address-Formato Dirección"
+  _alias = "Address-Formato Dirección"
+}

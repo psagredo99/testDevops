@@ -1,0 +1,30 @@
+salesforce.ApexPage SiteLogin {
+  apiVersion = 56
+  availableInTouch = false
+  confirmationTokenRequired = false
+  description = "Página Inicio de sesión predeterminada de Sitios de Salesforce"
+  label = "SiteLogin"
+  fullName = "SiteLogin"
+  content = file("salesforce/Records/ApexPage/SiteLogin.page")
+  _generated_dependencies = [
+    {
+      reference = salesforce.ApexClass.instance.SiteLoginController
+    },
+    {
+      reference = salesforce.ApexComponent.instance.SiteLogin
+    },
+    {
+      reference = salesforce.ApexComponent.instance.SitePoweredBy
+    },
+    {
+      reference = salesforce.ApexPage.instance.ForgotPassword
+    },
+    {
+      reference = salesforce.ApexPage.instance.SiteRegister
+    },
+    {
+      reference = salesforce.StaticResource.instance.SiteSamples
+    },
+  ]
+  _alias = "SiteLogin"
+}

@@ -1,0 +1,7 @@
+salesforce.SharingRules Servicios_Favoritos__c {
+  fullName = "Servicios_Favoritos__c"
+  _parent = [
+    salesforce.Servicios_Favoritos__c,
+  ]
+  _alias = "Servicios_Favoritos__c"
+}

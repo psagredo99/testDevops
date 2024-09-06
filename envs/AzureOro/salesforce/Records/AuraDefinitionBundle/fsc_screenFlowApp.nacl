@@ -1,0 +1,8 @@
+salesforce.AuraDefinitionBundle fsc_screenFlowApp {
+  apiVersion = 51
+  description = "Screen Flow App (Base Pack)"
+  fullName = "fsc_screenFlowApp"
+  type = "Application"
+  markup = file("salesforce/Records/AuraDefinitionBundle/fsc_screenFlowApp/fsc_screenFlowApp.app")
+  _alias = "fsc_screenFlowApp"
+}

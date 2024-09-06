@@ -1,0 +1,58 @@
+type salesforce.Clienti_Settings__c {
+  salesforce.DateTime Last_Sync_Date__c {
+    apiName = "Clienti_Settings__c.Last_Sync_Date__c"
+    label = "Last Sync Date"
+    trackTrending = false
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Text Next_callout_URL__c {
+    apiName = "Clienti_Settings__c.Next_callout_URL__c"
+    externalId = false
+    label = "Next callout URL"
+    length = 80
+    trackTrending = false
+    unique = false
+    createable = true
+    updateable = true
+    caseSensitive = false
+    queryable = true
+  }
+  salesforce.Number Processed_records__c {
+    apiName = "Clienti_Settings__c.Processed_records__c"
+    externalId = false
+    label = "Processed records"
+    precision = 18
+    scale = 0
+    trackTrending = false
+    unique = false
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Number Record_count__c {
+    apiName = "Clienti_Settings__c.Record_count__c"
+    externalId = false
+    label = "Record count"
+    precision = 18
+    scale = 0
+    trackTrending = false
+    unique = false
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Text URL_Base__c {
+    apiName = "Clienti_Settings__c.URL_Base__c"
+    externalId = false
+    label = "URL Base"
+    length = 80
+    trackTrending = false
+    unique = false
+    createable = true
+    updateable = true
+    caseSensitive = false
+    queryable = true
+  }
+}

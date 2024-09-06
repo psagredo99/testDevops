@@ -1,0 +1,17 @@
+salesforce.StandardValueSet OpportunityType {
+  fullName = "OpportunityType"
+  sorted = false
+  standardValue = [
+    {
+      fullName = "Existing Business"
+      default = false
+      label = "Negocio existente: oportunidades para clientes vinculadas servicios de la misma naturaleza que los que ya han contratado en el pasado. Estas oportunidades pueden surgir al ofrecer nuevas soluciones o actualizaciones a sus necesidades actuales."
+    },
+    {
+      fullName = "New Business"
+      default = false
+      label = "Nuevo Negocio: oportunidad de venta para un cliente potencial que aún no ha realizado ninguna compra anteriormente, o para vender servicios diferentes a los que un cliente ha comprado previamente."
+    },
+  ]
+  _alias = "OpportunityType"
+}

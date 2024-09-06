@@ -1,0 +1,8 @@
+salesforce.AuraDefinitionBundle sobjectselected {
+  apiVersion = 40
+  description = "A Lightning Component Bundle"
+  fullName = "sobjectselected"
+  type = "Event"
+  markup = file("salesforce/Records/AuraDefinitionBundle/sobjectselected/sobjectselected.evt")
+  _alias = "sobjectselected"
+}

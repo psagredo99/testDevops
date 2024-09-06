@@ -1,0 +1,126 @@
+salesforce.Flow Cuenta_Desactivar_Alerta {
+  fullName = "Cuenta_Desactivar_Alerta"
+  apiVersion = 57
+  assignments = [
+    {
+      name = "fillacctoupdate"
+      label = "fillacctoupdate"
+      locationX = 176
+      locationY = 158
+      assignmentItems = [
+        {
+          assignToReference = "accToUpdate.Id"
+          operator = "Assign"
+          value = {
+            elementReference = "recordId"
+          }
+        },
+        {
+          assignToReference = "accToUpdate.Alerta_activa__c"
+          operator = "Assign"
+          value = {
+            booleanValue = false
+          }
+        },
+      ]
+      connector = {
+        targetReference = "update_account"
+      }
+    },
+  ]
+  choices = [
+    {
+      name = "Impago"
+      choiceText = "Impago"
+      dataType = "String"
+    },
+  ]
+  environments = "Default"
+  interviewLabel = "Cuenta - Desactivar Alerta {!$Flow.CurrentDateTime}"
+  label = "Cuenta - Desactivar Alerta"
+  processMetadataValues = [
+    {
+      name = "BuilderType"
+      value = {
+        stringValue = "LightningFlowBuilder"
+      }
+    },
+    {
+      name = "CanvasMode"
+      value = {
+        stringValue = "AUTO_LAYOUT_CANVAS"
+      }
+    },
+    {
+      name = "OriginBuilderType"
+      value = {
+        stringValue = "LightningFlowBuilder"
+      }
+    },
+  ]
+  processType = "Flow"
+  recordUpdates = [
+    {
+      name = "update_account"
+      label = "update account"
+      locationX = 176
+      locationY = 278
+      connector = {
+        targetReference = "Desactivar_Alerta"
+      }
+      inputReference = "accToUpdate"
+    },
+  ]
+  screens = [
+    {
+      description = "Descamarcada como auditada"
+      name = "Desactivar_Alerta"
+      label = "Desactivar Alerta"
+      locationX = 176
+      locationY = 398
+      allowBack = true
+      allowFinish = true
+      allowPause = true
+      showFooter = true
+      showHeader = true
+    },
+  ]
+  start = {
+    locationX = 50
+    locationY = 0
+    connector = {
+      targetReference = "fillacctoupdate"
+    }
+  }
+  status = "Active"
+  variables = [
+    {
+      name = "accToUpdate"
+      dataType = "SObject"
+      isCollection = false
+      isInput = false
+      isOutput = false
+      objectType = salesforce.Account
+    },
+    {
+      name = "motivoalerta"
+      dataType = "Picklist"
+      isCollection = false
+      isInput = false
+      isOutput = false
+    },
+    {
+      name = "recordId"
+      dataType = "String"
+      isCollection = false
+      isInput = true
+      isOutput = false
+    },
+  ]
+  _generated_dependencies = [
+    {
+      reference = salesforce.Account.field.Alerta_activa__c
+    },
+  ]
+  _alias = "Cuenta - Desactivar Alerta"
+}

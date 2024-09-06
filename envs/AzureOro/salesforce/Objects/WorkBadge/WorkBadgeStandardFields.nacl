@@ -1,0 +1,129 @@
+type salesforce.WorkBadge {
+  salesforce.Lookup DefinitionId {
+    apiName = "WorkBadge.DefinitionId"
+    relationshipName = "Definition"
+    _required = true
+    label = "Id. de insignia"
+    createable = true
+    updateable = false
+    queryable = true
+  }
+  salesforce.LongTextArea Description {
+    apiName = "WorkBadge.Description"
+    length = 4000
+    label = "Descripción"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup GiverId {
+    apiName = "WorkBadge.GiverId"
+    relationshipName = "Giver"
+    label = "Id. de usuario"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Url ImageUrl {
+    apiName = "WorkBadge.ImageUrl"
+    label = "Imagen"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup RecipientId {
+    apiName = "WorkBadge.RecipientId"
+    relationshipName = "Recipient"
+    _required = true
+    label = "Id. de usuario"
+    createable = true
+    updateable = false
+    queryable = true
+  }
+  salesforce.MasterDetail SourceId {
+    apiName = "WorkBadge.SourceId"
+    relationshipName = "Source"
+    _required = true
+    label = "Id. de agradecimiento"
+    createable = true
+    updateable = false
+    queryable = true
+  }
+  serviceid Id {
+    apiName = "WorkBadge.Id"
+    label = "Id. de insignia recibida"
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Checkbox IsDeleted {
+    apiName = "WorkBadge.IsDeleted"
+    defaultValue = false
+    label = "Eliminado"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime CreatedDate {
+    apiName = "WorkBadge.CreatedDate"
+    label = "Fecha de creación"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup CreatedById {
+    apiName = "WorkBadge.CreatedById"
+    relationshipName = "CreatedBy"
+    label = "Creado por el Id."
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime LastModifiedDate {
+    apiName = "WorkBadge.LastModifiedDate"
+    label = "Fecha de la última modificación"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup LastModifiedById {
+    apiName = "WorkBadge.LastModifiedById"
+    relationshipName = "LastModifiedBy"
+    label = "Última modificación realizada por el Id."
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime SystemModstamp {
+    apiName = "WorkBadge.SystemModstamp"
+    label = "Modstamp del sistema"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup NetworkId {
+    apiName = "WorkBadge.NetworkId"
+    relationshipName = "Network"
+    label = "Id. de red"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.LongTextArea Message {
+    apiName = "WorkBadge.Message"
+    length = 4000
+    label = "Mensaje"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+}

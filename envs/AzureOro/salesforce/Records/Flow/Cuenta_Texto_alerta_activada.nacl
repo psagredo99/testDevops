@@ -1,0 +1,172 @@
+salesforce.Flow Cuenta_Texto_alerta_activada {
+  fullName = "Cuenta_Texto_alerta_activada"
+  apiVersion = 57
+  environments = "Default"
+  interviewLabel = "Cuenta - Texto alerta activada {!$Flow.CurrentDateTime}"
+  label = "Cuenta - Texto alerta activada"
+  processMetadataValues = [
+    {
+      name = "BuilderType"
+      value = {
+        stringValue = "LightningFlowBuilder"
+      }
+    },
+    {
+      name = "CanvasMode"
+      value = {
+        stringValue = "AUTO_LAYOUT_CANVAS"
+      }
+    },
+    {
+      name = "OriginBuilderType"
+      value = {
+        stringValue = "LightningFlowBuilder"
+      }
+    },
+  ]
+  processType = "Flow"
+  recordLookups = [
+    {
+      name = "getacc"
+      label = "getacc"
+      locationX = 176
+      locationY = 134
+      assignNullValuesIfNoRecordsFound = false
+      connector = {
+        targetReference = "Cuenta_con_alerta_activa"
+      }
+      filterLogic = "and"
+      filters = [
+        {
+          field = salesforce.Account.field.Id
+          operator = "EqualTo"
+          value = {
+            elementReference = "recordId"
+          }
+        },
+      ]
+      getFirstRecordOnly = true
+      object = salesforce.Account
+      queriedFields = [
+        salesforce.Account.field.Id,
+        salesforce.Account.field.Alerta_activa__c,
+        salesforce.Account.field.Alerta_fecha__c,
+        salesforce.Account.field.Alerta_motivo__c,
+        salesforce.Account.field.Alerta_usuario__c,
+        salesforce.Account.field.Alerta_observaciones__c,
+        salesforce.Account.field.Alerta_nombre_usuario__c,
+      ]
+      storeOutputAutomatically = true
+    },
+  ]
+  screens = [
+    {
+      name = "Cuenta_con_alerta_activa"
+      label = "Cuenta con alerta activa"
+      locationX = 176
+      locationY = 242
+      allowBack = false
+      allowFinish = true
+      allowPause = false
+      fields = [
+        {
+          name = "Cuenta_con_alerta_activa_Section1"
+          fieldType = "RegionContainer"
+          fields = [
+            {
+              name = "Cuenta_con_alerta_activa_Section1_Column1"
+              fieldType = "Region"
+              fields = [
+                {
+                  name = "stopImg"
+                  extensionName = "flowruntime:image"
+                  fieldType = "ComponentInstance"
+                  inputParameters = [
+                    {
+                      name = "imageName"
+                      value = {
+                        stringValue = "StopImage"
+                      }
+                    },
+                    {
+                      name = "imageHeight"
+                      value = {
+                        stringValue = "150"
+                      }
+                    },
+                    {
+                      name = "imageWidth"
+                      value = {
+                        stringValue = "150"
+                      }
+                    },
+                    {
+                      name = "horizontalAlignment"
+                      value = {
+                        stringValue = "right"
+                      }
+                    },
+                  ]
+                  inputsOnNextNavToAssocScrn = "UseStoredValues"
+                  isRequired = true
+                  storeOutputAutomatically = true
+                },
+              ]
+              inputParameters = [
+                {
+                  name = "width"
+                  value = {
+                    stringValue = "6"
+                  }
+                },
+              ]
+              isRequired = false
+            },
+            {
+              name = "Cuenta_con_alerta_activa_Section1_Column2"
+              fieldType = "Region"
+              fields = [
+                {
+                  name = "textoalerta"
+                  fieldText = "<p><strong style=\"color: rgb(0, 0, 0); font-size: 28px;\">{!getacc.Alerta_fecha__c}: </strong><strong style=\"color: rgb(0, 0, 0); font-size: 28px; background-color: rgb(255, 255, 255);\">{!getacc.Alerta_motivo__c}</strong></p><p><strong style=\"color: rgb(0, 0, 0); font-size: 28px; background-color: rgb(255, 255, 255);\">({!getacc.Alerta_nombre_usuario__c})</strong></p><p><span style=\"font-size: 28px; background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);\">{!getacc.Alerta_observaciones__c}</span></p>"
+                  fieldType = "DisplayText"
+                },
+              ]
+              inputParameters = [
+                {
+                  name = "width"
+                  value = {
+                    stringValue = "6"
+                  }
+                },
+              ]
+              isRequired = false
+            },
+          ]
+          isRequired = false
+          regionContainerType = "SectionWithoutHeader"
+        },
+      ]
+      showFooter = false
+      showHeader = false
+    },
+  ]
+  start = {
+    locationX = 50
+    locationY = 0
+    connector = {
+      targetReference = "getacc"
+    }
+  }
+  status = "Active"
+  variables = [
+    {
+      name = "recordId"
+      dataType = "String"
+      isCollection = false
+      isInput = true
+      isOutput = false
+    },
+  ]
+  _alias = "Cuenta - Texto alerta activada"
+}

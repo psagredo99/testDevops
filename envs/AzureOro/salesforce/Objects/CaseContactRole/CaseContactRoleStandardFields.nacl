@@ -1,0 +1,86 @@
+type salesforce.CaseContactRole {
+  salesforce.Picklist Role {
+    apiName = "CaseContactRole.Role"
+    restricted = false
+    label = "Función"
+    createable = true
+    updateable = true
+    queryable = true
+    valueSetName = salesforce.StandardValueSet.instance.CaseContactRole
+  }
+  serviceid Id {
+    apiName = "CaseContactRole.Id"
+    label = "Función del contacto para"
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup CasesId {
+    apiName = "CaseContactRole.CasesId"
+    relationshipName = "Cases"
+    _required = true
+    label = "Id. del caso"
+    createable = true
+    updateable = false
+    queryable = true
+  }
+  salesforce.Lookup ContactId {
+    apiName = "CaseContactRole.ContactId"
+    relationshipName = "Contact"
+    _required = true
+    label = "Id. de contacto"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.DateTime CreatedDate {
+    apiName = "CaseContactRole.CreatedDate"
+    label = "Fecha de creación"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup CreatedById {
+    apiName = "CaseContactRole.CreatedById"
+    relationshipName = "CreatedBy"
+    label = "Creado por el Id."
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime LastModifiedDate {
+    apiName = "CaseContactRole.LastModifiedDate"
+    label = "Fecha de la última modificación"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup LastModifiedById {
+    apiName = "CaseContactRole.LastModifiedById"
+    relationshipName = "LastModifiedBy"
+    label = "Última modificación realizada por el Id."
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime SystemModstamp {
+    apiName = "CaseContactRole.SystemModstamp"
+    label = "Modstamp del sistema"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Checkbox IsDeleted {
+    apiName = "CaseContactRole.IsDeleted"
+    defaultValue = false
+    label = "Eliminado"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+}

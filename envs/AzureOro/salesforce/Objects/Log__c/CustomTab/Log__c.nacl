@@ -1,0 +1,9 @@
+salesforce.CustomTab Log__c {
+  fullName = "Log__c"
+  customObject = true
+  motif = "Custom26: Flag"
+  _parent = [
+    salesforce.Log__c,
+  ]
+  _alias = "Log__c"
+}

@@ -1,0 +1,33 @@
+salesforce.ApexClass AsistenteOportunidadesControllerTest {
+  apiVersion = 53
+  status = "Active"
+  fullName = "AsistenteOportunidadesControllerTest"
+  content = file("salesforce/Records/ApexClass/AsistenteOportunidadesControllerTest.cls")
+  _generated_dependencies = [
+    {
+      reference = salesforce.Account
+    },
+    {
+      reference = salesforce.ApexClass.instance.AsistenteOportunidadesController
+    },
+    {
+      reference = salesforce.Opportunity
+    },
+    {
+      reference = salesforce.OpportunityLineItem
+    },
+    {
+      reference = salesforce.Pricebook2
+    },
+    {
+      reference = salesforce.PricebookEntry
+    },
+    {
+      reference = salesforce.Product2
+    },
+    {
+      reference = salesforce.User
+    },
+  ]
+  _alias = "AsistenteOportunidadesControllerTest"
+}

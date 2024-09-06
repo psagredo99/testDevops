@@ -1,0 +1,5 @@
+salesforce.InstalledPackage sortablegrid {
+  versionNumber = "3.47"
+  fullName = "sortablegrid"
+  _alias = "sortablegrid"
+}

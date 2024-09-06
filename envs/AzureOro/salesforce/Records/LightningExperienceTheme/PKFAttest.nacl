@@ -1,0 +1,8 @@
+salesforce.LightningExperienceTheme PKFAttest {
+  fullName = "PKFAttest"
+  defaultBrandingSet = salesforce.BrandingSet.instance.LEXTHEMINGPKFAttest
+  description = "Nueva identidad corporativa"
+  masterLabel = "PKF Attest"
+  shouldOverrideLoadingImage = false
+  _alias = "PKFAttest"
+}

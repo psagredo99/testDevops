@@ -1,0 +1,558 @@
+salesforce.Flow Cuenta_Tabla_de_Facturacion_del_Grupo_por_Socio {
+  fullName = "Cuenta_Tabla_de_Facturacion_del_Grupo_por_Socio"
+  apiVersion = 57
+  assignments = [
+    {
+      name = "Agregar_a_Lista"
+      label = "Agregar a Lista"
+      locationX = 446
+      locationY = 1382
+      assignmentItems = [
+        {
+          assignToReference = "listaFacturaciones"
+          operator = "Add"
+          value = {
+            elementReference = "facturacionSocio"
+          }
+        },
+      ]
+      connector = {
+        targetReference = "Facturacion_Socio"
+      }
+    },
+    {
+      name = "Agregar_al_registro_de_facturaci_n_del_Socio"
+      label = "Agregar al registro de facturación del Socio"
+      locationX = 710
+      locationY = 1274
+      assignmentItems = [
+        {
+          assignToReference = "facturacionSocio.Facturacion__c"
+          operator = "Add"
+          value = {
+            elementReference = "Agrupar_facturaciones_por_Socio.Facturacion__c"
+          }
+        },
+      ]
+      connector = {
+        targetReference = "Grabar_nombre_socio_vuelta"
+      }
+    },
+    {
+      name = "Agregar_empresas_del_grupo_a_lista_de_cuentas"
+      label = "Agregar empresas del grupo a lista de cuentas"
+      locationX = 182
+      locationY = 542
+      assignmentItems = [
+        {
+          assignToReference = "Filiales_desde_Matriz"
+          operator = "Add"
+          value = {
+            elementReference = "Empresa_Matriz"
+          }
+        },
+        {
+          assignToReference = "Filiales_desde_Matriz"
+          operator = "Add"
+          value = {
+            elementReference = "Filiales_Desde_Filial"
+          }
+        },
+      ]
+      connector = {
+        targetReference = "Asignar_Id_a_Set_de_Datos"
+      }
+    },
+    {
+      name = "Anadir_Id_a_lista"
+      label = "Añadir Id a lista"
+      locationX = 270
+      locationY = 758
+      assignmentItems = [
+        {
+          assignToReference = "AccountsIds"
+          operator = "Add"
+          value = {
+            elementReference = "Asignar_Id_a_Set_de_Datos.Id"
+          }
+        },
+      ]
+      connector = {
+        targetReference = "Asignar_Id_a_Set_de_Datos"
+      }
+    },
+    {
+      name = "Copia_1_de_Agregar_a_Lista"
+      label = "Copia 1 de Agregar a Lista"
+      locationX = 182
+      locationY = 1958
+      assignmentItems = [
+        {
+          assignToReference = "listaFacturaciones"
+          operator = "Add"
+          value = {
+            elementReference = "facturacionSocio"
+          }
+        },
+      ]
+      connector = {
+        targetReference = "Ordenar_por_facturaci_n"
+      }
+    },
+    {
+      name = "Facturacion_Socio"
+      label = "Facturación Socio"
+      locationX = 358
+      locationY = 1574
+      assignmentItems = [
+        {
+          assignToReference = "facturacionSocio.Socio__c"
+          operator = "Assign"
+          value = {
+            elementReference = "Agrupar_facturaciones_por_Socio.Socio__c"
+          }
+        },
+        {
+          assignToReference = "facturacionSocio.Facturacion__c"
+          operator = "Assign"
+          value = {
+            elementReference = "Agrupar_facturaciones_por_Socio.Facturacion__c"
+          }
+        },
+      ]
+      connector = {
+        targetReference = "Grabar_nombre_socio_vuelta"
+      }
+    },
+    {
+      name = "Grabar_nombre_socio_vuelta"
+      label = "Grabar nombre socio vuelta"
+      locationX = 534
+      locationY = 1766
+      assignmentItems = [
+        {
+          assignToReference = "nombreSocioVueltaAnterior"
+          operator = "Assign"
+          value = {
+            elementReference = "Agrupar_facturaciones_por_Socio.Socio__c"
+          }
+        },
+      ]
+      connector = {
+        targetReference = "Agrupar_facturaciones_por_Socio"
+      }
+    },
+  ]
+  collectionProcessors = {
+    name = "Ordenar_por_facturaci_n"
+    elementSubtype = "SortCollectionProcessor"
+    label = "Ordenar por facturación"
+    locationX = 182
+    locationY = 2066
+    collectionProcessorType = "SortCollectionProcessor"
+    collectionReference = "listaFacturaciones"
+    connector = {
+      targetReference = "Tabla"
+    }
+    sortOptions = {
+      doesPutEmptyStringAndNullFirst = false
+      sortField = "Facturacion__c"
+      sortOrder = "Desc"
+    }
+  }
+  decisions = [
+    {
+      name = "Crear_o_Agregar"
+      label = "¿Crear o Agregar?"
+      locationX = 534
+      locationY = 1166
+      defaultConnector = {
+        targetReference = "Agregar_al_registro_de_facturaci_n_del_Socio"
+      }
+      defaultConnectorLabel = "Agregar"
+      rules = [
+        {
+          name = "Crear"
+          conditionLogic = "and"
+          conditions = [
+            {
+              leftValueReference = "Agrupar_facturaciones_por_Socio.Socio__c"
+              operator = "NotEqualTo"
+              rightValue = {
+                elementReference = "nombreSocioVueltaAnterior"
+              }
+            },
+          ]
+          connector = {
+            targetReference = "Primera_vuelta"
+          }
+          label = "Crear"
+        },
+      ]
+    },
+    {
+      name = "Desencadenante_Matriz"
+      label = "Desencadenante Matriz"
+      locationX = 182
+      locationY = 242
+      defaultConnector = {
+        targetReference = "Filiales_Desde_Filial"
+      }
+      defaultConnectorLabel = "No"
+      rules = [
+        {
+          name = "Si_es_una_matriz"
+          conditionLogic = "and"
+          conditions = [
+            {
+              leftValueReference = "recordId.Id_Matriz_del_Grupo__c"
+              operator = "IsNull"
+              rightValue = {
+                booleanValue = true
+              }
+            },
+          ]
+          connector = {
+            targetReference = "Filiales_desde_Matriz"
+          }
+          label = "Sí, es una matriz"
+        },
+      ]
+    },
+    {
+      name = "Primera_vuelta"
+      label = "Primera vuelta?"
+      locationX = 358
+      locationY = 1274
+      defaultConnector = {
+        targetReference = "Agregar_a_Lista"
+      }
+      defaultConnectorLabel = "No"
+      rules = [
+        {
+          name = "Si"
+          conditionLogic = "and"
+          conditions = [
+            {
+              leftValueReference = "nombreSocioVueltaAnterior"
+              operator = "IsNull"
+              rightValue = {
+                booleanValue = true
+              }
+            },
+          ]
+          connector = {
+            targetReference = "Facturacion_Socio"
+          }
+          label = "Sí"
+        },
+      ]
+    },
+  ]
+  environments = "Default"
+  formulas = [
+    {
+      name = "Id_Empresa_Matriz"
+      dataType = "String"
+      expression = "LEFT({!recordId.Id},15)"
+    },
+    {
+      name = "Id_Matriz_desde_Filial"
+      dataType = "String"
+      expression = "left({!recordId.Id_Matriz_del_Grupo__c},15)"
+    },
+  ]
+  interviewLabel = "Cuenta - Tabla de Facturación del Grupo por Socio {!$Flow.CurrentDateTime}"
+  label = "Cuenta - Tabla de Facturación del Grupo por Socio"
+  loops = [
+    {
+      name = "Agrupar_facturaciones_por_Socio"
+      label = "Agrupar facturaciones por Socio"
+      locationX = 182
+      locationY = 1058
+      collectionReference = "Get_Facturaci_n"
+      iterationOrder = "Asc"
+      nextValueConnector = {
+        targetReference = "Crear_o_Agregar"
+      }
+      noMoreValuesConnector = {
+        targetReference = "Copia_1_de_Agregar_a_Lista"
+      }
+    },
+    {
+      name = "Asignar_Id_a_Set_de_Datos"
+      label = "Asignar Id a Set de Datos"
+      locationX = 182
+      locationY = 650
+      collectionReference = "Filiales_desde_Matriz"
+      iterationOrder = "Asc"
+      nextValueConnector = {
+        targetReference = "Anadir_Id_a_lista"
+      }
+      noMoreValuesConnector = {
+        targetReference = "Get_Facturaci_n"
+      }
+    },
+  ]
+  processMetadataValues = [
+    {
+      name = "BuilderType"
+      value = {
+        stringValue = "LightningFlowBuilder"
+      }
+    },
+    {
+      name = "CanvasMode"
+      value = {
+        stringValue = "AUTO_LAYOUT_CANVAS"
+      }
+    },
+    {
+      name = "OriginBuilderType"
+      value = {
+        stringValue = "LightningFlowBuilder"
+      }
+    },
+  ]
+  processType = "Flow"
+  recordLookups = [
+    {
+      name = "Empresa_Matriz"
+      label = "Empresa Matriz"
+      locationX = 182
+      locationY = 134
+      assignNullValuesIfNoRecordsFound = false
+      connector = {
+        targetReference = "Desencadenante_Matriz"
+      }
+      filterLogic = "(1 and 2) or 3"
+      filters = [
+        {
+          field = salesforce.Account.field.Id_Matriz_del_Grupo__c
+          operator = "IsNull"
+          value = {
+            booleanValue = true
+          }
+        },
+        {
+          field = salesforce.Account.field.Id
+          operator = "EqualTo"
+          value = {
+            elementReference = "recordId.Id"
+          }
+        },
+        {
+          field = salesforce.Account.field.Id
+          operator = "EqualTo"
+          value = {
+            elementReference = "Id_Matriz_desde_Filial"
+          }
+        },
+      ]
+      getFirstRecordOnly = true
+      object = salesforce.Account
+      storeOutputAutomatically = true
+    },
+    {
+      name = "Filiales_Desde_Filial"
+      label = "Filiales desde una de las filiales"
+      locationX = 314
+      locationY = 350
+      assignNullValuesIfNoRecordsFound = false
+      connector = {
+        targetReference = "Agregar_empresas_del_grupo_a_lista_de_cuentas"
+      }
+      filterLogic = "and"
+      filters = [
+        {
+          field = salesforce.Account.field.Id_Matriz_del_Grupo__c
+          operator = "EqualTo"
+          value = {
+            elementReference = "Id_Matriz_desde_Filial"
+          }
+        },
+      ]
+      getFirstRecordOnly = false
+      object = salesforce.Account
+      sortField = salesforce.Account.field.Name
+      sortOrder = "Asc"
+      storeOutputAutomatically = true
+    },
+    {
+      name = "Filiales_desde_Matriz"
+      label = "Filiales desde Matriz"
+      locationX = 50
+      locationY = 350
+      assignNullValuesIfNoRecordsFound = false
+      connector = {
+        targetReference = "Agregar_empresas_del_grupo_a_lista_de_cuentas"
+      }
+      filterLogic = "and"
+      filters = [
+        {
+          field = salesforce.Account.field.Id_Matriz_del_Grupo__c
+          operator = "EqualTo"
+          value = {
+            elementReference = "Id_Empresa_Matriz"
+          }
+        },
+      ]
+      getFirstRecordOnly = false
+      object = salesforce.Account
+      sortField = salesforce.Account.field.Name
+      sortOrder = "Asc"
+      storeOutputAutomatically = true
+    },
+    {
+      name = "Get_Facturaci_n"
+      label = "Get Facturación"
+      locationX = 182
+      locationY = 950
+      assignNullValuesIfNoRecordsFound = false
+      connector = {
+        targetReference = "Agrupar_facturaciones_por_Socio"
+      }
+      filterLogic = "and"
+      filters = [
+        {
+          field = salesforce.Facturacion__c.field.Cuenta__c
+          operator = "In"
+          value = {
+            elementReference = "AccountsIds"
+          }
+        },
+        {
+          field = salesforce.Facturacion__c.field.Socio__c
+          operator = "NotEqualTo"
+          value = {
+            stringValue = ""
+          }
+        },
+      ]
+      getFirstRecordOnly = false
+      object = salesforce.Facturacion__c
+      sortField = salesforce.Facturacion__c.field.Socio__c
+      sortOrder = "Asc"
+      storeOutputAutomatically = true
+    },
+  ]
+  screens = [
+    {
+      name = "Tabla"
+      label = "Tabla"
+      locationX = 182
+      locationY = 2174
+      allowBack = true
+      allowFinish = true
+      allowPause = true
+      fields = [
+        {
+          name = "TablaAgrupada"
+          dataTypeMappings = {
+            typeName = "T"
+            typeValue = salesforce.Facturacion__c
+          }
+          extensionName = "flowruntime:datatable"
+          fieldType = "ComponentInstance"
+          inputParameters = [
+            {
+              name = "label"
+              value = {
+                stringValue = "Data Table"
+              }
+            },
+            {
+              name = "selectionMode"
+              value = {
+                stringValue = "NO_SELECTION"
+              }
+            },
+            {
+              name = "minRowSelection"
+              value = {
+                numberValue = 0
+              }
+            },
+            {
+              name = "tableData"
+              value = {
+                elementReference = "listaFacturaciones"
+              }
+            },
+            {
+              name = "columns"
+              value = {
+                stringValue = "[{\"apiName\":\"Socio__c\",\"guid\":\"column-f46a\",\"editable\":false,\"hasCustomHeaderLabel\":false,\"customHeaderLabel\":\"\",\"wrapText\":true,\"order\":0,\"label\":\"Socio\",\"type\":\"text\"},{\"apiName\":\"Facturacion__c\",\"guid\":\"column-ff40\",\"editable\":false,\"hasCustomHeaderLabel\":false,\"customHeaderLabel\":\"\",\"wrapText\":true,\"order\":1,\"label\":\"Facturación\",\"type\":\"currency\"}]"
+              }
+            },
+            {
+              name = "maxRowSelection"
+              value = {
+                numberValue = 0
+              }
+            },
+          ]
+          inputsOnNextNavToAssocScrn = "UseStoredValues"
+          isRequired = true
+          storeOutputAutomatically = true
+        },
+      ]
+      showFooter = false
+      showHeader = false
+    },
+  ]
+  start = {
+    locationX = 56
+    locationY = 0
+    connector = {
+      targetReference = "Empresa_Matriz"
+    }
+  }
+  status = "Active"
+  variables = [
+    {
+      name = "AccountsIds"
+      dataType = "String"
+      isCollection = true
+      isInput = false
+      isOutput = false
+    },
+    {
+      name = "facturacionSocio"
+      dataType = "SObject"
+      isCollection = false
+      isInput = false
+      isOutput = false
+      objectType = salesforce.Facturacion__c
+    },
+    {
+      name = "listaFacturaciones"
+      dataType = "SObject"
+      isCollection = true
+      isInput = false
+      isOutput = false
+      objectType = salesforce.Facturacion__c
+    },
+    {
+      name = "nombreSocioVueltaAnterior"
+      dataType = "String"
+      isCollection = false
+      isInput = false
+      isOutput = false
+    },
+    {
+      name = "recordId"
+      dataType = "SObject"
+      isCollection = false
+      isInput = true
+      isOutput = false
+      objectType = salesforce.Account
+    },
+  ]
+  _generated_dependencies = [
+    {
+      reference = salesforce.Facturacion__c.field.Facturacion__c
+    },
+  ]
+  _alias = "Cuenta - Tabla de Facturación del Grupo por Socio"
+}

@@ -1,0 +1,60 @@
+salesforce.Network postventa {
+  fullName = "postventa"
+  allowInternalUserLogin = false
+  allowMembersToFlag = false
+  changePasswordTemplate = "unfiled$public/CommunityChangePasswordEmailTemplate"
+  communityRoles = {
+  }
+  disableReputationRecordConversations = true
+  emailSenderAddress = "jsouto@pkf-attest.es"
+  emailSenderName = "postventa"
+  embeddedLoginEnabled = true
+  enableApexCDNCaching = true
+  enableCustomVFErrorPageOverrides = false
+  enableDirectMessages = true
+  enableExpFriendlyUrlsAsDefault = false
+  enableExperienceBundleBasedSnaOverrideEnabled = true
+  enableGuestChatter = false
+  enableGuestFileAccess = true
+  enableGuestMemberVisibility = false
+  enableImageOptimizationCDN = true
+  enableInvitation = false
+  enableKnowledgeable = false
+  enableLWRExperienceConnectedApp = false
+  enableMemberVisibility = false
+  enableNicknameDisplay = true
+  enablePrivateMessages = false
+  enableReputation = false
+  enableShowAllNetworkSettings = false
+  enableSiteAsContainer = true
+  enableTalkingAboutStats = true
+  enableTopicAssignmentRules = true
+  enableTopicSuggestions = false
+  enableUpDownVote = false
+  forgotPasswordTemplate = "unfiled$public/CommunityForgotPasswordEmailTemplate"
+  gatherCustomerSentimentData = false
+  headlessForgotPasswordTemplate = salesforce.EmailTemplate.instance.unfiled_public_CommunityHeadlessForgotPasswordTemplate@zcd
+  headlessRegistrationTemplate = salesforce.EmailTemplate.instance.unfiled_public_CommunityHeadlessRegistrationTemplate@zcd
+  networkMemberGroups = {
+    profile = "admin"
+  }
+  networkPageOverrides = {
+    changePasswordPageOverrideSetting = "Standard"
+    forgotPasswordPageOverrideSetting = "Designer"
+    homePageOverrideSetting = "Designer"
+    loginPageOverrideSetting = "Designer"
+    selfRegProfilePageOverrideSetting = "Designer"
+  }
+  picassoSite = "postventa1"
+  selfRegistration = false
+  sendWelcomeEmail = true
+  site = salesforce.CustomSite.instance.postventa
+  siteArchiveStatus = "NotArchived"
+  status = "DownForMaintenance"
+  tabs = {
+    defaultTab = "home"
+    standardTab = "Chatter"
+  }
+  welcomeTemplate = "unfiled$public/CommunityWelcomeEmailTemplate"
+  _alias = "postventa"
+}

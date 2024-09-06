@@ -1,0 +1,8 @@
+salesforce.RemoteSiteSetting Mc_Mailchimp_API_US9 {
+  fullName = "Mc_Mailchimp_API_US9"
+  description = "Mailchimp API (Datacenter US9)"
+  disableProtocolSecurity = false
+  isActive = true
+  url = "https://us9.api.mailchimp.com"
+  _alias = "Mc_Mailchimp_API_US9"
+}

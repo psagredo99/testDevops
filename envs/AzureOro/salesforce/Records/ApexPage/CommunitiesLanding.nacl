@@ -1,0 +1,15 @@
+salesforce.ApexPage CommunitiesLanding {
+  apiVersion = 57
+  availableInTouch = false
+  confirmationTokenRequired = false
+  description = "Página de inicio de experiencias predeterminadas"
+  label = "CommunitiesLanding"
+  fullName = "CommunitiesLanding"
+  content = file("salesforce/Records/ApexPage/CommunitiesLanding.page")
+  _generated_dependencies = [
+    {
+      reference = salesforce.ApexClass.instance.CommunitiesLandingController
+    },
+  ]
+  _alias = "CommunitiesLanding"
+}

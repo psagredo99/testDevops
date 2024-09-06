@@ -1,0 +1,114 @@
+salesforce.Flow Cuenta_Desmarcar_como_Auditada {
+  fullName = "Cuenta_Desmarcar_como_Auditada"
+  apiVersion = 57
+  environments = "Default"
+  interviewLabel = "Cuenta - Desmarcar como Auditada {!$Flow.CurrentDateTime}"
+  label = "Cuenta - Desmarcar como Auditada"
+  processMetadataValues = [
+    {
+      name = "BuilderType"
+      value = {
+        stringValue = "LightningFlowBuilder"
+      }
+    },
+    {
+      name = "CanvasMode"
+      value = {
+        stringValue = "AUTO_LAYOUT_CANVAS"
+      }
+    },
+    {
+      name = "OriginBuilderType"
+      value = {
+        stringValue = "LightningFlowBuilder"
+      }
+    },
+  ]
+  processType = "Flow"
+  recordUpdates = [
+    {
+      name = "Marcar_auditada"
+      label = "Marcar auditada"
+      locationX = 176
+      locationY = 158
+      connector = {
+        targetReference = "Msg"
+      }
+      filterLogic = "and"
+      filters = [
+        {
+          field = salesforce.Account.field.Id
+          operator = "EqualTo"
+          value = {
+            elementReference = "recordId.Id"
+          }
+        },
+      ]
+      inputAssignments = [
+        {
+          field = salesforce.Account.field.Empresa_auditada__c
+          value = {
+            booleanValue = false
+          }
+        },
+      ]
+      object = salesforce.Account
+    },
+  ]
+  screens = [
+    {
+      name = "Msg"
+      label = "Msg"
+      locationX = 176
+      locationY = 278
+      allowBack = true
+      allowFinish = true
+      allowPause = true
+      fields = [
+        {
+          name = "red"
+          extensionName = "c:Redirigir_al_registro_Desmarcar"
+          fieldType = "ComponentInstance"
+          inputParameters = [
+            {
+              name = "recordId"
+              value = {
+                elementReference = "recordId.Id"
+              }
+            },
+            {
+              name = "msgToast"
+              value = {
+                stringValue = "Descamarcada como auditada"
+              }
+            },
+          ]
+          inputsOnNextNavToAssocScrn = "UseStoredValues"
+          isRequired = true
+          storeOutputAutomatically = true
+        },
+      ]
+      showFooter = false
+      showHeader = false
+    },
+  ]
+  start = {
+    locationX = 50
+    locationY = 0
+    connector = {
+      targetReference = "Marcar_auditada"
+    }
+  }
+  status = "Active"
+  variables = [
+    {
+      name = "recordId"
+      dataType = "SObject"
+      isCollection = false
+      isInput = true
+      isOutput = false
+      objectType = salesforce.Account
+    },
+  ]
+  _alias = "Cuenta - Desmarcar como Auditada"
+}

@@ -1,0 +1,117 @@
+salesforce.LightningComponentBundle fsc_flowButtonBar {
+  apiVersion = 51
+  isExposed = true
+  masterLabel = "Flow Button Bar"
+  targets = {
+    target = [
+      "lightning__FlowScreen",
+    ]
+  }
+  targetConfigs = {
+    targetConfig = [
+      {
+        targets = "lightning__FlowScreen"
+        configurationEditor = "c-fsc_flow-button-bar-c-p-e"
+        property = [
+          {
+            name = "label"
+            label = "Label"
+            type = "string"
+            role = "inputOnly"
+          },
+          {
+            name = "alignment"
+            label = "Button position"
+            type = "string"
+            description = "Enter 'left', 'center', or 'right' (default)."
+            default = "right"
+            role = "inputOnly"
+          },
+          {
+            name = "orientation"
+            label = "Button orientation"
+            type = "string"
+            description = "Enter 'horizontal' (default), or 'vertical'."
+            default = "horizontal"
+            role = "inputOnly"
+          },
+          {
+            name = "showLines"
+            label = "Include horizontal line above buttons"
+            type = "String"
+            description = "You can optionally add lines below and/or above the button bar to separate it from the rest of the screen"
+            role = "inputOnly"
+          },
+          {
+            name = "buttons"
+            label = "Buttons"
+            type = "String"
+            role = "inputOnly"
+          },
+          {
+            name = "actionMode"
+            label = "Action Mode"
+            type = "String"
+            role = "inputOnly"
+          },
+          {
+            name = "required"
+            label = "Required"
+            type = "String"
+            role = "inputOnly"
+          },
+          {
+            name = "multiselect"
+            label = "Multi-Select"
+            type = "String"
+            role = "inputOnly"
+          },
+          {
+            name = "defaultValue"
+            label = "Default Value"
+            type = "String"
+            role = "inputOnly"
+          },
+          {
+            name = "value"
+            label = "Value"
+            type = "String"
+          },
+          {
+            name = "values"
+            label = "Values"
+            type = "String[]"
+          },
+          {
+            name = "cssString"
+            label = "CSS String"
+            type = "String"
+          },
+        ]
+      },
+    ]
+  }
+  fullName = "fsc_flowButtonBar"
+  lwcResources = {
+    lwcResource = {
+      fsc_flowButtonBar_html@uv = {
+        source = file("salesforce/Records/LightningComponentBundle/fsc_flowButtonBar/fsc_flowButtonBar.html")
+        filePath = "lwc/fsc_flowButtonBar/fsc_flowButtonBar.html"
+      }
+      fsc_flowButtonBar_css@uv = {
+        source = file("salesforce/Records/LightningComponentBundle/fsc_flowButtonBar/fsc_flowButtonBar.css")
+        filePath = "lwc/fsc_flowButtonBar/fsc_flowButtonBar.css"
+      }
+      fsc_flowButtonBar_js@uv = {
+        source = file("salesforce/Records/LightningComponentBundle/fsc_flowButtonBar/fsc_flowButtonBar.js")
+        filePath = "lwc/fsc_flowButtonBar/fsc_flowButtonBar.js"
+      }
+    }
+  }
+  _generated_dependencies = [
+    {
+      reference = salesforce.LightningComponentBundle.instance.fsc_flowButtonBarCPE
+    },
+  ]
+  _alias = "fsc_flowButtonBar"
+}

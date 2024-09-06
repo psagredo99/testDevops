@@ -1,0 +1,243 @@
+type salesforce.FeedItem {
+  serviceid Id {
+    apiName = "FeedItem.Id"
+    label = "Id. de elemento de noticias en tiempo real"
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup ParentId {
+    apiName = "FeedItem.ParentId"
+    relationshipName = "Parent"
+    _required = true
+    label = "Id. de principal"
+    createable = true
+    updateable = false
+    queryable = true
+  }
+  salesforce.Picklist Type {
+    apiName = "FeedItem.Type"
+    restricted = true
+    label = "Tipo de elemento de noticias"
+    createable = true
+    updateable = false
+    queryable = true
+  }
+  salesforce.Lookup CreatedById {
+    apiName = "FeedItem.CreatedById"
+    relationshipName = "CreatedBy"
+    label = "Creado por el Id."
+    createable = true
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime CreatedDate {
+    apiName = "FeedItem.CreatedDate"
+    label = "Fecha de creación"
+    createable = true
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Checkbox IsDeleted {
+    apiName = "FeedItem.IsDeleted"
+    defaultValue = false
+    label = "Eliminado"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime LastModifiedDate {
+    apiName = "FeedItem.LastModifiedDate"
+    label = "Fecha de la última modificación"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime SystemModstamp {
+    apiName = "FeedItem.SystemModstamp"
+    label = "Modstamp del sistema"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Number Revision {
+    apiName = "FeedItem.Revision"
+    label = "Revisión"
+    precision = 9
+    createable = true
+    updateable = false
+    scale = 0
+    unique = false
+    queryable = true
+  }
+  salesforce.Lookup LastEditById {
+    apiName = "FeedItem.LastEditById"
+    label = "Id. de última modificación"
+    createable = true
+    updateable = false
+    queryable = true
+  }
+  salesforce.DateTime LastEditDate {
+    apiName = "FeedItem.LastEditDate"
+    label = "Fecha de la última modificación"
+    createable = true
+    updateable = false
+    queryable = true
+  }
+  salesforce.Number CommentCount {
+    apiName = "FeedItem.CommentCount"
+    _required = true
+    label = "Recuento de comentarios"
+    precision = 9
+    createable = false
+    updateable = false
+    scale = 0
+    unique = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Number LikeCount {
+    apiName = "FeedItem.LikeCount"
+    _required = true
+    label = "Me gusta el recuento"
+    precision = 9
+    createable = false
+    updateable = false
+    scale = 0
+    unique = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Text Title {
+    apiName = "FeedItem.Title"
+    length = 255
+    label = "Título"
+    createable = true
+    updateable = true
+    unique = false
+    caseSensitive = false
+    queryable = true
+  }
+  salesforce.LongTextArea Body {
+    apiName = "FeedItem.Body"
+    length = 10000
+    label = "Cuerpo"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Url LinkUrl {
+    apiName = "FeedItem.LinkUrl"
+    label = "URL de enlace"
+    createable = true
+    updateable = false
+    queryable = true
+  }
+  salesforce.Checkbox IsRichText {
+    apiName = "FeedItem.IsRichText"
+    defaultValue = false
+    label = "Es texto enriquecido"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Lookup RelatedRecordId {
+    apiName = "FeedItem.RelatedRecordId"
+    label = "Id. de registro relacionado"
+    createable = true
+    updateable = false
+    queryable = true
+  }
+  salesforce.Lookup InsertedById {
+    apiName = "FeedItem.InsertedById"
+    relationshipName = "InsertedBy"
+    _required = true
+    label = "Introducido por Id."
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Picklist NetworkScope {
+    apiName = "FeedItem.NetworkScope"
+    restricted = true
+    label = "Ámbito de la red"
+    createable = true
+    updateable = false
+    queryable = true
+  }
+  salesforce.Picklist Visibility {
+    apiName = "FeedItem.Visibility"
+    restricted = true
+    label = "Visibilidad"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Lookup BestCommentId {
+    apiName = "FeedItem.BestCommentId"
+    relationshipName = "BestComment"
+    label = "Id. del mejor comentario"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Checkbox HasContent {
+    apiName = "FeedItem.HasContent"
+    defaultValue = false
+    label = "Tiene contenido"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Checkbox HasLink {
+    apiName = "FeedItem.HasLink"
+    defaultValue = false
+    label = "Tiene enlace"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Checkbox HasFeedEntity {
+    apiName = "FeedItem.HasFeedEntity"
+    defaultValue = false
+    label = "Tiene archivo adjunto de entidad de noticias en tiempo real"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Checkbox HasVerifiedComment {
+    apiName = "FeedItem.HasVerifiedComment"
+    defaultValue = false
+    label = "Tiene comentario verificado"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Checkbox IsClosed {
+    apiName = "FeedItem.IsClosed"
+    defaultValue = false
+    label = "Está cerrado"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Picklist Status {
+    apiName = "FeedItem.Status"
+    restricted = true
+    label = "Estado"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+}

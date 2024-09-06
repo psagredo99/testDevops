@@ -1,0 +1,119 @@
+type salesforce.ForecastingCustomData {
+  salesforce.Lookup CompositeKeyId {
+    apiName = "ForecastingCustomData.CompositeKeyId"
+    _hidden_value = true
+  }
+  salesforce.Unknown Name {
+    apiName = "ForecastingCustomData.Name"
+    _hidden_value = true
+  }
+  salesforce.Picklist ProductFamily {
+    apiName = "ForecastingCustomData.ProductFamily"
+    restricted = false
+    label = "Familia de productos"
+    createable = true
+    updateable = false
+    queryable = true
+    valueSetName = salesforce.StandardValueSet.instance.Product2Family
+  }
+  serviceid Id {
+    apiName = "ForecastingCustomData.Id"
+    label = "Id. de Datos personalizados de previsión"
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Checkbox IsDeleted {
+    apiName = "ForecastingCustomData.IsDeleted"
+    defaultValue = false
+    label = "Eliminado"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime CreatedDate {
+    apiName = "ForecastingCustomData.CreatedDate"
+    label = "Fecha de creación"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup CreatedById {
+    apiName = "ForecastingCustomData.CreatedById"
+    relationshipName = "CreatedBy"
+    label = "Creado por el Id."
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime LastModifiedDate {
+    apiName = "ForecastingCustomData.LastModifiedDate"
+    label = "Fecha de la última modificación"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup LastModifiedById {
+    apiName = "ForecastingCustomData.LastModifiedById"
+    relationshipName = "LastModifiedBy"
+    label = "Última modificación realizada por el Id."
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime SystemModstamp {
+    apiName = "ForecastingCustomData.SystemModstamp"
+    label = "Modstamp del sistema"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup PeriodId {
+    apiName = "ForecastingCustomData.PeriodId"
+    relationshipName = "Period"
+    label = "Id. del período"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup ForecastOwnerId {
+    apiName = "ForecastingCustomData.ForecastOwnerId"
+    relationshipName = "ForecastOwner"
+    _required = true
+    label = "Id. de usuario"
+    createable = true
+    updateable = false
+    queryable = true
+  }
+  salesforce.Lookup ForecastingTypeId {
+    apiName = "ForecastingCustomData.ForecastingTypeId"
+    relationshipName = "ForecastingType"
+    _required = true
+    label = "Id. de tipo de previsión"
+    createable = true
+    updateable = false
+    queryable = true
+  }
+  salesforce.Date StartDate {
+    apiName = "ForecastingCustomData.StartDate"
+    _required = true
+    label = "Fecha de inicio"
+    createable = true
+    updateable = false
+    queryable = true
+  }
+  salesforce.Lookup ForecastingGroupItemId {
+    apiName = "ForecastingCustomData.ForecastingGroupItemId"
+    relationshipName = "ForecastingGroupItem"
+    label = "Id. de Elemento de grupo de previsión"
+    createable = true
+    updateable = false
+    queryable = true
+  }
+}

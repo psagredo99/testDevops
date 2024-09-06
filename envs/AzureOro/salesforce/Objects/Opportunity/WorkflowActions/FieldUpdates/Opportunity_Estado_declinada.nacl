@@ -1,0 +1,14 @@
+salesforce.WorkflowFieldUpdate Opportunity_Estado_declinada@vu {
+  fullName = "Opportunity.Estado_declinada"
+  field = salesforce.Opportunity.field.Estado_proceso_aprobacion__c
+  literalValue = "Rechazado"
+  name = "Estado declinada"
+  notifyAssignee = false
+  operation = "Literal"
+  protected = false
+  reevaluateOnChange = false
+  _parent = [
+    salesforce.Opportunity,
+  ]
+  _alias = "Opportunity.Estado_declinada"
+}

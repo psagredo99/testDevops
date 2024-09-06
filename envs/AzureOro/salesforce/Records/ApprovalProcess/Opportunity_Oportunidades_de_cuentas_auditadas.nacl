@@ -1,0 +1,113 @@
+salesforce.ApprovalProcess Opportunity_Oportunidades_de_cuentas_auditadas@vuuu {
+  fullName = "Opportunity.Oportunidades_de_cuentas_auditadas"
+  active = true
+  allowRecall = true
+  allowedSubmitters = [
+    {
+      type = "creator"
+    },
+    {
+      type = "owner"
+    },
+    {
+      submitter = salesforce.Role.instance.Socio
+      type = "role"
+    },
+  ]
+  approvalPageFields = {
+    field = [
+      "Account",
+      "Name",
+      "CloseDate",
+      "Owner",
+      "Socio_oportunidad__c",
+      "Responsable_oportunidad__c",
+      "Amount",
+    ]
+  }
+  approvalStep = [
+    {
+      allowDelegate = false
+      assignedApprover = {
+        approver = [
+          {
+            name = "admin@pkf-attest.es"
+            type = "user"
+          },
+          {
+            name = "alago@pkf-attest.es"
+            type = "user"
+          },
+          {
+            name = "nperez@pkf-attest.es"
+            type = "user"
+          },
+        ]
+        whenMultipleApprovers = "FirstResponse"
+      }
+      label = "Notificación aprobaciones"
+      name = "Notificacion_aprobaciones"
+    },
+  ]
+  description = "Si los clientes están marcados como auditados es necesario que Secretaría Técnica autorice la oferta."
+  emailTemplate = "unfiled$public/Oportunidad_Aprobaciones"
+  enableMobileDeviceAccess = false
+  entryCriteria = {
+    formula = "true"
+  }
+  finalApprovalActions = {
+    action = [
+      {
+        name = "Comentario"
+        type = "FieldUpdate"
+      },
+      {
+        name = "Estado_a_aprobada"
+        type = "FieldUpdate"
+      },
+      {
+        name = "Fecha_aprobacion"
+        type = "FieldUpdate"
+      },
+      {
+        name = "Oportunidad_aprobada"
+        type = "Alert"
+      },
+    ]
+  }
+  finalApprovalRecordLock = false
+  finalRejectionActions = {
+    action = [
+      {
+        name = "Estado_declinada"
+        type = "FieldUpdate"
+      },
+      {
+        name = "Oportunidad_rechazada"
+        type = "Alert"
+      },
+    ]
+  }
+  finalRejectionRecordLock = false
+  initialSubmissionActions = {
+    action = [
+      {
+        name = "Estado_a_Pendiente_Rta"
+        type = "FieldUpdate"
+      },
+    ]
+  }
+  label = "Oportunidades de cuentas auditadas"
+  processOrder = 1
+  recallActions = {
+    action = [
+      {
+        name = "Vaciar_estado"
+        type = "FieldUpdate"
+      },
+    ]
+  }
+  recordEditability = "AdminOnly"
+  showApprovalHistory = false
+  _alias = "Oportunidades de cuentas auditadas"
+}

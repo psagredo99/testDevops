@@ -1,0 +1,15 @@
+salesforce.ListView ers_datatableConfig__c_All {
+  fullName = "ers_datatableConfig__c.All"
+  columns = [
+    "NAME",
+    salesforce.ers_datatableConfig__c.field.Object_API_Name__c,
+    salesforce.ers_datatableConfig__c.field.Field_API_Names__c,
+    salesforce.ers_datatableConfig__c.field.Active__c,
+  ]
+  filterScope = "Everything"
+  label = "All"
+  _parent = [
+    salesforce.ers_datatableConfig__c,
+  ]
+  _alias = "All"
+}

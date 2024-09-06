@@ -1,0 +1,21 @@
+salesforce.ApexClass NAV2SFJobsTest {
+  apiVersion = 57
+  status = "Active"
+  fullName = "NAV2SFJobsTest"
+  content = file("salesforce/Records/ApexClass/NAV2SFJobsTest.cls")
+  _generated_dependencies = [
+    {
+      reference = salesforce.Account
+    },
+    {
+      reference = salesforce.Account.field.Multicompany_ID__c
+    },
+    {
+      reference = salesforce.ApexClass.instance.Integration_Util
+    },
+    {
+      reference = salesforce.ApexClass.instance.NAV2SFJobs
+    },
+  ]
+  _alias = "NAV2SFJobsTest"
+}

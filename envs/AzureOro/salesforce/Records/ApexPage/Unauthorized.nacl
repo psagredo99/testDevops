@@ -1,0 +1,30 @@
+salesforce.ApexPage Unauthorized {
+  apiVersion = 56
+  availableInTouch = false
+  confirmationTokenRequired = false
+  description = "Página predeterminada de autorización necesaria de Plataforma Lightning"
+  label = "Unauthorized"
+  fullName = "Unauthorized"
+  content = file("salesforce/Records/ApexPage/Unauthorized.page")
+  _generated_dependencies = [
+    {
+      reference = salesforce.ApexClass.instance.SiteLoginController
+    },
+    {
+      reference = salesforce.ApexComponent.instance.SiteLogin
+    },
+    {
+      reference = salesforce.ApexComponent.instance.SitePoweredBy
+    },
+    {
+      reference = salesforce.ApexPage.instance.ForgotPassword
+    },
+    {
+      reference = salesforce.ApexPage.instance.SiteRegister
+    },
+    {
+      reference = salesforce.StaticResource.instance.SiteSamples
+    },
+  ]
+  _alias = "Unauthorized"
+}

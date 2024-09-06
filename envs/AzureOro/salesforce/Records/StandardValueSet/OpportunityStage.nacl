@@ -1,0 +1,79 @@
+salesforce.StandardValueSet OpportunityStage {
+  fullName = "OpportunityStage"
+  sorted = false
+  standardValue = [
+    {
+      fullName = "Identificada"
+      default = false
+      label = "Identificada"
+      closed = false
+      forecastCategory = "Pipeline"
+      probability = 10
+      won = false
+    },
+    {
+      fullName = "Notificación auditoría"
+      default = false
+      label = "Notificación auditoría"
+      closed = false
+      forecastCategory = "Pipeline"
+      probability = 30
+      won = false
+    },
+    {
+      fullName = "En preparación"
+      default = false
+      label = "En preparación"
+      closed = false
+      forecastCategory = "Pipeline"
+      probability = 30
+      won = false
+    },
+    {
+      fullName = "Aprobación auditoría"
+      default = false
+      label = "Aprobación auditoría"
+      closed = false
+      forecastCategory = "Pipeline"
+      probability = 50
+      won = false
+    },
+    {
+      fullName = "Ofertada"
+      default = false
+      label = "Ofertada"
+      closed = false
+      forecastCategory = "Pipeline"
+      probability = 50
+      won = false
+    },
+    {
+      fullName = "Postpuesta"
+      default = false
+      label = "Postpuesta"
+      closed = false
+      forecastCategory = "Pipeline"
+      probability = 10
+      won = false
+    },
+    {
+      fullName = "Cerrada ganada"
+      default = false
+      label = "Cerrada ganada"
+      closed = true
+      forecastCategory = "Closed"
+      probability = 100
+      won = true
+    },
+    {
+      fullName = "Cerrada perdida"
+      default = false
+      label = "Cerrada perdida"
+      closed = true
+      forecastCategory = "Omitted"
+      probability = 0
+      won = false
+    },
+  ]
+  _alias = "OpportunityStage"
+}

@@ -1,0 +1,6 @@
+salesforce.CustomPermission Cuenta_Modificar_nombre {
+  isLicensed = false
+  label = "Cuenta - Modificar nombre"
+  fullName = "Cuenta_Modificar_nombre"
+  _alias = "Cuenta - Modificar nombre"
+}

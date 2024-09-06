@@ -1,0 +1,44 @@
+salesforce.CaseSettings {
+  fullName = "Case"
+  caseFeedItemSettings = {
+    characterLimit = 400
+    displayFormat = "Default"
+    feedItemType = "EmailMessageEvent"
+  }
+  caseFeedReadUnreadLtng = false
+  caseMergeInLightning = "false"
+  closeCaseThroughStatusChange = false
+  defaultCaseFeedLayoutOn = false
+  defaultCaseOwner = "jsouto@pkf-attest.es"
+  defaultCaseOwnerType = "User"
+  defaultCaseUser = "jsouto@pkf-attest.es"
+  emailToCase = {
+    enableEmailToCase = false
+  }
+  enableCaseFeed = true
+  enableCaseSwarming = "false"
+  enableCollapseEmailThread = true
+  enableEarlyEscalationRuleTriggers = false
+  enableEscalateQfiToCaseInternal = false
+  enableEscalateQfiToCaseNetworks = false
+  enableMultiLangSolnSrchCSS = "false"
+  enableMultiLangSolnSrchPKB = "false"
+  enableMultiLangSolution = "false"
+  enableSolutionCategory = "false"
+  enableSolutionInlineCategory = "true"
+  enableSolutionShortSummary = "true"
+  enableSuggestedSolutions = true
+  escalateCaseBefore = false
+  notifyContactOnCaseComment = false
+  notifyDefaultCaseOwner = false
+  notifyOwnerOnCaseComment = false
+  notifyOwnerOnCaseOwnerChange = false
+  showEmailAttachmentsInCaseAttachmentsRL = true
+  useSystemEmailAddress = true
+  useSystemUserAsDefaultCaseUser = false
+  visibleInCssCheckbox = false
+  webToCase = {
+    enableWebToCase = false
+  }
+  _alias = "Case"
+}

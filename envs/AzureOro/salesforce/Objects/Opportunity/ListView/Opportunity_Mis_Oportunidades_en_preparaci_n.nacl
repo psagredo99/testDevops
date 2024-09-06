@@ -1,0 +1,22 @@
+salesforce.ListView Opportunity_Mis_Oportunidades_en_preparaci_n {
+  fullName = "Opportunity.Mis_Oportunidades_en_preparaci_n"
+  columns = [
+    "OPPORTUNITY.NAME",
+    "ACCOUNT.NAME",
+    "OPPORTUNITY.CLOSE_DATE",
+    "OPPORTUNITY.AMOUNT",
+  ]
+  filterScope = "Mine"
+  filters = [
+    {
+      field = "OPPORTUNITY.STAGE_NAME"
+      operation = "equals"
+      value = "En preparación"
+    },
+  ]
+  label = "Mis oportunidades en preparación"
+  _parent = [
+    salesforce.Opportunity,
+  ]
+  _alias = "Mis oportunidades en preparación"
+}

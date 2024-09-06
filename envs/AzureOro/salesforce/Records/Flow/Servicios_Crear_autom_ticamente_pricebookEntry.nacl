@@ -1,0 +1,136 @@
+salesforce.Flow Servicios_Crear_autom_ticamente_pricebookEntry {
+  fullName = "Servicios_Crear_autom_ticamente_pricebookEntry"
+  apiVersion = 59
+  decisions = [
+    {
+      name = "Si_no_existe_lista_de_precios"
+      label = "Si no existe lista de precios"
+      locationX = 182
+      locationY = 431
+      defaultConnectorLabel = "Resultado predeterminado"
+      rules = [
+        {
+          name = "Vacia"
+          conditionLogic = "and"
+          conditions = [
+            {
+              leftValueReference = "Obtner_Price_book_entry"
+              operator = "IsNull"
+              rightValue = {
+                booleanValue = true
+              }
+            },
+          ]
+          connector = {
+            targetReference = "Creamos_el_pricebook_entry_para_ese_servicio"
+          }
+          label = "Vacia"
+        },
+      ]
+    },
+  ]
+  environments = "Default"
+  interviewLabel = "Servicios- Crear automáticamente pricebookEntry {!$Flow.CurrentDateTime}"
+  label = "Servicios- Crear automáticamente pricebookEntry"
+  processMetadataValues = [
+    {
+      name = "BuilderType"
+      value = {
+        stringValue = "LightningFlowBuilder"
+      }
+    },
+    {
+      name = "CanvasMode"
+      value = {
+        stringValue = "AUTO_LAYOUT_CANVAS"
+      }
+    },
+    {
+      name = "OriginBuilderType"
+      value = {
+        stringValue = "LightningFlowBuilder"
+      }
+    },
+  ]
+  processType = "AutoLaunchedFlow"
+  recordCreates = [
+    {
+      name = "Creamos_el_pricebook_entry_para_ese_servicio"
+      label = "Creamos el pricebook entry para ese servicio"
+      locationX = 50
+      locationY = 539
+      inputAssignments = [
+        {
+          field = salesforce.PricebookEntry.field.IsActive
+          value = {
+            booleanValue = true
+          }
+        },
+        {
+          field = salesforce.PricebookEntry.field.Pricebook2Id
+          value = {
+            stringValue = "01s68000003RdvfAAC"
+          }
+        },
+        {
+          field = salesforce.PricebookEntry.field.Product2Id
+          value = {
+            elementReference = "$Record.Id"
+          }
+        },
+        {
+          field = salesforce.PricebookEntry.field.UnitPrice
+          value = {
+            numberValue = 0
+          }
+        },
+      ]
+      object = salesforce.PricebookEntry
+      storeOutputAutomatically = true
+    },
+  ]
+  recordLookups = [
+    {
+      name = "Obtner_Price_book_entry"
+      label = "Obtener Price book entry"
+      locationX = 182
+      locationY = 323
+      assignNullValuesIfNoRecordsFound = false
+      connector = {
+        targetReference = "Si_no_existe_lista_de_precios"
+      }
+      filterLogic = "and"
+      filters = [
+        {
+          field = salesforce.PricebookEntry.field.Product2Id
+          operator = "EqualTo"
+          value = {
+            elementReference = "$Record.Id"
+          }
+        },
+        {
+          field = salesforce.PricebookEntry.field.IsActive
+          operator = "EqualTo"
+          value = {
+            booleanValue = true
+          }
+        },
+      ]
+      getFirstRecordOnly = true
+      object = salesforce.PricebookEntry
+      storeOutputAutomatically = true
+    },
+  ]
+  start = {
+    locationX = 56
+    locationY = 0
+    connector = {
+      targetReference = "Obtner_Price_book_entry"
+    }
+    object = salesforce.Product2
+    recordTriggerType = "CreateAndUpdate"
+    triggerType = "RecordAfterSave"
+  }
+  status = "Active"
+  _alias = "Servicios- Crear automáticamente pricebookEntry"
+}

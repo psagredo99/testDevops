@@ -1,0 +1,22 @@
+salesforce.ListView Opportunity_Mis_Oportunidades_ofertadas {
+  fullName = "Opportunity.Mis_Oportunidades_ofertadas"
+  columns = [
+    "OPPORTUNITY.NAME",
+    "ACCOUNT.NAME",
+    "OPPORTUNITY.CLOSE_DATE",
+    "OPPORTUNITY.AMOUNT",
+  ]
+  filterScope = "Mine"
+  filters = [
+    {
+      field = "OPPORTUNITY.STAGE_NAME"
+      operation = "equals"
+      value = "Ofertada"
+    },
+  ]
+  label = "Mis oportunidades ofertadas"
+  _parent = [
+    salesforce.Opportunity,
+  ]
+  _alias = "Mis oportunidades ofertadas"
+}

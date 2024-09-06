@@ -1,0 +1,220 @@
+salesforce.LightningComponentBundle fsc_flexcardFlow {
+  apiVersion = 56
+  isExposed = true
+  targets = {
+    target = [
+      "lightning__FlowScreen",
+    ]
+  }
+  targetConfigs = {
+    targetConfig = [
+      {
+        targets = "lightning__FlowScreen"
+        configurationEditor = "c-fsc_flexcard-c-p-e"
+        property = [
+          {
+            name = "value"
+            label = "Value"
+            type = "String"
+            description = "The selected cards recordId if Allow Multi-Select is set to false"
+          },
+          {
+            name = "selectedLabel"
+            label = "Selected Label"
+            type = "String"
+            role = "outputOnly"
+            description = "The selected Label (V1.3+)"
+          },
+          {
+            name = "icon"
+            label = "Icon"
+            type = "String"
+            description = "Icon name for example standard:account"
+          },
+          {
+            name = "records"
+            label = "Card Data Record Collection"
+            type = "{T[]}"
+            role = "inputOnly"
+            description = "Record Collection variable containing the records to display in the flexcard."
+          },
+          {
+            name = "visibleFieldNames"
+            label = "Visible Field Names"
+            type = "String"
+            default = "Id"
+            required = true
+            description = "Show which fields?"
+          },
+          {
+            name = "visibleFlowNames"
+            label = "Visible Flow Names"
+            type = "String"
+            description = "Show which flow?"
+          },
+          {
+            name = "cardSize"
+            role = "inputOnly"
+            label = "Box Size"
+            type = "Integer"
+            default = "300"
+            description = "The size of the box in pixels. The box is a square."
+          },
+          {
+            name = "cardSizeString"
+            role = "inputOnly"
+            label = "Box Size"
+            type = "String"
+            default = "300"
+            description = "The size of the box in pixels. The box is a square."
+          },
+          {
+            name = "isClickable"
+            role = "inputOnly"
+            label = "isClickable"
+            type = "Boolean"
+            default = "false"
+            description = "Set as true if you wish to select individual cards for action further downstream in flow default is false"
+          },
+          {
+            name = "cb_isClickable"
+            type = "String"
+            role = "inputOnly"
+          },
+          {
+            name = "headerStyle"
+            label = "Header Style"
+            type = "String"
+            description = "Add your own style attribute to the card headers ie. background-color:red;"
+          },
+          {
+            name = "subheadCSS"
+            label = "Subhead CSS"
+            default = ""
+            type = "String"
+          },
+          {
+            name = "Cardcss"
+            label = "Card CSS"
+            default = "card"
+            type = "String"
+          },
+          {
+            name = "allowMultiSelect"
+            label = "Allow Multi-Select"
+            type = "Boolean"
+            default = "false"
+            description = "Allow for multiselect of cards when enabled checkboxes appear on cards and adds selected cards to collection"
+          },
+          {
+            name = "cb_allowMultiSelect"
+            type = "String"
+            role = "inputOnly"
+          },
+          {
+            name = "selectedRecordIds"
+            label = "Selected Record Ids"
+            type = "String[]"
+            role = "outputOnly"
+            description = "String Collection of selected Record ID's"
+          },
+          {
+            name = "objectAPIName"
+            label = "Object API Name"
+            type = "String"
+            role = "inputOnly"
+            default = "Account"
+            required = true
+            description = "The SObject API Name used to query fields and values must be the same object selected in Flexcard Object API Name"
+          },
+          {
+            name = "label"
+            label = "Label"
+            type = "String"
+            role = "inputOnly"
+            description = "Enter a label for you component"
+          },
+          {
+            name = "transitionOnClick"
+            label = "Transition on Click"
+            type = "Boolean"
+            role = "inputOnly"
+            default = "false"
+            description = "If marked as true will transition flow to next screen on card click"
+          },
+          {
+            name = "cb_transitionOnClick"
+            type = "String"
+            role = "inputOnly"
+          },
+          {
+            name = "fields"
+            label = "Visible Field Names"
+            type = "String"
+            default = "Id"
+            required = true
+            description = "Show which fields?"
+          },
+          {
+            name = "flows"
+            label = "Visible Flow Names"
+            type = "String"
+            description = "Show which fields?"
+          },
+          {
+            name = "actionDisplayType"
+            label = "Action List Display Type"
+            type = "String"
+            description = "Display actions as hyperlinks in a list or a Menu List"
+          },
+          {
+            name = "buttonLabel"
+            label = "Action Menu Label"
+            type = "String"
+            description = "Action Menu Button Label"
+          },
+          {
+            name = "allowAllObjects"
+            label = "Show All Fields"
+            type = "String"
+            description = "When checked will display all sObject Types"
+            role = "inputOnly"
+          },
+        ]
+        propertyType = {
+          attr_name = "T"
+          attr_extends = "SObject"
+          attr_label = "Flexcard Object API Name"
+          attr_description = "Specify the API Name of the SObject to use in the Flexcard"
+        }
+        attr_category = "Input"
+      },
+    ]
+  }
+  fullName = "fsc_flexcardFlow"
+  lwcResources = {
+    lwcResource = {
+      fsc_flexcardFlow_css@uv = {
+        source = file("salesforce/Records/LightningComponentBundle/fsc_flexcardFlow/fsc_flexcardFlow.css")
+        filePath = "lwc/fsc_flexcardFlow/fsc_flexcardFlow.css"
+      }
+      fsc_flexcardFlow_html@uv = {
+        source = file("salesforce/Records/LightningComponentBundle/fsc_flexcardFlow/fsc_flexcardFlow.html")
+        filePath = "lwc/fsc_flexcardFlow/fsc_flexcardFlow.html"
+      }
+      fsc_flexcardFlow_js@uv = {
+        source = file("salesforce/Records/LightningComponentBundle/fsc_flexcardFlow/fsc_flexcardFlow.js")
+        filePath = "lwc/fsc_flexcardFlow/fsc_flexcardFlow.js"
+      }
+    }
+  }
+  _generated_dependencies = [
+    {
+      reference = salesforce.LightningComponentBundle.instance.fsc_actionList3
+    },
+    {
+      reference = salesforce.LightningComponentBundle.instance.fsc_flexcardCPE
+    },
+  ]
+  _alias = "fsc_flexcardFlow"
+}

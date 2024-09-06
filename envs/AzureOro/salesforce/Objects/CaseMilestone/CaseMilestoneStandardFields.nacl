@@ -1,0 +1,268 @@
+type salesforce.CaseMilestone {
+  salesforce.Lookup BusinessHoursId {
+    apiName = "CaseMilestone.BusinessHoursId"
+    relationshipName = "BusinessHours"
+    label = "Id. de horario de oficina"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup CaseId {
+    apiName = "CaseMilestone.CaseId"
+    relationshipName = "Case"
+    _required = true
+    label = "Id. del caso"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime CompletionDate {
+    apiName = "CaseMilestone.CompletionDate"
+    label = "Fecha de finalización"
+    createable = false
+    updateable = true
+    queryable = true
+  }
+  salesforce.Number ElapsedTimeInDays {
+    apiName = "CaseMilestone.ElapsedTimeInDays"
+    label = "Tiempo transcurrido (días)"
+    precision = 6
+    scale = 2
+    createable = false
+    updateable = false
+    unique = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Number ElapsedTimeInHrs {
+    apiName = "CaseMilestone.ElapsedTimeInHrs"
+    label = "Tiempo transcurrido (horas)"
+    precision = 6
+    scale = 2
+    createable = false
+    updateable = false
+    unique = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Number ElapsedTimeInMins {
+    apiName = "CaseMilestone.ElapsedTimeInMins"
+    label = "Tiempo transcurrido (minutos)"
+    precision = 9
+    createable = false
+    updateable = false
+    scale = 0
+    unique = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Checkbox IsCompleted {
+    apiName = "CaseMilestone.IsCompleted"
+    defaultValue = false
+    label = "Completado"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Checkbox IsViolated {
+    apiName = "CaseMilestone.IsViolated"
+    defaultValue = false
+    label = "Infracción"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup MilestoneId {
+    apiName = "CaseMilestone.MilestoneId"
+    _hidden_value = true
+  }
+  salesforce.Lookup SlaProcessId {
+    apiName = "CaseMilestone.SlaProcessId"
+    _hidden_value = true
+  }
+  salesforce.DateTime StartDate {
+    apiName = "CaseMilestone.StartDate"
+    label = "Fecha de inicio"
+    createable = false
+    updateable = true
+    queryable = true
+  }
+  salesforce.DateTime TargetDate {
+    apiName = "CaseMilestone.TargetDate"
+    _required = true
+    label = "Fecha programada"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Number TargetResponseInDays {
+    apiName = "CaseMilestone.TargetResponseInDays"
+    label = "Respuesta programada (días)"
+    precision = 6
+    scale = 2
+    createable = false
+    updateable = false
+    unique = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Number TargetResponseInHrs {
+    apiName = "CaseMilestone.TargetResponseInHrs"
+    label = "Respuesta programada (horas)"
+    precision = 6
+    scale = 2
+    createable = false
+    updateable = false
+    unique = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Number TargetResponseInMins {
+    apiName = "CaseMilestone.TargetResponseInMins"
+    label = "Respuesta programada (minutos)"
+    precision = 9
+    createable = false
+    updateable = false
+    scale = 0
+    unique = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Number TimeRemainingInDays {
+    apiName = "CaseMilestone.TimeRemainingInDays"
+    label = "Tiempo restante (días)"
+    precision = 6
+    scale = 2
+    createable = false
+    updateable = false
+    unique = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Text TimeRemainingInHrs {
+    apiName = "CaseMilestone.TimeRemainingInHrs"
+    length = 10
+    label = "Tiempo restante (horas:minutos)"
+    createable = false
+    updateable = false
+    unique = false
+    caseSensitive = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Text TimeRemainingInMins {
+    apiName = "CaseMilestone.TimeRemainingInMins"
+    length = 10
+    label = "Tiempo restante (minutos:segundos)"
+    createable = false
+    updateable = false
+    unique = false
+    caseSensitive = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Number TimeSinceTargetInDays {
+    apiName = "CaseMilestone.TimeSinceTargetInDays"
+    label = "Tiempo desde objetivo (días)"
+    precision = 6
+    scale = 2
+    createable = false
+    updateable = false
+    unique = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Text TimeSinceTargetInHrs {
+    apiName = "CaseMilestone.TimeSinceTargetInHrs"
+    length = 10
+    label = "Tiempo desde objetivo (horas:minutos)"
+    createable = false
+    updateable = false
+    unique = false
+    caseSensitive = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Text TimeSinceTargetInMins {
+    apiName = "CaseMilestone.TimeSinceTargetInMins"
+    length = 10
+    label = "Tiempo desde objetivo (minutos:segundos)"
+    createable = false
+    updateable = false
+    unique = false
+    caseSensitive = false
+    queryable = true
+    _hidden_value = true
+  }
+  serviceid Id {
+    apiName = "CaseMilestone.Id"
+    label = "Id de Evento clave de caso"
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup MilestoneTypeId {
+    apiName = "CaseMilestone.MilestoneTypeId"
+    relationshipName = "MilestoneType"
+    label = "Id de tipo de evento clave"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime SystemModstamp {
+    apiName = "CaseMilestone.SystemModstamp"
+    label = "Modstamp del sistema"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime CreatedDate {
+    apiName = "CaseMilestone.CreatedDate"
+    label = "Fecha de creación"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup CreatedById {
+    apiName = "CaseMilestone.CreatedById"
+    relationshipName = "CreatedBy"
+    label = "Creado por el Id."
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime LastModifiedDate {
+    apiName = "CaseMilestone.LastModifiedDate"
+    label = "Fecha de la última modificación"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup LastModifiedById {
+    apiName = "CaseMilestone.LastModifiedById"
+    relationshipName = "LastModifiedBy"
+    label = "Última modificación realizada por el Id."
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Checkbox IsDeleted {
+    apiName = "CaseMilestone.IsDeleted"
+    defaultValue = false
+    label = "Eliminado"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+}

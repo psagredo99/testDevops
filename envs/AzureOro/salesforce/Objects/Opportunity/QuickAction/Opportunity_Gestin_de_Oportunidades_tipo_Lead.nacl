@@ -1,0 +1,38 @@
+salesforce.QuickAction Opportunity_Gestin_de_Oportunidades_tipo_Lead@vuuuu {
+  fullName = "Opportunity.Gestin_de_Oportunidades_tipo_Lead"
+  label = "Gestión de Oportunidades tipo Lead"
+  optionsCreateFeedItem = false
+  quickActionLayout = {
+    layoutSectionStyle = "TwoColumnsLeftToRight"
+    quickActionLayoutColumns = [
+      {
+        quickActionLayoutItems = [
+          {
+            emptySpace = false
+            field = salesforce.Opportunity.field.Lead_valido__c
+            uiBehavior = "Edit"
+          },
+        ]
+      },
+      {
+        quickActionLayoutItems = [
+          {
+            emptySpace = false
+            field = salesforce.Opportunity.field.Estado_Lead__c
+            uiBehavior = "Edit"
+          },
+          {
+            emptySpace = false
+            field = salesforce.Opportunity.field.Estado_operacion_lead__c
+            uiBehavior = "Edit"
+          },
+        ]
+      },
+    ]
+  }
+  type = "Update"
+  _parent = [
+    salesforce.Opportunity,
+  ]
+  _alias = "Gestión de Oportunidades tipo Lead"
+}

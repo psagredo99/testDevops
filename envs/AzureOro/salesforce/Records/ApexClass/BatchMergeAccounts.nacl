@@ -1,0 +1,12 @@
+salesforce.ApexClass BatchMergeAccounts {
+  apiVersion = 58
+  status = "Active"
+  fullName = "BatchMergeAccounts"
+  content = file("salesforce/Records/ApexClass/BatchMergeAccounts.cls")
+  _generated_dependencies = [
+    {
+      reference = salesforce.Account
+    },
+  ]
+  _alias = "BatchMergeAccounts"
+}

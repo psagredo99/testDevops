@@ -1,0 +1,198 @@
+type salesforce.MacroUsage {
+  serviceid Id {
+    apiName = "MacroUsage.Id"
+    label = "Id. de Uso de macro"
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup OwnerId {
+    apiName = "MacroUsage.OwnerId"
+    relationshipName = "Owner"
+    label = "Id. del propietario"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Checkbox IsDeleted {
+    apiName = "MacroUsage.IsDeleted"
+    defaultValue = false
+    label = "Eliminado"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Text Name {
+    apiName = "MacroUsage.Name"
+    length = 255
+    _required = true
+    label = "Nombre de uso de macro"
+    createable = false
+    updateable = false
+    unique = false
+    caseSensitive = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime CreatedDate {
+    apiName = "MacroUsage.CreatedDate"
+    label = "Fecha de creación"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup CreatedById {
+    apiName = "MacroUsage.CreatedById"
+    relationshipName = "CreatedBy"
+    label = "Creado por el Id."
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime LastModifiedDate {
+    apiName = "MacroUsage.LastModifiedDate"
+    label = "Fecha de la última modificación"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup LastModifiedById {
+    apiName = "MacroUsage.LastModifiedById"
+    relationshipName = "LastModifiedBy"
+    label = "Última modificación realizada por el Id."
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime SystemModstamp {
+    apiName = "MacroUsage.SystemModstamp"
+    label = "Modstamp del sistema"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup MacroId {
+    apiName = "MacroUsage.MacroId"
+    relationshipName = "Macro"
+    _required = true
+    label = "Id. de macro"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Text ContextRecord {
+    apiName = "MacroUsage.ContextRecord"
+    length = 18
+    label = "Registro de contexto"
+    createable = false
+    updateable = false
+    unique = false
+    caseSensitive = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Number ExecutedInstructionCount {
+    apiName = "MacroUsage.ExecutedInstructionCount"
+    label = "Recuento de instrucciones ejecutadas"
+    precision = 9
+    createable = false
+    updateable = false
+    scale = 0
+    unique = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Number InstructionCount {
+    apiName = "MacroUsage.InstructionCount"
+    label = "Recuento de instrucciones"
+    precision = 9
+    createable = false
+    updateable = false
+    scale = 0
+    unique = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime ExecutionEndTime {
+    apiName = "MacroUsage.ExecutionEndTime"
+    label = "Hora de finalización de ejecución"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup UserId {
+    apiName = "MacroUsage.UserId"
+    relationshipName = "User"
+    label = "Id. de usuario"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Checkbox IsFromBulk {
+    apiName = "MacroUsage.IsFromBulk"
+    defaultValue = false
+    label = "Desde ejecución masiva"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Picklist AppContext {
+    apiName = "MacroUsage.AppContext"
+    restricted = true
+    label = "Contexto de aplicación"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Number ConditionCount {
+    apiName = "MacroUsage.ConditionCount"
+    label = "Recuento de condiciones"
+    precision = 9
+    createable = false
+    updateable = false
+    scale = 0
+    unique = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Picklist ExecutionState {
+    apiName = "MacroUsage.ExecutionState"
+    restricted = true
+    label = "Estado de ejecución"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Number DurationInMs {
+    apiName = "MacroUsage.DurationInMs"
+    label = "Duración en milisegundos"
+    precision = 9
+    createable = false
+    updateable = false
+    scale = 0
+    unique = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Picklist FailureReason {
+    apiName = "MacroUsage.FailureReason"
+    restricted = true
+    label = "Motivo del fallo"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+}

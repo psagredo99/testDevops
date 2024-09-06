@@ -1,0 +1,174 @@
+type salesforce.ProcessException {
+  salesforce.Lookup AttachedToId {
+    apiName = "ProcessException.AttachedToId"
+    relationshipName = "AttachedTo"
+    _required = true
+    label = "Adjunto a Id."
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Lookup CaseId {
+    apiName = "ProcessException.CaseId"
+    relationshipName = "Case"
+    label = "Id. del caso"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Picklist Category {
+    apiName = "ProcessException.Category"
+    restricted = false
+    label = "Categoría"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.LongTextArea Description {
+    apiName = "ProcessException.Description"
+    length = 2000
+    label = "Descripción"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Text ExternalReference {
+    apiName = "ProcessException.ExternalReference"
+    length = 255
+    label = "Referencia externa"
+    createable = true
+    updateable = true
+    unique = false
+    caseSensitive = false
+    queryable = true
+  }
+  salesforce.Text Message {
+    apiName = "ProcessException.Message"
+    length = 255
+    _required = true
+    label = "Mensaje"
+    createable = true
+    updateable = true
+    unique = false
+    caseSensitive = false
+    queryable = true
+  }
+  salesforce.Lookup OwnerId {
+    apiName = "ProcessException.OwnerId"
+    relationshipName = "Owner"
+    label = "Id. del propietario"
+    createable = true
+    updateable = true
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Picklist Priority {
+    apiName = "ProcessException.Priority"
+    restricted = false
+    label = "Prioridad"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Picklist Severity {
+    apiName = "ProcessException.Severity"
+    restricted = false
+    label = "Gravedad"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Picklist Status {
+    apiName = "ProcessException.Status"
+    restricted = false
+    _required = true
+    label = "Estado"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  serviceid Id {
+    apiName = "ProcessException.Id"
+    label = "Id. de Excepción de proceso"
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Checkbox IsDeleted {
+    apiName = "ProcessException.IsDeleted"
+    defaultValue = false
+    label = "Eliminado"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.AutoNumber ProcessExceptionNumber {
+    apiName = "ProcessException.ProcessExceptionNumber"
+    label = "Número de Excepción de proceso"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime CreatedDate {
+    apiName = "ProcessException.CreatedDate"
+    label = "Fecha de creación"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup CreatedById {
+    apiName = "ProcessException.CreatedById"
+    relationshipName = "CreatedBy"
+    label = "Creado por el Id."
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime LastModifiedDate {
+    apiName = "ProcessException.LastModifiedDate"
+    label = "Fecha de la última modificación"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup LastModifiedById {
+    apiName = "ProcessException.LastModifiedById"
+    relationshipName = "LastModifiedBy"
+    label = "Última modificación realizada por el Id."
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime SystemModstamp {
+    apiName = "ProcessException.SystemModstamp"
+    label = "Modstamp del sistema"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Picklist StatusCategory {
+    apiName = "ProcessException.StatusCategory"
+    restricted = true
+    _required = true
+    label = "Categoría de estado"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Picklist SeverityCategory {
+    apiName = "ProcessException.SeverityCategory"
+    restricted = true
+    label = "Categoría de gravedad"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+}

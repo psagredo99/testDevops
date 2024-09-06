@@ -1,0 +1,13 @@
+salesforce.WorkflowFieldUpdate Opportunity_Vaciar_estado@vu {
+  fullName = "Opportunity.Vaciar_estado"
+  field = salesforce.Opportunity.field.Estado_proceso_aprobacion__c
+  name = "Vaciar estado"
+  notifyAssignee = false
+  operation = "Literal"
+  protected = false
+  reevaluateOnChange = false
+  _parent = [
+    salesforce.Opportunity,
+  ]
+  _alias = "Opportunity.Vaciar_estado"
+}

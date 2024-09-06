@@ -1,0 +1,54 @@
+salesforce.QuickAction NewContact {
+  fullName = "NewContact"
+  optionsCreateFeedItem = true
+  quickActionLayout = {
+    layoutSectionStyle = "TwoColumnsLeftToRight"
+    quickActionLayoutColumns = [
+      {
+        quickActionLayoutItems = [
+          {
+            emptySpace = false
+            field = "Name"
+            uiBehavior = "Required"
+          },
+          {
+            emptySpace = false
+            field = "Email"
+            uiBehavior = "Edit"
+          },
+          {
+            emptySpace = false
+            field = "Phone"
+            uiBehavior = "Edit"
+          },
+          {
+            emptySpace = false
+            field = "AccountId"
+            uiBehavior = "Required"
+          },
+          {
+            emptySpace = false
+            field = "Departamento__c"
+            uiBehavior = "Edit"
+          },
+          {
+            emptySpace = false
+            field = "Puesto__c"
+            uiBehavior = "Edit"
+          },
+          {
+            emptySpace = false
+            field = "Title"
+            uiBehavior = "Edit"
+          },
+        ]
+      },
+      {
+      },
+    ]
+  }
+  standardLabel = "New"
+  targetObject = salesforce.Contact
+  type = "Create"
+  _alias = "NewContact"
+}

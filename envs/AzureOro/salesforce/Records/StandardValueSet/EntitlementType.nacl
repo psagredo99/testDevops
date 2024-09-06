@@ -1,0 +1,17 @@
+salesforce.StandardValueSet EntitlementType {
+  fullName = "EntitlementType"
+  sorted = false
+  standardValue = [
+    {
+      fullName = "Asistencia telefónica"
+      default = true
+      label = "Asistencia telefónica"
+    },
+    {
+      fullName = "Asistencia por Internet"
+      default = false
+      label = "Asistencia por Internet"
+    },
+  ]
+  _alias = "EntitlementType"
+}

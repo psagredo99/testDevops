@@ -1,0 +1,84 @@
+type salesforce.ProfileSkillEndorsement {
+  salesforce.MasterDetail ProfileSkillUserId {
+    apiName = "ProfileSkillEndorsement.ProfileSkillUserId"
+    relationshipName = "ProfileSkillUser"
+    _required = true
+    label = "Id. de Usuario con habilidades"
+    createable = true
+    updateable = false
+    queryable = true
+  }
+  salesforce.Lookup UserId {
+    apiName = "ProfileSkillEndorsement.UserId"
+    relationshipName = "User"
+    label = "Id. de usuario"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  serviceid Id {
+    apiName = "ProfileSkillEndorsement.Id"
+    label = "Id. de recomendación"
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Checkbox IsDeleted {
+    apiName = "ProfileSkillEndorsement.IsDeleted"
+    defaultValue = false
+    label = "Eliminado"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.AutoNumber Name {
+    apiName = "ProfileSkillEndorsement.Name"
+    label = "Nombre de recomendación"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime CreatedDate {
+    apiName = "ProfileSkillEndorsement.CreatedDate"
+    label = "Fecha agregada"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup CreatedById {
+    apiName = "ProfileSkillEndorsement.CreatedById"
+    relationshipName = "CreatedBy"
+    label = "Creado por el Id."
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime LastModifiedDate {
+    apiName = "ProfileSkillEndorsement.LastModifiedDate"
+    label = "Fecha de la última modificación"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup LastModifiedById {
+    apiName = "ProfileSkillEndorsement.LastModifiedById"
+    relationshipName = "LastModifiedBy"
+    label = "Última modificación realizada por el Id."
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime SystemModstamp {
+    apiName = "ProfileSkillEndorsement.SystemModstamp"
+    label = "Modstamp del sistema"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+}

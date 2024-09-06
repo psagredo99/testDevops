@@ -1,0 +1,27 @@
+salesforce.StandardValueSet CampaignStatus {
+  fullName = "CampaignStatus"
+  sorted = false
+  standardValue = [
+    {
+      fullName = "Planificada"
+      default = true
+      label = "Planificada"
+    },
+    {
+      fullName = "En progreso"
+      default = false
+      label = "En progreso"
+    },
+    {
+      fullName = "Cancelada"
+      default = false
+      label = "Cancelada"
+    },
+    {
+      fullName = "Completada"
+      default = false
+      label = "Completada"
+    },
+  ]
+  _alias = "CampaignStatus"
+}

@@ -1,0 +1,89 @@
+type salesforce.UserPrioritizedRecord {
+  serviceid Id {
+    apiName = "UserPrioritizedRecord.Id"
+    label = "Id. de Registro con prioridad del usuario"
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup OwnerId {
+    apiName = "UserPrioritizedRecord.OwnerId"
+    relationshipName = "Owner"
+    label = "Id. del propietario"
+    createable = true
+    updateable = true
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Checkbox IsDeleted {
+    apiName = "UserPrioritizedRecord.IsDeleted"
+    defaultValue = false
+    label = "Eliminado"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime CreatedDate {
+    apiName = "UserPrioritizedRecord.CreatedDate"
+    label = "Fecha de creación"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup CreatedById {
+    apiName = "UserPrioritizedRecord.CreatedById"
+    relationshipName = "CreatedBy"
+    label = "Creado por el Id."
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime LastModifiedDate {
+    apiName = "UserPrioritizedRecord.LastModifiedDate"
+    label = "Fecha de la última modificación"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup LastModifiedById {
+    apiName = "UserPrioritizedRecord.LastModifiedById"
+    relationshipName = "LastModifiedBy"
+    label = "Última modificación realizada por el Id."
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime SystemModstamp {
+    apiName = "UserPrioritizedRecord.SystemModstamp"
+    label = "Modstamp del sistema"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup TargetId {
+    apiName = "UserPrioritizedRecord.TargetId"
+    relationshipName = "Target"
+    _required = true
+    label = "Id. de Destino"
+    createable = true
+    updateable = false
+    queryable = true
+  }
+  salesforce.Text TargetKeyPrefix {
+    apiName = "UserPrioritizedRecord.TargetKeyPrefix"
+    length = 3
+    _required = true
+    label = "Prefijo clave de destino"
+    createable = false
+    updateable = false
+    unique = false
+    caseSensitive = false
+    queryable = true
+    _hidden_value = true
+  }
+}

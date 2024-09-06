@@ -1,0 +1,22 @@
+type salesforce.In_App_Checklist_Settings__c {
+  salesforce.Text ProfileKey__c {
+    apiName = "In_App_Checklist_Settings__c.ProfileKey__c"
+    externalId = false
+    label = "ProfileKey"
+    length = 255
+    trackTrending = false
+    unique = false
+    createable = true
+    updateable = true
+    caseSensitive = false
+    queryable = true
+  }
+  salesforce.Url Sales_Cloud_In_App_Page__c {
+    apiName = "In_App_Checklist_Settings__c.Sales_Cloud_In_App_Page__c"
+    label = "Sales Cloud In App Page"
+    trackTrending = false
+    createable = true
+    updateable = true
+    queryable = true
+  }
+}

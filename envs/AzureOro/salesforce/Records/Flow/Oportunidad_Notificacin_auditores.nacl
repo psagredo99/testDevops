@@ -1,0 +1,452 @@
+salesforce.Flow Oportunidad_Notificacin_auditores {
+  fullName = "Oportunidad_Notificacin_auditores"
+  actionCalls = [
+    {
+      name = "Enviar_notificacion_equipo_auditores"
+      label = "Enviar notificación equipo auditores"
+      locationX = 50
+      locationY = 1247
+      actionName = "emailSimple"
+      actionType = "emailSimple"
+      connector = {
+        targetReference = "Update_Oportunidad"
+      }
+      faultConnector = {
+        targetReference = "Error_al_enviar_el_email"
+      }
+      flowTransactionModel = "CurrentTransaction"
+      inputParameters = [
+        {
+          name = "emailAddresses"
+          value = {
+            elementReference = "EmailListaDestinatariosString"
+          }
+        },
+        {
+          name = "emailSubject"
+          value = {
+            elementReference = "EmailAsunto"
+          }
+        },
+        {
+          name = "emailBody"
+          value = {
+            elementReference = "EmailCuerpo"
+          }
+        },
+        {
+          name = "sendRichBody"
+          value = {
+            booleanValue = true
+          }
+        },
+        {
+          name = "relatedRecordId"
+          value = {
+            elementReference = "$Record.Id"
+          }
+        },
+        {
+          name = "recipientId"
+          value = {
+            elementReference = "Get_Contacto_relacionado_para_vincular_el_email_en_el_feed.Id"
+          }
+        },
+        {
+          name = "logEmailOnSend"
+          value = {
+            booleanValue = true
+          }
+        },
+      ]
+      nameSegment = "emailSimple"
+      versionSegment = 1
+    },
+  ]
+  apiVersion = 59
+  assignments = [
+    {
+      name = "Asignamos_primera_posici_n"
+      label = "Asignamos primera posición"
+      locationX = 138
+      locationY = 863
+      assignmentItems = [
+        {
+          assignToReference = "EmailListaDestinatariosString"
+          operator = "Assign"
+          value = {
+            elementReference = "Usuarios_notificaciones.Email"
+          }
+        },
+      ]
+      connector = {
+        targetReference = "Usuarios_notificaciones"
+      }
+    },
+    {
+      name = "Asignamos_resto_posiciones"
+      label = "Asignamos resto posiciones"
+      locationX = 402
+      locationY = 863
+      assignmentItems = [
+        {
+          assignToReference = "EmailListaDestinatariosString"
+          operator = "Assign"
+          value = {
+            elementReference = "EmailAnadirDestinatario"
+          }
+        },
+      ]
+      connector = {
+        targetReference = "Usuarios_notificaciones"
+      }
+    },
+    {
+      description = "Se añade el socio responsable de la opp, el responsable y el propietario"
+      name = "Asignar_Responsables_a_lista_de_destinatarios"
+      label = "Asignar Responsables a lista de destinatarios"
+      locationX = 50
+      locationY = 1139
+      assignmentItems = [
+        {
+          assignToReference = "EmailListaDestinatariosString"
+          operator = "Assign"
+          value = {
+            elementReference = "EmailAnadirSocio"
+          }
+        },
+        {
+          assignToReference = "EmailListaDestinatariosString"
+          operator = "Assign"
+          value = {
+            elementReference = "EmailAnadirSocioAuditCuenta"
+          }
+        },
+      ]
+      connector = {
+        targetReference = "Enviar_notificacion_equipo_auditores"
+      }
+    },
+  ]
+  customErrors = [
+    {
+      name = "Error_al_actualizar_oportunidad"
+      label = "Error al actualizar oportunidad"
+      locationX = 314
+      locationY = 1463
+      customErrorMessages = {
+        errorMessage = '''
+Parece que ha habido un problema al actualizar la oportunidad, en caso de persistir contacte con el administrador.
+
+Error: {!$Flow.FaultMessage}
+'''
+        isFieldError = false
+      }
+    },
+    {
+      name = "Error_al_enviar_el_email"
+      label = "Error al enviar el email"
+      locationX = 578
+      locationY = 1355
+      customErrorMessages = {
+        errorMessage = '''
+Parece que ha habido un problema al enviar el email de notificación, en caso de persistir contacte con el administrador.
+
+Error: {!$Flow.FaultMessage}
+'''
+        isFieldError = false
+      }
+    },
+    {
+      name = "Error_No_hay_usuarios"
+      label = "Error No hay usuarios"
+      locationX = 842
+      locationY = 647
+      customErrorMessages = {
+        errorMessage = "Parece que ha habido un problema al enviar el email de notificación, ya que no hay usuarios configurados de secretaría técnica a los que enviar el email"
+        isFieldError = false
+      }
+    },
+  ]
+  decisions = [
+    {
+      name = "Encontrados_usuarios_para_notificaci_n"
+      label = "Encontrados usuarios para notificación?"
+      locationX = 446
+      locationY = 539
+      defaultConnector = {
+        targetReference = "Error_No_hay_usuarios"
+      }
+      defaultConnectorLabel = "No"
+      rules = [
+        {
+          name = "Si"
+          conditionLogic = "and"
+          conditions = [
+            {
+              leftValueReference = "Get_Usuarios_Secretaria_Tecnica"
+              operator = "IsNull"
+              rightValue = {
+                booleanValue = false
+              }
+            },
+          ]
+          connector = {
+            targetReference = "Usuarios_notificaciones"
+          }
+          label = "Sí"
+        },
+      ]
+    },
+    {
+      name = "Primer_Registro"
+      label = "Primer Registro"
+      locationX = 270
+      locationY = 755
+      defaultConnector = {
+        targetReference = "Asignamos_resto_posiciones"
+      }
+      defaultConnectorLabel = "Otros"
+      rules = [
+        {
+          name = "El_primero"
+          conditionLogic = "and"
+          conditions = [
+            {
+              leftValueReference = "EmailListaDestinatariosString"
+              operator = "IsNull"
+              rightValue = {
+                booleanValue = true
+              }
+            },
+          ]
+          connector = {
+            targetReference = "Asignamos_primera_posici_n"
+          }
+          label = "El primero"
+        },
+      ]
+    },
+  ]
+  description = '''
+Aviso al equipo auditor que se va a trabajar en una opp de un cliente auditado.
+11/12/23 ILS: cambiado para añadir el email del socio de la auditoría asignado a nivel de cuenta.
+'''
+  environments = "Default"
+  formulas = [
+    {
+      name = "EmailAnadirDestinatario"
+      dataType = "String"
+      expression = "{!EmailListaDestinatariosString}+','+{!Usuarios_notificaciones.Email}"
+    },
+    {
+      name = "EmailAnadirResponsable"
+      dataType = "String"
+      expression = "IF({!$Record.Responsable_oportunidad__c}!='',{!EmailListaDestinatariosString}+','+{!$Record.Responsable_oportunidad__r.Correo_electronico__c},{!EmailListaDestinatariosString})"
+    },
+    {
+      name = "EmailAnadirSocio"
+      dataType = "String"
+      expression = "IF({!$Record.Socio_oportunidad__c}!='',{!EmailListaDestinatariosString}+','+{!$Record.Socio_oportunidad__r.Correo_electronico__c},{!EmailListaDestinatariosString})"
+    },
+    {
+      description = "Añadir el email del socio de la auditoría designado en la cuenta."
+      name = "EmailAnadirSocioAuditCuenta"
+      dataType = "String"
+      expression = "{!EmailListaDestinatariosString}+','+ {!$Record.Account.Socio_de_la_auditoria__r.Correo_electronico__c}"
+    },
+    {
+      name = "EmailAsunto"
+      dataType = "String"
+      expression = "{!$Record.Account.Name} + ' - Notificación nueva oportunidad en gestión'"
+    },
+  ]
+  interviewLabel = "Oportunidad - Notificación auditoría {!$Flow.CurrentDateTime}"
+  label = "Oportunidad - Notificación auditores"
+  loops = [
+    {
+      name = "Usuarios_notificaciones"
+      label = "Usuarios notificaciones"
+      locationX = 50
+      locationY = 647
+      collectionReference = "Get_Usuarios_Secretaria_Tecnica"
+      iterationOrder = "Asc"
+      nextValueConnector = {
+        targetReference = "Primer_Registro"
+      }
+      noMoreValuesConnector = {
+        targetReference = "Asignar_Responsables_a_lista_de_destinatarios"
+      }
+    },
+  ]
+  processMetadataValues = [
+    {
+      name = "BuilderType"
+      value = {
+        stringValue = "LightningFlowBuilder"
+      }
+    },
+    {
+      name = "CanvasMode"
+      value = {
+        stringValue = "AUTO_LAYOUT_CANVAS"
+      }
+    },
+    {
+      name = "OriginBuilderType"
+      value = {
+        stringValue = "LightningFlowBuilder"
+      }
+    },
+  ]
+  processType = "AutoLaunchedFlow"
+  recordLookups = [
+    {
+      name = "Get_Contacto_relacionado_para_vincular_el_email_en_el_feed"
+      label = "Get Contacto relacionado para vincular el email en el feed"
+      locationX = 446
+      locationY = 323
+      assignNullValuesIfNoRecordsFound = false
+      connector = {
+        targetReference = "Get_Usuarios_Secretaria_Tecnica"
+      }
+      filterLogic = "and"
+      filters = [
+        {
+          field = "LastName"
+          operator = "EqualTo"
+          value = {
+            stringValue = "Secretaría Técnica"
+          }
+        },
+      ]
+      getFirstRecordOnly = true
+      object = salesforce.Contact
+      storeOutputAutomatically = true
+    },
+    {
+      description = "Recuperamos los usuarios que tienen activo el check de Notificación Secretaría Técnica"
+      name = "Get_Usuarios_Secretaria_Tecnica"
+      label = "Get Usuarios Secretaría Técnica"
+      locationX = 446
+      locationY = 431
+      assignNullValuesIfNoRecordsFound = false
+      connector = {
+        targetReference = "Encontrados_usuarios_para_notificaci_n"
+      }
+      filterLogic = "and"
+      filters = [
+        {
+          field = salesforce.User.field.Recibir_notificacion_secretaria_tecnica__c
+          operator = "EqualTo"
+          value = {
+            booleanValue = true
+          }
+        },
+      ]
+      getFirstRecordOnly = false
+      object = salesforce.User
+      storeOutputAutomatically = true
+    },
+  ]
+  recordUpdates = [
+    {
+      description = "Almacenamos los datos del envío y marcamos como procesada la notificación"
+      name = "Update_Oportunidad"
+      label = "Update Oportunidad"
+      locationX = 50
+      locationY = 1355
+      faultConnector = {
+        targetReference = "Error_al_actualizar_oportunidad"
+      }
+      inputAssignments = [
+        {
+          field = "Fecha_notificacion_auditoria__c"
+          value = {
+            elementReference = "$Flow.CurrentDateTime"
+          }
+        },
+        {
+          field = "Notificacion_auditoria__c"
+          value = {
+            booleanValue = true
+          }
+        },
+        {
+          field = "Usuarios_notificados__c"
+          value = {
+            elementReference = "EmailListaDestinatariosString"
+          }
+        },
+      ]
+      inputReference = "$Record"
+    },
+  ]
+  start = {
+    locationX = 320
+    locationY = 0
+    connector = {
+      targetReference = "Get_Contacto_relacionado_para_vincular_el_email_en_el_feed"
+    }
+    doesRequireRecordChangedToMeetCriteria = true
+    filterLogic = "and"
+    filters = [
+      {
+        field = salesforce.Opportunity.field.StageName
+        operator = "EqualTo"
+        value = {
+          stringValue = "Notificación auditoría"
+        }
+      },
+      {
+        field = salesforce.Opportunity.field.Notificacion_auditoria__c
+        operator = "EqualTo"
+        value = {
+          booleanValue = false
+        }
+      },
+    ]
+    object = salesforce.Opportunity
+    recordTriggerType = "Update"
+    triggerType = "RecordAfterSave"
+  }
+  status = "Active"
+  textTemplates = {
+    name = "EmailCuerpo"
+    isViewedAsPlainText = false
+    text = "<p>Buenas {!$Record.Account.Socio_de_la_auditoria__r.Name},</p><p><br></p><p>El cliente <strong>{!$Record.Account.Name} </strong>está marcado como auditado y el usuario <strong>{!$User.FirstName} {!$User.LastName}</strong> os envía esta notificación para que tengáis constancia de que se ha creado una oportunidad <strong>{!$Record.Name}</strong>.</p><p><br></p><p>Un saludo.</p>"
+  }
+  variables = [
+    {
+      name = "EmailListaDestinatariosString"
+      dataType = "String"
+      isCollection = false
+      isInput = false
+      isOutput = false
+    },
+  ]
+  _generated_dependencies = [
+    {
+      reference = salesforce.Account.field.Socio_de_la_auditoria__c
+    },
+    {
+      reference = salesforce.Empleado__c
+    },
+    {
+      reference = salesforce.Empleado__c.field.Correo_electronico__c
+    },
+    {
+      reference = salesforce.Opportunity.field.Fecha_notificacion_auditoria__c
+    },
+    {
+      reference = salesforce.Opportunity.field.Responsable_oportunidad__c
+    },
+    {
+      reference = salesforce.Opportunity.field.Socio_oportunidad__c
+    },
+    {
+      reference = salesforce.Opportunity.field.Usuarios_notificados__c
+    },
+  ]
+  _alias = "Oportunidad - Notificación auditores"
+}

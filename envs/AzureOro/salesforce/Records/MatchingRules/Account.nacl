@@ -1,0 +1,49 @@
+salesforce.MatchingRules Account {
+  fullName = "Account"
+  matchingRules = [
+    {
+      fullName = "Comparativa_de_CIF"
+      description = "Comprobamos el CIF entre cuentas potenciales y cuentas de tipo cliente."
+      label = "Comparativa de CIF"
+      matchingRuleItems = [
+        {
+          blankValueBehavior = "NullNotAllowed"
+          fieldName = "NIF_CIF__c"
+          matchingMethod = "Exact"
+        },
+      ]
+      ruleStatus = "Active"
+    },
+    {
+      fullName = "Mismo_alias"
+      label = "Mismo alias"
+      matchingRuleItems = [
+        {
+          blankValueBehavior = "NullNotAllowed"
+          fieldName = "Alias__c"
+          matchingMethod = "Exact"
+        },
+        {
+          blankValueBehavior = "NullNotAllowed"
+          fieldName = "Name"
+          matchingMethod = "CompanyName"
+        },
+      ]
+      ruleStatus = "Active"
+    },
+    {
+      fullName = "Nombres_iguales"
+      description = "Compara si los nombres son iguales o parecidos."
+      label = "Nombres iguales"
+      matchingRuleItems = [
+        {
+          blankValueBehavior = "NullNotAllowed"
+          fieldName = "Name"
+          matchingMethod = "Exact"
+        },
+      ]
+      ruleStatus = "Active"
+    },
+  ]
+  _alias = "Account"
+}

@@ -1,0 +1,28 @@
+salesforce.CustomApplication Kanban {
+  brand = {
+    headerColor = "#0070D2"
+    shouldOverrideOrgTheme = false
+  }
+  formFactors = [
+    "Small",
+    "Large",
+  ]
+  isNavAutoTempTabsDisabled = false
+  isNavPersonalizationDisabled = false
+  isNavTabPersistenceDisabled = false
+  isOmniPinnedViewEnabled = false
+  label = "Kanban"
+  navType = "Standard"
+  tabs = [
+    salesforce.CustomTab.instance.Kanban_Configuration__c,
+  ]
+  uiType = "Lightning"
+  utilityBar = "Kanban_UtilityBar"
+  fullName = "Kanban"
+  _generated_dependencies = [
+    {
+      reference = salesforce.LightningPage.instance.Kanban_UtilityBar
+    },
+  ]
+  _alias = "Kanban"
+}

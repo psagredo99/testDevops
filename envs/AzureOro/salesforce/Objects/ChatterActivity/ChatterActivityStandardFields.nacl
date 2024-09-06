@@ -1,0 +1,92 @@
+type salesforce.ChatterActivity {
+  serviceid Id {
+    apiName = "ChatterActivity.Id"
+    label = "Id. de actividad de Chatter"
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup NetworkId {
+    apiName = "ChatterActivity.NetworkId"
+    label = "Id. de red"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup ParentId {
+    apiName = "ChatterActivity.ParentId"
+    label = "Id. de principal"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Number PostCount {
+    apiName = "ChatterActivity.PostCount"
+    _required = true
+    label = "Recuento de publicaciones"
+    precision = 9
+    createable = false
+    updateable = false
+    scale = 0
+    unique = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Number CommentCount {
+    apiName = "ChatterActivity.CommentCount"
+    _required = true
+    label = "Recuento de comentarios"
+    precision = 9
+    createable = false
+    updateable = false
+    scale = 0
+    unique = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Number CommentReceivedCount {
+    apiName = "ChatterActivity.CommentReceivedCount"
+    _required = true
+    label = "Recuento de comentarios recibidos"
+    precision = 9
+    createable = false
+    updateable = false
+    scale = 0
+    unique = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Number LikeReceivedCount {
+    apiName = "ChatterActivity.LikeReceivedCount"
+    _required = true
+    label = "Me gusta el recuento lo recibido"
+    precision = 9
+    createable = false
+    updateable = false
+    scale = 0
+    unique = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Number InfluenceRawRank {
+    apiName = "ChatterActivity.InfluenceRawRank"
+    _required = true
+    label = "Rango de influencia sin procesar"
+    precision = 9
+    createable = false
+    updateable = false
+    scale = 0
+    unique = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime SystemModstamp {
+    apiName = "ChatterActivity.SystemModstamp"
+    label = "Modstamp del sistema"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+}

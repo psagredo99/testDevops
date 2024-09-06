@@ -1,0 +1,21 @@
+salesforce.ApexClass AccountUtil {
+  apiVersion = 58
+  status = "Active"
+  fullName = "AccountUtil"
+  content = file("salesforce/Records/ApexClass/AccountUtil.cls")
+  _generated_dependencies = [
+    {
+      reference = salesforce.Account
+    },
+    {
+      reference = salesforce.Account.field.Multicompany_ID__c
+    },
+    {
+      reference = salesforce.Account.field.NIF_CIF__c
+    },
+    {
+      reference = salesforce.ApexClass.instance.BatchMergeAccounts
+    },
+  ]
+  _alias = "AccountUtil"
+}

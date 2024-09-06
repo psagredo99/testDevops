@@ -1,0 +1,11 @@
+salesforce.NamedCredential IP_API_CALL {
+  fullName = "IP_API_CALL"
+  allowMergeFieldsInBody = true
+  allowMergeFieldsInHeader = true
+  endpoint = "https://api-bdc.net/data/client-ip/"
+  generateAuthorizationHeader = true
+  label = "IP API CALL"
+  principalType = "Anonymous"
+  protocol = "NoAuthentication"
+  _alias = "IP API CALL"
+}

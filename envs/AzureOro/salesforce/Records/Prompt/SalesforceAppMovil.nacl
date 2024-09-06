@@ -1,0 +1,75 @@
+salesforce.Prompt SalesforceAppMovil {
+  fullName = "SalesforceAppMovil"
+  masterLabel = "Salesforce - App Móvil"
+  promptVersions = [
+    {
+      body = "<p>Ayuda para configurar Salesforce en dispositivos móviles</p>"
+      customApplication = salesforce.CustomApplication.instance.standard__LightningSales
+      delayDays = 3
+      description = "Pasos para vincular la app del móvil."
+      dismissButtonLabel = "Descartar"
+      displayPosition = "BottomRight"
+      displayType = "FloatingPanel"
+      endDate = "2023-05-31"
+      imageAltText = "Instalar la app desde el market de aplicaciones del terminal móvil. Abrir la app de Salesforce y marcar la opción de Utilizar dominio personalizado."
+      imageLocation = "Bottom"
+      isPublished = true
+      masterLabel = "Salesforce - App Móvil Paso 1"
+      publishedDate = "2023-04-27"
+      shouldDisplayActionButton = false
+      shouldIgnoreGlobalDelay = true
+      startDate = "2023-04-26"
+      stepNumber = 1
+      targetPageKey1 = "home"
+      targetPageType = "standard__namedPage"
+      timesToDisplay = 4
+      title = "Salesforce en el móvil."
+      userAccess = "Everyone"
+      userProfileAccess = "Everyone"
+      versionNumber = 1
+    },
+    {
+      body = "<p>Añadimos el dominio personalizado: </p><p><strong>               crm-pkf-attest</strong></p><p>Y pulsamos sobre:</p><p>     Iniciar sesión con <strong>Azure AD PKF Attest</strong></p>"
+      customApplication = salesforce.CustomApplication.instance.standard__LightningSales
+      dismissButtonLabel = "Descartar"
+      displayPosition = "BottomRight"
+      displayType = "FloatingPanel"
+      imageAltText = "Tras el login hay que permitir que desde la app se pueda acceder a Salesforce"
+      imageLocation = "Bottom"
+      isPublished = false
+      masterLabel = "Salesforce - App Móvil Paso 2"
+      shouldDisplayActionButton = false
+      shouldIgnoreGlobalDelay = false
+      stepNumber = 2
+      targetPageKey1 = "home"
+      targetPageType = "standard__namedPage"
+      title = "Login en la app móvil"
+      userAccess = "Everyone"
+      userProfileAccess = "Everyone"
+      versionNumber = 1
+    },
+    {
+      actionButtonLabel = "Salesforce en el móvil"
+      actionButtonLink = "https://crm-pkf-attest.lightning.force.com/lightning/r/ContentDocument/0696800000PAqNOAA1/view?0.source=alohaHeader"
+      body = "<p>Para visualizar Salesforce como en el ordenador hay que modificar la aplicación. Para ello tras dar permisos, se navega al menú, iniciador de la apliación y se debe seleccionar:</p><p><strong>Coordinación de Ventas</strong></p>"
+      customApplication = salesforce.CustomApplication.instance.standard__LightningSales
+      dismissButtonLabel = "Descartar"
+      displayPosition = "BottomRight"
+      displayType = "FloatingPanel"
+      imageAltText = "Tras estos pasos ya tienes configurada la app móvil"
+      imageLocation = "Bottom"
+      isPublished = false
+      masterLabel = "Salesforce - App Móvil Paso 3"
+      shouldDisplayActionButton = true
+      shouldIgnoreGlobalDelay = false
+      stepNumber = 3
+      targetPageKey1 = "home"
+      targetPageType = "standard__namedPage"
+      title = "Cambiar de aplicativo en Salesforce"
+      userAccess = "Everyone"
+      userProfileAccess = "Everyone"
+      versionNumber = 1
+    },
+  ]
+  _alias = "SalesforceAppMovil"
+}

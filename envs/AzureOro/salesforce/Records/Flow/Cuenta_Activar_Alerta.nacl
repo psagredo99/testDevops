@@ -1,0 +1,175 @@
+salesforce.Flow Cuenta_Activar_Alerta {
+  fullName = "Cuenta_Activar_Alerta"
+  apiVersion = 57
+  assignments = [
+    {
+      name = "fillacctoupdate"
+      label = "fillacctoupdate"
+      locationX = 176
+      locationY = 158
+      assignmentItems = [
+        {
+          assignToReference = "accToUpdate.Id"
+          operator = "Assign"
+          value = {
+            elementReference = "recordId"
+          }
+        },
+        {
+          assignToReference = "accToUpdate.Alerta_activa__c"
+          operator = "Assign"
+          value = {
+            booleanValue = true
+          }
+        },
+        {
+          assignToReference = "accToUpdate.Alerta_usuario__c"
+          operator = "Assign"
+          value = {
+            elementReference = "$User.Id"
+          }
+        },
+        {
+          assignToReference = "accToUpdate.Alerta_fecha_hora__c"
+          operator = "Assign"
+          value = {
+            elementReference = "$Flow.CurrentDateTime"
+          }
+        },
+        {
+          assignToReference = "accToUpdate.Alerta_fecha__c"
+          operator = "Assign"
+          value = {
+            elementReference = "$Flow.CurrentDate"
+          }
+        },
+      ]
+      connector = {
+        targetReference = "Activar_alerta"
+      }
+    },
+  ]
+  choices = [
+    {
+      name = "Impago"
+      choiceText = "Impago"
+      dataType = "String"
+    },
+  ]
+  environments = "Default"
+  interviewLabel = "Cuenta - Activar Alerta {!$Flow.CurrentDateTime}"
+  label = "Cuenta - Activar Alerta"
+  processMetadataValues = [
+    {
+      name = "BuilderType"
+      value = {
+        stringValue = "LightningFlowBuilder"
+      }
+    },
+    {
+      name = "CanvasMode"
+      value = {
+        stringValue = "AUTO_LAYOUT_CANVAS"
+      }
+    },
+    {
+      name = "OriginBuilderType"
+      value = {
+        stringValue = "LightningFlowBuilder"
+      }
+    },
+  ]
+  processType = "Flow"
+  recordUpdates = [
+    {
+      name = "update_account"
+      label = "update account"
+      locationX = 176
+      locationY = 398
+      inputReference = "accToUpdate"
+    },
+  ]
+  screens = [
+    {
+      name = "Activar_alerta"
+      label = "Activar alerta"
+      locationX = 176
+      locationY = 278
+      allowBack = false
+      allowFinish = true
+      allowPause = false
+      connector = {
+        targetReference = "update_account"
+      }
+      fields = [
+        {
+          fieldType = "ObjectProvided"
+          inputsOnNextNavToAssocScrn = "UseStoredValues"
+          isRequired = false
+          objectFieldReference = "accToUpdate.Alerta_motivo__c"
+        },
+        {
+          fieldType = "ObjectProvided"
+          inputsOnNextNavToAssocScrn = "UseStoredValues"
+          isRequired = false
+          objectFieldReference = "accToUpdate.Alerta_observaciones__c"
+        },
+      ]
+      showFooter = true
+      showHeader = true
+    },
+  ]
+  start = {
+    locationX = 50
+    locationY = 0
+    connector = {
+      targetReference = "fillacctoupdate"
+    }
+  }
+  status = "Active"
+  variables = [
+    {
+      name = "accToUpdate"
+      dataType = "SObject"
+      isCollection = false
+      isInput = false
+      isOutput = false
+      objectType = salesforce.Account
+    },
+    {
+      name = "motivoalerta"
+      dataType = "Picklist"
+      isCollection = false
+      isInput = false
+      isOutput = false
+    },
+    {
+      name = "recordId"
+      dataType = "String"
+      isCollection = false
+      isInput = true
+      isOutput = false
+    },
+  ]
+  _generated_dependencies = [
+    {
+      reference = salesforce.Account.field.Alerta_activa__c
+    },
+    {
+      reference = salesforce.Account.field.Alerta_fecha__c
+    },
+    {
+      reference = salesforce.Account.field.Alerta_fecha_hora__c
+    },
+    {
+      reference = salesforce.Account.field.Alerta_motivo__c
+    },
+    {
+      reference = salesforce.Account.field.Alerta_observaciones__c
+    },
+    {
+      reference = salesforce.Account.field.Alerta_usuario__c
+    },
+  ]
+  _alias = "Cuenta - Activar Alerta"
+}

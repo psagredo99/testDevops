@@ -1,0 +1,19 @@
+salesforce.MatchingRules Contact {
+  fullName = "Contact"
+  matchingRules = [
+    {
+      fullName = "Contacto_personalizada"
+      description = "Nueva regla para contactos personalizada que comprueba solo el correo ya que los contactos cargados de Navision tienen el nombre y el apellido en el mismo campo."
+      label = "Contacto personalizada"
+      matchingRuleItems = [
+        {
+          blankValueBehavior = "NullNotAllowed"
+          fieldName = "Email"
+          matchingMethod = "Exact"
+        },
+      ]
+      ruleStatus = "Active"
+    },
+  ]
+  _alias = "Contact"
+}

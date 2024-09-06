@@ -1,0 +1,35 @@
+<aura:component implements="lightning:recordHomeTemplate" description="Full-width header above a main column and collapsible right sidebar.">
+
+    <aura:attribute name="header" type="Aura.Component[]" description="Header region"/>
+    <aura:attribute name="main" type="Aura.Component[]" description="Main region"/>
+    <aura:attribute name="sidebar" type="Aura.Component[]" description="Collapsible sidebar region"/>
+
+    <aura:attribute name="isSidebarCollapsed" type="Boolean" access="PRIVATE" default="false" />
+    <aura:attribute name="isMainCollapsed" type="Boolean" access="PRIVATE" default="false" />
+
+    <div>
+        <div>{!v.header}</div>
+         <lightning:layout class="{! $Browser.isDesktop ? 'slds-m-top_medium' : 'slds-m-top_medium slds-wrap'}">
+            <!-- Main Column: en Auto Flexibility para rellenar el hueco no usado por la sidebar -->
+             <lightning:layoutItem flexibility="auto" class="{! v.isMainCollapsed ? ' slds-hide' : 'anchoMaxPermitido' }" size="{! $Browser.isDesktop ? '' : '12' }">
+                {!v.main}
+            </lightning:layoutItem>
+            <!-- Columna: No flexible. Cambia en el onclick de Izq a Decha. Cambia isSidebarCollased a True si se presiona.-->
+            <lightning:layoutItem flexibility="no-flex" class="{! $Browser.isDesktop ? 'divFlechaContraer' : 'divFlechaContraer slds-hide' }">
+                <div class="ColumnaFlechas"> 
+                    <lightning:buttonIcon onclick ="{!c.toggleSection}"
+                                    class="{! v.isMainCollapsed ? ' slds-hide design-allow-interaction toggle slds-p-around_xxx-small slds-m-horizontal_xx-small FlechaContraer' : 'design-allow-interaction toggle slds-p-around_xxx-small slds-m-horizontal_xx-small FlechaContraer' }"
+                                    variant="border-filled"
+                                    iconName="{! v.isSidebarCollapsed ? 'utility:chevronleft' : 'utility:chevronright' }" 
+                                    alternativeText="{! v.isSidebarCollapsed ? 'Expand Sidebar' : 'Collapse Sidebar' }" 
+                                    size="x-small"/>
+           
+                </div>
+            </lightning:layoutItem>
+             <!-- Sidebar Column: en 3/12 para inicio. Si isSidebarCollased en True, pasa a 0. -->
+            <lightning:layoutItem class="{! v.isSidebarCollapsed ? ' slds-hide' : '' }" size="{! $Browser.isDesktop ? '' : '3' }">
+                {!v.sidebar}
+            </lightning:layoutItem>
+        </lightning:layout> 
+    </div>
+</aura:component>

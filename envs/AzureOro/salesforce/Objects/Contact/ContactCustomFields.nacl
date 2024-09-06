@@ -1,0 +1,215 @@
+type salesforce.Contact {
+  salesforce.Text CIF_NIF__c {
+    apiName = "Contact.CIF_NIF__c"
+    externalId = false
+    label = "CIF/NIF"
+    length = 20
+    unique = false
+    createable = true
+    updateable = true
+    caseSensitive = false
+    queryable = true
+  }
+  salesforce.Picklist Departamento__c {
+    apiName = "Contact.Departamento__c"
+    description = "Selector de departamento"
+    label = "Departamento"
+    valueSet = [
+      {
+        fullName = "Dirección"
+        default = false
+        label = "Dirección"
+      },
+      {
+        fullName = "Finanzas y Contabilidad"
+        default = false
+        label = "Finanzas y Contabilidad"
+      },
+      {
+        fullName = "RRHH & Formación"
+        default = false
+        label = "RRHH & Formación"
+      },
+      {
+        fullName = "Ventas"
+        default = false
+        label = "Ventas"
+      },
+      {
+        fullName = "Marketing"
+        default = false
+        label = "Marketing"
+      },
+      {
+        fullName = "Operaciones & Producción"
+        default = false
+        label = "Operaciones & Producción"
+      },
+      {
+        fullName = "Organización, Cal. Med. PRL."
+        default = false
+        label = "Organización, Cal. Med. PRL."
+      },
+      {
+        fullName = "Compras"
+        default = false
+        label = "Compras"
+      },
+      {
+        fullName = "Teconologías de la Información"
+        default = false
+        label = "Teconologías de la Información"
+      },
+      {
+        fullName = "Otro departamento"
+        default = false
+        label = "Otro departamento"
+      },
+    ]
+    sorted = false
+    restricted = false
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Text Email_Nav_2__c {
+    apiName = "Contact.Email_Nav_2__c"
+    externalId = false
+    label = "Email Nav 2"
+    length = 255
+    unique = false
+    createable = true
+    updateable = true
+    caseSensitive = false
+    queryable = true
+  }
+  salesforce.Text Email_Nav__c {
+    apiName = "Contact.Email_Nav__c"
+    externalId = false
+    label = "Email Nav"
+    length = 255
+    unique = false
+    createable = true
+    updateable = true
+    caseSensitive = false
+    queryable = true
+  }
+  salesforce.Text ID_CRM_Dynamics__c {
+    apiName = "Contact.ID_CRM_Dynamics__c"
+    caseSensitive = false
+    externalId = true
+    label = "ID CRM Dynamics"
+    length = 20
+    unique = true
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Text ID_Contacto_Clientify__c {
+    apiName = "Contact.ID_Contacto_Clientify__c"
+    externalId = false
+    label = "ID Contacto Clientify"
+    length = 80
+    unique = false
+    createable = true
+    updateable = true
+    caseSensitive = false
+    queryable = true
+  }
+  salesforce.Text Multicompany_Id__c {
+    apiName = "Contact.Multicompany_Id__c"
+    caseSensitive = false
+    externalId = true
+    label = "Multicompany Id"
+    length = 40
+    unique = true
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Url Perfil_de_Linkedin__c {
+    apiName = "Contact.Perfil_de_Linkedin__c"
+    label = "Perfil de Linkedin"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Picklist Puesto__c {
+    apiName = "Contact.Puesto__c"
+    label = "Puesto"
+    valueSet = [
+      {
+        fullName = "Propietario / Accionista"
+        default = false
+        label = "Propietario / Accionista"
+      },
+      {
+        fullName = "CEO / Director general"
+        default = false
+        label = "CEO / Director general"
+      },
+      {
+        fullName = "Directores"
+        default = false
+        label = "Directores"
+      },
+      {
+        fullName = "Mando intermedio"
+        default = false
+        label = "Mando intermedio"
+      },
+      {
+        fullName = "Técnicos"
+        default = false
+        label = "Técnicos"
+      },
+      {
+        fullName = "Administradores / Consejeros"
+        default = false
+        label = "Administradores / Consejeros"
+      },
+    ]
+    sorted = false
+    restricted = false
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.TextArea Relacion_personal__c {
+    apiName = "Contact.Relacion_personal__c"
+    inlineHelpText = "Relación personal"
+    label = "Relación personal"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.TextArea Relaciones_Profesionales_PKF_Attest__c {
+    apiName = "Contact.Relaciones_Profesionales_PKF_Attest__c"
+    label = "Relaciones Profesionales PKF Attest"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Text Telefono_Nav_2__c {
+    apiName = "Contact.Telefono_Nav_2__c"
+    externalId = false
+    label = "Teléfono Nav 2"
+    length = 250
+    unique = false
+    createable = true
+    updateable = true
+    caseSensitive = false
+    queryable = true
+  }
+  salesforce.Text Telefono_Nav__c {
+    apiName = "Contact.Telefono_Nav__c"
+    externalId = false
+    label = "Teléfono Nav"
+    length = 250
+    unique = false
+    createable = true
+    updateable = true
+    caseSensitive = false
+    queryable = true
+  }
+}

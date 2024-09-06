@@ -1,0 +1,17 @@
+salesforce.ListView Opportunity_Kanban {
+  fullName = "Opportunity.Kanban"
+  columns = [
+    "OPPORTUNITY.NAME",
+    "ACCOUNT.NAME",
+    "OPPORTUNITY.STAGE_NAME",
+    "OPPORTUNITY.CLOSE_DATE",
+    "OPPORTUNITY.AMOUNT",
+    "CORE.USERS.ALIAS",
+  ]
+  filterScope = "Mine"
+  label = "Kanban"
+  _parent = [
+    salesforce.Opportunity,
+  ]
+  _alias = "Kanban"
+}

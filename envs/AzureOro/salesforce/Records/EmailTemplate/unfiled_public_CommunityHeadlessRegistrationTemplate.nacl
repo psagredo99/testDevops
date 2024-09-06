@@ -1,0 +1,13 @@
+salesforce.EmailTemplate unfiled_public_CommunityHeadlessRegistrationTemplate@zcd {
+  available = true
+  description = "Mensaje por correo electrónico que reciben los usuarios con su contraseña simultánea durante el flujo de registro desatendido"
+  encodingKey = "UTF-8"
+  name = "Experience Cloud: Correo electrónico de contraseña simultánea para verificación de registro desatendido"
+  style = "none"
+  subject = "Verificar su identidad en {!Community.Name}"
+  type = "text"
+  uiType = "Aloha"
+  fullName = "unfiled$public/CommunityHeadlessRegistrationTemplate"
+  content = file("salesforce/Records/EmailTemplate/unfiled$public/CommunityHeadlessRegistrationTemplate/CommunityHeadlessRegistrationTemplate.email")
+  _alias = "unfiled$public/CommunityHeadlessRegistrationTemplate"
+}

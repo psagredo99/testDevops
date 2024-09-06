@@ -1,0 +1,97 @@
+salesforce.Layout EmpUserProvisioningProcess_Formato_Proceso_de_aprovisionamiento_de_usuario_empleado@bssssss {
+  layoutSections = [
+    {
+      customLabel = true
+      detailHeading = true
+      editHeading = true
+      label = "Información"
+      layoutColumns = [
+        {
+          layoutItems = [
+            {
+              behavior = "Readonly"
+              field = "Name"
+            },
+            {
+              behavior = "Required"
+              field = "ProcessStatus"
+            },
+            {
+              behavior = "Edit"
+              field = "StartTime"
+            },
+            {
+              behavior = "Edit"
+              field = "EndTime"
+            },
+            {
+              behavior = "Edit"
+              field = "TotalRecordCount"
+            },
+            {
+              behavior = "Edit"
+              field = "SuccessRecordCount"
+            },
+            {
+              behavior = "Edit"
+              field = "ErrorRecordCount"
+            },
+          ]
+        },
+        {
+        },
+      ]
+      style = "TwoColumnsLeftToRight"
+    },
+    {
+      customLabel = true
+      detailHeading = true
+      editHeading = true
+      label = "Información del sistema"
+      layoutColumns = [
+        {
+          layoutItems = [
+            {
+              behavior = "Readonly"
+              field = "CreatedById"
+            },
+          ]
+        },
+        {
+          layoutItems = [
+            {
+              behavior = "Readonly"
+              field = "LastModifiedById"
+            },
+          ]
+        },
+      ]
+      style = "TwoColumnsLeftToRight"
+    },
+    {
+      customLabel = false
+      detailHeading = false
+      editHeading = false
+      layoutColumns = [
+        {
+        },
+      ]
+      style = "CustomLinks"
+    },
+  ]
+  relatedLists = [
+    {
+      fields = [
+        "Name",
+        "ErrorCode",
+        "ErrorMessage",
+      ]
+      relatedList = "EmpUserProvisionProcessErrList"
+    },
+  ]
+  showEmailCheckbox = false
+  showRunAssignmentRulesCheckbox = false
+  showSubmitAndAttachButton = false
+  fullName = "EmpUserProvisioningProcess-Formato Proceso de aprovisionamiento de usuario empleado"
+  _alias = "EmpUserProvisioningProcess-Formato Proceso de aprovisionamiento de usuario empleado"
+}

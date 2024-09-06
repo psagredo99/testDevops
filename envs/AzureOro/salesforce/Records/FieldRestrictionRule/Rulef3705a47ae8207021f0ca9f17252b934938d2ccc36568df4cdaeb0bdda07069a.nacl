@@ -1,0 +1,14 @@
+salesforce.FieldRestrictionRule Rulef3705a47ae8207021f0ca9f17252b934938d2ccc36568df4cdaeb0bdda07069a {
+  fullName = "Rulef3705a47ae8207021f0ca9f17252b934938d2ccc36568df4cdaeb0bdda07069a"
+  active = true
+  classification = "PersonalInfo_EPIM"
+  classificationType = "FieldSet"
+  description = "Field Restriction Rule for Guest PersonalInfo_EPIM"
+  enforcementType = "FieldRestrict"
+  masterLabel = "Rulef3705a47ae8207021f0ca9f17252b934938d2ccc36568df4cdaeb0bdda07069a"
+  recordFilter = "Id='NEVER_TRUE'"
+  targetEntity = "User"
+  userCriteria = "CASE($User.UserType,'Guest',1,0)=1"
+  version = 0
+  _alias = "Rulef3705a47ae8207021f0ca9f17252b934938d2ccc36568df4cdaeb0bdda07069a"
+}

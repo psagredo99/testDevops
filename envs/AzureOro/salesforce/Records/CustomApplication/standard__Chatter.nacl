@@ -1,0 +1,14 @@
+salesforce.CustomApplication standard__Chatter {
+  defaultLandingTab = "standard-Chatter"
+  isNavAutoTempTabsDisabled = false
+  isNavPersonalizationDisabled = false
+  isNavTabPersistenceDisabled = false
+  isOmniPinnedViewEnabled = false
+  tabs = [
+    "standard-Chatter",
+    "standard-File",
+    salesforce.CustomTab.instance.Datos_cuentas__c,
+  ]
+  fullName = "standard__Chatter"
+  _alias = "standard__Chatter"
+}

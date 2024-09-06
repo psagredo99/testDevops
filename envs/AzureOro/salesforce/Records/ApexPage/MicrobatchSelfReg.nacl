@@ -1,0 +1,15 @@
+salesforce.ApexPage MicrobatchSelfReg {
+  apiVersion = 57
+  availableInTouch = false
+  confirmationTokenRequired = false
+  description = "Procese solicitudes de registro automático en lotes en vez de individualmente."
+  label = "MicrobatchSelfReg"
+  fullName = "MicrobatchSelfReg"
+  content = file("salesforce/Records/ApexPage/MicrobatchSelfReg.page")
+  _generated_dependencies = [
+    {
+      reference = salesforce.ApexClass.instance.MicrobatchSelfRegController
+    },
+  ]
+  _alias = "MicrobatchSelfReg"
+}

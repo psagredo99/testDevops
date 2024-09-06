@@ -1,0 +1,7 @@
+salesforce.SharingRules VideoCall {
+  fullName = "VideoCall"
+  _parent = [
+    salesforce.VideoCall,
+  ]
+  _alias = "VideoCall"
+}

@@ -1,0 +1,7 @@
+salesforce.ApexClass ers_EncodeDecodeURL {
+  apiVersion = 53
+  status = "Active"
+  fullName = "ers_EncodeDecodeURL"
+  content = file("salesforce/Records/ApexClass/ers_EncodeDecodeURL.cls")
+  _alias = "ers_EncodeDecodeURL"
+}

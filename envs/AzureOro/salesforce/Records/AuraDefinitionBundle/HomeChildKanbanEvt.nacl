@@ -1,0 +1,8 @@
+salesforce.AuraDefinitionBundle HomeChildKanbanEvt {
+  apiVersion = 40
+  description = "A Lightning Component Bundle"
+  fullName = "HomeChildKanbanEvt"
+  type = "Event"
+  markup = file("salesforce/Records/AuraDefinitionBundle/HomeChildKanbanEvt/HomeChildKanbanEvt.evt")
+  _alias = "HomeChildKanbanEvt"
+}

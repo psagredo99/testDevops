@@ -1,0 +1,13 @@
+salesforce.EmailTemplate unfiled_public_CommunityChgEmailVerNewTemplate@zcd {
+  available = true
+  description = "Correo electrónico que los usuarios reciben en su nuevo correo electrónico cuando cambia el correo electrónico"
+  encodingKey = "UTF-8"
+  name = "Experience Cloud: Nuevo correo electrónico - Verificación de cambio de correo electrónico"
+  style = "none"
+  subject = "Finalizar el cambio de la dirección de correo electrónico de su cuenta de {!Community_Name}"
+  type = "text"
+  uiType = "Aloha"
+  fullName = "unfiled$public/CommunityChgEmailVerNewTemplate"
+  content = file("salesforce/Records/EmailTemplate/unfiled$public/CommunityChgEmailVerNewTemplate/CommunityChgEmailVerNewTemplate.email")
+  _alias = "unfiled$public/CommunityChgEmailVerNewTemplate"
+}

@@ -1,0 +1,2212 @@
+type salesforce.Sector__c {
+  salesforce.Picklist Actividad__c {
+    apiName = "Sector__c.Actividad__c"
+    label = "Actividad"
+    trackTrending = false
+    valueSet = [
+      {
+        fullName = "Administración general del Estado"
+        default = false
+        label = "Administración general del Estado"
+      },
+      {
+        fullName = "Administración local"
+        default = false
+        label = "Administración local"
+      },
+      {
+        fullName = "Administración regional"
+        default = false
+        label = "Administración regional"
+      },
+      {
+        fullName = "Entes reguladores"
+        default = false
+        label = "Entes reguladores"
+      },
+      {
+        fullName = "Organismos europeos"
+        default = false
+        label = "Organismos europeos"
+      },
+      {
+        fullName = "Componentes del automóvil"
+        default = false
+        label = "Componentes del automóvil"
+      },
+      {
+        fullName = "Fabricación de automóviles"
+        default = false
+        label = "Fabricación de automóviles"
+      },
+      {
+        fullName = "Movilidad urbana"
+        default = false
+        label = "Movilidad urbana"
+      },
+      {
+        fullName = "Transporte aéreo"
+        default = false
+        label = "Transporte aéreo"
+      },
+      {
+        fullName = "Transporte integrado"
+        default = false
+        label = "Transporte integrado"
+      },
+      {
+        fullName = "Transporte marítimo"
+        default = false
+        label = "Transporte marítimo"
+      },
+      {
+        fullName = "Transporte por carretera"
+        default = false
+        label = "Transporte por carretera"
+      },
+      {
+        fullName = "Transporte por ferrocarril"
+        default = false
+        label = "Transporte por ferrocarril"
+      },
+      {
+        fullName = "Alimentación y nutrición"
+        default = false
+        label = "Alimentación y nutrición"
+      },
+      {
+        fullName = "Bebidas alcohólicas"
+        default = false
+        label = "Bebidas alcohólicas"
+      },
+      {
+        fullName = "Bebidas sin alcohol"
+        default = false
+        label = "Bebidas sin alcohol"
+      },
+      {
+        fullName = "Cosmética, cuidado personal, higiene"
+        default = false
+        label = "Cosmética, cuidado personal, higiene"
+      },
+      {
+        fullName = "Electrodomésticos"
+        default = false
+        label = "Electrodomésticos"
+      },
+      {
+        fullName = "Juguetes y ocio"
+        default = false
+        label = "Juguetes y ocio"
+      },
+      {
+        fullName = "Mascotas"
+        default = false
+        label = "Mascotas"
+      },
+      {
+        fullName = "Mobiliario"
+        default = false
+        label = "Mobiliario"
+      },
+      {
+        fullName = "Papelería y material de oficina"
+        default = false
+        label = "Papelería y material de oficina"
+      },
+      {
+        fullName = "Productos de limpieza"
+        default = false
+        label = "Productos de limpieza"
+      },
+      {
+        fullName = "Ropa, calzado y complementos"
+        default = false
+        label = "Ropa, calzado y complementos"
+      },
+      {
+        fullName = "Tabaco"
+        default = false
+        label = "Tabaco"
+      },
+      {
+        fullName = "Agricultura"
+        default = false
+        label = "Agricultura"
+      },
+      {
+        fullName = "Agua"
+        default = false
+        label = "Agua"
+      },
+      {
+        fullName = "Carbón y otros combustibles sin incluir el petróleo"
+        default = false
+        label = "Carbón y otros combustibles sin incluir el petróleo"
+      },
+      {
+        fullName = "Cogeneración y ciclos combinados"
+        default = false
+        label = "Cogeneración y ciclos combinados"
+      },
+      {
+        fullName = "Distribución y comercialización eléctrica"
+        default = false
+        label = "Distribución y comercialización eléctrica"
+      },
+      {
+        fullName = "Enegía nuclear"
+        default = false
+        label = "Enegía nuclear"
+      },
+      {
+        fullName = "Energía Eólica"
+        default = false
+        label = "Energía Eólica"
+      },
+      {
+        fullName = "Energía Solar"
+        default = false
+        label = "Energía Solar"
+      },
+      {
+        fullName = "Exploración  y  producción de productos petrolíferos"
+        default = false
+        label = "Exploración  y  producción de productos petrolíferos"
+      },
+      {
+        fullName = "Ganadería"
+        default = false
+        label = "Ganadería"
+      },
+      {
+        fullName = "Gas natural - Comercialización"
+        default = false
+        label = "Gas natural - Comercialización"
+      },
+      {
+        fullName = "Gas natural - Oleoductos y transporte"
+        default = false
+        label = "Gas natural - Oleoductos y transporte"
+      },
+      {
+        fullName = "Mineria"
+        default = false
+        label = "Mineria"
+      },
+      {
+        fullName = "Otras fuentes de energía alternativas (hidrógeno, geotérmica, etc.)"
+        default = false
+        label = "Otras fuentes de energía alternativas (hidrógeno, geotérmica, etc.)"
+      },
+      {
+        fullName = "Pesca y acuicultura"
+        default = false
+        label = "Pesca y acuicultura"
+      },
+      {
+        fullName = "Recursos forestales"
+        default = false
+        label = "Recursos forestales"
+      },
+      {
+        fullName = "Refino y comercialización de productos petrolíferos"
+        default = false
+        label = "Refino y comercialización de productos petrolíferos"
+      },
+      {
+        fullName = "Silvicultura"
+        default = false
+        label = "Silvicultura"
+      },
+      {
+        fullName = "Acuaparks, Zoos, Parques de atracciones y temáticos"
+        default = false
+        label = "Acuaparks, Zoos, Parques de atracciones y temáticos"
+      },
+      {
+        fullName = "Agencias de viaje y Tour operadores"
+        default = false
+        label = "Agencias de viaje y Tour operadores"
+      },
+      {
+        fullName = "Alquiler de coches"
+        default = false
+        label = "Alquiler de coches"
+      },
+      {
+        fullName = "Casinos, apuestas y juegos de azar"
+        default = false
+        label = "Casinos, apuestas y juegos de azar"
+      },
+      {
+        fullName = "Catering"
+        default = false
+        label = "Catering"
+      },
+      {
+        fullName = "Cultura y museos"
+        default = false
+        label = "Cultura y museos"
+      },
+      {
+        fullName = "Deportistas profesionales"
+        default = false
+        label = "Deportistas profesionales"
+      },
+      {
+        fullName = "Destinos"
+        default = false
+        label = "Destinos"
+      },
+      {
+        fullName = "Entidades de entretenimiento"
+        default = false
+        label = "Entidades de entretenimiento"
+      },
+      {
+        fullName = "Entidades y clubes deportivos"
+        default = false
+        label = "Entidades y clubes deportivos"
+      },
+      {
+        fullName = "Hoteles"
+        default = false
+        label = "Hoteles"
+      },
+      {
+        fullName = "Instalaciones deportivas"
+        default = false
+        label = "Instalaciones deportivas"
+      },
+      {
+        fullName = "Puertos deportivos"
+        default = false
+        label = "Puertos deportivos"
+      },
+      {
+        fullName = "Restauración"
+        default = false
+        label = "Restauración"
+      },
+      {
+        fullName = "Aeroespacial y defensa"
+        default = false
+        label = "Aeroespacial y defensa"
+      },
+      {
+        fullName = "Caucho, goma"
+        default = false
+        label = "Caucho, goma"
+      },
+      {
+        fullName = "Construcción y Concesiones"
+        default = false
+        label = "Construcción y Concesiones"
+      },
+      {
+        fullName = "Construcciones mecánicas / Bienes de equipo"
+        default = false
+        label = "Construcciones mecánicas / Bienes de equipo"
+      },
+      {
+        fullName = "Disolventes, limpiadores, detergentes"
+        default = false
+        label = "Disolventes, limpiadores, detergentes"
+      },
+      {
+        fullName = "Electrónica, comunicación e informática"
+        default = false
+        label = "Electrónica, comunicación e informática"
+      },
+      {
+        fullName = "Envases y embalajes"
+        default = false
+        label = "Envases y embalajes"
+      },
+      {
+        fullName = "Fabricación de artículos de joyería, bisutería y artículos similares"
+        default = false
+        label = "Fabricación de artículos de joyería, bisutería y artículos similares"
+      },
+      {
+        fullName = "Fertilizantes"
+        default = false
+        label = "Fertilizantes"
+      },
+      {
+        fullName = "Imprenta y artes gráficas"
+        default = false
+        label = "Imprenta y artes gráficas"
+      },
+      {
+        fullName = "Ingeniería"
+        default = false
+        label = "Ingeniería"
+      },
+      {
+        fullName = "Ingeniería civil y Naval"
+        default = false
+        label = "Ingeniería civil y Naval"
+      },
+      {
+        fullName = "Material  eléctrico y electrodomésticos"
+        default = false
+        label = "Material  eléctrico y electrodomésticos"
+      },
+      {
+        fullName = "Materiales Construcción"
+        default = false
+        label = "Materiales Construcción"
+      },
+      {
+        fullName = "Metalúrgica y siderometalúrgica"
+        default = false
+        label = "Metalúrgica y siderometalúrgica"
+      },
+      {
+        fullName = "Papel, cartón, madera, corcho, muebles."
+        default = false
+        label = "Papel, cartón, madera, corcho, muebles."
+      },
+      {
+        fullName = "Pesticidas"
+        default = false
+        label = "Pesticidas"
+      },
+      {
+        fullName = "Petroquímicas"
+        default = false
+        label = "Petroquímicas"
+      },
+      {
+        fullName = "Plásticos"
+        default = false
+        label = "Plásticos"
+      },
+      {
+        fullName = "Producción textil básica"
+        default = false
+        label = "Producción textil básica"
+      },
+      {
+        fullName = "Química básica"
+        default = false
+        label = "Química básica"
+      },
+      {
+        fullName = "Servicios Urbanos"
+        default = false
+        label = "Servicios Urbanos"
+      },
+      {
+        fullName = "Cooperativas"
+        default = false
+        label = "Cooperativas"
+      },
+      {
+        fullName = "Family offices"
+        default = false
+        label = "Family offices"
+      },
+      {
+        fullName = "Firmas miembro de PKF"
+        default = false
+        label = "Firmas miembro de PKF"
+      },
+      {
+        fullName = "Personas físicas"
+        default = false
+        label = "Personas físicas"
+      },
+      {
+        fullName = "Sociedades patrimoniales"
+        default = false
+        label = "Sociedades patrimoniales"
+      },
+      {
+        fullName = "Alimentación y bebidas"
+        default = false
+        label = "Alimentación y bebidas"
+      },
+      {
+        fullName = "Aparatos de tecnología, comunicación y electrónica"
+        default = false
+        label = "Aparatos de tecnología, comunicación y electrónica"
+      },
+      {
+        fullName = "Automoción y componentes/repuestos del automóvil"
+        default = false
+        label = "Automoción y componentes/repuestos del automóvil"
+      },
+      {
+        fullName = "Cadena de suministro"
+        default = false
+        label = "Cadena de suministro"
+      },
+      {
+        fullName = "Centrales de compra"
+        default = false
+        label = "Centrales de compra"
+      },
+      {
+        fullName = "Comercio internacional"
+        default = false
+        label = "Comercio internacional"
+      },
+      {
+        fullName = "Cuidado personal e higiene"
+        default = false
+        label = "Cuidado personal e higiene"
+      },
+      {
+        fullName = "Empresas de logística"
+        default = false
+        label = "Empresas de logística"
+      },
+      {
+        fullName = "Material de officina"
+        default = false
+        label = "Material de officina"
+      },
+      {
+        fullName = "Material deportivo, cultural y de entreteminiento"
+        default = false
+        label = "Material deportivo, cultural y de entreteminiento"
+      },
+      {
+        fullName = "Mercados mayoristas"
+        default = false
+        label = "Mercados mayoristas"
+      },
+      {
+        fullName = "Mercancía general"
+        default = false
+        label = "Mercancía general"
+      },
+      {
+        fullName = "Moda y accesorios"
+        default = false
+        label = "Moda y accesorios"
+      },
+      {
+        fullName = "Otros mayoristas"
+        default = false
+        label = "Otros mayoristas"
+      },
+      {
+        fullName = "Biomedicina"
+        default = false
+        label = "Biomedicina"
+      },
+      {
+        fullName = "Clínicas"
+        default = false
+        label = "Clínicas"
+      },
+      {
+        fullName = "Distribuidores farmacéuticos"
+        default = false
+        label = "Distribuidores farmacéuticos"
+      },
+      {
+        fullName = "Fabricantes de material sanitario, implantes, prótesis"
+        default = false
+        label = "Fabricantes de material sanitario, implantes, prótesis"
+      },
+      {
+        fullName = "Farmacias"
+        default = false
+        label = "Farmacias"
+      },
+      {
+        fullName = "Hospitales"
+        default = false
+        label = "Hospitales"
+      },
+      {
+        fullName = "Industria farmacéutica"
+        default = false
+        label = "Industria farmacéutica"
+      },
+      {
+        fullName = "Laboratorios de diagnóstico y análisis clínico"
+        default = false
+        label = "Laboratorios de diagnóstico y análisis clínico"
+      },
+      {
+        fullName = "Otros servicios sociosanitarios"
+        default = false
+        label = "Otros servicios sociosanitarios"
+      },
+      {
+        fullName = "Residencias"
+        default = false
+        label = "Residencias"
+      },
+      {
+        fullName = "Sistemas sanitatios y servicios de salud"
+        default = false
+        label = "Sistemas sanitatios y servicios de salud"
+      },
+      {
+        fullName = "Suministradores"
+        default = false
+        label = "Suministradores"
+      },
+      {
+        fullName = "Alquiler (excepto inmobiliario y coches)"
+        default = false
+        label = "Alquiler (excepto inmobiliario y coches)"
+      },
+      {
+        fullName = "Asesoría fiscal y legal"
+        default = false
+        label = "Asesoría fiscal y legal"
+      },
+      {
+        fullName = "Asociaciones y ONG"
+        default = false
+        label = "Asociaciones y ONG"
+      },
+      {
+        fullName = "Call Center - empresas marketing telefónico"
+        default = false
+        label = "Call Center - empresas marketing telefónico"
+      },
+      {
+        fullName = "Certificación"
+        default = false
+        label = "Certificación"
+      },
+      {
+        fullName = "Consultoría de Recursos Humanos (Colocación de personal, ETT, etc.)"
+        default = false
+        label = "Consultoría de Recursos Humanos (Colocación de personal, ETT, etc.)"
+      },
+      {
+        fullName = "Consultoría informática"
+        default = false
+        label = "Consultoría informática"
+      },
+      {
+        fullName = "Educación y formación de todo tipo"
+        default = false
+        label = "Educación y formación de todo tipo"
+      },
+      {
+        fullName = "Empresas de seguridad"
+        default = false
+        label = "Empresas de seguridad"
+      },
+      {
+        fullName = "Federaciones y confederaciones"
+        default = false
+        label = "Federaciones y confederaciones"
+      },
+      {
+        fullName = "Fundaciones"
+        default = false
+        label = "Fundaciones"
+      },
+      {
+        fullName = "Gestión de residuos y reciclaje"
+        default = false
+        label = "Gestión de residuos y reciclaje"
+      },
+      {
+        fullName = "Mantenimiento (limpiezas, mantenimiento, recogida de basuras)"
+        default = false
+        label = "Mantenimiento (limpiezas, mantenimiento, recogida de basuras)"
+      },
+      {
+        fullName = "Mensajería y entrega"
+        default = false
+        label = "Mensajería y entrega"
+      },
+      {
+        fullName = "Otros servicios para empresas y particulares"
+        default = false
+        label = "Otros servicios para empresas y particulares"
+      },
+      {
+        fullName = "Outsourcing"
+        default = false
+        label = "Outsourcing"
+      },
+      {
+        fullName = "Partidos políticos y sindicatos"
+        default = false
+        label = "Partidos políticos y sindicatos"
+      },
+      {
+        fullName = "Patronales"
+        default = false
+        label = "Patronales"
+      },
+      {
+        fullName = "Servicios al consumidor especializados"
+        default = false
+        label = "Servicios al consumidor especializados"
+      },
+      {
+        fullName = "Servicios de Consultoría y Asesoría"
+        default = false
+        label = "Servicios de Consultoría y Asesoría"
+      },
+      {
+        fullName = "Suministros urbanos"
+        default = false
+        label = "Suministros urbanos"
+      },
+      {
+        fullName = "Bancos y cajas de ahorro"
+        default = false
+        label = "Bancos y cajas de ahorro"
+      },
+      {
+        fullName = "Bolsa y mercado de capitales"
+        default = false
+        label = "Bolsa y mercado de capitales"
+      },
+      {
+        fullName = "Compañías de seguros"
+        default = false
+        label = "Compañías de seguros"
+      },
+      {
+        fullName = "Corredurías y otros intermediarios de seguros"
+        default = false
+        label = "Corredurías y otros intermediarios de seguros"
+      },
+      {
+        fullName = "Empresas de Asesoramiento Financiero"
+        default = false
+        label = "Empresas de Asesoramiento Financiero"
+      },
+      {
+        fullName = "Establecimientos financieros de crédito (financieras, leasing, factoring)"
+        default = false
+        label = "Establecimientos financieros de crédito (financieras, leasing, factoring)"
+      },
+      {
+        fullName = "Fondos de inversión y de pensiones ( y gestoras), Sociedades de inversión y de Capital riesgo"
+        default = false
+        label = "Fondos de inversión y de pensiones ( y gestoras), Sociedades de inversión y de Capital riesgo"
+      },
+      {
+        fullName = "Inversiones y servicios inmobiliarios. Real Estate"
+        default = false
+        label = "Inversiones y servicios inmobiliarios. Real Estate"
+      },
+      {
+        fullName = "Mutuas de seguros"
+        default = false
+        label = "Mutuas de seguros"
+      },
+      {
+        fullName = "Otras entidades financieras"
+        default = false
+        label = "Otras entidades financieras"
+      },
+      {
+        fullName = "Sociedades de crédito hipotecario, renting, etc."
+        default = false
+        label = "Sociedades de crédito hipotecario, renting, etc."
+      },
+      {
+        fullName = "Sociedades y Agencias de Valores"
+        default = false
+        label = "Sociedades y Agencias de Valores"
+      },
+      {
+        fullName = "Agencias y Publicidad"
+        default = false
+        label = "Agencias y Publicidad"
+      },
+      {
+        fullName = "Hardware"
+        default = false
+        label = "Hardware"
+      },
+      {
+        fullName = "Infraestructuras de telecomunicaciones"
+        default = false
+        label = "Infraestructuras de telecomunicaciones"
+      },
+      {
+        fullName = "Ingeniería y equipamiento tecnológico"
+        default = false
+        label = "Ingeniería y equipamiento tecnológico"
+      },
+      {
+        fullName = "Internet"
+        default = false
+        label = "Internet"
+      },
+      {
+        fullName = "Internet y transmisión de datos"
+        default = false
+        label = "Internet y transmisión de datos"
+      },
+      {
+        fullName = "Prensa, revistas, editoriales y prensa electrónica"
+        default = false
+        label = "Prensa, revistas, editoriales y prensa electrónica"
+      },
+      {
+        fullName = "Productoras"
+        default = false
+        label = "Productoras"
+      },
+      {
+        fullName = "Radio y TV"
+        default = false
+        label = "Radio y TV"
+      },
+      {
+        fullName = "Salas de cine, distribuidores de películas y otros distribuidores"
+        default = false
+        label = "Salas de cine, distribuidores de películas y otros distribuidores"
+      },
+      {
+        fullName = "Servicios tecnológicos"
+        default = false
+        label = "Servicios tecnológicos"
+      },
+      {
+        fullName = "Software"
+        default = false
+        label = "Software"
+      },
+      {
+        fullName = "Tecnología"
+        default = false
+        label = "Tecnología"
+      },
+      {
+        fullName = "Telefonía"
+        default = false
+        label = "Telefonía"
+      },
+    ]
+    sorted = false
+    restricted = true
+    fieldDependency = {
+      controllingField = "Subsector__c"
+      valueSettings = [
+        {
+          valueName = "Clínicas"
+          controllingFieldValue = [
+            "Servicios sociosanitarios",
+          ]
+        },
+        {
+          valueName = "Hospitales"
+          controllingFieldValue = [
+            "Servicios sociosanitarios",
+          ]
+        },
+        {
+          valueName = "Laboratorios de diagnóstico y análisis clínico"
+          controllingFieldValue = [
+            "Servicios sociosanitarios",
+          ]
+        },
+        {
+          valueName = "Otros servicios sociosanitarios"
+          controllingFieldValue = [
+            "Servicios sociosanitarios",
+          ]
+        },
+        {
+          valueName = "Residencias"
+          controllingFieldValue = [
+            "Servicios sociosanitarios",
+          ]
+        },
+        {
+          valueName = "Sistemas sanitatios y servicios de salud"
+          controllingFieldValue = [
+            "Servicios sociosanitarios",
+          ]
+        },
+        {
+          valueName = "Suministradores"
+          controllingFieldValue = [
+            "Servicios sociosanitarios",
+          ]
+        },
+        {
+          valueName = "Asociaciones y ONG"
+          controllingFieldValue = [
+            "Entidades sin ánimo de lucro",
+          ]
+        },
+        {
+          valueName = "Federaciones y confederaciones"
+          controllingFieldValue = [
+            "Entidades sin ánimo de lucro",
+          ]
+        },
+        {
+          valueName = "Fundaciones"
+          controllingFieldValue = [
+            "Entidades sin ánimo de lucro",
+          ]
+        },
+        {
+          valueName = "Partidos políticos y sindicatos"
+          controllingFieldValue = [
+            "Entidades sin ánimo de lucro",
+          ]
+        },
+        {
+          valueName = "Patronales"
+          controllingFieldValue = [
+            "Entidades sin ánimo de lucro",
+          ]
+        },
+        {
+          valueName = "Alquiler (excepto inmobiliario y coches)"
+          controllingFieldValue = [
+            "Servicios profesionales",
+          ]
+        },
+        {
+          valueName = "Asesoría fiscal y legal"
+          controllingFieldValue = [
+            "Servicios profesionales",
+          ]
+        },
+        {
+          valueName = "Call Center - empresas marketing telefónico"
+          controllingFieldValue = [
+            "Servicios profesionales",
+          ]
+        },
+        {
+          valueName = "Certificación"
+          controllingFieldValue = [
+            "Servicios profesionales",
+          ]
+        },
+        {
+          valueName = "Consultoría de Recursos Humanos (Colocación de personal, ETT, etc.)"
+          controllingFieldValue = [
+            "Servicios profesionales",
+          ]
+        },
+        {
+          valueName = "Consultoría informática"
+          controllingFieldValue = [
+            "Servicios profesionales",
+          ]
+        },
+        {
+          valueName = "Educación y formación de todo tipo"
+          controllingFieldValue = [
+            "Servicios profesionales",
+          ]
+        },
+        {
+          valueName = "Empresas de seguridad"
+          controllingFieldValue = [
+            "Servicios profesionales",
+          ]
+        },
+        {
+          valueName = "Mantenimiento (limpiezas, mantenimiento, recogida de basuras)"
+          controllingFieldValue = [
+            "Servicios profesionales",
+          ]
+        },
+        {
+          valueName = "Mensajería y entrega"
+          controllingFieldValue = [
+            "Servicios profesionales",
+          ]
+        },
+        {
+          valueName = "Otros servicios para empresas y particulares"
+          controllingFieldValue = [
+            "Servicios profesionales",
+          ]
+        },
+        {
+          valueName = "Outsourcing"
+          controllingFieldValue = [
+            "Servicios profesionales",
+          ]
+        },
+        {
+          valueName = "Servicios al consumidor especializados"
+          controllingFieldValue = [
+            "Servicios profesionales",
+          ]
+        },
+        {
+          valueName = "Servicios de Consultoría y Asesoría"
+          controllingFieldValue = [
+            "Servicios profesionales",
+          ]
+        },
+        {
+          valueName = "Gestión de residuos y reciclaje"
+          controllingFieldValue = [
+            "Suministros y gestión de residuos",
+          ]
+        },
+        {
+          valueName = "Suministros urbanos"
+          controllingFieldValue = [
+            "Suministros y gestión de residuos",
+          ]
+        },
+        {
+          valueName = "Bancos y cajas de ahorro"
+          controllingFieldValue = [
+            "Entidades Financieras",
+          ]
+        },
+        {
+          valueName = "Bolsa y mercado de capitales"
+          controllingFieldValue = [
+            "Entidades Financieras",
+          ]
+        },
+        {
+          valueName = "Empresas de Asesoramiento Financiero"
+          controllingFieldValue = [
+            "Entidades Financieras",
+          ]
+        },
+        {
+          valueName = "Establecimientos financieros de crédito (financieras, leasing, factoring)"
+          controllingFieldValue = [
+            "Entidades Financieras",
+          ]
+        },
+        {
+          valueName = "Fondos de inversión y de pensiones ( y gestoras), Sociedades de inversión y de Capital riesgo"
+          controllingFieldValue = [
+            "Entidades Financieras",
+          ]
+        },
+        {
+          valueName = "Inversiones y servicios inmobiliarios. Real Estate"
+          controllingFieldValue = [
+            "Entidades Financieras",
+          ]
+        },
+        {
+          valueName = "Otras entidades financieras"
+          controllingFieldValue = [
+            "Entidades Financieras",
+          ]
+        },
+        {
+          valueName = "Sociedades de crédito hipotecario, renting, etc."
+          controllingFieldValue = [
+            "Entidades Financieras",
+          ]
+        },
+        {
+          valueName = "Sociedades y Agencias de Valores"
+          controllingFieldValue = [
+            "Entidades Financieras",
+          ]
+        },
+        {
+          valueName = "Compañías de seguros"
+          controllingFieldValue = [
+            "Seguros",
+          ]
+        },
+        {
+          valueName = "Corredurías y otros intermediarios de seguros"
+          controllingFieldValue = [
+            "Seguros",
+          ]
+        },
+        {
+          valueName = "Mutuas de seguros"
+          controllingFieldValue = [
+            "Seguros",
+          ]
+        },
+        {
+          valueName = "Agencias y Publicidad"
+          controllingFieldValue = [
+            "Medios de Comunicación",
+          ]
+        },
+        {
+          valueName = "Prensa, revistas, editoriales y prensa electrónica"
+          controllingFieldValue = [
+            "Medios de Comunicación",
+          ]
+        },
+        {
+          valueName = "Productoras"
+          controllingFieldValue = [
+            "Medios de Comunicación",
+          ]
+        },
+        {
+          valueName = "Radio y TV"
+          controllingFieldValue = [
+            "Medios de Comunicación",
+          ]
+        },
+        {
+          valueName = "Salas de cine, distribuidores de películas y otros distribuidores"
+          controllingFieldValue = [
+            "Medios de Comunicación",
+          ]
+        },
+        {
+          valueName = "Hardware"
+          controllingFieldValue = [
+            "Tecnología",
+          ]
+        },
+        {
+          valueName = "Ingeniería y equipamiento tecnológico"
+          controllingFieldValue = [
+            "Tecnología",
+          ]
+        },
+        {
+          valueName = "Internet"
+          controllingFieldValue = [
+            "Tecnología",
+          ]
+        },
+        {
+          valueName = "Servicios tecnológicos"
+          controllingFieldValue = [
+            "Tecnología",
+          ]
+        },
+        {
+          valueName = "Software"
+          controllingFieldValue = [
+            "Tecnología",
+          ]
+        },
+        {
+          valueName = "Tecnología"
+          controllingFieldValue = [
+            "Tecnología",
+          ]
+        },
+        {
+          valueName = "Infraestructuras de telecomunicaciones"
+          controllingFieldValue = [
+            "Telecomunicaciones",
+          ]
+        },
+        {
+          valueName = "Internet y transmisión de datos"
+          controllingFieldValue = [
+            "Telecomunicaciones",
+          ]
+        },
+        {
+          valueName = "Telefonía"
+          controllingFieldValue = [
+            "Telecomunicaciones",
+          ]
+        },
+        {
+          valueName = "Deportistas profesionales"
+          controllingFieldValue = [
+            "Deportes",
+          ]
+        },
+        {
+          valueName = "Entidades y clubes deportivos"
+          controllingFieldValue = [
+            "Deportes",
+          ]
+        },
+        {
+          valueName = "Instalaciones deportivas"
+          controllingFieldValue = [
+            "Deportes",
+          ]
+        },
+        {
+          valueName = "Catering"
+          controllingFieldValue = [
+            "Hostelería",
+          ]
+        },
+        {
+          valueName = "Hoteles"
+          controllingFieldValue = [
+            "Hostelería",
+          ]
+        },
+        {
+          valueName = "Restauración"
+          controllingFieldValue = [
+            "Hostelería",
+          ]
+        },
+        {
+          valueName = "Acuaparks, Zoos, Parques de atracciones y temáticos"
+          controllingFieldValue = [
+            "Ocio",
+          ]
+        },
+        {
+          valueName = "Casinos, apuestas y juegos de azar"
+          controllingFieldValue = [
+            "Ocio",
+          ]
+        },
+        {
+          valueName = "Cultura y museos"
+          controllingFieldValue = [
+            "Ocio",
+          ]
+        },
+        {
+          valueName = "Entidades de entretenimiento"
+          controllingFieldValue = [
+            "Ocio",
+          ]
+        },
+        {
+          valueName = "Puertos deportivos"
+          controllingFieldValue = [
+            "Ocio",
+          ]
+        },
+        {
+          valueName = "Agencias de viaje y Tour operadores"
+          controllingFieldValue = [
+            "Turismo",
+          ]
+        },
+        {
+          valueName = "Alquiler de coches"
+          controllingFieldValue = [
+            "Turismo",
+          ]
+        },
+        {
+          valueName = "Destinos"
+          controllingFieldValue = [
+            "Turismo",
+          ]
+        },
+        {
+          valueName = "Aeroespacial y defensa"
+          controllingFieldValue = [
+            "Fabricación",
+          ]
+        },
+        {
+          valueName = "Construcción y Concesiones"
+          controllingFieldValue = [
+            "Fabricación",
+          ]
+        },
+        {
+          valueName = "Construcciones mecánicas / Bienes de equipo"
+          controllingFieldValue = [
+            "Fabricación",
+          ]
+        },
+        {
+          valueName = "Electrónica, comunicación e informática"
+          controllingFieldValue = [
+            "Fabricación",
+          ]
+        },
+        {
+          valueName = "Envases y embalajes"
+          controllingFieldValue = [
+            "Fabricación",
+          ]
+        },
+        {
+          valueName = "Fabricación de artículos de joyería, bisutería y artículos similares"
+          controllingFieldValue = [
+            "Fabricación",
+          ]
+        },
+        {
+          valueName = "Imprenta y artes gráficas"
+          controllingFieldValue = [
+            "Fabricación",
+          ]
+        },
+        {
+          valueName = "Material  eléctrico y electrodomésticos"
+          controllingFieldValue = [
+            "Fabricación",
+          ]
+        },
+        {
+          valueName = "Metalúrgica y siderometalúrgica"
+          controllingFieldValue = [
+            "Fabricación",
+          ]
+        },
+        {
+          valueName = "Papel, cartón, madera, corcho, muebles."
+          controllingFieldValue = [
+            "Fabricación",
+          ]
+        },
+        {
+          valueName = "Producción textil básica"
+          controllingFieldValue = [
+            "Fabricación",
+          ]
+        },
+        {
+          valueName = "Ingeniería"
+          controllingFieldValue = [
+            "Infraestructuras y Construcción",
+          ]
+        },
+        {
+          valueName = "Ingeniería civil y Naval"
+          controllingFieldValue = [
+            "Infraestructuras y Construcción",
+          ]
+        },
+        {
+          valueName = "Materiales Construcción"
+          controllingFieldValue = [
+            "Infraestructuras y Construcción",
+          ]
+        },
+        {
+          valueName = "Servicios Urbanos"
+          controllingFieldValue = [
+            "Infraestructuras y Construcción",
+          ]
+        },
+        {
+          valueName = "Caucho, goma"
+          controllingFieldValue = [
+            "Química",
+          ]
+        },
+        {
+          valueName = "Disolventes, limpiadores, detergentes"
+          controllingFieldValue = [
+            "Química",
+          ]
+        },
+        {
+          valueName = "Fertilizantes"
+          controllingFieldValue = [
+            "Química",
+          ]
+        },
+        {
+          valueName = "Pesticidas"
+          controllingFieldValue = [
+            "Química",
+          ]
+        },
+        {
+          valueName = "Petroquímicas"
+          controllingFieldValue = [
+            "Química",
+          ]
+        },
+        {
+          valueName = "Plásticos"
+          controllingFieldValue = [
+            "Química",
+          ]
+        },
+        {
+          valueName = "Química básica"
+          controllingFieldValue = [
+            "Química",
+          ]
+        },
+        {
+          valueName = "Cooperativas"
+          controllingFieldValue = [
+            "Otros",
+          ]
+        },
+        {
+          valueName = "Family offices"
+          controllingFieldValue = [
+            "Otros",
+          ]
+        },
+        {
+          valueName = "Firmas miembro de PKF"
+          controllingFieldValue = [
+            "Otros",
+          ]
+        },
+        {
+          valueName = "Personas físicas"
+          controllingFieldValue = [
+            "Otros",
+          ]
+        },
+        {
+          valueName = "Sociedades patrimoniales"
+          controllingFieldValue = [
+            "Otros",
+          ]
+        },
+        {
+          valueName = "Cadena de suministro"
+          controllingFieldValue = [
+            "Distribución mayorista",
+          ]
+        },
+        {
+          valueName = "Centrales de compra"
+          controllingFieldValue = [
+            "Distribución mayorista",
+          ]
+        },
+        {
+          valueName = "Comercio internacional"
+          controllingFieldValue = [
+            "Distribución mayorista",
+          ]
+        },
+        {
+          valueName = "Empresas de logística"
+          controllingFieldValue = [
+            "Distribución mayorista",
+          ]
+        },
+        {
+          valueName = "Mercados mayoristas"
+          controllingFieldValue = [
+            "Distribución mayorista",
+          ]
+        },
+        {
+          valueName = "Otros mayoristas"
+          controllingFieldValue = [
+            "Distribución mayorista",
+          ]
+        },
+        {
+          valueName = "Mobiliario"
+          controllingFieldValue = [
+            "Retail",
+            "Hogar",
+          ]
+        },
+        {
+          valueName = "Alimentación y bebidas"
+          controllingFieldValue = [
+            "Retail",
+          ]
+        },
+        {
+          valueName = "Aparatos de tecnología, comunicación y electrónica"
+          controllingFieldValue = [
+            "Retail",
+          ]
+        },
+        {
+          valueName = "Automoción y componentes/repuestos del automóvil"
+          controllingFieldValue = [
+            "Retail",
+          ]
+        },
+        {
+          valueName = "Cuidado personal e higiene"
+          controllingFieldValue = [
+            "Retail",
+          ]
+        },
+        {
+          valueName = "Material de officina"
+          controllingFieldValue = [
+            "Retail",
+          ]
+        },
+        {
+          valueName = "Material deportivo, cultural y de entreteminiento"
+          controllingFieldValue = [
+            "Retail",
+          ]
+        },
+        {
+          valueName = "Mercancía general"
+          controllingFieldValue = [
+            "Retail",
+          ]
+        },
+        {
+          valueName = "Moda y accesorios"
+          controllingFieldValue = [
+            "Retail",
+          ]
+        },
+        {
+          valueName = "Componentes del automóvil"
+          controllingFieldValue = [
+            "Automoción",
+          ]
+        },
+        {
+          valueName = "Fabricación de automóviles"
+          controllingFieldValue = [
+            "Automoción",
+          ]
+        },
+        {
+          valueName = "Movilidad urbana"
+          controllingFieldValue = [
+            "Movilidad",
+          ]
+        },
+        {
+          valueName = "Transporte aéreo"
+          controllingFieldValue = [
+            "Movilidad",
+          ]
+        },
+        {
+          valueName = "Transporte integrado"
+          controllingFieldValue = [
+            "Movilidad",
+          ]
+        },
+        {
+          valueName = "Transporte marítimo"
+          controllingFieldValue = [
+            "Movilidad",
+          ]
+        },
+        {
+          valueName = "Transporte por carretera"
+          controllingFieldValue = [
+            "Movilidad",
+          ]
+        },
+        {
+          valueName = "Transporte por ferrocarril"
+          controllingFieldValue = [
+            "Movilidad",
+          ]
+        },
+        {
+          valueName = "Alimentación y nutrición"
+          controllingFieldValue = [
+            "Alimentación y bebidas",
+          ]
+        },
+        {
+          valueName = "Bebidas alcohólicas"
+          controllingFieldValue = [
+            "Alimentación y bebidas",
+          ]
+        },
+        {
+          valueName = "Bebidas sin alcohol"
+          controllingFieldValue = [
+            "Alimentación y bebidas",
+          ]
+        },
+        {
+          valueName = "Electrodomésticos"
+          controllingFieldValue = [
+            "Hogar",
+          ]
+        },
+        {
+          valueName = "Mascotas"
+          controllingFieldValue = [
+            "Hogar",
+          ]
+        },
+        {
+          valueName = "Productos de limpieza"
+          controllingFieldValue = [
+            "Hogar",
+          ]
+        },
+        {
+          valueName = "Cosmética, cuidado personal, higiene"
+          controllingFieldValue = [
+            "Uso personal",
+          ]
+        },
+        {
+          valueName = "Juguetes y ocio"
+          controllingFieldValue = [
+            "Uso personal",
+          ]
+        },
+        {
+          valueName = "Papelería y material de oficina"
+          controllingFieldValue = [
+            "Uso personal",
+          ]
+        },
+        {
+          valueName = "Ropa, calzado y complementos"
+          controllingFieldValue = [
+            "Uso personal",
+          ]
+        },
+        {
+          valueName = "Tabaco"
+          controllingFieldValue = [
+            "Uso personal",
+          ]
+        },
+        {
+          valueName = "Carbón y otros combustibles sin incluir el petróleo"
+          controllingFieldValue = [
+            "Eléctricas",
+          ]
+        },
+        {
+          valueName = "Cogeneración y ciclos combinados"
+          controllingFieldValue = [
+            "Eléctricas",
+          ]
+        },
+        {
+          valueName = "Distribución y comercialización eléctrica"
+          controllingFieldValue = [
+            "Eléctricas",
+          ]
+        },
+        {
+          valueName = "Enegía nuclear"
+          controllingFieldValue = [
+            "Eléctricas",
+          ]
+        },
+        {
+          valueName = "Energía Eólica"
+          controllingFieldValue = [
+            "Eléctricas",
+          ]
+        },
+        {
+          valueName = "Energía Solar"
+          controllingFieldValue = [
+            "Eléctricas",
+          ]
+        },
+        {
+          valueName = "Otras fuentes de energía alternativas (hidrógeno, geotérmica, etc.)"
+          controllingFieldValue = [
+            "Eléctricas",
+          ]
+        },
+        {
+          valueName = "Exploración  y  producción de productos petrolíferos"
+          controllingFieldValue = [
+            "Oil & Gas",
+          ]
+        },
+        {
+          valueName = "Gas natural - Comercialización"
+          controllingFieldValue = [
+            "Oil & Gas",
+          ]
+        },
+        {
+          valueName = "Gas natural - Oleoductos y transporte"
+          controllingFieldValue = [
+            "Oil & Gas",
+          ]
+        },
+        {
+          valueName = "Refino y comercialización de productos petrolíferos"
+          controllingFieldValue = [
+            "Oil & Gas",
+          ]
+        },
+        {
+          valueName = "Agricultura"
+          controllingFieldValue = [
+            "Recursos naturales",
+          ]
+        },
+        {
+          valueName = "Agua"
+          controllingFieldValue = [
+            "Recursos naturales",
+          ]
+        },
+        {
+          valueName = "Ganadería"
+          controllingFieldValue = [
+            "Recursos naturales",
+          ]
+        },
+        {
+          valueName = "Mineria"
+          controllingFieldValue = [
+            "Recursos naturales",
+          ]
+        },
+        {
+          valueName = "Pesca y acuicultura"
+          controllingFieldValue = [
+            "Recursos naturales",
+          ]
+        },
+        {
+          valueName = "Recursos forestales"
+          controllingFieldValue = [
+            "Recursos naturales",
+          ]
+        },
+        {
+          valueName = "Silvicultura"
+          controllingFieldValue = [
+            "Recursos naturales",
+          ]
+        },
+        {
+          valueName = "Biomedicina"
+          controllingFieldValue = [
+            "Otros salud",
+          ]
+        },
+        {
+          valueName = "Fabricantes de material sanitario, implantes, prótesis"
+          controllingFieldValue = [
+            "Otros salud",
+          ]
+        },
+        {
+          valueName = "Distribuidores farmacéuticos"
+          controllingFieldValue = [
+            "Pharma",
+          ]
+        },
+        {
+          valueName = "Farmacias"
+          controllingFieldValue = [
+            "Pharma",
+          ]
+        },
+        {
+          valueName = "Industria farmacéutica"
+          controllingFieldValue = [
+            "Pharma",
+          ]
+        },
+      ]
+    }
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.MasterDetail Cuenta__c {
+    apiName = "Sector__c.Cuenta__c"
+    label = "Cuenta"
+    referenceTo = [
+      salesforce.Account,
+    ]
+    relationshipName = "Sectores"
+    relationshipOrder = 0
+    reparentableMasterDetail = false
+    trackTrending = false
+    writeRequiresMasterRead = false
+    createable = true
+    updateable = false
+    queryable = true
+  }
+  salesforce.Picklist Sector__c {
+    apiName = "Sector__c.Sector__c"
+    label = "Sector"
+    trackTrending = false
+    valueSet = [
+      {
+        fullName = "Administración Pública"
+        default = false
+        label = "Administración Pública"
+      },
+      {
+        fullName = "Automoción y movilidad"
+        default = false
+        label = "Automoción y movilidad"
+      },
+      {
+        fullName = "Bienes de consumo"
+        default = false
+        label = "Bienes de consumo"
+      },
+      {
+        fullName = "Energía y Recursos naturales"
+        default = false
+        label = "Energía y Recursos naturales"
+      },
+      {
+        fullName = "Hostelería, Turismo y Ocio"
+        default = false
+        label = "Hostelería, Turismo y Ocio"
+      },
+      {
+        fullName = "Industria"
+        default = false
+        label = "Industria"
+      },
+      {
+        fullName = "Otros"
+        default = false
+        label = "Otros"
+      },
+      {
+        fullName = "Retail y Distribución"
+        default = false
+        label = "Retail y Distribución"
+      },
+      {
+        fullName = "Salud"
+        default = false
+        label = "Salud"
+      },
+      {
+        fullName = "Servicios"
+        default = false
+        label = "Servicios"
+      },
+      {
+        fullName = "Servicios financieros"
+        default = false
+        label = "Servicios financieros"
+      },
+      {
+        fullName = "Tecnologia, medios y telecomunicaciones"
+        default = false
+        label = "Tecnologia, medios y telecomunicaciones"
+      },
+    ]
+    sorted = false
+    restricted = true
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Picklist Subsector__c {
+    apiName = "Sector__c.Subsector__c"
+    label = "Subsector"
+    trackTrending = false
+    valueSet = [
+      {
+        fullName = "Automoción"
+        default = false
+        label = "Automoción"
+      },
+      {
+        fullName = "Movilidad"
+        default = false
+        label = "Movilidad"
+      },
+      {
+        fullName = "Alimentación y bebidas"
+        default = false
+        label = "Alimentación y bebidas"
+      },
+      {
+        fullName = "Hogar"
+        default = false
+        label = "Hogar"
+      },
+      {
+        fullName = "Uso personal"
+        default = false
+        label = "Uso personal"
+      },
+      {
+        fullName = "Eléctricas"
+        default = false
+        label = "Eléctricas"
+      },
+      {
+        fullName = "Oil & Gas"
+        default = false
+        label = "Oil & Gas"
+      },
+      {
+        fullName = "Recursos naturales"
+        default = false
+        label = "Recursos naturales"
+      },
+      {
+        fullName = "Deportes"
+        default = false
+        label = "Deportes"
+      },
+      {
+        fullName = "Hostelería"
+        default = false
+        label = "Hostelería"
+      },
+      {
+        fullName = "Ocio"
+        default = false
+        label = "Ocio"
+      },
+      {
+        fullName = "Turismo"
+        default = false
+        label = "Turismo"
+      },
+      {
+        fullName = "Fabricación"
+        default = false
+        label = "Fabricación"
+      },
+      {
+        fullName = "Infraestructuras y Construcción"
+        default = false
+        label = "Infraestructuras y Construcción"
+      },
+      {
+        fullName = "Química"
+        default = false
+        label = "Química"
+      },
+      {
+        fullName = "Otros"
+        default = false
+        label = "Otros"
+      },
+      {
+        fullName = "Distribución mayorista"
+        default = false
+        label = "Distribución mayorista"
+      },
+      {
+        fullName = "Retail"
+        default = false
+        label = "Retail"
+      },
+      {
+        fullName = "Otros salud"
+        default = false
+        label = "Otros salud"
+      },
+      {
+        fullName = "Pharma"
+        default = false
+        label = "Pharma"
+      },
+      {
+        fullName = "Servicios sociosanitarios"
+        default = false
+        label = "Servicios sociosanitarios"
+      },
+      {
+        fullName = "Entidades sin ánimo de lucro"
+        default = false
+        label = "Entidades sin ánimo de lucro"
+      },
+      {
+        fullName = "Servicios profesionales"
+        default = false
+        label = "Servicios profesionales"
+      },
+      {
+        fullName = "Suministros y gestión de residuos"
+        default = false
+        label = "Suministros y gestión de residuos"
+      },
+      {
+        fullName = "Entidades Financieras"
+        default = false
+        label = "Entidades Financieras"
+      },
+      {
+        fullName = "Seguros"
+        default = false
+        label = "Seguros"
+      },
+      {
+        fullName = "Medios de Comunicación"
+        default = false
+        label = "Medios de Comunicación"
+      },
+      {
+        fullName = "Tecnología"
+        default = false
+        label = "Tecnología"
+      },
+      {
+        fullName = "Telecomunicaciones"
+        default = false
+        label = "Telecomunicaciones"
+      },
+      {
+        fullName = "Administración general del Estado"
+        default = false
+        label = "Administración general del Estado"
+      },
+      {
+        fullName = "Administración local"
+        default = false
+        label = "Administración local"
+      },
+      {
+        fullName = "Administración regional"
+        default = false
+        label = "Administración regional"
+      },
+      {
+        fullName = "Sociedades y entidades públicas"
+        default = false
+        label = "Sociedades y entidades públicas"
+      },
+      {
+        fullName = "Entes reguladores"
+        default = false
+        label = "Entes reguladores"
+      },
+      {
+        fullName = "Organismos europeos"
+        default = false
+        label = "Organismos europeos"
+      },
+      {
+        fullName = "Administración Pública"
+        default = false
+        isActive = false
+        label = "Administración Pública"
+      },
+    ]
+    sorted = false
+    restricted = true
+    fieldDependency = {
+      controllingField = "Sector__c"
+      valueSettings = [
+        {
+          valueName = "Entidades Financieras"
+          controllingFieldValue = [
+            "Servicios financieros",
+          ]
+        },
+        {
+          valueName = "Seguros"
+          controllingFieldValue = [
+            "Servicios financieros",
+          ]
+        },
+        {
+          valueName = "Administración general del Estado"
+          controllingFieldValue = [
+            "Administración Pública",
+          ]
+        },
+        {
+          valueName = "Administración local"
+          controllingFieldValue = [
+            "Administración Pública",
+          ]
+        },
+        {
+          valueName = "Administración regional"
+          controllingFieldValue = [
+            "Administración Pública",
+          ]
+        },
+        {
+          valueName = "Sociedades y entidades públicas"
+          controllingFieldValue = [
+            "Administración Pública",
+          ]
+        },
+        {
+          valueName = "Entes reguladores"
+          controllingFieldValue = [
+            "Administración Pública",
+          ]
+        },
+        {
+          valueName = "Organismos europeos"
+          controllingFieldValue = [
+            "Administración Pública",
+          ]
+        },
+        {
+          valueName = "Medios de Comunicación"
+          controllingFieldValue = [
+            "Tecnologia, medios y telecomunicaciones",
+          ]
+        },
+        {
+          valueName = "Tecnología"
+          controllingFieldValue = [
+            "Tecnologia, medios y telecomunicaciones",
+          ]
+        },
+        {
+          valueName = "Telecomunicaciones"
+          controllingFieldValue = [
+            "Tecnologia, medios y telecomunicaciones",
+          ]
+        },
+        {
+          valueName = "Automoción"
+          controllingFieldValue = [
+            "Automoción y movilidad",
+          ]
+        },
+        {
+          valueName = "Movilidad"
+          controllingFieldValue = [
+            "Automoción y movilidad",
+          ]
+        },
+        {
+          valueName = "Alimentación y bebidas"
+          controllingFieldValue = [
+            "Bienes de consumo",
+          ]
+        },
+        {
+          valueName = "Hogar"
+          controllingFieldValue = [
+            "Bienes de consumo",
+          ]
+        },
+        {
+          valueName = "Uso personal"
+          controllingFieldValue = [
+            "Bienes de consumo",
+          ]
+        },
+        {
+          valueName = "Eléctricas"
+          controllingFieldValue = [
+            "Energía y Recursos naturales",
+          ]
+        },
+        {
+          valueName = "Oil & Gas"
+          controllingFieldValue = [
+            "Energía y Recursos naturales",
+          ]
+        },
+        {
+          valueName = "Recursos naturales"
+          controllingFieldValue = [
+            "Energía y Recursos naturales",
+          ]
+        },
+        {
+          valueName = "Deportes"
+          controllingFieldValue = [
+            "Hostelería, Turismo y Ocio",
+          ]
+        },
+        {
+          valueName = "Hostelería"
+          controllingFieldValue = [
+            "Hostelería, Turismo y Ocio",
+          ]
+        },
+        {
+          valueName = "Ocio"
+          controllingFieldValue = [
+            "Hostelería, Turismo y Ocio",
+          ]
+        },
+        {
+          valueName = "Turismo"
+          controllingFieldValue = [
+            "Hostelería, Turismo y Ocio",
+          ]
+        },
+        {
+          valueName = "Fabricación"
+          controllingFieldValue = [
+            "Industria",
+          ]
+        },
+        {
+          valueName = "Infraestructuras y Construcción"
+          controllingFieldValue = [
+            "Industria",
+          ]
+        },
+        {
+          valueName = "Química"
+          controllingFieldValue = [
+            "Industria",
+          ]
+        },
+        {
+          valueName = "Otros"
+          controllingFieldValue = [
+            "Otros",
+          ]
+        },
+        {
+          valueName = "Distribución mayorista"
+          controllingFieldValue = [
+            "Retail y Distribución",
+          ]
+        },
+        {
+          valueName = "Retail"
+          controllingFieldValue = [
+            "Retail y Distribución",
+          ]
+        },
+        {
+          valueName = "Otros salud"
+          controllingFieldValue = [
+            "Salud",
+          ]
+        },
+        {
+          valueName = "Pharma"
+          controllingFieldValue = [
+            "Salud",
+          ]
+        },
+        {
+          valueName = "Servicios sociosanitarios"
+          controllingFieldValue = [
+            "Salud",
+          ]
+        },
+        {
+          valueName = "Entidades sin ánimo de lucro"
+          controllingFieldValue = [
+            "Servicios",
+          ]
+        },
+        {
+          valueName = "Servicios profesionales"
+          controllingFieldValue = [
+            "Servicios",
+          ]
+        },
+        {
+          valueName = "Suministros y gestión de residuos"
+          controllingFieldValue = [
+            "Servicios",
+          ]
+        },
+      ]
+    }
+    createable = true
+    updateable = true
+    queryable = true
+  }
+}

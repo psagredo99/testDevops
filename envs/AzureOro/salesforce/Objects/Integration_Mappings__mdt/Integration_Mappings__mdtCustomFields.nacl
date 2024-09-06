@@ -1,0 +1,173 @@
+type salesforce.Integration_Mappings__mdt {
+  salesforce.Text Date_Format__c {
+    apiName = "Integration_Mappings__mdt.Date_Format__c"
+    externalId = false
+    fieldManageability = "DeveloperControlled"
+    label = "Date Format"
+    length = 255
+    unique = false
+  }
+  salesforce.Text Date_Separator__c {
+    apiName = "Integration_Mappings__mdt.Date_Separator__c"
+    externalId = false
+    fieldManageability = "DeveloperControlled"
+    label = "Date Separator"
+    length = 255
+    unique = false
+  }
+  salesforce.TextArea Description__c {
+    apiName = "Integration_Mappings__mdt.Description__c"
+    fieldManageability = "DeveloperControlled"
+    label = "Description"
+  }
+  salesforce.Checkbox External_ID__c {
+    apiName = "Integration_Mappings__mdt.External_ID__c"
+    defaultValue = false
+    fieldManageability = "DeveloperControlled"
+    label = "External ID"
+  }
+  salesforce.Number Field_Length__c {
+    apiName = "Integration_Mappings__mdt.Field_Length__c"
+    externalId = false
+    fieldManageability = "DeveloperControlled"
+    label = "Field Length"
+    precision = 18
+    scale = 0
+    unique = false
+  }
+  salesforce.Picklist Field_Type__c {
+    apiName = "Integration_Mappings__mdt.Field_Type__c"
+    fieldManageability = "DeveloperControlled"
+    label = "Field Type"
+    valueSet = [
+      {
+        fullName = "Boolean"
+        default = true
+        label = "Boolean"
+      },
+      {
+        fullName = "Date"
+        default = false
+        label = "Date"
+      },
+      {
+        fullName = "Datetime"
+        default = false
+        label = "Datetime"
+      },
+      {
+        fullName = "Email"
+        default = false
+        label = "Email"
+      },
+      {
+        fullName = "Lookup"
+        default = false
+        label = "Lookup"
+      },
+      {
+        fullName = "String"
+        default = false
+        label = "String"
+      },
+      {
+        fullName = "Number"
+        default = false
+        label = "Number"
+      },
+    ]
+    sorted = false
+    restricted = true
+  }
+  salesforce.Checkbox Inbound__c {
+    apiName = "Integration_Mappings__mdt.Inbound__c"
+    defaultValue = false
+    fieldManageability = "DeveloperControlled"
+    label = "Inbound"
+  }
+  salesforce.Text Lookup_SObject_External_ID__c {
+    apiName = "Integration_Mappings__mdt.Lookup_SObject_External_ID__c"
+    externalId = false
+    fieldManageability = "DeveloperControlled"
+    label = "Lookup SObject External ID"
+    length = 255
+    unique = false
+  }
+  salesforce.Text Lookup_SObject__c {
+    apiName = "Integration_Mappings__mdt.Lookup_SObject__c"
+    externalId = false
+    fieldManageability = "DeveloperControlled"
+    label = "Lookup SObject"
+    length = 255
+    unique = false
+  }
+  salesforce.MetadataRelationship Object__c {
+    apiName = "Integration_Mappings__mdt.Object__c"
+    fieldManageability = "DeveloperControlled"
+    label = "Object"
+    referenceTo = [
+      "Integration_Object__mdt",
+    ]
+    relationshipLabel = "Integration Mappings"
+    relationshipName = "Integration_Mappings"
+    unique = false
+  }
+  salesforce.Checkbox Outbound__c {
+    apiName = "Integration_Mappings__mdt.Outbound__c"
+    defaultValue = false
+    fieldManageability = "DeveloperControlled"
+    label = "Outbound"
+  }
+  salesforce.Picklist Salesforce_Field_Type__c {
+    apiName = "Integration_Mappings__mdt.Salesforce_Field_Type__c"
+    fieldManageability = "DeveloperControlled"
+    label = "Salesforce Field Type"
+    valueSet = [
+      {
+        fullName = "Boolean"
+        default = true
+        label = "Boolean"
+      },
+      {
+        fullName = "Date"
+        default = false
+        label = "Date"
+      },
+      {
+        fullName = "Datetime"
+        default = false
+        label = "Datetime"
+      },
+      {
+        fullName = "Email"
+        default = false
+        label = "Email"
+      },
+      {
+        fullName = "Lookup"
+        default = false
+        label = "Lookup"
+      },
+      {
+        fullName = "String"
+        default = false
+        label = "String"
+      },
+      {
+        fullName = "Number"
+        default = false
+        label = "Number"
+      },
+    ]
+    sorted = false
+    restricted = true
+  }
+  salesforce.Text Salesforce_Field__c {
+    apiName = "Integration_Mappings__mdt.Salesforce_Field__c"
+    externalId = false
+    fieldManageability = "DeveloperControlled"
+    label = "Salesforce Field"
+    length = 255
+    unique = false
+  }
+}

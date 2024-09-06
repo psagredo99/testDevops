@@ -1,0 +1,102 @@
+type salesforce.ScorecardMetric {
+  salesforce.Picklist Category {
+    apiName = "ScorecardMetric.Category"
+    restricted = false
+    label = "Categoría"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.TextArea Description {
+    apiName = "ScorecardMetric.Description"
+    label = "Descripción"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Text Name {
+    apiName = "ScorecardMetric.Name"
+    length = 255
+    _required = true
+    label = "Nombre"
+    createable = true
+    updateable = true
+    unique = false
+    caseSensitive = false
+    queryable = true
+  }
+  salesforce.Lookup ReportId {
+    apiName = "ScorecardMetric.ReportId"
+    relationshipName = "Report"
+    label = "Report ID"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.MasterDetail ScorecardId {
+    apiName = "ScorecardMetric.ScorecardId"
+    relationshipName = "Scorecard"
+    _required = true
+    label = "Tarjeta de puntuación ID"
+    createable = true
+    updateable = false
+    queryable = true
+  }
+  serviceid Id {
+    apiName = "ScorecardMetric.Id"
+    label = "Id. de Medición de tarjeta de puntuación"
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Checkbox IsDeleted {
+    apiName = "ScorecardMetric.IsDeleted"
+    defaultValue = false
+    label = "Eliminado"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime CreatedDate {
+    apiName = "ScorecardMetric.CreatedDate"
+    label = "Fecha de creación"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup CreatedById {
+    apiName = "ScorecardMetric.CreatedById"
+    relationshipName = "CreatedBy"
+    label = "Creado por el Id."
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime LastModifiedDate {
+    apiName = "ScorecardMetric.LastModifiedDate"
+    label = "Fecha de la última modificación"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup LastModifiedById {
+    apiName = "ScorecardMetric.LastModifiedById"
+    relationshipName = "LastModifiedBy"
+    label = "Última modificación realizada por el Id."
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime SystemModstamp {
+    apiName = "ScorecardMetric.SystemModstamp"
+    label = "Modstamp del sistema"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+}

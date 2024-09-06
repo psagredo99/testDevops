@@ -1,0 +1,37 @@
+salesforce.AuraDefinitionBundle HomeChildKanban {
+  apiVersion = 53
+  description = "A Lightning Component Bundle"
+  fullName = "HomeChildKanban"
+  type = "Component"
+  designContent = file("salesforce/Records/AuraDefinitionBundle/HomeChildKanban/HomeChildKanban.design")
+  SVGContent = file("salesforce/Records/AuraDefinitionBundle/HomeChildKanban/HomeChildKanban.svg")
+  controllerContent = file("salesforce/Records/AuraDefinitionBundle/HomeChildKanban/HomeChildKanbanController.js")
+  helperContent = file("salesforce/Records/AuraDefinitionBundle/HomeChildKanban/HomeChildKanbanHelper.js")
+  styleContent = file("salesforce/Records/AuraDefinitionBundle/HomeChildKanban/HomeChildKanban.css")
+  documentationContent = file("salesforce/Records/AuraDefinitionBundle/HomeChildKanban/HomeChildKanban.auradoc")
+  markup = file("salesforce/Records/AuraDefinitionBundle/HomeChildKanban/HomeChildKanban.cmp")
+  _generated_dependencies = [
+    {
+      reference = salesforce.ApexClass.instance.HomeChildKanbanCls
+    },
+    {
+      reference = salesforce.ApexClass.instance.HomeChildKanbanUtil
+    },
+    {
+      reference = salesforce.ApexClass.instance.KanbanConfigList
+    },
+    {
+      reference = salesforce.AuraDefinitionBundle.instance.HomeChildKanbanCol
+    },
+    {
+      reference = salesforce.AuraDefinitionBundle.instance.HomeChildKanbanCrd
+    },
+    {
+      reference = salesforce.AuraDefinitionBundle.instance.HomeChildKanbanDeleteEvt
+    },
+    {
+      reference = salesforce.AuraDefinitionBundle.instance.HomeChildKanbanEvt
+    },
+  ]
+  _alias = "HomeChildKanban"
+}

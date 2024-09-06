@@ -1,0 +1,124 @@
+type salesforce.OpportunityTeamMember {
+  salesforce.Picklist OpportunityAccessLevel {
+    apiName = "OpportunityTeamMember.OpportunityAccessLevel"
+    restricted = true
+    label = "Acceso a oportunidad"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Lookup OpportunityId {
+    apiName = "OpportunityTeamMember.OpportunityId"
+    relationshipName = "Opportunity"
+    _required = true
+    label = "Id. de la oportunidad"
+    createable = true
+    updateable = false
+    queryable = true
+  }
+  salesforce.Picklist TeamMemberRole {
+    apiName = "OpportunityTeamMember.TeamMemberRole"
+    restricted = false
+    label = "Función del equipo"
+    createable = true
+    updateable = true
+    queryable = true
+    valueSetName = salesforce.StandardValueSet.instance.SalesTeamRole
+  }
+  salesforce.Lookup UserId {
+    apiName = "OpportunityTeamMember.UserId"
+    relationshipName = "User"
+    _required = true
+    label = "Id. de usuario"
+    createable = true
+    updateable = false
+    queryable = true
+  }
+  serviceid Id {
+    apiName = "OpportunityTeamMember.Id"
+    label = "Id. del miembro del equipo de oportunidades"
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Text Name {
+    apiName = "OpportunityTeamMember.Name"
+    length = 361
+    label = "Nombre del miembro del equipo de oportunidades"
+    createable = false
+    updateable = false
+    unique = false
+    caseSensitive = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Url PhotoUrl {
+    apiName = "OpportunityTeamMember.PhotoUrl"
+    label = "URL de fotografía en tamaño miniatura"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Text Title {
+    apiName = "OpportunityTeamMember.Title"
+    length = 80
+    label = "Cargo"
+    createable = false
+    updateable = false
+    unique = false
+    caseSensitive = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime CreatedDate {
+    apiName = "OpportunityTeamMember.CreatedDate"
+    label = "Fecha de creación"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup CreatedById {
+    apiName = "OpportunityTeamMember.CreatedById"
+    relationshipName = "CreatedBy"
+    label = "Creado por el Id."
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime LastModifiedDate {
+    apiName = "OpportunityTeamMember.LastModifiedDate"
+    label = "Fecha de la última modificación"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup LastModifiedById {
+    apiName = "OpportunityTeamMember.LastModifiedById"
+    relationshipName = "LastModifiedBy"
+    label = "Última modificación realizada por el Id."
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime SystemModstamp {
+    apiName = "OpportunityTeamMember.SystemModstamp"
+    label = "Modstamp del sistema"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Checkbox IsDeleted {
+    apiName = "OpportunityTeamMember.IsDeleted"
+    defaultValue = false
+    label = "Eliminado"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+}

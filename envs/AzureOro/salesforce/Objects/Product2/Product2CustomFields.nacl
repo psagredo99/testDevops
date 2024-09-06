@@ -1,0 +1,690 @@
+type salesforce.Product2 {
+  salesforce.Picklist Grupo_de_Servicios__c {
+    apiName = "Product2.Grupo_de_Servicios__c"
+    label = "Grupo de Servicios"
+    valueSet = [
+      {
+        fullName = "Auditoría"
+        default = false
+        label = "Auditoría"
+      },
+      {
+        fullName = "Auditoría continua y a distancia"
+        default = false
+        label = "Auditoría continua y a distancia"
+      },
+      {
+        fullName = "Auditoría de aplicaciones"
+        default = false
+        label = "Auditoría de aplicaciones"
+      },
+      {
+        fullName = "Auditoría medidas técnicas del RGPD y la LOPDGDD"
+        default = false
+        label = "Auditoría medidas técnicas del RGPD y la LOPDGDD"
+      },
+      {
+        fullName = "Ayudas Públicas"
+        default = false
+        label = "Ayudas Públicas"
+      },
+      {
+        fullName = "BME Growth"
+        default = false
+        label = "BME Growth"
+      },
+      {
+        fullName = "Business Intelligence"
+        default = false
+        label = "Business Intelligence"
+      },
+      {
+        fullName = "Calidad del dato"
+        default = false
+        label = "Calidad del dato"
+      },
+      {
+        fullName = "Ciberseguridad"
+        default = false
+        label = "Ciberseguridad"
+      },
+      {
+        fullName = "Concursal"
+        default = false
+        label = "Concursal"
+      },
+      {
+        fullName = "Consultoría"
+        default = false
+        label = "Consultoría"
+      },
+      {
+        fullName = "Contabilidad"
+        default = false
+        label = "Contabilidad"
+      },
+      {
+        fullName = "Contabilidad analítica y de gestión"
+        default = false
+        label = "Contabilidad analítica y de gestión"
+      },
+      {
+        fullName = "Continuidad de Negocio / ISO 22301 (Sistema de Gestión de la Continuidad de Negocio)"
+        default = false
+        label = "Continuidad de Negocio / ISO 22301 (Sistema de Gestión de la Continuidad de Negocio)"
+      },
+      {
+        fullName = "Corporate Intelligence (orientados a detectar e investigar conexiones anómalas)"
+        default = false
+        label = "Corporate Intelligence (orientados a detectar e investigar conexiones anómalas)"
+      },
+      {
+        fullName = "CRM"
+        default = false
+        label = "CRM"
+      },
+      {
+        fullName = "Cuantificación Lucro Cesante y Daño Emergente"
+        default = false
+        label = "Cuantificación Lucro Cesante y Daño Emergente"
+      },
+      {
+        fullName = "Cuentas Anuales y Estados Financieros"
+        default = false
+        label = "Cuentas Anuales y Estados Financieros"
+      },
+      {
+        fullName = "Debt Capital Markets"
+        default = false
+        label = "Debt Capital Markets"
+      },
+      {
+        fullName = "Dispositivos móviles"
+        default = false
+        label = "Dispositivos móviles"
+      },
+      {
+        fullName = "Due Diligence"
+        default = false
+        label = "Due Diligence"
+      },
+      {
+        fullName = "ERP"
+        default = false
+        label = "ERP"
+      },
+      {
+        fullName = "ESG"
+        default = false
+        label = "ESG"
+      },
+      {
+        fullName = "Financial Advanced Solutions"
+        default = false
+        label = "Financial Advanced Solutions"
+      },
+      {
+        fullName = "Fiscal"
+        default = false
+        label = "Fiscal"
+      },
+      {
+        fullName = "Forensic tecnológico"
+        default = false
+        label = "Forensic tecnológico"
+      },
+      {
+        fullName = "Gestión de la Tesorería"
+        default = false
+        label = "Gestión de la Tesorería"
+      },
+      {
+        fullName = "Gobierno de TI"
+        default = false
+        label = "Gobierno de TI"
+      },
+      {
+        fullName = "Health"
+        default = false
+        label = "Health"
+      },
+      {
+        fullName = "Herramientas orientadas a la prevención y monitorización del fraude"
+        default = false
+        label = "Herramientas orientadas a la prevención y monitorización del fraude"
+      },
+      {
+        fullName = "IBR"
+        default = false
+        label = "IBR"
+      },
+      {
+        fullName = "Incentivos a la I+D+i"
+        default = false
+        label = "Incentivos a la I+D+i"
+      },
+      {
+        fullName = "Incumplimientos o divergencias en la aplicación de cláusulas contractuales"
+        default = false
+        label = "Incumplimientos o divergencias en la aplicación de cláusulas contractuales"
+      },
+      {
+        fullName = "Informes de índole laboral (procedencia del despido/cuantificación de los perjuicios ocasionados)"
+        default = false
+        label = "Informes de índole laboral (procedencia del despido/cuantificación de los perjuicios ocasionados)"
+      },
+      {
+        fullName = "Informes sobre productos financieros"
+        default = false
+        label = "Informes sobre productos financieros"
+      },
+      {
+        fullName = "Ingeniería de Software"
+        default = false
+        label = "Ingeniería de Software"
+      },
+      {
+        fullName = "Investigación de delitos socio-económicos (administración desleal, apropiación indebida)"
+        default = false
+        label = "Investigación de delitos socio-económicos (administración desleal, apropiación indebida)"
+      },
+      {
+        fullName = "Laboral"
+        default = false
+        label = "Laboral"
+      },
+      {
+        fullName = "Legal"
+        default = false
+        label = "Legal"
+      },
+      {
+        fullName = "Marketing digital"
+        default = false
+        label = "Marketing digital"
+      },
+      {
+        fullName = "Medioambiente y energía"
+        default = false
+        label = "Medioambiente y energía"
+      },
+      {
+        fullName = "Modelización financiera"
+        default = false
+        label = "Modelización financiera"
+      },
+      {
+        fullName = "Modelos de gestión"
+        default = false
+        label = "Modelos de gestión"
+      },
+      {
+        fullName = "Organización y personas"
+        default = false
+        label = "Organización y personas"
+      },
+      {
+        fullName = "Otras Soluciones"
+        default = false
+        label = "Otras Soluciones"
+      },
+      {
+        fullName = "Otros servicios"
+        default = false
+        label = "Otros servicios"
+      },
+      {
+        fullName = "Outsourcing de TI / Contratos SLA’s / Servicios en la nube"
+        default = false
+        label = "Outsourcing de TI / Contratos SLA’s / Servicios en la nube"
+      },
+      {
+        fullName = "Preconcursal"
+        default = false
+        label = "Preconcursal"
+      },
+      {
+        fullName = "Prevención, detección e Investigación de fraude"
+        default = false
+        label = "Prevención, detección e Investigación de fraude"
+      },
+      {
+        fullName = "Procesos de negocio"
+        default = false
+        label = "Procesos de negocio"
+      },
+      {
+        fullName = "Regulación & Public policy"
+        default = false
+        label = "Regulación & Public policy"
+      },
+      {
+        fullName = "Segregación de funciones / Administ. de Accesos e Identidades (IAM)"
+        default = false
+        label = "Segregación de funciones / Administ. de Accesos e Identidades (IAM)"
+      },
+      {
+        fullName = "Seguridad de la información"
+        default = false
+        label = "Seguridad de la información"
+      },
+      {
+        fullName = "Sistemas de información"
+        default = false
+        label = "Sistemas de información"
+      },
+      {
+        fullName = "Técnica de Sistemas"
+        default = false
+        label = "Técnica de Sistemas"
+      },
+      {
+        fullName = "Tesorería y finanzas"
+        default = false
+        label = "Tesorería y finanzas"
+      },
+      {
+        fullName = "Transacciones"
+        default = false
+        label = "Transacciones"
+      },
+      {
+        fullName = "Valoraciones"
+        default = false
+        label = "Valoraciones"
+      },
+      {
+        fullName = "Verificación"
+        default = false
+        label = "Verificación"
+      },
+      {
+        fullName = "Excellence"
+        default = false
+        label = "Excellence"
+      },
+    ]
+    sorted = false
+    restricted = false
+    fieldDependency = {
+      controllingField = "Family"
+      valueSettings = [
+        {
+          valueName = "Ayudas Públicas"
+          controllingFieldValue = [
+            "Gestión de la innovación",
+          ]
+        },
+        {
+          valueName = "Incentivos a la I+D+i"
+          controllingFieldValue = [
+            "Gestión de la innovación",
+          ]
+        },
+        {
+          valueName = "Contabilidad"
+          controllingFieldValue = [
+            "Asesoramiento Fiscal y Legal",
+          ]
+        },
+        {
+          valueName = "Fiscal"
+          controllingFieldValue = [
+            "Asesoramiento Fiscal y Legal",
+          ]
+        },
+        {
+          valueName = "Laboral"
+          controllingFieldValue = [
+            "Asesoramiento Fiscal y Legal",
+          ]
+        },
+        {
+          valueName = "Legal"
+          controllingFieldValue = [
+            "Asesoramiento Fiscal y Legal",
+          ]
+        },
+        {
+          valueName = "Cuentas Anuales y Estados Financieros"
+          controllingFieldValue = [
+            "Auditoría y verificación",
+          ]
+        },
+        {
+          valueName = "Otros servicios"
+          controllingFieldValue = [
+            "Auditoría y verificación",
+            "Financial Advisory",
+          ]
+        },
+        {
+          valueName = "Verificación"
+          controllingFieldValue = [
+            "Auditoría y verificación",
+          ]
+        },
+        {
+          valueName = "Auditoría continua y a distancia"
+          controllingFieldValue = [
+            "Auditoría de TI",
+          ]
+        },
+        {
+          valueName = "Auditoría de aplicaciones"
+          controllingFieldValue = [
+            "Auditoría de TI",
+          ]
+        },
+        {
+          valueName = "Auditoría medidas técnicas del RGPD y la LOPDGDD"
+          controllingFieldValue = [
+            "Auditoría de TI",
+          ]
+        },
+        {
+          valueName = "Calidad del dato"
+          controllingFieldValue = [
+            "Auditoría de TI",
+          ]
+        },
+        {
+          valueName = "Continuidad de Negocio / ISO 22301 (Sistema de Gestión de la Continuidad de Negocio)"
+          controllingFieldValue = [
+            "Auditoría de TI",
+          ]
+        },
+        {
+          valueName = "Dispositivos móviles"
+          controllingFieldValue = [
+            "Auditoría de TI",
+          ]
+        },
+        {
+          valueName = "Gobierno de TI"
+          controllingFieldValue = [
+            "Auditoría de TI",
+          ]
+        },
+        {
+          valueName = "Outsourcing de TI / Contratos SLA’s / Servicios en la nube"
+          controllingFieldValue = [
+            "Auditoría de TI",
+          ]
+        },
+        {
+          valueName = "Procesos de negocio"
+          controllingFieldValue = [
+            "Auditoría de TI",
+          ]
+        },
+        {
+          valueName = "Segregación de funciones / Administ. de Accesos e Identidades (IAM)"
+          controllingFieldValue = [
+            "Auditoría de TI",
+          ]
+        },
+        {
+          valueName = "Auditoría"
+          controllingFieldValue = [
+            "GRC (Gobierno, Riesgo y Cumplimiento)",
+          ]
+        },
+        {
+          valueName = "Ciberseguridad"
+          controllingFieldValue = [
+            "GRC (Gobierno, Riesgo y Cumplimiento)",
+          ]
+        },
+        {
+          valueName = "Consultoría"
+          controllingFieldValue = [
+            "GRC (Gobierno, Riesgo y Cumplimiento)",
+          ]
+        },
+        {
+          valueName = "Corporate Intelligence (orientados a detectar e investigar conexiones anómalas)"
+          controllingFieldValue = [
+            "Forensic",
+          ]
+        },
+        {
+          valueName = "Cuantificación Lucro Cesante y Daño Emergente"
+          controllingFieldValue = [
+            "Forensic",
+          ]
+        },
+        {
+          valueName = "Forensic tecnológico"
+          controllingFieldValue = [
+            "Forensic",
+          ]
+        },
+        {
+          valueName = "Herramientas orientadas a la prevención y monitorización del fraude"
+          controllingFieldValue = [
+            "Forensic",
+          ]
+        },
+        {
+          valueName = "Incumplimientos o divergencias en la aplicación de cláusulas contractuales"
+          controllingFieldValue = [
+            "Forensic",
+          ]
+        },
+        {
+          valueName = "Informes de índole laboral (procedencia del despido/cuantificación de los perjuicios ocasionados)"
+          controllingFieldValue = [
+            "Forensic",
+          ]
+        },
+        {
+          valueName = "Informes sobre productos financieros"
+          controllingFieldValue = [
+            "Forensic",
+          ]
+        },
+        {
+          valueName = "Investigación de delitos socio-económicos (administración desleal, apropiación indebida)"
+          controllingFieldValue = [
+            "Forensic",
+          ]
+        },
+        {
+          valueName = "Prevención, detección e Investigación de fraude"
+          controllingFieldValue = [
+            "Forensic",
+          ]
+        },
+        {
+          valueName = "Contabilidad analítica y de gestión"
+          controllingFieldValue = [
+            "Financial Advisory",
+          ]
+        },
+        {
+          valueName = "Due Diligence"
+          controllingFieldValue = [
+            "Financial Advisory",
+          ]
+        },
+        {
+          valueName = "Financial Advanced Solutions"
+          controllingFieldValue = [
+            "Financial Advisory",
+          ]
+        },
+        {
+          valueName = "Gestión de la Tesorería"
+          controllingFieldValue = [
+            "Financial Advisory",
+          ]
+        },
+        {
+          valueName = "IBR"
+          controllingFieldValue = [
+            "Financial Advisory",
+          ]
+        },
+        {
+          valueName = "Modelización financiera"
+          controllingFieldValue = [
+            "Financial Advisory",
+          ]
+        },
+        {
+          valueName = "Transacciones"
+          controllingFieldValue = [
+            "Financial Advisory",
+          ]
+        },
+        {
+          valueName = "Valoraciones"
+          controllingFieldValue = [
+            "Financial Advisory",
+          ]
+        },
+        {
+          valueName = "Concursal"
+          controllingFieldValue = [
+            "Reestructuraciones e Insolvencia",
+          ]
+        },
+        {
+          valueName = "Preconcursal"
+          controllingFieldValue = [
+            "Reestructuraciones e Insolvencia",
+          ]
+        },
+        {
+          valueName = "ESG"
+          controllingFieldValue = [
+            "Consultoría",
+          ]
+        },
+        {
+          valueName = "Marketing digital"
+          controllingFieldValue = [
+            "Consultoría",
+          ]
+        },
+        {
+          valueName = "Medioambiente y energía"
+          controllingFieldValue = [
+            "Consultoría",
+          ]
+        },
+        {
+          valueName = "Modelos de gestión"
+          controllingFieldValue = [
+            "Consultoría",
+          ]
+        },
+        {
+          valueName = "Organización y personas"
+          controllingFieldValue = [
+            "Consultoría",
+          ]
+        },
+        {
+          valueName = "Regulación & Public policy"
+          controllingFieldValue = [
+            "Consultoría",
+          ]
+        },
+        {
+          valueName = "Seguridad de la información"
+          controllingFieldValue = [
+            "Consultoría",
+          ]
+        },
+        {
+          valueName = "Sistemas de información"
+          controllingFieldValue = [
+            "Consultoría",
+          ]
+        },
+        {
+          valueName = "Excellence"
+          controllingFieldValue = [
+            "Consultoría",
+          ]
+        },
+        {
+          valueName = "Business Intelligence"
+          controllingFieldValue = [
+            "Tecnología",
+          ]
+        },
+        {
+          valueName = "CRM"
+          controllingFieldValue = [
+            "Tecnología",
+          ]
+        },
+        {
+          valueName = "ERP"
+          controllingFieldValue = [
+            "Tecnología",
+          ]
+        },
+        {
+          valueName = "Health"
+          controllingFieldValue = [
+            "Tecnología",
+          ]
+        },
+        {
+          valueName = "Ingeniería de Software"
+          controllingFieldValue = [
+            "Tecnología",
+          ]
+        },
+        {
+          valueName = "Otras Soluciones"
+          controllingFieldValue = [
+            "Tecnología",
+          ]
+        },
+        {
+          valueName = "Técnica de Sistemas"
+          controllingFieldValue = [
+            "Tecnología",
+          ]
+        },
+        {
+          valueName = "Tesorería y finanzas"
+          controllingFieldValue = [
+            "Tecnología",
+          ]
+        },
+        {
+          valueName = "BME Growth"
+          controllingFieldValue = [
+            "Mercado de Capitales",
+          ]
+        },
+        {
+          valueName = "Debt Capital Markets"
+          controllingFieldValue = [
+            "Mercado de Capitales",
+          ]
+        },
+      ]
+    }
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Text Proyectos_NAV_Asociados__c {
+    apiName = "Product2.Proyectos_NAV_Asociados__c"
+    externalId = false
+    label = "Proyectos NAV Asociados"
+    length = 255
+    unique = false
+    createable = true
+    updateable = true
+    caseSensitive = false
+    queryable = true
+  }
+}

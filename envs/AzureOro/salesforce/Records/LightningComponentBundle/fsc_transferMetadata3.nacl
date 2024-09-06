@@ -1,0 +1,81 @@
+salesforce.LightningComponentBundle fsc_transferMetadata3 {
+  apiVersion = 51
+  isExposed = true
+  masterLabel = "Transfer Metadata"
+  targets = {
+    target = [
+      "lightning__FlowScreen",
+    ]
+  }
+  targetConfigs = {
+    targetConfig = [
+      {
+        targets = "lightning__FlowScreen"
+        property = [
+          {
+            name = "zipFileString"
+            type = "String"
+            role = "outputOnly"
+            description = "Contents of the Zip File returned by the Retrieve operation."
+          },
+          {
+            name = "extractedMetadataString"
+            type = "String"
+            role = "outputOnly"
+            description = "Contents of the retrieved metadata file extracted from the Zip File."
+          },
+          {
+            name = "error"
+            type = "String"
+            role = "outputOnly"
+            description = "Error"
+          },
+          {
+            name = "escapedMetadataString"
+            type = "String"
+            role = "outputOnly"
+            description = "Escaped version of the extracted file.  Useful if you want to display the file in the Flow."
+          },
+          {
+            name = "metadataName"
+            type = "String"
+            role = "inputOnly"
+            description = "API Name of the metadata"
+          },
+          {
+            name = "transferMode"
+            type = "String"
+            role = "inputOnly"
+            description = "Options are: retrieve or deploy"
+          },
+          {
+            name = "objectType"
+            type = "String"
+            role = "inputOnly"
+            description = "Metadata Object Type needs to be in CamelCase"
+          },
+          {
+            name = "metadataString"
+            type = "String"
+            role = "inputOnly"
+            description = "Metadata source code"
+          },
+        ]
+      },
+    ]
+  }
+  fullName = "fsc_transferMetadata3"
+  lwcResources = {
+    lwcResource = {
+      fsc_transferMetadata3_js@uv = {
+        source = file("salesforce/Records/LightningComponentBundle/fsc_transferMetadata3/fsc_transferMetadata3.js")
+        filePath = "lwc/fsc_transferMetadata3/fsc_transferMetadata3.js"
+      }
+      fsc_transferMetadata3_html@uv = {
+        source = file("salesforce/Records/LightningComponentBundle/fsc_transferMetadata3/fsc_transferMetadata3.html")
+        filePath = "lwc/fsc_transferMetadata3/fsc_transferMetadata3.html"
+      }
+    }
+  }
+  _alias = "fsc_transferMetadata3"
+}

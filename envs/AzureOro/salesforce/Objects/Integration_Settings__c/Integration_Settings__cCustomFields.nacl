@@ -1,0 +1,227 @@
+type salesforce.Integration_Settings__c {
+  salesforce.Text BookmarkKey__c {
+    apiName = "Integration_Settings__c.BookmarkKey__c"
+    externalId = false
+    label = "BookmarkKey"
+    length = 255
+    trackTrending = false
+    unique = false
+    createable = true
+    updateable = true
+    caseSensitive = false
+    queryable = true
+  }
+  salesforce.Number Buffer_days__c {
+    apiName = "Integration_Settings__c.Buffer_days__c"
+    externalId = false
+    label = "Buffer days"
+    precision = 18
+    scale = 0
+    trackTrending = false
+    unique = false
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Text Integration_Process__c {
+    apiName = "Integration_Settings__c.Integration_Process__c"
+    externalId = false
+    label = "Integration Process"
+    length = 255
+    trackTrending = false
+    unique = false
+    createable = true
+    updateable = true
+    caseSensitive = false
+    queryable = true
+  }
+  salesforce.DateTime Integration_Start_Date_Time_2nd_run__c {
+    apiName = "Integration_Settings__c.Integration_Start_Date_Time_2nd_run__c"
+    label = "Integration Start Date/Time 2nd run"
+    trackTrending = false
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.DateTime Integration_Start_Date_Time__c {
+    apiName = "Integration_Settings__c.Integration_Start_Date_Time__c"
+    label = "Integration Start Date/Time"
+    trackTrending = false
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Number Integration_day_of_Month_2__c {
+    apiName = "Integration_Settings__c.Integration_day_of_Month_2__c"
+    externalId = false
+    label = "Integration day of Month 2"
+    precision = 2
+    scale = 0
+    trackTrending = false
+    unique = false
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Number Integration_day_of_Month__c {
+    apiName = "Integration_Settings__c.Integration_day_of_Month__c"
+    externalId = false
+    label = "Integration day of Month"
+    precision = 2
+    scale = 0
+    trackTrending = false
+    unique = false
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Number Integration_day_of_Week_2__c {
+    apiName = "Integration_Settings__c.Integration_day_of_Week_2__c"
+    externalId = false
+    label = "Integration day of Week 2"
+    precision = 2
+    scale = 0
+    trackTrending = false
+    unique = false
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Number Integration_day_of_Week__c {
+    apiName = "Integration_Settings__c.Integration_day_of_Week__c"
+    externalId = false
+    label = "Integration day of Week"
+    precision = 2
+    scale = 0
+    trackTrending = false
+    unique = false
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Number Limit__c {
+    apiName = "Integration_Settings__c.Limit__c"
+    externalId = false
+    label = "Limit"
+    precision = 18
+    scale = 0
+    trackTrending = false
+    unique = false
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Text Log_ID__c {
+    apiName = "Integration_Settings__c.Log_ID__c"
+    externalId = false
+    label = "Log ID"
+    length = 18
+    trackTrending = false
+    unique = false
+    createable = true
+    updateable = true
+    caseSensitive = false
+    queryable = true
+  }
+  salesforce.Text Log_Level__c {
+    apiName = "Integration_Settings__c.Log_Level__c"
+    externalId = false
+    label = "Log Level"
+    length = 255
+    trackTrending = false
+    unique = false
+    createable = true
+    updateable = true
+    caseSensitive = false
+    queryable = true
+  }
+  salesforce.Text Name__c {
+    apiName = "Integration_Settings__c.Name__c"
+    externalId = false
+    label = "Name"
+    length = 255
+    trackTrending = false
+    unique = false
+    createable = true
+    updateable = true
+    caseSensitive = false
+    queryable = true
+  }
+  salesforce.Text Next_Process_Delay__c {
+    apiName = "Integration_Settings__c.Next_Process_Delay__c"
+    externalId = false
+    label = "Next Process Delay"
+    length = 5
+    trackTrending = false
+    unique = false
+    createable = true
+    updateable = true
+    caseSensitive = false
+    queryable = true
+  }
+  salesforce.Text Next_Process__c {
+    apiName = "Integration_Settings__c.Next_Process__c"
+    externalId = false
+    label = "Next Process"
+    length = 255
+    trackTrending = false
+    unique = false
+    createable = true
+    updateable = true
+    caseSensitive = false
+    queryable = true
+  }
+  salesforce.Number Offset__c {
+    apiName = "Integration_Settings__c.Offset__c"
+    externalId = false
+    label = "Offset"
+    precision = 18
+    scale = 0
+    trackTrending = false
+    unique = false
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Number Order__c {
+    apiName = "Integration_Settings__c.Order__c"
+    externalId = false
+    label = "Order"
+    precision = 18
+    scale = 0
+    trackTrending = false
+    unique = false
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Checkbox Repeat__c {
+    apiName = "Integration_Settings__c.Repeat__c"
+    defaultValue = false
+    label = "Repeat"
+    trackTrending = false
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.DateTime Timestamp__c {
+    apiName = "Integration_Settings__c.Timestamp__c"
+    label = "Timestamp"
+    trackTrending = false
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Number Total_Records__c {
+    apiName = "Integration_Settings__c.Total_Records__c"
+    externalId = false
+    label = "Total Records"
+    precision = 18
+    scale = 0
+    trackTrending = false
+    unique = false
+    createable = true
+    updateable = true
+    queryable = true
+  }
+}

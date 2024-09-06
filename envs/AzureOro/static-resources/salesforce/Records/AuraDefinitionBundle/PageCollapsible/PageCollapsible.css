@@ -1,0 +1,23 @@
+.THIS .FlechaContraer
+{
+    /* display: block; */
+}
+.THIS .divFlechaContraer
+{
+    width:28px;
+}
+.THIS .ColumnaFlechas
+{
+    position: fixed;
+    max-width: min-content;
+}
+
+.THIS .scrollHorizontal
+{
+    overflow:auto;
+}
+
+.THIS .anchoMaxPermitido
+{
+    width: 100px;
+}

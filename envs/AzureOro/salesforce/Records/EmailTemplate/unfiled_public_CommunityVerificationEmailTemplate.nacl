@@ -1,0 +1,13 @@
+salesforce.EmailTemplate unfiled_public_CommunityVerificationEmailTemplate@zcd {
+  available = true
+  description = "Mensaje de correo electrónico que reciben los usuarios con sus códigos de verificación."
+  encodingKey = "UTF-8"
+  name = "Experience Cloud: Correo electrónico de contraseña simultánea"
+  style = "none"
+  subject = "Verificar su identidad en {!Community_Name}"
+  type = "text"
+  uiType = "Aloha"
+  fullName = "unfiled$public/CommunityVerificationEmailTemplate"
+  content = file("salesforce/Records/EmailTemplate/unfiled$public/CommunityVerificationEmailTemplate/CommunityVerificationEmailTemplate.email")
+  _alias = "unfiled$public/CommunityVerificationEmailTemplate"
+}

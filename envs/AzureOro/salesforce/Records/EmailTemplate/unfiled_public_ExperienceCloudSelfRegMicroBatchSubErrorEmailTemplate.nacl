@@ -1,0 +1,13 @@
+salesforce.EmailTemplate unfiled_public_ExperienceCloudSelfRegMicroBatchSubErrorEmailTemplate@zcd {
+  available = true
+  description = "Esta plantilla se aplica a las solicitudes de registro automático que se procesan en lotes después del envío de la solicitud. Un usuario recibe este correo electrónico cuando hay un error al procesar su solicitud de registro automático."
+  encodingKey = "UTF-8"
+  name = "Experience Cloud: Correo electrónico de usuario de error de envío de microlote de registro automático"
+  style = "none"
+  subject = "Falló su registro en {!Community_Name}"
+  type = "text"
+  uiType = "Aloha"
+  fullName = "unfiled$public/ExperienceCloudSelfRegMicroBatchSubErrorEmailTemplate"
+  content = file("salesforce/Records/EmailTemplate/unfiled$public/ExperienceCloudSelfRegMicroBatchSubErrorEmailTemplate/ExperienceCloudSelfRegMicroBatchSubErrorEmailTemplate.email")
+  _alias = "unfiled$public/ExperienceCloudSelfRegMicroBatchSubErrorEmailTemplate"
+}

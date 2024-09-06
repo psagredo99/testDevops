@@ -1,0 +1,38 @@
+salesforce.LightningComponentBundle fsc_quickChoiceCpe {
+  apiVersion = 57
+  description = "Quick Choice Cpe"
+  isExposed = true
+  masterLabel = "Quick Choice Cpe"
+  fullName = "fsc_quickChoiceCpe"
+  lwcResources = {
+    lwcResource = {
+      fsc_quickChoiceCpe_css@uv = {
+        source = file("salesforce/Records/LightningComponentBundle/fsc_quickChoiceCpe/fsc_quickChoiceCpe.css")
+        filePath = "lwc/fsc_quickChoiceCpe/fsc_quickChoiceCpe.css"
+      }
+      fsc_quickChoiceCpe_html@uv = {
+        source = file("salesforce/Records/LightningComponentBundle/fsc_quickChoiceCpe/fsc_quickChoiceCpe.html")
+        filePath = "lwc/fsc_quickChoiceCpe/fsc_quickChoiceCpe.html"
+      }
+      fsc_quickChoiceCpe_js@uv = {
+        source = file("salesforce/Records/LightningComponentBundle/fsc_quickChoiceCpe/fsc_quickChoiceCpe.js")
+        filePath = "lwc/fsc_quickChoiceCpe/fsc_quickChoiceCpe.js"
+      }
+    }
+  }
+  _generated_dependencies = [
+    {
+      reference = salesforce.LightningComponentBundle.instance.fsc_flowCheckbox
+    },
+    {
+      reference = salesforce.LightningComponentBundle.instance.fsc_flowCombobox
+    },
+    {
+      reference = salesforce.LightningComponentBundle.instance.fsc_lwcModal
+    },
+    {
+      reference = salesforce.LightningComponentBundle.instance.fsc_pickObjectAndField3
+    },
+  ]
+  _alias = "fsc_quickChoiceCpe"
+}

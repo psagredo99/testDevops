@@ -1,0 +1,15 @@
+salesforce.LightningComponentBundle fsc_lwcLogger {
+  apiVersion = 46
+  isExposed = false
+  attr_fqn = "lwcLogger"
+  fullName = "fsc_lwcLogger"
+  lwcResources = {
+    lwcResource = {
+      fsc_lwcLogger_js@uv = {
+        source = file("salesforce/Records/LightningComponentBundle/fsc_lwcLogger/fsc_lwcLogger.js")
+        filePath = "lwc/fsc_lwcLogger/fsc_lwcLogger.js"
+      }
+    }
+  }
+  _alias = "fsc_lwcLogger"
+}

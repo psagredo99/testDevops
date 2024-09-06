@@ -1,0 +1,35 @@
+type salesforce.RecordType__mdt {
+  salesforce.MetadataRelationship Object__c {
+    apiName = "RecordType__mdt.Object__c"
+    fieldManageability = "DeveloperControlled"
+    label = "Object"
+    referenceTo = [
+      "Integration_Object__mdt",
+    ]
+    relationshipLabel = "RecordTypes"
+    relationshipName = "RecordTypes"
+    unique = false
+  }
+  salesforce.Checkbox Paso_inicial__c {
+    apiName = "RecordType__mdt.Paso_inicial__c"
+    defaultValue = false
+    fieldManageability = "DeveloperControlled"
+    label = "Paso inicial"
+  }
+  salesforce.Text RecordType_Name__c {
+    apiName = "RecordType__mdt.RecordType_Name__c"
+    externalId = false
+    fieldManageability = "DeveloperControlled"
+    label = "RecordType Name"
+    length = 255
+    unique = false
+  }
+  salesforce.Text Value__c {
+    apiName = "RecordType__mdt.Value__c"
+    externalId = false
+    fieldManageability = "DeveloperControlled"
+    label = "Value"
+    length = 50
+    unique = false
+  }
+}

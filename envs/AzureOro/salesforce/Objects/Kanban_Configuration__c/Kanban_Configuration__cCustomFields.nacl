@@ -1,0 +1,123 @@
+type salesforce.Kanban_Configuration__c {
+  salesforce.Text Clausula_WHERE__c {
+    apiName = "Kanban_Configuration__c.Clausula_WHERE__c"
+    externalId = false
+    label = "Clausula WHERE"
+    length = 255
+    trackTrending = false
+    unique = false
+    createable = true
+    updateable = true
+    caseSensitive = false
+    queryable = true
+  }
+  salesforce.Text For_Object__c {
+    apiName = "Kanban_Configuration__c.For_Object__c"
+    externalId = false
+    label = "For Object"
+    length = 255
+    trackTrending = false
+    unique = false
+    createable = true
+    updateable = true
+    caseSensitive = false
+    queryable = true
+  }
+  salesforce.Text KanbanDev_Child_Object__c {
+    apiName = "Kanban_Configuration__c.KanbanDev_Child_Object__c"
+    externalId = false
+    label = "Child Object"
+    length = 255
+    trackTrending = false
+    unique = false
+    createable = true
+    updateable = true
+    caseSensitive = false
+    queryable = true
+  }
+  salesforce.LongTextArea KanbanDev_Exclude_From_Group_By__c {
+    apiName = "Kanban_Configuration__c.KanbanDev_Exclude_From_Group_By__c"
+    label = "Exclude From Group By"
+    length = 131072
+    trackTrending = false
+    visibleLines = 3
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.LongTextArea KanbanDev_Fields_To_Show__c {
+    apiName = "Kanban_Configuration__c.KanbanDev_Fields_To_Show__c"
+    label = "Fields To Show"
+    length = 131071
+    trackTrending = false
+    visibleLines = 3
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Text KanbanDev_Group_By__c {
+    apiName = "Kanban_Configuration__c.KanbanDev_Group_By__c"
+    externalId = false
+    label = "Group By"
+    length = 255
+    trackTrending = false
+    unique = false
+    createable = true
+    updateable = true
+    caseSensitive = false
+    queryable = true
+  }
+  salesforce.Text KanbanDev_Name_Field__c {
+    apiName = "Kanban_Configuration__c.KanbanDev_Name_Field__c"
+    externalId = false
+    label = "Name Field(Do Not Edit)"
+    length = 255
+    trackTrending = false
+    unique = false
+    createable = true
+    updateable = true
+    caseSensitive = false
+    queryable = true
+  }
+  salesforce.Text KanbanDev_Relation_Field__c {
+    apiName = "Kanban_Configuration__c.KanbanDev_Relation_Field__c"
+    externalId = false
+    label = "Relation Field"
+    length = 255
+    trackTrending = false
+    unique = false
+    createable = true
+    updateable = true
+    caseSensitive = false
+    queryable = true
+  }
+  salesforce.Text KanbanDev_Summarize_By__c {
+    apiName = "Kanban_Configuration__c.KanbanDev_Summarize_By__c"
+    externalId = false
+    label = "Summarize By"
+    length = 255
+    trackTrending = false
+    unique = false
+    createable = true
+    updateable = true
+    caseSensitive = false
+    queryable = true
+  }
+  salesforce.Picklist Kanban_For__c {
+    apiName = "Kanban_Configuration__c.Kanban_For__c"
+    label = "Kanban For"
+    trackTrending = false
+    valueSet = [
+      {
+        fullName = "1"
+        default = false
+        label = "1"
+      },
+    ]
+    sorted = false
+    restricted = true
+    createable = true
+    updateable = true
+    queryable = true
+  }
+}

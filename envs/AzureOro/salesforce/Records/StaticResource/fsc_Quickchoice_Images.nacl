@@ -1,0 +1,8 @@
+salesforce.StaticResource fsc_Quickchoice_Images {
+  cacheControl = "Public"
+  contentType = "application/zip"
+  description = "Image files for the fsc_quickChoiceFSC LWC"
+  fullName = "fsc_Quickchoice_Images"
+  content = file("salesforce/Records/StaticResource/fsc_Quickchoice_Images.zip")
+  _alias = "fsc_Quickchoice_Images"
+}

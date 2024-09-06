@@ -1,0 +1,194 @@
+type salesforce.ers_datatableConfig__c {
+  salesforce.Checkbox Active__c {
+    apiName = "ers_datatableConfig__c.Active__c"
+    defaultValue = true
+    deprecated = false
+    label = "Active"
+    trackTrending = false
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Text Alignments__c {
+    apiName = "ers_datatableConfig__c.Alignments__c"
+    deprecated = false
+    externalId = false
+    label = "Alignments"
+    length = 255
+    trackTrending = false
+    unique = false
+    createable = true
+    updateable = true
+    caseSensitive = false
+    queryable = true
+  }
+  salesforce.Text Cell_Attributes__c {
+    apiName = "ers_datatableConfig__c.Cell_Attributes__c"
+    deprecated = false
+    externalId = false
+    label = "Cell Attributes"
+    length = 255
+    trackTrending = false
+    unique = false
+    createable = true
+    updateable = true
+    caseSensitive = false
+    queryable = true
+  }
+  salesforce.Text Edits__c {
+    apiName = "ers_datatableConfig__c.Edits__c"
+    deprecated = false
+    externalId = false
+    label = "Edits"
+    length = 255
+    trackTrending = false
+    unique = false
+    createable = true
+    updateable = true
+    caseSensitive = false
+    queryable = true
+  }
+  salesforce.Text Field_API_Names__c {
+    apiName = "ers_datatableConfig__c.Field_API_Names__c"
+    deprecated = false
+    externalId = false
+    label = "Field API Names"
+    length = 255
+    _required = true
+    trackTrending = false
+    unique = false
+    createable = true
+    updateable = true
+    caseSensitive = false
+    queryable = true
+  }
+  salesforce.Text Filters__c {
+    apiName = "ers_datatableConfig__c.Filters__c"
+    deprecated = false
+    externalId = false
+    label = "Filters"
+    length = 255
+    trackTrending = false
+    unique = false
+    createable = true
+    updateable = true
+    caseSensitive = false
+    queryable = true
+  }
+  salesforce.Text Icons__c {
+    apiName = "ers_datatableConfig__c.Icons__c"
+    deprecated = false
+    externalId = false
+    label = "Icons"
+    length = 255
+    trackTrending = false
+    unique = false
+    createable = true
+    updateable = true
+    caseSensitive = false
+    queryable = true
+  }
+  salesforce.Text Labels__c {
+    apiName = "ers_datatableConfig__c.Labels__c"
+    deprecated = false
+    externalId = false
+    label = "Labels"
+    length = 255
+    trackTrending = false
+    unique = false
+    createable = true
+    updateable = true
+    caseSensitive = false
+    queryable = true
+  }
+  salesforce.Text Object_API_Name__c {
+    apiName = "ers_datatableConfig__c.Object_API_Name__c"
+    deprecated = false
+    externalId = false
+    label = "Object API Name"
+    length = 120
+    _required = true
+    trackTrending = false
+    unique = false
+    createable = true
+    updateable = true
+    caseSensitive = false
+    queryable = true
+  }
+  salesforce.Text Other_Attributes__c {
+    apiName = "ers_datatableConfig__c.Other_Attributes__c"
+    deprecated = false
+    externalId = false
+    label = "Other Attributes"
+    length = 255
+    trackTrending = false
+    unique = false
+    createable = true
+    updateable = true
+    caseSensitive = false
+    queryable = true
+  }
+  salesforce.Picklist Selection_Method__c {
+    apiName = "ers_datatableConfig__c.Selection_Method__c"
+    deprecated = false
+    label = "Selection Method"
+    _required = true
+    trackTrending = false
+    valueSet = [
+      {
+        fullName = "Pick"
+        default = true
+        label = "Pick"
+      },
+      {
+        fullName = "Type"
+        default = false
+        label = "Type"
+      },
+    ]
+    sorted = false
+    restricted = true
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Text Type_Attributes__c {
+    apiName = "ers_datatableConfig__c.Type_Attributes__c"
+    deprecated = false
+    externalId = false
+    label = "Type Attributes"
+    length = 255
+    trackTrending = false
+    unique = false
+    createable = true
+    updateable = true
+    caseSensitive = false
+    queryable = true
+  }
+  salesforce.Text Widths__c {
+    apiName = "ers_datatableConfig__c.Widths__c"
+    deprecated = false
+    externalId = false
+    label = "Widths"
+    length = 255
+    trackTrending = false
+    unique = false
+    createable = true
+    updateable = true
+    caseSensitive = false
+    queryable = true
+  }
+  salesforce.Text Wraps__c {
+    apiName = "ers_datatableConfig__c.Wraps__c"
+    deprecated = false
+    externalId = false
+    label = "Wraps"
+    length = 255
+    trackTrending = false
+    unique = false
+    createable = true
+    updateable = true
+    caseSensitive = false
+    queryable = true
+  }
+}

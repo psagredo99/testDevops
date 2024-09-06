@@ -1,0 +1,29 @@
+salesforce.LightningPage Sales_Operations_UtilityBar {
+  flexiPageRegions = [
+    {
+      itemInstances = [
+        {
+          componentInstance = {
+            componentName = "notes:utilityBarNoteList"
+            identifier = "notes_utilityBarNoteList"
+          }
+        },
+        {
+          componentInstance = {
+            componentName = "console:history"
+            identifier = "console_history"
+          }
+        },
+      ]
+      name = "utilityItems"
+      type = "Region"
+    },
+  ]
+  masterLabel = "Sales Operations UtilityBar"
+  template = {
+    name = "one:utilityBarTemplateDesktop"
+  }
+  type = "UtilityBar"
+  fullName = "Sales_Operations_UtilityBar"
+  _alias = "Sales_Operations_UtilityBar"
+}

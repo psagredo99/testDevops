@@ -1,0 +1,13 @@
+salesforce.AuraDefinitionBundle PageCollapsible {
+  apiVersion = 57
+  description = "Cambiar configuración de página para hacer más amplia la sección izquierda"
+  fullName = "PageCollapsible"
+  type = "Component"
+  SVGContent = file("salesforce/Records/AuraDefinitionBundle/PageCollapsible/PageCollapsible.svg")
+  designContent = file("salesforce/Records/AuraDefinitionBundle/PageCollapsible/PageCollapsible.design")
+  styleContent = file("salesforce/Records/AuraDefinitionBundle/PageCollapsible/PageCollapsible.css")
+  helperContent = file("salesforce/Records/AuraDefinitionBundle/PageCollapsible/PageCollapsibleHelper.js")
+  controllerContent = file("salesforce/Records/AuraDefinitionBundle/PageCollapsible/PageCollapsibleController.js")
+  markup = file("salesforce/Records/AuraDefinitionBundle/PageCollapsible/PageCollapsible.cmp")
+  _alias = "PageCollapsible"
+}

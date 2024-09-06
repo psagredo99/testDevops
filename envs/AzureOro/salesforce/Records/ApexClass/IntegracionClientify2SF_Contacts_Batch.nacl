@@ -1,0 +1,51 @@
+salesforce.ApexClass IntegracionClientify2SF_Contacts_Batch {
+  apiVersion = 57
+  status = "Active"
+  fullName = "IntegracionClientify2SF_Contacts_Batch"
+  content = file("salesforce/Records/ApexClass/IntegracionClientify2SF_Contacts_Batch.cls")
+  _generated_dependencies = [
+    {
+      reference = salesforce.Activity.field.Id_Clientify__c
+    },
+    {
+      reference = salesforce.ApexClass.instance.Clientify2SF
+    },
+    {
+      reference = salesforce.Clienti_Settings__c
+    },
+    {
+      reference = salesforce.Contact
+    },
+    {
+      reference = salesforce.Contact.field.ID_Contacto_Clientify__c
+    },
+    {
+      reference = salesforce.EmailMessage
+    },
+    {
+      reference = salesforce.EmailMessage.field.Candidato__c
+    },
+    {
+      reference = salesforce.EmailMessage.field.Id_Clientify__c
+    },
+    {
+      reference = salesforce.Event
+    },
+    {
+      reference = salesforce.Lead
+    },
+    {
+      reference = salesforce.Lead.field.ID_Contacto_Clientify__c
+    },
+    {
+      reference = salesforce.Lead.field.Integrado_Clientify__c
+    },
+    {
+      reference = salesforce.Log__c
+    },
+    {
+      reference = salesforce.Task
+    },
+  ]
+  _alias = "IntegracionClientify2SF_Contacts_Batch"
+}

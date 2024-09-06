@@ -1,0 +1,53 @@
+salesforce.LightningComponentBundle fsc_formulaBuilder3 {
+  apiVersion = 46
+  isExposed = true
+  masterLabel = "FormulaBuilder"
+  targets = {
+    target = [
+      "lightning__AppPage",
+      "lightning__RecordPage",
+      "lightning__HomePage",
+      "lightning__FlowScreen",
+    ]
+  }
+  targetConfigs = {
+    targetConfig = [
+      {
+        targets = "lightning__FlowScreen"
+        property = [
+          {
+            name = "formulaString"
+            type = "String"
+          },
+          {
+            name = "contextObjectType"
+            type = "String"
+          },
+          {
+            name = "supportedSystemTypes"
+            type = "String"
+          },
+        ]
+      },
+    ]
+  }
+  attr_fqn = "formulaBuilder"
+  fullName = "fsc_formulaBuilder3"
+  lwcResources = {
+    lwcResource = {
+      fsc_formulaBuilder3_js@uv = {
+        source = file("salesforce/Records/LightningComponentBundle/fsc_formulaBuilder3/fsc_formulaBuilder3.js")
+        filePath = "lwc/fsc_formulaBuilder3/fsc_formulaBuilder3.js"
+      }
+      fsc_formulaBuilder3_html@uv = {
+        source = file("salesforce/Records/LightningComponentBundle/fsc_formulaBuilder3/fsc_formulaBuilder3.html")
+        filePath = "lwc/fsc_formulaBuilder3/fsc_formulaBuilder3.html"
+      }
+      fsc_formulaBuilder3_css@uv = {
+        source = file("salesforce/Records/LightningComponentBundle/fsc_formulaBuilder3/fsc_formulaBuilder3.css")
+        filePath = "lwc/fsc_formulaBuilder3/fsc_formulaBuilder3.css"
+      }
+    }
+  }
+  _alias = "fsc_formulaBuilder3"
+}

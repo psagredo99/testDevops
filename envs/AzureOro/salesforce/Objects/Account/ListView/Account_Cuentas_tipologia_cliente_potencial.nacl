@@ -1,0 +1,25 @@
+salesforce.ListView Account_Cuentas_tipologia_cliente_potencial {
+  fullName = "Account.Cuentas_tipologia_cliente_potencial"
+  columns = [
+    "ACCOUNT.NAME",
+    salesforce.Account.field.Alias_FX__c,
+    salesforce.Account.field.Ubicacion__c,
+    "ACCOUNT.URL",
+    "ACCOUNT.PHONE1",
+    "ACCOUNT.RECORDTYPE",
+    salesforce.Account.field.Situacion_cliente__c,
+  ]
+  filterScope = "Everything"
+  filters = [
+    {
+      field = "ACCOUNT.RECORDTYPE"
+      operation = "equals"
+      value = "Account.Cuenta_Potencial"
+    },
+  ]
+  label = "Cuentas tipología cliente potencial"
+  _parent = [
+    salesforce.Account,
+  ]
+  _alias = "Cuentas tipología cliente potencial"
+}

@@ -1,0 +1,85 @@
+type salesforce.ScorecardAssociation {
+  salesforce.MasterDetail ScorecardId {
+    apiName = "ScorecardAssociation.ScorecardId"
+    relationshipName = "Scorecard"
+    _required = true
+    label = "Tarjeta de puntuación ID"
+    createable = true
+    updateable = false
+    queryable = true
+  }
+  salesforce.Lookup TargetEntityId {
+    apiName = "ScorecardAssociation.TargetEntityId"
+    relationshipName = "TargetEntity"
+    _required = true
+    label = "Target Entity ID"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  serviceid Id {
+    apiName = "ScorecardAssociation.Id"
+    label = "Id. de Asociación de tarjeta de puntuación"
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Checkbox IsDeleted {
+    apiName = "ScorecardAssociation.IsDeleted"
+    defaultValue = false
+    label = "Eliminado"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.AutoNumber Name {
+    apiName = "ScorecardAssociation.Name"
+    label = "Nombre"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime CreatedDate {
+    apiName = "ScorecardAssociation.CreatedDate"
+    label = "Fecha de creación"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup CreatedById {
+    apiName = "ScorecardAssociation.CreatedById"
+    relationshipName = "CreatedBy"
+    label = "Creado por el Id."
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime LastModifiedDate {
+    apiName = "ScorecardAssociation.LastModifiedDate"
+    label = "Fecha de la última modificación"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup LastModifiedById {
+    apiName = "ScorecardAssociation.LastModifiedById"
+    relationshipName = "LastModifiedBy"
+    label = "Última modificación realizada por el Id."
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime SystemModstamp {
+    apiName = "ScorecardAssociation.SystemModstamp"
+    label = "Modstamp del sistema"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+}

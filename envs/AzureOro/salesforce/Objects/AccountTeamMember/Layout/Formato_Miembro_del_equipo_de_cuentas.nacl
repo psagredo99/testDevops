@@ -1,0 +1,67 @@
+salesforce.Layout AccountTeamMember_Formato_Miembro_del_equipo_de_cuentas@bsssss {
+  layoutSections = [
+    {
+      customLabel = false
+      detailHeading = false
+      editHeading = false
+      label = "Information"
+      layoutColumns = [
+        {
+          layoutItems = [
+            {
+              behavior = "Required"
+              field = salesforce.AccountTeamMember.field.AccountId
+            },
+            {
+              behavior = "Required"
+              field = salesforce.AccountTeamMember.field.TeamMemberRole
+            },
+            {
+              behavior = "Required"
+              field = salesforce.AccountTeamMember.field.OpportunityAccessLevel
+            },
+            {
+              behavior = "Required"
+              field = salesforce.AccountTeamMember.field.ContactAccessLevel
+            },
+          ]
+        },
+        {
+          layoutItems = [
+            {
+              behavior = "Required"
+              field = salesforce.AccountTeamMember.field.UserId
+            },
+            {
+              behavior = "Required"
+              field = salesforce.AccountTeamMember.field.AccountAccessLevel
+            },
+            {
+              behavior = "Required"
+              field = salesforce.AccountTeamMember.field.CaseAccessLevel
+            },
+          ]
+        },
+      ]
+      style = "TwoColumnsLeftToRight"
+    },
+    {
+      customLabel = false
+      detailHeading = false
+      editHeading = false
+      layoutColumns = [
+        {
+        },
+      ]
+      style = "CustomLinks"
+    },
+  ]
+  showEmailCheckbox = false
+  showRunAssignmentRulesCheckbox = false
+  showSubmitAndAttachButton = false
+  fullName = "AccountTeamMember-Formato Miembro del equipo de cuentas"
+  _parent = [
+    salesforce.AccountTeamMember,
+  ]
+  _alias = "AccountTeamMember-Formato Miembro del equipo de cuentas"
+}

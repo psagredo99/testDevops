@@ -1,0 +1,4 @@
+salesforce.ManagedTopics postventa {
+  fullName = "postventa"
+  _alias = "postventa"
+}

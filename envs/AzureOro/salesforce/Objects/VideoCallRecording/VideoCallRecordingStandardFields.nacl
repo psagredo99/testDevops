@@ -1,0 +1,155 @@
+type salesforce.VideoCallRecording {
+  serviceid Id {
+    apiName = "VideoCallRecording.Id"
+    label = "Id. de Grabación de llamada de vídeo"
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Checkbox IsDeleted {
+    apiName = "VideoCallRecording.IsDeleted"
+    defaultValue = false
+    label = "Eliminado"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Text Name {
+    apiName = "VideoCallRecording.Name"
+    length = 255
+    label = "Nombre"
+    createable = false
+    updateable = false
+    unique = false
+    caseSensitive = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime CreatedDate {
+    apiName = "VideoCallRecording.CreatedDate"
+    label = "Fecha de creación"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup CreatedById {
+    apiName = "VideoCallRecording.CreatedById"
+    relationshipName = "CreatedBy"
+    label = "Creado por el Id."
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime LastModifiedDate {
+    apiName = "VideoCallRecording.LastModifiedDate"
+    label = "Fecha de la última modificación"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup LastModifiedById {
+    apiName = "VideoCallRecording.LastModifiedById"
+    relationshipName = "LastModifiedBy"
+    label = "Última modificación realizada por el Id."
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime SystemModstamp {
+    apiName = "VideoCallRecording.SystemModstamp"
+    label = "Modstamp del sistema"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup VideoCallRecordId {
+    apiName = "VideoCallRecording.VideoCallRecordId"
+    relationshipName = "VideoCallRecord"
+    _required = true
+    label = "Id. de Llamada de vídeo"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Text ExternalRecordingKey {
+    apiName = "VideoCallRecording.ExternalRecordingKey"
+    length = 255
+    label = "Clave de grabación externa"
+    createable = false
+    updateable = false
+    unique = true
+    caseSensitive = true
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime StartDateTime {
+    apiName = "VideoCallRecording.StartDateTime"
+    label = "Grabación de llamada de vídeo iniciada"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime EndDateTime {
+    apiName = "VideoCallRecording.EndDateTime"
+    label = "Grabación de llamada de vídeo finalizada"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Number DurationInSeconds {
+    apiName = "VideoCallRecording.DurationInSeconds"
+    label = "Duración de grabación"
+    precision = 8
+    createable = false
+    updateable = false
+    scale = 0
+    unique = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Unknown FileSizeInByte {
+    apiName = "VideoCallRecording.FileSizeInByte"
+    label = "Tamaño de archivo en bytes"
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Text FileType {
+    apiName = "VideoCallRecording.FileType"
+    length = 255
+    _required = true
+    label = "Tipo de archivo"
+    createable = false
+    updateable = false
+    unique = false
+    caseSensitive = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime ExpirationDateTime {
+    apiName = "VideoCallRecording.ExpirationDateTime"
+    label = "Fecha/Hora de caducidad"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Text ExternalRecordingKeyLong {
+    apiName = "VideoCallRecording.ExternalRecordingKeyLong"
+    length = 1000
+    label = "Clave de grabación externa para valores largos"
+    createable = false
+    updateable = false
+    unique = false
+    caseSensitive = false
+    queryable = true
+    _hidden_value = true
+  }
+}

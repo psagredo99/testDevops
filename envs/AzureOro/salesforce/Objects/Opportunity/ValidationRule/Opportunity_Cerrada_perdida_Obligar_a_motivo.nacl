@@ -1,0 +1,18 @@
+salesforce.ValidationRule Opportunity_Cerrada_perdida_Obligar_a_motivo {
+  fullName = "Opportunity.Cerrada_perdida_Obligar_a_motivo"
+  active = false
+  errorConditionFormula = '''
+AND (
+ISCHANGED(StageName),
+ISPICKVAL(StageName, 'Cerrada perdida'),
+IsClosed ,
+NOT(IsWon),
+ISPICKVAL( Loss_Reason__c,"")
+)
+'''
+  errorMessage = "Es necesario añadir el motivo de pérdida para poder darla como perdida."
+  _parent = [
+    salesforce.Opportunity,
+  ]
+  _alias = "Opportunity.Cerrada_perdida_Obligar_a_motivo"
+}

@@ -1,0 +1,34 @@
+salesforce.ValidationRule Opportunity_Incluir_servicios_antes_de_cambiar_etapa {
+  fullName = "Opportunity.Incluir_servicios_antes_de_cambiar_etapa"
+  active = true
+  description = "Es necesario que cuando se quiere ir a la fase de oferta o se gane los servicios de la oportunidad tienen que estar añadidos."
+  errorConditionFormula = '''
+OR(
+   AND(
+       ISCHANGED(StageName),
+       OR(
+          ISPICKVAL(StageName, 'Ofertada'),
+          ISPICKVAL(StageName, 'Cerrada ganada')),
+       Servicios_a_adidos_en_la_oportunidad__c = 0
+   ),
+   AND(
+       ISNEW(),
+       OR(
+          ISPICKVAL(StageName, 'Ofertada'),
+          ISPICKVAL(StageName, 'Cerrada ganada')
+       )
+
+   )
+)
+'''
+  errorMessage = "Antes de poner la etapa como ofertada o cerrada ganada es necesario que se añadan los servicios vinculados a la oportunidad."
+  _parent = [
+    salesforce.Opportunity,
+  ]
+  _generated_dependencies = [
+    {
+      reference = salesforce.Opportunity.field.Servicios_a_adidos_en_la_oportunidad__c
+    },
+  ]
+  _alias = "Opportunity.Incluir_servicios_antes_de_cambiar_etapa"
+}

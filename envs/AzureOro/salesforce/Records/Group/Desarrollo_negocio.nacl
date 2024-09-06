@@ -1,0 +1,6 @@
+salesforce.Group Desarrollo_negocio {
+  fullName = "Desarrollo_negocio"
+  doesIncludeBosses = true
+  name = "Desarrollo negocio"
+  _alias = "Desarrollo_negocio"
+}

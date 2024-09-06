@@ -1,0 +1,9 @@
+salesforce.CustomTab Empleado__c {
+  fullName = "Empleado__c"
+  customObject = true
+  motif = "Custom15: People"
+  _parent = [
+    salesforce.Empleado__c,
+  ]
+  _alias = "Empleado__c"
+}

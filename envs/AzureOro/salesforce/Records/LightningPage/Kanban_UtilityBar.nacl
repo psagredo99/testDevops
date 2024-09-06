@@ -1,0 +1,23 @@
+salesforce.LightningPage Kanban_UtilityBar {
+  flexiPageRegions = [
+    {
+      name = "utilityItems"
+      type = "Region"
+    },
+    {
+      name = "backgroundComponents"
+      type = "Background"
+    },
+  ]
+  masterLabel = "Kanban UtilityBar"
+  template = {
+    name = "one:utilityBarTemplateDesktop"
+    properties = {
+      name = "isLeftAligned"
+      value = "true"
+    }
+  }
+  type = "UtilityBar"
+  fullName = "Kanban_UtilityBar"
+  _alias = "Kanban_UtilityBar"
+}

@@ -1,0 +1,5 @@
+salesforce.MeetingsSettings {
+  fullName = "Meetings"
+  enableZoomVideoConference = "false"
+  _alias = "Meetings"
+}

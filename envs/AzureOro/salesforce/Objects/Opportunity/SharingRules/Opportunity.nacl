@@ -1,0 +1,20 @@
+salesforce.SharingRules Opportunity {
+  sharingOwnerRules = [
+    {
+      fullName = "Socios_y_subordinados"
+      accessLevel = "Read"
+      label = "Socios y subordinados"
+      sharedTo = {
+        roleAndSubordinates = salesforce.Role.instance.Socio
+      }
+      sharedFrom = {
+        roleAndSubordinates = salesforce.Role.instance.Socio
+      }
+    },
+  ]
+  fullName = "Opportunity"
+  _parent = [
+    salesforce.Opportunity,
+  ]
+  _alias = "Opportunity"
+}

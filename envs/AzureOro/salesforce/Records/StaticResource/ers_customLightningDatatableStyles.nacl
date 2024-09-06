@@ -1,0 +1,8 @@
+salesforce.StaticResource ers_customLightningDatatableStyles {
+  cacheControl = "Public"
+  contentType = "text/css"
+  description = "ers_customLightningDatatableStyles"
+  fullName = "ers_customLightningDatatableStyles"
+  content = file("salesforce/Records/StaticResource/ers_customLightningDatatableStyles.css")
+  _alias = "ers_customLightningDatatableStyles"
+}

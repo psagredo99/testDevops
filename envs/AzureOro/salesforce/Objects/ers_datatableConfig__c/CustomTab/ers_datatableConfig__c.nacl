@@ -1,0 +1,10 @@
+salesforce.CustomTab ers_datatableConfig__c {
+  fullName = "ers_datatableConfig__c"
+  customObject = true
+  description = "Store attributes for the Column Wizard Flow that is part of the Datatable CPE"
+  motif = "Custom62: Chalkboard"
+  _parent = [
+    salesforce.ers_datatableConfig__c,
+  ]
+  _alias = "ers_datatableConfig__c"
+}

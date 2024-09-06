@@ -1,0 +1,15 @@
+salesforce.ApexTrigger AccountTrigger {
+  apiVersion = 58
+  status = "Active"
+  fullName = "AccountTrigger"
+  content = file("salesforce/Records/ApexTrigger/AccountTrigger.trigger")
+  _generated_dependencies = [
+    {
+      reference = salesforce.Account
+    },
+    {
+      reference = salesforce.ApexClass.instance.AccountUtil
+    },
+  ]
+  _alias = "AccountTrigger"
+}

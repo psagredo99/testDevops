@@ -1,0 +1,5 @@
+salesforce.EmailTemplateSettings {
+  fullName = "EmailTemplate"
+  enableTemplateEnhancedFolderPref = true
+  _alias = "EmailTemplate"
+}

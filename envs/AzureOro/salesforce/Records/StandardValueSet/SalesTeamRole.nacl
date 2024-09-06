@@ -1,0 +1,22 @@
+salesforce.StandardValueSet SalesTeamRole {
+  fullName = "SalesTeamRole"
+  sorted = false
+  standardValue = [
+    {
+      fullName = "Desarrollo negocio"
+      default = false
+      label = "Desarrollo negocio"
+    },
+    {
+      fullName = "Socio"
+      default = false
+      label = "Socio"
+    },
+    {
+      fullName = "DCM"
+      default = false
+      label = "DCM"
+    },
+  ]
+  _alias = "SalesTeamRole"
+}

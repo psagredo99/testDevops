@@ -1,0 +1,38 @@
+salesforce.ModerationRule postventa_Flag_banned@vu {
+  fullName = "postventa.Flag_banned"
+  action = "Flag"
+  active = false
+  description = "Community moderators review posts and comments containing banned keywords"
+  entitiesAndFields = [
+    {
+      entityName = "FeedComment"
+      fieldName = "RawCommentBody"
+      keywordList = "postventa.Banned"
+    },
+    {
+      entityName = "FeedItem"
+      fieldName = "LinkUrl"
+      keywordList = "postventa.Banned"
+    },
+    {
+      entityName = "FeedItem"
+      fieldName = "RawBody"
+      keywordList = "postventa.Banned"
+    },
+    {
+      entityName = "FeedItem"
+      fieldName = "Title"
+      keywordList = "postventa.Banned"
+    },
+    {
+      entityName = "FeedPollChoice"
+      fieldName = "ChoiceBody"
+      keywordList = "postventa.Banned"
+    },
+  ]
+  masterLabel = "Flag posts or comments containing banned keywords"
+  type = "Content"
+  userCriteria = "postventa.Customer_Members"
+  userMessage = "You can't use %BLOCKED_KEYWORD% or other inappropriate words in this community. Review your content and try again."
+  _alias = "postventa.Flag_banned"
+}

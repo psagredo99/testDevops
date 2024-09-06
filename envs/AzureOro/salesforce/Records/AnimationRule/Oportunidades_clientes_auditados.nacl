@@ -1,0 +1,13 @@
+salesforce.AnimationRule Oportunidades_clientes_auditados {
+  fullName = "Oportunidades_clientes_auditados"
+  animationFrequency = "often"
+  developerName = "Oportunidades_clientes_auditados"
+  isActive = true
+  masterLabel = "Oportunidades clientes auditados"
+  recordTypeContext = "Custom"
+  recordTypeName = salesforce.RecordType.instance.Opportunity_Oportunidades_clientes_auditados
+  sobjectType = salesforce.Opportunity
+  targetField = salesforce.Opportunity.field.StageName
+  targetFieldChangeToValues = "Cerrada ganada"
+  _alias = "Oportunidades_clientes_auditados"
+}

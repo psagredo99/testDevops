@@ -1,0 +1,19 @@
+salesforce.StandardValueSet TaskStatus {
+  fullName = "TaskStatus"
+  sorted = false
+  standardValue = [
+    {
+      fullName = "Open"
+      default = true
+      label = "Pendiente"
+      closed = false
+    },
+    {
+      fullName = "Completed"
+      default = false
+      label = "Completada"
+      closed = true
+    },
+  ]
+  _alias = "TaskStatus"
+}

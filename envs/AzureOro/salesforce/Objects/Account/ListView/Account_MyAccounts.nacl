@@ -1,0 +1,18 @@
+salesforce.ListView Account_MyAccounts {
+  fullName = "Account.MyAccounts"
+  columns = [
+    "ACCOUNT.NAME",
+    "ACCOUNT.ADDRESS2_STREET",
+    "ACCOUNT.ADDRESS2_CITY",
+    "ACCOUNT.ADDRESS2_STATE",
+    "ACCOUNT.ADDRESS2_COUNTRY",
+    "ACCOUNT.ADDRESS2_ZIP",
+    "ACCOUNT.PHONE1",
+  ]
+  filterScope = "Mine"
+  label = "Cuentas creadas por mi"
+  _parent = [
+    salesforce.Account,
+  ]
+  _alias = "Cuentas creadas por mi"
+}

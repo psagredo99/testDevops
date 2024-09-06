@@ -1,0 +1,6 @@
+salesforce.Group Socios {
+  fullName = "Socios"
+  doesIncludeBosses = true
+  name = "Socios"
+  _alias = "Socios"
+}

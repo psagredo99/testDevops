@@ -1,0 +1,35 @@
+salesforce.SharingRules Campaign {
+  sharingOwnerRules = [
+    {
+      fullName = "Colaborar_con_DCM"
+      accessLevel = "Edit"
+      label = "Colaborar con DCM"
+      sharedTo = {
+        role = [
+          salesforce.Role.instance.Capital_Markets,
+        ]
+      }
+      sharedFrom = {
+        roleAndSubordinates = salesforce.Role.instance.Capital_Markets
+      }
+    },
+    {
+      fullName = "Colaborar_con_Socios"
+      accessLevel = "Edit"
+      label = "Colaborar con Socios"
+      sharedTo = {
+        role = [
+          salesforce.Role.instance.Socio,
+        ]
+      }
+      sharedFrom = {
+        roleAndSubordinates = salesforce.Role.instance.Socio
+      }
+    },
+  ]
+  fullName = "Campaign"
+  _parent = [
+    salesforce.Campaign,
+  ]
+  _alias = "Campaign"
+}

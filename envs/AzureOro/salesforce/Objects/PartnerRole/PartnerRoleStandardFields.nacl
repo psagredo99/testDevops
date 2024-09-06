@@ -1,0 +1,94 @@
+type salesforce.PartnerRole {
+  salesforce.Picklist ReverseRole {
+    apiName = "PartnerRole.ReverseRole"
+    restricted = false
+    label = "Función complementaria"
+    createable = false
+    updateable = false
+    queryable = true
+    valueSetName = salesforce.StandardValueSet.instance.PartnerRole
+    _hidden_value = true
+  }
+  serviceid Id {
+    apiName = "PartnerRole.Id"
+    label = "Id. del valor de la función del socio"
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Text MasterLabel {
+    apiName = "PartnerRole.MasterLabel"
+    length = 255
+    label = "Etiqueta principal"
+    createable = false
+    updateable = false
+    unique = false
+    caseSensitive = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Text ApiName {
+    apiName = "PartnerRole.ApiName"
+    length = 255
+    _required = true
+    label = "Nombre de la API"
+    createable = false
+    updateable = false
+    unique = false
+    caseSensitive = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Number SortOrder {
+    apiName = "PartnerRole.SortOrder"
+    label = "Orden de clasificación"
+    precision = 9
+    createable = false
+    updateable = false
+    scale = 0
+    unique = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup CreatedById {
+    apiName = "PartnerRole.CreatedById"
+    relationshipName = "CreatedBy"
+    label = "Creado por el Id."
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime CreatedDate {
+    apiName = "PartnerRole.CreatedDate"
+    label = "Fecha de creación"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup LastModifiedById {
+    apiName = "PartnerRole.LastModifiedById"
+    relationshipName = "LastModifiedBy"
+    label = "Última modificación realizada por el Id."
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime LastModifiedDate {
+    apiName = "PartnerRole.LastModifiedDate"
+    label = "Fecha de la última modificación"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime SystemModstamp {
+    apiName = "PartnerRole.SystemModstamp"
+    label = "Modstamp del sistema"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+}

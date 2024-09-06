@@ -1,0 +1,8 @@
+salesforce.AuraDefinitionBundle custom_event {
+  apiVersion = 53
+  description = "DESCRIPTION"
+  fullName = "custom_event"
+  type = "Event"
+  markup = file("salesforce/Records/AuraDefinitionBundle/custom_event/custom_event.evt")
+  _alias = "custom_event"
+}

@@ -1,0 +1,30 @@
+salesforce.Organization {
+  Address = {
+    country = "ES"
+  }
+  PrimaryContact = "Jon Souto"
+  DefaultLocaleSidKey = "es_ES"
+  TimeZoneSidKey = "Europe/Paris"
+  LanguageLocaleKey = "es"
+  ReceivesInfoEmails = false
+  ReceivesAdminInfoEmails = true
+  PreferencesRequireOpportunityProducts = false
+  PreferencesEmailSenderIdCompliance = true
+  PreferencesConsentManagementEnabled = false
+  PreferencesAutoSelectIndividualOnMerge = false
+  PreferencesLightningLoginEnabled = true
+  PreferencesOnlyLLPermUserAllowed = false
+  FiscalYearStartMonth = 1
+  UsesStartDateAsFiscalYearName = false
+  DefaultAccountAccess = "None"
+  DefaultContactAccess = "ControlledByParent"
+  DefaultOpportunityAccess = "None"
+  DefaultLeadAccess = "ReadEditTransfer"
+  DefaultCaseAccess = "None"
+  DefaultCalendarAccess = "HideDetailsInsert"
+  DefaultPricebookAccess = "ReadSelect"
+  DefaultCampaignAccess = "All"
+  UiSkin = "Theme3"
+  SignupCountryIsoCode = "ES"
+  IsReadOnly = false
+}

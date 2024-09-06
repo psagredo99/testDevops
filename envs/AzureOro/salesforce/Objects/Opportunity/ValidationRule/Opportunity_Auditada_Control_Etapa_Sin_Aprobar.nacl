@@ -1,0 +1,26 @@
+salesforce.ValidationRule Opportunity_Auditada_Control_Etapa_Sin_Aprobar {
+  fullName = "Opportunity.Auditada_Control_Etapa_Sin_Aprobar"
+  active = true
+  description = "Si no se aprueba la gestión por parte de secretaría técnica no se puede avanzar en el proceso, solo posponer o cerrar perdida."
+  errorConditionFormula = '''
+AND(
+ ISCHANGED(StageName),
+OR(
+   TEXT(StageName)= 'Ofertada',
+   TEXT(StageName)= 'Cerrada ganada'),
+ RecordType.Name = 'Oportunidades clientes auditados',
+ TEXT(Estado_proceso_aprobacion__c)!= 'Aprobado'
+)
+'''
+  errorDisplayField = salesforce.Opportunity.field.StageName
+  errorMessage = "No puede continuar el proceso de negocio si no está aprobada por el equipo de auditoría por lo que no se permite el cambio de etapa a ofertada ni a cerrada ganada."
+  _parent = [
+    salesforce.Opportunity,
+  ]
+  _generated_dependencies = [
+    {
+      reference = salesforce.Opportunity.field.Estado_proceso_aprobacion__c
+    },
+  ]
+  _alias = "Opportunity.Auditada_Control_Etapa_Sin_Aprobar"
+}

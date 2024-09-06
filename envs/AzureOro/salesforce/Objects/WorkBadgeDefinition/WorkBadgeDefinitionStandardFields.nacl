@@ -1,0 +1,164 @@
+type salesforce.WorkBadgeDefinition {
+  salesforce.LongTextArea Description {
+    apiName = "WorkBadgeDefinition.Description"
+    length = 4000
+    label = "Descripción"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Number GivenBadgeCount {
+    apiName = "WorkBadgeDefinition.GivenBadgeCount"
+    label = "Recuento de insignias otorgado"
+    precision = 9
+    createable = false
+    updateable = false
+    scale = 0
+    unique = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Url ImageUrl {
+    apiName = "WorkBadgeDefinition.ImageUrl"
+    _required = true
+    label = "URL de la imagen"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Checkbox IsActive {
+    apiName = "WorkBadgeDefinition.IsActive"
+    defaultValue = false
+    label = "Activa"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Checkbox IsCompanyWide {
+    apiName = "WorkBadgeDefinition.IsCompanyWide"
+    defaultValue = false
+    label = "Insignia de la empresa"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Checkbox IsLimitPerUser {
+    apiName = "WorkBadgeDefinition.IsLimitPerUser"
+    defaultValue = false
+    label = "Límite por usuario"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Number LimitNumber {
+    apiName = "WorkBadgeDefinition.LimitNumber"
+    label = "Número límite"
+    precision = 9
+    createable = true
+    updateable = true
+    scale = 0
+    unique = false
+    queryable = true
+  }
+  salesforce.Date LimitStartDate {
+    apiName = "WorkBadgeDefinition.LimitStartDate"
+    label = "Fecha de inicio de límite"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Text Name {
+    apiName = "WorkBadgeDefinition.Name"
+    length = 255
+    _required = true
+    label = "Nombre de insignia"
+    createable = true
+    updateable = true
+    unique = false
+    caseSensitive = false
+    queryable = true
+  }
+  salesforce.Lookup OwnerId {
+    apiName = "WorkBadgeDefinition.OwnerId"
+    relationshipName = "Owner"
+    label = "Id. del propietario"
+    createable = true
+    updateable = true
+    queryable = true
+    _hidden_value = true
+  }
+  serviceid Id {
+    apiName = "WorkBadgeDefinition.Id"
+    label = "Id. de insignia"
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Checkbox IsDeleted {
+    apiName = "WorkBadgeDefinition.IsDeleted"
+    defaultValue = false
+    label = "Eliminado"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime CreatedDate {
+    apiName = "WorkBadgeDefinition.CreatedDate"
+    label = "Fecha de creación"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup CreatedById {
+    apiName = "WorkBadgeDefinition.CreatedById"
+    relationshipName = "CreatedBy"
+    label = "Creado por el Id."
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime LastModifiedDate {
+    apiName = "WorkBadgeDefinition.LastModifiedDate"
+    label = "Fecha de la última modificación"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup LastModifiedById {
+    apiName = "WorkBadgeDefinition.LastModifiedById"
+    relationshipName = "LastModifiedBy"
+    label = "Última modificación realizada por el Id."
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.DateTime SystemModstamp {
+    apiName = "WorkBadgeDefinition.SystemModstamp"
+    label = "Modstamp del sistema"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+  salesforce.Lookup NetworkId {
+    apiName = "WorkBadgeDefinition.NetworkId"
+    relationshipName = "Network"
+    label = "Id. de red"
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Checkbox IsRewardBadge {
+    apiName = "WorkBadgeDefinition.IsRewardBadge"
+    defaultValue = false
+    label = "Insignia de premio"
+    createable = false
+    updateable = false
+    queryable = true
+    _hidden_value = true
+  }
+}

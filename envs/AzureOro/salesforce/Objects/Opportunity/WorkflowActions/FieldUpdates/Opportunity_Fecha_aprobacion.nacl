@@ -1,0 +1,14 @@
+salesforce.WorkflowFieldUpdate Opportunity_Fecha_aprobacion@vu {
+  fullName = "Opportunity.Fecha_aprobacion"
+  field = salesforce.Opportunity.field.Fecha_aprobacion_auditoria__c
+  formula = "NOW()"
+  name = "Fecha aprobación"
+  notifyAssignee = false
+  operation = "Formula"
+  protected = false
+  reevaluateOnChange = false
+  _parent = [
+    salesforce.Opportunity,
+  ]
+  _alias = "Opportunity.Fecha_aprobacion"
+}

@@ -1,0 +1,335 @@
+salesforce.RecordType Opportunity_Oportunidades_estandar {
+  fullName = "Opportunity.Oportunidades_estandar"
+  active = true
+  businessProcess = salesforce.BusinessProcess.instance.Opportunity_PKF_Attest@us
+  description = "Proceso de negocio habitual cuando los clientes no pertenecen al grupo de cuentas auditadas por PKF Attest."
+  label = "Oportunidades estándar"
+  picklistValues = [
+    {
+      picklist = salesforce.Opportunity.field.Centro_de_actividad__c
+      values = [
+        {
+          fullName = "Auditoria"
+          default = false
+        },
+        {
+          fullName = "BS Dynamics NAV"
+          default = false
+        },
+        {
+          fullName = "BS Expertis"
+          default = false
+        },
+        {
+          fullName = "BS GesCol"
+          default = false
+        },
+        {
+          fullName = "BS Otras Sol%2E %28BI%2C Lucanet%2E%2C FN%2E%2E%29"
+          default = false
+        },
+        {
+          fullName = "BS Sage X3"
+          default = false
+        },
+        {
+          fullName = "Centro Actividad"
+          default = false
+        },
+        {
+          fullName = "Compliance"
+          default = false
+        },
+        {
+          fullName = "Consultoría"
+          default = false
+        },
+        {
+          fullName = "Consultoría de Sistemas"
+          default = false
+        },
+        {
+          fullName = "Corporate FInance"
+          default = false
+        },
+        {
+          fullName = "Data Analytics"
+          default = false
+        },
+        {
+          fullName = "Excellence"
+          default = false
+        },
+        {
+          fullName = "Health"
+          default = false
+        },
+        {
+          fullName = "Ing%2ESoftware"
+          default = false
+        },
+        {
+          fullName = "Inncome"
+          default = false
+        },
+        {
+          fullName = "Legal %26 Fiscal"
+          default = false
+        },
+        {
+          fullName = "Marketing Digital"
+          default = false
+        },
+        {
+          fullName = "RGPD"
+          default = false
+        },
+        {
+          fullName = "Regulation %40 Public Policy"
+          default = false
+        },
+        {
+          fullName = "Riesgos Tecnológicos"
+          default = false
+        },
+        {
+          fullName = "SALESFORCE"
+          default = false
+        },
+        {
+          fullName = "Técnica Sistemas"
+          default = false
+        },
+      ]
+    },
+    {
+      picklist = salesforce.Opportunity.field.Division__c
+      values = [
+        {
+          fullName = "Auditoría y Consultoría Económica"
+          default = false
+        },
+        {
+          fullName = "Capital Markets"
+          default = false
+        },
+        {
+          fullName = "Concursal"
+          default = false
+        },
+        {
+          fullName = "Corporate Finance"
+          default = false
+        },
+        {
+          fullName = "Corporativo"
+          default = false
+        },
+        {
+          fullName = "FAS"
+          default = false
+        },
+        {
+          fullName = "Fiscal"
+          default = false
+        },
+        {
+          fullName = "Health"
+          default = false
+        },
+        {
+          fullName = "ITC"
+          default = false
+        },
+        {
+          fullName = "Inncome"
+          default = false
+        },
+        {
+          fullName = "Legal"
+          default = false
+        },
+        {
+          fullName = "Regulación"
+          default = false
+        },
+        {
+          fullName = "Riesgos Tecnológicos"
+          default = false
+        },
+        {
+          fullName = "Soluciones de Gestión"
+          default = false
+        },
+      ]
+    },
+    {
+      picklist = salesforce.Opportunity.field.Estado_Lead__c
+      values = [
+        {
+          fullName = "En curso"
+          default = false
+        },
+        {
+          fullName = "Ganado"
+          default = false
+        },
+        {
+          fullName = "Pausado"
+          default = false
+        },
+        {
+          fullName = "Perdido"
+          default = false
+        },
+        {
+          fullName = "Rechazado"
+          default = false
+        },
+      ]
+    },
+    {
+      picklist = salesforce.Opportunity.field.Estado_operacion_lead__c
+      values = [
+        {
+          fullName = "Abonado"
+          default = false
+        },
+        {
+          fullName = "En devolución"
+          default = false
+        },
+        {
+          fullName = "Perdido"
+          default = false
+        },
+        {
+          fullName = "Sin cargo"
+          default = false
+        },
+      ]
+    },
+    {
+      picklist = salesforce.Opportunity.field.Estado_proceso_aprobacion__c
+      values = [
+        {
+          fullName = "Aprobado"
+          default = false
+        },
+        {
+          fullName = "Pendiente"
+          default = false
+        },
+        {
+          fullName = "Rechazado"
+          default = false
+        },
+      ]
+    },
+    {
+      picklist = salesforce.Opportunity.field.ForecastCategoryName
+      values = [
+        {
+          fullName = "Best Case"
+          default = false
+        },
+        {
+          fullName = "Closed"
+          default = false
+        },
+        {
+          fullName = "Commit"
+          default = false
+        },
+        {
+          fullName = "Omitted"
+          default = false
+        },
+        {
+          fullName = "Pipeline"
+          default = false
+        },
+      ]
+    },
+    {
+      picklist = salesforce.Opportunity.field.LeadSource
+      values = [
+        {
+          fullName = "Clientify"
+          default = false
+        },
+        {
+          fullName = "Website"
+          default = false
+        },
+      ]
+    },
+    {
+      picklist = salesforce.Opportunity.field.Loss_Reason__c
+      values = [
+        {
+          fullName = "Cancelada"
+          default = false
+        },
+        {
+          fullName = "Competencia"
+          default = false
+        },
+        {
+          fullName = "No nos presentamos"
+          default = false
+        },
+      ]
+    },
+    {
+      picklist = salesforce.Opportunity.field.Origen__c
+      values = [
+        {
+          fullName = "Campaña"
+          default = false
+        },
+        {
+          fullName = "Firmas miembro de PKF Internacional"
+          default = false
+        },
+        {
+          fullName = "Gestión comercial"
+          default = false
+        },
+        {
+          fullName = "Licitación pública"
+          default = false
+        },
+        {
+          fullName = "Marketing %2F web"
+          default = false
+        },
+        {
+          fullName = "Referido"
+          default = false
+        },
+        {
+          fullName = "Telemarketing"
+          default = false
+        },
+      ]
+    },
+    {
+      picklist = salesforce.Opportunity.field.Type
+      values = [
+        {
+          fullName = "Existing Business"
+          default = false
+        },
+        {
+          fullName = "New Business"
+          default = false
+        },
+      ]
+    },
+  ]
+  _parent = [
+    salesforce.Opportunity,
+  ]
+  _alias = "Oportunidades estándar"
+}

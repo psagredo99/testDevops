@@ -1,0 +1,18 @@
+salesforce.LightningComponentBundle fsc_searchableDataTable {
+  apiVersion = 51
+  isExposed = false
+  fullName = "fsc_searchableDataTable"
+  lwcResources = {
+    lwcResource = {
+      fsc_searchableDataTable_html@uv = {
+        source = file("salesforce/Records/LightningComponentBundle/fsc_searchableDataTable/fsc_searchableDataTable.html")
+        filePath = "lwc/fsc_searchableDataTable/fsc_searchableDataTable.html"
+      }
+      fsc_searchableDataTable_js@uv = {
+        source = file("salesforce/Records/LightningComponentBundle/fsc_searchableDataTable/fsc_searchableDataTable.js")
+        filePath = "lwc/fsc_searchableDataTable/fsc_searchableDataTable.js"
+      }
+    }
+  }
+  _alias = "fsc_searchableDataTable"
+}

@@ -1,0 +1,57 @@
+salesforce.CustomApplication Capital_Markets {
+  actionOverrides = [
+    {
+      actionName = "View"
+      comment = "Action override created by Lightning App Builder during activation."
+      content = "Account_Page_Capital_Markets"
+      formFactor = "Large"
+      skipRecordTypeSelect = false
+      type = "Flexipage"
+      pageOrSobjectType = "Account"
+    },
+    {
+      actionName = "View"
+      comment = "Action override created by Lightning App Builder during activation."
+      content = "Account_Page_Capital_Markets"
+      formFactor = "Small"
+      skipRecordTypeSelect = false
+      type = "Flexipage"
+      pageOrSobjectType = "Account"
+    },
+  ]
+  brand = {
+    headerColor = "#0070D2"
+    logoVersion = 1
+    shouldOverrideOrgTheme = false
+  }
+  formFactors = [
+    "Small",
+    "Large",
+  ]
+  isNavAutoTempTabsDisabled = false
+  isNavPersonalizationDisabled = false
+  isNavTabPersistenceDisabled = false
+  isOmniPinnedViewEnabled = false
+  label = "Capital Markets"
+  navType = "Standard"
+  tabs = [
+    "standard-home",
+    "standard-Account",
+    "standard-Contact",
+    "standard-Campaign",
+    "standard-Lead",
+    "standard-Opportunity",
+    "standard-Task",
+    "standard-Event",
+    "standard-report",
+  ]
+  uiType = "Lightning"
+  utilityBar = "Capital_Market_UtilityBar"
+  fullName = "Capital_Markets"
+  _generated_dependencies = [
+    {
+      reference = salesforce.LightningPage.instance.Capital_Market_UtilityBar
+    },
+  ]
+  _alias = "Capital Markets"
+}

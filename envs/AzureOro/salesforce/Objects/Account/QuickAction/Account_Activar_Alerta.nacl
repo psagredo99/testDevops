@@ -1,0 +1,11 @@
+salesforce.QuickAction Account_Activar_Alerta@vu {
+  fullName = "Account.Activar_Alerta"
+  flowDefinition = salesforce.Flow.instance.Cuenta_Activar_Alerta
+  label = "Activar Alerta"
+  optionsCreateFeedItem = false
+  type = "Flow"
+  _parent = [
+    salesforce.Account,
+  ]
+  _alias = "Activar Alerta"
+}

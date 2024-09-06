@@ -1,0 +1,52 @@
+salesforce.PathAssistant Oportunidad_Est_ndar {
+  fullName = "Oportunidad_Est_ndar"
+  active = true
+  entityName = "Opportunity"
+  fieldName = "StageName"
+  masterLabel = "Oportunidad Estándar"
+  pathAssistantSteps = [
+    {
+      fieldNames = [
+        "Loss_Reason__c",
+        "Descripcion_motivo_p_rdida_de_oportunida__c",
+      ]
+      picklistValueName = "Cerrada perdida"
+    },
+    {
+      fieldNames = [
+        "Amount",
+        "NextStep",
+      ]
+      info = "<p>Completar los datos de importe, como previsión de lo que se estima sea el cierre del negocio.</p><p>Añadir detalle genérico sobre que área y servicio se van a ofertar.</p>"
+      picklistValueName = "En preparación"
+    },
+    {
+      fieldNames = [
+        "CloseDate",
+        "Description",
+        "NextStep",
+      ]
+      info = "<p><span style=\"font-size: 13px;\">Describir brevemente que negocio se va a llevar a cabo con la cuenta relacionada.</span></p>"
+      picklistValueName = "Identificada"
+    },
+    {
+      fieldNames = [
+        "Documentacion__c",
+        "CloseDate",
+        "Amount",
+        "Probability",
+        "NextStep",
+      ]
+      info = "<p><span style=\"font-size: 13px;\">Informar de la dirección donde está almacenada la documentación de la oferta.</span></p>"
+      picklistValueName = "Ofertada"
+    },
+    {
+      fieldNames = [
+        "NextStep",
+      ]
+      picklistValueName = "Postpuesta"
+    },
+  ]
+  recordTypeName = "Oportunidades_estandar"
+  _alias = "Oportunidad_Est_ndar"
+}

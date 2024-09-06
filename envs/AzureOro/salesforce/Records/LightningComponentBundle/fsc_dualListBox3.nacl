@@ -1,0 +1,154 @@
+salesforce.LightningComponentBundle fsc_dualListBox3 {
+  apiVersion = 47
+  description = "Dual List Box v3"
+  isExposed = true
+  masterLabel = "Dual List Box v3"
+  targets = {
+    target = [
+      "lightning__FlowScreen",
+    ]
+  }
+  targetConfigs = {
+    targetConfig = [
+      {
+        targets = "lightning__FlowScreen"
+        configurationEditor = "c-fsc_dual-list-box-c-p-e"
+        property = [
+          {
+            name = "label"
+            type = "String"
+            role = "inputOnly"
+          },
+          {
+            name = "sourceLabel"
+            type = "String"
+            role = "inputOnly"
+          },
+          {
+            name = "fieldLevelHelp"
+            type = "String"
+            role = "inputOnly"
+          },
+          {
+            name = "selectedLabel"
+            type = "String"
+            role = "inputOnly"
+          },
+          {
+            name = "min"
+            type = "Integer"
+            role = "inputOnly"
+          },
+          {
+            name = "max"
+            type = "Integer"
+            role = "inputOnly"
+          },
+          {
+            name = "disableReordering"
+            type = "Boolean"
+            role = "inputOnly"
+          },
+          {
+            name = "size"
+            type = "Integer"
+            role = "inputOnly"
+          },
+          {
+            name = "required"
+            type = "Boolean"
+            role = "inputOnly"
+          },
+          {
+            name = "requiredOptions"
+            type = "String"
+            role = "inputOnly"
+          },
+          {
+            name = "useObjectValueAsOutput"
+            type = "Boolean"
+            role = "inputOnly"
+          },
+          {
+            name = "useWhichObjectKeyForData"
+            type = "String"
+            role = "inputOnly"
+          },
+          {
+            name = "useWhichObjectKeyForLabel"
+            type = "String"
+            role = "inputOnly"
+          },
+          {
+            name = "useWhichObjectKeyForSort"
+            type = "String"
+            role = "inputOnly"
+          },
+          {
+            name = "allOptionsFieldDescriptorList"
+            type = "apex://usf3.FieldDescriptor[]"
+            role = "inputOnly"
+          },
+          {
+            name = "allOptionsCSV"
+            type = "String"
+            role = "inputOnly"
+          },
+          {
+            name = "allOptionsStringCollection"
+            type = "String[]"
+            role = "inputOnly"
+          },
+          {
+            name = "allOptionsStringCollectionLabels"
+            type = "String[]"
+            role = "inputOnly"
+          },
+          {
+            name = "allOptionsStringFormat"
+            type = "String"
+            role = "inputOnly"
+          },
+          {
+            name = "selectedOptionsFieldDescriptorList"
+            type = "apex://usf3.FieldDescriptor[]"
+          },
+          {
+            name = "selectedOptionsCSV"
+            type = "String"
+          },
+          {
+            name = "selectedOptionsStringList"
+            type = "String[]"
+          },
+        ]
+        attr_category = "Input"
+      },
+    ]
+  }
+  fullName = "fsc_dualListBox3"
+  lwcResources = {
+    lwcResource = {
+      fsc_dualListBox3_js@uv = {
+        source = file("salesforce/Records/LightningComponentBundle/fsc_dualListBox3/fsc_dualListBox3.js")
+        filePath = "lwc/fsc_dualListBox3/fsc_dualListBox3.js"
+      }
+      fsc_dualListBox3_html@uv = {
+        source = file("salesforce/Records/LightningComponentBundle/fsc_dualListBox3/fsc_dualListBox3.html")
+        filePath = "lwc/fsc_dualListBox3/fsc_dualListBox3.html"
+      }
+    }
+  }
+  _generated_dependencies = [
+    {
+      reference = salesforce.LightningComponentBundle.instance.fsc_dualListBoxCPE
+    },
+    {
+      reference = salesforce.LightningComponentBundle.instance.fsc_dualListBoxUtils
+    },
+    {
+      reference = salesforce.LightningComponentBundle.instance.fsc_extendedBaseDualListBox
+    },
+  ]
+  _alias = "fsc_dualListBox3"
+}

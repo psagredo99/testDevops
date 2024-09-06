@@ -1,0 +1,55 @@
+salesforce.Layout OpportunityTeamMember_Formato_Miembro_del_equipo_de_oportunidades@bsssss {
+  layoutSections = [
+    {
+      customLabel = false
+      detailHeading = false
+      editHeading = false
+      label = "Information"
+      layoutColumns = [
+        {
+          layoutItems = [
+            {
+              behavior = "Required"
+              field = salesforce.OpportunityTeamMember.field.OpportunityId
+            },
+            {
+              behavior = "Required"
+              field = salesforce.OpportunityTeamMember.field.TeamMemberRole
+            },
+          ]
+        },
+        {
+          layoutItems = [
+            {
+              behavior = "Required"
+              field = salesforce.OpportunityTeamMember.field.UserId
+            },
+            {
+              behavior = "Required"
+              field = salesforce.OpportunityTeamMember.field.OpportunityAccessLevel
+            },
+          ]
+        },
+      ]
+      style = "TwoColumnsLeftToRight"
+    },
+    {
+      customLabel = false
+      detailHeading = false
+      editHeading = false
+      layoutColumns = [
+        {
+        },
+      ]
+      style = "CustomLinks"
+    },
+  ]
+  showEmailCheckbox = false
+  showRunAssignmentRulesCheckbox = false
+  showSubmitAndAttachButton = false
+  fullName = "OpportunityTeamMember-Formato Miembro del equipo de oportunidades"
+  _parent = [
+    salesforce.OpportunityTeamMember,
+  ]
+  _alias = "OpportunityTeamMember-Formato Miembro del equipo de oportunidades"
+}

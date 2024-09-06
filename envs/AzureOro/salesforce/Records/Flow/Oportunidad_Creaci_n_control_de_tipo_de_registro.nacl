@@ -1,0 +1,248 @@
+salesforce.Flow Oportunidad_Creaci_n_control_de_tipo_de_registro {
+  fullName = "Oportunidad_Creaci_n_control_de_tipo_de_registro"
+  apiVersion = 59
+  customErrors = [
+    {
+      description = "Se ha producido un fallo al intentar crear la oportunidad"
+      name = "Copia_1_de_Error"
+      label = "Error"
+      locationX = 842
+      locationY = 611
+      customErrorMessages = {
+        errorMessage = '''
+Algo ha fallado, al ser una cuenta estándar se ha producido un error al asignar el tipo de oportunidad que le corresponde a este cliente.
+Detalle del error:
+{!$Flow.FaultMessage}
+'''
+        isFieldError = false
+      }
+    },
+    {
+      description = "Se ha producido un fallo al intentar crear la oportunidad"
+      name = "Error"
+      label = "Error"
+      locationX = 314
+      locationY = 611
+      customErrorMessages = {
+        errorMessage = '''
+Algo ha fallado, al ser una cuenta auditada se ha producido un error al cambiar el tipo de oportunidad que le corresponde a este cliente.
+Detalle del error:
+{!$Flow.FaultMessage}
+'''
+        isFieldError = false
+      }
+    },
+  ]
+  decisions = [
+    {
+      name = "Auditado_o_Normal"
+      label = "Auditado o Normal?"
+      locationX = 446
+      locationY = 287
+      defaultConnector = {
+        targetReference = "Get_Tipo_registro_estandar"
+      }
+      defaultConnectorLabel = "Normal"
+      rules = [
+        {
+          name = "Auditado"
+          conditionLogic = "and"
+          conditions = [
+            {
+              leftValueReference = "$Record.Account.Cliente_auditado__c"
+              operator = "EqualTo"
+              rightValue = {
+                booleanValue = true
+              }
+            },
+          ]
+          connector = {
+            targetReference = "Get_Tipo_registro_Auditado"
+          }
+          label = "Auditado"
+        },
+      ]
+    },
+    {
+      name = "Encontrado_tipo_de_registro"
+      label = "Encontrado tipo de registro?"
+      locationX = 182
+      locationY = 503
+      defaultConnector = {
+        targetReference = "Error"
+      }
+      defaultConnectorLabel = "No"
+      rules = [
+        {
+          name = "S"
+          conditionLogic = "and"
+          conditions = [
+            {
+              leftValueReference = "Get_Tipo_registro_Auditado"
+              operator = "IsNull"
+              rightValue = {
+                booleanValue = false
+              }
+            },
+          ]
+          connector = {
+            targetReference = "Actualizar_tipo_de_registro"
+          }
+          label = "Sí"
+        },
+      ]
+    },
+    {
+      name = "Encontrado_tipo_de_registro_estandar"
+      label = "Encontrado tipo de registro estándar?"
+      locationX = 710
+      locationY = 503
+      defaultConnector = {
+        targetReference = "Copia_1_de_Error"
+      }
+      defaultConnectorLabel = "No"
+      rules = [
+        {
+          name = "Si"
+          conditionLogic = "and"
+          conditions = [
+            {
+              leftValueReference = "Get_Tipo_registro_estandar"
+              operator = "IsNull"
+              rightValue = {
+                booleanValue = false
+              }
+            },
+          ]
+          connector = {
+            targetReference = "Actualizar_tipo_de_registro_est_ndar"
+          }
+          label = "Sí"
+        },
+      ]
+    },
+  ]
+  description = "Modificación para que se añada un tipo de registro por defecto."
+  environments = "Default"
+  interviewLabel = "Oportunidad - Creación control de tipo de registro {!$Flow.CurrentDateTime}"
+  label = "Oportunidad - Creación control de tipo de registro"
+  processMetadataValues = [
+    {
+      name = "BuilderType"
+      value = {
+        stringValue = "LightningFlowBuilder"
+      }
+    },
+    {
+      name = "CanvasMode"
+      value = {
+        stringValue = "AUTO_LAYOUT_CANVAS"
+      }
+    },
+    {
+      name = "OriginBuilderType"
+      value = {
+        stringValue = "LightningFlowBuilder"
+      }
+    },
+  ]
+  processType = "AutoLaunchedFlow"
+  recordLookups = [
+    {
+      name = "Get_Tipo_registro_Auditado"
+      label = "Get Tipo registro Auditado"
+      locationX = 182
+      locationY = 395
+      assignNullValuesIfNoRecordsFound = false
+      connector = {
+        targetReference = "Encontrado_tipo_de_registro"
+      }
+      filterLogic = "and"
+      filters = [
+        {
+          field = "Name"
+          operator = "EqualTo"
+          value = {
+            stringValue = "Oportunidades clientes auditados"
+          }
+        },
+      ]
+      getFirstRecordOnly = true
+      object = "RecordType"
+      storeOutputAutomatically = true
+    },
+    {
+      name = "Get_Tipo_registro_estandar"
+      label = "Get Tipo registro estándar"
+      locationX = 710
+      locationY = 395
+      assignNullValuesIfNoRecordsFound = false
+      connector = {
+        targetReference = "Encontrado_tipo_de_registro_estandar"
+      }
+      filterLogic = "and"
+      filters = [
+        {
+          field = "Name"
+          operator = "EqualTo"
+          value = {
+            stringValue = "Oportunidades estándar"
+          }
+        },
+      ]
+      getFirstRecordOnly = true
+      object = "RecordType"
+      storeOutputAutomatically = true
+    },
+  ]
+  recordUpdates = [
+    {
+      name = "Actualizar_tipo_de_registro"
+      label = "Actualizar tipo de registro"
+      locationX = 50
+      locationY = 611
+      inputAssignments = [
+        {
+          field = "RecordTypeId"
+          value = {
+            elementReference = "Get_Tipo_registro_Auditado.Id"
+          }
+        },
+      ]
+      inputReference = "$Record"
+    },
+    {
+      name = "Actualizar_tipo_de_registro_est_ndar"
+      label = "Actualizar tipo de registro estándar"
+      locationX = 578
+      locationY = 611
+      inputAssignments = [
+        {
+          field = "RecordTypeId"
+          value = {
+            elementReference = "Get_Tipo_registro_estandar.Id"
+          }
+        },
+      ]
+      inputReference = "$Record"
+    },
+  ]
+  start = {
+    locationX = 320
+    locationY = 0
+    connector = {
+      targetReference = "Auditado_o_Normal"
+    }
+    object = salesforce.Opportunity
+    recordTriggerType = "Create"
+    triggerType = "RecordBeforeSave"
+  }
+  status = "Active"
+  triggerOrder = 10
+  _generated_dependencies = [
+    {
+      reference = salesforce.Account.field.Cliente_auditado__c
+    },
+  ]
+  _alias = "Oportunidad - Creación control de tipo de registro"
+}

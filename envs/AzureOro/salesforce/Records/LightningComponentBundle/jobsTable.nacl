@@ -1,0 +1,79 @@
+salesforce.LightningComponentBundle jobsTable {
+  apiVersion = 56
+  isExposed = true
+  masterLabel = "Jobs Table NAV"
+  targets = {
+    target = [
+      "lightning__RecordPage",
+      "lightning__AppPage",
+      "lightning__HomePage",
+    ]
+  }
+  targetConfigs = {
+    targetConfig = [
+      {
+        targets = "lightning__RecordPage"
+        supportedFormFactors = {
+          supportedFormFactor = [
+            {
+              type = "Small"
+            },
+            {
+              type = "Large"
+            },
+          ]
+        }
+      },
+      {
+        targets = "lightning__AppPage"
+        supportedFormFactors = {
+          supportedFormFactor = [
+            {
+              type = "Small"
+            },
+            {
+              type = "Large"
+            },
+          ]
+        }
+      },
+      {
+        targets = "lightning__HomePage"
+        supportedFormFactors = {
+          supportedFormFactor = [
+            {
+              type = "Small"
+            },
+            {
+              type = "Large"
+            },
+          ]
+        }
+      },
+    ]
+  }
+  attr_fqn = "dataTableSortingLWC"
+  fullName = "jobsTable"
+  lwcResources = {
+    lwcResource = {
+      jobsTable_css@v = {
+        source = file("salesforce/Records/LightningComponentBundle/jobsTable/jobsTable.css")
+        filePath = "lwc/jobsTable/jobsTable.css"
+      }
+      jobsTable_js@v = {
+        source = file("salesforce/Records/LightningComponentBundle/jobsTable/jobsTable.js")
+        filePath = "lwc/jobsTable/jobsTable.js"
+      }
+      jobsTable_html@v = {
+        source = file("salesforce/Records/LightningComponentBundle/jobsTable/jobsTable.html")
+        filePath = "lwc/jobsTable/jobsTable.html"
+      }
+    }
+  }
+  _generated_dependencies = [
+    {
+      reference = salesforce.ApexClass.instance.NAV2SFJobs
+    },
+  ]
+  _alias = "jobsTable"
+}

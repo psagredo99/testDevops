@@ -1,0 +1,30 @@
+salesforce.LightningComponentBundle fsc_flowButtonBarCPE {
+  apiVersion = 51
+  isExposed = false
+  fullName = "fsc_flowButtonBarCPE"
+  lwcResources = {
+    lwcResource = {
+      fsc_flowButtonBarCPE_css@uv = {
+        source = file("salesforce/Records/LightningComponentBundle/fsc_flowButtonBarCPE/fsc_flowButtonBarCPE.css")
+        filePath = "lwc/fsc_flowButtonBarCPE/fsc_flowButtonBarCPE.css"
+      }
+      fsc_flowButtonBarCPE_html@uv = {
+        source = file("salesforce/Records/LightningComponentBundle/fsc_flowButtonBarCPE/fsc_flowButtonBarCPE.html")
+        filePath = "lwc/fsc_flowButtonBarCPE/fsc_flowButtonBarCPE.html"
+      }
+      fsc_flowButtonBarCPE_js@uv = {
+        source = file("salesforce/Records/LightningComponentBundle/fsc_flowButtonBarCPE/fsc_flowButtonBarCPE.js")
+        filePath = "lwc/fsc_flowButtonBarCPE/fsc_flowButtonBarCPE.js"
+      }
+    }
+  }
+  _generated_dependencies = [
+    {
+      reference = salesforce.LightningComponentBundle.instance.fsc_flowButtonBar
+    },
+    {
+      reference = salesforce.LightningComponentBundle.instance.fsc_pickIcon
+    },
+  ]
+  _alias = "fsc_flowButtonBarCPE"
+}

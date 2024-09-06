@@ -1,0 +1,275 @@
+type salesforce.Log__c {
+  salesforce.Text Apex_Class_Name__c {
+    apiName = "Log__c.Apex_Class_Name__c"
+    externalId = false
+    label = "Apex Class Name"
+    length = 255
+    trackTrending = false
+    unique = false
+    createable = true
+    updateable = true
+    caseSensitive = false
+    queryable = true
+  }
+  salesforce.Text Apex_Method_Name__c {
+    apiName = "Log__c.Apex_Method_Name__c"
+    externalId = false
+    label = "Apex Method Name"
+    length = 255
+    trackTrending = false
+    unique = false
+    createable = true
+    updateable = true
+    caseSensitive = false
+    queryable = true
+  }
+  salesforce.LongTextArea Callout_Error__c {
+    apiName = "Log__c.Callout_Error__c"
+    description = "Contendrá la información si la llamada falla."
+    label = "Callout Error"
+    length = 131072
+    trackTrending = false
+    visibleLines = 3
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Text End_Date__c {
+    apiName = "Log__c.End_Date__c"
+    externalId = false
+    label = "End Date"
+    length = 255
+    trackTrending = false
+    unique = false
+    createable = true
+    updateable = true
+    caseSensitive = false
+    queryable = true
+  }
+  salesforce.Text End_Record__c {
+    apiName = "Log__c.End_Record__c"
+    externalId = false
+    label = "End Record"
+    length = 255
+    trackTrending = false
+    unique = false
+    createable = true
+    updateable = true
+    caseSensitive = false
+    queryable = true
+  }
+  salesforce.Text Endpoint_WS__c {
+    apiName = "Log__c.Endpoint_WS__c"
+    externalId = false
+    label = "Endpoint WS"
+    length = 255
+    trackTrending = false
+    unique = false
+    createable = true
+    updateable = true
+    caseSensitive = false
+    queryable = true
+  }
+  salesforce.Number Error_Records__c {
+    apiName = "Log__c.Error_Records__c"
+    externalId = false
+    label = "Error Records"
+    precision = 18
+    scale = 0
+    trackTrending = false
+    unique = false
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Text Record_ID__c {
+    apiName = "Log__c.Record_ID__c"
+    externalId = false
+    label = "Record ID"
+    length = 255
+    trackTrending = false
+    unique = false
+    createable = true
+    updateable = true
+    caseSensitive = false
+    queryable = true
+  }
+  salesforce.LongTextArea Request__c {
+    apiName = "Log__c.Request__c"
+    description = "Contendrá el request body que se envía al servicio externo"
+    label = "Request"
+    length = 131072
+    trackTrending = false
+    visibleLines = 5
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.LongTextArea Response_Body__c {
+    apiName = "Log__c.Response_Body__c"
+    description = "Contendrá el response body de la llamada WS."
+    label = "Response Body"
+    length = 131072
+    trackTrending = false
+    visibleLines = 3
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.LongTextArea Result_Description__c {
+    apiName = "Log__c.Result_Description__c"
+    label = "Result Description"
+    length = 131072
+    trackTrending = false
+    visibleLines = 3
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.FormulaText Result_Icon__c {
+    apiName = "Log__c.Result_Icon__c"
+    externalId = false
+    formula = '''
+IMAGE( 
+CASE( TEXT(Result__c) , 
+"Success", "/img/msg_icons/confirm24.png", 
+"Warning", "/img/msg_icons/warning24.png", 
+"Error", "/img/msg_icons/error24.png", 
+"/s.gif"), 
+"Result")
+'''
+    formulaTreatBlanksAs = "BlankAsZero"
+    label = "Result Icon"
+    trackTrending = false
+    unique = false
+    createable = false
+    updateable = false
+    caseSensitive = false
+    queryable = true
+    _hidden_value = true
+    _generated_dependencies = [
+      {
+        reference = salesforce.Log__c.field.Result__c
+      },
+    ]
+  }
+  salesforce.Picklist Result__c {
+    apiName = "Log__c.Result__c"
+    description = "This field determines whether the petition was successful or if there were any errors in the process."
+    inlineHelpText = "This field determines whether the petition was successful or if there were any errors in the process."
+    label = "Result"
+    trackTrending = false
+    valueSet = [
+      {
+        fullName = "Success"
+        default = false
+        label = "Success"
+      },
+      {
+        fullName = "Error"
+        default = false
+        label = "Error"
+      },
+      {
+        fullName = "Warning"
+        default = false
+        label = "Warning"
+      },
+    ]
+    sorted = false
+    restricted = true
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.LongTextArea Server_Response__c {
+    apiName = "Log__c.Server_Response__c"
+    label = "Server Response"
+    length = 131072
+    trackTrending = false
+    visibleLines = 3
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Text Service_Name__c {
+    apiName = "Log__c.Service_Name__c"
+    externalId = false
+    label = "Service Name"
+    length = 255
+    trackTrending = false
+    unique = false
+    createable = true
+    updateable = true
+    caseSensitive = false
+    queryable = true
+  }
+  salesforce.Text Start_Date__c {
+    apiName = "Log__c.Start_Date__c"
+    externalId = false
+    label = "Start Date"
+    length = 255
+    trackTrending = false
+    unique = false
+    createable = true
+    updateable = true
+    caseSensitive = false
+    queryable = true
+  }
+  salesforce.Text Start_Record__c {
+    apiName = "Log__c.Start_Record__c"
+    externalId = false
+    label = "Start Record"
+    length = 255
+    trackTrending = false
+    unique = false
+    createable = true
+    updateable = true
+    caseSensitive = false
+    queryable = true
+  }
+  salesforce.Number Successful_Records__c {
+    apiName = "Log__c.Successful_Records__c"
+    externalId = false
+    label = "Successful Records"
+    precision = 18
+    scale = 0
+    trackTrending = false
+    unique = false
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.DateTime Timestamp__c {
+    apiName = "Log__c.Timestamp__c"
+    label = "Timestamp"
+    trackTrending = false
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Number Total_Records__c {
+    apiName = "Log__c.Total_Records__c"
+    externalId = false
+    label = "Total Records"
+    precision = 18
+    scale = 0
+    trackTrending = false
+    unique = false
+    createable = true
+    updateable = true
+    queryable = true
+  }
+  salesforce.Number Warning_Records__c {
+    apiName = "Log__c.Warning_Records__c"
+    externalId = false
+    label = "Warning Records"
+    precision = 18
+    scale = 0
+    trackTrending = false
+    unique = false
+    createable = true
+    updateable = true
+    queryable = true
+  }
+}

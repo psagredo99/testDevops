@@ -1,0 +1,19 @@
+type salesforce.Integration_Object__mdt {
+  annotations {
+    serviceid apiName {
+    }
+    serviceid metadataType {
+    }
+    string label {
+    }
+    string pluralLabel {
+    }
+    hidden_string keyPrefix {
+    }
+  }
+  apiName = "Integration_Object__mdt"
+  metadataType = "CustomMetadata"
+  label = "Integration Object"
+  pluralLabel = "Integration Objects"
+  _alias = "Integration Object"
+}

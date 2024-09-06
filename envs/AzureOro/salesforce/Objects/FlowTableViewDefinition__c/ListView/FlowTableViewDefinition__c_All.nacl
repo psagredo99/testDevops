@@ -1,0 +1,15 @@
+salesforce.ListView FlowTableViewDefinition__c_All {
+  fullName = "FlowTableViewDefinition__c.All"
+  columns = [
+    "NAME",
+    salesforce.FlowTableViewDefinition__c.field.Object_API_Name__c,
+    salesforce.FlowTableViewDefinition__c.field.Field_API_Names__c,
+    salesforce.FlowTableViewDefinition__c.field.Active__c,
+  ]
+  filterScope = "Everything"
+  label = "All"
+  _parent = [
+    salesforce.FlowTableViewDefinition__c,
+  ]
+  _alias = "All"
+}

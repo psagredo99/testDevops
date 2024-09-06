@@ -1,0 +1,66 @@
+salesforce.SharingRules Account {
+  sharingOwnerRules = [
+    {
+      fullName = "Capital_Markets"
+      accessLevel = "Edit"
+      accountSettings = {
+        caseAccessLevel = "Read"
+        contactAccessLevel = "Edit"
+        opportunityAccessLevel = "Edit"
+      }
+      label = "Capital Markets"
+      sharedTo = {
+        role = [
+          salesforce.Role.instance.Capital_Markets,
+        ]
+      }
+      sharedFrom = {
+        role = [
+          salesforce.Role.instance.Capital_Markets,
+        ]
+      }
+    },
+    {
+      fullName = "DCM"
+      accessLevel = "Edit"
+      accountSettings = {
+        caseAccessLevel = "None"
+        contactAccessLevel = "Edit"
+        opportunityAccessLevel = "None"
+      }
+      description = "Colaboración para añadir las cuentas de Jokin que tiene perfil de socio"
+      label = "DCM"
+      sharedTo = {
+        group = [
+          salesforce.Group.instance.Capital_Markets,
+        ]
+      }
+      sharedFrom = {
+        group = [
+          salesforce.Group.instance.Capital_Markets,
+        ]
+      }
+    },
+    {
+      fullName = "Desarrollo_negocio"
+      accessLevel = "Edit"
+      accountSettings = {
+        caseAccessLevel = "None"
+        contactAccessLevel = "Edit"
+        opportunityAccessLevel = "Read"
+      }
+      label = "Desarrollo negocio"
+      sharedTo = {
+        roleAndSubordinates = salesforce.Role.instance.Socio
+      }
+      sharedFrom = {
+        roleAndSubordinates = salesforce.Role.instance.Socio
+      }
+    },
+  ]
+  fullName = "Account"
+  _parent = [
+    salesforce.Account,
+  ]
+  _alias = "Account"
+}

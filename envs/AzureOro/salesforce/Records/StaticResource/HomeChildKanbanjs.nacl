@@ -1,0 +1,7 @@
+salesforce.StaticResource HomeChildKanbanjs {
+  cacheControl = "Private"
+  contentType = "text/javascript"
+  fullName = "HomeChildKanbanjs"
+  content = file("salesforce/Records/StaticResource/HomeChildKanbanjs.resource")
+  _alias = "HomeChildKanbanjs"
+}

@@ -1,0 +1,34 @@
+salesforce.NamedCredential Clientify {
+  fullName = "Clientify"
+  allowMergeFieldsInBody = true
+  allowMergeFieldsInHeader = true
+  calloutStatus = "Enabled"
+  generateAuthorizationHeader = true
+  label = "Clientify"
+  namedCredentialParameters = [
+    {
+      parameterName = "Url"
+      parameterType = "Url"
+      parameterValue = "https://api.clientify.net"
+    },
+    {
+      externalCredential = salesforce.ExternalCredential.instance.Clientify
+      parameterName = "ExternalCredential"
+      parameterType = "Authentication"
+    },
+    {
+      parameterName = "Accept"
+      parameterType = "HttpHeader"
+      parameterValue = "application/json"
+      sequenceNumber = 2
+    },
+    {
+      parameterName = "Authorization"
+      parameterType = "HttpHeader"
+      parameterValue = "Token 794013d682dfc21dc754db99522dab1f447f092e"
+      sequenceNumber = 1
+    },
+  ]
+  namedCredentialType = "SecuredEndpoint"
+  _alias = "Clientify"
+}

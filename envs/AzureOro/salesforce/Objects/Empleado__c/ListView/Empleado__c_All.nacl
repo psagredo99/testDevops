@@ -1,0 +1,9 @@
+salesforce.ListView Empleado__c_All {
+  fullName = "Empleado__c.All"
+  filterScope = "Everything"
+  label = "Todos"
+  _parent = [
+    salesforce.Empleado__c,
+  ]
+  _alias = "Todos"
+}
