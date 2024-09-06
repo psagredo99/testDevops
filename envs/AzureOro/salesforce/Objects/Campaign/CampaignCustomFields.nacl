@@ -403,6 +403,8 @@ type salesforce.Campaign {
     apiName = "Campaign.AzureV1__c"
     defaultValue = false
     label = "AzureV1"
-    _hidden_value = true
+    createable = true
+    updateable = true
+    queryable = true
   }
 }

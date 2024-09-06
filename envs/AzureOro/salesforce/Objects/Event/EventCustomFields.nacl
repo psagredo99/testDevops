@@ -20,4 +20,12 @@ type salesforce.Event {
     caseSensitive = false
     queryable = true
   }
+  salesforce.Checkbox TESTV1__c {
+    apiName = "Event.TESTV1__c"
+    defaultValue = false
+    label = "TESTV1"
+    createable = true
+    updateable = true
+    queryable = true
+  }
 }
