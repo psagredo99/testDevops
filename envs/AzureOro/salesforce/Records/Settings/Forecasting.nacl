@@ -74,6 +74,15 @@ salesforce.ForecastingSettings {
       ]
     },
     {
+      forecastingItemCategoryApiName = "customcategory"
+      weightedSourceCategories = [
+        {
+          sourceCategoryApiName = "custom category"
+          weight = 1
+        },
+      ]
+    },
+    {
       forecastingItemCategoryApiName = "commitforecast"
       weightedSourceCategories = [
         {
